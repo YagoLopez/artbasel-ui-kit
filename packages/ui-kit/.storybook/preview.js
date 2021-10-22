@@ -1,4 +1,3 @@
-// import 'bootstrap/dist/css/bootstrap.css'
 import '../../themes/dist/artbasel/artbasel.css';
 
 export const parameters = {

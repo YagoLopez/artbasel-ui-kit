@@ -8,7 +8,10 @@
   ],
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd packages/ui-kit && yarn test",
+    "build-theme": "cd packages/themes && yarn build",
+    "build-ui-kit": "cd packages/ui-kit && yarn build",
+    "storybook": "cd packages/ui-kit && yarn storybook"
   },
   "keywords": [],
   "author": "",
