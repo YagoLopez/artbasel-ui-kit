@@ -11,6 +11,7 @@
 # production
 build
 dist
+false
 
 # misc
 .DS_Store

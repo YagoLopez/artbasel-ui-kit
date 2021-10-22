@@ -75,21 +75,21 @@ $danger: $red !default;
 
 // scss-docs-start colors-map
 $colors: (
-  "red":        $mchRed,
-  "orange":     $mchOrange,
-  "green":      $mchGreen,
-  "white":      $mchWhite,
-  "gray":       $gray-300,
-  "gray-dark":  $gray-500
+  'red': $mchRed,
+  'orange': $mchOrange,
+  'green': $mchGreen,
+  'white': $mchWhite,
+  'gray': $gray-300,
+  'gray-dark': $gray-500,
 ) !default;
 // scss-docs-end colors-map
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "warning":    $warning,
-  "danger":     $danger,
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'warning': $warning,
+  'danger': $danger,
 ) !default;
 // scss-docs-end theme-colors-map
