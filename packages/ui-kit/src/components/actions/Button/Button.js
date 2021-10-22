@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button as BSPButton } from 'react-bootstrap';
 import classNames from 'classnames';
-import { Icon, IconList } from '../../icon';
+import { Icon, IconList } from '../../Icon';
 
 const Button = ({
   children,
