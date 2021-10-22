@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "../../../dist/artbasel/variables/colors.css",
+	"sources": [
+		"../../../bootstrap/artbasel/variables/colors.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

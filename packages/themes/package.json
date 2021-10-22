@@ -1,0 +1,35 @@
+{
+  "name": "mch-themes",
+  "version": "1.0.0",
+  "description": "MCH UI Design",
+  "scripts": {
+    "build": "npm run css-compile",
+    "build-dev": "npm run css-compile && cp -r dist/artbasel ../artbasel-ui-kit/css",
+    "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map false --source-map-contents false --precision 6 bootstrap -o dist/",
+    "watch": "nodemon -e scss -x \"npm run css-compile\"",
+    "test": "npm run css-compile"
+  },
+  "keywords": [
+    "sass",
+    "css",
+    "bootstrap"
+  ],
+  "author": "",
+  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "husky": "^7.0.2",
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.13",
+    "postcss-cli": "^9.0.1",
+    "serve": "^12.0.1"
+  }
+}

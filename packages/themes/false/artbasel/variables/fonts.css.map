@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "../../../dist/artbasel/variables/fonts.css",
+	"sources": [
+		"../../../bootstrap/artbasel/variables/fonts.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

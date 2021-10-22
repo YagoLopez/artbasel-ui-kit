@@ -1,0 +1,69 @@
+<!--- ButtonFilter.stories.mdx --->
+
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+
+import ButtonFilter from './ButtonFilter';
+
+<Meta title="Components/Actions/Button Filter" component={ButtonFilter} />
+
+# Button Filter
+The filter button is the only completely rounded button. It is displayed mobile on listing pages in the lower right area. 
+
+export const Template = (args) => <ButtonFilter {...args} />
+
+export const argTypes = {
+  className: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssStyles: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssInternalPrefix: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  onClick: {
+    table: {
+      category: 'Events',
+    },
+  }
+};
+
+<Canvas>
+  <Story 
+    name="Button\ Filter" 
+    args={{ 
+      children: 'Primary Button',
+      disabled: false,
+      filter: false
+    }}
+    argTypes={argTypes}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## States
+<Preview>
+  <div>
+    <ButtonFilter />
+    <p>Default</p>
+    <ButtonFilter className="hover" />
+    <p>Hover</p>
+    <ButtonFilter filter={true} />
+    <p>Filter</p>
+    <ButtonFilter disabled={true} />
+    <p>Disabled</p>
+    <ButtonFilter className="focus" />
+    <p>Focus</p>
+  </div>
+</Preview>
+
+## Properties
+
+<ArgsTable of={ButtonFilter} />

@@ -1,0 +1,165 @@
+.btn {
+  &.icon-left,
+  &.icon-right {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+  }
+
+  &.icon-left {
+    flex-direction: row;
+    svg {
+      margin-right: $btn-icon-margin;
+    }
+  }
+
+  &.icon-right {
+    flex-direction: row-reverse;
+    svg {
+      margin-left: $btn-icon-margin;
+    }
+  }
+
+  &.size-compact {
+    height: $btn-size-compact-height;
+  }
+
+  &.size-dynamic {
+    height: $btn-size-dynamic-height;
+    min-width: $btn-size-dynamic-min-width;
+  }
+}
+
+.btn-primary {
+  text-transform: uppercase;
+
+  color: $mchWhite;
+  background-color: $mchBlack;
+  border-color: $mchBlack;
+
+  &:hover,
+  &.hover {
+    color: $mchWhite;
+    background-color: $mchGrey500;
+    border-color: $mchGrey500;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $mchGrey300;
+    border-color: $mchGrey300;
+  }
+
+  .btn-check:focus + &,
+  &:focus,
+  &.focus {
+    background-color: $mchGrey500;
+    border-color: $mchGrey500;
+    box-shadow: none;
+  }
+
+  svg {
+    fill: $mchWhite;
+  }
+}
+
+.btn-secondary {
+  text-transform: uppercase;
+
+  color: $mchBlack;
+  background-color: $mchWhite;
+  border-color: $mchBlack;
+
+  &:hover,
+  &.hover {
+    color: $mchBlack;
+    background-color: $mchGrey100;
+    border-color: $mchBlack;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $mchWhite;
+    color: $mchGrey400;
+    border-color: $mchGrey400;
+  }
+
+  .btn-check:focus + &,
+  &:focus,
+  &.focus {
+    background-color: $mchGrey200;
+    border-color: $mchBlack;
+    box-shadow: none;
+  }
+
+  svg {
+    fill: $mchBlack;
+  }
+}
+
+.btn-icon {
+  color: $mchBlack;
+  padding: 8px;
+  padding-bottom: 4px;
+  border: none;
+  background-color: transparent;
+
+  &:hover,
+  &.hover {
+    color: $mchBlack;
+    background-color: $mchGrey100;
+    border-color: $mchBlack;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $mchWhite;
+    color: $mchGrey400;
+    border-color: $mchGrey400;
+  }
+
+  &:focus,
+  &.focus {
+    background-color: $mchGrey200;
+    border-color: $mchBlack;
+    box-shadow: none;
+  }
+
+  svg {
+    fill: $mchBlack;
+  }
+}
+
+.btn-filter {
+  width: $btn-filter-size;
+  height: $btn-filter-size;
+  border-radius: 100%;
+  padding:0;
+
+  &:disabled,
+  &.disabled {
+    fill: $mchBlack;
+
+    svg {
+      fill: $mchBlack;
+    }
+  }
+
+  &:focus,
+  &.focus {
+    background-color: $mchGrey200;
+    border-color: $mchGrey200;
+    box-shadow: none;
+
+    svg {
+      fill: $mchBlack;
+    }
+  }
+
+  .checked {
+    svg {
+      fill: $mchBlack;
+    }
+  }
+}

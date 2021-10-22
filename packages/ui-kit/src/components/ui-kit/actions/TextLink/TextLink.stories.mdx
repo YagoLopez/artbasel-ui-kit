@@ -1,0 +1,118 @@
+<!--- TextLink.stories.mdx --->
+
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+
+import TextLink from './TextLink';
+import { IconList } from '../../Icon';
+
+<Meta title="Components/Actions/TextLink" component={TextLink} />
+
+export const Template = (args) => <TextLink {...args} />
+
+export const argTypes = {
+  variant: {
+    table: {
+      category: 'TextLink',
+    },
+  },
+  size: {
+    table: {
+      category: 'TextLink',
+    },
+  },
+  type: {
+    table: {
+      category: 'TextLink',
+    },
+  },
+  icon: {
+    table: {
+      category: 'Icon',
+    },
+    options: [null, ...IconList],
+  },
+  iconAlign: {
+    table: {
+      category: 'Icon',
+    },
+  },
+  className: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssStyles: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssInternalPrefix: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  onClick: {
+    table: {
+      category: 'Events',
+    },
+  },
+};
+
+# Text Link
+The text button is applied as a subtle call to action. It is possible to combine a text button with an icon.
+
+<Canvas>
+  <Story 
+    name="Default" 
+    args={{ 
+      children: 'TextLink Label',
+    }}
+    argTypes={argTypes}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Icon
+<Canvas>
+  <Story 
+    name="Leading Icon" 
+    args={{
+      children: 'Leading Icon',
+      icon: 'certificate',
+      iconAlign: 'left',
+    }}
+    argTypes={argTypes}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story 
+    name="Trailing Icon" 
+    args={{
+      children: 'Trailing Icon',
+      icon: 'certificate',
+      iconAlign: 'right',
+    }}
+    argTypes={argTypes}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## States
+<Preview>
+  <div>
+    <TextLink icon="certificate">TextLink Label</TextLink>
+    <p>Default</p>
+    <TextLink icon="certificate" className="hover">TextLink Label</TextLink>
+    <p>Hover</p>
+    <TextLink icon="certificate" disabled={true}>TextLink Label</TextLink>
+    <p>Disabled</p>
+    <TextLink icon="certificate" className="focus">TextLink Label</TextLink>
+    <p>Focus</p>
+  </div>
+</Preview>
+
+## Properties
+
+<ArgsTable of={TextLink} />

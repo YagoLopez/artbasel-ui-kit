@@ -1,0 +1,265 @@
+<!--- Button.stories.mdx --->
+
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+
+import Button from './Button';
+import { IconList } from '../../Icon';
+
+<Meta title="Components/Actions/Button" component={Button} />
+
+export const Template = (args) => <Button {...args} />
+
+export const argTypes = {
+  variant: {
+    table: {
+      category: 'Button',
+    },
+  },
+  size: {
+    table: {
+      category: 'Button',
+    },
+  },
+  type: {
+    table: {
+      category: 'Button',
+    },
+  },
+  icon: {
+    table: {
+      category: 'Icon',
+    },
+    options: [null, ...IconList],
+  },
+  iconAlign: {
+    table: {
+      category: 'Icon',
+    },
+  },
+  className: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssStyles: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssInternalPrefix: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  onClick: {
+    table: {
+      category: 'Events',
+    },
+  },
+};
+
+export const primaryArgs = {
+  variant: 'primary',
+  children: 'Primary Button',
+  type: 'button',
+  disabled: false,
+  size: 'dynamic',
+  iconAlign: 'left',
+};
+
+export const secondaryArgs = {
+  variant: 'secondary',
+  children: 'Secondary Button',
+  type: 'button',
+  disabled: false,
+  size: 'dynamic',
+  iconAlign: 'left',
+};
+
+# Button
+Buttons can be used to show the user a choice of options/actions and assign to them clear hierarchy.
+The target page to be accessed or the action to be triggered is shown on the buttons by means of a label or else by an icon, or by a combination of the two. 
+All buttons provide visual feedback when clicked or tapped in the form of a response effect.
+
+## Variants
+### Primary Button
+The filled-out primary button is used for the most important action on a page or in a view. The buttons can also contain an icon and the minimum size is 184px while it’s height is set to 48px.
+
+<Canvas>
+  <Story 
+    name="Primary Button" 
+    args={primaryArgs}
+    argTypes={argTypes}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Secondary Button
+The secondary button with a thin 2px frame is used for subordinate actions. 
+The secondary button is used either white or transparent depending on the contrast. They can also contain an icon and the minimum size is 184px while it’s height is set to 48px.
+
+<Canvas>
+  <Story 
+    name="Secondary Button" 
+    args={secondaryArgs}
+    argTypes={argTypes}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Button with icon
+<Canvas>
+  <Story 
+    name="Leading Icon" 
+    args={{
+      ...primaryArgs,
+      children: 'Leading Icon',
+      icon: 'certificate',
+      iconAlign: 'left',
+    }}
+    argTypes={argTypes}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story 
+    name="Trailing Icon" 
+    args={{
+      ...secondaryArgs,
+      children: 'Trailing Icon',
+      icon: 'certificate',
+      iconAlign: 'right',
+    }}
+    argTypes={argTypes}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Compact
+The minimum width rule of 184px does not adhere to the compact version. The height of the compact button is 40px tall.
+
+<Canvas>
+  <Story 
+    name="Compact Primary" 
+    args={{
+      ...primaryArgs,
+      children: 'Compact Primary',
+      size: 'compact'
+    }}
+    argTypes={argTypes}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story 
+    name="Compact Secundary" 
+    args={{
+      ...secondaryArgs,
+      children: 'Compact Secondary',
+      size: 'compact'
+    }}
+    argTypes={argTypes}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Dynamic Width
+The width of the button dynamically adjusts to the text length. The minimum width of 184px is still maintained.
+
+<Canvas>
+  <Story 
+    name="Dynamic Primary" 
+    args={{
+      ...primaryArgs,
+      children: 'Compact Primary',
+      size: 'compact'
+    }}
+    argTypes={argTypes}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story 
+    name="Dynamic Secondary"  
+    args={{
+      ...secondaryArgs,
+      children: 'Compact Secondary',
+      size: 'compact'
+    }}
+    argTypes={argTypes}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## States
+### Primary Button
+<Preview>
+  <div>
+    <Button 
+      variant="primary"
+    >
+      Primary Button
+    </Button>
+    <p>Default</p>
+    <Button 
+      variant="primary"
+      className="hover"
+    >
+      Primary Button
+    </Button>
+    <p>Hover</p>
+    <Button 
+      variant="primary"
+      disabled={true}
+    >
+      Primary Button
+    </Button>
+    <p>Disabled</p>
+    <Button 
+      variant="primary"
+      className="focus"
+    >
+      Primary Button
+    </Button>
+    <p>Focus</p>
+  </div>
+</Preview>
+
+### Secondary Button
+<Preview>
+  <div>
+    <Button 
+      variant="secondary"
+    >
+      Secondary Button
+    </Button>
+    <p>Default</p>
+    <Button 
+      variant="secondary"
+      className="hover"
+    >
+      Secondary Button
+    </Button>
+    <p>Hover</p>
+    <Button 
+      variant="secondary"
+      disabled={true}
+    >
+      Secondary Button
+    </Button>
+    <p>Disabled</p>
+    <Button 
+      variant="secondary"
+      className="focus"
+    >
+      Secondary Button
+    </Button>
+    <p>Focus</p>
+  </div>
+</Preview>
+
+## Properties
+
+<ArgsTable of={Button} />

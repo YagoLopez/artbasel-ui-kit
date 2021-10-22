@@ -1,0 +1,95 @@
+/*-------------------
+       Colors
+--------------------*/
+
+/*---- Primary Colors ----*/
+$mchBlack: #1d2327;
+$mchWhite: #ffffff;
+
+/*---- Secondary Colors ----*/
+$mchGrey100: #f7f7f7;
+$mchGrey200: #f0f2f5;
+$mchGrey300: #babfc4;
+$mchGrey400: #757575;
+$mchGrey500: #444749;
+
+/*---- Supporting Colors ----*/
+$mchTextRed: #c9012f;
+$mchRed: #ff003b;
+$mchTextOrange: #bf8519;
+$mchOrange: #f19d00;
+$mchTextGreen: #018661;
+$mchGreen: #019f53;
+$mchError: $mchRed;
+$mchWarning: $mchOrange;
+
+/*---- Extended Palette Colors ----*/
+$mchSubBrandBasel: #00a0cf;
+$mchSubBrandMiami: #00c18b;
+$mchSubBrandHongKong: #e0004d;
+$mchSubBrandCities: #fa4616;
+
+/*---- Sectors Colors ----*/
+$mchFilm: #f7dce9;
+$mchParcourPublic: #cddff2;
+$mchMeridians: #dff0cb;
+$mchEncounters: #dff0cb;
+$mchUnlimitedA: #dff0cb;
+$mchDiscoveries: #d2d3ec;
+$mchStatements: #d2d3ec;
+$mchPositions: #d2d3ec;
+$mchGalleries: #eaeaea;
+$mchFeatureNova: #d8eeeb;
+$mchEdition: #fff7bf;
+$mchKabinett: #fcdfaa;
+$mchInsightsSurvey: #fcd5d7;
+$mchDialogues: #dcdcdc;
+
+/*-----------------------
+    Overwrite BS Colors
+------------------------*/
+
+// scss-docs-start gray-color-variables
+$white: $mchWhite;
+$gray-100: $mchGrey100;
+$gray-200: $mchGrey200;
+$gray-300: $mchGrey300;
+$gray-400: $mchGrey400;
+$gray-500: $mchGrey500;
+$black: $mchBlack;
+// scss-docs-end gray-color-variables
+
+// scss-docs-start color-variables
+$red: $mchRed !default;
+$orange: $mchOrange !default;
+$green: $mchGreen !default;
+// scss-docs-end color-variables
+
+// scss-docs-start theme-color-variables
+$primary: $mchBlack !default;
+$secondary: $mchWhite !default;
+$success: $green !default;
+$warning: $orange !default;
+$danger: $red !default;
+// scss-docs-end theme-color-variables
+
+// scss-docs-start colors-map
+$colors: (
+  "red":        $mchRed,
+  "orange":     $mchOrange,
+  "green":      $mchGreen,
+  "white":      $mchWhite,
+  "gray":       $gray-300,
+  "gray-dark":  $gray-500
+) !default;
+// scss-docs-end colors-map
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "warning":    $warning,
+  "danger":     $danger,
+) !default;
+// scss-docs-end theme-colors-map

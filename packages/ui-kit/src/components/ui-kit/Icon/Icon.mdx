@@ -1,0 +1,58 @@
+import { ArgsTable, Canvas } from '@storybook/addon-docs';
+
+import Icon from './Icon';
+
+# Icon
+
+<ArgsTable of={Icon} />
+
+
+## Installation
+
+Install art-basel-ui-kit with npm
+
+```bash
+  npm install art-basel-ui-kit
+```
+    
+## Usage/Examples
+
+```javascript
+import Icon from 'art-basel-ui-kit';
+
+// You have to pass the name attribute to the Icon Component
+const Example = () => {
+  return <Icon name="add" />
+}
+
+export default Example;
+
+//You can pass the color prop to change the Icon color and you can also change the color with css className
+const ExampleWithColor = () => {
+  return <Icon name="add" className="icon red" color="#FF0000" />
+}
+
+export default ExampleWithColor;
+
+//Icons also accept height, width, size, style and onClick props
+const ExampleWithRestOfProps = () => {
+  return <Icon 
+  name="add" 
+  className="icon red" 
+  color="#FF0000" 
+  size={20} 
+  height={20} 
+  width={20} 
+  style={{fill: 'red'}} 
+  onClick={() => {}} />
+}
+
+export default ExampleWithRestOfProps;
+```
+
+  
+## Where to use
+
+- links: in company with links for navigation
+
+  

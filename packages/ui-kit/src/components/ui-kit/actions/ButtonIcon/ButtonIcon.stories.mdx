@@ -1,0 +1,73 @@
+<!--- ButtonIcon.stories.mdx --->
+
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+
+import ButtonIcon from './ButtonIcon';
+import { IconList } from '../../Icon';
+
+<Meta title="Components/Actions/Button Icon" component={ButtonIcon} />
+
+# Button Icon
+Icon buttons allow users to take actions, and make choices, with a single tap.
+
+export const Template = (args) => <ButtonIcon {...args} />
+
+export const argTypes = {
+  icon: {
+    table: {
+      category: 'Icon',
+    },
+    options: [null, ...IconList],
+  },
+  className: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssStyles: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssInternalPrefix: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  onClick: {
+    table: {
+      category: 'Events',
+    },
+  },
+};
+
+<Canvas>
+  <Story 
+    name="Button\ Icon" 
+    args={{ 
+      icon: 'close',
+      disabled: false,
+    }}
+    argTypes={argTypes}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## States
+<Preview>
+  <div>
+    <ButtonIcon  icon="close" />
+    <p>Default</p>
+    <ButtonIcon  icon="close" className="hover" />
+    <p>Hover</p>
+    <ButtonIcon  icon="close" disabled={true} />
+    <p>Disabled</p>
+    <ButtonIcon  icon="close" className="focus" />
+    <p>Focus</p>
+  </div>
+</Preview>
+
+## Properties
+
+<ArgsTable of={ButtonIcon} />
