@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { withDesign } from 'storybook-addon-designs';
+
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
@@ -7,7 +9,7 @@ import Card from 'react-bootstrap/Card';
 import { Icon, IconList } from '../../src/components/Icon';
 
 export default {
-  title: 'Styles/Iconography',
+  title: 'Basic/Iconography',
   parameters: {
     previewTabs: {
       'storybook/docs/panel': {
@@ -15,6 +17,7 @@ export default {
       },
     },
   },
+  decorators: [withDesign],
 };
 
 export const Iconography = () => (
@@ -33,3 +36,12 @@ export const Iconography = () => (
     ))}
   </Row>
 );
+
+Iconography.parameters = {
+  design: {
+    name: 'Figma Design',
+    type: 'figma',
+    url:
+      'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=77%3A3984',
+  },
+};

@@ -4,7 +4,7 @@ export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   options: {
     storySort: {
-      order: ['Basics', 'Components'],
+      order: ['Introduction', 'Basic', 'Components'],
     },
     matchers: {
       color: /(background|color)$/i,

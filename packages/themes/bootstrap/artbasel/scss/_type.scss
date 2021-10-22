@@ -1,0 +1,103 @@
+/* Standard */
+h1 {
+  letter-spacing: 0px;
+  color: $mchBlack;
+  @media (max-width: $grid-breakpoint-md) {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  @media (min-width: $grid-breakpoint-md) and (max-width: $grid-breakpoint-lg) {
+    font-size: 36px;
+    line-height: 41px;
+  }
+  @media (min-width: $grid-breakpoint-lg) and (max-width: $grid-breakpoint-xl) {
+    font-size: 40px;
+    line-height: 46px;
+  }
+  @media (min-width: $grid-breakpoint-xl) and (max-width: $grid-breakpoint-xxl) {
+    font-size: 42px;
+    line-height: 48px;
+  }
+  @media (min-width: $grid-breakpoint-xxl) {
+    font-size: 48px;
+    line-height: 50px;
+  }
+}
+
+h2 {
+  letter-spacing: 0px;
+  color: $mchBlack;
+
+  @media (max-width: $grid-breakpoint-md) {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  @media (min-width: $grid-breakpoint-md) and (max-width: $grid-breakpoint-lg) {
+    font-size: 30px;
+    line-height: 34px;
+  }
+  @media (min-width: $grid-breakpoint-lg) {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+h3 {
+  letter-spacing: 0px;
+  color: $mchBlack;
+
+  @media (max-width: $grid-breakpoint-md) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  @media (min-width: $grid-breakpoint-md) and (max-width: $grid-breakpoint-lg) {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  @media (min-width: $grid-breakpoint-lg) {
+    font-size: 30px;
+    line-height: 34px;
+  }
+}
+
+h4 {
+  letter-spacing: 0px;
+  color: $mchBlack;
+
+  @media (max-width: $grid-breakpoint-md) {
+    font-size: 20px;
+    line-height: 23px;
+  }
+  @media (min-width: $grid-breakpoint-md) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+h5 {
+  letter-spacing: 0px;
+  color: $mchBlack;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.breakpoints-sizes-text::before {
+  @media (max-width: $grid-breakpoint-sm) {
+    content: 'XS - bellow ' + $grid-breakpoint-sm;
+  }
+  @media (min-width: $grid-breakpoint-sm) and (max-width: $grid-breakpoint-md) {
+    content: 'SM (' + $grid-breakpoint-sm + ' - ' + $grid-breakpoint-md + ')';
+  }
+  @media (min-width: $grid-breakpoint-md) and (max-width: $grid-breakpoint-lg) {
+    content: 'MD (' + $grid-breakpoint-md + ' - ' + $grid-breakpoint-lg + ')';
+  }
+  @media (min-width: $grid-breakpoint-lg) and (max-width: $grid-breakpoint-xl) {
+    content: 'LG (' + $grid-breakpoint-lg + ' - ' + $grid-breakpoint-xl + ')';
+  }
+  @media (min-width: $grid-breakpoint-xl) and (max-width: $grid-breakpoint-xxl) {
+    content: 'XL (' + $grid-breakpoint-xl + ' - ' + $grid-breakpoint-xxl + ')';
+  }
+  @media (min-width: $grid-breakpoint-xxl) {
+    content: 'XXL (above ' + $grid-breakpoint-xxl + ')';
+  }
+}

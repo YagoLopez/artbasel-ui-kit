@@ -1,11 +1,16 @@
 <!--- Button.stories.mdx --->
 
 import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
 
 import Button from './Button';
 import { Icon, IconList } from '../../Icon';
 
-<Meta title="Components/Actions/Button" component={Button} />
+<Meta
+  title="Components/Actions/Button"
+  component={Button}
+  decorators={[withDesign]}
+/>
 
 export const Template = (args) => <Button {...args} />;
 
@@ -89,7 +94,19 @@ All buttons provide visual feedback when clicked or tapped in the form of a resp
 The filled-out primary button is used for the most important action on a page or in a view. The buttons can also contain an icon and the minimum size is 184px while it’s height is set to 48px.
 
 <Canvas>
-  <Story name="Primary Button" args={primaryArgs} argTypes={argTypes}>
+  <Story
+    name="Primary Button"
+    args={primaryArgs}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+      },
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -100,7 +117,19 @@ The secondary button with a thin 2px frame is used for subordinate actions.
 The secondary button is used either white or transparent depending on the contrast. They can also contain an icon and the minimum size is 184px while it’s height is set to 48px.
 
 <Canvas>
-  <Story name="Secondary Button" args={secondaryArgs} argTypes={argTypes}>
+  <Story
+    name="Secondary Button"
+    args={secondaryArgs}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+      },
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -117,6 +146,14 @@ The secondary button is used either white or transparent depending on the contra
       iconAlign: 'left',
     }}
     argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+      },
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -129,6 +166,14 @@ The secondary button is used either white or transparent depending on the contra
       iconAlign: 'right',
     }}
     argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+      },
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -147,6 +192,14 @@ The minimum width rule of 184px does not adhere to the compact version. The heig
       size: 'compact',
     }}
     argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+      },
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -158,6 +211,14 @@ The minimum width rule of 184px does not adhere to the compact version. The heig
       size: 'compact',
     }}
     argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+      },
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -176,6 +237,14 @@ The width of the button dynamically adjusts to the text length. The minimum widt
       size: 'compact',
     }}
     argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+      },
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -187,6 +256,14 @@ The width of the button dynamically adjusts to the text length. The minimum widt
       size: 'compact',
     }}
     argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+      },
+    }}
   >
     {Template.bind({})}
   </Story>

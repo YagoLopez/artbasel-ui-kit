@@ -1,7 +1,9 @@
 import React from 'react';
 
+import { withDesign } from 'storybook-addon-designs';
+
 export default {
-  title: 'Styles/Layout',
+  title: 'Basic/Layout',
   parameters: {
     previewTabs: {
       'storybook/docs/panel': {
@@ -9,12 +11,16 @@ export default {
       },
     },
   },
+  decorators: [withDesign],
 };
 
 export const Layout = () => (
   <>
     <h1>Layout</h1>
-    <p>The layout is simple and clearly structured and offers a high level of flexibility. </p>
+    <p>
+      The layout is simple and clearly structured and offers a high level of
+      flexibility.{' '}
+    </p>
     <h3>Breakpoints and dimensions</h3>
     <table>
       <tr>
@@ -76,3 +82,12 @@ export const Layout = () => (
     </table>
   </>
 );
+
+Layout.parameters = {
+  design: {
+    name: 'Figma Design',
+    type: 'figma',
+    url:
+      'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB-Style-Guide?node-id=166%3A8291',
+  },
+};

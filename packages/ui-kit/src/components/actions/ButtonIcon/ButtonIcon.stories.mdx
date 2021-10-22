@@ -1,16 +1,22 @@
 <!--- ButtonIcon.stories.mdx --->
 
 import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
 
 import ButtonIcon from './ButtonIcon';
 import { IconList } from '../../Icon';
 
-<Meta title="Components/Actions/Button Icon" component={ButtonIcon} />
+<Meta
+  title="Components/Actions/Button Icon"
+  component={ButtonIcon}
+  decorators={[withDesign]}
+/>
 
 # Button Icon
+
 Icon buttons allow users to take actions, and make choices, with a single tap.
 
-export const Template = (args) => <ButtonIcon {...args} />
+export const Template = (args) => <ButtonIcon {...args} />;
 
 export const argTypes = {
   icon: {
@@ -42,28 +48,37 @@ export const argTypes = {
 };
 
 <Canvas>
-  <Story 
-    name="Button\ Icon" 
-    args={{ 
+  <Story
+    name="Button\ Icon"
+    args={{
       icon: 'close',
       disabled: false,
     }}
     argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=77%3A1994',
+      },
+    }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ## States
+
 <Preview>
   <div>
-    <ButtonIcon  icon="close" />
+    <ButtonIcon icon="close" />
     <p>Default</p>
-    <ButtonIcon  icon="close" className="hover" />
+    <ButtonIcon icon="close" className="hover" />
     <p>Hover</p>
-    <ButtonIcon  icon="close" disabled={true} />
+    <ButtonIcon icon="close" disabled={true} />
     <p>Disabled</p>
-    <ButtonIcon  icon="close" className="focus" />
+    <ButtonIcon icon="close" className="focus" />
     <p>Focus</p>
   </div>
 </Preview>

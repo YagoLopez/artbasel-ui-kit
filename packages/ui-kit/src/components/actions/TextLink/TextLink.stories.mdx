@@ -1,13 +1,18 @@
 <!--- TextLink.stories.mdx --->
 
 import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
 
 import TextLink from './TextLink';
 import { IconList } from '../../Icon';
 
-<Meta title="Components/Actions/TextLink" component={TextLink} />
+<Meta
+  title="Components/Actions/TextLink"
+  component={TextLink}
+  decorators={[withDesign]}
+/>
 
-export const Template = (args) => <TextLink {...args} />
+export const Template = (args) => <TextLink {...args} />;
 
 export const argTypes = {
   variant: {
@@ -59,56 +64,89 @@ export const argTypes = {
 };
 
 # Text Link
+
 The text button is applied as a subtle call to action. It is possible to combine a text button with an icon.
 
 <Canvas>
-  <Story 
-    name="Default" 
-    args={{ 
+  <Story
+    name="Default"
+    args={{
       children: 'TextLink Label',
     }}
     argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=77%3A2903',
+      },
+    }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ## Icon
+
 <Canvas>
-  <Story 
-    name="Leading Icon" 
+  <Story
+    name="Leading Icon"
     args={{
       children: 'Leading Icon',
       icon: 'certificate',
       iconAlign: 'left',
     }}
     argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=77%3A2903',
+      },
+    }}
   >
     {Template.bind({})}
   </Story>
-  <Story 
-    name="Trailing Icon" 
+  <Story
+    name="Trailing Icon"
     args={{
       children: 'Trailing Icon',
       icon: 'certificate',
       iconAlign: 'right',
     }}
     argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=77%3A2903',
+      },
+    }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ## States
+
 <Preview>
   <div>
     <TextLink icon="certificate">TextLink Label</TextLink>
     <p>Default</p>
-    <TextLink icon="certificate" className="hover">TextLink Label</TextLink>
+    <TextLink icon="certificate" className="hover">
+      TextLink Label
+    </TextLink>
     <p>Hover</p>
-    <TextLink icon="certificate" disabled={true}>TextLink Label</TextLink>
+    <TextLink icon="certificate" disabled={true}>
+      TextLink Label
+    </TextLink>
     <p>Disabled</p>
-    <TextLink icon="certificate" className="focus">TextLink Label</TextLink>
+    <TextLink icon="certificate" className="focus">
+      TextLink Label
+    </TextLink>
     <p>Focus</p>
   </div>
 </Preview>

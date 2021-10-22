@@ -1,0 +1,65 @@
+<!--- GettingStarted.stories.mdx --->
+
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Introduction/Getting Started" />
+
+<img src="/artbasel_design.png" />
+
+# Getting Started
+
+The MCH UI kit is a set of React components, with atomic components (buttons, input fields, etc) and other components to be used on MCH projects.
+
+## Installation
+
+MCH UI Kit is composed by 2 diferent parts: themes and components.
+
+### Install themes library
+
+```bash
+  yarn add mch-themes
+```
+
+### Install components library
+
+```bash
+  yarn add mch-ui-kit
+```
+
+## Using components
+
+### Importing the CSS file
+
+Import the css styles in your app, in the index.js file
+
+```javascript
+import 'mch-themes/dist/artbasel/artbasel.css';
+```
+
+### Importing components
+
+Import a component in your page and use it as a React component.
+
+```javascript
+import { Button } from 'mch-ui-kit';
+
+const Example = () => {
+  return (
+    <div>
+      <Button variant="primary">Primary Button</Button>
+    </div>
+  );
+};
+
+export default Example;
+```
+
+## Usage
+
+All the components of this library are available on the navigation menu of this Storybook.
+
+Each component page describes his attributes and usability, on the Canvas and Doc Tabs.
+
+- On Canvas tab you can test all possible controls and check the component behaviors. Some components can have available the Figma file the the design guide.
+
+- Docs tab describes the components in details, with a table of his arguments. Bellow each component usage example, there is a "Show code" which button shows a code sample.

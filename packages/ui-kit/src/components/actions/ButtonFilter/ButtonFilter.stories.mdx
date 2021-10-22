@@ -1,15 +1,21 @@
 <!--- ButtonFilter.stories.mdx --->
 
 import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
 
 import ButtonFilter from './ButtonFilter';
 
-<Meta title="Components/Actions/Button Filter" component={ButtonFilter} />
+<Meta
+  title="Components/Actions/Button Filter"
+  component={ButtonFilter}
+  decorators={[withDesign]}
+/>
 
 # Button Filter
-The filter button is the only completely rounded button. It is displayed mobile on listing pages in the lower right area. 
 
-export const Template = (args) => <ButtonFilter {...args} />
+The filter button is the only completely rounded button. It is displayed mobile on listing pages in the lower right area.
+
+export const Template = (args) => <ButtonFilter {...args} />;
 
 export const argTypes = {
   className: {
@@ -31,24 +37,33 @@ export const argTypes = {
     table: {
       category: 'Events',
     },
-  }
+  },
 };
 
 <Canvas>
-  <Story 
-    name="Button\ Filter" 
-    args={{ 
+  <Story
+    name="Button\ Filter"
+    args={{
       children: 'Primary Button',
       disabled: false,
-      filter: false
+      filter: false,
     }}
     argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=77%3A2496',
+      },
+    }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ## States
+
 <Preview>
   <div>
     <ButtonFilter />
