@@ -11,4 +11,4 @@ export default {
 };
  */
 
-export { Button } from './components/ui-kit/actions/Button/Button';
+export { Button } from './components/actions/Button/Button';
