@@ -1,11 +1,4 @@
-import Button from './Button';
-import ButtonFiler from './ButtonFilter';
-import ButoonIcon from './ButtonIcon';
-import TextLink from './TextLink';
-
-export default {
-  Button,
-  ButtonFiler,
-  ButoonIcon,
-  TextLink,
-};
+export * from './Button';
+export * from './ButtonFilter';
+export * from './ButtonIcon';
+export * from './TextLink';

@@ -1,3 +1,1 @@
-import ButtonFilter from './ButtonFilter';
-
-export default ButtonFilter;
+export { default as ButtonFilter } from './ButtonFilter';

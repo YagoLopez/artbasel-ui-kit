@@ -1,23 +1,10 @@
-import Checkbox from './Checkbox';
-import CreditCard from './CreditCard';
-import Dropdown from './Dropdown';
-import Email from './Email';
-import Password from './Password';
-import Radio from './Radio';
-import Search from './Search';
-import Switch from './Switch';
-import Text from './Text';
-import TextArea from './TextArea';
-
-export default {
-  Checkbox,
-  CreditCard,
-  Dropdown,
-  Email,
-  Password,
-  Radio,
-  Search,
-  Switch,
-  Text,
-  TextArea,
-};
+export * from './Checkbox';
+export * from './CreditCard';
+export * from './Dropdown';
+export * from './Email';
+export * from './Password';
+export * from './Radio';
+export * from './Search';
+export * from './Switch';
+export * from './Text';
+export * from './TextArea';

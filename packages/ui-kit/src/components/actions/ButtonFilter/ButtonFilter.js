@@ -2,25 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button as BSPButton } from 'react-bootstrap';
 import classNames from 'classnames';
-import Icon from '../../Icon';
+import { Icon } from '../../icon';
 
 const ButtonFilter = ({
-  className, cssInternalPrefix, cssStyles, disabled, filter, onClick,
+  className,
+  cssInternalPrefix,
+  cssStyles,
+  disabled,
+  filter,
+  onClick,
 }) => (
-      <BSPButton
-        data-testid="mch-button-filter"
-        className={classNames(
-          { 'icon-filter-check': filter },
-          'btn-filter',
-          className,
-        )}
-        style={cssStyles}
-        onClick={onClick}
-        disabled={disabled}
-        bsPrefix={cssInternalPrefix}
-      >
-        <Icon name="filter" size={24} />
-    </BSPButton>
+  <BSPButton
+    data-testid="mch-button-filter"
+    className={classNames(
+      { 'icon-filter-check': filter },
+      'btn-filter',
+      className
+    )}
+    style={cssStyles}
+    onClick={onClick}
+    disabled={disabled}
+    bsPrefix={cssInternalPrefix}
+  >
+    <Icon name="filter" size={24} />
+  </BSPButton>
 );
 
 ButtonFilter.propTypes = {

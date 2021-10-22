@@ -1,13 +1,5 @@
-import Actions from './actions';
-import Feedback from './feedback';
-import Icon from './Icon';
-import Inputs from './inputs';
-import Structure from './structure';
-
-export default {
-  Actions,
-  Feedback,
-  Icon,
-  Inputs,
-  Structure,
-};
+export * from './actions';
+export * from './feedback';
+export * from './icon';
+export * from './inputs';
+export * from './structure';

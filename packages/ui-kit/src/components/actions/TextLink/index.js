@@ -1,3 +1,1 @@
-import TextLink from './TextLink';
-
-export default TextLink;
+export { default as TextLink } from './TextLink';

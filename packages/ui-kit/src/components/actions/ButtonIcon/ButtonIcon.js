@@ -2,24 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button as BSPButton } from 'react-bootstrap';
 import classNames from 'classnames';
-import Icon, { IconList } from '../../Icon';
+import { Icon, IconList } from '../../icon';
 
 const ButtonIcon = ({
-  className, cssInternalPrefix, cssStyles, disabled, icon, onClick,
+  className,
+  cssInternalPrefix,
+  cssStyles,
+  disabled,
+  icon,
+  onClick,
 }) => (
-      <BSPButton
-        data-testid="mch-button-icon"
-        className={classNames(
-          'btn-icon',
-          className,
-        )}
-        style={cssStyles}
-        onClick={onClick}
-        disabled={disabled}
-        bsPrefix={cssInternalPrefix}
-      >
-        <Icon name={icon} size={24} />
-    </BSPButton>
+  <BSPButton
+    data-testid="mch-button-icon"
+    className={classNames('btn-icon', className)}
+    style={cssStyles}
+    onClick={onClick}
+    disabled={disabled}
+    bsPrefix={cssInternalPrefix}
+  >
+    <Icon name={icon} size={24} />
+  </BSPButton>
 );
 
 ButtonIcon.propTypes = {
