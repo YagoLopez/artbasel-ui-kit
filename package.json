@@ -10,6 +10,7 @@
   "scripts": {
     "test": "cd packages/ui-kit && yarn test",
     "build-theme": "cd packages/themes && yarn build",
+    "publish-theme": "cd packages/themes && yarn build && npm publish",
     "build-ui-kit": "cd packages/ui-kit && yarn build",
     "storybook": "cd packages/ui-kit && yarn storybook"
   },

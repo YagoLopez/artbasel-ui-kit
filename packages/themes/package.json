@@ -1,7 +1,8 @@
 {
-  "name": "mch-themes",
-  "version": "1.0.0",
-  "description": "MCH UI Design",
+  "name": "mch-themes-test",
+  "version": "0.0.2",
+  "description": "MCH UI Themes",
+  "main": "dist/artbasel/artbase.css",
   "scripts": {
     "build": "npm run css-compile",
     "build-dev": "npm run css-compile && cp -r dist/artbasel ../artbasel-ui-kit/css",
