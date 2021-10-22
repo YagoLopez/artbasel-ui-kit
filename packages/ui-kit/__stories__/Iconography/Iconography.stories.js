@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
-import Icon, { IconList } from '../../packages/components/Icon';
+import Icon, { IconList } from '../../src/components/ui-kit/Icon';
 
 export default {
   title: 'Styles/Iconography',
@@ -22,7 +22,9 @@ export const Iconography = () => (
     {IconList.map((name) => (
       <Col key={name}>
         <Card>
-          <Card.Header><b>{name}</b></Card.Header>
+          <Card.Header>
+            <b>{name}</b>
+          </Card.Header>
           <Card.Body>
             <Icon name={name} />
           </Card.Body>
