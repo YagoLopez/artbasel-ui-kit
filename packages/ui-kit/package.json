@@ -1,6 +1,6 @@
 {
   "name": "mch-ui-kit-test",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "MCH UI Kit",
   "main": "dist/index.js",
   "module": "dist/index.cjs.js",
