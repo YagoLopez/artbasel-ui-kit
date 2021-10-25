@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import classNames from 'classnames';
 
 const Radio = ({
+  align,
   checked,
   className,
   cssInternalPrefix,
@@ -19,11 +20,9 @@ const Radio = ({
       <Form.Check
         data-testid="mch-radio"
         className={classNames(
-          // styles.button,
-          // styles[variant],
-          // styles[size],
           { disabled },
           className,
+          `align-${align}`,
         )}
         checked={checked}
         style={cssStyles}
@@ -40,6 +39,7 @@ const Radio = ({
 );
 
 Radio.propTypes = {
+  align: PropTypes.oneOf(['left', 'right']),
   checked: PropTypes.bool,
   className: PropTypes.string,
   cssStyles: PropTypes.string,
@@ -54,7 +54,7 @@ Radio.propTypes = {
 };
 
 Radio.defaultProps = {
-  checked: false,
+  align: 'right',
   cssInternalPrefix: 'form-check',
   disabled: false,
   inline: false,

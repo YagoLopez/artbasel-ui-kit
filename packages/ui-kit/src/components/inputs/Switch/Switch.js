@@ -11,16 +11,12 @@ const Switch = ({
   disabled,
   id,
   inline,
-  isInvalid,
-  isValid,
   onChange,
 }) => (
       <Form.Switch
         data-testid="mch-switch"
         className={classNames(
           // styles.button,
-          // styles[variant],
-          // styles[size],
           { disabled },
           className,
         )}
@@ -30,8 +26,6 @@ const Switch = ({
         bsPrefix={cssInternalPrefix}
         id={id}
         inline={inline}
-        isInvalid={isInvalid}
-        isValid={isValid}
         onChange={onChange || (() => {})}
       ></Form.Switch>
 );
@@ -44,18 +38,13 @@ Switch.propTypes = {
   disabled: PropTypes.bool,
   id: PropTypes.string,
   inline: PropTypes.bool,
-  isInvalid: PropTypes.bool,
-  isValid: PropTypes.bool,
   onChange: PropTypes.func,
 };
 
 Switch.defaultProps = {
-  checked: false,
   cssInternalPrefix: 'form-check',
   disabled: false,
   inline: false,
-  isInvalid: false,
-  isValid: false,
   onChange: () => {},
 };
 

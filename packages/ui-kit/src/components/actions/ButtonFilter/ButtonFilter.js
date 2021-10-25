@@ -17,7 +17,7 @@ const ButtonFilter = ({
     className={classNames(
       { 'icon-filter-check': filter },
       'btn-filter',
-      className
+      className,
     )}
     style={cssStyles}
     onClick={onClick}

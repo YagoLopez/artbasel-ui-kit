@@ -1,0 +1,55 @@
+.form-switch {
+  .form-check-input {
+    width: 56px;
+    height: 32px;
+
+    border-color: $mchGrey300;
+
+    background-size: 37px 37px;
+    background-position-x: -3px;
+    background-color: $mchGrey300;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23ffffff'/%3e%3c/svg%3e");
+
+    &:checked {
+      background-position-x: 20px;
+
+      border-color: $mchBlack;
+      background-color: $mchBlack;
+    }
+
+    &:focus,
+    &.focus {
+      box-shadow: none;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23ffffff'/%3e%3c/svg%3e");
+    }
+  }
+}
+
+.form-check {
+  .form-check-input {
+    background-color: $mchGrey200;
+    border-color: $mchGrey200;
+    // border-radius: 0;
+
+    &:hover,
+    &.hover {
+      border-color: $mchGrey300;
+    }
+
+    &:focus,
+    &.focus {
+      box-shadow: none;
+    }
+
+    &:checked[type="radio"] {
+      background-size: 8px;
+      border-color: $mchBlack;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23000000'/%3e%3c/svg%3e");
+    }
+
+    &:checked[type="checkbox"] {
+      background-color: $mchBlack;
+      border-color: $mchBlack;
+    }
+  }
+}
