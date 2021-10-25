@@ -20,7 +20,7 @@ const TextLink = ({
     style={cssStyles}
     disabled={disabled}
     type={null}
-    variant="Link"
+    variant="link"
     href={href}
     bsPrefix={cssInternalPrefix}
   >

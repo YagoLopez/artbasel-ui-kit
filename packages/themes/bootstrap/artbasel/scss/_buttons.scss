@@ -49,6 +49,10 @@
   &.disabled {
     background-color: $mchGrey300;
     border-color: $mchGrey300;
+
+    svg {
+      fill: $mchWhite;
+    }
   }
 
   .btn-check:focus + &,
@@ -83,6 +87,10 @@
     background-color: $mchWhite;
     color: $mchGrey400;
     border-color: $mchGrey400;
+
+    svg {
+      fill: $mchGrey400;
+    }
   }
 
   .btn-check:focus + &,
@@ -91,6 +99,31 @@
     background-color: $mchGrey200;
     border-color: $mchBlack;
     box-shadow: none;
+  }
+
+  svg {
+    fill: $mchBlack;
+  }
+}
+
+.btn-link {
+  color: $mchBlack;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+
+  &:hover,
+  &.hover {
+    text-decoration: underline;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $mchGrey400;
+
+    svg {
+      fill: $mchGrey400;
+    }
   }
 
   svg {
@@ -135,7 +168,7 @@
   width: $btn-filter-size;
   height: $btn-filter-size;
   border-radius: 100%;
-  padding:0;
+  padding: 0;
 
   &:disabled,
   &.disabled {
