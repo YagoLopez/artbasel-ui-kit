@@ -1,19 +1,2 @@
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# misc
-.DS_Store
-.env*
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# storybook
-storybook-static
+src
+webpack.config.js
