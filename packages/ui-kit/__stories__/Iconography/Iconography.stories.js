@@ -21,34 +21,40 @@ export default {
 };
 
 export const Iconography = () => (
-  <Row xs={3} md={4} lg={6} className="g-2">
-    {IconList.map((name) => (
-      <div
-      style={{
-        margin: '5px',
-        width: '120px',
-        height: '120px',
-        backgroundColor: '#EEEEEE',
-        display: 'grid',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <div style={{ alignSelf: 'center', justifySelf: 'center' }}>
-        {name}
-      </div>
-      <div
-        style={{
-          height: '40px',
-          alignSelf: 'center',
-          justifySelf: 'center',
-        }}
-      >
-        <Icon name={name} />
-      </div>
-    </div>
-    ))}
-  </Row>
+  <>
+    <h1>Iconography</h1>
+    <p>Icons are graphical representations of actions, entities or concepts.</p>
+    <h2>Icons</h2>
+
+    <Row xs={3} md={4} lg={6} className="g-2">
+      {IconList.map((name) => (
+        <div
+          style={{
+            margin: '5px',
+            width: '120px',
+            height: '120px',
+            backgroundColor: '#EEEEEE',
+            display: 'grid',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <div style={{ alignSelf: 'center', justifySelf: 'center' }}>
+            {name}
+          </div>
+          <div
+            style={{
+              height: '40px',
+              alignSelf: 'center',
+              justifySelf: 'center',
+            }}
+          >
+            <Icon name={name} />
+          </div>
+        </div>
+      ))}
+    </Row>
+  </>
 );
 
 Iconography.parameters = {

@@ -28,6 +28,14 @@ const headerText = 'The quick brown fox jumps over the lazy dog';
 
 export const Typography = () => (
   <>
+    <h1>Typography</h1>
+    <p />
+    <h2>Headings</h2>
+    <p>
+      Art Basel Headline is used to communicate context and important
+      information. It is used in multiple scenarios but never within body text.
+    </p>
+
     <p style={styleTitle}>
       <span className="breakpoints-sizes-text" />
     </p>
