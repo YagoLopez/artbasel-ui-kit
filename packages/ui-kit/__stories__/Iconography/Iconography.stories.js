@@ -23,16 +23,30 @@ export default {
 export const Iconography = () => (
   <Row xs={3} md={4} lg={6} className="g-2">
     {IconList.map((name) => (
-      <Col key={name}>
-        <Card>
-          <Card.Header>
-            <b>{name}</b>
-          </Card.Header>
-          <Card.Body>
-            <Icon name={name} />
-          </Card.Body>
-        </Card>
-      </Col>
+      <div
+      style={{
+        margin: '5px',
+        width: '120px',
+        height: '120px',
+        backgroundColor: '#EEEEEE',
+        display: 'grid',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <div style={{ alignSelf: 'center', justifySelf: 'center' }}>
+        {name}
+      </div>
+      <div
+        style={{
+          height: '40px',
+          alignSelf: 'center',
+          justifySelf: 'center',
+        }}
+      >
+        <Icon name={name} />
+      </div>
+    </div>
     ))}
   </Row>
 );
