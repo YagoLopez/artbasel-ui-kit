@@ -81,7 +81,65 @@ h5 {
   line-height: 21px;
 }
 
-.breakpoints-sizes-text::before {
+.text-link {
+  color: $mchBlack;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+
+  &:hover,
+  &.hover {
+    text-decoration: underline;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $mchGrey400;
+
+    svg {
+      fill: $mchGrey400;
+    }
+  }
+
+  svg {
+    fill: $mchBlack;
+  }
+}
+
+.external-link {
+  color: $mchBlack;
+  text-decoration: none;
+  border: 0;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+
+  &:hover,
+  &.hover {
+    color: $mchBlack;
+    background-color: $mchGrey100;
+    border-color: $mchBlack;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $mchGrey400;
+
+    svg {
+      fill: $mchGrey400;
+    }
+  }
+
+  svg {
+    fill: $mchBlack;
+  }
+}
+
+.breakpoints-storybook-text::before {
   @media (max-width: $grid-breakpoint-sm) {
     content: 'XS - bellow ' + $grid-breakpoint-sm;
   }
@@ -99,5 +157,135 @@ h5 {
   }
   @media (min-width: $grid-breakpoint-xxl) {
     content: 'XXL (above ' + $grid-breakpoint-xxl + ')';
+  }
+}
+
+.p1{
+  letter-spacing: 0px;
+  color: $mchBlack;
+
+  @media (max-width: $grid-breakpoint-md) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  @media (min-width: $grid-breakpoint-md) {
+    font-size: 30px;
+    line-height: 34px;
+  }
+}
+
+.p2{
+  letter-spacing: 0px;
+  color: $mchBlack;
+
+  @media (max-width: $grid-breakpoint-md) {
+    font-size: 20px;
+    line-height: 23px;
+  }
+  @media (min-width: $grid-breakpoint-md) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.text-l{
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.text-m{
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.text-s{
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.label-xl{
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: bold;
+}
+
+.label-l{
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.label-m{
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
+.label-s{
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.3px;
+}
+
+/* Typography Size */
+
+.h5-storybook-text-size::before{
+  content: '18px';
+}
+
+.h4-storybook-text-size::before{
+  content: '24px';
+}
+
+.h3-storybook-text-size::before{
+  content: '30px';
+}
+
+.h2-storybook-text-size::before{
+  content: '36px';
+}
+
+@media (max-width: $grid-breakpoint-md) {
+  .h1-storybook-text-size::before{
+    content: '30px'
+  }
+  .h2-storybook-text-size::before{
+    content: '26px';
+  }
+  .h3-storybook-text-size::before{
+    content: '24px';
+  }
+  .h4-storybook-text-size::before{
+    content: '20px';
+  }
+}
+
+@media (min-width: $grid-breakpoint-md) and (max-width: $grid-breakpoint-lg) {
+  .h1-storybook-text-size::before{
+    content: '36px';
+  }
+  .h2-storybook-text-size::before{
+    content: '30px';
+  }
+  .h3-storybook-text-size::before{
+    content: '26px';
+  }
+}
+
+@media (min-width: $grid-breakpoint-lg) and (max-width: $grid-breakpoint-xl) {
+  .h1-storybook-text-size::before{
+    content: '40px';
+  }
+}
+
+@media (min-width: $grid-breakpoint-xl) and (max-width: $grid-breakpoint-xxl) {
+  .h1-storybook-text-size::before{
+    content: '42px';
+  }
+}
+
+@media (min-width: $grid-breakpoint-xxl) {
+  .h1-storybook-text-size::before{
+    content: '48px';
   }
 }
