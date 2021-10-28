@@ -1,52 +1,62 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Text from './Text';
 
 const testElementId = 'mch-text';
 
 describe('Text component', () => {
-  test('render text', () => {
-    const label = 'Click me';
-    render(<Text>{label}</Text>);
+  describe('renderer', () => {
+    test('render Text component with default props', () => {
+      render(<Text />);
 
-    const el = screen.getByTestId(testElementId);
+      const el = screen.getByTestId(testElementId);
+      const trailingIcon = screen.queryByTestId('trailing-icon');
 
-    expect(el).toBeDefined();
+      expect(el).toBeDefined();
+      expect(trailingIcon).not.toBeInTheDocument();
+    });
+
+    test('render correct label', () => {
+      const label = 'label';
+
+      render(<Text label={label} />);
+
+      const labelElement = screen.getByText(label);
+
+      expect(labelElement).toBeInTheDocument();
+    });
+
+    test.each([['muted'], ['warning'], ['danger']])('render correct %s help text', (helpText) => {
+      render(<Text helpText={helpText} helpTextType={helpText} />);
+
+      const helpTextElement = screen.getByText(helpText);
+
+      expect(helpTextElement).toHaveProperty('className', expect.stringContaining(`text-${helpText}`));
+    });
+
+    test('render trailingIcon', () => {
+      render(<Text trailingIcon />);
+
+      const trailingIcon = screen.getByTestId('trailing-icon');
+
+      expect(trailingIcon).toBeInTheDocument();
+    });
   });
 
-  // test('Text does not break when no prop onClick is passed', () => {
-  //   const label = 'Click me';
-  //   render(<Text>{label}</Text>);
+  describe('actions', () => {
+    test('call onChange when change value', () => {
+      const onChangeSpy = jest.fn();
+      const placeholder = 'foo';
 
-  //   const el = screen.getByTestId(testElementId);
+      render(<Text onChange={onChangeSpy} placeholder={placeholder}/>);
 
-  //   fireEvent.click(el);
-  //   expect(el).toBeDefined();
-  // });
+      const input = screen.getByPlaceholderText(placeholder);
 
-  // test('Text disabled prop', () => {
-  //   const onClickFn = jest.fn();
-  //   const label = 'foo';
+      fireEvent.change(input, { target: { value: 'bar' } });
 
-  //   render(<Text disabled={true} onClick={onClickFn}>{label}</Text>);
-
-  //   const el = screen.getByTestId(testElementId);
-
-  //   expect(el).toHaveClass('disabled');
-
-  //   fireEvent.click(el);
-  //   expect(onClickFn).not.toHaveBeenCalled();
-  // });
-
-  // test('click on text with onClick prop', () => {
-  //   const onClickFn = jest.fn();
-  //   const label = 'foo';
-  //   render(<Text onClick={onClickFn}>{label}</Text>);
-
-  //   const el = screen.getByTestId(testElementId);
-
-  //   fireEvent.click(el);
-  //   expect(onClickFn).toHaveBeenCalled();
-  // });
+      expect(onChangeSpy).toHaveBeenCalled();
+      expect(input.value).toBe('bar');
+    });
+  });
 });

@@ -69,27 +69,27 @@ $green: $mchGreen !default;
 $primary: $mchBlack !default;
 $secondary: $mchWhite !default;
 $success: $green !default;
-$warning: $orange !default;
-$danger: $red !default;
+$warning: $mchTextOrange !default;
+$danger: $mchTextRed !default;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start colors-map
 $colors: (
-  'red': $mchRed,
-  'orange': $mchOrange,
-  'green': $mchGreen,
-  'white': $mchWhite,
-  'gray': $gray-300,
-  'gray-dark': $gray-500,
+  "red": $mchRed,
+  "orange": $mchOrange,
+  "green": $mchGreen,
+  "white": $mchWhite,
+  "gray": $gray-300,
+  "gray-dark": $gray-500,
 ) !default;
 // scss-docs-end colors-map
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-  'primary': $primary,
-  'secondary': $secondary,
-  'success': $success,
-  'warning': $warning,
-  'danger': $danger,
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "warning": $warning,
+  "danger": $danger,
 ) !default;
 // scss-docs-end theme-colors-map
