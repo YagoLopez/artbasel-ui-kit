@@ -1,0 +1,20 @@
+{
+  "author": "Author name",
+  "label": "Label example",
+  "title": "Heading",
+  "titleLong": "Sed ut perspiciatis unde omnis iste natus error sit voluptate",
+  "date": "29/01/2019",
+  "image": "https://images.pexels.com/photos/4362302/pexels-photo-4362302.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium.",
+  "descriptionLong": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia vol",
+  "button": {
+    "link": "#",
+    "type": "primary",
+    "text": "Go to link"
+  },
+  "textLink": {
+    "link": "#",
+    "type": "textlink",
+    "text": "Go to link"
+  }
+}
