@@ -50,6 +50,7 @@ TextLink.defaultProps = {
   cssInternalPrefix: 'btn',
   disabled: false,
   href: '#',
+  iconAlign: 'left',
 };
 
 export default TextLink;
