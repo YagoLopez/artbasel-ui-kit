@@ -1,0 +1,133 @@
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+import example from './GalleryCard.example.json';
+import GalleryCard from './GalleryCard';
+
+<Meta 
+  title="Components/Structure/GalleryCard"
+  component={GalleryCard}
+  decorators={[withDesign]}
+/>
+
+export const Template = (args) => <GalleryCard {...args} />;
+
+export const argTypes = {
+  cssStyles: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssInternalPrefix: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  size: {
+    table: {
+      category: 'GalleryCard',
+    },
+  },
+  gallery: {
+    table: {
+      category: 'GalleryCard',
+    },
+  },
+  title: {
+    table: {
+      category: 'GalleryCard',
+    },
+  },
+  image: {
+    table: {
+      category: 'GalleryCard',
+    },
+  },
+  description: {
+    table: {
+      category: 'GalleryCard',
+    },
+  },
+};
+
+export const generalArgs = {
+  gallery: example.gallery,
+  title: example.title,
+  image: example.image,
+  description: example.description
+};
+
+# GalleryCard
+
+Gallery card is one of the different types of content card displayed on the website.
+
+## Variants
+
+### Size S
+
+<Canvas style={{width: '450px'}}>
+  <Story
+    name="GalleryCard Size S"
+    args={generalArgs}
+    argTypes={{argTypes}}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size M
+
+<Canvas style={{width: '450px'}}>
+  <Story
+    name="GalleryCard Size M"
+    args={{
+      ...generalArgs,
+      size: 'm'
+    }}
+    argTypes={{argTypes}}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Truncated text
+
+<Canvas style={{width: '450px'}}>
+  <Story
+    name="GalleryCard truncated text"
+    args={{
+      ...generalArgs,
+      description: example.descriptionLong
+    }}
+    argTypes={{argTypes}}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable of={GalleryCard} />

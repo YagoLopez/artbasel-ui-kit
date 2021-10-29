@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
 import classNames from 'classnames';
-import Thumbnail from '../../Thumbnail/Thumbnail';
 import { Button } from '../../../actions/Button';
 import { TextLink } from '../../../actions/TextLink';
 import { Icon } from '../../../Icon';
@@ -72,7 +71,13 @@ const StoryCard = ({
             <Icon name="play" height="35" width="35" color="white"/>
           </div>}
         <div className="gradient" />
-        <Thumbnail src={image} width="100%" height={thumbnailHeight}/>
+        <img 
+          src={image}
+          width="100%"
+          height={thumbnailHeight}
+          alt="picture" 
+          style={{objectFit: 'cover'}}
+        />
       </div>
       <BSPCard.Body>
         <BSPCard.Text className="card-author">{author}, {label}</BSPCard.Text>
