@@ -2120,8 +2120,8 @@ const Icon = ({
 Icon.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
-  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  height: PropTypes.number,
+  width: PropTypes.number,
   name: PropTypes.oneOf(IconList).isRequired,
   onClick: PropTypes.func,
   size: PropTypes.number,
