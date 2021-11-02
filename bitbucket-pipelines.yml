@@ -57,7 +57,6 @@ stepdefinitions:
         - cd ../ui-kit/
         - yarn build-storybook
         - cd storybook-static
-        - cp ../../../web.config .
         - pwd
         - ls -l
         - zip -r storybook-$BITBUCKET_BUILD_NUMBER.zip .
@@ -68,8 +67,8 @@ pipelines:
   pull-requests:
     '{feature/*,hotfix/*}':
       - parallel:
-        - step: *lint
-        - step: *test
+          - step: *lint
+          - step: *test
         #- step: *audit
       #- step: *sonar
       - step: *build
@@ -96,9 +95,9 @@ pipelines:
   branches:
     main:
       - parallel:
-        - step: *lint
-        #- step: *audit
-        - step: *test
+          - step: *lint
+          #- step: *audit
+          - step: *test
       #- step: *sonar
       - step: *build
       - step:
