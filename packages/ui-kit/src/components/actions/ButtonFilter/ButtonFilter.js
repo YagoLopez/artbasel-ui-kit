@@ -12,20 +12,22 @@ const ButtonFilter = ({
   filter,
   onClick,
 }) => (
-  <BSPButton
-    data-testid="mch-button-filter"
-    className={classNames(
-      { 'icon-filter-check': filter },
-      'btn-filter',
-      className,
-    )}
-    style={cssStyles}
-    onClick={onClick}
-    disabled={disabled}
-    bsPrefix={cssInternalPrefix}
-  >
-    <Icon name="filter" size={24} />
-  </BSPButton>
+  <>
+    <BSPButton
+      data-testid="mch-button-filter"
+      className={classNames(
+        'btn-filter position-relative',
+        className,
+      )}
+        style={cssStyles}
+        onClick={onClick}
+        disabled={disabled}
+        bsPrefix={cssInternalPrefix}
+        >
+      { filter && <Icon name="check" size={24} className="icon-filter-check" /> }
+      <Icon name="filter" size={24} />
+    </BSPButton>
+  </>
 );
 
 ButtonFilter.propTypes = {

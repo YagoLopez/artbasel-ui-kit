@@ -171,6 +171,7 @@
   height: $btn-filter-size;
   border-radius: 100%;
   padding: 0;
+  box-shadow: 0px 4px 16px rgba(29, 35, 39, 0.12);
 
   &:disabled,
   &.disabled {
@@ -192,9 +193,12 @@
     }
   }
 
-  .checked {
-    svg {
-      fill: $mchBlack;
-    }
+  .icon-filter-check {
+    position: absolute;
+    border-radius: 100%;
+    right: -5px;
+    top: -5px;
+    fill: $mchBlack;
+    background-color: $mchWhite;
   }
 }
