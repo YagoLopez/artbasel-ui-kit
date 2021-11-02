@@ -1,0 +1,125 @@
+image: node:14-slim
+clone:
+  depth: full
+options:
+  max-time: 30 # maximum amount of minutes a step can execute
+definitions:
+  caches:
+    sonar: /root/.sonar/cache
+
+stepdefinitions:
+  - lint: &lint
+      name: Lint
+      caches:
+        - node
+      script:
+        - yarn install
+        - cd packages/ui-kit
+        - yarn lint || true
+        #- yarn lint-md
+  - test: &test
+      name: Test and Analyze
+      caches:
+        - node
+      script:
+        - yarn install
+        - cd packages/themes
+        - yarn test
+        - cd ../ui-kit/
+        - yarn test
+      artifacts: # defining the artifacts to be passed to each future step.
+        - coverage/**
+  - sonar: &sonar
+      name: Sonar Analysis
+      caches:
+        - node
+      script:
+        - npm install -g sonarqube-scanner
+        - sonar-scanner -Dsonar.login=$SONAR_TOKEN
+          -Dsonar.organization=$SONAR_ORGANIZATION
+          -Dsonar.projectKey=$SONAR_PROJECT_KEY
+          -Dsonar.branch.name=$BITBUCKET_BRANCH
+  - audit: &audit
+      name: Audit (yarn)
+      caches:
+        - node
+      script:
+        - yarn audit || true
+  - build: &build
+      name: Build
+      caches:
+        - node
+      script:
+        - apt update && apt install -y zip
+        - yarn install
+        - cd packages/themes
+        - yarn build
+        - cd ../ui-kit/
+        - yarn build-storybook
+        - cd storybook-static
+        - cp ../../../web.config .
+        - pwd
+        - ls -l
+        - zip -r storybook-$BITBUCKET_BUILD_NUMBER.zip .
+      artifacts:
+        - "packages/ui-kit/storybook-static/storybook-*.zip"
+
+pipelines:
+  pull-requests:
+    '{feature/*,hotfix/*}':
+      - parallel:
+        - step: *lint
+        - step: *test
+        #- step: *audit
+      #- step: *sonar
+      - step: *build
+      - step:
+          name: "Create Preview"
+          script:
+            - pipe: microsoft/azure-cli-run:1.1.0
+              variables:
+                AZURE_APP_ID: $AZURE_APP_ID_DEV
+                AZURE_PASSWORD: $AZURE_PASSWORD_DEV
+                AZURE_TENANT_ID: $AZURE_TENANT_ID_DEV
+                CLI_COMMAND: 'az webapp create --name ase-storybook-marketplace-pr-$BITBUCKET_PR_ID --resource-group $AZURE_RESOURCE_GROUP_DEV --plan plan-shared-marketplace-dev-switzerlandnorth-001'
+      - step:
+          name: "Deploy Preview"
+          script:
+            - pipe: microsoft/azure-web-apps-deploy:1.0.4
+              variables:
+                AZURE_APP_ID: $AZURE_APP_ID_DEV
+                AZURE_PASSWORD: $AZURE_PASSWORD_DEV
+                AZURE_TENANT_ID: $AZURE_TENANT_ID_DEV
+                AZURE_RESOURCE_GROUP: $AZURE_RESOURCE_GROUP_DEV
+                AZURE_APP_NAME: ase-storybook-marketplace-pr-$BITBUCKET_PR_ID
+                ZIP_FILE: 'packages/ui-kit/storybook-static/storybook-$BITBUCKET_BUILD_NUMBER.zip'
+  branches:
+    main:
+      - parallel:
+        - step: *lint
+        #- step: *audit
+        - step: *test
+      #- step: *sonar
+      - step: *build
+      - step:
+          name: "Delete Preview"
+          image: mcr.microsoft.com/azure-cli
+          script:
+            - az login --service-principal -u $AZURE_APP_ID_DEV -p $AZURE_PASSWORD_DEV --tenant $AZURE_TENANT_ID_DEV
+            - PR=$(curl -s -u $BITBUCKET_ADMIN_USER:$BITBUCKET_ADMIN_PASSWORD https://api.bitbucket.org/2.0/repositories/mchappsrvcs/artbasel-ui-kit/pullrequests?state=MERGED | jq -s '.[].values[].id' | sort > pullRequestList.txt)
+            - WEB_APP=$(az webapp list --query "[?state=='Running']" | jq '.[].name'| grep 'pr' | cut -c 31-33 | tr -d '"' | sort > webappList.txt)
+            - COMPARE=$(comm -12 pullRequestList.txt webappList.txt)
+            - echo "List of Web App services to delete"
+            - for x in $COMPARE; do echo "ase-storybook-marketplace-pr-$x"; done
+            - for p in $COMPARE; do az webapp delete --name ase-storybook-marketplace-pr-$p --resource-group $AZURE_RESOURCE_GROUP_DEV; done
+      - step:
+          name: "Deploy"
+          script:
+            - pipe: microsoft/azure-web-apps-deploy:1.0.4
+              variables:
+                AZURE_APP_ID: $AZURE_APP_ID_DEV
+                AZURE_PASSWORD: $AZURE_PASSWORD_DEV
+                AZURE_TENANT_ID: $AZURE_TENANT_ID_DEV
+                AZURE_RESOURCE_GROUP: $AZURE_RESOURCE_GROUP_DEV
+                AZURE_APP_NAME: $AZURE_APP_NAME_DEV
+                ZIP_FILE: 'packages/ui-kit/storybook-static/storybook-$BITBUCKET_BUILD_NUMBER.zip'
