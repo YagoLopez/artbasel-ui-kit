@@ -2,25 +2,30 @@
   .form-check-input {
     width: 56px;
     height: 32px;
-
     border-color: $mchGrey300;
-
-    background-size: 37px 37px;
-    background-position-x: -3px;
+    background-size: 24px 24px;
+    background-position-x: 4px;
+    background-position-y: 3px;
     background-color: $mchGrey300;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23ffffff'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='4' fill='%23ffffff'/%3e%3c/svg%3e");
 
     &:checked {
-      background-position-x: 20px;
-
+      background-position-x: 27px;
       border-color: $mchBlack;
       background-color: $mchBlack;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='4' fill='%23ffffff'/%3e%3c/svg%3e");
     }
 
     &:focus,
     &.focus {
       box-shadow: none;
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23ffffff'/%3e%3c/svg%3e");
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='4' fill='%23ffffff'/%3e%3c/svg%3e");
+    }
+
+    &:disabled {
+      opacity: 1;
+      background-color: $mchGrey200;
+      border-color: $mchGrey200;
     }
   }
 }
@@ -68,6 +73,17 @@
       background-color: $mchBlack;
       border-color: $mchBlack;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 24 24'%3E%3Cpath d='M18.455 6.484l1.09 1.032-9.504 10.03-5.543-4.988 1.003-1.115 4.457 4.01 8.497-8.969z'%3E%3C/path%3E%3C/svg%3E");
+    }
+
+    &:disabled {
+      opacity: 1;
+      border-color: $mchGrey200;
+      background-color: $mchWhite;
+    }
+
+    &:disabled ~ label {
+      opacity: 1;
+      color: $mchGrey300;
     }
   }
 }
