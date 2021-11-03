@@ -35,12 +35,20 @@ describe('Text component', () => {
       expect(helpTextElement).toHaveProperty('className', expect.stringContaining(`text-${helpText}`));
     });
 
-    test('render trailingIcon', () => {
-      render(<Text trailingIcon />);
+    test('render validated icon', () => {
+      render(<Text validated />);
 
-      const trailingIcon = screen.getByTestId('trailing-icon');
+      const trailingIcon = screen.getByTestId('text-icon');
 
       expect(trailingIcon).toBeInTheDocument();
+    });
+
+    test('render password eye icon', () => {
+      render(<Text type="password" />);
+
+      const eyeIcon = screen.getByTestId('text-icon');
+
+      expect(eyeIcon).toHaveProperty('className', 'eye-hide-icon');
     });
   });
 
@@ -57,6 +65,27 @@ describe('Text component', () => {
 
       expect(onChangeSpy).toHaveBeenCalled();
       expect(input.value).toBe('bar');
+    });
+
+    test('change eye icon on click in eye', () => {
+      render(<Text type="password" />);
+
+      const eyeIcon = screen.getByTestId('text-icon');
+
+      fireEvent.click(eyeIcon);
+
+      expect(eyeIcon).toHaveProperty('className', 'eye-show-icon');
+    });
+
+    test('set type text on password when click in eye icon', () => {
+      render(<Text type="password" placeholder="password" />);
+
+      const eyeIcon = screen.getByTestId('text-icon');
+      const input = screen.getByPlaceholderText('password');
+
+      fireEvent.click(eyeIcon);
+
+      expect(input).toHaveProperty('type', 'text');
     });
   });
 });

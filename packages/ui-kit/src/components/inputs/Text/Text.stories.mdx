@@ -1,9 +1,9 @@
-<!--- Switch.stories.mdx --->
+<!--- Text.stories.mdx --->
 
-import { Meta, Story, Canvas, ArgsTable, Preview } from "@storybook/addon-docs";
-import { withDesign } from "storybook-addon-designs";
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
 
-import { Text } from ".";
+import { Text } from '.';
 
 <Meta
   title="Components/Inputs/Text"
@@ -19,56 +19,63 @@ export const Template = (args) => <Text {...args} />;
 
 export const argTypes = {
   label: {
-    defaultValue: "Label",
     control: {
-      type: "text",
+      type: 'text',
     },
   },
   value: {
-    defaultValue: "",
     control: {
-      type: "text",
+      type: 'text',
     },
   },
   disabled: {
-    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
   },
   id: {
-    defaultValue: "",
     control: {
-      type: "text",
+      type: 'text',
     },
   },
   helpText: {
-    defaultValue: "",
+    control: {
+      type: 'text',
+    },
   },
   helpTextType: {
-    defaultValue: "info",
+    control: {
+      type: 'text',
+    },
   },
   type: {
-    defaultValue: "text",
+    control: {
+      type: 'text',
+    },
   },
-  trailingIcon: {
-    defaultValue: false,
+  validated: {
+    control: {
+      type: 'boolean',
+    },
   },
   className: {
     table: {
-      category: "Styles",
+      category: 'Styles',
     },
   },
   cssStyles: {
     table: {
-      category: "Styles",
+      category: 'Styles',
     },
   },
   cssInternalPrefix: {
     table: {
-      category: "Styles",
+      category: 'Styles',
     },
   },
   onChange: {
     table: {
-      category: "Events",
+      category: 'Events',
     },
   },
 };
@@ -76,14 +83,14 @@ export const argTypes = {
 <Canvas>
   <Story
     name="Text"
-    args={{}}
+    args={{ label: 'Label' }}
     argTypes={argTypes}
     parameters={{
       design: {
-        name: "Figma Design",
-        type: "figma",
+        name: 'Figma Design',
+        type: 'figma',
         url:
-          "https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=82%3A2908",
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=82%3A2909',
       },
     }}
   >
@@ -93,68 +100,68 @@ export const argTypes = {
 
 ## States
 
-<Preview>
+<Canvas>
   <div>
     <b>Default</b>
     <Text label="Label" />
   </div>
-</Preview>
+</Canvas>
 
-<Preview>
-  <div>
-    <b>Email</b>
-    <Text label="Email" type="email" />
-  </div>
-</Preview>
-
-<Preview>
+<Canvas>
   <div>
     <b>Hover</b>
     <Text label="Label" className="hover" />
   </div>
-</Preview>
+</Canvas>
 
-<Preview>
+<Canvas>
   <div>
     <b>Active</b>
     <Text label="Label" value="Text" className="active" />
   </div>
-</Preview>
+</Canvas>
 
-<Preview>
+<Canvas>
   <div>
     <b>Focus</b>
     <Text label="Label" className="focus" />
   </div>
-</Preview>
+</Canvas>
 
-<Preview>
+<Canvas>
   <div>
-    <b>Trailing icon</b>
-    <Text label="Label" trailingIcon />
+    <b>Validated</b>
+    <Text label="Label" validated />
   </div>
-</Preview>
+</Canvas>
 
-<Preview>
+<Canvas>
   <div>
     <b>Warning</b>
     <Text label="Label" helpText="Helper Text" helpTextType="warning" />
   </div>
-</Preview>
+</Canvas>
 
-<Preview>
+<Canvas>
   <div>
     <b>Error</b>
     <Text label="Label" helpText="Helper Text" helpTextType="danger" />
   </div>
-</Preview>
+</Canvas>
 
-<Preview>
+<Canvas>
   <div>
     <b>Disabled</b>
     <Text label="Label" disabled />
   </div>
-</Preview>
+</Canvas>
+
+<Canvas>
+  <div>
+    <b>Disabled with text</b>
+    <Text label="Label" value="Text" disabled />
+  </div>
+</Canvas>
 
 ## Properties
 

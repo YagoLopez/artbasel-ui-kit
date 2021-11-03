@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 const textClassName = {
   muted: 'text-muted',
@@ -20,33 +20,45 @@ const Text = ({
   value,
   helpText,
   helpTextType,
-  trailingIcon,
+  validated,
   placeholder,
   onChange,
-}) => (
+}) => {
+  const [passwordIcon, setPasswordIcon] = useState('hide');
+  const isPassword = useMemo(() => type === 'password', [type]);
+  const handleSetShowPassword = useCallback(() => {
+    setPasswordIcon((prevState) => (prevState === 'hide' ? 'show' : 'hide'));
+  }, []);
+
+  return (
     <div data-testid="mch-text">
       <FloatingLabel controlId="floatingInput" label={label}>
         <Form.Control
-          className={classNames(
-            `help-text-input-${helpTextType}`,
-            className,
-          )}
+          className={classnames(`help-text-input-${helpTextType}`, className)}
           style={cssStyles}
           bsPrefix={cssInternalPrefix}
-          type={type}
+          type={isPassword && passwordIcon === 'show' ? 'text' : type}
           defaultValue={value}
           placeholder={placeholder}
           aria-describedby="passwordHelpBlock"
           disabled={disabled}
           onChange={onChange}
         />
-        {trailingIcon && <i className="trailing-icon" data-testid="trailing-icon"/>}
+        {(validated || isPassword) && (
+          <i
+            className={classnames({
+              'validate-icon': validated,
+              [`eye-${passwordIcon}-icon`]: isPassword,
+            })}
+            onClick={isPassword ? handleSetShowPassword : undefined}
+            data-testid="text-icon"
+          />
+        )}
       </FloatingLabel>
-      <Form.Text className={textClassName[helpTextType]}>
-        {helpText}
-      </Form.Text>
+      <Form.Text className={textClassName[helpTextType]}>{helpText}</Form.Text>
     </div>
-);
+  );
+};
 
 Text.propTypes = {
   className: PropTypes.string,
@@ -58,7 +70,7 @@ Text.propTypes = {
   helpTextType: PropTypes.oneOf(['muted', 'warning', 'danger']),
   label: PropTypes.string.isRequired,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  trailingIcon: PropTypes.bool,
+  validated: PropTypes.bool,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
 };
@@ -70,7 +82,7 @@ Text.defaultProps = {
   label: '',
   helpTextType: 'muted',
   value: '',
-  trailingIcon: false,
+  validated: false,
   placeholder: ' ',
   onChange: () => {},
 };
