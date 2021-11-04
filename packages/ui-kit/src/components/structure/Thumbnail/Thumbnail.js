@@ -5,13 +5,12 @@ import PropTypes from 'prop-types';
 const Thumbnail = ({
   src,
   width,
-  height
+  height,
 }) => {
-
   const imgRef = useRef(null);
-  
-  const [maskSize, setMaskSize] = useState({width: 0, height: 0});
-  const [imgSize, setImgSize] = useState({width: 0, height: 0});
+
+  const [maskSize, setMaskSize] = useState({ width: 0, height: 0 });
+  const [imgSize, setImgSize] = useState({ width: 0, height: 0 });
   const [imgElement, setImgElement] = useState(null);
 
   const setImageSize = (chngattr, attr) => {
@@ -22,14 +21,13 @@ const Thumbnail = ({
 
     const direction = attr === 'height' ? 'Y' : 'X';
     img.style.transform = `translate${direction}(-${(img[attr] - maskSize[attr]) / 2}px)`;
-
   };
 
   useEffect(() => {
     if (imgRef.current) {
       setMaskSize({
         width: imgRef.current.offsetWidth,
-        height: imgRef.current.offsetHeight
+        height: imgRef.current.offsetHeight,
       });
     }
   }, [imgRef.current, height, width]);
@@ -37,8 +35,8 @@ const Thumbnail = ({
   useEffect(() => {
     if (imgSize.width > 0 && maskSize.width > 0) {
       const attrs = imgSize.width <= imgSize.height
-        ? { changing: 'width', cover: 'height'}
-        : { changing: 'height', cover: 'width'};
+        ? { changing: 'width', cover: 'height' }
+        : { changing: 'height', cover: 'width' };
 
       setImageSize(attrs.changing, attrs.cover);
 
@@ -51,7 +49,7 @@ const Thumbnail = ({
   const handleImgSize = (e) => {
     setImgSize({
       width: e.target.width,
-      height: e.target.height
+      height: e.target.height,
     });
     setImgElement(e.target);
   };
@@ -60,7 +58,7 @@ const Thumbnail = ({
     <div
       className="thumbnail"
       ref={imgRef}
-      style={{width, height}}
+      style={{ width, height }}
     >
       <Image src={src} onLoad={handleImgSize} />
     </div>
@@ -70,12 +68,12 @@ const Thumbnail = ({
 Thumbnail.propTypes = {
   src: PropTypes.string.isRequired,
   width: PropTypes.string,
-  height: PropTypes.string
+  height: PropTypes.string,
 };
 
 Thumbnail.defaultProps = {
   width: null,
-  height: null
+  height: null,
 };
 
 export default Thumbnail;

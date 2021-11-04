@@ -8,18 +8,18 @@ import { Icon } from '../../../Icon';
 
 const truncated = {
   title: false,
-  description: false
+  description: false,
 };
 
 const truncateValues = {
   title: 60,
-  description: 250
+  description: 250,
 };
 
 const classHeight = {
   s: '234.37px',
   m: '404px',
-  l: '624px'
+  l: '624px',
 };
 
 const truncateText = (text, textType) => {
@@ -38,9 +38,8 @@ const StoryCard = ({
   title,
   date,
   description,
-  button
+  button,
 }) => {
-
   const [thumbnailHeight, setthumbnailHeight] = useState(classHeight[size]);
 
   useEffect(() => {
@@ -53,7 +52,7 @@ const StoryCard = ({
       : null,
     primary: button
       ? <Button primary href={button?.link}>{button?.text}</Button>
-      : null
+      : null,
   };
 
   const renderButton = () => (buttonComponent[button.type]);
@@ -66,38 +65,38 @@ const StoryCard = ({
       className={classNames('story-card', `size-${size}`)}
     >
       <div className="hoverHandler">
-        {video &&
-          <div className="play-box">
+        {video
+          && <div className="play-box">
             <Icon name="play" height="35" width="35" color="white"/>
           </div>}
         <div className="gradient" />
-        <img 
+        <img
           src={image}
           width="100%"
           height={thumbnailHeight}
-          alt="picture" 
-          style={{objectFit: 'cover'}}
+          alt="picture"
+          style={{ objectFit: 'cover' }}
         />
       </div>
       <BSPCard.Body>
         <BSPCard.Text className="card-author">{author}, {label}</BSPCard.Text>
         <BSPCard.Title>
           {truncateText(title, 'title')}
-          {truncated.title &&
-            <span title={title}>...</span>}
+          {truncated.title
+            && <span title={title}>...</span>}
         </BSPCard.Title>
         <BSPCard.Text className="card-date">{date}</BSPCard.Text>
         <BSPCard.Text className="card-description">
           {truncateText(description, 'description')}
-          {truncated.description &&
-            <span title={description}>...</span>}
+          {truncated.description
+            && <span title={description}>...</span>}
         </BSPCard.Text>
         <div
           className={
-            classNames('button-box', {'pt13': button?.type === 'next'})
+            classNames('button-box', { pt13: button?.type === 'next' })
           }>
-          {button &&
-          renderButton()}
+          {button
+          && renderButton()}
         </div>
       </BSPCard.Body>
     </BSPCard>
@@ -116,10 +115,10 @@ StoryCard.propTypes = {
   button: PropTypes.shape({
     link: PropTypes.string,
     type: PropTypes.oneOf(['primary', 'textlink']).isRequired,
-    text: PropTypes.string.isRequired
+    text: PropTypes.string.isRequired,
   }),
   cssStyles: PropTypes.string,
-  cssInternalPrefix: PropTypes.string
+  cssInternalPrefix: PropTypes.string,
 };
 
 StoryCard.defaultProps = {
@@ -129,7 +128,7 @@ StoryCard.defaultProps = {
   date: null,
   video: false,
   cssInternalPrefix: 'card',
-  cssStyles: null
+  cssStyles: null,
 };
 
 export default StoryCard;

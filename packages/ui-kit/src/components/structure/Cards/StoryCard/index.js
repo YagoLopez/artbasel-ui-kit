@@ -1,1 +1,1 @@
-export { default, StoryCard } from './StoryCard';
+export { default as StoryCard } from './StoryCard';

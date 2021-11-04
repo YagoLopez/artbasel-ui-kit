@@ -2,7 +2,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { cleanup, render, screen } from '@testing-library/react';
-import StoryCard  from './StoryCard';
+import StoryCard from './StoryCard';
 import example from './StoryCard.example.json';
 
 console.error = jest.fn();
@@ -20,7 +20,7 @@ describe('Tests for Story Card component', () => {
         description={example.description}
         image={example.image}
         link={example.link}
-      />
+      />,
     );
     expect(screen.queryByText(example.title)).toBeInTheDocument();
   });
@@ -34,7 +34,7 @@ describe('Tests for Story Card component', () => {
         date={example.date}
         description={example.description}
         link={example.link}
-      />
+      />,
     );
     expect(console.error).toBeCalled();
   });
@@ -48,7 +48,7 @@ describe('Tests for Story Card component', () => {
         description={example.description}
         image={example.image}
         link={example.link}
-      />
+      />,
     );
     expect(console.error).toBeCalled();
   });
@@ -62,7 +62,7 @@ describe('Tests for Story Card component', () => {
         description={example.description}
         image={example.image}
         link={example.link}
-      />
+      />,
     );
     expect(console.error).toBeCalled();
   });
@@ -75,7 +75,7 @@ describe('Tests for Story Card component', () => {
         date={example.date}
         description={example.description}
         image={example.image}
-      />
+      />,
     );
     expect(console.error).toBeCalled();
   });
@@ -89,7 +89,7 @@ describe('Tests for Story Card component', () => {
         date={example.date}
         image={example.image}
         link={example.link}
-      />
+      />,
     );
     expect(console.error).toBeCalled();
   });
@@ -97,7 +97,7 @@ describe('Tests for Story Card component', () => {
     const button = {
       type: null,
       text: 'Button Text',
-      link: '#'
+      link: '#',
     };
 
     render(
@@ -109,7 +109,7 @@ describe('Tests for Story Card component', () => {
         image={example.image}
         link={example.link}
         button={button}
-      />
+      />,
     );
     expect(console.error).toBeCalled();
   });

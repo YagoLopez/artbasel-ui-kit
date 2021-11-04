@@ -5,7 +5,7 @@
     }
   },
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2020,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
@@ -30,7 +30,8 @@
     "import/no-extraneous-dependencies": [
       "error",
       { "devDependencies": ["**/*.stories.js", "**/*.spec.js"] }
-    ]
+    ],
+    "import/prefer-default-export": "off"
   },
   "ignorePatterns": ["dist/", "node_modules/", "storybook-static/"],
   "env": {

@@ -13,7 +13,7 @@ const truncateText = (text) => {
 
 const thumbnailHeight = '234.37px';
 
-export const GalleryCard = ({
+const GalleryCard = ({
   size,
   gallery,
   title,
@@ -22,7 +22,6 @@ export const GalleryCard = ({
   cssInternalPrefix,
   cssStyles,
 }) => {
-  
   return (
     <BSPCard
       data-testid="mch-gallery-card"
@@ -32,12 +31,12 @@ export const GalleryCard = ({
     >
       <div className="hoverHandler">
         <div className="gradient"/>
-        <img 
+        <img
           src={image}
           width="100%"
           height={thumbnailHeight}
-          alt="picture" 
-          style={{objectFit: 'cover'}}
+          alt="picture"
+          style={{ objectFit: 'cover' }}
         />
       </div>
       <BSPCard.Body>
@@ -45,8 +44,8 @@ export const GalleryCard = ({
         <BSPCard.Title>{title}</BSPCard.Title>
         <BSPCard.Text>
           {truncateText(description)}
-          {truncated &&
-          <span title={description}>...</span>}
+          {truncated
+          && <span title={description}>...</span>}
         </BSPCard.Text>
       </BSPCard.Body>
     </BSPCard>
@@ -60,13 +59,13 @@ GalleryCard.propTypes = {
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   cssInternalPrefix: PropTypes.string,
-  cssStyles: PropTypes.string
+  cssStyles: PropTypes.string,
 };
 
 GalleryCard.defaultProps = {
   size: 's',
   cssInternalPrefix: 'card',
-  cssStyles: null
+  cssStyles: null,
 };
 
 export default GalleryCard;

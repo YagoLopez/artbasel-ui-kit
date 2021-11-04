@@ -1,14 +1,22 @@
 {
-  "name": "mch-ui-kit-mr",
-  "version": "1.0.0",
-  "description": "",
+  "name": "mch-ui-kit",
+  "version": "0.0.0",
+  "description": "UI component library",
   "main": "index.js",
   "workspaces": [
     "packages/**"
   ],
   "private": true,
   "scripts": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": ["javascript", "frontend", "ui-kit", "design-system", "react"],
+  "author": "DMI",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/mchappsrvcs/artbasel-ui-kit"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^7.0.4"
+  }
 }

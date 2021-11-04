@@ -12,7 +12,7 @@ describe('Tests for Thumbnail component', () => {
 
   test('Should render the component', () => {
     const result = render(
-      <Thumbnail src={img} />
+      <Thumbnail src={img} />,
     );
     const thumbnail = result.container.querySelector('.thumbnail');
     expect(thumbnail).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe('Tests for Thumbnail component', () => {
 
   test('Should not render the component without required prop', () => {
     render(
-      <Thumbnail />
+      <Thumbnail />,
     );
     expect(console.error).toBeCalled();
   });

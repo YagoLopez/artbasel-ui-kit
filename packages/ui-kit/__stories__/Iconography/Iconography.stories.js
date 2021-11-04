@@ -3,8 +3,6 @@ import React from 'react';
 import { withDesign } from 'storybook-addon-designs';
 
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
 
 import { Icon, IconList } from '../../src/components/Icon';
 
@@ -29,6 +27,7 @@ export const Iconography = () => (
     <Row xs={3} md={4} lg={6} className="g-2">
       {IconList.map((name) => (
         <div
+          key={name}
           style={{
             margin: '5px',
             width: '120px',

@@ -13,12 +13,11 @@ const ProductTile = ({
   year,
   gallery,
   price,
-  offer
+  offer,
 }) => {
-  
   const subtitleRef = useRef(null);
   const [truncated, setTruncated] = useState(false);
-  const [dimensions, setDimensions] = useState({limit: 0, width: 0});
+  const [dimensions, setDimensions] = useState({ limit: 0, width: 0 });
   const subtitle = [productName, year].join(', ');
   const [truncatedSubtitle, setTruncatedSubtitle] = useState([productName, year].join(', '));
 
@@ -27,7 +26,7 @@ const ProductTile = ({
       const p = subtitleRef.current.querySelector('p');
       setDimensions({
         limit: subtitleRef.current.offsetWidth,
-        width: p.scrollWidth
+        width: p.scrollWidth,
       });
     }
   }, [subtitleRef.current]);
@@ -35,9 +34,9 @@ const ProductTile = ({
   useEffect(() => {
     if (dimensions.width > dimensions.limit && !truncated) {
       const limitChars = Math.floor(
-        (dimensions.limit * subtitle.length / dimensions.width) - 3
+        ((dimensions.limit * subtitle.length) / dimensions.width) - 3,
       );
-      setTruncatedSubtitle(subtitle.substring(0,limitChars));
+      setTruncatedSubtitle(subtitle.substring(0, limitChars));
       setTruncated(true);
     }
 
@@ -47,10 +46,9 @@ const ProductTile = ({
     }
   }, [dimensions]);
 
-
   return (
     <BSPCard
-      className={classNames("product-tile", `size-${size}`)}
+      className={classNames('product-tile', `size-${size}`)}
       bsPrefix={cssInternalPrefix}
       style={cssStyles}
       data-testid="mch-product-tile"
@@ -61,23 +59,25 @@ const ProductTile = ({
       <BSPCard.Body>
         <div className="tile-subtitle" ref={subtitleRef}>
           <p>{truncatedSubtitle}</p>
-          {truncated &&
-          <span title={subtitle} className="ellipsis">...</span>}
+          {truncated
+          && <span title={subtitle} className="ellipsis">...</span>}
         </div>
         <BSPCard.Title>{title}</BSPCard.Title>
         <BSPCard.Text className="tile-gallery">{gallery}</BSPCard.Text>
-        {price &&
-        <div className="tile-price-container">
+        {price
+        && <div className="tile-price-container">
           <div className="tile-price">{price.currency} {price.value}</div>
-          {offer &&
-          <div className="tile-offer">| Make an offer</div>}
+          {offer
+          && <div className="tile-offer">| Make an offer</div>}
         </div>}
       </BSPCard.Body>
     </BSPCard>
   );
-}
+};
 
 ProductTile.propTypes = {
+  cssStyles: PropTypes.string,
+  cssInternalPrefix: PropTypes.string,
   size: PropTypes.oneOf(['s', 'm']),
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
@@ -86,15 +86,15 @@ ProductTile.propTypes = {
   gallery: PropTypes.string.isRequired,
   price: PropTypes.shape({
     value: PropTypes.string.isRequired,
-    currency: PropTypes.string.isRequired
+    currency: PropTypes.string.isRequired,
   }),
-  offer: PropTypes.bool
+  offer: PropTypes.bool,
 };
 
 ProductTile.defaultProps = {
   size: 's',
   price: null,
-  offer: false
+  offer: false,
 };
 
 export default ProductTile;

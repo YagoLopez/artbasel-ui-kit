@@ -6,7 +6,7 @@ import example from './ProductTile.example.json';
 
 describe('Tests for Product Tile component', () => {
   afterEach(cleanup);
-  
+
   test('Should render the component', () => {
     render(
       <ProductTile
@@ -15,12 +15,12 @@ describe('Tests for Product Tile component', () => {
         year={example.year}
         image={example.image}
         gallery={example.gallery}
-      />
+      />,
     );
     expect(screen.queryByText(example.title)).toBeInTheDocument();
   });
 
-  test('Should truncate a long subtitle', () => {    
+  test('Should truncate a long subtitle', () => {
     const { container } = render(
       <ProductTile
         title={example.title}
@@ -28,7 +28,7 @@ describe('Tests for Product Tile component', () => {
         year={example.year}
         image={example.image}
         gallery={example.gallery}
-      />
+      />,
     );
 
     setTimeout(() => {

@@ -15,7 +15,7 @@ stepdefinitions:
       script:
         - yarn install
         - cd packages/ui-kit
-        - yarn lint || true
+        - yarn lint
         #- yarn lint-md
   - test: &test
       name: Test and Analyze

@@ -17,7 +17,7 @@ describe('Tests for Gallery Card component', () => {
         title={example.title}
         description={example.description}
         image={example.image}
-      />
+      />,
     );
     expect(screen.queryByText(example.title)).toBeInTheDocument();
   });
@@ -28,7 +28,7 @@ describe('Tests for Gallery Card component', () => {
         gallery={example.gallery}
         title={example.title}
         description={example.description}
-      />
+      />,
     );
     expect(console.error).toBeCalled();
   });
@@ -39,7 +39,7 @@ describe('Tests for Gallery Card component', () => {
         gallery={example.gallery}
         image={example.image}
         description={example.description}
-      />
+      />,
     );
     expect(console.error).toBeCalled();
   });
@@ -50,7 +50,7 @@ describe('Tests for Gallery Card component', () => {
         image={example.image}
         title={example.title}
         description={example.description}
-      />
+      />,
     );
     expect(console.error).toBeCalled();
   });
@@ -61,7 +61,7 @@ describe('Tests for Gallery Card component', () => {
         gallery={example.gallery}
         title={example.title}
         image={example.image}
-      />
+      />,
     );
     expect(console.error).toBeCalled();
   });
