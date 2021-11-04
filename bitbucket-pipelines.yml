@@ -44,7 +44,7 @@ stepdefinitions:
       caches:
         - node
       script:
-        - yarn audit || true
+        - yarn audit
   - build: &build
       name: Build
       caches:
@@ -64,13 +64,19 @@ stepdefinitions:
         - "packages/ui-kit/storybook-static/storybook-*.zip"
 
 pipelines:
+  default:
+    - parallel:
+      - step: *lint
+      - step: *test
+      - step: *audit
+    - step: *sonar
   pull-requests:
     '{feature/*,hotfix/*}':
       - parallel:
           - step: *lint
           - step: *test
-        #- step: *audit
-      #- step: *sonar
+          - step: *audit
+      - step: *sonar
       - step: *build
       - step:
           name: "Create Preview"
@@ -96,9 +102,9 @@ pipelines:
     main:
       - parallel:
           - step: *lint
-          #- step: *audit
           - step: *test
-      #- step: *sonar
+          - step: *audit
+      - step: *sonar
       - step: *build
       - step:
           name: "Delete Preview"
