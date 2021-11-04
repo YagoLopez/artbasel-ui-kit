@@ -17,6 +17,20 @@ describe('Text component', () => {
       expect(trailingIcon).not.toBeInTheDocument();
     });
 
+    test('render id prop', () => {
+      const id = 'foo';
+      const label = 'label';
+      const placeholder = 'placeholder';
+
+      render(<Text id={id} label={label} placeholder={placeholder} />);
+
+      const labelEl = screen.getByText(label);
+      const inputEl = screen.getByPlaceholderText(placeholder);
+
+      expect(labelEl).toHaveProperty('htmlFor', id);
+      expect(inputEl).toHaveProperty('id', id);
+    });
+
     test('render correct label', () => {
       const label = 'label';
 

@@ -12,6 +12,7 @@ const textClassName = {
 
 const Text = ({
   className,
+  id,
   cssStyles,
   cssInternalPrefix,
   type,
@@ -32,7 +33,7 @@ const Text = ({
 
   return (
     <div data-testid="mch-text">
-      <FloatingLabel controlId="floatingInput" label={label}>
+      <FloatingLabel controlId={id} label={label}>
         <Form.Control
           className={classnames(`help-text-input-${helpTextType}`, className)}
           style={cssStyles}
@@ -40,7 +41,6 @@ const Text = ({
           type={isPassword && passwordIcon === 'show' ? 'text' : type}
           defaultValue={value}
           placeholder={placeholder}
-          aria-describedby="passwordHelpBlock"
           disabled={disabled}
           onChange={onChange}
         />
@@ -61,6 +61,7 @@ const Text = ({
 };
 
 Text.propTypes = {
+  id: PropTypes.string,
   className: PropTypes.string,
   cssStyles: PropTypes.string,
   cssInternalPrefix: PropTypes.string,
@@ -76,6 +77,7 @@ Text.propTypes = {
 };
 
 Text.defaultProps = {
+  id: 'floatingInput',
   cssInternalPrefix: '',
   type: 'text',
   disabled: false,

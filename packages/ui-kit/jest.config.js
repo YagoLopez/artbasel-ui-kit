@@ -13,7 +13,7 @@ module.exports = {
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
 
-  collectCoverageFrom: ['packages/**/*.js', '!src/index.js', '!packages/**/*.stories.js'],
+  collectCoverageFrom: ['src/**/*.js', '!src/**/index.js', '!src/**/*.stories.js'],
 
   modulePathIgnorePatterns: ['<rootDir>/.*/__mocks__'],
 
