@@ -28,7 +28,7 @@ stepdefinitions:
         - cd ../ui-kit/
         - yarn test
       artifacts: # defining the artifacts to be passed to each future step.
-        - coverage/**
+        - packages/ui-kit/coverage/**
   - sonar: &sonar
       name: Sonar Analysis
       caches:
