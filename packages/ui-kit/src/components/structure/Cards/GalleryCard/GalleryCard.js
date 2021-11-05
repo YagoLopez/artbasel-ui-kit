@@ -2,15 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
 import classnames from 'classnames';
+import { truncateText } from '../../../../utils/truncateText';
 
-let truncated = false;
 const truncateValue = 250;
-
-const truncateText = (text) => {
-  truncated = text?.length > truncateValue;
-  return truncated ? text.substring(0, truncateValue - 3) : text;
-};
-
 const thumbnailHeight = '234.37px';
 
 const GalleryCard = ({
@@ -22,6 +16,8 @@ const GalleryCard = ({
   cssInternalPrefix,
   cssStyles,
 }) => {
+  const truncated = truncateText(description, truncateValue);
+
   return (
     <BSPCard
       data-testid="mch-gallery-card"
@@ -43,8 +39,8 @@ const GalleryCard = ({
         <BSPCard.Text className="card-gallery">{gallery}</BSPCard.Text>
         <BSPCard.Title>{title}</BSPCard.Title>
         <BSPCard.Text>
-          {truncateText(description)}
-          {truncated
+          {truncated.text}
+          {truncated.state
           && <span title={description}>...</span>}
         </BSPCard.Text>
       </BSPCard.Body>

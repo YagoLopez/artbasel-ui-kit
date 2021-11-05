@@ -1,4 +1,3 @@
 export * from './Accordions';
-// export * from './cards';
+export * from './Cards';
 export * from './ProductTile';
-export * from './Thumbnail';

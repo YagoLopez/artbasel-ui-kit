@@ -1,0 +1,198 @@
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+import example from './EventCard.example.json';
+import EventCard from './EventCard';
+
+<Meta 
+  title="Components/Structure/EventCard"
+  component={EventCard}
+  decorators={[withDesign]}
+/>
+
+export const Template = (args) => <EventCard {...args} />;
+
+export const argTypes = {
+  cssStyles: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssInternalPrefix: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  size: {
+    table: {
+      category: 'EventCard',
+    },
+  },
+  title: {
+    table: {
+      category: 'EventCard',
+    },
+  },
+  date: {
+    table: {
+      category: 'EventCard',
+    },
+  },
+  description: {
+    table: {
+      category: 'EventCard',
+    },
+  },
+  image: {
+    table: {
+      category: 'EventCard',
+    },
+  },
+  button: {
+    table: {
+      category: 'EventCard',
+    },
+  },
+  location: {
+    table: {
+      category: 'EventCard',
+    },
+  },
+  schedule: {
+    table: {
+      category: 'EventCard',
+    },
+  },
+};
+
+export const button = {
+  link: '#',
+  text: 'Go to link'
+};
+
+export const location = {
+  address: "Türkenstraße 16",
+  city: "MÜNCHEN",
+  pc: "80333"
+};
+
+export const generalArgs = {
+  title: example.title,
+  date: example.date,
+  schedule: example.schedule,
+  description: example.description,
+  image: example.image,
+  button,
+  location
+};
+
+export const truncatedArgs = {
+  title: example.titleLong,
+  date: example.date,
+  schedule: example.schedule,
+  description: example.descriptionLong,
+  image: example.image,
+  button,
+  location,
+};
+
+
+# EventCard
+
+Event card is one of the different types of content card displayed on the website.
+
+## Variants
+
+### Size S 
+
+<Canvas style={{width: '450px'}}>
+  <Story
+    name="EventCard Size S"
+    args={generalArgs}
+    argTypes={{argTypes}}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size M
+
+<Canvas>
+  <Story
+    name="EventCard Size M"
+    args={{
+      ...generalArgs,
+      button,
+      location,
+      size: 'm',
+    }}
+    argTypes={{argTypes}}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size L
+
+<Canvas style={{width: '1300px'}}>
+  <Story
+    name="EventCard Size L"
+    args={{
+      ...generalArgs,
+      button,
+      location,
+      size: 'l',
+    }}
+    argTypes={{argTypes}}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Truncated text
+
+<Canvas style={{width: '450px'}}>
+  <Story
+    name="EventCard truncated text"
+    args={truncatedArgs}
+    argTypes={{argTypes}}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+## Properties
+
+<ArgsTable of={EventCard} />

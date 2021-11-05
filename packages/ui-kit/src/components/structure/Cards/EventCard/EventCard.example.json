@@ -1,0 +1,18 @@
+{
+  "title": "Heading",
+  "titleLong": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+  "date": "14. Sep – 09. Nov 2019",
+  "location": {
+    "address": "Türkenstraße 16",
+    "city": "MÜNCHEN",
+    "pc": "80333"
+  },
+  "schedule":"Tuesday to Saturday, 10am to 6pm",
+  "image": "https://images.pexels.com/photos/1585325/pexels-photo-1585325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  "description": "For OPEN ART 2019, Galerie Thomas shows new large-format paintings by Peter Halley. The geometric, colorful and in strict consistency composed paintings of Peter Halley are a critique of the increasing control of society by communication",
+  "descriptionLong": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat mas",
+  "button": {
+    "link": "#",
+    "text": "Go to link"
+  }
+}
