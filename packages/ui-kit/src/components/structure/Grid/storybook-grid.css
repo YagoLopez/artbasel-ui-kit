@@ -1,0 +1,15 @@
+[class^='col'] div {
+  background-color: #ddd;
+  padding: 16px;
+}
+
+.row {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.col {
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 0;
+}
