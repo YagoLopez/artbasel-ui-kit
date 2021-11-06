@@ -3,14 +3,14 @@ $btn-font-weight: bold;
 $btn-border-width: 2px;
 $btn-font-size: 14px;
 $btn-border-radius: 0.125rem !default;
-$btn-padding-x: 1.5rem;
+$btn-padding-x: $spacing-7;
 $btn-line-height: 18px;
 $btn-focus-box-shadow: none;
 $btn-active-box-shadow: none;
 
 // Custom variables
 $btn-filter-size: 64px;
-$btn-icon-margin: 8px;
+$btn-icon-margin: $spacing-3;
 $btn-size-compact-height: 40px;
 $btn-size-dynamic-height: 48px;
 $btn-size-dynamic-min-width: 184px;

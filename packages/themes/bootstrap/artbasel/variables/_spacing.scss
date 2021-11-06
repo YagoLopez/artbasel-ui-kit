@@ -1,0 +1,48 @@
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem !default;
+
+$spacing-0: 0;
+$spacing-1: $spacer * 0.125;
+$spacing-2: $spacer * 0.25;
+$spacing-3: $spacer * 0.5;
+$spacing-4: $spacer * 0.75;
+$spacing-5: $spacer;
+$spacing-6: $spacer * 1.25;
+$spacing-7: $spacer * 1.5;
+$spacing-8: $spacer * 2;
+$spacing-9: $spacer * 2.5;
+$spacing-10: $spacer * 3;
+$spacing-11: $spacer * 3.5;
+$spacing-12: $spacer * 4;
+$spacing-13: $spacer * 4.5;
+$spacing-14: $spacer * 5;
+$spacing-15: $spacer * 6;
+$spacing-16: $spacer * 7;
+
+$spacers: (
+  0: 0,
+  1: $spacing-1,
+  2: $spacing-2,
+  3: $spacing-3,
+  4: $spacing-4,
+  5: $spacing-5,
+  6: $spacing-6,
+  7: $spacing-7,
+  8: $spacing-8,
+  9: $spacing-9,
+  10: $spacing-10,
+  11: $spacing-11,
+  12: $spacing-12,
+  13: $spacing-13,
+  14: $spacing-14,
+  15: $spacing-15,
+  16: $spacing-16,
+) !default;
+
+// scss-docs-end spacer-variables-maps
