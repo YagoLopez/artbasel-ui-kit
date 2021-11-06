@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Basic/Typography',
+  title: 'Basic/Typography 🚧 ',
   parameters: {
     previewTabs: {
       'storybook/docs/panel': {
@@ -28,7 +28,7 @@ const headerText = 'The quick brown fox jumps over the lazy dog';
 
 export const Typography = () => (
   <>
-    <h1>Typography</h1>
+    <h1>Typography 🚧 </h1>
     <p />
     <h2>Headings</h2>
     <p>
@@ -51,7 +51,6 @@ export const Typography = () => (
       <Col sm={1}>
         <p className="mb-0">H1</p>
         <p className="h1-storybook-text-size text-s"></p>
-
       </Col>
       <Col>
         <h1>{headerText}</h1>
@@ -124,7 +123,10 @@ export const Typography = () => (
         <span className="text-s">18px</span>
       </Col>
       <Col>
-        <p className="text-l">This is for short paragraphs with no more than four lines and is commonly used in the expressive type theme for layouts .</p>
+        <p className="text-l">
+          This is for short paragraphs with no more than four lines and is
+          commonly used in the expressive type theme for layouts .
+        </p>
       </Col>
     </Row>
 
@@ -134,7 +136,13 @@ export const Typography = () => (
         <span className="text-s">16px</span>
       </Col>
       <Col>
-        <p className="text-m">This is commonly used in layouts for long paragraphs with more than four lines. The looser line height and larger size makes for comfortable, long-form reading, in mediums that allow for more space. This size type is rarely used for body copy in components. Always left-align type; never center it.</p>
+        <p className="text-m">
+          This is commonly used in layouts for long paragraphs with more than
+          four lines. The looser line height and larger size makes for
+          comfortable, long-form reading, in mediums that allow for more space.
+          This size type is rarely used for body copy in components. Always
+          left-align type; never center it.
+        </p>
       </Col>
     </Row>
 
@@ -144,7 +152,13 @@ export const Typography = () => (
         <span className="text-s">16px</span>
       </Col>
       <Col>
-        <p className="text-s">This is commonly used in layouts for long paragraphs with more than four lines. It is a good size for comfortable, long-form reading. Use this for longer body copy in components such as accordion, list or other components where space is limited. Preferably left-align this type; center aligning it sparingly.</p>
+        <p className="text-s">
+          This is commonly used in layouts for long paragraphs with more than
+          four lines. It is a good size for comfortable, long-form reading. Use
+          this for longer body copy in components such as accordion, list or
+          other components where space is limited. Preferably left-align this
+          type; center aligning it sparingly.
+        </p>
       </Col>
     </Row>
 
@@ -174,7 +188,9 @@ export const Typography = () => (
         <span className="text-s">16px</span>
       </Col>
       <Col>
-        <p>...lorem <a className="text-link">ipsum dolor </a>amet isis</p>
+        <p>
+          ...lorem <a className="text-link">ipsum dolor </a>amet isis
+        </p>
       </Col>
     </Row>
 
@@ -184,7 +200,10 @@ export const Typography = () => (
         <span className="text-s">16px</span>
       </Col>
       <Col>
-        <p className="label-xl">This is for use within components or UI elements to display labels, names and other short form information - complimentary to Text-M</p>
+        <p className="label-xl">
+          This is for use within components or UI elements to display labels,
+          names and other short form information - complimentary to Text-M
+        </p>
       </Col>
     </Row>
 
@@ -194,7 +213,10 @@ export const Typography = () => (
         <span className>14px</span>
       </Col>
       <Col>
-        <p className="label-l">This is for captions in a layout — not for body copy - complimentary to Text-S</p>
+        <p className="label-l">
+          This is for captions in a layout — not for body copy - complimentary
+          to Text-S
+        </p>
       </Col>
     </Row>
 
@@ -204,7 +226,10 @@ export const Typography = () => (
         <span className="text-s">12px</span>
       </Col>
       <Col>
-        <p className="label-m">This is for use as tertiary/caption/label or explanatory helper text that appears below a field title within a component.</p>
+        <p className="label-m">
+          This is for use as tertiary/caption/label or explanatory helper text
+          that appears below a field title within a component.
+        </p>
       </Col>
     </Row>
 
@@ -214,7 +239,10 @@ export const Typography = () => (
         <span className="text-s">12px</span>
       </Col>
       <Col>
-        <a className="label-s">This is for se as tertiary/caption/label or explanatory helper text that appears below a field title within a component.</a>
+        <p className="label-s">
+          This is for se as tertiary/caption/label or explanatory helper text
+          that appears below a field title within a component.
+        </p>
       </Col>
     </Row>
   </>
