@@ -1,0 +1,86 @@
+<!--- ButtonToggle.stories.mdx --->
+
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+
+import ButtonToggle from './ButtonToggle';
+
+<Meta
+  title="Components/Actions/Button Toggle"
+  component={ButtonToggle}
+  decorators={[withDesign]}
+/>
+
+# Button Toggle
+
+The Toggle button is a button which have a icon to show the active state.
+
+export const Template = (args) => <ButtonToggle {...args} />;
+
+export const argTypes = {
+  className: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssStyles: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssInternalPrefix: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  onClick: {
+    table: {
+      category: 'Events',
+    },
+  },
+};
+
+<Canvas>
+  <Story
+    name="Button\ Toggle"
+    args={{
+      children: 'Selection',
+      disabled: false,
+      active: false,
+    }}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=134%3A3299',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## States
+
+<Preview>
+  <div>
+    <ButtonToggle>Selection</ButtonToggle>
+    <p>Default</p>
+    <ButtonToggle className="hover">Selection</ButtonToggle>
+    <p>Hover</p>
+    <ButtonToggle active={true}>Selection</ButtonToggle>
+    <p>Active</p>
+    <ButtonToggle disabled={true}>Selection</ButtonToggle>
+    <p>Disabled</p>
+    <ButtonToggle disabled={true} active={true}>
+      Selection
+    </ButtonToggle>
+    <p>Active and Disabled</p>
+  </div>
+</Preview>
+
+## Properties
+
+<ArgsTable of={ButtonToggle} />
