@@ -37,6 +37,7 @@
   color: $mchWhite;
   background-color: $mchBlack;
   border-color: $mchBlack;
+  box-shadow: none;
 
   &:hover,
   &.hover {
@@ -60,7 +61,6 @@
   &.focus {
     background-color: $mchGrey500;
     border-color: $mchGrey500;
-    box-shadow: none;
   }
 
   svg {
@@ -70,10 +70,10 @@
 
 .btn-secondary {
   text-transform: uppercase;
-
   color: $mchBlack;
   background-color: $mchWhite;
   border-color: $mchBlack;
+  box-shadow: none;
 
   &:hover,
   &.hover {
@@ -98,7 +98,6 @@
   &.focus {
     background-color: $mchGrey200;
     border-color: $mchBlack;
-    box-shadow: none;
   }
 
   svg {
@@ -112,6 +111,7 @@
   font-weight: bold;
   font-size: 16px;
   padding: 0px;
+  box-shadow: none;
 
   &:hover,
   &.hover {
@@ -138,6 +138,7 @@
   padding-bottom: $spacing-3;
   border: none;
   background-color: transparent;
+  box-shadow: none;
 
   &:hover,
   &.hover {
@@ -151,13 +152,15 @@
     background-color: $mchWhite;
     color: $mchGrey400;
     border-color: $mchGrey400;
+
+    svg {
+      fill: $mchGrey500;
+    }
   }
 
   &:focus,
   &.focus {
     background-color: $mchGrey200;
-    border-color: $mchBlack;
-    box-shadow: none;
   }
 
   svg {
@@ -185,7 +188,6 @@
   &.focus {
     background-color: $mchGrey200;
     border-color: $mchGrey200;
-    box-shadow: none;
 
     svg {
       fill: $mchBlack;
@@ -267,5 +269,34 @@
     background-color: $mchWhite;
     color: $mchGrey400;
     border-color: $mchGrey400;
+  }
+}
+
+.btn-backtotop {
+  width: $btn-backtotop-size;
+  height: $btn-backtotop-size;
+  border-radius: 100%;
+  padding: 0;
+  box-shadow: 0px 4px 16px rgba(29, 35, 39, 0.12);
+
+  &:hover,
+  &.hover {
+    width: 72px;
+    height: 72px;
+    background-color: $mchGrey100;
+    border-color: $mchGrey100;
+  }
+
+  &:focus,
+  &.focus {
+    width: 72px;
+    height: 72px;
+    background-color: $mchGrey200;
+    border-color: $mchGrey200;
+    box-shadow: 0px 4px 16px rgba(29, 35, 39, 0.12);
+  }
+
+  svg {
+    fill: $mchBlack;
   }
 }

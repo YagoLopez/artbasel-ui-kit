@@ -10,6 +10,7 @@ export const IconList = [
   'archive',
   'attach',
   'backarrow',
+  'backtotoparrow',
   'backarrow-button',
   'calendar',
   'camera',
@@ -211,6 +212,26 @@ const Icon = ({
               fillRule="evenodd"
               clipRule="evenodd"
               d="M10.75 17.847l-5.24-5.141L21 12.607l-.033-1.516-15.522-.033 5.273-5.207-1.12-1.12-7.218 7.118L9.63 19l1.12-1.153z"
+            />
+          </svg>
+        );
+      case 'backtotoparrow':
+        return (
+          <svg
+            {...rest}
+            data-testid="mch-icon"
+            height={height || size}
+            width={width || size}
+            onClick={onClick}
+            style={style}
+            className={className}
+            fill={color}
+            viewBox="0 0 24 24"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M6.153 10.7526L11.2942 5.5126L11.393 21.002L12.909 20.969L12.942 5.44669L18.149 10.7197L19.2695 9.59916L12.151 2.38177L4.99953 9.63212L6.153 10.7526Z"
             />
           </svg>
         );
