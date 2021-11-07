@@ -4,7 +4,6 @@ import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
 import GridDemo from './GridDemo';
 import { Container, Row, Col } from './index';
-import './storybook-grid.css';
 
 <Meta
   title="Basic/Grid System"
@@ -18,6 +17,11 @@ export const argTypes = {
   elements: {
     table: {
       category: 'Elements',
+    },
+  },
+  gutter: {
+    table: {
+      category: 'Gutter',
     },
   },
   xs: {
@@ -52,6 +56,24 @@ export const argTypes = {
   },
 };
 
+<Story
+  name="Grid System"
+  parameters={{ docs: { disable: true } }}
+  argTypes={argTypes}
+  args={{
+    elements: 24,
+    gutter: 'g-5 g-md-7 g-lg-8',
+    xs: 12,
+    sm: 6,
+    md: 4,
+    lg: 3,
+    xl: 2,
+    xxl: 1,
+  }}
+>
+  {Template.bind({})}
+</Story>
+
 # Grid System
 
 Our grid system uses a series of containers, rows, and columns to layout and align content. It’s built with flexbox and is fully responsive. Below is an example and an in-depth look at how the grid comes together.
@@ -62,9 +84,9 @@ Containers provide a means to center and horizontally pad your site’s contents
 
 <Canvas>
   <Container>
-    <Row>
+    <Row gutter="g-0">
       <Col>
-        <div>1 of 1</div>
+        <div className="p-5 border bg-light">1 of 1</div>
       </Col>
     </Row>
   </Container>
@@ -76,9 +98,9 @@ You can use <b>&lt;Container fluid /&gt;</b> for width: 100% across all viewport
 
 <Canvas>
   <Container fluid>
-    <Row>
+    <Row gutter="g-0">
       <Col>
-        <div>1 of 1</div>
+        <div className="p-5 border bg-light">1 of 1</div>
       </Col>
     </Row>
   </Container>
@@ -88,9 +110,9 @@ You can set breakpoints for the <b>fluid</b> prop. Setting it to a breakpoint (s
 
 <Canvas>
   <Container fluid="md">
-    <Row>
+    <Row gutter="g-0">
       <Col>
-        <div>1 of 1</div>
+        <div className="p-5 border bg-light">1 of 1</div>
       </Col>
     </Row>
   </Container>
@@ -106,23 +128,23 @@ For example, here are two grid layouts that apply to every device and viewport, 
 
 <Canvas>
   <Container>
-    <Row>
+    <Row gutter="g-0">
       <Col>
-        <div>1 of 2</div>
+        <div className="p-5 border bg-light">1 of 2</div>
       </Col>
       <Col>
-        <div>2 of 2</div>
+        <div className="p-5 border bg-light">2 of 2</div>
       </Col>
     </Row>
-    <Row>
+    <Row gutter="g-0">
       <Col>
-        <div>1 of 3</div>
+        <div className="p-5 border bg-light">1 of 3</div>
       </Col>
       <Col>
-        <div>1 of 3</div>
+        <div className="p-5 border bg-light">2 of 3</div>
       </Col>
       <Col>
-        <div>1 of 3</div>
+        <div className="p-5 border bg-light">3 of 3</div>
       </Col>
     </Row>
   </Container>
@@ -134,26 +156,26 @@ Auto-layout for flexbox grid columns also means you can set the width of one col
 
 <Canvas>
   <Container>
-    <Row>
+    <Row gutter="g-0">
       <Col>
-        <div>1 of 3</div>
+        <div className="p-5 border bg-light">1 of 3</div>
       </Col>
       <Col xs={6}>
-        <div>2 of 3 (wider)</div>
+        <div className="p-5 border bg-light">2 of 3 (wider)</div>
       </Col>
       <Col>
-        <div>3 of 3</div>
+        <div className="p-5 border bg-light">3 of 3</div>
       </Col>
     </Row>
-    <Row>
+    <Row gutter="g-0">
       <Col>
-        <div>1 of 3</div>
+        <div className="p-5 border bg-light">1 of 3</div>
       </Col>
       <Col xs={5}>
-        <div>2 of 3 (wider)</div>
+        <div className="p-5 border bg-light">2 of 3 (wider)</div>
       </Col>
       <Col>
-        <div>3 of 3</div>
+        <div className="p-5 border bg-light">3 of 3</div>
       </Col>
     </Row>
   </Container>
@@ -165,54 +187,54 @@ Set the column value (for any breakpoint size) to "auto" to size columns based o
 
 <Canvas>
   <Container>
-    <Row className="justify-content-md-center">
+    <Row gutter="g-0" className="justify-content-md-center">
       <Col xs lg="2">
-        <div>1 of 3</div>
+        <div className="p-5 border bg-light">1 of 3</div>
       </Col>
       <Col md="auto">
-        <div>Variable width content</div>
+        <div className="p-5 border bg-light">Variable width content</div>
       </Col>
       <Col xs lg="2">
-        <div>3 of 3</div>
+        <div className="p-5 border bg-light">3 of 3</div>
       </Col>
     </Row>
-    <Row>
+    <Row gutter="g-0">
       <Col>
-        <div>1 of 3</div>
+        <div className="p-5 border bg-light">1 of 3</div>
       </Col>
       <Col md="auto">
-        <div>Variable width content</div>
+        <div className="p-5 border bg-light">Variable width content</div>
       </Col>
       <Col xs lg="2">
-        <div>3 of 3</div>
+        <div className="p-5 border bg-light">3 of 3</div>
       </Col>
     </Row>
   </Container>
 </Canvas>
 
-### Responsive grids
+## Responsive grids
 
 The Col lets you specify column widths across 6 breakpoint sizes (xs, sm, md, lg, xl and xxl). For every breakpoint, you can specify the amount of columns to span, or set the prop to <Col lg={true} /> for auto layout widths.
 
 <Canvas>
   <Container>
-    <Row>
+    <Row gutter="g-0">
       <Col sm="8">
-        <div>sm=8</div>
+        <div className="p-5 border bg-light">sm=8</div>
       </Col>
       <Col sm="4">
-        <div>sm=4</div>
+        <div className="p-5 border bg-light">sm=4</div>
       </Col>
     </Row>
-    <Row>
+    <Row gutter="g-0">
       <Col sm>
-        <div>sm=true</div>
+        <div className="p-5 border bg-light">sm=true</div>
       </Col>
       <Col sm>
-        <div>sm=true</div>
+        <div className="p-5 border bg-light">sm=true</div>
       </Col>
       <Col sm>
-        <div>sm=true</div>
+        <div className="p-5 border bg-light">sm=true</div>
       </Col>
     </Row>
   </Container>
@@ -222,58 +244,171 @@ You can also mix and match breakpoints to create different grids depending on th
 
 <Canvas>
   <Container>
-    <Row>
+    <Row gutter="g-0">
       <Col xs={12} md={8}>
-        <div>xs=12 md=8</div>
+        <div className="p-5 border bg-light">xs=12 md=8</div>
       </Col>
       <Col xs={6} md={4}>
-        <div>xs=6 md=4</div>
+        <div className="p-5 border bg-light">xs=6 md=4</div>
       </Col>
     </Row>
     {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
-    <Row>
+    <Row gutter="g-0">
       <Col xs={6} md={4}>
-        <div>xs=6 md=4</div>
+        <div className="p-5 border bg-light">xs=6 md=4</div>
       </Col>
       <Col xs={6} md={4}>
-        <div>xs=6 md=4</div>
+        <div className="p-5 border bg-light">xs=6 md=4</div>
       </Col>
       <Col xs={6} md={4}>
-        <div>xs=6 md=4</div>
+        <div className="p-5 border bg-light">xs=6 md=4</div>
       </Col>
     </Row>
     {/* Columns are always 50% wide, on mobile and desktop */}
-    <Row>
+    <Row gutter="g-0">
       <Col xs={6}>
-        <div>xs=6</div>
+        <div className="p-5 border bg-light">xs=6</div>
       </Col>
       <Col xs={6}>
-        <div>xs=6</div>
+        <div className="p-5 border bg-light">xs=6</div>
       </Col>
     </Row>
   </Container>
 </Canvas>
 
-For further information abaout our Gris System and it's API, please check this [link](https://react-bootstrap.github.io/layout/grid/#grid-props).
+For further information about our Gris System and it's API, please check this [link](https://react-bootstrap.github.io/layout/grid/#grid-props).
 
-## Interactive Demo
+## Gutters
 
-This a smal demo test, with interactive parameters which can be changed on Canvas tab.
+Gutters are the padding between your columns, used to responsively space and align content in the Bootstrap grid system.
+
+### How they work
+
+- Gutters are the gaps between column content, created by horizontal padding. We set padding-right and padding-left on each column, and use negative margin to offset that at the start and end of each row to align content.
+
+- Gutters match our grid to the padding and margin spacing scale (see [Spacing page](/story/basic--spacing)).
+
+- Gutters can be responsively adjusted. Use breakpoint-specific gutter classes to modify horizontal gutters, vertical gutters, and all gutters.
+
+### How to use
+
+To use custom gutters on a grid, add the prop gutter to the <b>&lt;Row /&gt;</b> and the values as class names. Example: <b>&lt;Row gutter="g-5" /&gt;</b>
+
+By default, if no gutter prop is defined on the <b>&lt;Row /&gt;</b> element, our grid system will use a <b>pre-defined horizontal and vertical gutters</b> based on the [Layout](/story/basic-layout) specifications (<code>g-5 g-md-7 g-lg-8</code>).
+
+See bellow examples for more details.
+
+### Horizontal Gutters
+
+.gx-\* classes can be used to control the horizontal gutter widths. Example: <code>gx-5</code>.
 
 <Canvas>
-  <Story
-    name="Grid System"
-    argTypes={argTypes}
-    args={{
-      elements: 24,
-      xs: 12,
-      sm: 6,
-      md: 4,
-      lg: 3,
-      xl: 2,
-      xxl: 1,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+  <Container className="overflow-hidden">
+    <Row gutter="gx-5">
+      <Col xs={6}>
+        <div className="p-5 border bg-light">1 of 4</div>
+      </Col>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">2 of 4</div>
+      </Col>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">3 of 4</div>
+      </Col>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">4 of 4</div>
+      </Col>
+    </Row>
+  </Container>
+</Canvas>
+
+### Vertical gutters
+
+.gy-\* classes can be used to control the vertical gutter widths. Example: <code>gy-5</code>.
+
+<Canvas>
+  <Container>
+    <Row gutter="gy-5">
+      <Col xs={6}>
+        <div className="p-5 border bg-light">1 of 4</div>
+      </Col>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">2 of 4</div>
+      </Col>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">3 of 4</div>
+      </Col>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">4 of 4</div>
+      </Col>
+    </Row>
+  </Container>
+</Canvas>
+
+### Horizontal & vertical gutters
+
+.g-\* classes can be used to control the horizontal gutter widths. Example: <code>g-5</code>.
+
+<Canvas>
+  <Container>
+    <Row gutter="g-5">
+      <Col xs={6}>
+        <div className="p-5 border bg-light">1 of 4</div>
+      </Col>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">2 of 4</div>
+      </Col>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">3 of 4</div>
+      </Col>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">4 of 4</div>
+      </Col>
+    </Row>
+  </Container>
+</Canvas>
+
+### Responsive gutters
+
+Gutters classes can use breakpoints, like margins and paddings to apply responsive gutters. Example: <code>g-1 g-sm-2 g-md-3 g-lg-5 g-xl-7</code>.
+
+<Canvas>
+  <Container>
+    <Row gutter="g-1 g-sm-2 g-md-3 g-lg-5 g-xl-7">
+      <Col xs={6}>
+        <div className="p-5 border bg-light">1 of 4</div>
+      </Col>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">2 of 4</div>
+      </Col>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">3 of 4</div>
+      </Col>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">4 of 4</div>
+      </Col>
+    </Row>
+  </Container>
+</Canvas>
+
+### Default gutters
+
+If no gutter prop is defined on the <b>&lt;Row /&gt;</b> element, our grid system will use a <b>pre-defined horizontal and vertical gutters</b> based on the [Layout](/story/basic-layout) specifications (<code>g-5 g-md-7 g-lg-8</code>).
+
+<Canvas>
+  <Container>
+    <Row>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">1 of 4</div>
+      </Col>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">2 of 4</div>
+      </Col>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">3 of 4</div>
+      </Col>
+      <Col xs={6}>
+        <div className="p-5 border bg-light">4 of 4</div>
+      </Col>
+    </Row>
+  </Container>
 </Canvas>
