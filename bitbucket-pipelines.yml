@@ -72,11 +72,6 @@ pipelines:
     - step: *sonar
   pull-requests:
     '{feature/*,hotfix/*}':
-      - parallel:
-          - step: *lint
-          - step: *test
-          - step: *audit
-      - step: *sonar
       - step: *build
       - step:
           name: "Create Preview"
