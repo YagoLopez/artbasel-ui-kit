@@ -1,0 +1,131 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+import example from './ContentCard.example.json';
+import ContentCard from './ContentCard';
+
+<Meta 
+  title="Components/Structure/ContentCard"
+  component={ContentCard}
+  decorators={[withDesign]}
+/>
+
+export const Template = (args) => <ContentCard {...args} />;
+
+export const argTypes = {
+  cssStyles: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssInternalPrefix: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  size: {
+    table: {
+      category: 'ContentCard',
+    },
+  },
+  title: {
+    table: {
+      category: 'ContentCard',
+    },
+  },
+  description: {
+    table: {
+      category: 'ContentCard',
+    },
+  },
+  image: {
+    table: {
+      category: 'ContentCard',
+    },
+  },
+};
+
+export const generalArgs = {
+  title: example.title,
+  description: example.description,
+  image: example.image,
+};
+
+export const truncatedArgs = {
+  title: example.titleLong,
+  description: example.descriptionLong,
+  image: example.image,
+};
+
+# ContentCard
+
+Content on image card is one of the different types of content card displayed on the website.
+
+## Variants
+
+### Size S 
+
+<Canvas style={{width: '450px'}}>
+  <Story
+    name="ContentCard Size S"
+    args={generalArgs}
+    argTypes={{argTypes}}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size L
+
+<Canvas style={{width: '1300px'}}>
+  <Story
+    name="ContentCard Size L"
+    args={{
+      ...generalArgs,
+      size: 'l',
+    }}
+    argTypes={{argTypes}}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Truncated text
+
+<Canvas style={{width: '450px'}}>
+  <Story
+    name="ContentCard truncated text"
+    args={truncatedArgs}
+    argTypes={{argTypes}}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+## Properties
+
+<ArgsTable of={ContentCard} />
