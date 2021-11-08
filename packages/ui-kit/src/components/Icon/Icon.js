@@ -18,6 +18,7 @@ export const IconList = [
   'certificate',
   'chat',
   'check',
+  'checkbox-check',
   'close',
   'collections-add',
   'colour',
@@ -2132,6 +2133,21 @@ const Icon = ({
             />
           </svg>
         );
+        case 'checkbox-check':
+          return (
+            <svg {...rest}
+            data-testid="mch-icon"
+            height={height || size}
+            width={width || size}
+            onClick={onClick}
+            style={style}
+            className={className}
+            fill={color}
+            viewBox="0 0 24 24">
+                <path fillRule="evenodd"
+                clipRule="evenodd" d="M3.57537 8.42L0 4.84463L1.26032 3.58431L3.57537 5.89042L9.4658 0L10.7261 1.26926L3.57537 8.42Z"/>
+             </svg>
+          );
     }
   };
 
