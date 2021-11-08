@@ -1,0 +1,203 @@
+<!--- Typography.stories.mdx --->
+
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+
+import { Container, Row, Col } from 'react-bootstrap';
+
+import TypographyDemo from './TypographyDemo';
+
+<Meta title="Basic/Typography" decorators={[withDesign]} />
+
+export const Template = (args) => <TypographyDemo {...args} />;
+
+export const argTypes = {
+  headersTextSample: {
+    name: 'Header Text Sample',
+    table: {
+      category: 'Header',
+    },
+  },
+  textSample: {
+    name: 'Text Classes Sample',
+    table: {
+      category: 'Text Classes',
+    },
+  },
+};
+
+<Story
+  name="Typography"
+  parameters={{ docs: { disable: true } }}
+  argTypes={argTypes}
+  args={{
+    headersTextSample: 'The quick brown fox jumps over the lazy dog',
+    textSample:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  }}
+  parameters={{
+    design: {
+      name: 'Figma Design',
+      type: 'figma',
+      url:
+        'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=676%3A24536',
+    },
+  }}
+>
+  {Template.bind({})}
+</Story>
+
+# Typography
+
+Typography is our system of custom fonts which helps create clear hierarchies, guide users through the experience and organise information.
+
+## Typography specifications
+
+All typograhy specifications can be accessed from this <a href="./mch-typography.pdf" target="_blank">link</a>.
+
+## Fluid Type
+
+We use these Fluid styles for headings depending on the breakpoints. The font for headings is <b>Art Basel Headline</b> and is used to communicate context and important information. It is used in multiple scenarios but never within body text.
+
+Please <a href="./mch-typography-breakpoints.pdf" target="_blank">check here</a> the breakpoints definitions for font sizes and line heights.
+
+### Headings
+
+Headings are accessible through the <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code> and <code>h1</code> tags.
+
+<code>h1</code>
+
+<Canvas>
+  <h1>The quick brown fox jumps over the lazy dog</h1>
+</Canvas>
+
+<code>h2</code>
+
+<Canvas>
+  <h2>The quick brown fox jumps over the lazy dog</h2>
+</Canvas>
+
+<code>h3</code>
+
+<Canvas>
+  <h3>The quick brown fox jumps over the lazy dog</h3>
+</Canvas>
+
+<code>h4</code>
+
+<Canvas>
+  <h4>The quick brown fox jumps over the lazy dog</h4>
+</Canvas>
+
+<code>h5</code>
+
+<Canvas>
+  <h5>The quick brown fox jumps over the lazy dog</h5>
+</Canvas>
+
+### Paragrahs Heading Styles
+
+Use as auxiliary texts in headings, and are accessible using classes.
+
+<code>.text-paragraph-1</code>
+
+<Canvas>
+  <p className="text-paragraph-1">
+    The quick brown fox jumps over the lazy dog
+  </p>
+</Canvas>
+
+<code>.text-paragraph-2</code>
+
+<Canvas>
+  <p className="text-paragraph-2">
+    The quick brown fox jumps over the lazy dog
+  </p>
+</Canvas>
+
+## Fixed Type
+
+We use these fixed styles for body, links or supporting styles across all our breakpoints. The font used for these styles is <b>Art Basel Text</b>. It is used for all body text in any given situation, with no exceptions.
+
+### Body text
+
+Are accessible using classes.
+
+<code>.text-small</code>
+
+<Canvas>
+  <p className="text-small">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Vel pharetra vel turpis
+    nunc eget. Urna molestie at elementum eu facilisis sed odio morbi. Lorem
+    ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Vel pharetra vel turpis nunc
+    eget. Urna molestie at elementum eu facilisis sed odio morbi.
+  </p>
+</Canvas>
+
+<code>.text-medium</code>
+
+<Canvas>
+  <p className="text-medium">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Vel pharetra vel turpis
+    nunc eget. Urna molestie at elementum eu facilisis sed odio morbi. Lorem
+    ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Vel pharetra vel turpis nunc
+    eget. Urna molestie at elementum eu facilisis sed odio morbi.
+  </p>
+</Canvas>
+
+<code>.text-large</code>
+
+<Canvas>
+  <p className="text-large">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Vel pharetra vel turpis
+    nunc eget. Urna molestie at elementum eu facilisis sed odio morbi. Lorem
+    ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Vel pharetra vel turpis nunc
+    eget. Urna molestie at elementum eu facilisis sed odio morbi.
+  </p>
+</Canvas>
+
+### Supporting text
+
+Are accessible using classes.
+
+<code>.text-label-small</code>
+
+<Canvas>
+  <p className="text-label-small">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </p>
+</Canvas>
+
+<code>.text-label-medium</code>
+
+<Canvas>
+  <p className="text-label-medium">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </p>
+</Canvas>
+
+<code>.text-label-large</code>
+
+<Canvas>
+  <p className="text-label-large">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </p>
+</Canvas>
+
+<code>.text-label-xlarge</code>
+
+<Canvas>
+  <p className="text-label-xlarge">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </p>
+</Canvas>

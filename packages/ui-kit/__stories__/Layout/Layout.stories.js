@@ -3,7 +3,7 @@ import React from 'react';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Basic/Layout 🚧 ',
+  title: 'Basic/Layout',
   parameters: {
     previewTabs: {
       'storybook/docs/panel': {
@@ -16,7 +16,7 @@ export default {
 
 export const Layout = () => (
   <>
-    <h1>Layout 🚧 </h1>
+    <h1>Layout</h1>
     <p>
       The layout is simple and clearly structured and offers a high level of
       flexibility.

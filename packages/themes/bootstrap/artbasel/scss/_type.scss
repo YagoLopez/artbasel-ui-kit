@@ -1,26 +1,54 @@
-/* Standard */
+/*  Headers definitions  */
+
 h1 {
   letter-spacing: 0px;
   color: $mchBlack;
-  @media (max-width: $grid-breakpoint-md) {
-    font-size: 30px;
-    line-height: 35px;
+
+  @include media-breakpoint-up(xs) {
+    font-size: 1.875rem;
+    line-height: 2.1875rem;
   }
-  @media (min-width: $grid-breakpoint-md) and (max-width: $grid-breakpoint-lg) {
-    font-size: 36px;
-    line-height: 41px;
+  @include media-breakpoint-up(md) {
+    font-size: 2.25rem;
+    line-height: 2.5625rem;
   }
-  @media (min-width: $grid-breakpoint-lg) and (max-width: $grid-breakpoint-xl) {
-    font-size: 40px;
-    line-height: 46px;
+  @include media-breakpoint-up(lg) {
+    font-size: 2.5rem;
+    line-height: 2.875rem;
   }
-  @media (min-width: $grid-breakpoint-xl) and (max-width: $grid-breakpoint-xxl) {
-    font-size: 42px;
-    line-height: 48px;
+  @include media-breakpoint-up(xl) {
+    font-size: 2.625rem;
+    line-height: 3rem;
   }
-  @media (min-width: $grid-breakpoint-xxl) {
-    font-size: 48px;
-    line-height: 50px;
+  @include media-breakpoint-up(xxl) {
+    font-size: 3rem;
+    line-height: 3.125rem;
+  }
+}
+
+h1.display-1 {
+  letter-spacing: 0px;
+  color: $mchBlack;
+
+  @include media-breakpoint-up(xs) {
+    font-size: 2.25rem;
+    line-height: 2.5625rem;
+  }
+  @include media-breakpoint-up(md) {
+    font-size: 2.5rem;
+    line-height: 2.875rem;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 2.625rem;
+    line-height: 3rem;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 3rem;
+    line-height: 3.125rem;
+  }
+  @include media-breakpoint-up(xxl) {
+    font-size: 3.125rem !important;
+    line-height: 3.25rem;
   }
 }
 
@@ -28,17 +56,17 @@ h2 {
   letter-spacing: 0px;
   color: $mchBlack;
 
-  @media (max-width: $grid-breakpoint-md) {
-    font-size: 26px;
-    line-height: 30px;
+  @include media-breakpoint-up(xs) {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
   }
-  @media (min-width: $grid-breakpoint-md) and (max-width: $grid-breakpoint-lg) {
-    font-size: 30px;
-    line-height: 34px;
+  @include media-breakpoint-up(md) {
+    font-size: 1.875rem;
+    line-height: 2.125rem;
   }
-  @media (min-width: $grid-breakpoint-lg) {
-    font-size: 36px;
-    line-height: 42px;
+  @include media-breakpoint-up(lg) {
+    font-size: 2.25rem;
+    line-height: 2.625rem;
   }
 }
 
@@ -46,17 +74,17 @@ h3 {
   letter-spacing: 0px;
   color: $mchBlack;
 
-  @media (max-width: $grid-breakpoint-md) {
-    font-size: 24px;
-    line-height: 28px;
+  @include media-breakpoint-up(xs) {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
   }
-  @media (min-width: $grid-breakpoint-md) and (max-width: $grid-breakpoint-lg) {
-    font-size: 26px;
-    line-height: 30px;
+  @include media-breakpoint-up(md) {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
   }
-  @media (min-width: $grid-breakpoint-lg) {
-    font-size: 30px;
-    line-height: 34px;
+  @include media-breakpoint-up(lg) {
+    font-size: 1.875rem;
+    line-height: 2.125rem;
   }
 }
 
@@ -64,49 +92,102 @@ h4 {
   letter-spacing: 0px;
   color: $mchBlack;
 
-  @media (max-width: $grid-breakpoint-md) {
-    font-size: 20px;
-    line-height: 23px;
+  @include media-breakpoint-up(xs) {
+    font-size: 1.25rem;
+    line-height: 1.4375rem;
   }
-  @media (min-width: $grid-breakpoint-md) {
-    font-size: 24px;
-    line-height: 28px;
+  @include media-breakpoint-up(md) {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
   }
 }
 
 h5 {
   letter-spacing: 0px;
   color: $mchBlack;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
 }
 
-.text-link {
+/*  ------------------------  */
+/*  Text classes definitions  */
+/*  ------------------------  */
+
+/*  Title style "Paragraph"  */
+
+.text-paragraph-1 {
+  letter-spacing: 0px;
   color: $mchBlack;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-  border: 0;
-  cursor: pointer;
 
-  &:hover,
-  &.hover {
-    text-decoration: underline;
+  @include media-breakpoint-up(xs) {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
   }
-
-  &:disabled,
-  &.disabled {
-    color: $mchGrey400;
-
-    svg {
-      fill: $mchGrey400;
-    }
-  }
-
-  svg {
-    fill: $mchBlack;
+  @include media-breakpoint-up(md) {
+    font-size: 1.875rem;
+    line-height: 2.125rem;
   }
 }
+
+.text-paragraph-2 {
+  letter-spacing: 0px;
+  color: $mchBlack;
+
+  @include media-breakpoint-up(xs) {
+    font-size: 1.25rem;
+    line-height: 1.4375rem;
+  }
+  @include media-breakpoint-up(md) {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+  }
+}
+
+/*  Body Text  */
+
+p.text-large {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+p.text-medium {
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
+p.text-small {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+}
+
+/*  Text Style "Labels"  */
+
+p {
+  .text-label-xlarge {
+    font-size: 1rem;
+    line-height: 1.375rem;
+    font-weight: bold;
+  }
+  .text-label-large {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-weight: bold;
+  }
+
+  .text-label-medium {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: bold;
+  }
+
+  .text-label-small {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.3px;
+  }
+}
+
+//// ---- to be removed from here to buttons section
 
 .external-link {
   color: $mchBlack;
@@ -139,153 +220,29 @@ h5 {
   }
 }
 
-.breakpoints-storybook-text::before {
-  @media (max-width: $grid-breakpoint-sm) {
-    content: 'XS - bellow ' + $grid-breakpoint-sm;
-  }
-  @media (min-width: $grid-breakpoint-sm) and (max-width: $grid-breakpoint-md) {
-    content: 'SM (' + $grid-breakpoint-sm + ' - ' + $grid-breakpoint-md + ')';
-  }
-  @media (min-width: $grid-breakpoint-md) and (max-width: $grid-breakpoint-lg) {
-    content: 'MD (' + $grid-breakpoint-md + ' - ' + $grid-breakpoint-lg + ')';
-  }
-  @media (min-width: $grid-breakpoint-lg) and (max-width: $grid-breakpoint-xl) {
-    content: 'LG (' + $grid-breakpoint-lg + ' - ' + $grid-breakpoint-xl + ')';
-  }
-  @media (min-width: $grid-breakpoint-xl) and (max-width: $grid-breakpoint-xxl) {
-    content: 'XL (' + $grid-breakpoint-xl + ' - ' + $grid-breakpoint-xxl + ')';
-  }
-  @media (min-width: $grid-breakpoint-xxl) {
-    content: 'XXL (above ' + $grid-breakpoint-xxl + ')';
-  }
-}
-
-.p1{
-  letter-spacing: 0px;
+.text-link {
   color: $mchBlack;
-
-  @media (max-width: $grid-breakpoint-md) {
-    font-size: 24px;
-    line-height: 28px;
-  }
-  @media (min-width: $grid-breakpoint-md) {
-    font-size: 30px;
-    line-height: 34px;
-  }
-}
-
-.p2{
-  letter-spacing: 0px;
-  color: $mchBlack;
-
-  @media (max-width: $grid-breakpoint-md) {
-    font-size: 20px;
-    line-height: 23px;
-  }
-  @media (min-width: $grid-breakpoint-md) {
-    font-size: 24px;
-    line-height: 28px;
-  }
-}
-
-.text-l{
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.text-m{
   font-size: 16px;
-  line-height: 22px;
-}
-
-.text-s{
-  font-size: 14px;
-  line-height: 18px;
-}
-
-.label-xl{
-  font-size: 16px;
-  line-height: 22px;
   font-weight: bold;
-}
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
 
-.label-l{
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: bold;
-}
-
-.label-m{
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
-}
-
-.label-s{
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.3px;
-}
-
-/* Typography Size */
-
-.h5-storybook-text-size::before{
-  content: '18px';
-}
-
-.h4-storybook-text-size::before{
-  content: '24px';
-}
-
-.h3-storybook-text-size::before{
-  content: '30px';
-}
-
-.h2-storybook-text-size::before{
-  content: '36px';
-}
-
-@media (max-width: $grid-breakpoint-md) {
-  .h1-storybook-text-size::before{
-    content: '30px'
+  &:hover,
+  &.hover {
+    text-decoration: underline;
   }
-  .h2-storybook-text-size::before{
-    content: '26px';
-  }
-  .h3-storybook-text-size::before{
-    content: '24px';
-  }
-  .h4-storybook-text-size::before{
-    content: '20px';
-  }
-}
 
-@media (min-width: $grid-breakpoint-md) and (max-width: $grid-breakpoint-lg) {
-  .h1-storybook-text-size::before{
-    content: '36px';
-  }
-  .h2-storybook-text-size::before{
-    content: '30px';
-  }
-  .h3-storybook-text-size::before{
-    content: '26px';
-  }
-}
+  &:disabled,
+  &.disabled {
+    color: $mchGrey400;
 
-@media (min-width: $grid-breakpoint-lg) and (max-width: $grid-breakpoint-xl) {
-  .h1-storybook-text-size::before{
-    content: '40px';
+    svg {
+      fill: $mchGrey400;
+    }
   }
-}
 
-@media (min-width: $grid-breakpoint-xl) and (max-width: $grid-breakpoint-xxl) {
-  .h1-storybook-text-size::before{
-    content: '42px';
-  }
-}
-
-@media (min-width: $grid-breakpoint-xxl) {
-  .h1-storybook-text-size::before{
-    content: '48px';
+  svg {
+    fill: $mchBlack;
   }
 }

@@ -1,0 +1,22 @@
+/* responsive breakpoints text helper */
+
+.breakpoints-storybook-text::before {
+  @media (max-width: $grid-breakpoint-sm) {
+    content: 'XS (bellow 413px)';
+  }
+  @media (min-width: $grid-breakpoint-sm) and (max-width: $grid-breakpoint-md) {
+    content: 'SM (413 - 185px)';
+  }
+  @media (min-width: $grid-breakpoint-md) and (max-width: $grid-breakpoint-lg) {
+    content: 'MD (786 - 1023px)';
+  }
+  @media (min-width: $grid-breakpoint-lg) and (max-width: $grid-breakpoint-xl) {
+    content: 'LG (1024 - 1279px)';
+  }
+  @media (min-width: $grid-breakpoint-xl) and (max-width: $grid-breakpoint-xxl) {
+    content: 'XL (1280 - 1536px)';
+  }
+  @media (min-width: $grid-breakpoint-xxl) {
+    content: 'XXL (above 1536px)';
+  }
+}
