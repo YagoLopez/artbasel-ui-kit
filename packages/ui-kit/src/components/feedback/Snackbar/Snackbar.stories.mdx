@@ -3,12 +3,16 @@
 import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
 
-import Snackbar from './Snackbar.js';
+import Snackbar from './Snackbar';
+import SnackbarDemo from './SnackbarDemo';
+import SnackbarContainer from './SnackbarContainer';
+import Button from '../../actions/Button/Button';
+
 import { IconList } from '../../Icon';
 
 <Meta
   title="Components/Feedback/Snackbar"
-  component={Snackbar}
+  component={SnackbarDemo}
   decorators={[withDesign]}
 />
 
@@ -17,7 +21,7 @@ import { IconList } from '../../Icon';
 Snackbars allow users to show messages that inform about a
 result of action or error if it finalize with error.
 
-export const Template = args => <Snackbar {...args} />;
+export const Template = (args) => <SnackbarDemo {...args} />;
 
 export const argTypes = {
   leadingIcon: {
@@ -32,12 +36,40 @@ export const argTypes = {
       message: 'Saved in collection',
       leadingIcon: 'download',
       actionText: 'undo',
-      onAction: () => console.info('OnAction clicked'),
+      onAction: () => {},
       delay: 6000,
-      autohide: false,
+      autohide: true,
+      show: true,
+      type: 'default',
+      onClose: () => {},
     }}
     argTypes={argTypes}
     parameters={{
+      docs: {
+        source: {
+          code: `const YourComponent = ({ message, leadingIcon, actionText, autohide, type, onAction }) => {
+  const [show, setShow] = useState(false);
+  return (
+    <>
+      <SnackbarContainer position="top-end">
+        <Snackbar
+          message={message}
+          leadingIcon={leadingIcon}
+          autohide={autohide}
+          show={show}
+          type={type}
+          onClose={() => setShow(false)}
+          actionText={actionText}
+          onAction={onAction}
+        />
+      </SnackbarContainer>
+      <Button variant="primary" onClick={() => setShow(true)}>
+        Show Snackbar
+      </Button>
+    </>
+  );`,
+        },
+      },
       design: {
         name: 'Figma Design',
         type: 'figma',
@@ -52,12 +84,13 @@ export const argTypes = {
 
 ## States
 
-<Preview>
+<Canvas>
   <div>
     <Snackbar
       message="Download started"
       leadingIcon="download"
       autohide={false}
+      show={true}
     />
     <p>Default</p>
     <Snackbar
@@ -65,11 +98,29 @@ export const argTypes = {
       onAction={() => {}}
       actionText="try again"
       type="error"
+      show={true}
+      autohide={false}
     />
     <p>Error</p>
   </div>
-</Preview>
+</Canvas>
 
 ## Properties
 
 <ArgsTable of={Snackbar} />
+
+## Placement
+
+Place snackbars by setting a position in a <b>&lt;SnackbarContainer /&gt;</b>. The top right is often used for notifications, as is the top middle.
+
+- position: 'top-start' | 'top-center' | 'top-end' | 'middle-start' | 'middle-center' | 'middle-end' | 'bottom-start' | 'bottom-center' | 'bottom-end'
+
+<Canvas>
+  <SnackbarContainer position="middle-center">
+    <Snackbar message="Test" show={true} />
+  </SnackbarContainer>
+</Canvas>
+
+## Properties
+
+<ArgsTable of={SnackbarContainer} />

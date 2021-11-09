@@ -7,7 +7,7 @@ const testSnackbarId = 'mch-snackbar';
 
 describe('Snackbar component', () => {
   test('should render snackbar', () => {
-    render(<Snackbar message="message" />);
+    render(<Snackbar message="message" show={true} />);
 
     const element = screen.getByTestId(testSnackbarId);
 
@@ -15,7 +15,7 @@ describe('Snackbar component', () => {
   });
 
   test('when show error should render error state', () => {
-    render(<Snackbar message="message" type="error" />);
+    render(<Snackbar message="message" show={true} type="error" />);
 
     const element = screen.getByTestId(testSnackbarId);
 
