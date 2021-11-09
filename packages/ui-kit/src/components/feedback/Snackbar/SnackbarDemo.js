@@ -13,6 +13,7 @@ const SnackbarDemo = ({
   autohide,
   type,
   onAction,
+  delay,
 }) => {
   const [show, setShow] = useState(false);
 
@@ -28,6 +29,7 @@ const SnackbarDemo = ({
           onClose={() => setShow(false)}
           actionText={actionText}
           onAction={onAction}
+          delay={delay}
         />
       </SnackbarContainer>
 

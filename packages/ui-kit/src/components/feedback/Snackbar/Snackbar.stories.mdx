@@ -21,7 +21,7 @@ import { IconList } from '../../Icon';
 Snackbars allow users to show messages that inform about a
 result of action or error if it finalize with error.
 
-export const Template = (args) => <SnackbarDemo {...args} />;
+export const Template = args => <SnackbarDemo {...args} />;
 
 export const argTypes = {
   leadingIcon: {
@@ -47,7 +47,7 @@ export const argTypes = {
     parameters={{
       docs: {
         source: {
-          code: `const YourComponent = ({ message, leadingIcon, actionText, autohide, type, onAction }) => {
+          code: `const YourComponent = ({ message, leadingIcon, actionText, autohide, type, onAction, delay }) => {
   const [show, setShow] = useState(false);
   return (
     <>
@@ -61,6 +61,7 @@ export const argTypes = {
           onClose={() => setShow(false)}
           actionText={actionText}
           onAction={onAction}
+          delay={delay}
         />
       </SnackbarContainer>
       <Button variant="primary" onClick={() => setShow(true)}>
