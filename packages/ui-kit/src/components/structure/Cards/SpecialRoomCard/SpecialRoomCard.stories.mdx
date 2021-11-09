@@ -1,0 +1,144 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+import example from './SpecialRoomCard.example.json';
+import SpecialRoomCard from './SpecialRoomCard';
+
+<Meta
+  title="Components/Structure/SpecialRoomCard"
+  component={SpecialRoomCard}
+  decorators={[withDesign]}
+/>
+
+export const Template = (args) => <SpecialRoomCard {...args} />
+
+export const argTypes = {
+  cssStyles: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssInternalPrefix: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  size: {
+    table: {
+      category: 'SpecialRoomCard',
+    },
+  },
+  title: {
+    table: {
+      category: 'SpecialRoomCard',
+    },
+  },
+  image: {
+    table: {
+      category: 'SpecialRoomCard',
+    },
+  },
+  room: {
+    table: {
+      category: 'SpecialRoomCard',
+    },
+  },
+  date: {
+    table: {
+      category: 'SpecialRoomCard',
+    },
+  },
+  name: {
+    table: {
+      category: 'SpecialRoomCard',
+    },
+  },
+};
+
+export const generalArgs = {
+  title: example.title,
+  date: example.date,
+  image: example.image,
+  room: example.room,
+  name: example.name,
+};
+
+export const truncatedArgs = {
+  title: example.titleLong,
+  date: example.date,
+  room: example.room,
+  image: example.image,
+  name: example.nameLong,
+};
+
+# SpecialRoomCard
+
+SpecialRoomCard is one of the different types of content cards.
+
+## Variants
+
+### Size S
+
+<Canvas style={{width: '450px'}}>
+  <Story
+    name="SpecialRoomCard Size S"
+    args={generalArgs}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size L
+
+<Canvas style={{width: '1250px'}}>
+  <Story
+    name="SpecialRoomCard Size L"
+    args={{
+      ...generalArgs,
+      size: 'l',
+    }}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Truncated Text
+
+<Canvas style={{width: '450px'}}>
+  <Story
+    name="SpecialRoomCard truncated text"
+    args={truncatedArgs}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable of={SpecialRoomCard} />
