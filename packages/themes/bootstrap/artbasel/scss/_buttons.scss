@@ -281,16 +281,12 @@
 
   &:hover,
   &.hover {
-    width: 72px;
-    height: 72px;
     background-color: $mchGrey100;
     border-color: $mchGrey100;
   }
 
   &:focus,
   &.focus {
-    width: 72px;
-    height: 72px;
     background-color: $mchGrey200;
     border-color: $mchGrey200;
     box-shadow: 0px 4px 16px rgba(29, 35, 39, 0.12);
