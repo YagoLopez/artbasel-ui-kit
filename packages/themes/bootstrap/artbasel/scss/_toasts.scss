@@ -1,0 +1,39 @@
+.toast {
+  display: flex;
+  min-width: 256px;
+}
+
+.toast-body {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: $text-font-size;
+  line-height: $text-line-height;
+  padding: 24px 16px;
+
+  .toast-default-icon {
+    fill: $toast-color;
+    min-width: 24px;
+  }
+
+  .toast-leading-icon {
+    margin-right: 8px;
+  }
+
+  .toast-message {
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.6em;
+    line-height: 1.8em;
+  }
+
+  .toast-action {
+    font-size: $btn-font-size;
+    line-height: $btn-line-height;
+    margin: 0px 32px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,75 @@
+<!--- Snackbar.stories.mdx --->
+
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+
+import Snackbar from './Snackbar.js';
+import { IconList } from '../../Icon';
+
+<Meta
+  title="Components/Feedback/Snackbar"
+  component={Snackbar}
+  decorators={[withDesign]}
+/>
+
+# Snackbar
+
+Snackbars allow users to show messages that inform about a
+result of action or error if it finalize with error.
+
+export const Template = args => <Snackbar {...args} />;
+
+export const argTypes = {
+  leadingIcon: {
+    options: [null, ...IconList],
+  },
+};
+
+<Canvas>
+  <Story
+    name="Snackbar"
+    args={{
+      message: 'Saved in collection',
+      leadingIcon: 'download',
+      actionText: 'undo',
+      onAction: () => console.info('OnAction clicked'),
+      delay: 6000,
+      autohide: false,
+    }}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=29%3A2',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## States
+
+<Preview>
+  <div>
+    <Snackbar
+      message="Download started"
+      leadingIcon="download"
+      autohide={false}
+    />
+    <p>Default</p>
+    <Snackbar
+      message="Action not possible"
+      onAction={() => {}}
+      actionText="try again"
+      type="error"
+    />
+    <p>Error</p>
+  </div>
+</Preview>
+
+## Properties
+
+<ArgsTable of={Snackbar} />
