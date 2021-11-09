@@ -29,7 +29,7 @@ const SpecialRoomCard = ({
 
   return (
     <BSPCard
-      data-testid="mch-scpecialroom-card"
+      data-testid="mch-specialroom-card"
       bsPrefix={cssInternalPrefix}
       style={cssStyles}
       className={classnames('specialroom-card', `size-${size}`)}
