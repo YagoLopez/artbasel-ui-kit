@@ -1,22 +1,9 @@
+const base = require('../../jest.config.base');
+const packageJson = require('./package.json');
+
 module.exports = {
-  moduleDirectories: [
-    'node_modules',
-    __dirname, // the root directory
-  ],
-
-  // Automatically clear mock calls and instances between every test
-  clearMocks: false,
-
-  // Indicates whether the coverage information should be collected while executing the test
-  collectCoverage: true,
-
-  // The directory where Jest should output its coverage files
-  coverageDirectory: 'coverage',
-
-  collectCoverageFrom: ['src/**/*.js', '!src/**/index.js', '!src/**/*.stories.js'],
-
-  modulePathIgnorePatterns: ['<rootDir>/.*/__mocks__'],
-
-  // The test environment that will be used for testing
+  ...base,
   testEnvironment: 'jsdom',
+  name: packageJson.name,
+  displayName: packageJson.name,
 };

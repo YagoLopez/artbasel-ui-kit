@@ -1,22 +1,61 @@
 {
   "name": "mch-ui-kit",
+  "description": "UI Kit library & Themes",
   "version": "0.0.0",
-  "description": "UI component library",
-  "main": "index.js",
-  "workspaces": [
-    "packages/**"
-  ],
-  "private": true,
-  "scripts": {},
-  "keywords": ["javascript", "frontend", "ui-kit", "design-system", "react"],
-  "author": "DMI",
-  "license": "ISC",
+  "bugs": "https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/issues",
   "repository": {
     "type": "git",
     "url": "https://bitbucket.org/mchappsrvcs/artbasel-ui-kit"
   },
-  "dependencies": {},
+  "private": true,
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/mchappsrvcs/artbasel-ui-kit",
+  "keywords": [
+    "javascript",
+    "frontend",
+    "ui-kit",
+    "design-system",
+    "react"
+  ],
+  "author": "DMI",
+  "workspaces": [
+    "packages/**"
+  ],
+  "scripts": {
+    "build": "lerna run build --stream",
+    "clean": "lerna run clean --parallel",
+    "lint": "lerna run lint --parallel",
+    "test": "lerna run test --parallel",
+    "publish": "lerna publish",
+    "prepublish": "yarn lint && yarn test && yarn clean && yarn build",
+    "prepare": "husky install"
+  },
   "devDependencies": {
-    "husky": "^7.0.4"
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-proposal-export-default-from": "^7.16.0",
+    "@babel/plugin-syntax-jsx": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/addon-viewport": "^6.3.12",
+    "@storybook/react": "^6.3.12",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
+    "babel-loader": "^8.2.3",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jest": "^25.2.2",
+    "eslint-plugin-react": "^7.26.1",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "lerna": "^4.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-test-renderer": "^17.0.2",
+    "storybook-addon-designs": "^6.2.0"
   }
 }

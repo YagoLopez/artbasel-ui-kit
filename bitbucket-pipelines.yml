@@ -14,7 +14,6 @@ stepdefinitions:
         - node
       script:
         - yarn install
-        - cd packages/ui-kit
         - yarn lint
         #- yarn lint-md
   - test: &test
@@ -23,9 +22,6 @@ stepdefinitions:
         - node
       script:
         - yarn install
-        - cd packages/themes
-        - yarn test
-        - cd ../ui-kit/
         - yarn test
       artifacts: # defining the artifacts to be passed to each future step.
         - packages/ui-kit/coverage/**
@@ -44,7 +40,7 @@ stepdefinitions:
       caches:
         - node
       script:
-        - yarn audit
+        - yarn audit || true #Temp disabled
   - build: &build
       name: Build
       caches:
@@ -52,26 +48,22 @@ stepdefinitions:
       script:
         - apt update && apt install -y zip
         - yarn install
-        - cd packages/themes
         - yarn build
-        - cd ../ui-kit/
+        - cd packages/ui-kit/
         - yarn build-storybook
         - cd storybook-static
-        - pwd
-        - ls -l
         - zip -r storybook-$BITBUCKET_BUILD_NUMBER.zip .
       artifacts:
         - "packages/ui-kit/storybook-static/storybook-*.zip"
 
 pipelines:
-  default:
-    - parallel:
-      - step: *lint
-      - step: *test
-      - step: *audit
-    - step: *sonar
   pull-requests:
-    '{feature/*,hotfix/*}':
+    '**':
+      - parallel:
+        - step: *lint
+        - step: *test
+        - step: *audit
+      - step: *sonar
       - step: *build
       - step:
           name: "Create Preview"

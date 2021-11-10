@@ -1,4 +1,4 @@
-import '../../themes/dist/artbasel/artbasel.css';
+import '@mch-ui-kit/themes/dist/artbasel/artbasel.css';
 
 const customViewports = {
   iPhoneX: {

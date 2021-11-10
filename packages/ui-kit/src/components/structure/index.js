@@ -1,4 +1,4 @@
 export * from './Accordions';
-export * from './Cards';
+export * from './cards';
 export * from './ProductTile';
 export * from './Grid';
