@@ -42,7 +42,7 @@ describe('ButtonToggle component', () => {
 
   test('buttontoggle have an icon with active prop', () => {
     const testElementIconId = 'toggle-icon';
-    render(<ButtonToggle active={true}>Selection</ButtonToggle>);
+    render(<ButtonToggle checked={true}>Selection</ButtonToggle>);
 
     const el = screen.getByTestId(testElementIconId);
     expect(el).toBeDefined();

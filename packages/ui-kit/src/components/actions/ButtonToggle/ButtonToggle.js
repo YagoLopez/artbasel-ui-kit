@@ -9,7 +9,7 @@ const ButtonToggle = ({
   cssInternalPrefix,
   cssStyles,
   disabled,
-  active,
+  checked,
   onClick,
 }) => (
   <>
@@ -19,7 +19,7 @@ const ButtonToggle = ({
       className={classNames(
         'btn-toggle position-relative icon-left',
         className,
-        { 'toggle-active': active },
+        { 'toggle-active': checked },
       )}
       style={cssStyles}
       onClick={onClick}
@@ -27,7 +27,7 @@ const ButtonToggle = ({
       bsPrefix={cssInternalPrefix}
     >
       {children}
-      {active && <i data-testid="toggle-icon" />}
+      {checked && <i data-testid="toggle-icon" />}
     </BSPButton>
   </>
 );
@@ -37,14 +37,14 @@ ButtonToggle.propTypes = {
   className: PropTypes.string,
   cssInternalPrefix: PropTypes.string,
   disabled: PropTypes.bool,
-  active: PropTypes.bool,
+  checked: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
 ButtonToggle.defaultProps = {
   cssInternalPrefix: 'btn',
   disabled: false,
-  active: false,
+  checked: false,
   onClick: () => {},
 };
 
