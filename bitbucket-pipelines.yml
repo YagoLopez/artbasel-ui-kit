@@ -24,7 +24,7 @@ stepdefinitions:
         - yarn install
         - yarn test
       artifacts: # defining the artifacts to be passed to each future step.
-        - packages/ui-kit/coverage/**
+        - packages/components/coverage/**
   - sonar: &sonar
       name: Sonar Analysis
       caches:
@@ -49,12 +49,12 @@ stepdefinitions:
         - apt update && apt install -y zip
         - yarn install
         - yarn build
-        - cd packages/ui-kit/
+        - cd packages/components/
         - yarn build-storybook
         - cd storybook-static
         - zip -r storybook-$BITBUCKET_BUILD_NUMBER.zip .
       artifacts:
-        - "packages/ui-kit/storybook-static/storybook-*.zip"
+        - "packages/components/storybook-static/storybook-*.zip"
 
 pipelines:
   pull-requests:
@@ -84,7 +84,7 @@ pipelines:
                 AZURE_TENANT_ID: $AZURE_TENANT_ID_DEV
                 AZURE_RESOURCE_GROUP: $AZURE_RESOURCE_GROUP_DEV
                 AZURE_APP_NAME: ase-storybook-marketplace-pr-$BITBUCKET_PR_ID
-                ZIP_FILE: 'packages/ui-kit/storybook-static/storybook-$BITBUCKET_BUILD_NUMBER.zip'
+                ZIP_FILE: 'packages/components/storybook-static/storybook-$BITBUCKET_BUILD_NUMBER.zip'
   branches:
     main:
       - parallel:
@@ -114,4 +114,4 @@ pipelines:
                 AZURE_TENANT_ID: $AZURE_TENANT_ID_DEV
                 AZURE_RESOURCE_GROUP: $AZURE_RESOURCE_GROUP_DEV
                 AZURE_APP_NAME: $AZURE_APP_NAME_DEV
-                ZIP_FILE: 'packages/ui-kit/storybook-static/storybook-$BITBUCKET_BUILD_NUMBER.zip'
+                ZIP_FILE: 'packages/components/storybook-static/storybook-$BITBUCKET_BUILD_NUMBER.zip'

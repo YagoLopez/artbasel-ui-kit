@@ -4,7 +4,7 @@ module.exports = {
   ...base,
   roots: ['<rootDir>'],
   projects: [
-    '<rootDir>/packages/ui-kit',
+    '<rootDir>/packages/components',
     '<rootDir>/packages/themes',
   ],
 };

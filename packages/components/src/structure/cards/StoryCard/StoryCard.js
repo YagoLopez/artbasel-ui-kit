@@ -1,31 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import { Button } from '../../../actions/Button';
+import { TextLink } from '../../../actions/TextLink';
 import { Icon } from '../../../Icon';
-import { truncateText } from '../../../../utils/truncateText';
+import { truncateText } from '../../../utils/truncateText';
 
 const truncateValues = {
-  title: 80,
+  title: 60,
   description: 250,
 };
+
 const classHeight = {
   s: '234.37px',
-  m: '492px',
+  m: '404px',
   l: '624px',
 };
 
-const EventCard = ({
+const StoryCard = ({
   cssInternalPrefix,
   cssStyles,
   size,
-  title,
+  author,
+  label,
   image,
-  description,
-  location,
-  schedule,
+  video,
+  title,
   date,
+  description,
   button,
 }) => {
   const truncated = {
@@ -33,15 +36,30 @@ const EventCard = ({
     description: truncateText(description, truncateValues.description),
   };
 
+  const buttonComponent = {
+    textlink: button
+      ? <TextLink href={button?.link} icon="linkarrow" iconAlign="right">{button?.text}</TextLink>
+      : null,
+    primary: button
+      ? <Button primary href={button?.link}>{button?.text}</Button>
+      : null,
+  };
+
+  const renderButton = () => (buttonComponent[button.type]);
+
   return (
     <BSPCard
-      data-testid="mch-event-card"
+      data-testid="mch-story-card"
       bsPrefix={cssInternalPrefix}
       style={cssStyles}
-      className={classnames('event-card', `size-${size}`)}
+      className={classNames('story-card', `size-${size}`)}
     >
       <div className="hoverHandler">
-        <div className="gradient"/>
+        {video
+          && <div className="play-box">
+            <Icon name="play" height={35} width={35} color="white"/>
+          </div>}
+        <div className="gradient" />
         <img
           src={image}
           width="100%"
@@ -51,76 +69,56 @@ const EventCard = ({
         />
       </div>
       <BSPCard.Body>
+        <BSPCard.Text className="card-author">{author}, {label}</BSPCard.Text>
         <BSPCard.Title>
           {truncated.title.text}
           {truncated.title.state
             && <span title={title}>...</span>}
         </BSPCard.Title>
+        <BSPCard.Text className="card-date">{date}</BSPCard.Text>
         <BSPCard.Text className="card-description">
           {truncated.description.text}
           {truncated.description.state
             && <span title={description}>...</span>}
         </BSPCard.Text>
-        <div className="item">
-          <div className="card-item-icon">
-            <Icon name="pin" height={20}/>
-          </div>
-          <div className="card-item-data">
-            <span>{location?.address}</span><br/>
-            <span>{location?.pc} {location?.city}</span>
-          </div>
-        </div>
-        <div className="item">
-          <div className="card-item-icon">
-            <Icon name="calendar" height={20} />
-          </div>
-          <div className="card-item-data">
-            <span>{date}</span>
-          </div>
-        </div>
-        <div className="item">
-          <div className="card-item-icon">
-            <Icon name="time" height={20} />
-          </div>
-          <div className="card-item-data">
-            <span>{schedule}</span>
-          </div>
-        </div>
-        <div className="buttonBox">
+        <div
+          className={
+            classNames('button-box', { pt13: button?.type === 'next' })
+          }>
           {button
-            && <Button variant="secondary" href={button?.link}>{button?.text}</Button>}
+          && renderButton()}
         </div>
       </BSPCard.Body>
     </BSPCard>
   );
 };
 
-EventCard.propTypes = {
+StoryCard.propTypes = {
   size: PropTypes.oneOf(['s', 'm', 'l']),
+  author: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  video: PropTypes.bool,
+  date: PropTypes.string,
   description: PropTypes.string.isRequired,
-  location: PropTypes.shape({
-    address: PropTypes.string.isRequired,
-    city: PropTypes.string.isRequired,
-    pc: PropTypes.string.isRequired,
-  })
-    .isRequired,
-  schedule: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
   button: PropTypes.shape({
-    link: PropTypes.string.isRequired,
+    link: PropTypes.string,
+    type: PropTypes.oneOf(['primary', 'textlink']).isRequired,
     text: PropTypes.string.isRequired,
-  })
-    .isRequired,
+  }),
   cssStyles: PropTypes.string,
   cssInternalPrefix: PropTypes.string,
 };
 
-EventCard.defaultProps = {
+StoryCard.defaultProps = {
   size: 's',
+  link: null,
+  button: null,
+  date: null,
+  video: false,
   cssInternalPrefix: 'card',
   cssStyles: null,
 };
 
-export default EventCard;
+export default StoryCard;

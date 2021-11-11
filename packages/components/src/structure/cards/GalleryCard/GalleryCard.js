@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
 import classnames from 'classnames';
-import { truncateText } from '../../../../utils/truncateText';
+import { truncateText } from '../../../utils/truncateText';
 
 const truncateValue = 250;
 const thumbnailHeight = '234.37px';

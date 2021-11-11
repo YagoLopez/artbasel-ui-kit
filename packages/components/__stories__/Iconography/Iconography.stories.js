@@ -4,7 +4,7 @@ import { withDesign } from 'storybook-addon-designs';
 
 import Row from 'react-bootstrap/Row';
 
-import { Icon, IconList } from '../../src/components/Icon';
+import { Icon, IconList } from '../../src/Icon';
 
 export default {
   title: 'Basic/Iconography',
