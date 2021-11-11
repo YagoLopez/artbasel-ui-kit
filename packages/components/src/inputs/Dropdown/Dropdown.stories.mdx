@@ -1,0 +1,94 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+import { Container } from 'react-bootstrap';
+
+import dropdownOptions from './DropdownOptions.example.json';
+import { Dropdown } from '.';
+
+<Meta
+  title="Components/Inputs/Dropdown"
+  component={Dropdown}
+  decorators={[
+    withDesign,
+    (storyFn) => <div style={{ height: '250px' }}>{storyFn()}</div>,
+  ]}
+/>
+
+# Dropdown field
+
+Dropdown field is a field used to select a value from diferent options
+
+export const Template = (args) => <Dropdown {...args} />;
+
+export const argTypes = {
+  className: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  onChange: {
+    table: {
+      category: 'Events',
+    },
+  },
+};
+
+<Canvas>
+  <Story
+    name="Dropdown"
+    args={{ label: 'Label', options: dropdownOptions }}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=486%3A22447',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## States
+
+<Canvas>
+  <div>
+    <b>Default</b>
+    <Dropdown
+      label="Label"
+      options={dropdownOptions}
+      style={{ height: '250px' }}
+    />
+  </div>
+</Canvas>
+
+<Canvas>
+  <div>
+    <b>Helper text</b>
+    <Dropdown
+      label="Label"
+      helpText="Helper Text"
+      options={dropdownOptions}
+      style={{ height: '250px' }}
+    />
+  </div>
+</Canvas>
+
+<Canvas>
+  <div>
+    <b>Error</b>
+    <Dropdown
+      label="Label"
+      helpText="Helper Text"
+      helpTextType="danger"
+      style={{ height: '250px' }}
+      options={dropdownOptions}
+    />
+  </div>
+</Canvas>
+
+## Properties
+
+<ArgsTable of={Dropdown} />

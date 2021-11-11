@@ -128,7 +128,8 @@
       color: $mchGrey300;
     }
 
-    & ~ i {
+    & ~ i,
+    & ~ svg {
       position: absolute;
       width: 1.5rem;
       height: 1.5rem;
@@ -138,6 +139,10 @@
       margin-right: 1rem;
       background-repeat: no-repeat;
       background-position: center center;
+
+      &.flip-icon {
+        transform: rotate(180deg);
+      }
 
       &.validate-icon {
         background-image: url("data:image/svg+xml,%0A%3Csvg width='15' height='11' viewBox='0 0 16 12' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.4553 0.484192L15.5442 1.51581L6.04145 11.5465L0.498047 6.55747L1.50149 5.44253L5.95809 9.45347L14.4553 0.484192Z' fill='%231D2327'/%3E%3C/svg%3E");
@@ -161,6 +166,10 @@
       font-size: 0.75rem;
       line-height: 1rem;
       letter-spacing: 0.0187rem;
+    }
+
+    &:focus::placeholder {
+      color: $mchGrey300;
     }
 
     & ~ label {
