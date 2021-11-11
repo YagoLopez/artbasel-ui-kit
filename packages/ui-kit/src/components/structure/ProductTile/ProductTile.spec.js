@@ -10,20 +10,20 @@ describe('Tests for Product Tile component', () => {
   test('Should render the component', () => {
     render(
       <ProductTile
-        title={example.title}
+        author={example.author}
         productName={example.productName}
         year={example.year}
         image={example.image}
         gallery={example.gallery}
       />,
     );
-    expect(screen.queryByText(example.title)).toBeInTheDocument();
+    expect(screen.queryByText(example.productName)).toBeInTheDocument();
   });
 
-  test('Should truncate a long subtitle', () => {
+  test('Should truncate a long product name', () => {
     const { container } = render(
       <ProductTile
-        title={example.title}
+        author={example.author}
         productName={example.longName}
         year={example.year}
         image={example.image}

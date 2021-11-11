@@ -8,40 +8,40 @@ const ProductTile = ({
   cssStyles,
   size,
   image,
-  title,
+  author,
   productName,
   year,
   gallery,
   price,
   offer,
 }) => {
-  const subtitleRef = useRef(null);
+  const titleRef = useRef(null);
   const [truncated, setTruncated] = useState(false);
   const [dimensions, setDimensions] = useState({ limit: 0, width: 0 });
-  const subtitle = [productName, year].join(', ');
-  const [truncatedSubtitle, setTruncatedSubtitle] = useState([productName, year].join(', '));
+  const subtitle = [author, year].join(', ');
+  const [truncatedTitle, setTruncatedTitle] = useState(productName);
 
   useEffect(() => {
-    if (subtitle && subtitleRef.current) {
-      const p = subtitleRef.current.querySelector('p');
+    if (titleRef.current) {
+      const heading = titleRef.current.querySelector('.card-title');
       setDimensions({
-        limit: subtitleRef.current.offsetWidth,
-        width: p.scrollWidth,
+        limit: titleRef.current.offsetWidth,
+        width: heading.scrollWidth,
       });
     }
-  }, [subtitleRef.current]);
+  }, [titleRef.current]);
 
   useEffect(() => {
     if (dimensions.width > dimensions.limit && !truncated) {
       const limitChars = Math.floor(
-        ((dimensions.limit * subtitle.length) / dimensions.width) - 3,
+        ((dimensions.limit * productName.length) / dimensions.width) - 3,
       );
-      setTruncatedSubtitle(subtitle.substring(0, limitChars));
+      setTruncatedTitle(productName.substring(0, limitChars));
       setTruncated(true);
     }
 
     if (dimensions.width <= dimensions.limit && truncated) {
-      setTruncatedSubtitle(subtitle);
+      setTruncatedTitle(productName);
       setTruncated(false);
     }
   }, [dimensions]);
@@ -57,12 +57,14 @@ const ProductTile = ({
         <BSPCard.Img variant="top" src={image} />
       </div>
       <BSPCard.Body>
-        <div className="tile-subtitle" ref={subtitleRef}>
-          <p>{truncatedSubtitle}</p>
-          {truncated
-          && <span title={subtitle} className="ellipsis">...</span>}
+        <p className="tile-subtitle">{subtitle}</p>
+        <div ref={titleRef}>
+          <BSPCard.Title>
+            {truncatedTitle}
+            {truncated
+              && <span title={productName}>...</span>}
+          </BSPCard.Title>
         </div>
-        <BSPCard.Title>{title}</BSPCard.Title>
         <BSPCard.Text className="tile-gallery">{gallery}</BSPCard.Text>
         {price
         && <div className="tile-price-container">
@@ -80,7 +82,7 @@ ProductTile.propTypes = {
   cssInternalPrefix: PropTypes.string,
   size: PropTypes.oneOf(['s', 'm']),
   image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
   productName: PropTypes.string.isRequired,
   year: PropTypes.string.isRequired,
   gallery: PropTypes.string.isRequired,

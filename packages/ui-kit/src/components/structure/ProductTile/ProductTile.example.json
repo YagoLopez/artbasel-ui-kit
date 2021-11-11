@@ -1,10 +1,10 @@
 {
   "productName": "Artwork Name",
-  "longName": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula.",
+  "longName": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula. We have extra text around here.",
   "shortName": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
   "image": "https://images.pexels.com/photos/1988681/pexels-photo-1988681.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   "horizontalImage": "https://images.pexels.com/photos/795693/pexels-photo-795693.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "title": "Author Name",
+  "author": "Author Name",
   "year": "2019",
   "gallery": "Acb Gallery",
   "price": {

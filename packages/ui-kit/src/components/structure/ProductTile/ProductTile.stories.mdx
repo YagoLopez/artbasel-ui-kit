@@ -37,7 +37,7 @@ export const argTypes = {
       category: 'ProductTile',
     },
   },
-  title: {
+  author: {
     table: {
       category: 'ProductTile',
     },
@@ -79,7 +79,7 @@ The tile is applied to represent a product in a Product List Page.
     args={{
       size: 'm',
       image: example.image,
-      title: example.title,
+      author: example.author,
       productName: example.productName,
       year: example.year,
       image: example.image,
@@ -103,7 +103,7 @@ The tile is applied to represent a product in a Product List Page.
   <div>
     <div style={{ width: '375px', marginRight: '16px', float: 'left' }}>
       <ProductTile
-        title={example.title}
+        author={example.author}
         productName={example.productName}
         year={example.year}
         image={example.image}
@@ -112,7 +112,7 @@ The tile is applied to represent a product in a Product List Page.
     </div>
     <div style={{ width: '375px', marginRight: '16px', float: 'left' }}>
       <ProductTile
-        title={example.title}
+        author={example.author}
         productName={example.longName}
         year={example.year}
         image={example.horizontalImage}
@@ -122,7 +122,7 @@ The tile is applied to represent a product in a Product List Page.
     </div>
     <div style={{ width: '375px', float: 'left' }}>
       <ProductTile
-        title={example.title}
+        author={example.author}
         productName={example.productName}
         year={example.year}
         image={example.image}

@@ -52,6 +52,7 @@
     line-height: 21px;
     margin-bottom: 0;
     text-align: left;
+    white-space: nowrap;
   }
 
   .card-body {
@@ -89,6 +90,7 @@
         float: left;
         line-height: 18px;
         white-space: nowrap;
+        margin-left: 0;
       }
 
       .ellipsis {
