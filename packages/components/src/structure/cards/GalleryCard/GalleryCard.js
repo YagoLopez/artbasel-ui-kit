@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
 import classnames from 'classnames';
-import { truncateText } from '../../../utils/truncateText';
+import { truncateText } from '../../../helpers/truncateText';
 
 const truncateValue = 250;
 const thumbnailHeight = '234.37px';
@@ -26,7 +26,7 @@ const GalleryCard = ({
       className={classnames('gallery-card', `size-${size}`)}
     >
       <div className="hoverHandler">
-        <div className="gradient"/>
+        <div className="gradient" />
         <img
           src={image}
           width="100%"
@@ -40,8 +40,7 @@ const GalleryCard = ({
         <BSPCard.Title>{title}</BSPCard.Title>
         <BSPCard.Text>
           {truncated.text}
-          {truncated.state
-          && <span title={description}>...</span>}
+          {truncated.state && <span title={description}>...</span>}
         </BSPCard.Text>
       </BSPCard.Body>
     </BSPCard>

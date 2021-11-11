@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Snackbar from './Snackbar';
 import SnackbarContainer from './SnackbarContainer';
 import Button from '../../actions/Button/Button';
-import { IconList } from '../../Icon';
+import { IconList } from '../../utils/Icon';
 
 const SnackbarDemo = ({
   message,

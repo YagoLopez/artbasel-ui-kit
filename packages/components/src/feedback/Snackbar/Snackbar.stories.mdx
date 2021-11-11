@@ -8,7 +8,7 @@ import SnackbarDemo from './SnackbarDemo';
 import SnackbarContainer from './SnackbarContainer';
 import Button from '../../actions/Button/Button';
 
-import { IconList } from '../../Icon';
+import { IconList } from '../../utils/Icon';
 
 <Meta
   title="Components/Feedback/Snackbar"
@@ -21,7 +21,7 @@ import { IconList } from '../../Icon';
 Snackbars allow users to show messages that inform about a
 result of action or error if it finalize with error.
 
-export const Template = args => <SnackbarDemo {...args} />;
+export const Template = (args) => <SnackbarDemo {...args} />;
 
 export const argTypes = {
   leadingIcon: {

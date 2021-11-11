@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button as BSPButton } from 'react-bootstrap';
 import classNames from 'classnames';
-import { Icon } from '../../Icon';
+import { Icon } from '../../utils/Icon';
 
 const ButtonBackToTop = ({
   className,

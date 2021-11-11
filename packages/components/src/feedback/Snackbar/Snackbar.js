@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Toast } from 'react-bootstrap';
-import { Icon, IconList } from '../../Icon';
+import { Icon, IconList } from '../../utils/Icon';
 
 const Snackbar = ({
   onAction,

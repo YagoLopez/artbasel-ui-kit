@@ -2,27 +2,36 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { FloatingLabel, FormControl } from 'react-bootstrap';
 import classnames from 'classnames';
-import { Icon } from '../../Icon';
+import { Icon } from '../../utils/Icon';
 
 const fn = () => null;
 
-const Toggle = forwardRef(({
-  label, onClick, labelSelected, 'aria-expanded': ariaExpanded, placeholder,
-}, ref) => (
-  <FloatingLabel label={label} onClick={onClick}>
-    <FormControl
-      ref={ref}
-      type="text"
-      placeholder={placeholder}
-      value={labelSelected}
-      onChange={fn}
-    />
-    <Icon
-      name="dropdown"
-      className={classnames({ 'flip-icon': ariaExpanded })}
-    />
-  </FloatingLabel>
-));
+const Toggle = forwardRef(
+  (
+    {
+      label,
+      onClick,
+      labelSelected,
+      'aria-expanded': ariaExpanded,
+      placeholder,
+    },
+    ref,
+  ) => (
+    <FloatingLabel label={label} onClick={onClick}>
+      <FormControl
+        ref={ref}
+        type="text"
+        placeholder={placeholder}
+        value={labelSelected}
+        onChange={fn}
+      />
+      <Icon
+        name="dropdown"
+        className={classnames({ 'flip-icon': ariaExpanded })}
+      />
+    </FloatingLabel>
+  ),
+);
 
 Toggle.displayName = 'Toggles';
 

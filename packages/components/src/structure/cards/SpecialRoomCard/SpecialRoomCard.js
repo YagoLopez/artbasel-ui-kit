@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
 import classnames from 'classnames';
-import { truncateText } from '../../../utils/truncateText';
+import { truncateText } from '../../../helpers/truncateText';
 
 const truncateValues = {
   title: 60,
   description: 180,
 };
 
-const format = dateInput => new Date(dateInput).getFullYear();
+const format = (dateInput) => new Date(dateInput).getFullYear();
 
 const SpecialRoomCard = ({
   size,
@@ -35,20 +35,16 @@ const SpecialRoomCard = ({
       className={classnames('specialroom-card', `size-${size}`)}
     >
       <div className="gradient" />
-      <img src={image} alt="picture"/>
+      <img src={image} alt="picture" />
       <BSPCard.Body>
-        <BSPCard.Text className="room">
-          {room}
-        </BSPCard.Text>
+        <BSPCard.Text className="room">{room}</BSPCard.Text>
         <BSPCard.Title>
           {truncated.title.text}
-          {truncated.title.state
-            && <span title={title}>...</span>}
+          {truncated.title.state && <span title={title}>...</span>}
         </BSPCard.Title>
         <BSPCard.Text className="date">
           {truncated.description.text}
-          {truncated.description.state
-            && <span title={description}>...</span>}
+          {truncated.description.state && <span title={description}>...</span>}
         </BSPCard.Text>
       </BSPCard.Body>
     </BSPCard>

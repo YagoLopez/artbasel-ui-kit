@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
 import classnames from 'classnames';
-import { truncateText } from '../../../utils/truncateText';
+import { truncateText } from '../../../helpers/truncateText';
 
 const truncateValues = {
   title: 60,
@@ -30,17 +30,15 @@ const ContentCard = ({
       className={classnames('content-card', `size-${size}`)}
     >
       <div className="gradient" />
-      <img src={image} alt="picture"/>
+      <img src={image} alt="picture" />
       <BSPCard.Body>
         <BSPCard.Title>
           {truncated.title.text}
-          {truncated.title.state
-            && <span title={title}>...</span>}
+          {truncated.title.state && <span title={title}>...</span>}
         </BSPCard.Title>
         <BSPCard.Text className="card-description">
           {truncated.description.text}
-          {truncated.description.state
-            && <span title={description}>...</span>}
+          {truncated.description.state && <span title={description}>...</span>}
         </BSPCard.Text>
       </BSPCard.Body>
     </BSPCard>

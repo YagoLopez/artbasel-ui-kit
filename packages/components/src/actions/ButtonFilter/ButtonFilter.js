@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button as BSPButton } from 'react-bootstrap';
 import classNames from 'classnames';
-import { Icon } from '../../Icon';
+import { Icon } from '../../utils/Icon';
 
 const ButtonFilter = ({
   className,
@@ -15,16 +15,13 @@ const ButtonFilter = ({
   <>
     <BSPButton
       data-testid="mch-button-filter"
-      className={classNames(
-        'btn-filter position-relative',
-        className,
-      )}
-        style={cssStyles}
-        onClick={onClick}
-        disabled={disabled}
-        bsPrefix={cssInternalPrefix}
-        >
-      { filter && <Icon name="check" size={24} className="icon-filter-check" /> }
+      className={classNames('btn-filter position-relative', className)}
+      style={cssStyles}
+      onClick={onClick}
+      disabled={disabled}
+      bsPrefix={cssInternalPrefix}
+    >
+      {filter && <Icon name="check" size={24} className="icon-filter-check" />}
       <Icon name="filter" size={24} />
     </BSPButton>
   </>

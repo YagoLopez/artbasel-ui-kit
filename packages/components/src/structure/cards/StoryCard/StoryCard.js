@@ -4,8 +4,8 @@ import { Card as BSPCard } from 'react-bootstrap';
 import classNames from 'classnames';
 import { Button } from '../../../actions/Button';
 import { TextLink } from '../../../actions/TextLink';
-import { Icon } from '../../../Icon';
-import { truncateText } from '../../../utils/truncateText';
+import { Icon } from '../../../utils/Icon';
+import { truncateText } from '../../../helpers/truncateText';
 
 const truncateValues = {
   title: 60,
@@ -37,15 +37,19 @@ const StoryCard = ({
   };
 
   const buttonComponent = {
-    textlink: button
-      ? <TextLink href={button?.link} icon="linkarrow" iconAlign="right">{button?.text}</TextLink>
-      : null,
-    primary: button
-      ? <Button primary href={button?.link}>{button?.text}</Button>
-      : null,
+    textlink: button ? (
+      <TextLink href={button?.link} icon="linkarrow" iconAlign="right">
+        {button?.text}
+      </TextLink>
+    ) : null,
+    primary: button ? (
+      <Button primary href={button?.link}>
+        {button?.text}
+      </Button>
+    ) : null,
   };
 
-  const renderButton = () => (buttonComponent[button.type]);
+  const renderButton = () => buttonComponent[button.type];
 
   return (
     <BSPCard
@@ -55,10 +59,11 @@ const StoryCard = ({
       className={classNames('story-card', `size-${size}`)}
     >
       <div className="hoverHandler">
-        {video
-          && <div className="play-box">
-            <Icon name="play" height={35} width={35} color="white"/>
-          </div>}
+        {video && (
+          <div className="play-box">
+            <Icon name="play" height={35} width={35} color="white" />
+          </div>
+        )}
         <div className="gradient" />
         <img
           src={image}
@@ -69,24 +74,24 @@ const StoryCard = ({
         />
       </div>
       <BSPCard.Body>
-        <BSPCard.Text className="card-author">{author}, {label}</BSPCard.Text>
+        <BSPCard.Text className="card-author">
+          {author}, {label}
+        </BSPCard.Text>
         <BSPCard.Title>
           {truncated.title.text}
-          {truncated.title.state
-            && <span title={title}>...</span>}
+          {truncated.title.state && <span title={title}>...</span>}
         </BSPCard.Title>
         <BSPCard.Text className="card-date">{date}</BSPCard.Text>
         <BSPCard.Text className="card-description">
           {truncated.description.text}
-          {truncated.description.state
-            && <span title={description}>...</span>}
+          {truncated.description.state && <span title={description}>...</span>}
         </BSPCard.Text>
         <div
-          className={
-            classNames('button-box', { pt13: button?.type === 'next' })
-          }>
-          {button
-          && renderButton()}
+          className={classNames('button-box', {
+            pt13: button?.type === 'next',
+          })}
+        >
+          {button && renderButton()}
         </div>
       </BSPCard.Body>
     </BSPCard>

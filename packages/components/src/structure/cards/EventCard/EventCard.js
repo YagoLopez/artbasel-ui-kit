@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
 import classnames from 'classnames';
 import { Button } from '../../../actions/Button';
-import { Icon } from '../../../Icon';
-import { truncateText } from '../../../utils/truncateText';
+import { Icon } from '../../../utils/Icon';
+import { truncateText } from '../../../helpers/truncateText';
 
 const truncateValues = {
   title: 80,
@@ -41,7 +41,7 @@ const EventCard = ({
       className={classnames('event-card', `size-${size}`)}
     >
       <div className="hoverHandler">
-        <div className="gradient"/>
+        <div className="gradient" />
         <img
           src={image}
           width="100%"
@@ -53,21 +53,22 @@ const EventCard = ({
       <BSPCard.Body>
         <BSPCard.Title>
           {truncated.title.text}
-          {truncated.title.state
-            && <span title={title}>...</span>}
+          {truncated.title.state && <span title={title}>...</span>}
         </BSPCard.Title>
         <BSPCard.Text className="card-description">
           {truncated.description.text}
-          {truncated.description.state
-            && <span title={description}>...</span>}
+          {truncated.description.state && <span title={description}>...</span>}
         </BSPCard.Text>
         <div className="item">
           <div className="card-item-icon">
-            <Icon name="pin" height={20}/>
+            <Icon name="pin" height={20} />
           </div>
           <div className="card-item-data">
-            <span>{location?.address}</span><br/>
-            <span>{location?.pc} {location?.city}</span>
+            <span>{location?.address}</span>
+            <br />
+            <span>
+              {location?.pc} {location?.city}
+            </span>
           </div>
         </div>
         <div className="item">
@@ -87,8 +88,11 @@ const EventCard = ({
           </div>
         </div>
         <div className="buttonBox">
-          {button
-            && <Button variant="secondary" href={button?.link}>{button?.text}</Button>}
+          {button && (
+            <Button variant="secondary" href={button?.link}>
+              {button?.text}
+            </Button>
+          )}
         </div>
       </BSPCard.Body>
     </BSPCard>
@@ -104,15 +108,13 @@ EventCard.propTypes = {
     address: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
     pc: PropTypes.string.isRequired,
-  })
-    .isRequired,
+  }).isRequired,
   schedule: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   button: PropTypes.shape({
     link: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
-  })
-    .isRequired,
+  }).isRequired,
   cssStyles: PropTypes.string,
   cssInternalPrefix: PropTypes.string,
 };
