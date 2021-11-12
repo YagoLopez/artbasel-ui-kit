@@ -10,9 +10,25 @@
   height: 587px;
   font-family: $font-family-base;
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
 
   &:hover {
     cursor: pointer;
+  }
+
+  .button-container {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 9999;
+    right: 12px;
+    top: 12px;
+    overflow: hidden;
+
+    svg {
+      z-index: 999;
+    }
   }
 
   .tile-img-container {
@@ -32,9 +48,24 @@
   }
 
   &.size-s {
+    .overlay-fill {
+      position: absolute;
+      width: 100%;
+      height: 456px;
+      opacity: 0;
+      background-color: $mchProducTileHover;
+      transition: all 350ms ease-out;
+    }
+
     .tile-img-container {
       height: 456px;
       padding: 64px 0;
+    }
+
+    &:hover {
+      .overlay-fill {
+        opacity: 0.05;
+      }
     }
   }
 
@@ -42,6 +73,21 @@
     .tile-img-container {
       height: 472px;
       padding: 72px 0;
+    }
+
+    .overlay-fill {
+      position: absolute;
+      width: 100%;
+      height: 472px;
+      opacity: 0;
+      background-color: $mchProducTileHover;
+      transition: all 350ms ease-out;
+    
+    }
+    &:hover {
+      .overlay-fill {
+        opacity: 0.05;
+      }
     }
   }
 

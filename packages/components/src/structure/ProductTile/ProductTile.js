@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
 import classNames from 'classnames';
+import { ButtonIcon } from '../../actions/ButtonIcon';
 
 const ProductTile = ({
   cssInternalPrefix,
@@ -15,33 +16,33 @@ const ProductTile = ({
   price,
   offer,
 }) => {
-  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
   const [truncated, setTruncated] = useState(false);
   const [dimensions, setDimensions] = useState({ limit: 0, width: 0 });
-  const subtitle = [author, year].join(', ');
-  const [truncatedTitle, setTruncatedTitle] = useState(productName);
+  const subtitle = [productName, year].join(', ');
+  const [truncatedSubtitle, setTruncatedSubtitle] = useState([productName, year].join(', '));
 
   useEffect(() => {
-    if (titleRef.current) {
-      const heading = titleRef.current.querySelector('.card-title');
+    if (subtitle && subtitleRef.current) {
+      const p = subtitleRef.current.querySelector('p');
       setDimensions({
-        limit: titleRef.current.offsetWidth,
-        width: heading.scrollWidth,
+        limit: subtitleRef.current.offsetWidth,
+        width: p.scrollWidth,
       });
     }
-  }, [titleRef.current]);
+  }, [subtitleRef.current]);
 
   useEffect(() => {
     if (dimensions.width > dimensions.limit && !truncated) {
       const limitChars = Math.floor(
-        ((dimensions.limit * productName.length) / dimensions.width) - 3,
+        ((dimensions.limit * subtitle.length) / dimensions.width) - 3,
       );
-      setTruncatedTitle(productName.substring(0, limitChars));
+      setTruncatedSubtitle(subtitle.substring(0, limitChars));
       setTruncated(true);
     }
 
     if (dimensions.width <= dimensions.limit && truncated) {
-      setTruncatedTitle(productName);
+      setTruncatedSubtitle(subtitle);
       setTruncated(false);
     }
   }, [dimensions]);
@@ -53,18 +54,20 @@ const ProductTile = ({
       style={cssStyles}
       data-testid="mch-product-tile"
     >
+      <div className="overlay-fill" />
+      <div className="button-container">
+        <ButtonIcon icon="favourite" />
+      </div>
       <div className="tile-img-container">
         <BSPCard.Img variant="top" src={image} />
       </div>
       <BSPCard.Body>
-        <p className="tile-subtitle">{subtitle}</p>
-        <div ref={titleRef}>
-          <BSPCard.Title>
-            {truncatedTitle}
-            {truncated
-              && <span title={productName}>...</span>}
-          </BSPCard.Title>
+        <div className="tile-subtitle" ref={subtitleRef}>
+          <p>{truncatedSubtitle}</p>
+          {truncated
+          && <span title={subtitle} className="ellipsis">...</span>}
         </div>
+        <BSPCard.Title>{author}</BSPCard.Title>
         <BSPCard.Text className="tile-gallery">{gallery}</BSPCard.Text>
         {price
         && <div className="tile-price-container">

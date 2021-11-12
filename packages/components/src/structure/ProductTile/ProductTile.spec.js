@@ -17,7 +17,7 @@ describe('Tests for Product Tile component', () => {
         gallery={example.gallery}
       />,
     );
-    expect(screen.queryByText(example.productName)).toBeInTheDocument();
+    expect(screen.queryByText(example.author)).toBeInTheDocument();
   });
 
   test('Should truncate a long product name', () => {
