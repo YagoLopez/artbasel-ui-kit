@@ -115,9 +115,12 @@ h5 {
 
 /*  Title style "Paragraph"  */
 
-.text-paragraph-1 {
+h3.text-paragraph-1,
+h3 .text-paragraph-1 {
   letter-spacing: 0px;
   color: $mchBlack;
+  font-weight: normal;
+  font-family: 'Art Basel Text', Courier, monospace;
 
   @include media-breakpoint-up(xs) {
     font-size: 1.5rem;
@@ -129,9 +132,12 @@ h5 {
   }
 }
 
-.text-paragraph-2 {
+h4.text-paragraph-2,
+h4 .text-paragraph-2 {
   letter-spacing: 0px;
   color: $mchBlack;
+  font-weight: normal;
+  font-family: 'Art Basel Text', Courier, monospace;
 
   @include media-breakpoint-up(xs) {
     font-size: 1.25rem;
@@ -143,44 +149,46 @@ h5 {
   }
 }
 
-/*  Body Text  */
-
-p.text-large {
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-}
-
-p.text-medium {
+p {
+  /*  Body Text  */
   font-size: 1rem;
   line-height: 1.375rem;
-}
 
-p.text-small {
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-}
+  &.text-large {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
 
-/*  Text Style "Labels"  */
+  &.text-medium {
+    font-size: 1rem;
+    line-height: 1.375rem;
+  }
 
-p {
-  .text-label-xlarge {
+  &.text-small {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+  }
+
+  /*  Text Style "Labels"  */
+
+  &.text-label-xlarge {
     font-size: 1rem;
     line-height: 1.375rem;
     font-weight: bold;
   }
-  .text-label-large {
+  &.text-label-large {
     font-size: 0.875rem;
     line-height: 1.125rem;
     font-weight: bold;
   }
 
-  .text-label-medium {
+  &.text-label-medium {
     font-size: 0.75rem;
     line-height: 1rem;
     font-weight: bold;
   }
 
-  .text-label-small {
+  &.text-label-small {
     font-size: 0.75rem;
     line-height: 1rem;
     letter-spacing: 0.3px;
@@ -220,29 +228,6 @@ p {
   }
 }
 
-.text-link {
-  color: $mchBlack;
-  font-size: 16px;
+a {
   font-weight: bold;
-  text-decoration: none;
-  border: 0;
-  cursor: pointer;
-
-  &:hover,
-  &.hover {
-    text-decoration: underline;
-  }
-
-  &:disabled,
-  &.disabled {
-    color: $mchGrey400;
-
-    svg {
-      fill: $mchGrey400;
-    }
-  }
-
-  svg {
-    fill: $mchBlack;
-  }
 }

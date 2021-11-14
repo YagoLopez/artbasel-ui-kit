@@ -5,47 +5,7 @@ import { withDesign } from 'storybook-addon-designs';
 
 import { Container, Row, Col } from 'react-bootstrap';
 
-import TypographyDemo from './TypographyDemo';
-
 <Meta title="Basic/Typography" decorators={[withDesign]} />
-
-export const Template = (args) => <TypographyDemo {...args} />;
-
-export const argTypes = {
-  headersTextSample: {
-    name: 'Header Text Sample',
-    table: {
-      category: 'Header',
-    },
-  },
-  textSample: {
-    name: 'Text Classes Sample',
-    table: {
-      category: 'Text Classes',
-    },
-  },
-};
-
-<Story
-  name="Typography"
-  parameters={{ docs: { disable: true } }}
-  argTypes={argTypes}
-  args={{
-    headersTextSample: 'The quick brown fox jumps over the lazy dog',
-    textSample:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  }}
-  parameters={{
-    design: {
-      name: 'Figma Design',
-      type: 'figma',
-      url:
-        'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=676%3A24536',
-    },
-  }}
->
-  {Template.bind({})}
-</Story>
 
 # Typography
 
@@ -63,33 +23,33 @@ Please <a href="./mch-typography-breakpoints.pdf" target="_blank">check here</a>
 
 ### Headings
 
-Headings are accessible through the <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code> and <code>h1</code> tags.
+Headings are accessible through the <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code> and <code>h1</code> HTML tags.
 
-<code>h1</code>
+HTML Tag: <code>h1</code>
 
 <Canvas>
   <h1>The quick brown fox jumps over the lazy dog</h1>
 </Canvas>
 
-<code>h2</code>
+HTML Tag: <code>h2</code>
 
 <Canvas>
   <h2>The quick brown fox jumps over the lazy dog</h2>
 </Canvas>
 
-<code>h3</code>
+HTML Tag: <code>h3</code>
 
 <Canvas>
   <h3>The quick brown fox jumps over the lazy dog</h3>
 </Canvas>
 
-<code>h4</code>
+HTML Tag: <code>h4</code>
 
 <Canvas>
   <h4>The quick brown fox jumps over the lazy dog</h4>
 </Canvas>
 
-<code>h5</code>
+HTML Tag: <code>h5</code>
 
 <Canvas>
   <h5>The quick brown fox jumps over the lazy dog</h5>
@@ -99,20 +59,40 @@ Headings are accessible through the <code>h1</code>, <code>h2</code>, <code>h3</
 
 Use as auxiliary texts in headings, and are accessible using classes.
 
-<code>.text-paragraph-1</code>
+HTML Tag: <code>h3</code>
+
+Class: <code>.text-paragraph-1</code>
 
 <Canvas>
-  <p className="text-paragraph-1">
+  <h3 className="text-paragraph-1">
     The quick brown fox jumps over the lazy dog
-  </p>
+  </h3>
 </Canvas>
 
-<code>.text-paragraph-2</code>
+Mixed with Header example:
 
 <Canvas>
-  <p className="text-paragraph-2">
+  <h3>
+    Stories <span className="text-paragraph-1">| Overview</span>
+  </h3>
+</Canvas>
+
+HTML Tag: <code>h4</code>
+
+Class: <code>.text-paragraph-2</code>
+
+<Canvas>
+  <h4 className="text-paragraph-2">
     The quick brown fox jumps over the lazy dog
-  </p>
+  </h4>
+</Canvas>
+
+Mixed with Header example:
+
+<Canvas>
+  <h4>
+    Stories <span className="text-paragraph-2">| Overview</span>
+  </h4>
 </Canvas>
 
 ## Fixed Type
@@ -121,9 +101,11 @@ We use these fixed styles for body, links or supporting styles across all our br
 
 ### Body text
 
-Are accessible using classes.
+Are accessible using <code>p</code> HTML tag and classes.
 
-<code>.text-small</code>
+HTML Tag: <code>p</code>
+
+Class: <code>.text-small</code>
 
 <Canvas>
   <p className="text-small">
@@ -136,7 +118,9 @@ Are accessible using classes.
   </p>
 </Canvas>
 
-<code>.text-medium</code>
+HTML Tag: <code>p</code>
+
+Class: <code>.text-medium</code>
 
 <Canvas>
   <p className="text-medium">
@@ -149,7 +133,9 @@ Are accessible using classes.
   </p>
 </Canvas>
 
-<code>.text-large</code>
+HTML Tag: <code>p</code>
+
+Class: <code>.text-large</code>
 
 <Canvas>
   <p className="text-large">
@@ -162,11 +148,21 @@ Are accessible using classes.
   </p>
 </Canvas>
 
+### Text with link
+
+<Canvas>
+  <p>
+    More information can be found in <a href="#">this link</a>.
+  </p>
+</Canvas>
+
 ### Supporting text
 
-Are accessible using classes.
+Are accessible using <code>p</code> HTML tag and classes.
 
-<code>.text-label-small</code>
+HTML Tag: <code>p</code>
+
+Class: <code>.text-label-small</code>
 
 <Canvas>
   <p className="text-label-small">
@@ -175,7 +171,9 @@ Are accessible using classes.
   </p>
 </Canvas>
 
-<code>.text-label-medium</code>
+HTML Tag: <code>p</code>
+
+Class: <code>.text-label-medium</code>
 
 <Canvas>
   <p className="text-label-medium">
@@ -184,7 +182,9 @@ Are accessible using classes.
   </p>
 </Canvas>
 
-<code>.text-label-large</code>
+HTML Tag: <code>p</code>
+
+Class: <code>.text-label-large</code>
 
 <Canvas>
   <p className="text-label-large">
@@ -193,7 +193,9 @@ Are accessible using classes.
   </p>
 </Canvas>
 
-<code>.text-label-xlarge</code>
+HTML Tag: <code>p</code>
+
+Class: <code>.text-label-xlarge</code>
 
 <Canvas>
   <p className="text-label-xlarge">
