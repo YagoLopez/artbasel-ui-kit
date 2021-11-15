@@ -17,7 +17,7 @@ const ProgressBar = ({
 
 ProgressBar.propTypes = {
   percentage: PropTypes.number.isRequired,
-  variant: PropTypes.string,
+  variant: PropTypes.oneOf(['primary', 'dark', 'danger', 'warning', 'success']),
   width: PropTypes.string,
 };
 
