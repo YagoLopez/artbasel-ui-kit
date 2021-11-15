@@ -4,5 +4,17 @@
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "independent"
+  "version": "independent",
+  "ignoreChanges": [
+    "**/__mocks__/**",
+    "**/__tests__/**",
+    "**/*.spec.js",
+    "**/*.stories.mdx",
+    "**/*.md"
+  ],
+  "command": {
+    "publish": {
+        "registry": "https://registry.npmjs.org/"
+    }
+  }
 }

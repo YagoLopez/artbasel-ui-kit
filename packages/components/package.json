@@ -1,7 +1,7 @@
 {
   "name": "@mch-ui-kit/components",
   "description": "MCH UI Basic Componentes",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "bugs": "https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/issues",
   "repository": {
     "type": "git",
@@ -17,13 +17,16 @@
   "license": "ISC",
   "author": "DMI",
   "publishConfig": {
-    "access": "public"
+    "access": "restricted"
   },
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">= 14.0.0"
+  },
   "scripts": {
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",

@@ -1,7 +1,7 @@
 {
   "name": "@mch-ui-kit/themes",
   "description": "MCH UI Themes",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "bugs": "https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/issues",
   "repository": {
     "type": "git",
@@ -18,12 +18,15 @@
   "license": "ISC",
   "author": "DMI",
   "publishConfig": {
-    "access": "public"
+    "access": "restricted"
   },
-  "main": "dist",
   "files": [
-    "dist"
+    "dist/**/*.{css,map}",
+    "bootstrap/**/*.scss"
   ],
+  "engines": {
+    "node": ">= 14.0.0"
+  },
   "scripts": {
     "build": "npm run css-compile",
     "clean": "rm -rf dist",
