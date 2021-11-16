@@ -76,6 +76,7 @@ const Dropdown = ({
         label={label}
         optionsSelected={optionsSelected}
         placeholder={placeholder}
+        helpTextType={helpTextType}
       />
       <FormText className={textClassName[helpTextType]}>{helpText}</FormText>
       <Menu

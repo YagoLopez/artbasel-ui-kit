@@ -6,42 +6,56 @@ import { Icon } from '../../../utils/Icon';
 
 const fn = () => null;
 
-const Toggle = forwardRef(({
-  label, onClick, optionsSelected, 'aria-expanded': ariaExpanded, placeholder,
-}, ref) => {
-  const normalizeValue = useMemo(() => {
-    if (!optionsSelected.length) return '';
-    const [firstOption, ...rest] = optionsSelected;
-    return `${firstOption.label}${rest.length ? `, +${rest.length}` : ''}`;
-  }, [optionsSelected]);
-  return (
-    <FloatingLabel label={label} onClick={onClick}>
-      <FormControl
-        ref={ref}
-        type="text"
-        placeholder={placeholder}
-        value={normalizeValue}
-        onChange={fn}
-      />
-      <Icon
-        name="dropdown"
-        className={classnames({ 'flip-icon': ariaExpanded })}
-      />
-    </FloatingLabel>
-  );
-});
+const Toggle = forwardRef(
+  (
+    {
+      label,
+      onClick,
+      optionsSelected,
+      'aria-expanded': ariaExpanded,
+      placeholder,
+      helpTextType,
+    },
+    ref,
+  ) => {
+    const normalizeValue = useMemo(() => {
+      if (!optionsSelected.length) return '';
+      const [firstOption, ...rest] = optionsSelected;
+      return `${firstOption.label}${rest.length ? `, +${rest.length}` : ''}`;
+    }, [optionsSelected]);
+    return (
+      <FloatingLabel label={label} onClick={onClick}>
+        <FormControl
+          ref={ref}
+          type="text"
+          placeholder={placeholder}
+          value={normalizeValue}
+          onChange={fn}
+          className={`help-text-input-${helpTextType}`}
+        />
+        <Icon
+          name="dropdown"
+          className={classnames({ 'flip-icon': ariaExpanded })}
+        />
+      </FloatingLabel>
+    );
+  },
+);
 
 Toggle.displayName = 'Toggle';
 
 Toggle.propTypes = {
   label: PropTypes.string,
   onClick: PropTypes.func,
-  optionsSelected: PropTypes.arrayOf(PropTypes.shape({
-    value: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-  })),
+  optionsSelected: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    }),
+  ),
   placeholder: PropTypes.string.isRequired,
   'aria-expanded': PropTypes.bool.isRequired,
+  helpTextType: PropTypes.oneOf(['muted', 'warning', 'danger']),
 };
 
 Toggle.defaultProps = {
@@ -49,6 +63,7 @@ Toggle.defaultProps = {
   onClick: fn,
   optionsSelected: [],
   labelSelected: '',
+  helpTextType: 'muted',
 };
 
 export default Toggle;
