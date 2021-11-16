@@ -16,6 +16,7 @@ const Checkbox = ({
   isValid,
   label,
   onChange,
+  value,
 }) => (
       <Form.Check
         data-testid="mch-checkbox"
@@ -35,6 +36,7 @@ const Checkbox = ({
         isValid={isValid}
         label={label}
         onChange={onChange || (() => {})}
+        value={value}
       ></Form.Check>
 );
 
@@ -51,6 +53,7 @@ Checkbox.propTypes = {
   isValid: PropTypes.bool,
   label: PropTypes.node,
   onChange: PropTypes.func,
+  value: PropTypes.string,
 };
 
 Checkbox.defaultProps = {

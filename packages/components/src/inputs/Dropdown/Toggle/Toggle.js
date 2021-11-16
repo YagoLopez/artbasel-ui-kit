@@ -1,28 +1,26 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { FloatingLabel, FormControl } from 'react-bootstrap';
 import classnames from 'classnames';
-import { Icon } from '../../utils/Icon';
+import { Icon } from '../../../utils/Icon';
 
 const fn = () => null;
 
-const Toggle = forwardRef(
-  (
-    {
-      label,
-      onClick,
-      labelSelected,
-      'aria-expanded': ariaExpanded,
-      placeholder,
-    },
-    ref,
-  ) => (
+const Toggle = forwardRef(({
+  label, onClick, optionsSelected, 'aria-expanded': ariaExpanded, placeholder,
+}, ref) => {
+  const normalizeValue = useMemo(() => {
+    if (!optionsSelected.length) return '';
+    const [firstOption, ...rest] = optionsSelected;
+    return `${firstOption.label}${rest.length ? `, +${rest.length}` : ''}`;
+  }, [optionsSelected]);
+  return (
     <FloatingLabel label={label} onClick={onClick}>
       <FormControl
         ref={ref}
         type="text"
         placeholder={placeholder}
-        value={labelSelected}
+        value={normalizeValue}
         onChange={fn}
       />
       <Icon
@@ -30,15 +28,18 @@ const Toggle = forwardRef(
         className={classnames({ 'flip-icon': ariaExpanded })}
       />
     </FloatingLabel>
-  ),
-);
+  );
+});
 
-Toggle.displayName = 'Toggles';
+Toggle.displayName = 'Toggle';
 
 Toggle.propTypes = {
   label: PropTypes.string,
   onClick: PropTypes.func,
-  labelSelected: PropTypes.string,
+  optionsSelected: PropTypes.arrayOf(PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  })),
   placeholder: PropTypes.string.isRequired,
   'aria-expanded': PropTypes.bool.isRequired,
 };
@@ -46,6 +47,7 @@ Toggle.propTypes = {
 Toggle.defaultProps = {
   label: '',
   onClick: fn,
+  optionsSelected: [],
   labelSelected: '',
 };
 

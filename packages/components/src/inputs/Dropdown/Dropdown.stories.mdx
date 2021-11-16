@@ -36,7 +36,7 @@ export const argTypes = {
 <Canvas>
   <Story
     name="Dropdown"
-    args={{ label: 'Label', options: dropdownOptions }}
+    args={{ label: 'Label', options: dropdownOptions, isMultiselect: false }}
     argTypes={argTypes}
     parameters={{
       design: {
@@ -59,7 +59,44 @@ export const argTypes = {
     <Dropdown
       label="Label"
       options={dropdownOptions}
-      style={{ height: '250px' }}
+      style={{ height: '250px', width: '240px' }}
+    />
+  </div>
+</Canvas>
+
+<Canvas>
+  <div>
+    <b>With value</b>
+    <Dropdown
+      label="Label"
+      value={dropdownOptions[0].value}
+      options={dropdownOptions}
+      style={{ height: '250px', width: '240px' }}
+    />
+  </div>
+</Canvas>
+
+<Canvas>
+  <div>
+    <b>Multiple selection</b>
+    <Dropdown
+      label="Label"
+      isMultiselect
+      style={{ height: '250px', width: '240px' }}
+      options={dropdownOptions}
+    />
+  </div>
+</Canvas>
+
+<Canvas>
+  <div>
+    <b>Multiple selection with values</b>
+    <Dropdown
+      label="Label"
+      isMultiselect
+      value={[dropdownOptions[1].value, dropdownOptions[3].value]}
+      style={{ height: '250px', width: '240px' }}
+      options={dropdownOptions}
     />
   </div>
 </Canvas>
@@ -71,7 +108,7 @@ export const argTypes = {
       label="Label"
       helpText="Helper Text"
       options={dropdownOptions}
-      style={{ height: '250px' }}
+      style={{ height: '250px', width: '240px' }}
     />
   </div>
 </Canvas>
@@ -83,7 +120,7 @@ export const argTypes = {
       label="Label"
       helpText="Helper Text"
       helpTextType="danger"
-      style={{ height: '250px' }}
+      style={{ height: '250px', width: '240px' }}
       options={dropdownOptions}
     />
   </div>
