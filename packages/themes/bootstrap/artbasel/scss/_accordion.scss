@@ -1,0 +1,43 @@
+.accordion {
+    .accordion-item {
+        margin-bottom: -1px;
+        border-top: 1px solid $mchGrey200;
+        border-bottom: 1px solid $mchGrey200;
+        .accordion-collapse .accordion-body {
+            font-size: 14px;
+            color: $mchGrey300;
+        }
+    }
+     .size-default.accordion-header  .accordion-button {
+        font-family: Art Basel Text;
+        font-weight: bold;
+        height: 56px;
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: 0px;
+        text-align: left;
+        &.collapsed::after {
+            height: 24px;
+        }
+    }
+    .size-l.accordion-header  .accordion-button {
+        font-family: Art Basel Text;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: 0px;
+        text-align: left;
+        height: 72px;
+        &.collapsed::after {
+        }
+    }
+    .accordion-button:not(.collapsed)::after {
+        height: 24px;
+    }
+
+    .accordion-button:not(.collapsed) {
+        color: $mchBlack;
+        background-color: $mchWhite;
+    }
+}
+
