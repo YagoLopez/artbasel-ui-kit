@@ -1,0 +1,79 @@
+<!--- Tag.stories.mdx --->
+
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+
+import Tag from './Tag';
+
+<Meta
+  title="Components/Feedback/Tag"
+  component={Tag}
+  decorators={[withDesign]}
+/>
+
+# Tag
+
+The Use of Tags in e.g. Product, Content or Gallery cards is intended to be a visual feedback of the status of an associated item. 
+
+export const Template = (args) => <Tag {...args}/>;
+
+<Canvas>
+  <Story
+    name="Tag"
+    args={{
+      label: 'Label',
+    }}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=134%3A3299',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Now Live"
+    args={{
+      label: 'Now Live',
+      live: true,
+    }}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=134%3A3299',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Curator’s Pick"
+    args={{
+      headerLabel: 'Curator’s Pick',
+      label: 'Name goes here',
+    }}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=134%3A3299',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Tag} />

@@ -1,0 +1,16 @@
+.tag {
+  .tag-shadow {
+    filter: drop-shadow(0px 4px 16px rgba(29, 35, 39, 0.06));
+  }
+  .tag-border-radius{
+    border-radius: .125rem;
+  }
+  .tag-border-radius-start {
+    border-bottom-left-radius: .125rem;
+    border-top-left-radius: .125rem;
+  }
+  .tag-border-radius-end {
+    border-bottom-left-radius: .125rem;
+    border-top-left-radius: .125rem;
+  }
+}
