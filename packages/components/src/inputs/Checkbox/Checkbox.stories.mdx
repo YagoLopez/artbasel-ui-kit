@@ -44,7 +44,7 @@ export const argTypes = {
   <Story
     name="Checkbox"
     args={{
-      label: 'Section'
+      label: 'Label',
     }}
     argTypes={argTypes}
     parameters={{
@@ -81,7 +81,12 @@ export const argTypes = {
   <div>
     <Checkbox checked={false} label="Text Multiline" align="left" />
     <p>Left Align</p>
-    <Checkbox checked={false} label="Text Multiline" align="right" className="hover" />
+    <Checkbox
+      checked={false}
+      label="Text Multiline"
+      align="right"
+      className="hover"
+    />
     <p>Right Align</p>
   </div>
 </Preview>
@@ -92,8 +97,6 @@ export const argTypes = {
   <div>
     <Checkbox checked={false} label="Section" />
     <p>Default</p>
-    <Checkbox checked={false} label="Section" className="hover" />
-    <p>Hover</p>
     <Checkbox checked={true} label="Section" />
     <p>Active</p>
     <Checkbox disabled={true} label="Section" />

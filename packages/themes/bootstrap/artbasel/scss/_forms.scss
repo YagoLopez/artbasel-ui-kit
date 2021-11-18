@@ -37,15 +37,17 @@
   &.align-left {
     flex-direction: row-reverse;
     padding-left: 0px;
+
     .form-check-input {
-      margin-left: $spacing-5;
+      margin-left: $spacing-3;
     }
   }
+
   .form-check-input {
     background-color: $mchGrey200;
     border-color: $mchGrey200;
     margin-top: 5px;
-    margin-right: $spacing-5;
+    margin-right: $spacing-3;
 
     &[type='checkbox'] {
       border-radius: 2px;
@@ -72,7 +74,7 @@
     &:checked[type='checkbox'] {
       background-color: $mchBlack;
       border-color: $mchBlack;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 24 24'%3E%3Cpath d='M18.455 6.484l1.09 1.032-9.504 10.03-5.543-4.988 1.003-1.115 4.457 4.01 8.497-8.969z'%3E%3C/path%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='5 5 14 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5754 16.42L7 12.8446L8.26032 11.5843L10.5754 13.8904L16.4658 8L17.7261 9.26926L10.5754 16.42Z' fill='%23ffffff'/%3E%3C/svg%3E");
     }
 
     &:disabled {
@@ -85,10 +87,6 @@
       opacity: 1;
       color: $mchGrey300;
     }
-  }
-
-  .form-check-label {
-    width: 100%;
   }
 }
 

@@ -18,26 +18,22 @@ const Checkbox = ({
   onChange,
   value,
 }) => (
-      <Form.Check
-        data-testid="mch-checkbox"
-        className={classNames(
-          { disabled },
-          className,
-          `align-${align}`,
-        )}
-        checked={checked}
-        style={cssStyles}
-        disabled={disabled}
-        type='checkbox'
-        bsPrefix={cssInternalPrefix}
-        id={id}
-        inline={inline}
-        isInvalid={isInvalid}
-        isValid={isValid}
-        label={label}
-        onChange={onChange || (() => {})}
-        value={value}
-      ></Form.Check>
+  <Form.Check
+    data-testid="mch-checkbox"
+    className={classNames({ disabled }, className, `align-${align}`)}
+    checked={checked}
+    style={cssStyles}
+    disabled={disabled}
+    type="checkbox"
+    bsPrefix={cssInternalPrefix}
+    id={id}
+    inline={inline}
+    isInvalid={isInvalid}
+    isValid={isValid}
+    label={label}
+    onChange={onChange || (() => {})}
+    value={value}
+  ></Form.Check>
 );
 
 Checkbox.propTypes = {
@@ -51,7 +47,7 @@ Checkbox.propTypes = {
   inline: PropTypes.bool,
   isInvalid: PropTypes.bool,
   isValid: PropTypes.bool,
-  label: PropTypes.node,
+  label: PropTypes.string,
   onChange: PropTypes.func,
   value: PropTypes.string,
 };

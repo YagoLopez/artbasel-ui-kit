@@ -44,7 +44,7 @@ export const argTypes = {
   <Story
     name="Radio"
     args={{
-      label: 'Section'
+      label: 'Section',
     }}
     argTypes={argTypes}
     parameters={{
@@ -81,7 +81,12 @@ export const argTypes = {
   <div>
     <Radio checked={false} label="Text Multiline" align="left" />
     <p>Left Align</p>
-    <Radio checked={false} label="Text Multiline" align="right" className="hover" />
+    <Radio
+      checked={false}
+      label="Text Multiline"
+      align="right"
+      className="hover"
+    />
     <p>Right Align</p>
   </div>
 </Preview>
@@ -92,8 +97,6 @@ export const argTypes = {
   <div>
     <Radio checked={false} label="Section" />
     <p>Default</p>
-    <Radio checked={false} label="Section" className="hover" />
-    <p>Hover</p>
     <Radio checked={true} label="Section" />
     <p>Active</p>
     <Radio disabled={true} label="Section" />

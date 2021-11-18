@@ -17,25 +17,21 @@ const Radio = ({
   label,
   onChange,
 }) => (
-      <Form.Check
-        data-testid="mch-radio"
-        className={classNames(
-          { disabled },
-          className,
-          `align-${align}`,
-        )}
-        checked={checked}
-        style={cssStyles}
-        disabled={disabled}
-        type='radio'
-        bsPrefix={cssInternalPrefix}
-        id={id}
-        inline={inline}
-        isInvalid={isInvalid}
-        isValid={isValid}
-        label={label}
-        onChange={onChange || (() => {})}
-      ></Form.Check>
+  <Form.Check
+    data-testid="mch-radio"
+    className={classNames({ disabled }, className, `align-${align}`)}
+    checked={checked}
+    style={cssStyles}
+    disabled={disabled}
+    type="radio"
+    bsPrefix={cssInternalPrefix}
+    id={id}
+    inline={inline}
+    isInvalid={isInvalid}
+    isValid={isValid}
+    label={label}
+    onChange={onChange || (() => {})}
+  ></Form.Check>
 );
 
 Radio.propTypes = {
@@ -49,7 +45,7 @@ Radio.propTypes = {
   inline: PropTypes.bool,
   isInvalid: PropTypes.bool,
   isValid: PropTypes.bool,
-  label: PropTypes.node,
+  label: PropTypes.string,
   onChange: PropTypes.func,
 };
 
