@@ -7,11 +7,11 @@ React UI components.
 ## Installation
 
 ```
-yarn add @mch-ui-kit/components
+yarn add @mch-group/uikit-components
 ```
 
 ```
-npm --save install @mch-ui-kit/components
+npm --save install @mch-group/uikit-components
 ```
 
 Additionally install the peer dependencies (if not present)
@@ -57,7 +57,7 @@ npm --save install react
 ## Usage
 
 ```jsx
-import { Button } from '@mch-ui-kit/components';
+import { Button } from '@mch-group/uikit-components';
 
 const Example = () => {
   return (

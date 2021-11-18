@@ -7,11 +7,11 @@ Collection of custom bootstrap themes using Sass.
 ## Installation
 
 ```
-yarn add @mch-ui-kit/themes
+yarn add @mch-group/uikit-themes
 ```
 
 ```
-npm --save install @mch-ui-kit/themes
+npm --save install @mch-group/uikit-themes
 ```
 
 ## Themes
@@ -33,7 +33,7 @@ npm --save install @mch-ui-kit/themes
 ## Usage
 
 ```jsx
-import '@mch-ui-kit/themes/dist/artbasel/artbasel.css';
+import '@mch-group/uikit-themes/dist/artbasel/artbasel.css';
 
 <h1>Sample Text</h1>
 <button className="btn btn-secondary"></button>
