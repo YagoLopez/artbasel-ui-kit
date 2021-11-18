@@ -35,7 +35,9 @@ npm --save install react
 
 ### Feedback
   - Modal
+  - ProgressBar
   - Snackbar
+  - Tag
 
 ### Inputs
   - Checkbox
@@ -53,6 +55,8 @@ npm --save install react
   - Cards
   - Grid
   - ProductTitle
+### Utils
+  - Icon
 
 ## Usage
 
