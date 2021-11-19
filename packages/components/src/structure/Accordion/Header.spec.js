@@ -5,7 +5,7 @@ import Header from './Header';
 
 describe('Accordion Header component', () => {
   test('render Accordion Header', () => {
-    render(<Header><p>Header</p></Header>);
+    render(<Header>Header</Header>);
     const el = screen.getByText('Header');
     expect(el).toBeDefined();
   });

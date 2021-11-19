@@ -5,13 +5,18 @@ import AccordionBody from 'react-bootstrap/AccordionBody';
 const Body = ({
   cssInternalPrefix, children, className, cssStyles,
 }) => (
-    <AccordionBody data-testid="mch-accordion-body" className={className} style={cssStyles} bsPrefix={cssInternalPrefix}>
-        {children}
-    </AccordionBody>
+  <AccordionBody
+    data-testid="mch-accordion-body"
+    className={className}
+    style={cssStyles}
+    bsPrefix={cssInternalPrefix}
+  >
+    {children}
+  </AccordionBody>
 );
 Body.propTypes = {
   cssInternalPrefix: PropTypes.string,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
   cssStyles: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };

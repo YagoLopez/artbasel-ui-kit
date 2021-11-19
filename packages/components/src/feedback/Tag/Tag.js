@@ -9,23 +9,25 @@ const style = {
 
 const Tag = ({ label, live, headerLabel }) => {
   return (
-    <div data-testid= "mch-tag" className="tag">
-      {
-        headerLabel
-          && <div className="tag-shadow d-inline-block p-3 bg-black tag-border-radius-start text-white">
-            <p className="text-label-small mb-0">
-              {headerLabel}
-            </p>
-          </div>
-      }
-      <div className={classNames('tag-shadow d-inline-block p-3 bg-white', {
-        'tag-border-radius-end': headerLabel,
-        'tag-border-radius': !headerLabel,
-      })}>
+    <div data-testid="mch-tag" className="tag">
+      {headerLabel && (
+        <div className="tag-shadow d-inline-block p-3 bg-black tag-border-radius-start text-white">
+          <p className="text-label-small mb-0">{headerLabel}</p>
+        </div>
+      )}
+      <div
+        className={classNames('tag-shadow d-inline-block p-3 bg-white', {
+          'tag-border-radius-end': headerLabel,
+          'tag-border-radius': !headerLabel,
+        })}
+      >
         <p className="text-label-small mb-0">
-          {
-            live && <div style={style} className="d-inline-block me-2 rounded-circle bg-success" />
-          }
+          {live && (
+            <span
+              style={style}
+              className="d-inline-block me-2 rounded-circle bg-success"
+            />
+          )}
           {label}
         </p>
       </div>

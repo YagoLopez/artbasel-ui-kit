@@ -77,7 +77,7 @@ describe('Dropdown component', () => {
     });
 
     describe('is dropdown multi', () => {
-      test('should clean toggle text on reset button', () => {
+      test('should clean toggle text on reset button', async () => {
         render(
           <Dropdown
             options={dropdownOptions}
@@ -86,19 +86,24 @@ describe('Dropdown component', () => {
           />,
         );
 
-        const input = screen.getByPlaceholderText('Select');
-        fireEvent.click(input);
-        const reset = screen.getByText('Reset');
-        fireEvent.click(reset);
-
-        expect(input).toHaveAttribute('value', '');
+        await waitFor(() => {
+          const input = screen.getByPlaceholderText('Select');
+          fireEvent.click(input);
+          const reset = screen.getByText('Reset');
+          fireEvent.click(reset);
+          expect(input).toHaveAttribute('value', '');
+        });
       });
 
       test('should call onChange when click on apply button', async () => {
         const onChangeSpy = jest.fn();
 
         render(
-            <Dropdown options={dropdownOptions} onChange={onChangeSpy} isMultiselect />,
+          <Dropdown
+            options={dropdownOptions}
+            onChange={onChangeSpy}
+            isMultiselect
+          />,
         );
 
         await waitFor(() => {
