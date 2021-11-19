@@ -1,0 +1,48 @@
+.btn-backtotop {
+  width: $btn-backtotop-size;
+  height: $btn-backtotop-size;
+  border-radius: 100%;
+  padding: 0;
+  box-shadow: 0px 4px 16px rgba(29, 35, 39, 0.12);
+
+  &::before {
+    @include transition-mix();
+
+    display: block;
+    width: 150px;
+    height: 150px;
+
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center center;
+
+    background-color: $mchGrey100;
+    border-radius: 50%;
+  }
+
+  &:hover,
+  &.hover {
+    background-color: $mchGrey100;
+    border-color: $mchGrey100;
+
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+
+  &:focus,
+  &.focus {
+    background-color: $mchGrey200;
+    border-color: $mchGrey200;
+    box-shadow: 0px 4px 16px rgba(29, 35, 39, 0.12);
+  }
+
+  svg {
+    fill: $mchBlack;
+  }
+}

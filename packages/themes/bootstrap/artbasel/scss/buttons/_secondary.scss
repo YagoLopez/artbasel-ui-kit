@@ -1,0 +1,64 @@
+.btn-secondary {
+  text-transform: uppercase;
+  color: $mchBlack;
+  background-color: $mchWhite;
+  border-color: $mchBlack;
+  box-shadow: none;
+  //added to fix incorrect line height of the font
+  padding-bottom: 8px;
+
+  &::before {
+    @include transition-mix();
+
+    display: block;
+    width: 300px;
+    height: 300px;
+
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center center;
+
+    background-color: $mchGrey100;
+    border-radius: 50%;
+  }
+
+  &:hover,
+  &.hover {
+    color: $mchBlack;
+    background-color: $mchGrey100;
+    border-color: $mchBlack;
+
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $mchWhite;
+    color: $mchGrey400;
+    border-color: $mchGrey400;
+
+    svg {
+      fill: $mchGrey400;
+    }
+  }
+
+  .btn-check:focus + &,
+  &:focus,
+  &.focus {
+    background-color: $mchGrey200;
+    border-color: $mchBlack;
+  }
+
+  svg {
+    fill: $mchBlack;
+    //added to fix incorrect line height of the font
+    margin-bottom: -2px;
+  }
+}

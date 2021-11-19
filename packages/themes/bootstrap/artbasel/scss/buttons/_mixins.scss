@@ -1,0 +1,19 @@
+@mixin transition-mix(
+  $property: transform,
+  $duration: 0.35s,
+  $timing: linear,
+  $delay: 0s,
+  $position: absolute,
+  $top: 50%,
+  $left: 50%
+) {
+  position: $position;
+  top: $top;
+  left: $left;
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $timing;
+  transition-delay: $delay;
+  content: '';
+  z-index: -1;
+}

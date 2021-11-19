@@ -1,0 +1,59 @@
+.btn-icon {
+  color: $mchBlack;
+  padding: $spacing-3;
+  padding-bottom: $spacing-3;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+
+  &::before {
+    @include transition-mix();
+
+    display: block;
+    width: 100px;
+    height: 100px;
+
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center center;
+
+    background-color: $mchGrey100;
+    border-radius: 50%;
+  }
+
+  &:hover,
+  &.hover {
+    color: $mchBlack;
+    background-color: $mchGrey100;
+    border-color: $mchGrey100;
+
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $mchWhite;
+    color: $mchGrey400;
+    border-color: $mchGrey400;
+
+    svg {
+      fill: $mchGrey500;
+    }
+  }
+
+  &:focus,
+  &.focus {
+    background-color: $mchGrey200;
+  }
+
+  svg {
+    fill: $mchBlack;
+  }
+}

@@ -1,0 +1,44 @@
+.btn {
+  justify-content: center;
+  transform: translateZ(0);
+  transition-duration: 0.6s;
+  overflow: hidden;
+
+  &.icon-left,
+  &.icon-right {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+  }
+
+  &.icon-left {
+    flex-direction: row;
+    svg {
+      margin-right: $btn-icon-margin;
+    }
+  }
+
+  &.icon-right {
+    flex-direction: row-reverse;
+    svg {
+      margin-left: $btn-icon-margin;
+    }
+  }
+
+  &.size-compact {
+    height: $btn-size-compact-height;
+  }
+
+  &.size-dynamic {
+    height: $btn-size-dynamic-height;
+    min-width: $btn-size-dynamic-min-width;
+  }
+
+  &:focus,
+  &:active,
+  &:focus:active {
+    outline: none;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,66 @@
+.btn-filter {
+  width: $btn-filter-size;
+  height: $btn-filter-size;
+  border-radius: 100%;
+  padding: 0;
+  box-shadow: 0px 4px 16px rgba(29, 35, 39, 0.12);
+
+  &::before {
+    @include transition-mix();
+
+    display: block;
+    width: 150px;
+    height: 150px;
+
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center center;
+
+    background-color: $mchGrey500;
+    border-radius: 50%;
+  }
+
+  &:hover,
+  &.hover {
+    color: $mchWhite;
+    background-color: $mchGrey500;
+    border-color: $mchGrey500;
+
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    fill: $mchBlack;
+
+    svg {
+      fill: $mchBlack;
+    }
+  }
+
+  &:focus,
+  &.focus {
+    background-color: $mchGrey200;
+    border-color: $mchGrey200;
+
+    svg {
+      fill: $mchBlack;
+    }
+  }
+
+  .icon-filter-check {
+    position: absolute;
+    border-radius: 100%;
+    right: -5px;
+    top: -5px;
+    fill: $mchBlack;
+    background-color: $mchWhite;
+  }
+}

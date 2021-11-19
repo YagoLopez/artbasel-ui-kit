@@ -1,0 +1,95 @@
+.btn-toggle {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: normal;
+  text-transform: none;
+  height: $btn-size-toggle-height;
+
+  color: $mchBlack;
+  background-color: $mchWhite;
+
+  border-radius: $btn-size-toggle-height;
+  border-width: 1px;
+  border-color: $mchBlack;
+
+  &::before {
+    @include transition-mix();
+
+    display: block;
+    width: 150px;
+    height: 150px;
+
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center center;
+
+    background-color: $mchGrey100;
+    border-radius: 50%;
+  }
+
+  &.toggle-active {
+    color: $mchWhite;
+    background-color: $mchBlack;
+    border-color: $mchBlack;
+    padding-right: 0.5rem;
+
+    &::before {
+      background-color: $mchGrey500;
+    }
+
+    &:hover,
+    &.hover {
+      color: $mchWhite;
+      background-color: $mchGrey500;
+      border-color: $mchGrey500;
+    }
+
+    &:disabled,
+    &.disabled {
+      color: $mchWhite;
+      background-color: $mchGrey300;
+      border-color: $mchGrey300;
+
+      & i {
+        background-image: url("data:image/svg+xml, %3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 12C0 5.37258 5.37258 0 12 0V0C18.6274 0 24 5.37258 24 12V12C24 18.6274 18.6274 24 12 24V24C5.37258 24 0 18.6274 0 12V12Z' fill='white'/%3E%3Cpath d='M18.4553 6.48413L19.5442 7.51575L10.0414 17.5465L4.49805 12.5574L5.50149 11.4425L9.95809 15.4534L18.4553 6.48413Z' fill='%23757575'/%3E%3C/svg%3E");
+      }
+    }
+  }
+
+  & i {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 0;
+    bottom: 0.75rem;
+    right: 0;
+    margin-left: 1rem;
+    margin-right: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml, %3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 12C0 5.37258 5.37258 0 12 0V0C18.6274 0 24 5.37258 24 12V12C24 18.6274 18.6274 24 12 24V24C5.37258 24 0 18.6274 0 12V12Z' fill='white'/%3E%3Cpath d='M18.4553 6.48413L19.5442 7.51575L10.0414 17.5465L4.49805 12.5574L5.50149 11.4425L9.95809 15.4534L18.4553 6.48413Z' fill='%231D2327'/%3E%3C/svg%3E");
+  }
+
+  &:hover,
+  &.hover {
+    color: $mchBlack;
+    background-color: $mchGrey100;
+    border-color: $mchBlack;
+
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $mchGrey200;
+    color: $mchGrey300;
+    border-color: $mchGrey300;
+  }
+}
