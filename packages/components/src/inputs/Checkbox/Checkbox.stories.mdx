@@ -1,6 +1,6 @@
 <!--- Checkbox.stories.mdx --->
 
-import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
 
 import Checkbox from './Checkbox';
@@ -45,6 +45,7 @@ export const argTypes = {
     name="Checkbox"
     args={{
       label: 'Label',
+      id: 'checkbox-canvas',
     }}
     argTypes={argTypes}
     parameters={{
@@ -64,47 +65,79 @@ export const argTypes = {
 
 ### Label Placement
 
-<Preview>
-  <div>
-    <Checkbox checked={false} label="Section" align="left" />
-    <p>Left Align</p>
-    <Checkbox checked={false} label="Section" align="right" className="hover" />
-    <p>Right Align</p>
-  </div>
-</Preview>
+Label can be aligned to the left and the right.
+
+#### Left Align
+
+<Canvas>
+  <Checkbox checked={false} id="label-left-align" label="Label" align="left" />
+</Canvas>
+
+#### Right Align
+
+<Canvas>
+  <Checkbox
+    checked={false}
+    id="label-right-align"
+    label="Label"
+    align="right"
+    className="hover"
+  />
+</Canvas>
 
 ## Behaviors
 
-### Text
+### Multiline Label
 
-<Preview>
-  <div>
-    <Checkbox checked={false} label="Text Multiline" align="left" />
-    <p>Left Align</p>
+Label text will automatically wrapped to fit the parent container. Additionally, the component's width can be set by cssStyles (view source code).
+
+#### Right Align
+
+<Canvas>
+  <div style={{ width: '200px' }}>
     <Checkbox
-      checked={false}
-      label="Text Multiline"
       align="right"
-      className="hover"
+      checked={true}
+      id="multiline-right"
+      label="I agree to the Terms and Conditions and the Privacy Policy"
     />
-    <p>Right Align</p>
   </div>
-</Preview>
+</Canvas>
+
+#### Left Align
+
+<Canvas>
+  <Checkbox
+    cssStyles={{ width: '200px' }}
+    align="left"
+    checked={true}
+    id="multiline-left"
+    label="I agree to the Terms and Conditions and the Privacy Policy"
+  />
+</Canvas>
 
 ## States
 
-<Preview>
+<Canvas>
   <div>
-    <Checkbox checked={false} label="Section" />
-    <p>Default</p>
-    <Checkbox checked={true} label="Section" />
-    <p>Active</p>
-    <Checkbox disabled={true} label="Section" />
-    <p>Disabled</p>
-    <Checkbox checked={false} label="Section" className="focus" />
-    <p>Focus</p>
+    Default
+    <Checkbox checked={false} id="state-default" label="Label" />
+    <br />
+    Active
+    <Checkbox checked={true} id="state-active" label="Label" />
+    <br />
+    Disabled
+    <Checkbox disabled={true} id="state-disabled" label="Label" />
+    <br />
+    Focus
+    <Checkbox
+      checked={false}
+      id="state-focus"
+      label="Label"
+      className="focus"
+    />
   </div>
-</Preview>
+</Canvas>
 
 ## Properties
 

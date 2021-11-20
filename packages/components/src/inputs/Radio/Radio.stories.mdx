@@ -1,6 +1,6 @@
 <!--- Radio.stories.mdx --->
 
-import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
 
 import Radio from './Radio';
@@ -45,6 +45,7 @@ export const argTypes = {
     name="Radio"
     args={{
       label: 'Section',
+      id: 'radio-canvas',
     }}
     argTypes={argTypes}
     parameters={{
@@ -64,47 +65,74 @@ export const argTypes = {
 
 ### Label Placement
 
-<Preview>
-  <div>
-    <Radio checked={false} label="Section" align="left" />
-    <p>Left Align</p>
-    <Radio checked={false} label="Section" align="right" className="hover" />
-    <p>Right Align</p>
-  </div>
-</Preview>
+Label can be aligned to the left and the right.
+
+#### Left Align
+
+<Canvas>
+  <Radio checked={false} id="label-left-align" label="Section" align="left" />
+</Canvas>
+
+#### Right Align
+
+<Canvas>
+  <Radio
+    checked={false}
+    id="label-right-align"
+    label="Section"
+    align="right"
+    className="hover"
+  />
+</Canvas>
 
 ## Behaviors
 
-### Text
+### Multiline Label
 
-<Preview>
-  <div>
-    <Radio checked={false} label="Text Multiline" align="left" />
-    <p>Left Align</p>
+Label text will automatically wrapped to fit the parent container. Additionally, the component's width can be set by cssStyles (view source code).
+
+#### Right Align
+
+<Canvas>
+  <div style={{ width: '200px' }}>
     <Radio
-      checked={false}
-      label="Text Multiline"
       align="right"
-      className="hover"
+      checked={true}
+      id="multiline-right"
+      label="I agree to the Terms and Conditions and the Privacy Policy"
     />
-    <p>Right Align</p>
   </div>
-</Preview>
+</Canvas>
+
+#### Left Align
+
+<Canvas>
+  <Radio
+    cssStyles={{ width: '200px' }}
+    align="left"
+    checked={true}
+    id="multiline-left"
+    label="I agree to the Terms and Conditions and the Privacy Policy"
+  />
+</Canvas>
 
 ## States
 
-<Preview>
+<Canvas>
   <div>
-    <Radio checked={false} label="Section" />
-    <p>Default</p>
-    <Radio checked={true} label="Section" />
-    <p>Active</p>
-    <Radio disabled={true} label="Section" />
-    <p>Disabled</p>
-    <Radio checked={false} label="Section" className="focus" />
-    <p>Focus</p>
+    Default
+    <Radio checked={false} id="state-default" label="Section" />
+    <br />
+    Active
+    <Radio checked={true} id="state-active" label="Section" />
+    <br />
+    Disabled
+    <Radio disabled={true} id="state-disabled" label="Section" />
+    <br />
+    Focus
+    <Radio checked={false} id="state-focus" label="Section" className="focus" />
   </div>
-</Preview>
+</Canvas>
 
 ## Properties
 

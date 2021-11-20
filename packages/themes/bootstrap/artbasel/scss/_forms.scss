@@ -31,8 +31,14 @@
 }
 
 .form-check {
-  width: max-content;
+  width: fit-content;
   display: flex;
+
+  .form-check-label {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+  }
 
   &.align-left {
     flex-direction: row-reverse;
@@ -40,6 +46,11 @@
 
     .form-check-input {
       margin-left: $spacing-3;
+    }
+
+    .form-check-label {
+      width: calc(100% - 2rem);
+      text-align: right;
     }
   }
 
