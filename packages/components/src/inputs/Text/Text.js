@@ -1,7 +1,6 @@
 import React, { useMemo, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import Form from 'react-bootstrap/Form';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import { FormControl, FloatingLabel, FormText } from 'react-bootstrap';
 import classnames from 'classnames';
 
 const textClassName = {
@@ -34,8 +33,10 @@ const Text = ({
   return (
     <div data-testid="mch-text">
       <FloatingLabel controlId={id} label={label}>
-        <Form.Control
-          className={classnames(`help-text-input-${helpTextType}`, className)}
+        <FormControl
+          className={classnames(`help-text-input-${helpTextType}`, className, {
+            'has-icon': isPassword || validated,
+          })}
           style={cssStyles}
           bsPrefix={cssInternalPrefix}
           type={isPassword && passwordIcon === 'show' ? 'text' : type}
@@ -55,7 +56,15 @@ const Text = ({
           />
         )}
       </FloatingLabel>
-      <Form.Text className={textClassName[helpTextType]}>{helpText}</Form.Text>
+      {helpText && (
+        <FormText
+          className={textClassName[helpTextType]}
+          as="div"
+          data-testid="help-text"
+        >
+          {helpText}
+        </FormText>
+      )}
     </div>
   );
 };

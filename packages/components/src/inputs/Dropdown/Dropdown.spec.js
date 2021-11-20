@@ -9,6 +9,14 @@ import { Dropdown } from '.';
 
 describe('Dropdown component', () => {
   describe('renderer', () => {
+    test('should not render helpText if not set as prop', () => {
+      render(<Dropdown />);
+
+      const helpText = screen.queryByTestId('help-text');
+
+      expect(helpText).not.toBeInTheDocument();
+    });
+
     describe('is dropdown simple', () => {
       test('should render the correct options', async () => {
         render(<Dropdown options={dropdownOptions} />);
@@ -77,7 +85,7 @@ describe('Dropdown component', () => {
     });
 
     describe('is dropdown multi', () => {
-      test('should clean toggle text on reset button', async () => {
+      test('should clean items selected on reset button', async () => {
         render(
           <Dropdown
             options={dropdownOptions}
@@ -86,12 +94,26 @@ describe('Dropdown component', () => {
           />,
         );
 
+        const input = screen.getByPlaceholderText('Select');
+        fireEvent.click(input);
+
+        expect(
+          screen.getByText(dropdownOptions[1].label).parentNode,
+        ).toHaveProperty('className', expect.stringContaining('active'));
+        expect(
+          screen.getByText(dropdownOptions[3].label).parentNode,
+        ).toHaveProperty('className', expect.stringContaining('active'));
+
         await waitFor(() => {
-          const input = screen.getByPlaceholderText('Select');
-          fireEvent.click(input);
           const reset = screen.getByText('Reset');
           fireEvent.click(reset);
-          expect(input).toHaveAttribute('value', '');
+
+          expect(
+            screen.getByText(dropdownOptions[1].label).parentNode,
+          ).not.toHaveProperty('className', expect.stringContaining('active'));
+          expect(
+            screen.getByText(dropdownOptions[3].label).parentNode,
+          ).not.toHaveProperty('className', expect.stringContaining('active'));
         });
       });
 

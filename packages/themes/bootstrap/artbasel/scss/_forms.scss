@@ -48,6 +48,8 @@
     border-color: $mchGrey200;
     margin-top: 5px;
     margin-right: $spacing-3;
+    min-width: 1rem;
+    min-height: 1rem;
 
     &[type='checkbox'] {
       border-radius: 2px;
@@ -97,8 +99,13 @@
     border-width: 0 0 1px;
     border-radius: 0px;
     padding-left: 0;
+    height: 3rem;
     font-size: 0.875rem;
     border-color: $mchGrey300;
+
+    &.has-icon {
+      padding-right: 3rem;
+    }
 
     &.help-text-input-warning,
     &.help-text-input-warning:hover {
@@ -236,4 +243,9 @@
       display: initial;
     }
   }
+}
+
+.form-text {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }

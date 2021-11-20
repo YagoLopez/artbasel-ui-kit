@@ -34,14 +34,17 @@ const Dropdown = ({
   const [optionsSelected, setOptionSelected] = useState(
     initializeValues(value, options),
   );
-  const [show, setShow] = useState(false);
-  const Menu = useMemo(() => (isMultiselect ? MultiMenu : SimpleMenu), [isMultiselect]);
+  const [isShow, setIsShow] = useState(false);
+  const Menu = useMemo(() => (isMultiselect ? MultiMenu : SimpleMenu), [
+    isMultiselect,
+  ]);
   const dropdownRef = useRef(null);
 
   const handleOnChange = useCallback(
     (option) => {
       if (isMultiselect) {
         setOptionSelected(option);
+        onChange(option.map((o) => o.value));
       } else {
         setOptionSelected([option]);
         onChange(option.value);
@@ -50,22 +53,17 @@ const Dropdown = ({
     [options, isMultiselect],
   );
 
-  const handleSubmit = useCallback(() => {
-    onChange(optionsSelected.map((o) => o.value));
-    setShow(false);
-  }, [optionsSelected]);
+  const handleOnToggle = useCallback((isOpen) => {
+    setIsShow(isOpen);
+  }, []);
 
-  const handleOnToggle = useCallback(
-    (isOpen, { source }) => {
-      setShow(isOpen);
-      if (source === 'rootClose' && isMultiselect) handleSubmit();
-    },
-    [handleSubmit],
-  );
+  const handleClose = useCallback(() => {
+    setIsShow(false);
+  }, []);
 
   return (
     <BTPDropdown
-      show={show}
+      show={isShow}
       style={style}
       className={classnames(className)}
       onToggle={handleOnToggle}
@@ -78,12 +76,21 @@ const Dropdown = ({
         placeholder={placeholder}
         helpTextType={helpTextType}
       />
-      <FormText className={textClassName[helpTextType]}>{helpText}</FormText>
+      {helpText && (
+        <FormText
+          className={textClassName[helpTextType]}
+          as="div"
+          data-testid="help-text"
+        >
+          {helpText}
+        </FormText>
+      )}
       <Menu
         options={options}
         onChange={handleOnChange}
-        onSubmit={handleSubmit}
         optionsSelected={optionsSelected}
+        isShow={isShow}
+        onClose={handleClose}
       />
     </BTPDropdown>
   );

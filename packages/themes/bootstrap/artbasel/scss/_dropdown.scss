@@ -68,6 +68,11 @@
         &:active,
         &.active {
           background: $mchGrey200;
+          color: $mchBlack;
+        }
+
+        > input[type='checkbox'] {
+          margin-right: 0;
         }
       }
     }

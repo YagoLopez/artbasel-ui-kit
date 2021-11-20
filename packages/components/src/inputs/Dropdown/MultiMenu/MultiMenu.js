@@ -8,9 +8,10 @@ import { Row, Col } from '../../../structure/Grid';
 const mapOptionsSelected = optionsSelected => optionsSelected.map(({ value }) => value);
 
 const MultiMenu = ({
-  options, optionsSelected, onChange, onSubmit,
+  options, optionsSelected, onChange, isShow, onClose,
 }) => {
   const [value, setValue] = useState(optionsSelected);
+  const [firstRender, setFirstRender] = useState(true);
 
   const handleOnChange = useCallback((e) => {
     const { checked, value: valueCheckbox } = e.target;
@@ -22,13 +23,21 @@ const MultiMenu = ({
     }
   }, []);
 
-  useEffect(() => {
-    onChange(value);
-  }, [value]);
-
   const handleOnReset = useCallback(() => {
     setValue([]);
   }, [setValue]);
+
+  const handleOnChangeParent = useCallback(() => {
+    onChange(value);
+    onClose();
+  }, [value]);
+
+  useEffect(() => {
+    if (!firstRender && !isShow) {
+      onChange(value);
+    }
+    setFirstRender(false);
+  }, [isShow]);
 
   return (
     <Dropdown.Menu>
@@ -48,7 +57,7 @@ const MultiMenu = ({
           />
         ))}
       </div>
-      <Row className="w-100">
+      <Row className="w-100" gutter="g-0">
         <Col className="d-flex" xs={6}>
           <Button
             variant="secondary"
@@ -60,7 +69,7 @@ const MultiMenu = ({
           </Button>
         </Col>
         <Col className="d-flex" xs={6}>
-          <Button size="compact" className="w-100 m-5" onClick={onSubmit}>
+          <Button size="compact" className="w-100 m-5" onClick={handleOnChangeParent}>
             Apply
           </Button>
         </Col>
@@ -83,14 +92,15 @@ MultiMenu.propTypes = {
     }),
   ),
   onChange: PropTypes.func,
-  onSubmit: PropTypes.func,
+  isShow: PropTypes.bool.isRequired,
+  onClose: PropTypes.func,
 };
 
 MultiMenu.defaultProps = {
   options: [],
   optionsSelected: [],
   onChange: () => null,
-  onSubmit: () => null,
+  onClose: () => null,
 };
 
 export default MultiMenu;

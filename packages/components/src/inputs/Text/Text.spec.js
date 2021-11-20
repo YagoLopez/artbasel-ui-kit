@@ -64,6 +64,14 @@ describe('Text component', () => {
 
       expect(eyeIcon).toHaveProperty('className', 'eye-hide-icon');
     });
+
+    test('should not render helpText if not set as prop', () => {
+      render(<Text />);
+
+      const helpText = screen.queryByTestId('help-text');
+
+      expect(helpText).not.toBeInTheDocument();
+    });
   });
 
   describe('actions', () => {

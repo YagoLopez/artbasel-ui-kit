@@ -33,8 +33,8 @@ const Search = ({
         disabled={disabled}
         onChange={onChange}
       />
-      <InputGroup.Text onClick={onRemove} >
-      <i className="remove-icon" data-testid="remove-search" />
+      <InputGroup.Text onClick={onRemove} as="button" >
+        <i className="remove-icon" data-testid="remove-search" />
       </InputGroup.Text>
     </InputGroup>
   );
