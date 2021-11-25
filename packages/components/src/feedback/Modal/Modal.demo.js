@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { Button } from '../../actions/Button';
 import { TextLink } from '../../actions/TextLink';
 import Modal from './Modal';
@@ -32,10 +31,10 @@ const ModalDemo = ({
         title={title}
         subline={subline}
       >
-        <Modal.Body className="p-sm-5 px-md-8">
+        <Modal.Body className={filter ? 'p-8' : 'py-7 px-8'}>
           <p>lorem ipsum</p>
         </Modal.Body>
-        <Modal.Footer className={classNames('p-sm-5 px-md-8', { 'modal-footer-filter': filter })}>
+        <Modal.Footer className={filter ? 'modal-footer-filter py-8 px-7' : 'py-7 px-8'}>
           {
             filter
               ? <TextLink>{secondaryActionText}</TextLink>

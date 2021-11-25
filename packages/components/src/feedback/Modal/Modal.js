@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal as BSModal } from 'react-bootstrap';
+import { ButtonIcon } from '../../actions/ButtonIcon';
 import Footer from './Footer';
 import Body from './Body';
 
@@ -14,7 +15,7 @@ const Modal = ({
       show={show}
       onHide={onHide}
     >
-      <BSModal.Header closeButton className="p-5 px-md-8">
+      <BSModal.Header className={filter ? 'py-8 px-7' : 'py-7 px-8'}>
         <div>
           {filter ? (
             <h5 className="pt-3 modal-title-filter">{title}</h5>
@@ -23,6 +24,7 @@ const Modal = ({
           )}
           {subline && <p className="modal-subline mb-0">{subline}</p>}
         </div>
+        <ButtonIcon icon='close' onClick={onHide} className={filter ? 'btn-close-filter' : 'btn-close'} />
       </BSModal.Header>
       {children}
     </BSModal>

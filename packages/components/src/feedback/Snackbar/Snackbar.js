@@ -33,7 +33,7 @@ const Snackbar = ({
         {leadingIcon && (
           <Icon className="toast-leading-icon" name={leadingIcon} />
         )}
-        <div className="toast-message me-auto">{message}</div>
+        <p className="toast-message me-auto mb-0 text-medium">{message}</p>
         <div className="toast-action" onClick={onAction}>
           {actionText}
         </div>
