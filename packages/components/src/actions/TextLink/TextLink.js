@@ -11,6 +11,7 @@ const TextLink = ({
   cssStyles,
   disabled,
   href,
+  onClick,
   icon,
   iconAlign,
 }) => (
@@ -44,6 +45,7 @@ TextLink.propTypes = {
   icon: PropTypes.oneOf(IconList),
   iconAlign: PropTypes.oneOf(['left', 'right']),
   href: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 };
 
 TextLink.defaultProps = {
@@ -51,6 +53,7 @@ TextLink.defaultProps = {
   disabled: false,
   href: '#',
   iconAlign: 'left',
+  onClick: null,
 };
 
 export default TextLink;
