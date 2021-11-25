@@ -19,6 +19,7 @@ const TextLink = ({
     data-testid="mch-text-link"
     className={classNames({ [`icon-${iconAlign}`]: icon }, className)}
     style={cssStyles}
+    onClick={onClick}
     disabled={disabled}
     type={null}
     variant="link"
