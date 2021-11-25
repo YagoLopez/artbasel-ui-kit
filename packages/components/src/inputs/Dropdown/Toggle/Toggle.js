@@ -31,7 +31,7 @@ const Toggle = forwardRef(
           placeholder={placeholder}
           value={normalizeValue}
           onChange={fn}
-          className={`help-text-input-${helpTextType}`}
+          className={`help-text-input-${helpTextType} has-icon`}
         />
         <Icon
           name="dropdown"

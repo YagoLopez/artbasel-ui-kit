@@ -74,6 +74,11 @@
         > input[type='checkbox'] {
           margin-right: 0;
         }
+
+        > label {
+          width: initial;
+          overflow-x: hidden;
+        }
       }
     }
   }
