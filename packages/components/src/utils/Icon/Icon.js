@@ -20,7 +20,9 @@ export const IconList = [
   'check',
   'checkbox-check',
   'close',
+  'collections',
   'collections-add',
+  'collections-remove',
   'colour',
   'condition-report',
   'copy',
@@ -398,11 +400,29 @@ const Icon = ({
             fill={color}
             viewBox="0 0 24 24"
           >
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm.969-15.5H11.03v4.531H6.5v1.938h4.531V17.5h1.938v-4.531H17.5V11.03h-4.531V6.5z"
-            />
+          <path fill-rule="evenodd" 
+          clip-rule="evenodd" 
+          d="M19.5 12.4819V14.9819H18.1324V12.4819H15.5V10.9819H18.1324V8.48193H19.5V10.9819H22V12.4819H19.5ZM19.5 21.9819V16.4819H18.1324V19.1264L11.75 14.228L5.36765 19.1264V7.37019C5.36765 5.20593 7.00049 3.45146 9.01471 3.45146H14.4853C16.3776 3.45146 17.9333 4.99994 18.1147 6.98193H19.4872C19.302 4.18731 17.1333 1.98193 14.4853 1.98193H9.01471C6.24516 1.98193 4 4.39434 4 7.37019V21.9819L11.75 16.0339L19.5 21.9819Z" 
+          />
+
+          </svg>
+        );
+        case 'collections-remove':
+        return (
+          <svg
+            {...rest}
+            data-testid="mch-icon"
+            height={height || size}
+            width={width || size}
+            onClick={onClick}
+            style={style}
+            className={className}
+            fill={color}
+            viewBox="0 0 24 24"
+          >
+            <path fill-rule="evenodd" 
+            clip-rule="evenodd"
+            d="M18.1765 10.9819H15.5V12.4819H22V10.9819H19.5H18.1765ZM19.5 21.9819V16.4819H18.1765V19.1264L12 14.228L5.82353 19.1264V7.37019C5.82353 5.20593 7.4037 3.45146 9.35294 3.45146H14.6471C16.4783 3.45146 17.9838 4.99994 18.1594 6.98193H19.4876C19.3084 4.18731 17.2097 1.98193 14.6471 1.98193H9.35294C6.67274 1.98193 4.5 4.39434 4.5 7.37019V21.9819L12 16.0339L19.5 21.9819Z"/>
           </svg>
         );
       case 'colour':
@@ -2148,6 +2168,24 @@ const Icon = ({
                 clipRule="evenodd" d="M3.57537 8.42L0 4.84463L1.26032 3.58431L3.57537 5.89042L9.4658 0L10.7261 1.26926L3.57537 8.42Z"/>
              </svg>
           );
+          case 'collections':
+            return (
+              <svg {...rest}
+              data-testid="mch-icon"
+              height={height || size}
+              width={width || size}
+              onClick={onClick}
+              style={style}
+              className={className}
+              fill={color}
+              viewBox="0 0 24 24">
+                <path fill-rule="evenodd" 
+                clip-rule="evenodd" 
+                d="M19.75 22V7.38825C19.75 4.4124 17.5048 2 14.7353 2H9.26471C6.49516 2 4.25 4.4124 4.25 7.38825V22L12 16.0519L19.75 22ZM12 14.246L5.61765 19.1444V7.38825C5.61765 5.224 7.25049 3.46952 9.26471 3.46952H14.7353C16.7495 3.46952 18.3824 5.224 18.3824 7.38825V19.1444L12 14.246Z" 
+              />
+               </svg>
+               
+            );
     }
   };
 
