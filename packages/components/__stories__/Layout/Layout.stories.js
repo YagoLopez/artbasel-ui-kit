@@ -53,7 +53,7 @@ export const Layout = () => (
         <tr>
           <td>768-1023 px</td>
           <td>MD</td>
-          <td>8</td>
+          <td>12</td>
           <td>24px</td>
           <td>24px</td>
           <td>Fluid, 100%</td>

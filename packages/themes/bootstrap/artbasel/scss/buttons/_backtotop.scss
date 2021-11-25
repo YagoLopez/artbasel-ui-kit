@@ -2,6 +2,7 @@
   width: $btn-backtotop-size;
   height: $btn-backtotop-size;
   border-radius: 100%;
+  border: none;
   padding: 0;
   box-shadow: 0px 4px 16px rgba(29, 35, 39, 0.12);
 
@@ -36,9 +37,13 @@
   }
 
   &:focus,
+  &:not(:focus-visible) {
+    background-color: transparent;
+    box-shadow: 0px 4px 16px rgba(29, 35, 39, 0.12);
+  }
+  &:focus-visible,
   &.focus {
-    background-color: $mchGrey200;
-    border-color: $mchGrey200;
+    background-color: $mchGrey100;
     box-shadow: 0px 4px 16px rgba(29, 35, 39, 0.12);
   }
 

@@ -42,7 +42,7 @@
   &.disabled {
     background-color: $mchWhite;
     color: $mchGrey400;
-    border-color: $mchGrey400;
+    border-color: $mchGrey400 !important;
 
     svg {
       fill: $mchGrey400;
@@ -51,6 +51,11 @@
 
   .btn-check:focus + &,
   &:focus,
+  &:not(:focus-visible) {
+    background-color: $mchWhite;
+    border-color: $mchBlack;
+  }
+  &:focus-visible,
   &.focus {
     background-color: $mchGrey200;
     border-color: $mchBlack;

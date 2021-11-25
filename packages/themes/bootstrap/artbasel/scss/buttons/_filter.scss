@@ -22,8 +22,7 @@
   &:hover,
   &.hover {
     color: $mchWhite;
-    background-color: $mchGrey500;
-    border-color: $mchGrey500;
+    background-color: $mchGrey500 !important;
 
     &::before {
       transform: translate(-50%, -50%) scale(1);
@@ -39,19 +38,23 @@
   &:disabled,
   &.disabled {
     fill: $mchBlack;
-
+    background-color: $mchGrey300;
     svg {
-      fill: $mchBlack;
+      fill: $mchGrey400;
     }
   }
 
   &:focus,
+  &:not(:focus-visible) {
+    background-color: $mchBlack;
+   }
+  &:focus-visible,
   &.focus {
-    background-color: $mchGrey200;
-    border-color: $mchGrey200;
-
+    background-color: $mchGrey500;
+    border-color: $mchGrey500;
+    
     svg {
-      fill: $mchBlack;
+      fill: $mchGrey100;
     }
   }
 

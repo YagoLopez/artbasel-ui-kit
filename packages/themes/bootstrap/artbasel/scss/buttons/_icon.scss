@@ -49,8 +49,12 @@
   }
 
   &:focus,
+  &:not(:focus-visible) {
+    background-color: transparent;
+  }
+  &:focus-visible,
   &.focus {
-    background-color: $mchGrey200;
+    background-color: $mchGrey100;
   }
 
   svg {

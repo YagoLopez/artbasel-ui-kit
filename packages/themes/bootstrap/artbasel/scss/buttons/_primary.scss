@@ -3,6 +3,7 @@
   color: $mchWhite;
   background-color: $mchBlack;
   border-color: $mchBlack;
+  border: none;
   box-shadow: none;
   //added to fix incorrect line height of the font
   padding-bottom: 8px;
@@ -25,7 +26,6 @@
   &.hover {
     color: $mchWhite;
     background-color: $mchGrey500;
-    border-color: $mchGrey500;
 
     &::before {
       transform: translate(-50%, -50%) scale(1);
@@ -40,8 +40,8 @@
 
   &:disabled,
   &.disabled {
-    background-color: $mchGrey300;
-    border-color: $mchGrey300;
+    background-color: $mchGrey300 !important;
+    border-color: $mchGrey300 !important;
 
     svg {
       fill: $mchWhite;
@@ -49,7 +49,12 @@
   }
 
   .btn-check:focus + &,
+
   &:focus,
+  &:not(:focus-visible) {
+    background-color: $mchBlack;
+  }
+  &:focus-visible,
   &.focus {
     background-color: $mchGrey500;
     border-color: $mchGrey500;
