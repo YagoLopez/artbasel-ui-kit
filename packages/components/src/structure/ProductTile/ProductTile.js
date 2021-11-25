@@ -56,18 +56,18 @@ const ProductTile = ({
     >
       <div className="overlay-fill" />
       <div className="button-container">
-        <ButtonIcon icon="favourite" />
+        <ButtonIcon icon="collections-add" />
       </div>
       <div className="tile-img-container">
         <BSPCard.Img variant="top" src={image} />
       </div>
       <BSPCard.Body>
-        <div className="tile-subtitle" ref={subtitleRef}>
+        <BSPCard.Title className="mt-5">{author}</BSPCard.Title>
+        <div className="tile-subtitle mb-5" ref={subtitleRef}>
           <p>{truncatedSubtitle}</p>
           {truncated
           && <span title={subtitle} className="ellipsis">...</span>}
         </div>
-        <BSPCard.Title>{author}</BSPCard.Title>
         <BSPCard.Text className="tile-gallery">{gallery}</BSPCard.Text>
         {price
         && <div className="tile-price-container">
