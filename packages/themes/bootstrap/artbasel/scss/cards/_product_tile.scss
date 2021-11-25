@@ -12,8 +12,24 @@
   overflow: hidden;
   transition: all 0.5s ease-in-out;
 
+  .card-body {
+    .card-text,
+    .tile-price,
+    .tile-offer {
+      transition: color 0.5s ease-in-out;
+    }
+  }
+
   &:hover {
     cursor: pointer;
+
+    .card-body {
+      .card-text,
+      .tile-price,
+      .tile-offer {
+        color: $mchBlack;
+      }
+    }
   }
 
   .button-container {
