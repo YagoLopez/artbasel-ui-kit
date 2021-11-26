@@ -40,11 +40,9 @@
   &:disabled,
   &.disabled {
     background-color: $mchWhite;
-    color: $mchGrey400;
-    border-color: $mchGrey400;
 
     svg {
-      fill: $mchGrey500;
+      fill: $mchGrey400;
     }
   }
 

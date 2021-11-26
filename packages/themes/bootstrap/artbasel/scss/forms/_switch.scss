@@ -1,0 +1,31 @@
+.form-switch {
+  .form-check-input {
+    width: 56px;
+    height: 32px;
+    border-color: $mchGrey300;
+    background-size: 24px 24px;
+    background-position-x: 4px;
+    background-position-y: 3px;
+    background-color: $mchGrey300;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='4' fill='%23ffffff'/%3e%3c/svg%3e");
+
+    &:checked {
+      background-position-x: 26px;
+      border-color: $mchBlack;
+      background-color: $mchBlack;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='4' fill='%23ffffff'/%3e%3c/svg%3e");
+    }
+
+    &:focus,
+    &.focus {
+      box-shadow: none;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='4' fill='%23ffffff'/%3e%3c/svg%3e");
+    }
+
+    &:disabled {
+      opacity: 1;
+      background-color: $mchGrey200;
+      border-color: $mchGrey200;
+    }
+  }
+}

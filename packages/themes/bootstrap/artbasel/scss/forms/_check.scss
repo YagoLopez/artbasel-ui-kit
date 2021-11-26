@@ -1,0 +1,72 @@
+.form-check {
+  width: fit-content;
+  display: flex;
+
+  .form-check-label {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &.align-left {
+    flex-direction: row-reverse;
+    padding-left: 0px;
+
+    .form-check-input {
+      margin-left: $spacing-3;
+    }
+
+    .form-check-label {
+      width: calc(100% - 2rem);
+      text-align: right;
+    }
+  }
+
+  .form-check-input {
+    background-color: $mchGrey200;
+    border-color: $mchGrey200;
+    margin-top: 5px;
+    margin-right: $spacing-3;
+    min-width: 1rem;
+    min-height: 1rem;
+
+    &[type='checkbox'] {
+      border-radius: 2px;
+    }
+
+    &:hover,
+    &.hover {
+      border-color: $mchGrey300;
+    }
+
+    &:focus,
+    &.focus {
+      box-shadow: none;
+    }
+
+    &:checked[type='radio'] {
+      background-size: 8px;
+      border-color: $mchBlack;
+      background-position-x: 3px;
+      background-position-y: 3px;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8' %3e %3ccircle r='4' fill='%23000000'/%3e%3c/svg%3e");
+    }
+
+    &:checked[type='checkbox'] {
+      background-color: $mchBlack;
+      border-color: $mchBlack;
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='5 5 14 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5754 16.42L7 12.8446L8.26032 11.5843L10.5754 13.8904L16.4658 8L17.7261 9.26926L10.5754 16.42Z' fill='%23ffffff'/%3E%3C/svg%3E");
+    }
+
+    &:disabled {
+      opacity: 1;
+      border-color: $mchGrey200;
+      background-color: $mchWhite;
+    }
+
+    &:disabled ~ label {
+      opacity: 1;
+      color: $mchGrey300;
+    }
+  }
+}

@@ -19,6 +19,7 @@ const ButtonIcon = ({
     onClick={onClick}
     disabled={disabled}
     bsPrefix={cssInternalPrefix}
+    variant=""
   >
     <Icon name={icon} size={24} />
   </BSPButton>

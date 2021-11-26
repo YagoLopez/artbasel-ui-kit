@@ -20,10 +20,13 @@ const ButtonFilter = ({
       onClick={onClick}
       disabled={disabled}
       bsPrefix={cssInternalPrefix}
+      variant=""
     >
       <Icon name="filter" size={24} />
     </BSPButton>
-    {checked && <Icon name="check" size={24} className="icon-check" />}
+    {checked && (
+      <Icon name="check" size={24} className="btn-filter-icon-check" />
+    )}
   </div>
 );
 

@@ -1,4 +1,5 @@
 .btn-filter {
+  background-color: $mchBlack;
   width: $btn-filter-size;
   height: $btn-filter-size;
   border-radius: 100%;
@@ -21,7 +22,6 @@
 
   &:hover,
   &.hover {
-    color: $mchWhite;
     background-color: $mchGrey500 !important;
 
     &::before {
@@ -37,29 +37,27 @@
 
   &:disabled,
   &.disabled {
-    fill: $mchBlack;
     background-color: $mchGrey300;
     svg {
       fill: $mchGrey400;
     }
   }
-
-  &:focus,
-  &:not(:focus-visible) {
+  &:focus {
     background-color: $mchBlack;
-   }
+  }
   &:focus-visible,
   &.focus {
     background-color: $mchGrey500;
     border-color: $mchGrey500;
-    
-    svg {
-      fill: $mchGrey100;
-    }
+  }
+
+  svg {
+    fill: $mchWhite;
+    //added to fix incorrect line height of the font
   }
 }
 
-.icon-check {
+.btn-filter-icon-check {
   position: absolute;
   border-radius: 100%;
   right: -2px;

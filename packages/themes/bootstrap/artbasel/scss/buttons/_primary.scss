@@ -48,12 +48,10 @@
     }
   }
 
-  .btn-check:focus + &,
-
-  &:focus,
-  &:not(:focus-visible) {
+  &:focus {
     background-color: $mchBlack;
   }
+
   &:focus-visible,
   &.focus {
     background-color: $mchGrey500;
