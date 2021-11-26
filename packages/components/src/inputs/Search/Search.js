@@ -4,9 +4,11 @@ import classnames from 'classnames';
 import { InputGroup, FormControl } from 'react-bootstrap';
 import useRefEvents from './useRefEvents';
 
-const Search = ({
-  placeholder, className, value, disabled, onChange,
-}) => {
+const Search = (
+  {
+    placeholder, className, value, disabled, onChange,
+  },
+) => {
   const inputRef = useRef(null);
   const { isFocus, hasValue } = useRefEvents(inputRef);
 
@@ -14,12 +16,15 @@ const Search = ({
     if (inputRef.current) {
       inputRef.current.value = '';
       inputRef.current.focus();
+      onChange({ target: { value: '' } });
     }
   }, []);
 
   return (
     <InputGroup
-      className={classnames('search-input', className, { focus: isFocus || hasValue })}
+      className={classnames('search-input', className, {
+        focus: isFocus || hasValue,
+      })}
       data-testid="mch-search"
     >
       <InputGroup.Text>
@@ -33,7 +38,7 @@ const Search = ({
         disabled={disabled}
         onChange={onChange}
       />
-      <InputGroup.Text onClick={onRemove} as="button" >
+      <InputGroup.Text onClick={onRemove} as="button">
         <i className="remove-icon" data-testid="remove-search" />
       </InputGroup.Text>
     </InputGroup>
