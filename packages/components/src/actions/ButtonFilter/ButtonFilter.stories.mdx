@@ -46,7 +46,7 @@ export const argTypes = {
     args={{
       children: 'Primary Button',
       disabled: false,
-      filter: false,
+      checked: false,
     }}
     argTypes={argTypes}
     parameters={{
@@ -70,7 +70,7 @@ export const argTypes = {
     <p>Default</p>
     <ButtonFilter className="hover" />
     <p>Hover</p>
-    <ButtonFilter filter={true} />
+    <ButtonFilter checked={true} />
     <p>Filter</p>
     <ButtonFilter disabled={true} />
     <p>Disabled</p>

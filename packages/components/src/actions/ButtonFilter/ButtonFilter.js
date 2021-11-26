@@ -9,10 +9,10 @@ const ButtonFilter = ({
   cssInternalPrefix,
   cssStyles,
   disabled,
-  filter,
+  checked,
   onClick,
 }) => (
-  <>
+  <div className="position-relative d-inline-block">
     <BSPButton
       data-testid="mch-button-filter"
       className={classNames('btn-filter position-relative', className)}
@@ -21,10 +21,10 @@ const ButtonFilter = ({
       disabled={disabled}
       bsPrefix={cssInternalPrefix}
     >
-      {filter && <Icon name="check" size={24} className="icon-filter-check" />}
       <Icon name="filter" size={24} />
     </BSPButton>
-  </>
+    {checked && <Icon name="check" size={24} className="icon-check" />}
+  </div>
 );
 
 ButtonFilter.propTypes = {
@@ -32,14 +32,14 @@ ButtonFilter.propTypes = {
   className: PropTypes.string,
   cssInternalPrefix: PropTypes.string,
   disabled: PropTypes.bool,
-  filter: PropTypes.bool,
+  checked: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
 ButtonFilter.defaultProps = {
   cssInternalPrefix: 'btn',
   disabled: false,
-  filter: false,
+  checked: false,
   onClick: () => {},
 };
 
