@@ -5,12 +5,12 @@
   text-transform: none;
   height: $btn-size-toggle-height;
 
-  color: $mchBlack;
-  background-color: $mchWhite;
+  color: $color-mch-black;
+  background-color: $color-mch-white;
 
   border-radius: $btn-size-toggle-height;
   border-width: 1px;
-  border-color: $mchBlack;
+  border-color: $color-mch-black;
 
   &::before {
     @include transition-mix();
@@ -22,32 +22,32 @@
     transform: translate(-50%, -50%) scale(0);
     transform-origin: center center;
 
-    background-color: $mchGrey100;
+    background-color: $color-mch-gray-100;
     border-radius: 50%;
   }
 
   &.toggle-active {
-    color: $mchWhite;
-    background-color: $mchBlack;
-    border-color: $mchBlack;
+    color: $color-mch-white;
+    background-color: $color-mch-black;
+    border-color: $color-mch-black;
     padding-right: 0.5rem;
 
     &::before {
-      background-color: $mchGrey500;
+      background-color: $color-mch-gray-500;
     }
 
     &:hover,
     &.hover {
-      color: $mchWhite;
-      background-color: $mchGrey500;
-      border-color: $mchGrey500;
+      color: $color-mch-white;
+      background-color: $color-mch-gray-500;
+      border-color: $color-mch-gray-500;
     }
 
     &:disabled,
     &.disabled {
-      color: $mchWhite;
-      background-color: $mchGrey300;
-      border-color: $mchGrey300;
+      color: $color-mch-white;
+      background-color: $color-mch-gray-300;
+      border-color: $color-mch-gray-300;
 
       & i {
         background-image: url("data:image/svg+xml, %3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 12C0 5.37258 5.37258 0 12 0V0C18.6274 0 24 5.37258 24 12V12C24 18.6274 18.6274 24 12 24V24C5.37258 24 0 18.6274 0 12V12Z' fill='white'/%3E%3Cpath d='M18.4553 6.48413L19.5442 7.51575L10.0414 17.5465L4.49805 12.5574L5.50149 11.4425L9.95809 15.4534L18.4553 6.48413Z' fill='%23757575'/%3E%3C/svg%3E");
@@ -71,9 +71,9 @@
 
   &:hover,
   &.hover {
-    color: $mchBlack;
-    background-color: $mchGrey100;
-    border-color: $mchBlack;
+    color: $color-mch-black;
+    background-color: $color-mch-gray-100;
+    border-color: $color-mch-black;
 
     &::before {
       transform: translate(-50%, -50%) scale(1);
@@ -88,8 +88,8 @@
 
   &:disabled,
   &.disabled {
-    background-color: $mchGrey200;
-    color: $mchGrey300;
-    border-color: $mchGrey300;
+    background-color: $color-mch-gray-200;
+    color: $color-mch-gray-300;
+    border-color: $color-mch-gray-300;
   }
 }

@@ -1,8 +1,8 @@
 .btn-secondary {
   text-transform: uppercase;
-  color: $mchBlack;
-  background-color: $mchWhite;
-  border-color: $mchBlack;
+  color: $color-mch-black;
+  background-color: $color-mch-white;
+  border-color: $color-mch-black;
   box-shadow: none;
   //added to fix incorrect line height of the font
   padding-bottom: 8px;
@@ -17,15 +17,15 @@
     transform: translate(-50%, -50%) scale(0);
     transform-origin: center center;
 
-    background-color: $mchGrey100;
+    background-color: $color-mch-gray-100;
     border-radius: 50%;
   }
 
   &:hover,
   &.hover {
-    color: $mchBlack;
-    background-color: $mchGrey100;
-    border-color: $mchBlack;
+    color: $color-mch-black;
+    background-color: $color-mch-gray-100;
+    border-color: $color-mch-black;
 
     &::before {
       transform: translate(-50%, -50%) scale(1);
@@ -40,27 +40,27 @@
 
   &:disabled,
   &.disabled {
-    background-color: $mchWhite;
-    color: $mchGrey400;
-    border-color: $mchGrey400 !important;
+    background-color: $color-mch-white;
+    color: $color-mch-gray-400;
+    border-color: $color-mch-gray-400 !important;
 
     svg {
-      fill: $mchGrey400;
+      fill: $color-mch-gray-400;
     }
   }
 
   &:focus {
-    background-color: $mchWhite;
-    border-color: $mchBlack;
+    background-color: $color-mch-white;
+    border-color: $color-mch-black;
   }
   &:focus-visible,
   &.focus {
-    background-color: $mchGrey200;
-    border-color: $mchBlack;
+    background-color: $color-mch-gray-200;
+    border-color: $color-mch-black;
   }
 
   svg {
-    fill: $mchBlack;
+    fill: $color-mch-black;
     //added to fix incorrect line height of the font
     margin-bottom: -2px;
   }

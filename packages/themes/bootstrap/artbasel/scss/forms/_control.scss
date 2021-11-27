@@ -7,7 +7,7 @@
     padding-left: 0;
     height: 3rem;
     font-size: 0.875rem;
-    border-color: $mchGrey300;
+    border-color: $color-mch-gray-300;
 
     &.has-icon {
       padding-right: 3rem;
@@ -15,12 +15,12 @@
 
     &.help-text-input-warning,
     &.help-text-input-warning:hover {
-      border-color: $mchOrange !important;
+      border-color: $color-mch-text-orange !important;
     }
 
     &.help-text-input-danger,
     &.help-text-input-danger:hover {
-      border-color: $mchRed !important;
+      border-color: $color-mch-text-red !important;
     }
 
     &:focus {
@@ -31,16 +31,16 @@
     &.hover,
     &:active:not(:disabled),
     &.active {
-      border-color: $mchBlack;
+      border-color: $color-mch-black;
     }
 
     &:disabled {
       background-color: initial;
-      color: $mchGrey400;
+      color: $color-mch-gray-400;
     }
 
     &:disabled ~ label {
-      color: $mchGrey300;
+      color: $color-mch-gray-300;
     }
 
     & ~ i,
@@ -84,7 +84,7 @@
     }
 
     &:focus::placeholder {
-      color: $mchGrey300;
+      color: $color-mch-gray-300;
     }
 
     & ~ label {
@@ -95,7 +95,7 @@
       line-height: 1.125rem;
       border: 0;
       font-size: 0.875rem;
-      color: $mchGrey500;
+      color: $color-mch-gray-500;
     }
   }
 }

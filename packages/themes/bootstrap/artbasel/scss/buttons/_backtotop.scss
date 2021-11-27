@@ -16,14 +16,14 @@
     transform: translate(-50%, -50%) scale(0);
     transform-origin: center center;
 
-    background-color: $mchGrey100;
+    background-color: $color-mch-gray-100;
     border-radius: 50%;
   }
 
   &:hover,
   &.hover {
-    background-color: $mchGrey100;
-    border-color: $mchGrey100;
+    background-color: $color-mch-gray-100;
+    border-color: $color-mch-gray-100;
 
     &::before {
       transform: translate(-50%, -50%) scale(1);
@@ -43,11 +43,11 @@
   }
   &:focus-visible,
   &.focus {
-    background-color: $mchGrey100;
+    background-color: $color-mch-gray-100;
     box-shadow: 0px 4px 16px rgba(29, 35, 39, 0.12);
   }
 
   svg {
-    fill: $mchBlack;
+    fill: $color-mch-black;
   }
 }

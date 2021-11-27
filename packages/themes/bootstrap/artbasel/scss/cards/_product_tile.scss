@@ -6,7 +6,7 @@
   border: 0;
   border-radius: 0;
   box-shadow: none;
-  background-color: $mchGrey200;
+  background-color: $color-mch-gray-200;
   height: 587px;
   font-family: $font-family-base;
   overflow: hidden;
@@ -27,7 +27,7 @@
       .card-text,
       .tile-price,
       .tile-offer {
-        color: $mchBlack;
+        color: $color-mch-black;
       }
     }
   }
@@ -68,7 +68,7 @@
       width: 100%;
       height: 456px;
       opacity: 0;
-      background-color: $mchProducTileHover;
+      background-color: $color-mch-product-tile-hover;
       transition: all 350ms ease-out;
     }
 
@@ -95,9 +95,8 @@
       width: 100%;
       height: 472px;
       opacity: 0;
-      background-color: $mchProducTileHover;
+      background-color: $color-mch-product-tile-hover;
       transition: all 350ms ease-out;
-    
     }
     &:hover {
       .overlay-fill {
@@ -118,7 +117,7 @@
   .card-body {
     padding: 0;
     border-top: none;
-    background-color: $mchWhite;
+    background-color: $color-mch-white;
     margin: 0;
     flex-grow: 1;
 
@@ -127,7 +126,7 @@
     }
 
     .tile-gallery {
-      margin-top: 8px;  
+      margin-top: 8px;
     }
 
     .tile-gallery,
@@ -136,14 +135,14 @@
       font-size: 16px;
       line-height: 20px;
       font-weight: bold;
-      color: $mchGrey400;
+      color: $color-mch-gray-400;
     }
 
     .tile-subtitle {
       width: 100%;
       height: 18px;
       font-size: 14px;
-      color: $mchBlack;
+      color: $color-mch-black;
 
       p {
         float: left;

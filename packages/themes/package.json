@@ -28,11 +28,12 @@
     "node": ">= 14.0.0"
   },
   "scripts": {
-    "build": "npm run css-compile",
+    "build": "npm run css-compile && yarn copy-sass-vars",
     "clean": "rm -rf dist",
-    "css-compile": "node-sass --include-path node_modules --output-style compressed --precision 6 bootstrap -o dist/",
-    "watch": "nodemon -e scss -x \"npm run css-compile\"",
-    "test": "npm run css-compile"
+    "css-compile": "node-sass --include-path node_modules --output-style compressed --precision 6 bootstrap -o dist/ ",
+    "watch": "nodemon -e scss -x \"yarn run css-compile\"",
+    "test": "yarn run css-compile",
+    "copy-sass-vars": "mkdir -p dist/artbasel/scss && cp bootstrap/artbasel/variables/_colors.scss dist/artbasel/scss/colors.scss"
   },
   "devDependencies": {
     "bootstrap": "^5.1.3",

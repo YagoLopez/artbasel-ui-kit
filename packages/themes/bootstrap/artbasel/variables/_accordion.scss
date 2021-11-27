@@ -1,11 +1,10 @@
-$accordion-button-bg: $mchWhite;
-$accordion-button-active-bg: $mchWhite;
-$accordion-icon-color: $mchBlack;
+$accordion-button-bg: $color-mch-white;
+$accordion-button-active-bg: $color-mch-white;
+$accordion-icon-color: $color-mch-black;
 $accordion-button-icon: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 14.4814L5.75259 7.34149L4.24744 8.6585L12 17.5186L19.7526 8.6585L18.2474 7.34149L12 14.4814Z' fill='%231D2327'/%3E%3C/svg%3E ");
-$accordion-button-active-icon:  url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 14.4814L5.75259 7.34149L4.24744 8.6585L12 17.5186L19.7526 8.6585L18.2474 7.34149L12 14.4814Z' fill='%231D2327'/%3E%3C/svg%3E ");
+$accordion-button-active-icon: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 14.4814L5.75259 7.34149L4.24744 8.6585L12 17.5186L19.7526 8.6585L18.2474 7.34149L12 14.4814Z' fill='%231D2327'/%3E%3C/svg%3E ");
 $accordion-border-width: 0px;
 $accordion-border-radius: 0px;
 $accordion-icon-width: 24px;
-$accordion-icon-transition: transform .2s ease-in-out;
+$accordion-icon-transition: transform 0.2s ease-in-out;
 $accordion-icon-transform: rotate(-180deg);
-

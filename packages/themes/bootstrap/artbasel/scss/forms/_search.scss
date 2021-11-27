@@ -1,7 +1,7 @@
 .search-input {
   margin: 1.5rem 0;
-  background-color: $mchGrey200;
-  border: 1px solid $mchGrey200;
+  background-color: $color-mch-gray-200;
+  border: 1px solid $color-mch-gray-200;
   border-radius: 0.125rem;
 
   .input-group-text {
@@ -23,27 +23,27 @@
 
   .form-control {
     height: 2.5rem;
-    background-color: $mchGrey200;
+    background-color: $color-mch-gray-200;
     border: none;
     line-height: 1.375rem;
     font-size: 1rem;
     opacity: 0.8;
-    color: $mchBlack;
+    color: $color-mch-black;
 
     &::placeholder {
-      color: $mchGrey300;
+      color: $color-mch-gray-300;
     }
   }
 
   &:hover .form-control::placeholder,
   &.hover .form-control::placeholder {
-    color: $mchGrey400;
+    color: $color-mch-gray-400;
   }
 
   &:active,
   &.active,
   &.focus {
-    border-color: $mchBlack;
+    border-color: $color-mch-black;
     .remove-icon {
       display: initial;
     }

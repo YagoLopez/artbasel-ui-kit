@@ -1,5 +1,5 @@
 .btn-icon {
-  color: $mchBlack;
+  color: $color-mch-black;
   padding: $spacing-3;
   padding-bottom: $spacing-3;
   border: none;
@@ -16,15 +16,15 @@
     transform: translate(-50%, -50%) scale(0);
     transform-origin: center center;
 
-    background-color: $mchGrey100;
+    background-color: $color-mch-gray-100;
     border-radius: 50%;
   }
 
   &:hover,
   &.hover {
-    color: $mchBlack;
-    background-color: $mchGrey100;
-    border-color: $mchGrey100;
+    color: $color-mch-black;
+    background-color: $color-mch-gray-100;
+    border-color: $color-mch-gray-100;
 
     &::before {
       transform: translate(-50%, -50%) scale(1);
@@ -39,10 +39,10 @@
 
   &:disabled,
   &.disabled {
-    background-color: $mchWhite;
+    background-color: $color-mch-white;
 
     svg {
-      fill: $mchGrey400;
+      fill: $color-mch-gray-400;
     }
   }
 
@@ -52,10 +52,10 @@
   }
   &:focus-visible,
   &.focus {
-    background-color: $mchGrey100;
+    background-color: $color-mch-gray-100;
   }
 
   svg {
-    fill: $mchBlack;
+    fill: $color-mch-black;
   }
 }

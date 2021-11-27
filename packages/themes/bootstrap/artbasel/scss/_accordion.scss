@@ -1,34 +1,33 @@
 .accordion {
-    .accordion-item {
-        margin-bottom: -1px;
-        border-top: 1px solid $mchGrey200;
-        border-bottom: 1px solid $mchGrey200;
-    }
-     .size-default.accordion-header  .accordion-button {
-        font-family: $font-family-sans-serif;
-        font-weight: bold;
-        height: 56px;
-        font-size: 16px;
-        line-height: 22px;
-        letter-spacing: 0px;
-        text-align: left;
-    }
-    .size-l.accordion-header  .accordion-button {
-        font-family: $font-family-sans-serif;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 22px;
-        letter-spacing: 0px;
-        text-align: left;
-        height: 72px;
-    }
-    .accordion-button:not(.collapsed)::after {
-        height: 24px;
-    }
+  .accordion-item {
+    margin-bottom: -1px;
+    border-top: 1px solid $color-mch-gray-200;
+    border-bottom: 1px solid $color-mch-gray-200;
+  }
+  .size-default.accordion-header .accordion-button {
+    font-family: $font-family-sans-serif;
+    font-weight: bold;
+    height: 56px;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+  .size-l.accordion-header .accordion-button {
+    font-family: $font-family-sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+    height: 72px;
+  }
+  .accordion-button:not(.collapsed)::after {
+    height: 24px;
+  }
 
-    .accordion-button:not(.collapsed) {
-        color: $mchBlack;
-        background-color: $mchWhite;
-    }
+  .accordion-button:not(.collapsed) {
+    color: $color-mch-black;
+    background-color: $color-mch-white;
+  }
 }
-

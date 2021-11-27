@@ -1,6 +1,6 @@
 .btn-link {
   height: 1.5rem;
-  color: $mchBlack;
+  color: $color-mch-black;
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
@@ -14,14 +14,14 @@
 
   &:disabled,
   &.disabled {
-    color: $mchGrey400;
+    color: $color-mch-gray-400;
 
     svg {
-      fill: $mchGrey400;
+      fill: $color-mch-gray-400;
     }
   }
 
   svg {
-    fill: $mchBlack;
+    fill: $color-mch-black;
   }
 }

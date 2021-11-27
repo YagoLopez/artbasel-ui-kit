@@ -7,7 +7,7 @@
     width: 100%;
   }
 
-  .gradient {    
+  .gradient {
     position: absolute;
     width: 100%;
     z-index: 999;
@@ -33,7 +33,7 @@
 
   .card-body {
     padding: 0;
-    background-color: $mchWhite;
+    background-color: $color-mch-white;
 
     .card-text {
       font-family: $font-family-base;
@@ -43,7 +43,7 @@
 
     .card-text.card-author,
     .card-text.card-date {
-      color: $mchGrey400;
+      color: $color-mch-gray-400;
     }
 
     .card-title {
@@ -78,26 +78,25 @@
 
   &:hover {
     cursor: pointer;
-    
+
     .gradient {
-      background:rgba(32, 31, 31, 0.4);
+      background: rgba(32, 31, 31, 0.4);
     }
 
     .card-body {
       .card-text.card-author,
       .card-text.card-date {
-        color: $mchBlack;
+        color: $color-mch-black;
       }
-      
+
       .btn-primary {
-        background-color: $mchGrey500;
-        border: 1px solid $mchGrey500;
+        background-color: $color-mch-gray-500;
+        border: 1px solid $color-mch-gray-500;
       }
 
       .btn-link {
         text-decoration: underline;
       }
-      
     }
   }
 
@@ -129,7 +128,7 @@
     }
   }
 
-  &.size-l, 
+  &.size-l,
   &.size-m {
     display: grid;
     grid-template-columns: 50% 50%;

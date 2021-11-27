@@ -2,7 +2,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const ColorTag = ({ color, name }) => (
+export const ColorTag = ({
+  color, name, scssVar, bsVar,
+}) => (
   <div className="me-4 my-4 text-center">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -22,8 +24,10 @@ export const ColorTag = ({ color, name }) => (
         <path d="M162 474 c4 -150 18 -190 87 -239 36 -25 52 -30 104 -30 112 0 191 66 204 172 8 70 -29 147 -89 189 -40 28 -47 29 -175 33 l-135 3 4 -128z" />
       </g>
     </svg>
-    <h6 style={{ width: '100px' }}>{name}</h6>
-    <p style={{ color: '#757575' }}>{color}</p>
+    <h6 style={{ width: '135px' }}>{name}</h6>
+    <p className="text-small text-gray my-2">{color}</p>
+    <p className="text-small text-gray my-2">{scssVar}</p>
+    <p className="text-small text-gray my-2">{bsVar}</p>
   </div>
 );
 
@@ -32,4 +36,6 @@ export default ColorTag;
 ColorTag.propTypes = {
   color: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  scssVar: PropTypes.string.isRequired,
+  bsVar: PropTypes.string.isRequired,
 };

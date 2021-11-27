@@ -17,7 +17,7 @@
   }
 
   .card-body {
-    background-color: $mchGrey200;
+    background-color: $color-mch-gray-200;
     padding: 0;
     padding-bottom: 10px;
     border-top: none;
@@ -35,7 +35,7 @@
     .card-description,
     .item {
       font-family: $font-family-base;
-      color: $mchBlack;
+      color: $color-mch-black;
     }
 
     .card-description {
@@ -66,20 +66,19 @@
     }
 
     .btn-secondary {
-      background-color: $mchGrey200;
+      background-color: $color-mch-gray-200;
     }
-
   }
 
   &:hover {
     cursor: pointer;
-    
+
     .gradient {
       background: rgba(29, 35, 39, 0.3);
     }
 
     .btn-secondary {
-      background-color: $mchGrey100;
+      background-color: $color-mch-gray-100;
     }
   }
 

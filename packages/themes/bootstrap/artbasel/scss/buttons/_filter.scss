@@ -1,5 +1,5 @@
 .btn-filter {
-  background-color: $mchBlack;
+  background-color: $color-mch-black;
   width: $btn-filter-size;
   height: $btn-filter-size;
   border-radius: 100%;
@@ -16,13 +16,13 @@
     transform: translate(-50%, -50%) scale(0);
     transform-origin: center center;
 
-    background-color: $mchGrey500;
+    background-color: $color-mch-gray-500;
     border-radius: 50%;
   }
 
   &:hover,
   &.hover {
-    background-color: $mchGrey500 !important;
+    background-color: $color-mch-gray-500 !important;
 
     &::before {
       transform: translate(-50%, -50%) scale(1);
@@ -37,22 +37,22 @@
 
   &:disabled,
   &.disabled {
-    background-color: $mchGrey300;
+    background-color: $color-mch-gray-300;
     svg {
-      fill: $mchGrey400;
+      fill: $color-mch-gray-400;
     }
   }
   &:focus {
-    background-color: $mchBlack;
+    background-color: $color-mch-black;
   }
   &:focus-visible,
   &.focus {
-    background-color: $mchGrey500;
-    border-color: $mchGrey500;
+    background-color: $color-mch-gray-500;
+    border-color: $color-mch-gray-500;
   }
 
   svg {
-    fill: $mchWhite;
+    fill: $color-mch-white;
     //added to fix incorrect line height of the font
   }
 }
@@ -62,6 +62,6 @@
   border-radius: 100%;
   right: -2px;
   top: -2px;
-  fill: $mchBlack;
-  background-color: $mchWhite;
+  fill: $color-mch-black;
+  background-color: $color-mch-white;
 }
