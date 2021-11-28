@@ -21,7 +21,7 @@
     "access": "restricted"
   },
   "files": [
-    "dist/**/*.{css,map}",
+    "dist/**/*.{css,scss,map}",
     "bootstrap/**/*.scss"
   ],
   "engines": {
