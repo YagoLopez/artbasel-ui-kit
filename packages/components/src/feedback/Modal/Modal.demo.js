@@ -31,15 +31,15 @@ const ModalDemo = ({
         title={title}
         subline={subline}
       >
-        <Modal.Body className={filter ? 'p-8' : 'py-7 px-8'}>
+        <Modal.Body>
           <p>lorem ipsum</p>
         </Modal.Body>
-        <Modal.Footer className={filter ? 'modal-footer-filter py-8 px-7' : 'py-7 px-8'}>
-          {
-            filter
-              ? <TextLink>{secondaryActionText}</TextLink>
-              : <Button variant='secondary'>{secondaryActionText}</Button>
-          }
+        <Modal.Footer>
+          {filter ? (
+            <TextLink>{secondaryActionText}</TextLink>
+          ) : (
+            <Button variant="secondary">{secondaryActionText}</Button>
+          )}
           <Button>{primaryActionText}</Button>
         </Modal.Footer>
       </Modal>

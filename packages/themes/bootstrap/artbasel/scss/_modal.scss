@@ -1,50 +1,29 @@
-.modal-filter {
-  max-width: 660px;
-  @media (max-width: 768px) {
-    max-width: 100%;
-    margin: 0;
-  }
-
-  .modal-title-filter {
-    font-size: 18px;
-    line-height: 21px;
-    margin: 0;
-  }
-
-  .btn-close-filter{
-    position: absolute;
-    top: 1.375rem;
-    right: 1.5rem;
-    padding-bottom: 10px;
-  }
-}
-
 .modal-dialog {
   @media (max-width: 413px) {
     margin: 0;
   }
 
   .modal-header {
+    padding: 1.5rem 2rem;
     align-items: flex-start;
 
     .modal-title {
-      font-size: 24px;
+      font-size: 1.5rem;
+      padding-top: 0.5rem;
     }
 
     .modal-subline {
       font-size: 0.875rem;
       line-height: 1.125rem;
     }
+  }
 
-    .btn-close {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      padding-bottom: 10px;
-    }
+  .modal-body {
+    padding: 1.5rem 2rem;
   }
 
   .modal-footer {
+    padding: 1.5rem 2rem;
     justify-content: flex-end;
     flex-wrap: nowrap;
 
@@ -57,13 +36,58 @@
     }
   }
 
-  &.modal-sm .modal-footer {
-    justify-content: space-evenly;
+  .btn-close {
+    position: absolute;
+    margin: 0;
+    top: 1rem;
+    right: 1rem;
+    padding-bottom: 10px;
   }
 
-  .modal-footer-filter {
-    @media (max-width: 413px) {
-      justify-content: space-between;
+  &.modal-sm {
+    .modal-footer {
+      justify-content: space-evenly;
+    }
+  }
+
+  &.modal-filter {
+    max-width: 660px;
+    @media (max-width: 768px) {
+      max-width: 100%;
+      margin: 0;
+    }
+
+    .modal-title {
+      font-size: 18px;
+      line-height: 21px;
+      padding-top: 0.5rem;
+      margin: 0;
+    }
+
+    .modal-header {
+      padding: 2rem 1.5rem;
+    }
+
+    .modal-body {
+      font-size: 18px;
+      line-height: 21px;
+      margin: 0;
+      padding: 2rem 1.5rem;
+    }
+
+    .modal-footer {
+      padding: 2rem 1.5rem;
+      @media (max-width: 413px) {
+        justify-content: space-between;
+      }
+    }
+
+    .btn-close {
+      position: absolute;
+      margin: 0;
+      top: 22px;
+      right: 24px;
+      padding-bottom: 10px;
     }
   }
 }

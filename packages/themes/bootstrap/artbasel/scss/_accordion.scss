@@ -4,6 +4,7 @@
     border-top: 1px solid $color-mch-gray-200;
     border-bottom: 1px solid $color-mch-gray-200;
   }
+
   .size-default.accordion-header .accordion-button {
     font-family: $font-family-sans-serif;
     font-weight: bold;
@@ -12,7 +13,9 @@
     line-height: 22px;
     letter-spacing: 0px;
     text-align: left;
+    padding-left: 0;
   }
+
   .size-l.accordion-header .accordion-button {
     font-family: $font-family-sans-serif;
     font-weight: bold;
@@ -21,7 +24,16 @@
     letter-spacing: 0px;
     text-align: left;
     height: 72px;
+    padding-left: 0;
   }
+
+  .accordion-body {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+    padding-left: 0;
+  }
+
   .accordion-button:not(.collapsed)::after {
     height: 24px;
   }

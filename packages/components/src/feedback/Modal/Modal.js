@@ -15,16 +15,16 @@ const Modal = ({
       show={show}
       onHide={onHide}
     >
-      <BSModal.Header className={filter ? 'py-8 px-7' : 'py-7 px-8'}>
+      <BSModal.Header>
         <div>
           {filter ? (
-            <h5 className="pt-3 modal-title-filter">{title}</h5>
+            <h5 className="modal-title">{title}</h5>
           ) : (
-            <h3 className="pt-3 modal-title">{title}</h3>
+            <h3 className="modal-title">{title}</h3>
           )}
           {subline && <p className="modal-subline mb-0">{subline}</p>}
         </div>
-        <ButtonIcon icon='close' onClick={onHide} className={filter ? 'btn-close-filter' : 'btn-close'} />
+        <ButtonIcon icon="close" onClick={onHide} className="btn-close" />
       </BSModal.Header>
       {children}
     </BSModal>
