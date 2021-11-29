@@ -86,7 +86,6 @@ describe('Text component', () => {
       fireEvent.change(input, { target: { value: 'bar' } });
 
       expect(onChangeSpy).toHaveBeenCalled();
-      expect(input.value).toBe('bar');
     });
 
     test('change eye icon on click in eye', () => {
@@ -108,6 +107,13 @@ describe('Text component', () => {
       fireEvent.click(eyeIcon);
 
       expect(input).toHaveProperty('type', 'text');
+    });
+    test('set value when passed in', () => {
+      render(<Text value="value1" placeholder="inputname"/>);
+
+      const input = screen.getByPlaceholderText('inputname');
+
+      expect(input.value).toEqual('value1');
     });
   });
 });

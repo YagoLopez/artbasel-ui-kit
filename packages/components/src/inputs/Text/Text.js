@@ -40,7 +40,7 @@ const Text = ({
           style={cssStyles}
           bsPrefix={cssInternalPrefix}
           type={isPassword && passwordIcon === 'show' ? 'text' : type}
-          defaultValue={value}
+          value={value}
           placeholder={placeholder}
           disabled={disabled}
           onChange={onChange}
