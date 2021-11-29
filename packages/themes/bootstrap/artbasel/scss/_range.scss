@@ -37,11 +37,14 @@
     }
 
     .thumb {
-      pointer-events: none;
       position: absolute;
       height: 0;
       width: 100%;
       outline: none;
+
+      &.is-range {
+        pointer-events: none;
+      }
     }
 
     .thumb--zindex-3 {

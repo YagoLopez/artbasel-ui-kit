@@ -66,9 +66,13 @@ const Slider = ({
               event.target.value = val.toString();
             }}
             disabled={disabled}
-            className={classnames('thumb thumb--zindex-3', {
-              'thumb--zindex-5': minVal > max - 100,
-            })}
+            className={classnames(
+              'thumb thumb--zindex-3',
+              {
+                'thumb--zindex-5': minVal > max - 100,
+              },
+              'is-range',
+            )}
           />
           <input
             type="range"
@@ -82,7 +86,7 @@ const Slider = ({
               event.target.value = val.toString();
             }}
             disabled={disabled}
-            className="thumb thumb--zindex-4"
+            className="thumb thumb--zindex-4 is-range"
           />
           <div className="slider-track" />
           <div
