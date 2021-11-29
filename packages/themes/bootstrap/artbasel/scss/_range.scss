@@ -1,0 +1,93 @@
+.slider-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .slider {
+    position: relative;
+    width: 100%;
+
+    .slider-track,
+    .slider-range {
+      position: absolute;
+      border-radius: 2px;
+      height: 2px;
+    }
+
+    .slider-track {
+      background-color: $color-mch-gray-200;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .slider-range {
+      background-color: $color-mch-gray-500;
+      z-index: 2;
+
+      &.disabled {
+        background-color: $color-mch-gray-200;
+      }
+    }
+
+    /* Removing the default appearance */
+    .thumb,
+    .thumb::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .thumb {
+      pointer-events: none;
+      position: absolute;
+      height: 0;
+      width: 100%;
+      outline: none;
+    }
+
+    .thumb--zindex-3 {
+      z-index: 3;
+    }
+
+    .thumb--zindex-4 {
+      z-index: 4;
+    }
+
+    .thumb--zindex-5 {
+      z-index: 5;
+    }
+
+    .thumb::-webkit-slider-thumb {
+      background-color: $color-mch-gray-500;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0px 1px 2px rgba(63, 71, 79, 0.15);
+      cursor: pointer;
+      height: 16px;
+      width: 16px;
+      margin-top: 2px;
+      pointer-events: all;
+      position: relative;
+    }
+
+    .thumb:disabled::-webkit-slider-thumb {
+      background-color: $color-mch-gray-200;
+    }
+
+    .thumb::-moz-range-thumb {
+      background-color: $color-mch-gray-500;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0px 1px 2px rgba(63, 71, 79, 0.15);
+      cursor: pointer;
+      height: 16px;
+      width: 16px;
+      margin-top: 2px;
+      pointer-events: all;
+      position: relative;
+    }
+
+    .thumb:disabled::-moz-range-thumb {
+      background-color: $color-mch-gray-200;
+    }
+  }
+}
