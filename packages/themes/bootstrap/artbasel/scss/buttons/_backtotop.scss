@@ -38,7 +38,7 @@
 
   &:focus,
   &:not(:focus-visible) {
-    background-color: transparent;
+    background-color: $color-mch-white;
     box-shadow: 0px 4px 16px rgba(29, 35, 39, 0.12);
   }
   &:focus-visible,
