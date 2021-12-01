@@ -6,6 +6,7 @@
     width: 100%;
     display: inline-block;
     vertical-align: top;
+    cursor: pointer;
   }
 
   &.align-left {
@@ -29,6 +30,7 @@
     margin-right: $spacing-3;
     min-width: 1rem;
     min-height: 1rem;
+    cursor: pointer;
 
     &[type='checkbox'] {
       border-radius: 2px;
