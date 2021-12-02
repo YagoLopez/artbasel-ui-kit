@@ -55,11 +55,11 @@ const ProductTile = ({
       style={cssStyles}
       data-testid="mch-product-tile"
     >
-      <div className="overlay-fill" />
       <div className="button-container">
         <ButtonIcon icon="collections-add" />
       </div>
       <div className="tile-img-container">
+        <div className="overlay-fill" />
         <div className="tile-img-frame">
           <img src={image} />
         </div>

@@ -52,6 +52,17 @@
       padding-bottom: 131%;
     }
 
+    .overlay-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      background-color: $color-mch-product-tile-hover;
+      transition: all 350ms ease-out;
+    }
+
     .tile-img-frame {
       position: absolute;
       top: 0;
@@ -62,10 +73,6 @@
       display: flex;
       align-items: center;
 
-      @include media-breakpoint-up(md) {
-        padding: 72px 16px;
-      }
-
       img {
         border: 0;
         border-radius: 0;
@@ -74,19 +81,17 @@
         margin-right: auto;
         margin-left: auto;
         object-fit: cover;
+        transition: all 350ms ease-out;
       }
     }
-  }
-
-  .overlay-fill {
-    opacity: 0;
-    background-color: $color-mch-product-tile-hover;
-    transition: all 350ms ease-out;
   }
 
   &:hover {
     .overlay-fill {
       opacity: 0.05;
+    }
+    & img {
+      filter: brightness(0.95);
     }
   }
 
