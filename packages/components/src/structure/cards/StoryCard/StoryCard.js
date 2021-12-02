@@ -86,13 +86,15 @@ const StoryCard = ({
           {truncated.description.text}
           {truncated.description.state && <span title={description}>...</span>}
         </BSPCard.Text>
-        <div
-          className={classNames('button-box', {
-            pt13: button?.type === 'next',
-          })}
-        >
-          {button && renderButton()}
-        </div>
+        { button
+          && <div
+            className={classNames('button-box', {
+              pt13: button?.type === 'next',
+            })}
+          >
+            {renderButton()}
+          </div>
+        }
       </BSPCard.Body>
     </BSPCard>
   );

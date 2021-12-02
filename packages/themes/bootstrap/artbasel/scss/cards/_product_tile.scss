@@ -7,7 +7,7 @@
   border-radius: 0;
   box-shadow: none;
   background-color: $color-mch-gray-200;
-  height: 587px;
+  //height: 587px;
   font-family: $font-family-base;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
@@ -36,72 +36,57 @@
     position: absolute;
     width: 40px;
     height: 40px;
-    z-index: 1001;
+    z-index: 10;
     right: 12px;
     top: 12px;
     overflow: hidden;
-
-    svg {
-      z-index: 999;
-    }
   }
 
   .tile-img-container {
     width: 100%;
-    display: flex;
-    align-items: center;
+    height: 0;
+    padding-bottom: 127%;
+    position: relative;
 
-    img {
-      border: 0;
-      border-radius: 0;
-      max-height: 328px;
-      max-width: 328px;
-      margin-right: auto;
-      margin-left: auto;
-      width: auto;
+    @include media-breakpoint-up(md) {
+      padding-bottom: 131%;
     }
-  }
 
-  &.size-s {
-    .overlay-fill {
+    .tile-img-frame {
       position: absolute;
-      width: 100%;
-      height: 456px;
-      opacity: 0;
-      background-color: $color-mch-product-tile-hover;
-      transition: all 350ms ease-out;
-    }
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      padding: 64px 16px;
+      display: flex;
+      align-items: center;
 
-    .tile-img-container {
-      height: 456px;
-      padding: 64px 0;
-    }
+      @include media-breakpoint-up(md) {
+        padding: 72px 16px;
+      }
 
-    &:hover {
-      .overlay-fill {
-        opacity: 0.05;
+      img {
+        border: 0;
+        border-radius: 0;
+        max-height: 100%;
+        max-width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        object-fit: cover;
       }
     }
   }
 
-  &.size-m {
-    .tile-img-container {
-      height: 472px;
-      padding: 72px 0;
-    }
+  .overlay-fill {
+    opacity: 0;
+    background-color: $color-mch-product-tile-hover;
+    transition: all 350ms ease-out;
+  }
 
+  &:hover {
     .overlay-fill {
-      position: absolute;
-      width: 100%;
-      height: 472px;
-      opacity: 0;
-      background-color: $color-mch-product-tile-hover;
-      transition: all 350ms ease-out;
-    }
-    &:hover {
-      .overlay-fill {
-        opacity: 0.05;
-      }
+      opacity: 0.05;
     }
   }
 

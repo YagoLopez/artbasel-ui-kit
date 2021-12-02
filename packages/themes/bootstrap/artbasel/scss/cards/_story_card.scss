@@ -12,7 +12,7 @@
     width: 100%;
     z-index: 999;
     background-color: none;
-    transition: all 0.1s ease-in-out;
+    transition: all 350ms ease-out;
   }
 
   .hoverHandler {
@@ -65,6 +65,10 @@
       padding: 0;
       margin: 0;
       max-width: 100%;
+
+      .btn-primary {
+        transition: all 350ms ease-out;
+      }
 
       .btn-link {
         padding: 0.375rem 0;
@@ -120,7 +124,6 @@
 
     .card-text.card-description {
       margin-top: 16px;
-      margin-bottom: 48px;
     }
 
     .button-box {

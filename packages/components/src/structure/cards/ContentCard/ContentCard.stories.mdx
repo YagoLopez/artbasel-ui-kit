@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import example from './ContentCard.example.json';
 import ContentCard from './ContentCard';
 
-<Meta 
+<Meta
   title="Components/Structure/ContentCard"
   component={ContentCard}
   decorators={[withDesign]}
@@ -62,13 +62,13 @@ Content on image card is one of the different types of content card displayed on
 
 ## Variants
 
-### Size S 
+### Size S
 
-<Canvas style={{width: '450px'}}>
+<Canvas style={{ width: '450px' }}>
   <Story
     name="ContentCard Size S"
     args={generalArgs}
-    argTypes={{argTypes}}
+    argTypes={{ argTypes }}
     parameters={{
       design: {
         name: 'Figma Design',
@@ -84,14 +84,14 @@ Content on image card is one of the different types of content card displayed on
 
 ### Size L
 
-<Canvas style={{width: '1300px'}}>
+<Canvas style={{ width: '1300px' }}>
   <Story
     name="ContentCard Size L"
     args={{
       ...generalArgs,
       size: 'l',
     }}
-    argTypes={{argTypes}}
+    argTypes={{ argTypes }}
     parameters={{
       design: {
         name: 'Figma Design',
@@ -107,11 +107,11 @@ Content on image card is one of the different types of content card displayed on
 
 ### Truncated text
 
-<Canvas style={{width: '450px'}}>
+<Canvas style={{ width: '450px' }}>
   <Story
     name="ContentCard truncated text"
     args={truncatedArgs}
-    argTypes={{argTypes}}
+    argTypes={{ argTypes }}
     parameters={{
       design: {
         name: 'Figma Design',
@@ -124,7 +124,6 @@ Content on image card is one of the different types of content card displayed on
     {Template.bind({})}
   </Story>
 </Canvas>
-
 
 ## Properties
 

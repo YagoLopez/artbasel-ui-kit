@@ -7,7 +7,6 @@ import { ButtonIcon } from '../../actions/ButtonIcon';
 const ProductTile = ({
   cssInternalPrefix,
   cssStyles,
-  size,
   image,
   author,
   productName,
@@ -20,7 +19,9 @@ const ProductTile = ({
   const [truncated, setTruncated] = useState(false);
   const [dimensions, setDimensions] = useState({ limit: 0, width: 0 });
   const subtitle = [productName, year].join(', ');
-  const [truncatedSubtitle, setTruncatedSubtitle] = useState([productName, year].join(', '));
+  const [truncatedSubtitle, setTruncatedSubtitle] = useState(
+    [productName, year].join(', '),
+  );
 
   useEffect(() => {
     if (subtitle && subtitleRef.current) {
@@ -35,7 +36,7 @@ const ProductTile = ({
   useEffect(() => {
     if (dimensions.width > dimensions.limit && !truncated) {
       const limitChars = Math.floor(
-        ((dimensions.limit * subtitle.length) / dimensions.width) - 3,
+        (dimensions.limit * subtitle.length) / dimensions.width - 3,
       );
       setTruncatedSubtitle(subtitle.substring(0, limitChars));
       setTruncated(true);
@@ -49,7 +50,7 @@ const ProductTile = ({
 
   return (
     <BSPCard
-      className={classNames('product-tile', `size-${size}`)}
+      className={classNames('product-tile')}
       bsPrefix={cssInternalPrefix}
       style={cssStyles}
       data-testid="mch-product-tile"
@@ -59,22 +60,29 @@ const ProductTile = ({
         <ButtonIcon icon="collections-add" />
       </div>
       <div className="tile-img-container">
-        <BSPCard.Img variant="top" src={image} />
+        <div className="tile-img-frame">
+          <img src={image} />
+        </div>
       </div>
       <BSPCard.Body>
         <BSPCard.Title className="mt-5">{author}</BSPCard.Title>
         <div className="tile-subtitle mb-5" ref={subtitleRef}>
           <p>{truncatedSubtitle}</p>
-          {truncated
-          && <span title={subtitle} className="ellipsis">...</span>}
+          {truncated && (
+            <span title={subtitle} className="ellipsis">
+              ...
+            </span>
+          )}
         </div>
         <BSPCard.Text className="tile-gallery">{gallery}</BSPCard.Text>
-        {price
-        && <div className="tile-price-container">
-          <div className="tile-price">{price.currency} {price.value}</div>
-          {offer
-          && <div className="tile-offer">| Make an offer</div>}
-        </div>}
+        {price && (
+          <div className="tile-price-container">
+            <div className="tile-price">
+              {price.currency} {price.value}
+            </div>
+            {offer && <div className="tile-offer">| Make an offer</div>}
+          </div>
+        )}
       </BSPCard.Body>
     </BSPCard>
   );
@@ -83,7 +91,6 @@ const ProductTile = ({
 ProductTile.propTypes = {
   cssStyles: PropTypes.string,
   cssInternalPrefix: PropTypes.string,
-  size: PropTypes.oneOf(['s', 'm']),
   image: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   productName: PropTypes.string.isRequired,
@@ -97,7 +104,6 @@ ProductTile.propTypes = {
 };
 
 ProductTile.defaultProps = {
-  size: 's',
   price: null,
   offer: false,
 };
