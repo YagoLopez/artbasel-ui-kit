@@ -1,139 +1,125 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
 const Slider = ({
-  min, max, onChange, step, isRange, disabled, value,
+  min,
+  max,
+  onChange,
+  step,
+  isRange,
+  disabled,
+  value,
+  onMouseUp,
 }) => {
-  let initMin = min;
-  let initMax = max;
+  const minValue = useMemo(
+    () => Number((isRange ? value[0] : value) || min),
+    [value, isRange],
+  );
+  const maxValue = useMemo(() => (isRange ? Number(value[1] || max) : 0), [value, max]);
 
-  if (isRange) {
-    const initVal = Array.isArray(value) ? value : [min, value];
-    [initMin, initMax] = initVal;
-  } else {
-    const initVal = Array.isArray(value) ? value[1] : value;
-    initMin = min;
-    initMax = initVal;
-  }
+  const getPercent = useCallback(
+    (val) => ((val - min) / (max - min)) * 100,
+    [min, max],
+  );
 
-  const [minVal, setMinVal] = useState(initMin);
-  const [maxVal, setMaxVal] = useState(initMax);
-
-  // Convert to percentage
-  const getPercent = useCallback((val) => ((val - min) / (max - min)) * 100, [
-    min,
-    max,
-  ]);
-
-  const getRangeStyle = () => {
-    const minPercent = getPercent(minVal);
-    const maxPercent = getPercent(maxVal);
-    // Preceding with '+' converts the value from type string to type number
+  const getRangeStyle = useCallback(() => {
+    const minPercent = getPercent(minValue);
+    const maxPercent = getPercent(maxValue);
     return {
       left: `${minPercent}%`,
       width: `${maxPercent - minPercent}%`,
     };
-  };
+  }, [minValue, maxValue]);
 
-  // Get min and max values when their state changes
-  useEffect(() => {
-    if (isRange) {
-      onChange([minVal, maxVal]);
-    } else {
-      onChange(maxVal);
-    }
-  }, [minVal, maxVal, onChange]);
+  const normalizeValue = useCallback(
+    (v, name) => {
+      if (!isRange) return +v;
+      if (name === 'min') {
+        return Math.min(+v, maxValue - step);
+      }
+      return Math.max(+v, minValue + step);
+    },
+    [isRange, maxValue, minValue],
+  );
 
-  useEffect(() => {
-    setMinVal(initMin);
-    setMaxVal(initMax);
-  }, [min, max, value, step, isRange]);
+  const valuesToChange = useCallback((v, name) => {
+    const normalizedValue = normalizeValue(v, name);
+    return isRange
+      ? [
+        name === 'min' ? normalizedValue : minValue,
+        name === 'max' ? normalizedValue : maxValue,
+      ]
+      : normalizedValue;
+  }, [isRange, minValue, maxValue]);
 
-  if (isRange) {
-    return (
-      <div className="slider-container">
-        <div className="slider">
+  const handleOnChange = useCallback(
+    (e) => {
+      const { value: v, name } = e.target;
+      onChange(valuesToChange(v, name));
+    },
+    [isRange, minValue, maxValue],
+  );
+
+  const handleOnMouseUp = useCallback((e) => {
+    const { value: v, name } = e.target;
+    onMouseUp(valuesToChange(v, name));
+  }, [value]);
+
+  return (
+    <div className="slider-container">
+      <div className="slider">
+        <input
+          data-testid="min-value"
+          type="range"
+          name="min"
+          min={min}
+          max={max}
+          step={step}
+          value={minValue}
+          onChange={handleOnChange}
+          onMouseUp={handleOnMouseUp}
+          onTouchEnd={handleOnMouseUp}
+          disabled={disabled}
+          className={classnames(
+            'thumb thumb--zindex-3',
+            {
+              'thumb--zindex-5': minValue > max - 100,
+            },
+            'is-range',
+          )}
+        />
+        {isRange && (
           <input
+            data-testid="max-value"
             type="range"
+            name="max"
             min={min}
             max={max}
             step={step}
-            value={minVal}
-            onChange={(event) => {
-              const val = Math.min(+event.target.value, maxVal - step);
-              setMinVal(val);
-              event.target.value = val.toString();
-            }}
-            disabled={disabled}
-            className={classnames(
-              'thumb thumb--zindex-3',
-              {
-                'thumb--zindex-5': minVal > max - 100,
-              },
-              'is-range',
-            )}
-          />
-          <input
-            type="range"
-            min={min}
-            max={max}
-            step={step}
-            value={maxVal}
-            onChange={(event) => {
-              const val = Math.max(+event.target.value, minVal + step);
-              setMaxVal(val);
-              event.target.value = val.toString();
-            }}
+            value={maxValue}
+            onChange={handleOnChange}
+            onMouseUp={handleOnMouseUp}
+            onTouchEnd={handleOnMouseUp}
             disabled={disabled}
             className="thumb thumb--zindex-4 is-range"
           />
-          <div className="slider-track" />
-          <div
-            style={getRangeStyle()}
-            className={classnames('slider-range', {
-              disabled: disabled === true,
-            })}
-          />
-        </div>
+        )}
+        <div className="slider-track" />
+        <div
+          style={getRangeStyle()}
+          className={classnames('slider-range', {
+            disabled: disabled === true,
+          })}
+        />
       </div>
-    );
-  } else {
-    return (
-      <div className="slider-container">
-        <div className="slider">
-          <input
-            type="range"
-            min={min}
-            max={max}
-            step={step}
-            value={maxVal}
-            onChange={(event) => {
-              const val = Math.max(+event.target.value, initMin);
-              setMaxVal(val);
-              event.target.value = val.toString();
-            }}
-            disabled={disabled}
-            className="thumb thumb--zindex-4"
-          />
-          <div className="slider-track" />
-          <div
-            style={getRangeStyle()}
-            className={classnames('slider-range', {
-              disabled: disabled === true,
-            })}
-          />
-        </div>
-      </div>
-    );
-  }
+    </div>
+  );
 };
 
 Slider.propTypes = {
   min: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
-  /** The initial value of the component. A number for single
-   * variant or an array of 2 numbers for range variant. */
   value: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.arrayOf(PropTypes.number),
@@ -141,18 +127,18 @@ Slider.propTypes = {
   step: PropTypes.number,
   isRange: PropTypes.bool,
   disabled: PropTypes.bool,
-  /** Called when the component value is changed. Returns a number
-   * for single variant or an array of 2 numbers for range variant. */
   onChange: PropTypes.func.isRequired,
+  onMouseUp: PropTypes.func,
 };
 
 Slider.defaultProps = {
   min: 0,
   max: 100,
-  value: [0, 100],
+  value: [],
   step: 1,
   isRange: false,
   disabled: false,
+  onMouseUp: () => null,
 };
 
 export default Slider;
