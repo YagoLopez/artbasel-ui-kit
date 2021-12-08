@@ -5,6 +5,7 @@
   border: none;
   padding: 0;
   box-shadow: 0px 4px 16px rgba(29, 35, 39, 0.12);
+  background-color: $color-mch-white;
 
   &::before {
     @include transition-mix();
@@ -38,7 +39,7 @@
 
   &:focus,
   &:not(:focus-visible) {
-    background-color: $color-mch-white;
+    background-color: $color-mch-white !important;
     box-shadow: 0px 4px 16px rgba(29, 35, 39, 0.12);
   }
   &:focus-visible,
