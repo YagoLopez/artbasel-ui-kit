@@ -193,6 +193,21 @@ p {
     line-height: 1rem;
     letter-spacing: 0.3px;
   }
+
+  a {
+    font-weight: bold;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.text-link {
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 //// ---- to be removed from here to buttons section
@@ -226,8 +241,4 @@ p {
   svg {
     fill: $color-mch-black;
   }
-}
-
-a {
-  font-weight: bold;
 }

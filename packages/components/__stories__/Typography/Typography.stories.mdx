@@ -150,10 +150,41 @@ Class: <code>.text-large</code>
 
 ### Text with link
 
+HTML Tag: <code>a</code> inside a <code>p</code>
+
 <Canvas>
   <p>
     More information can be found in <a href="#">this link</a>.
   </p>
+</Canvas>
+
+Adtionally a class can be used in other contexts to apply the same link style.
+
+Class: <code>.text-link</code>
+
+<Canvas>
+  <p>
+    This <span className="text-link">link style</span> was applied using the
+    class text-link.
+  </p>
+</Canvas>
+
+A header wrapped by an <code>a</code> tag will not receive the style from a text link (underline on hover), but is still a link:
+
+<Canvas>
+  <a href="#">
+    <h4>This is an h4 header with a link</h4>
+  </a>
+</Canvas>
+
+In this case, if is desire the header to have the link styling (underline on hover), the class <code>.text-link</code> can be applied to the <code>h4</code> tag:
+
+<Canvas>
+  <a href="#">
+    <h4 className="text-link">
+      This is an h4 header with a link and hover underline
+    </h4>
+  </a>
 </Canvas>
 
 ### Supporting text
