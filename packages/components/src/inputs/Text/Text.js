@@ -23,6 +23,8 @@ const Text = ({
   validated,
   placeholder,
   onChange,
+  'data-testid': dataTestId,
+  name,
 }) => {
   const [passwordIcon, setPasswordIcon] = useState('hide');
   const isPassword = useMemo(() => type === 'password', [type]);
@@ -44,6 +46,8 @@ const Text = ({
           placeholder={placeholder}
           disabled={disabled}
           onChange={onChange}
+          data-testid={dataTestId}
+          name={name}
         />
         {(validated || isPassword) && (
           <i
@@ -83,6 +87,8 @@ Text.propTypes = {
   validated: PropTypes.bool,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
+  'data-testid': PropTypes.string,
+  name: PropTypes.string,
 };
 
 Text.defaultProps = {
@@ -96,6 +102,8 @@ Text.defaultProps = {
   validated: false,
   placeholder: ' ',
   onChange: () => {},
+  'data-testid': null,
+  name: null,
 };
 
 export default Text;
