@@ -1,5 +1,6 @@
 .form-control {
   &[type='text'],
+  &[type='number'],
   &[type='password'],
   &[type='email'] {
     border-width: 0 0 1px;

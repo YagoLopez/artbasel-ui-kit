@@ -1,32 +1,31 @@
-<!--- Email.stories.mdx --->
+<!--- Password.stories.mdx --->
 
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
 
-import { Text } from '../Text';
-import { Template, argTypes } from '../Text/Text.stories.mdx';
+import { Text } from '..';
+import { Template, argTypes } from '../Text.stories.mdx';
 
 <Meta
-  title="Components/Inputs/Email"
+  title="Components/Inputs/Text/Number"
   component={Text}
   decorators={[withDesign]}
 />
 
 # Email Field
 
-Email field is a control used to set an email.
+Password field is a control used to set a password.
 
 <Canvas>
   <Story
-    name="Email"
-    args={{ type: 'email', label: 'Email' }}
+    name="Number"
+    args={{ type: 'number', label: 'Number' }}
     argTypes={argTypes}
     parameters={{
       design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=486%3A20057',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=486%3A18914',
       },
     }}
   >
@@ -39,35 +38,35 @@ Email field is a control used to set an email.
 <Canvas>
   <div>
     <b>Default</b>
-    <Text label="Email" type="email" />
+    <Text label="Number" type="number" />
   </div>
 </Canvas>
 
 <Canvas>
   <div>
     <b>Hover</b>
-    <Text label="Email" className="hover" type="email" />
+    <Text label="Number" className="hover" type="number" />
   </div>
 </Canvas>
 
 <Canvas>
   <div>
     <b>Active</b>
-    <Text label="Email" value="Text" className="active" type="email" />
+    <Text
+      label="Number"
+      value="Text"
+      className="active"
+      type="number"
+      min={1}
+      max={100}
+    />
   </div>
 </Canvas>
 
 <Canvas>
   <div>
     <b>Focus</b>
-    <Text label="Email" className="focus" type="email" />
-  </div>
-</Canvas>
-
-<Canvas>
-  <div>
-    <b>Validated</b>
-    <Text label="Email" validated type="email" />
+    <Text label="Number" className="focus" type="number" />
   </div>
 </Canvas>
 
@@ -75,10 +74,10 @@ Email field is a control used to set an email.
   <div>
     <b>Warning</b>
     <Text
-      label="Email"
+      label="Number"
       helpText="Helper Text"
       helpTextType="warning"
-      type="email"
+      type="number"
     />
   </div>
 </Canvas>
@@ -87,10 +86,12 @@ Email field is a control used to set an email.
   <div>
     <b>Error</b>
     <Text
-      label="Email"
+      label="Number"
       helpText="Helper Text"
       helpTextType="danger"
-      type="email"
+      type="number"
+      min={1}
+      max={100}
     />
   </div>
 </Canvas>
@@ -98,7 +99,7 @@ Email field is a control used to set an email.
 <Canvas>
   <div>
     <b>Disabled</b>
-    <Text label="Email" disabled type="email" />
+    <Text label="Number" disabled type="password" />
   </div>
 </Canvas>
 

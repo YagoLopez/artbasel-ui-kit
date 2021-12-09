@@ -78,7 +78,7 @@ Text.propTypes = {
   className: PropTypes.string,
   cssStyles: PropTypes.string,
   cssInternalPrefix: PropTypes.string,
-  type: PropTypes.oneOf(['text', 'tel', 'email', 'password']),
+  type: PropTypes.oneOf(['text', 'tel', 'email', 'password', 'number']),
   disabled: PropTypes.bool,
   helpText: PropTypes.string,
   helpTextType: PropTypes.oneOf(['muted', 'warning', 'danger']),
