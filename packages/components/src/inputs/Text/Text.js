@@ -23,6 +23,7 @@ const Text = ({
   validated,
   placeholder,
   onChange,
+  onBlur,
   'data-testid': dataTestId,
   name,
 }) => {
@@ -46,6 +47,7 @@ const Text = ({
           placeholder={placeholder}
           disabled={disabled}
           onChange={onChange}
+          onBlur={onBlur}
           data-testid={dataTestId}
           name={name}
         />
@@ -87,6 +89,7 @@ Text.propTypes = {
   validated: PropTypes.bool,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
+  onBlur: PropTypes.func,
   'data-testid': PropTypes.string,
   name: PropTypes.string,
 };
@@ -101,7 +104,8 @@ Text.defaultProps = {
   value: '',
   validated: false,
   placeholder: ' ',
-  onChange: () => {},
+  onChange: () => null,
+  onBlur: () => null,
   'data-testid': null,
   name: null,
 };

@@ -7,7 +7,7 @@ const testElementId = 'mch-text';
 
 describe('Text component', () => {
   describe('renderer', () => {
-    test('render Text component with default props', () => {
+    it('render Text component with default props', () => {
       render(<Text />);
 
       const el = screen.getByTestId(testElementId);
@@ -17,21 +17,21 @@ describe('Text component', () => {
       expect(trailingIcon).not.toBeInTheDocument();
     });
 
-    test('render id prop', () => {
+    it('render id prop', () => {
       const id = 'foo';
       const label = 'label';
-      const placeholder = 'placeholder';
+      const dataTestId = 'input';
 
-      render(<Text id={id} label={label} placeholder={placeholder} />);
+      render(<Text id={id} label={label} data-testid={dataTestId} />);
 
       const labelEl = screen.getByText(label);
-      const inputEl = screen.getByPlaceholderText(placeholder);
+      const inputEl = screen.getByTestId(dataTestId);
 
       expect(labelEl).toHaveProperty('htmlFor', id);
       expect(inputEl).toHaveProperty('id', id);
     });
 
-    test('render correct label', () => {
+    it('render correct label', () => {
       const label = 'label';
 
       render(<Text label={label} />);
@@ -49,7 +49,7 @@ describe('Text component', () => {
       expect(helpTextElement).toHaveProperty('className', expect.stringContaining(`text-${helpText}`));
     });
 
-    test('render validated icon', () => {
+    it('render validated icon', () => {
       render(<Text validated />);
 
       const trailingIcon = screen.getByTestId('text-icon');
@@ -57,7 +57,7 @@ describe('Text component', () => {
       expect(trailingIcon).toBeInTheDocument();
     });
 
-    test('render password eye icon', () => {
+    it('render password eye icon', () => {
       render(<Text type="password" />);
 
       const eyeIcon = screen.getByTestId('text-icon');
@@ -65,55 +65,83 @@ describe('Text component', () => {
       expect(eyeIcon).toHaveProperty('className', 'eye-hide-icon');
     });
 
-    test('should not render helpText if not set as prop', () => {
+    it('should not render helpText if not set as prop', () => {
       render(<Text />);
 
       const helpText = screen.queryByTestId('help-text');
 
       expect(helpText).not.toBeInTheDocument();
     });
+
+    it('should set value when passed in', () => {
+      const dataTestId = 'input';
+      render(<Text value="value1" data-testid={dataTestId}/>);
+
+      const input = screen.getByTestId(dataTestId);
+
+      expect(input.value).toEqual('value1');
+    });
+
+    it('should set name prop', () => {
+      const name = 'bar';
+      const dataTestId = 'input';
+
+      render(<Text name={name} data-testid={dataTestId} />);
+
+      const input = screen.getByTestId(dataTestId);
+
+      expect(input).toHaveProperty('name', name);
+    });
   });
 
   describe('actions', () => {
-    test('call onChange when change value', () => {
+    it('should call onChange when change value', () => {
       const onChangeSpy = jest.fn();
-      const placeholder = 'foo';
+      const dataTestId = 'input';
 
-      render(<Text onChange={onChangeSpy} placeholder={placeholder}/>);
+      render(<Text onChange={onChangeSpy} data-testid={dataTestId}/>);
 
-      const input = screen.getByPlaceholderText(placeholder);
+      const input = screen.getByTestId(dataTestId);
 
       fireEvent.change(input, { target: { value: 'bar' } });
 
       expect(onChangeSpy).toHaveBeenCalled();
     });
 
-    test('change eye icon on click in eye', () => {
-      render(<Text type="password" />);
+    it('should call onBlur when blur on input', () => {
+      const onBlurSpy = jest.fn();
+      const dataTestId = 'input';
 
-      const eyeIcon = screen.getByTestId('text-icon');
+      render(<Text onBlur={onBlurSpy} data-testid={dataTestId} />);
 
-      fireEvent.click(eyeIcon);
+      const input = screen.getByTestId(dataTestId);
 
-      expect(eyeIcon).toHaveProperty('className', 'eye-show-icon');
+      fireEvent.blur(input);
+
+      expect(onBlurSpy).toHaveBeenCalled();
     });
 
-    test('set type text on password when click in eye icon', () => {
-      render(<Text type="password" placeholder="password" />);
+    describe('type password', () => {
+      it('change eye icon on click in eye', () => {
+        render(<Text type="password" />);
 
-      const eyeIcon = screen.getByTestId('text-icon');
-      const input = screen.getByPlaceholderText('password');
+        const eyeIcon = screen.getByTestId('text-icon');
 
-      fireEvent.click(eyeIcon);
+        fireEvent.click(eyeIcon);
 
-      expect(input).toHaveProperty('type', 'text');
-    });
-    test('set value when passed in', () => {
-      render(<Text value="value1" placeholder="inputname"/>);
+        expect(eyeIcon).toHaveProperty('className', 'eye-show-icon');
+      });
 
-      const input = screen.getByPlaceholderText('inputname');
+      it('should set type text on password when click in eye icon', () => {
+        render(<Text type="password" placeholder="password" />);
 
-      expect(input.value).toEqual('value1');
+        const eyeIcon = screen.getByTestId('text-icon');
+        const input = screen.getByPlaceholderText('password');
+
+        fireEvent.click(eyeIcon);
+
+        expect(input).toHaveProperty('type', 'text');
+      });
     });
   });
 });
