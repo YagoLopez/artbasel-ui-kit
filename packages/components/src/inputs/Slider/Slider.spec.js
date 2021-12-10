@@ -1,6 +1,8 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { render, fireEvent, screen } from '@testing-library/react';
+import {
+  render, fireEvent, screen,
+} from '@testing-library/react';
 import Slider from './Slider';
 
 const Component = (props) => (
@@ -62,6 +64,17 @@ describe('Slider component', () => {
         expect(onMouseUpSpy).toHaveBeenCalledWith([23, 90]);
 
         expect(onMouseUpSpy).toHaveBeenCalledTimes(2);
+      });
+
+      it('should set min and max as same value', () => {
+        const onChangeSpy = jest.fn();
+        render(<Component value={[20, 21]} onChange={onChangeSpy}/>);
+
+        const maxInputElement = screen.getByTestId('max-value');
+
+        fireEvent.change(maxInputElement, { target: { value: '20' } });
+
+        expect(onChangeSpy).toHaveBeenCalledWith([20, 20]);
       });
     });
 

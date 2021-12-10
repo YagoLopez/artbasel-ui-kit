@@ -9,6 +9,13 @@
     height: 3rem;
     font-size: 0.875rem;
     border-color: $color-mch-gray-300;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
 
     &.has-icon {
       padding-right: 3rem;

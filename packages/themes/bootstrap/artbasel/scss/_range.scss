@@ -45,6 +45,13 @@
       &.is-range {
         pointer-events: none;
       }
+
+      &.is-same-value-min {
+        right: 0.5rem;
+      }
+      &.is-same-value-max {
+        left: 0.5rem;
+      }
     }
 
     .thumb--zindex-3 {

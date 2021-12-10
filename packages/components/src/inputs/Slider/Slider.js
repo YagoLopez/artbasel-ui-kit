@@ -13,7 +13,7 @@ const Slider = ({
   onMouseUp,
 }) => {
   const minValue = useMemo(
-    () => Number((isRange ? value[0] : value) || min),
+    () => Number((Array.isArray(value) ? value[0] : value) || min),
     [value, isRange],
   );
   const maxValue = useMemo(() => (isRange ? Number(value[1] || max) : 0), [value, max]);
@@ -26,19 +26,20 @@ const Slider = ({
   const getRangeStyle = useCallback(() => {
     const minPercent = getPercent(minValue);
     const maxPercent = getPercent(maxValue);
+
     return {
-      left: `${minPercent}%`,
-      width: `${maxPercent - minPercent}%`,
+      left: isRange ? `${minPercent}%` : 0,
+      width: `${isRange ? maxPercent - minPercent : minPercent}%`,
     };
-  }, [minValue, maxValue]);
+  }, [minValue, maxValue, isRange]);
 
   const normalizeValue = useCallback(
     (v, name) => {
       if (!isRange) return +v;
       if (name === 'min') {
-        return Math.min(+v, maxValue - step);
+        return Math.min(+v, maxValue);
       }
-      return Math.max(+v, minValue + step);
+      return Math.max(+v, minValue);
     },
     [isRange, maxValue, minValue],
   );
@@ -83,7 +84,9 @@ const Slider = ({
           disabled={disabled}
           className={classnames(
             'thumb thumb--zindex-3',
+            'slider-min',
             {
+              'is-same-value-min': isRange && minValue === maxValue,
               'thumb--zindex-5': minValue > max - 100,
             },
             'is-range',
@@ -109,6 +112,7 @@ const Slider = ({
         <div
           style={getRangeStyle()}
           className={classnames('slider-range', {
+            'is-same-value-max': isRange && minValue === maxValue,
             disabled: disabled === true,
           })}
         />
