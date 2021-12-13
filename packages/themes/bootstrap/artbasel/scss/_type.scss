@@ -149,6 +149,29 @@ h4 .text-paragraph-2 {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  &.header-uppercase-1 {
+    letter-spacing: 4px;
+    color: $color-mch-black;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-transform: uppercase;
+  }
+  &.header-uppercase-2 {
+    letter-spacing: 1px;
+    color: $color-mch-black;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+  }
+}
+
 p {
   /*  Body Text  */
   font-size: 1rem;
@@ -204,6 +227,15 @@ p {
 
 .text-link {
   font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.text-inline-link {
+  font-weight: bold;
+  font-style: italic;
   cursor: pointer;
   &:hover {
     text-decoration: underline;

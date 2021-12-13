@@ -13,13 +13,11 @@ Typography is our system of custom fonts which helps create clear hierarchies, g
 
 ## Typography specifications
 
-All typograhy specifications can be accessed from this <a href="./mch-typography.pdf" target="_blank">link</a>.
+All typograhy specifications can be accessed from this <a href="https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=676%3A24536" target="_blank">link</a>.
 
 ## Fluid Type
 
 We use these Fluid styles for headings depending on the breakpoints. The font for headings is <b>Art Basel Headline</b> and is used to communicate context and important information. It is used in multiple scenarios but never within body text.
-
-Please <a href="./mch-typography-breakpoints.pdf" target="_blank">check here</a> the breakpoints definitions for font sizes and line heights.
 
 ### Headings
 
@@ -97,10 +95,35 @@ Mixed with Header example:
 
 ## Fixed Type
 
-We use these fixed styles for body, links or supporting styles across all our breakpoints. The font used for these styles is <b>Art Basel Text</b>. It is used for all body text in any given situation, with no exceptions.
+We use these fixed styles for body, links or supporting styles across all our breakpoints.
+
+### Headings
+
+We use these fixed styles for headings and sign posting across all our breakpoints. The font used for these styles is Art Basel Headline.
+
+HTML Tag: <code>h1</code> to <code>h5</code>
+
+Class: <code>.header-uppercase-1</code>
+
+<Canvas>
+  <h1 className="header-uppercase-1">
+    The quick brown fox jumps over the lazy dog
+  </h1>
+</Canvas>
+
+HTML Tag: <code>h1</code> to <code>h5</code>
+
+Class: <code>.header-uppercase-2</code>
+
+<Canvas>
+  <h1 className="header-uppercase-2">
+    The quick brown fox jumps over the lazy dog
+  </h1>
+</Canvas>
 
 ### Body text
 
+The font used for these styles is <b>Art Basel Text</b>. It is used for all body text in any given situation, with no exceptions.
 Are accessible using <code>p</code> HTML tag and classes.
 
 HTML Tag: <code>p</code>
@@ -148,7 +171,7 @@ Class: <code>.text-large</code>
   </p>
 </Canvas>
 
-### Text with link
+### Links
 
 HTML Tag: <code>a</code> inside a <code>p</code>
 
@@ -169,7 +192,7 @@ Class: <code>.text-link</code>
   </p>
 </Canvas>
 
-A header wrapped by an <code>a</code> tag will not receive the style from a text link (underline on hover), but is still a link:
+An element wrapped by an <code>a</code> tag will not receive the style from a text link (underline on hover), but is still a link. For example, a header tag:
 
 <Canvas>
   <a href="#">
@@ -177,7 +200,7 @@ A header wrapped by an <code>a</code> tag will not receive the style from a text
   </a>
 </Canvas>
 
-In this case, if is desire the header to have the link styling (underline on hover), the class <code>.text-link</code> can be applied to the <code>h4</code> tag:
+But, if the link styling (underline on hover) is desired, the class <code>.text-link</code> can be applied to the <code>h4</code> tag:
 
 <Canvas>
   <a href="#">
@@ -185,6 +208,19 @@ In this case, if is desire the header to have the link styling (underline on hov
       This is an h4 header with a link and hover underline
     </h4>
   </a>
+</Canvas>
+
+#### Inline link
+
+The font used for these styles is Art Basel Text. It is used within a sentence or paragraph and is styled with an underline and italicize style. The color, size, and line height will follow what’s defined by the parent text.
+
+Class: <code>.text-inline-link</code>
+
+<Canvas>
+  <p>
+    This <span className="text-inline-link">inline link style</span> was applied
+    using the class text-inline-link.
+  </p>
 </Canvas>
 
 ### Supporting text
