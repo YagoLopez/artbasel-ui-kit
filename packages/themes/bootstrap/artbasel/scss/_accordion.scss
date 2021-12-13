@@ -31,6 +31,7 @@
 
   .accordion-body {
     padding: 0;
+    @include custom-scrollbar();
   }
 
   .accordion-button:not(.collapsed)::after {

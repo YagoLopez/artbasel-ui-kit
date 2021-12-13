@@ -1,0 +1,39 @@
+@mixin custom-scrollbar($width: 24px) {
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-right-width: calc((#{$width} / 2) - 1px);
+    border-left-width: calc((#{$width} / 2) - 1px);
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-color: $color-mch-white;
+    border-style: solid;
+    background: $color-mch-gray-400;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-right-width: calc((#{$width} / 2) - 1px);
+    border-left-width: calc((#{$width} / 2) - 1px);
+    border-color: $color-mch-white;
+    // border-color: transparent;
+    border-style: solid;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    // background: $color-mch-gray-200;
+    background: transparent;
+  }
+
+  overflow-y: scroll;
+
+  //Safari incompatible
+  // scrollbar-gutter: stable;
+
+  //adds support for Firefox browsers
+  scrollbar-color: $color-mch-gray-400 transparent;
+  scrollbar-width: thin;
+  @supports (-moz-appearance: none) {
+    padding-right: $width;
+  }
+}
