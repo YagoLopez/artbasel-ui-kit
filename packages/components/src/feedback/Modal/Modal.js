@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
+
 import { Modal as BSModal } from 'react-bootstrap';
 import { ButtonIcon } from '../../actions/ButtonIcon';
 import Footer from './Footer';
@@ -14,6 +16,7 @@ const Modal = ({
       size={filter ? 'filter' : size}
       show={show}
       onHide={onHide}
+      className={classnames({ 'modal-fullscreen': filter })}
     >
       <BSModal.Header>
         <div>
