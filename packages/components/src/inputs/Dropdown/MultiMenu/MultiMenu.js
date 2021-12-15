@@ -45,7 +45,7 @@ const MultiMenu = ({
         {options.map(({ value: v, label: l }) => (
           <Dropdown.Item
             as={Checkbox}
-            className="d-flex justify-content-between"
+            className="d-flex"
             key={v}
             value={v}
             id={v}

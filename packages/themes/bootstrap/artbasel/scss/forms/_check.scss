@@ -7,6 +7,7 @@
     display: inline-block;
     vertical-align: top;
     cursor: pointer;
+    flex-grow: 1;
   }
 
   &.align-left {
@@ -19,7 +20,7 @@
 
     .form-check-label {
       width: calc(100% - 2rem);
-      text-align: right;
+      text-align: left;
     }
   }
 

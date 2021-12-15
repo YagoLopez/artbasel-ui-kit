@@ -31,7 +31,7 @@ const Checkbox = ({
     isInvalid={isInvalid}
     isValid={isValid}
     label={label}
-    onChange={onChange || (() => {})}
+    onChange={onChange}
     value={value}
   ></Form.Check>
 );
@@ -59,7 +59,7 @@ Checkbox.defaultProps = {
   inline: false,
   isInvalid: false,
   isValid: false,
-  onChange: () => {},
+  onChange: () => null,
 };
 
 export default Checkbox;

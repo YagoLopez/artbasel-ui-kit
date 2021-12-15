@@ -84,7 +84,7 @@
     &:active:not(:disabled) ~ label,
     &:focus ~ label,
     &.focus ~ label {
-      transform: scale(0.85) translateY(-1.25rem);
+      transform: translateY(-1.25rem);
       opacity: 1;
       font-size: 0.75rem;
       line-height: 1rem;
