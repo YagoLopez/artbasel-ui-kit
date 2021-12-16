@@ -237,8 +237,9 @@ p {
   font-weight: bold;
   font-style: italic;
   cursor: pointer;
+  text-decoration: underline;
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
