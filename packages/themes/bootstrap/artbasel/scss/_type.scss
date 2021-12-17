@@ -238,6 +238,9 @@ p {
   font-style: italic;
   cursor: pointer;
   text-decoration: underline;
+  &:visited {
+    color: $color-mch-gray-300;
+  }
   &:hover {
     text-decoration: none;
   }
