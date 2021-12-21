@@ -239,7 +239,7 @@ p {
   cursor: pointer;
   text-decoration: underline;
   &:visited {
-    color: $color-mch-gray-300;
+   text-decoration-color: $color-mch-gray-300;
   }
   &:hover {
     text-decoration: none;
