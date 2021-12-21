@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -12,12 +12,15 @@ const Slider = ({
   value,
   onMouseUp,
 }) => {
+  const [lastActive, setLastActive] = useState(null);
   const minValue = useMemo(
     () => Number((Array.isArray(value) ? value[0] : value) || min),
     [value, isRange],
   );
-  const maxValue = useMemo(() => (isRange ? Number(value[1] || max) : 0), [value, max]);
-
+  const maxValue = useMemo(
+    () => (isRange ? Number(value[1] ?? max) : 0),
+    [value, max],
+  );
   const getPercent = useCallback(
     (val) => ((val - min) / (max - min)) * 100,
     [min, max],
@@ -44,28 +47,35 @@ const Slider = ({
     [isRange, maxValue, minValue],
   );
 
-  const valuesToChange = useCallback((v, name) => {
-    const normalizedValue = normalizeValue(v, name);
-    return isRange
-      ? [
-        name === 'min' ? normalizedValue : minValue,
-        name === 'max' ? normalizedValue : maxValue,
-      ]
-      : normalizedValue;
-  }, [isRange, minValue, maxValue]);
-
-  const handleOnChange = useCallback(
-    (e) => {
-      const { value: v, name } = e.target;
-      onChange(valuesToChange(v, name));
+  const valuesToChange = useCallback(
+    (v, name) => {
+      const normalizedValue = normalizeValue(v, name);
+      return isRange
+        ? [
+          name === 'min' ? normalizedValue : minValue,
+          name === 'max' ? normalizedValue : maxValue,
+        ]
+        : normalizedValue;
     },
     [isRange, minValue, maxValue],
   );
 
-  const handleOnMouseUp = useCallback((e) => {
-    const { value: v, name } = e.target;
-    onMouseUp(valuesToChange(v, name));
-  }, [value]);
+  const handleOnChange = useCallback(
+    (e) => {
+      const { value: v, name } = e.target;
+      if (isRange && name !== lastActive) setLastActive(name);
+      onChange(valuesToChange(v, name));
+    },
+    [isRange, minValue, maxValue, lastActive],
+  );
+
+  const handleOnMouseUp = useCallback(
+    (e) => {
+      const { value: v, name } = e.target;
+      onMouseUp(valuesToChange(v, name));
+    },
+    [value],
+  );
 
   return (
     <div className="slider-container">
@@ -86,7 +96,8 @@ const Slider = ({
             'thumb thumb--zindex-3',
             'slider-min',
             {
-              'is-same-value-min': isRange && minValue === maxValue,
+              'is-same-value-min':
+                isRange && minValue === maxValue && lastActive === 'min',
               'thumb--zindex-5': minValue > max - 100,
             },
             'is-range',
@@ -105,14 +116,16 @@ const Slider = ({
             onMouseUp={handleOnMouseUp}
             onTouchEnd={handleOnMouseUp}
             disabled={disabled}
-            className="thumb thumb--zindex-4 is-range"
+            className={classnames('thumb thumb--zindex-4 is-range', {
+              'is-same-value-max':
+                isRange && minValue === maxValue && lastActive === 'max',
+            })}
           />
         )}
         <div className="slider-track" />
         <div
           style={getRangeStyle()}
           className={classnames('slider-range', {
-            'is-same-value-max': isRange && minValue === maxValue,
             disabled: disabled === true,
           })}
         />
