@@ -1,0 +1,10 @@
+{
+  "title": "Lorem ipsum dolor sit amet, consec",
+  "titleLong": "Lorem ipsum dolor sit amet, consectetuer",
+  "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penat",
+  "descriptionLong": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur rid",
+  "link": {
+    "url": "/artists",
+    "text": "Explore all artists"
+  }
+}
