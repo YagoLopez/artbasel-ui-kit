@@ -101,7 +101,7 @@ pipelines:
             - npm install --global lerna
             - npm config set @mch-group:registry https://registry.npmjs.org && npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
             - lerna init
-            - lerna version --conventional-commits --yes -m "[ci skip] Publish Chore (release)"
+            - lerna version --conventional-commits --yes -m "[ci skip] Publish Chore (release)" --no-commit-hooks
             - lerna publish from-package --yes
       - step:
           name: "Delete Preview"
