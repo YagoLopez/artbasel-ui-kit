@@ -1,6 +1,6 @@
 {
   "packages": [
-    "packages/*"
+    "packages/**"
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,
@@ -14,7 +14,7 @@
   ],
   "command": {
     "publish": {
-        "registry": "https://registry.npmjs.org/"
+      "registry": "https://registry.npmjs.org/"
     }
   }
 }
