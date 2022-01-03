@@ -6,4 +6,7 @@ module.exports = {
   testEnvironment: 'jsdom',
   name: packageJson.name,
   displayName: packageJson.name,
+  moduleNameMapper: {
+    '\\.(css|less)$': '<rootDir>/src/helpers/styleMock.js',
+  },
 };

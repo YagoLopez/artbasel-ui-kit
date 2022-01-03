@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
 
-const ArtistCard = ({
+const CarouselArtistCard = ({
   artistName,
   artworks,
   image,
@@ -11,10 +11,10 @@ const ArtistCard = ({
 }) => {
   return (
     <BSPCard
-      data-testid="mch-artist-card"
+      data-testid="mch-carousel-artist-card"
       bsPrefix={cssInternalPrefix}
       style={cssStyles}
-      className="artist-card"
+      className="carousel-artist-card"
     >
       <div className="gradient" />
       <img src={image} alt="picture" />
@@ -28,7 +28,7 @@ const ArtistCard = ({
   );
 };
 
-ArtistCard.propTypes = {
+CarouselArtistCard.propTypes = {
   artistName: PropTypes.string.isRequired,
   artworks: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
@@ -36,9 +36,9 @@ ArtistCard.propTypes = {
   cssStyles: PropTypes.string,
 };
 
-ArtistCard.defaultProps = {
+CarouselArtistCard.defaultProps = {
   cssInternalPrefix: 'card',
   cssStyles: null,
 };
 
-export default ArtistCard;
+export default CarouselArtistCard;

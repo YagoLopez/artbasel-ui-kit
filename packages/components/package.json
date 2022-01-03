@@ -37,6 +37,7 @@
     "build-storybook": "build-storybook -s ./storybook-assets"
   },
   "dependencies": {
+    "@splidejs/react-splide": "^0.6.17",
     "classnames": "^2.3.1",
     "preval.macro": "^5.0.0",
     "prop-types": "^15.7.2",

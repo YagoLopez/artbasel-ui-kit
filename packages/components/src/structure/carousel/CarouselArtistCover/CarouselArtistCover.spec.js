@@ -2,8 +2,8 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { cleanup, render, screen } from '@testing-library/react';
-import ArtistCoverCard from './ArtistCoverCard';
-import example from './ArtistCoverCard.example.json';
+import CarouselArtistCover from './CarouselArtistCover';
+import example from './CarouselArtistCover.example.json';
 
 console.error = jest.fn();
 
@@ -12,7 +12,7 @@ describe('Test for Artist Cover Cards', () => {
 
   test('Should render the component', () => {
     render(
-      <ArtistCoverCard
+      <CarouselArtistCover
         title={example.title}
         description={example.description}
         link={example.link}
@@ -23,7 +23,7 @@ describe('Test for Artist Cover Cards', () => {
 
   test('Should not render the componenmt without title prop', () => {
     render(
-      <ArtistCoverCard
+      <CarouselArtistCover
         description={example.description}
         link={example.link}
       />,
@@ -33,7 +33,7 @@ describe('Test for Artist Cover Cards', () => {
 
   test('Should not render the componenmt without description prop', () => {
     render(
-      <ArtistCoverCard
+      <CarouselArtistCover
         title={example.title}
         link={example.link}
       />,
@@ -43,7 +43,7 @@ describe('Test for Artist Cover Cards', () => {
 
   test('Should not render the componenmt without link prop', () => {
     render(
-      <ArtistCoverCard
+      <CarouselArtistCover
         title={example.title}
         description={example.description}
       />,

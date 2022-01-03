@@ -1,0 +1,70 @@
+@import 'carousel/carousel_artist_cover.scss';
+@import 'carousel/carousel_artist_card.scss';
+
+/***************************
+    Carousel
+***************************/
+.carousel-container {
+  max-width: 100%;
+  border-top: 2px solid $color-mch-gray-200;
+  border-bottom: 2px solid $color-mch-gray-200;
+
+  .carousel-arrows {
+    position: absolute;
+    top: -4.5rem;
+    right: 0;
+  
+    .splide__arrow--prev {
+      float: left;
+      left: unset;
+      margin-right: 2.5rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .splide__arrow--next {
+      float: right;
+      right: unset;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .disabled {
+      &:hover {
+        cursor: default;
+      }
+      &::before {
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      top: -4rem
+    }
+
+    @include media-breakpoint-up(xl) {
+      top: -5rem;
+    }
+  }
+
+  .exceed-track .splide__track {
+    overflow: visible;    
+  }
+
+  .unlimited .splide__list .splide__slide {
+    width: auto !important;
+  }
+
+  .unlimited .splide__list .product-tile-size.splide__slide {
+    width: 234px !important;
+
+    @include media-breakpoint-up(md) {
+      width: 252px !important;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: 326px !important;
+    }
+  }
+}
+

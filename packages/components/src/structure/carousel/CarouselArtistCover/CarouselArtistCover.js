@@ -9,7 +9,7 @@ const truncateValues = {
   description: 160,
 };
 
-const ArtistCoverCard = ({
+const CarouselArtistCover = ({
   title,
   link,
   description,
@@ -23,10 +23,10 @@ const ArtistCoverCard = ({
 
   return (
     <BSPCard
-      data-textid="mch-artist-cover-card"
+      data-textid="mch-carousel-artist-cover"
       bsPrefix={cssInternalPrefix}
       style={cssStyles}
-      className="artist-cover-card"
+      className="carousel-artist-cover"
     >
       <BSPCard.Body>
         <BSPCard.Title>
@@ -43,7 +43,7 @@ const ArtistCoverCard = ({
   );
 };
 
-ArtistCoverCard.propTypes = {
+CarouselArtistCover.propTypes = {
   title: PropTypes.string.isRequired,
   link: PropTypes.shape({
     url: PropTypes.string.isRequired,
@@ -54,9 +54,9 @@ ArtistCoverCard.propTypes = {
   cssStyles: PropTypes.string,
 };
 
-ArtistCoverCard.defaultProps = {
+CarouselArtistCover.defaultProps = {
   cssInternalPrefix: 'card',
   cssStyles: null,
 };
 
-export default ArtistCoverCard;
+export default CarouselArtistCover;

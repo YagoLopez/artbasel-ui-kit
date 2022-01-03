@@ -1,0 +1,44 @@
+{
+  "cover": {
+    "title": "Lorem ipsum dolor sit amet, consec",
+    "titleLong": "Lorem ipsum dolor sit amet, consectetuer",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penat",
+    "descriptionLong": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur rid",
+    "link": {
+      "url": "/artists",
+      "text": "Explore all artists"
+    }
+  },
+  "cards": [
+    {
+      "artistName": "Artist Name 1",
+      "artworks": "3",
+      "image": "https://images.pexels.com/photos/1690351/pexels-photo-1690351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    },
+    {
+      "artistName": "Artist Name 2",
+      "artworks": "4",
+      "image": "https://images.pexels.com/photos/889839/pexels-photo-889839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    },
+    {
+      "artistName": "Artist Name 3 ",
+      "artworks": "3",
+      "image": "https://images.pexels.com/photos/1209843/pexels-photo-1209843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    },
+    {
+      "artistName": "Artist Name 4",
+      "artworks": "4",
+      "image": "https://images.pexels.com/photos/1145720/pexels-photo-1145720.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    },
+    {
+      "artistName": "Artist Name 5",
+      "artworks": "2",
+      "image": "https://images.pexels.com/photos/164455/pexels-photo-164455.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    },
+    {
+      "artistName": "Artist Name 6",
+      "artworks": "3",
+      "image": "https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    }
+  ]
+}
