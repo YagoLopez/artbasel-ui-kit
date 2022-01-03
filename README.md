@@ -51,3 +51,4 @@ yarn build
 ```
 
 Will be created a dist folder with the js files
+
