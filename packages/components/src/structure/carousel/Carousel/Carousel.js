@@ -30,7 +30,6 @@ const Carousel = ({
     perPage: options?.perPage || null,
     pagination: options?.pagination || false,
     arrows: options?.arrows || 2,
-    gap: options?.gap || '1.5rem',
     ...options,
   };
 
@@ -114,6 +113,13 @@ const Carousel = ({
 };
 
 Carousel.propTypes = {
+  title: PropTypes.string.isRequired,
+  /** Used to force the carousel width exceed its container
+   and use the total page width.
+   This prop requires the attribute overflow-x: hidden on the
+   main container or body to avoid an horizontal scrollbar.
+   Please refer to code sample. */
+  exceedTrack: PropTypes.bool,
   options: PropTypes.shape({
     width: PropTypes.oneOfType([
       PropTypes.string,
@@ -124,15 +130,9 @@ Carousel.propTypes = {
     perPage: PropTypes.number,
     pagination: PropTypes.bool,
     arrows: PropTypes.number,
-    gap: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
   }),
-  title: PropTypes.string.isRequired,
   cssStyles: PropTypes.string,
-  children: PropTypes.any,
-  exceedTrack: PropTypes.bool,
+  children: PropTypes.any.isRequired,
 };
 
 Carousel.defaultProps = {
@@ -143,7 +143,6 @@ Carousel.defaultProps = {
     perPage: null,
     pagination: false,
     arrows: 2,
-    gap: '1.5rem',
   },
   cssStyles: null,
   children: null,

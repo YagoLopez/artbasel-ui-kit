@@ -4,7 +4,7 @@ import example from './CarouselArtistCover.example.json';
 import CarouselArtistCover from './CarouselArtistCover';
 
 <Meta
-  title="Components/Structure/Carousel/CarouselArtistCover"
+  title="Components/Structure/Carousel/Carousel Cards/CarouselArtistCover"
   component={CarouselArtistCover}
   decorators={[withDesign]}
 />
@@ -49,7 +49,7 @@ export const truncatedArgs = {
   title: example.titleLong,
   description: example.descriptionLong,
   link: example.link,
-}
+};
 
 # CarouselArtistCover
 
@@ -61,11 +61,10 @@ First Artist card on carousel.
     args={generalArgs}
     argTypes={{ argTypes }}
     parameters={{
-       design: {
+      design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=2794%3A41144',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=2794%3A41144',
       },
     }}
   >
@@ -77,17 +76,16 @@ First Artist card on carousel.
 
 ### Truncated Text
 
-<Canvas style={{width: '1500px'}}>
+<Canvas>
   <Story
     name="CarouselArtistCover Truncated Text"
     args={truncatedArgs}
     argTypes={{ argTypes }}
     parameters={{
-       design: {
+      design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=2794%3A41144',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=2794%3A41144',
       },
     }}
   >

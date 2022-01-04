@@ -3,25 +3,28 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { SplideSlide } from '@splidejs/react-splide';
 
-const Slide = ({ children, className, productTiles }) => (
+const Slide = ({ children, cssStyles, productTiles }) => (
   <SplideSlide
     data-testid="mch-carousel-slide"
-    className={classnames(className, {
+    className={ classnames({
       'product-tile-size': productTiles,
-    })}
+    }) }
+    styles={cssStyles}
   >
     {children}
   </SplideSlide>
 );
 
 Slide.propTypes = {
-  children: PropTypes.object.isRequired,
-  className: PropTypes.string,
+  /** Used to force the Produt Tile slide width to be
+  equals to artist cards slides. Please refer to code sample. */
   productTiles: PropTypes.bool,
+  cssStyles: PropTypes.string,
+  children: PropTypes.object.isRequired,
 };
 
 Slide.defaultProps = {
-  className: null,
+  cssStyles: null,
   productTiles: false,
 };
 

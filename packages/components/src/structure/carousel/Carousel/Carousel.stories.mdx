@@ -2,8 +2,7 @@ import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
 import Carousel from './Carousel.js';
 import { Container, Row, Col } from '../../Grid';
-// import { Carousel.Slide } from '@splidejs/react-splide';
-// import '@splidejs/splide/dist/css/splide.min.css';
+
 import example from './Carousel.example.json';
 import CarouselArtistCard from '../CarouselArtistCard/CarouselArtistCard';
 import CarouselArtistCover from '../CarouselArtistCover/CarouselArtistCover';
@@ -15,160 +14,6 @@ import tileExamples from '../../ProductTile/ProductTilePage.example.json';
   component={Carousel}
   decorators={[withDesign]}
 />
-
-export const Template = (args) => (
-  <div style={{overflow: 'hidden'}}>
-    <Container>
-      <Row>
-        <Col>
-          <Carousel {...args}>
-            {/* Not using a loop to avoid documentation problems */}
-            <Carousel.Slide>
-              <CarouselArtistCover
-                title={example.cover.title}
-                description={example.cover.description}
-                link={example.cover.link}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide>
-              <CarouselArtistCard
-                artistName={example.cards[0].artistName}
-                artworks={example.cards[0].artworks}
-                image={example.cards[0].image}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide>
-              <CarouselArtistCard
-                artistName={example.cards[1].artistName}
-                artworks={example.cards[1].artworks}
-                image={example.cards[1].image}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide>
-              <CarouselArtistCard
-                artistName={example.cards[2].artistName}
-                artworks={example.cards[2].artworks}
-                image={example.cards[2].image}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide>
-              <CarouselArtistCard
-                artistName={example.cards[3].artistName}
-                artworks={example.cards[3].artworks}
-                image={example.cards[3].image}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide>
-              <CarouselArtistCard
-                artistName={example.cards[4].artistName}
-                artworks={example.cards[4].artworks}
-                image={example.cards[4].image}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide>
-              <CarouselArtistCard
-                artistName={example.cards[5].artistName}
-                artworks={example.cards[5].artworks}
-                image={example.cards[5].image}
-              />
-            </Carousel.Slide>
-          </Carousel>
-        </Col>
-      </Row>
-    </Container>
-  </div>
-);
-
-export const TileTemplate = (args) => (
-  <div style={{overflow: 'hidden'}}>
-    <Container>
-      <Row>
-        <Col>
-          <Carousel {...args}>
-            {/* Not using a loop to avoid documentation problems */}
-            <Carousel.Slide productTiles>
-              <ProductTile
-                author={tileExamples[0].author}
-                productName={tileExamples[0].productName}
-                year={tileExamples[0].year}
-                image={tileExamples[0].image}
-                gallery="Gallery Placeholder"
-                price={tileExamples[0].price}
-                offer={tileExamples[0].offer}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide productTiles>
-              <ProductTile
-                author={tileExamples[1].author}
-                productName={tileExamples[1].productName}
-                year={tileExamples[1].year}
-                image={tileExamples[1].image}
-                gallery="Gallery Placeholder"
-                price={tileExamples[1].price}
-                offer={tileExamples[1].offer}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide productTiles>
-              <ProductTile
-                author={tileExamples[2].author}
-                productName={tileExamples[2].productName}
-                year={tileExamples[2].year}
-                image={tileExamples[2].image}
-                gallery="Gallery Placeholder"
-                price={tileExamples[2].price}
-                offer={tileExamples[2].offer}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide productTiles>
-              <ProductTile
-                author={tileExamples[3].author}
-                productName={tileExamples[3].productName}
-                year={tileExamples[3].year}
-                image={tileExamples[3].image}
-                gallery="Gallery Placeholder"
-                price={tileExamples[3].price}
-                offer={tileExamples[3].offer}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide productTiles>
-              <ProductTile
-                author={tileExamples[4].author}
-                productName={tileExamples[4].productName}
-                year={tileExamples[4].year}
-                image={tileExamples[4].image}
-                gallery="Gallery Placeholder"
-                price={tileExamples[4].price}
-                offer={tileExamples[4].offer}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide productTiles>
-              <ProductTile
-                author={tileExamples[5].author}
-                productName={tileExamples[5].productName}
-                year={tileExamples[5].year}
-                image={tileExamples[5].image}
-                gallery="Gallery Placeholder"
-                price={tileExamples[5].price}
-                offer={tileExamples[5].offer}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide productTiles>
-              <ProductTile
-                author={tileExamples[6].author}
-                productName={tileExamples[6].productName}
-                year={tileExamples[6].year}
-                image={tileExamples[6].image}
-                gallery="Gallery Placeholder"
-                price={tileExamples[6].price}
-                offer={tileExamples[6].offer}
-              />
-            </Carousel.Slide>
-          </Carousel>
-        </Col>
-      </Row>
-    </Container>
-  </div>
-);
 
 export const argTypes = {
   title: {
@@ -210,6 +55,76 @@ export const tileArgs = {
 
 # Carousel
 
+## Default Carousel
+
+<Canvas>
+  <Container>
+    <Row>
+      <Col>
+        <Carousel title="Heading">
+          <Carousel.Slide>
+            <CarouselArtistCover
+              title={example.cover.title}
+              description={example.cover.description}
+              link={example.cover.link}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[0].artistName}
+              artworks={example.cards[0].artworks}
+              image={example.cards[0].image}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[1].artistName}
+              artworks={example.cards[1].artworks}
+              image={example.cards[1].image}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[2].artistName}
+              artworks={example.cards[2].artworks}
+              image={example.cards[2].image}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[3].artistName}
+              artworks={example.cards[3].artworks}
+              image={example.cards[3].image}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[4].artistName}
+              artworks={example.cards[4].artworks}
+              image={example.cards[4].image}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[5].artistName}
+              artworks={example.cards[5].artworks}
+              image={example.cards[5].image}
+            />
+          </Carousel.Slide>
+        </Carousel>
+      </Col>
+    </Row>
+  </Container>
+</Canvas>
+
+## Cards Carousel
+
+In some usages Carousel will need to extend itself beyound the container, to fill the viewport width.
+
+In this case, we need to add an <code>overflow: 'hidden'</code> css style to the most top container, and additionally add a property <code>exceedTrack</code> to <code>Carousel</code> component.
+
+Please check the source source (button Show Code) to see the complete code.
+
 <Canvas>
   <Story
     name="Carousel"
@@ -219,33 +134,178 @@ export const tileArgs = {
       design: {
         productName: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=2794%3A41144',      },
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=2794%3A41144',
+      },
     }}
   >
-  {Template.bind({})}
+    <div
+      style={{
+        overflow: 'hidden',
+      }}
+    >
+      <Container>
+        <Row>
+          <Col>
+            <Carousel title="Heading" exceedTrack>
+              <Carousel.Slide>
+                <CarouselArtistCover
+                  title={example.cover.title}
+                  description={example.cover.description}
+                  link={example.cover.link}
+                />
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <CarouselArtistCard
+                  artistName={example.cards[0].artistName}
+                  artworks={example.cards[0].artworks}
+                  image={example.cards[0].image}
+                />
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <CarouselArtistCard
+                  artistName={example.cards[1].artistName}
+                  artworks={example.cards[1].artworks}
+                  image={example.cards[1].image}
+                />
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <CarouselArtistCard
+                  artistName={example.cards[2].artistName}
+                  artworks={example.cards[2].artworks}
+                  image={example.cards[2].image}
+                />
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <CarouselArtistCard
+                  artistName={example.cards[3].artistName}
+                  artworks={example.cards[3].artworks}
+                  image={example.cards[3].image}
+                />
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <CarouselArtistCard
+                  artistName={example.cards[4].artistName}
+                  artworks={example.cards[4].artworks}
+                  image={example.cards[4].image}
+                />
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <CarouselArtistCard
+                  artistName={example.cards[5].artistName}
+                  artworks={example.cards[5].artworks}
+                  image={example.cards[5].image}
+                />
+              </Carousel.Slide>
+            </Carousel>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   </Story>
 </Canvas>
 
-## Tile Test
+## Product Tile Carousel
+
+The Carousel component can be used to display any kind of content (including cards or images) with pre-defined width.
+
+In case of using with Product Tile Card, which is responsive and dont have a fixed width, the property <code>productTiles</code> can be used on the <code>Carousel.Slide</code> component to ajust the product tile width to be compatible with the Artist card.
 
 <Canvas>
-  <Story
-    name="Tile Carousel"
-    argTypes={argTypes}
-    args={tileArgs}
-    parameters={{
-      design: {
-        productName: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=2794%3A41144',      },
-    }}
-  >
-  {TileTemplate.bind({})}
-  </Story>
+  <Container>
+    <Row>
+      <Col>
+        <Carousel title="Heading" exceedTrack>
+          <Carousel.Slide productTiles>
+            <ProductTile
+              author={tileExamples[0].author}
+              productName={tileExamples[0].productName}
+              year={tileExamples[0].year}
+              image={tileExamples[0].image}
+              gallery="Gallery Placeholder"
+              price={tileExamples[0].price}
+              offer={tileExamples[0].offer}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide productTiles>
+            <ProductTile
+              author={tileExamples[1].author}
+              productName={tileExamples[1].productName}
+              year={tileExamples[1].year}
+              image={tileExamples[1].image}
+              gallery="Gallery Placeholder"
+              price={tileExamples[1].price}
+              offer={tileExamples[1].offer}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide productTiles>
+            <ProductTile
+              author={tileExamples[2].author}
+              productName={tileExamples[2].productName}
+              year={tileExamples[2].year}
+              image={tileExamples[2].image}
+              gallery="Gallery Placeholder"
+              price={tileExamples[2].price}
+              offer={tileExamples[2].offer}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide productTiles>
+            <ProductTile
+              author={tileExamples[3].author}
+              productName={tileExamples[3].productName}
+              year={tileExamples[3].year}
+              image={tileExamples[3].image}
+              gallery="Gallery Placeholder"
+              price={tileExamples[3].price}
+              offer={tileExamples[3].offer}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide productTiles>
+            <ProductTile
+              author={tileExamples[4].author}
+              productName={tileExamples[4].productName}
+              year={tileExamples[4].year}
+              image={tileExamples[4].image}
+              gallery="Gallery Placeholder"
+              price={tileExamples[4].price}
+              offer={tileExamples[4].offer}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide productTiles>
+            <ProductTile
+              author={tileExamples[5].author}
+              productName={tileExamples[5].productName}
+              year={tileExamples[5].year}
+              image={tileExamples[5].image}
+              gallery="Gallery Placeholder"
+              price={tileExamples[5].price}
+              offer={tileExamples[5].offer}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide productTiles>
+            <ProductTile
+              author={tileExamples[6].author}
+              productName={tileExamples[6].productName}
+              year={tileExamples[6].year}
+              image={tileExamples[6].image}
+              gallery="Gallery Placeholder"
+              price={tileExamples[6].price}
+              offer={tileExamples[6].offer}
+            />
+          </Carousel.Slide>
+        </Carousel>
+      </Col>
+    </Row>
+  </Container>
 </Canvas>
 
 ## Properties
 
+<br />
+
+### Carousel
+
 <ArgsTable of={Carousel} />
+
+### Carousel.Slide
+
+<ArgsTable of={Carousel.Slide} />

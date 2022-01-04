@@ -11,9 +11,9 @@
 
   .carousel-arrows {
     position: absolute;
-    top: -4.5rem;
+    top: calc(-4.5rem - 8px);
     right: 0;
-  
+
     .splide__arrow--prev {
       float: left;
       left: unset;
@@ -39,16 +39,24 @@
     }
 
     @include media-breakpoint-up(md) {
-      top: -4rem
+      top: calc(-4rem - 8px);
     }
 
     @include media-breakpoint-up(xl) {
-      top: -5rem;
+      top: calc(-5rem - 8px);
     }
   }
 
+  .splide__list .splide__slide {
+    margin-right: 1rem;
+
+    @include media-breakpoint-up(xl) {
+      margin-right: 1.5rem;
+    }    
+  }
+
   .exceed-track .splide__track {
-    overflow: visible;    
+    overflow: visible;
   }
 
   .unlimited .splide__list .splide__slide {
@@ -67,4 +75,3 @@
     }
   }
 }
-

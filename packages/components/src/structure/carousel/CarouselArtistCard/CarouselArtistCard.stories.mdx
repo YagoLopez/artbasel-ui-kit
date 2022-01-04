@@ -4,7 +4,7 @@ import example from './CarouselArtistCard.example.json';
 import CarouselArtistCard from './CarouselArtistCard';
 
 <Meta
-  title="Components/Structure/Carousel/CarouselArtistCard"
+  title="Components/Structure/Carousel/Carousel Cards/CarouselArtistCard"
   component={CarouselArtistCard}
   decorators={[withDesign]}
 />
@@ -49,25 +49,22 @@ export const generalArgs = {
 
 Cards used on a carousel.
 
-
 <Canvas>
   <Story
     name="CarouselArtistCard"
     args={generalArgs}
     argTypes={{ argTypes }}
     parameters={{
-       design: {
+      design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=2794%3A41144',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=2794%3A41144',
       },
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
-
 
 ## Properties
 
