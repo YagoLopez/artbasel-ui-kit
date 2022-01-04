@@ -93,17 +93,17 @@ pipelines:
           - step: *audit
       - step: *sonar
       - step: *build
-      # - step:
-      #     name: "Publish packages"
-      #     script:
-      #       - apt update && apt install -y git
-      #       - yarn install
-      #       - npm install --global lerna
-      #       - npm config set @mch-group:registry https://registry.npmjs.org && npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
-      #       - git config --unset core.hooksPath
-      #       - lerna init
-      #       - lerna version --conventional-commits --yes -m "[ci skip] Publish Chore (release)"
-      #       - lerna publish from-package --yes
+      - step:
+          name: "Publish packages"
+          script:
+            - apt update && apt install -y git
+            - yarn install
+            - npm install --global lerna
+            - npm config set @mch-group:registry https://registry.npmjs.org && npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+            - git config --unset core.hooksPath
+            - lerna init
+            - lerna version --conventional-commits --yes -m "[ci skip] Publish Chore (release)"
+            - lerna publish from-package --yes
       - step:
           name: "Delete Preview"
           image: mcr.microsoft.com/azure-cli
