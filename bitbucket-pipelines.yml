@@ -106,7 +106,6 @@ pipelines:
             - git config user.name "David Sánchez"
             - git config user.email "dsanchez@dminc.com"
             - git config push.default current
-            - git config http.${BITBUCKET_GIT_HTTP_ORIGIN}.proxy http://localhost:29418/
             - git remote set-url origin http://bitbucket.org/$BITBUCKET_REPO_FULL_NAME
             - git commit -am "[ci skip] Publish Chore (release)" --no-verify
             - git push
