@@ -96,7 +96,7 @@ pipelines:
       - step:
           name: "Publish packages"
           script:
-            - apt update && apt install -y git
+            - apt update && apt install -y git cl-base64
             - yarn install
             - npm install --global lerna
             - npm config set @mch-group:registry https://registry.npmjs.org && npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
