@@ -106,7 +106,7 @@ pipelines:
             - git config user.name "David Sánchez"
             - git config user.email "dsanchez@dminc.com"
             - git config push.default current
-            - git remote set-url origin http://$BITBUCKET_DAVID_USER:$BITBUCKET_API_TOKEN@bitbucket.org/$BITBUCKET_REPO_FULL_NAME
+            - git remote set-url origin http://$BITBUCKET_DAVID_USER:${BITBUCKET_API_TOKEN}@bitbucket.org/$BITBUCKET_REPO_FULL_NAME
             - git commit -am "[ci skip] Publish Chore (release)" --no-verify
             - git push
             - lerna publish from-package --yes
