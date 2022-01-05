@@ -103,8 +103,8 @@ pipelines:
             - git config --unset core.hooksPath
             - lerna init
             - lerna version --conventional-commits --yes --no-git-tag-version --no-push
-            # Configure git to use the oauth token.
-            - git remote set-url origin "https://x-token-auth:${BITBUCKET_API_TOKEN}@bitbucket.org/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}"
+            - git config user.name "David Sánchez"
+            - git config user.email "dsanchez@dminc.com"
             - git commit -am "[ci skip] Publish Chore (release)" --no-verify
             - git push
             - lerna publish from-package --yes
