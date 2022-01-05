@@ -31,6 +31,7 @@ const ModalDemo = ({
         title={title}
         subline={subline}
       >
+      <Modal.Header onHide={handleClose} title={title} filter={filter} subline={subline} />
         <Modal.Body>
           <p>lorem ipsum</p>
         </Modal.Body>
