@@ -103,7 +103,12 @@ pipelines:
             - git config --unset core.hooksPath
             - lerna init
             - lerna version --conventional-commits --yes --no-git-tag-version --no-push
-            - git remote set-url origin git@bitbucket.org:mchappsrvcs/artbasel-ui-kit.git
+            # Configure git to use ssh.
+            - git remote set-url origin ${BITBUCKET_GIT_SSH_ORIGIN}
+            - echo $PRIVATE_KEY > ~/.ssh/id_rsa.tmp
+            - base64 -d ~/.ssh/id_rsa.tmp > ~/.ssh/id_rsa
+            - chmod 600 ~/.ssh/id_rsa
+            # Publish packages.
             - git commit -am "[ci skip] Publish Chore (release)" --no-verify
             - git push
             - lerna publish from-package --yes
