@@ -20,7 +20,7 @@ Slide.propTypes = {
   equals to artist cards slides. Please refer to code sample. */
   productTiles: PropTypes.bool,
   cssStyles: PropTypes.string,
-  children: PropTypes.object.isRequired,
+  children: PropTypes.any.isRequired,
 };
 
 Slide.defaultProps = {
