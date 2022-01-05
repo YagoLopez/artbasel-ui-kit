@@ -96,19 +96,17 @@ pipelines:
       - step:
           name: "Publish packages"
           script:
-            - apt update && apt install -y git cl-base64
+            - apt update && apt install -y git
             - yarn install
             - npm install --global lerna
             - npm config set @mch-group:registry https://registry.npmjs.org && npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
             - git config --unset core.hooksPath
             - lerna init
             - lerna version --conventional-commits --yes --no-git-tag-version --no-push
-            # Configure git to use ssh.
-            - git remote set-url origin ${BITBUCKET_GIT_SSH_ORIGIN}
-            - echo $PRIVATE_KEY > ~/.ssh/id_rsa.tmp
-            - base64 -d ~/.ssh/id_rsa.tmp > ~/.ssh/id_rsa
-            - chmod 600 ~/.ssh/id_rsa
-            # Publish packages.
+            - git config user.name "David Sánchez"
+            - git config user.email "dsanchez@dminc.com"
+            - git config push.default current
+            - git remote set-url origin https://${BITBUCKET_DAVID_USER}:${BITBUCKET_API_TOKEN}@bitbucket.org/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}
             - git commit -am "[ci skip] Publish Chore (release)" --no-verify
             - git push
             - lerna publish from-package --yes
