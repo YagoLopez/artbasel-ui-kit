@@ -101,14 +101,15 @@ pipelines:
             - npm install --global lerna
             - npm config set @mch-group:registry https://registry.npmjs.org && npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
             - git config --unset core.hooksPath
-            - lerna init
-            - lerna version --conventional-commits --yes --no-git-tag-version --no-push
             - git config user.name "David Sánchez"
             - git config user.email "dsanchez@dminc.com"
             - git config push.default current
             - git remote set-url origin https://${BITBUCKET_DAVID_USER}:${BITBUCKET_API_TOKEN}@bitbucket.org/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}
-            - git commit -am "[ci skip] Publish Chore (release)" --no-verify
-            - git push
+            - lerna init
+            - lerna version --conventional-commits --yes
+            # - lerna version --conventional-commits --yes --no-git-tag-version --no-push
+            # - git commit -am "[ci skip] Publish Chore (release)" --no-verify
+            # - git push
             - lerna publish from-package --yes
       - step:
           name: "Delete Preview"
