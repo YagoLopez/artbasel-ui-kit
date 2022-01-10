@@ -107,16 +107,13 @@ pipelines:
             - git remote set-url origin https://${BITBUCKET_DAVID_USER}:${BITBUCKET_API_TOKEN}@bitbucket.org/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}
             - lerna init
             - lerna version --conventional-commits --yes
-            # - lerna version --conventional-commits --yes --no-git-tag-version --no-push
-            # - git commit -am "[ci skip] Publish Chore (release)" --no-verify
-            # - git push
             - lerna publish from-package --yes
       - step:
           name: "Delete Preview"
           image: mcr.microsoft.com/azure-cli
           script:
             - az login --service-principal -u $AZURE_APP_ID_DEV -p $AZURE_PASSWORD_DEV --tenant $AZURE_TENANT_ID_DEV
-            - PR=$(curl -s -u $BITBUCKET_ADMIN_USER:$BITBUCKET_ADMIN_PASSWORD https://api.bitbucket.org/2.0/repositories/mchappsrvcs/artbasel-ui-kit/pullrequests?state=MERGED | jq -s '.[].values[].id' | sort > pullRequestList.txt)
+            - PR=$(curl -s -u $BITBUCKET_DAVID_USER:$BITBUCKET_API_TOKEN https://api.bitbucket.org/2.0/repositories/mchappsrvcs/artbasel-ui-kit/pullrequests?state=MERGED | jq -s '.[].values[].id' | sort > pullRequestList.txt)
             - WEB_APP=$(az webapp list --query "[?state=='Running']" | jq '.[].name'| grep 'pr' | cut -c 31-33 | tr -d '"' | sort > webappList.txt)
             - COMPARE=$(comm -12 pullRequestList.txt webappList.txt)
             - echo "List of Web App services to delete"
