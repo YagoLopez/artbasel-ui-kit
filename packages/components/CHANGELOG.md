@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.5.1...@mch-group/uikit-components@0.6.0) (2022-01-13)
+
+
+### Features
+
+* **Icons:** new icons: live-chat-small and close-small ([6961d50](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/6961d50693aca5a8e2837347151da30ade8c48cb))
+
+
+
+
+
 ## [0.5.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.5.0...@mch-group/uikit-components@0.5.1) (2022-01-13)
 
 **Note:** Version bump only for package @mch-group/uikit-components
