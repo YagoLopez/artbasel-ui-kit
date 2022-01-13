@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.4.1...@mch-group/uikit-themes@0.5.0) (2022-01-13)
+
+
+### Features
+
+* Added list-group classes ([d9938be](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d9938be53022022d12c63317bd5eb6699e5d4862))
+
+
+
+
+
 ## [0.4.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.4.0...@mch-group/uikit-themes@0.4.1) (2022-01-13)
 
 **Note:** Version bump only for package @mch-group/uikit-themes
