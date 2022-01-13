@@ -1,0 +1,27 @@
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+import { Container, Row, Col } from '../Grid';
+import ZoomableMedia from './ZoomableMedia';
+
+<Meta
+  title="Components/Structure/ZoomableMedia"
+  component={ZoomableMedia}
+  decorators={[withDesign]}
+/>
+
+
+The tile is applied to represent a zoomable media.
+
+## Individual usage
+
+<Canvas>
+  <div className="d-flex justify-content-center">
+    <ZoomableMedia>
+      <img src="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_200/v1574538507/mfp-fe-artworks/msh3wqmk4mq1pb7ejaxn.jpg" alt="my image" />
+    </ZoomableMedia>
+  </div>
+</Canvas>
+
+## Properties
+
+<ArgsTable of={ZoomableMedia} />

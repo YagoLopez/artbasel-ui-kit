@@ -1,0 +1,17 @@
+.zoomable-image{
+  background-color: var(--bs-mch-gray-200);
+  position: relative;
+  cursor: pointer;
+
+  .image-frame {
+    padding: 40px 16px 40px 16px;
+  }
+  .button-container {
+    position: absolute;
+    z-index: 10;
+    right: 8px;
+    bottom: 8px;
+    overflow: hidden;
+  }
+}
+
