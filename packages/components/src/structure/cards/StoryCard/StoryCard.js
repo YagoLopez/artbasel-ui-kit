@@ -38,7 +38,7 @@ const StoryCard = ({
 
   const buttonComponent = {
     textlink: button ? (
-      <TextLink href={button?.link} icon="linkarrow" iconAlign="right">
+      <TextLink href={button?.link} icon="chevron-right" iconAlign="right">
         {button?.text}
       </TextLink>
     ) : null,

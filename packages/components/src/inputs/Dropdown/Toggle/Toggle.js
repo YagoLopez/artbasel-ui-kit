@@ -34,7 +34,7 @@ const Toggle = forwardRef(
           className={`help-text-input-${helpTextType} has-icon`}
         />
         <Icon
-          name="dropdown"
+          name="chevron-down"
           className={classnames({ 'flip-icon': ariaExpanded })}
         />
       </FloatingLabel>

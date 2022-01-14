@@ -25,7 +25,7 @@ const ButtonFilter = ({
       <Icon name="filter" size={24} />
     </BSPButton>
     {checked && (
-      <Icon name="check" size={24} className="btn-filter-icon-check" />
+      <Icon name="checkmark" size={24} className="btn-filter-icon-check" />
     )}
   </div>
 );

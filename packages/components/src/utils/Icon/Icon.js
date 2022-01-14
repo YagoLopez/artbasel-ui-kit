@@ -87,6 +87,7 @@ export const IconList = [
   'lock-unlocked',
   'mail',
   'map',
+  'menu',
   'minimize',
   'minus',
   'move',
@@ -220,6 +221,7 @@ const Icon = ({className, color, height, width, name, onClick, size, style, ...r
       case ('lock-unlocked'): return (<svg {...rest} data-testid="mch-icon" height={height || size} width={width || size} onClick={onClick} style={style} className={className} fill={color} viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M12 3.5c-.925 0-1.766.359-2.392.945l-.764-1.323A5 5 0 0 1 17 7v1h1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h9.5V7A3.5 3.5 0 0 0 12 3.5zm-6 17a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6zm8-5.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" /></svg>);
       case ('mail'): return (<svg {...rest} data-testid="mch-icon" height={height || size} width={width || size} onClick={onClick} style={style} className={className} fill={color} viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M19.309 5.5H4.69L12 11.996 19.309 5.5zM3.5 6.448V17a.5.5 0 0 0 .5.5h16a.5.5 0 0 0 .5-.5V6.448L12 14.004 3.5 6.448zM2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6z" /></svg>);
       case ('map'): return (<svg {...rest} data-testid="mch-icon" height={height || size} width={width || size} onClick={onClick} style={style} className={className} fill={color} viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M20.25 4.287v13.22l-5.784 2.315-3.966-1.983-5.75 2.875V7.492l5.784-2.313L14.5 7.162l5.75-2.875zM14 8.589v9.323l-3-1.5V7.089l3 1.5zm1 9.403V8.59l3.75-1.875v9.778l-3.75 1.5zm-5-1.58V7.008l-3.75 1.5v9.779L10 16.412z" /></svg>);
+      case ('menu'): return (<svg {...rest} data-testid="mch-icon" height={height || size} width={width || size} onClick={onClick} style={style} className={className} fill={color} viewBox="0 0 24 24"><path d="M4.615 6.462h14.769v1.641H4.615zM4.615 11.384h14.769v1.641H4.615zM4.615 16.308h14.769v1.641H4.615z"/></svg>);
       case ('minimize'): return (<svg {...rest} data-testid="mch-icon" height={height || size} width={width || size} onClick={onClick} style={style} className={className} fill={color} viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M10.117 6.829h1.411v4.7h-4.7v-1.413h2.29L4 4.998 4.998 4l5.119 5.118v-2.29zm3.767 10.342h-1.412v-4.7h4.7v1.413h-2.29L20 19.002l-.998.998-5.118-5.118v2.29z" /></svg>);
       case ('minus'): return (<svg {...rest} data-testid="mch-icon" height={height || size} width={width || size} onClick={onClick} style={style} className={className} fill={color} viewBox="0 0 24 24"><path d="M20 12.5V11H4v1.5h16z" /></svg>);
       case ('move'): return (<svg {...rest} data-testid="mch-icon" height={height || size} width={width || size} onClick={onClick} style={style} className={className} fill={color} viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M3 6.484V20a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-8.019L11 4H4L3 5v1.484zM15 6.5H4.5v13h15v-13H15zm-2.493 10.606l4.603-4.053L12.507 9l-1.013 1.106 2.578 2.197H7v1.5h7.072L11.494 16l1.013 1.106z" /></svg>);

@@ -78,14 +78,14 @@ const Carousel = ({
         role="button"
         ref={prevArrow}
       >
-        <Icon name="linkarrow" size={24} />
+        <Icon name="chevron-right" size={24} />
       </button>
       <button
         className="splide__arrow--next btn-icon"
         role="button"
         ref={nextArrow}
       >
-        <Icon name="linkarrow" size={24} />
+        <Icon name="chevron-right" size={24} />
       </button>
     </div>
   );
