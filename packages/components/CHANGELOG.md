@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.7.0...@mch-group/uikit-components@0.7.1) (2022-01-14)
+
+
+### Bug Fixes
+
+* updated components to use new icons / fixed menu icon ([3b0eb50](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/3b0eb50aa08348fa9d1b13e76f5f701b153596e8))
+
+
+
+
+
 # [0.7.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.6.0...@mch-group/uikit-components@0.7.0) (2022-01-13)
 
 
