@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.9.0...@mch-group/uikit-components@0.9.1) (2022-01-17)
+
+
+### Bug Fixes
+
+* props flattening on Artist and Gallery Card ([08c24bf](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/08c24bf14d797c4300177b78dc4bdcba8a9943ae))
+
+
+
+
+
 # [0.9.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.8.0...@mch-group/uikit-components@0.9.0) (2022-01-17)
 
 
