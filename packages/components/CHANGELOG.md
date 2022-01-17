@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.8.0...@mch-group/uikit-components@0.9.0) (2022-01-17)
+
+
+### Features
+
+* added ZoomableImage component ([62850ac](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/62850ac16238d376a781a6b4a41541c3ce0193bc))
+
+
+
+
+
 # [0.8.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.7.1...@mch-group/uikit-components@0.8.0) (2022-01-17)
 
 
