@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.7.1...@mch-group/uikit-components@0.8.0) (2022-01-17)
+
+
+### Features
+
+* Add Artist and Gallery cards ([3873303](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/3873303bed11e33924921e77e7c14247687cf5e6))
+
+
+
+
+
 ## [0.7.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.7.0...@mch-group/uikit-components@0.7.1) (2022-01-14)
 
 
