@@ -2,42 +2,48 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { cleanup, render, screen } from '@testing-library/react';
-import GalleryCard from './GalleryCard';
-import example from './GalleryCard.example.json';
+import ArtistCard from './ArtistCard';
+import example from './ArtistCard.example.json';
 
 console.error = jest.fn();
 
-describe('Tests for GalleryCard component', () => {
+describe('Tests for ArtistCard component', () => {
   afterEach(cleanup);
 
   test('Should render the component', () => {
     render(
-      <GalleryCard
-        gallery={example.gallery}
+      <ArtistCard
+        artist={example.artist}
         image={example.image}
         link={example.link}
         description={example.description}
+        headerLabel={example.headerLabel}
+        ctaLabel={example.ctaLabel}
       />,
     );
-    expect(screen.queryByText(example.gallery.name)).toBeInTheDocument();
+    expect(screen.queryByText(example.artist.name)).toBeInTheDocument();
   });
 
   test('Should not render the component without image prop', () => {
     render(
-      <GalleryCard
-        gallery={example.gallery}
+      <ArtistCard
+        artist={example.artist}
         link={example.link}
         description={example.description}
+        headerLabel={example.headerLabel}
+        ctaLabel={example.ctaLabel}
       />,
     );
     expect(console.error).toBeCalled();
   });
-  test('Should not render the component gallery prop', () => {
+  test('Should not render the component artist prop', () => {
     render(
-      <GalleryCard
+      <ArtistCard
         image={example.image}
         link={example.link}
         description={example.description}
+        headerLabel={example.headerLabel}
+        ctaLabel={example.ctaLabel}
       />,
     );
     expect(console.error).toBeCalled();
@@ -45,10 +51,12 @@ describe('Tests for GalleryCard component', () => {
 
   test('Should not render the component without link prop', () => {
     render(
-      <GalleryCard
-        gallery={example.gallery}
+      <ArtistCard
+        artist={example.artist}
         image={example.image}
         description={example.description}
+        headerLabel={example.headerLabel}
+        ctaLabel={example.ctaLabel}
       />,
     );
     expect(console.error).toBeCalled();
@@ -56,10 +64,12 @@ describe('Tests for GalleryCard component', () => {
 
   test('Should not render the component without description prop', () => {
     render(
-      <GalleryCard
-        gallery={example.gallery}
+      <ArtistCard
+        artist={example.artist}
         link={example.link}
         image={example.image}
+        headerLabel={example.headerLabel}
+        ctaLabel={example.ctaLabel}
       />,
     );
     expect(console.error).toBeCalled();
@@ -67,7 +77,7 @@ describe('Tests for GalleryCard component', () => {
 
   test('Should not render the component without headerLabel prop', () => {
     render(
-      <GalleryCard
+      <ArtistCard
         artist={example.artist}
         link={example.link}
         image={example.image}
@@ -80,7 +90,7 @@ describe('Tests for GalleryCard component', () => {
 
   test('Should not render the component without ctaLabel prop', () => {
     render(
-      <GalleryCard
+      <ArtistCard
         artist={example.artist}
         link={example.link}
         image={example.image}

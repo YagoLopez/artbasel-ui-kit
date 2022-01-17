@@ -1,56 +1,21 @@
 {
-  "gallery": {
-    "name": "Hauser & Wirth",
-    "locations": [
-      "Zurich",
-      "Hong Kong",
-      "London", 
-      "Los Angeles",
-      "New York"
-    ]
+  "artist": {
+    "name": "Larry Bell",
+    "location": "U.S.A.",
+    "birthdate": "1938"
   },
-  "galleryTruncated": {
+  "artistTruncated": {
     "name": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec.",
-    "locations": [
-      "Zurich",
-      "Hong Kong",
-      "London", 
-      "Los Angeles",
-      "New York",
-      "Zurich",
-      "Hong Kong",
-      "London", 
-      "Los Angeles",
-      "New York",
-      "Zurich",
-      "Hong Kong",
-      "London", 
-      "Los Angeles",
-      "New York",
-      "Zurich",
-      "Hong Kong",
-      "London", 
-      "Los Angeles",
-      "New York",
-      "Zurich",
-      "Hong Kong",
-      "London", 
-      "Los Angeles",
-      "New York",
-      "Zurich",
-      "Hong Kong",
-      "London", 
-      "Los Angeles",
-      "New York"
-    ]
+    "location": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec.",
+    "birthdate": "1938"
   },
-  "image": "https://images.pexels.com/photos/2559741/pexels-photo-2559741.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  "image": "https://images.pexels.com/photos/762527/pexels-photo-762527.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium.",
   "descriptionL": "Larry Bell is one of the most renowned and influential artists to emerge from the Los Angeles art scene of the 1960s, alongside contemporaries Ed Ruscha and Robert Irwin. He had already garnered international repute by the age of 30. While Bell is best known for his refined surface treatment of glass, through which he explores light, reflection and shadow, his oeuvre extends from painting and works on paper, to glass sculptures and furniture design. Bell’s understanding of the potential of glass and light has allowed him to expand our visual and physical fields of perception. His sculptures surpass the traditional limitations of his chosen medium and he has said: ‘Although we tend to think of glass as a window, it is a solid liquid that has at once three distinctive qualities: it reflects light, it absorbs light and it transmits light all at the same time.’ ",
   "description430": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Null",
   "description360": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu",
   "description1050": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendre",
   "link": "#",
-  "headerLabel": "Gallery",
+  "headerLabel": "Artist",
   "ctaLabel": "Discover More"
 }

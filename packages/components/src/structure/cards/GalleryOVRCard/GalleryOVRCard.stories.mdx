@@ -1,0 +1,133 @@
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+import example from './GalleryOVRCard.example.json';
+import GalleryOVRCard from './GalleryOVRCard';
+
+<Meta 
+  title="Components/Structure/Cards/GalleryOVRCard"
+  component={GalleryOVRCard}
+  decorators={[withDesign]}
+/>
+
+export const Template = (args) => <GalleryOVRCard {...args} />;
+
+export const argTypes = {
+  cssStyles: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssInternalPrefix: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  size: {
+    table: {
+      category: 'GalleryOVRCard',
+    },
+  },
+  gallery: {
+    table: {
+      category: 'GalleryOVRCard',
+    },
+  },
+  title: {
+    table: {
+      category: 'GalleryOVRCard',
+    },
+  },
+  image: {
+    table: {
+      category: 'GalleryOVRCard',
+    },
+  },
+  description: {
+    table: {
+      category: 'GalleryOVRCard',
+    },
+  },
+};
+
+export const generalArgs = {
+  gallery: example.gallery,
+  title: example.title,
+  image: example.image,
+  description: example.description
+};
+
+# GalleryOVRCard
+
+Gallery card is one of the different types of content card displayed on the website.
+
+## Variants
+
+### Size S
+
+<Canvas style={{width: '450px'}}>
+  <Story
+    name="GalleryOVRCard Size S"
+    args={generalArgs}
+    argTypes={{argTypes}}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size M
+
+<Canvas style={{width: '450px'}}>
+  <Story
+    name="GalleryOVRCard Size M"
+    args={{
+      ...generalArgs,
+      size: 'm'
+    }}
+    argTypes={{argTypes}}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Truncated text
+
+<Canvas style={{width: '450px'}}>
+  <Story
+    name="GalleryOVRCard truncated text"
+    args={{
+      ...generalArgs,
+      description: example.descriptionLong
+    }}
+    argTypes={{argTypes}}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable of={GalleryOVRCard} />

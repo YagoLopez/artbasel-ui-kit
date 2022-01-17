@@ -5,11 +5,11 @@ import { ButtonIcon } from '../../../actions/ButtonIcon';
 import { TextLink } from '../../../actions/TextLink';
 import { truncateText } from '../../../helpers/truncateText';
 
-const GalleryCard = ({
+const ArtistCard = ({
   cssInternalPrefix,
   cssStyles,
   image,
-  gallery,
+  artist,
   description,
   link,
   headerLabel,
@@ -20,9 +20,8 @@ const GalleryCard = ({
   const subTitleRef = useRef(null);
   const [titleTruncated, setTitleTruncated] = useState(false);
   const [subtitleTruncated, setSubtitleTruncated] = useState(false);
+  const subtitle = [artist?.location || '', artist?.birthdate || ''].join(' ');
   const [descriptions, setDescriptions] = useState(null);
-
-  const subtitle = [gallery?.locations?.join(', ')];
 
   const isEllipsisActive = (item) => {
     return item.offsetHeight < item.scrollHeight;
@@ -57,10 +56,10 @@ const GalleryCard = ({
 
   return (
     <BSPCard
-      data-testid="mch-gallery-card"
+      data-testid="mch-artist-card"
       bsPrefix={cssInternalPrefix}
       style={cssStyles}
-      className="gallery-card"
+      className="artist-card"
       ref={cardRef}
     >
       <div className="card-wrapper">
@@ -68,25 +67,25 @@ const GalleryCard = ({
           <div className="card-header">
             <ButtonIcon icon="collections-add" />
             <div className="header-title">
-            <h3 className="header-uppercase-2">{headerLabel}</h3>
+              <h3 className="header-uppercase-2">{headerLabel}</h3>
             </div>
           </div>
           {titleTruncated
             && <BSPCard.Title
               ref={titleRef}
-              title={gallery?.name}
+              title={artist?.name}
             >
-              {gallery?.name}
+              {artist?.name}
             </BSPCard.Title>
           }
           {!titleTruncated
             && <BSPCard.Title ref={titleRef}>
-              {gallery?.name}
+              {artist?.name}
             </BSPCard.Title>
           }
           {subtitleTruncated
             && <BSPCard.Text
-              className="gallery-location"
+              className="artist-location"
               ref={subTitleRef}
               title={subtitle}
             >
@@ -95,7 +94,7 @@ const GalleryCard = ({
           }
           {!subtitleTruncated
             && <BSPCard.Text
-              className="gallery-location"
+              className="artist-location"
               ref={subTitleRef}
             >
                 {subtitle}
@@ -115,6 +114,7 @@ const GalleryCard = ({
           </BSPCard.Text>
           <TextLink href={link}>{ctaLabel}</TextLink>
         </BSPCard.Body>
+
         <div className="img-wrapper">
           <img
             src={image}
@@ -126,10 +126,11 @@ const GalleryCard = ({
   );
 };
 
-GalleryCard.propTypes = {
-  gallery: PropTypes.shape({
+ArtistCard.propTypes = {
+  artist: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    locations: PropTypes.array.isRequired,
+    location: PropTypes.string.isRequired,
+    birthdate: PropTypes.string.isRequired,
   }).isRequired,
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
@@ -140,9 +141,9 @@ GalleryCard.propTypes = {
   ctaLabel: PropTypes.string.isRequired,
 };
 
-GalleryCard.defaultProps = {
+ArtistCard.defaultProps = {
   cssInternalPrefix: 'card',
   cssStyles: null,
 };
 
-export default GalleryCard;
+export default ArtistCard;

@@ -1,15 +1,15 @@
 import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
-import example from './GalleryCard.example.json';
-import GalleryCard from './GalleryCard';
+import example from './ArtistCard.example.json';
+import ArtistCard from './ArtistCard';
 
 <Meta 
-  title="Components/Structure/Cards/GalleryCard"
-  component={GalleryCard}
+  title="Components/Structure/Cards/ArtistCard"
+  component={ArtistCard}
   decorators={[withDesign]}
 />
 
-export const Template = (args) => <GalleryCard {...args} />;
+export const Template = (args) => <ArtistCard {...args} />;
 
 export const argTypes = {
   cssStyles: {
@@ -22,24 +22,29 @@ export const argTypes = {
       category: 'Styles',
     },
   },
-  gallery: {
+  size: {
     table: {
-      category: 'GalleryCard',
+      category: 'ArtistCard',
+    },
+  },
+  artist: {
+    table: {
+      category: 'ArtistCard',
     },
   },
   image: {
     table: {
-      category: 'GalleryCard',
+      category: 'ArtistCard',
     },
   },
   description: {
     table: {
-      category: 'GalleryCard',
+      category: 'ArtistCard',
     },
   },
   link: {
     table: {
-      category: 'GalleryCard',
+      category: 'ArtistCard',
     },
   },
   headerLabel: {
@@ -55,22 +60,24 @@ export const argTypes = {
 };
 
 export const defaultArgs = {
-  gallery: example.gallery,
+  artist: example.artist,
   image: example.image,
   link: example.link,
   headerLabel: example.headerLabel,
   ctaLabel: example.ctaLabel,
 };
 
-# GalleryCard
+# ArtistCard
 
 These cards make up most of the interface and are key components for logically grouping page content and making it scalable.
 
 ## Variants
 
+### Size S
+
 <Canvas>
   <Story
-    name="GalleryCard"
+    name="ArtistCard"
     args={{
       description: example.description,
       ...defaultArgs,
@@ -89,13 +96,13 @@ These cards make up most of the interface and are key components for logically g
   </Story>
 </Canvas>
 
-### Truncated 
+### Truncated Text
 
 <Canvas>
   <Story
-    name="GalleryCard Truncated Text"
+    name="ArtistCard Truncated Text"
     args={{
-      gallery: example.galleryTruncated,
+      artist: example.artistTruncated,
       description: example.description1050,
       image: example.image,
       link: example.link,
@@ -118,4 +125,4 @@ These cards make up most of the interface and are key components for logically g
 
 ## Properties
 
-<ArgsTable of={GalleryCard} />
+<ArgsTable of={ArtistCard} />
