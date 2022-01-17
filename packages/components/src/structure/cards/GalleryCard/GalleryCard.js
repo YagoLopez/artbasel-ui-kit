@@ -9,7 +9,8 @@ const GalleryCard = ({
   cssInternalPrefix,
   cssStyles,
   image,
-  gallery,
+  name,
+  locations,
   description,
   link,
   headerLabel,
@@ -22,7 +23,7 @@ const GalleryCard = ({
   const [subtitleTruncated, setSubtitleTruncated] = useState(false);
   const [descriptions, setDescriptions] = useState(null);
 
-  const subtitle = [gallery?.locations?.join(', ')];
+  const subtitle = locations?.join(', ');
 
   const isEllipsisActive = (item) => {
     return item.offsetHeight < item.scrollHeight;
@@ -74,14 +75,14 @@ const GalleryCard = ({
           {titleTruncated
             && <BSPCard.Title
               ref={titleRef}
-              title={gallery?.name}
+              title={name}
             >
-              {gallery?.name}
+              {name}
             </BSPCard.Title>
           }
           {!titleTruncated
             && <BSPCard.Title ref={titleRef}>
-              {gallery?.name}
+              {name}
             </BSPCard.Title>
           }
           {subtitleTruncated
@@ -127,10 +128,8 @@ const GalleryCard = ({
 };
 
 GalleryCard.propTypes = {
-  gallery: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    locations: PropTypes.array.isRequired,
-  }).isRequired,
+  name: PropTypes.string.isRequired,
+  locations: PropTypes.array.isRequired,
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,

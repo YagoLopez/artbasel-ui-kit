@@ -1,14 +1,10 @@
 {
-  "artist": {
-    "name": "Larry Bell",
-    "location": "U.S.A.",
-    "birthdate": "1938"
-  },
-  "artistTruncated": {
-    "name": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec.",
-    "location": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec.",
-    "birthdate": "1938"
-  },
+  
+  "name": "Larry Bell",
+  "location": "U.S.A.",
+  "birthdate": "1938",  
+  "nameTruncated": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec.",
+  "locationTruncated": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec.",
   "image": "https://images.pexels.com/photos/762527/pexels-photo-762527.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium.",
   "descriptionL": "Larry Bell is one of the most renowned and influential artists to emerge from the Los Angeles art scene of the 1960s, alongside contemporaries Ed Ruscha and Robert Irwin. He had already garnered international repute by the age of 30. While Bell is best known for his refined surface treatment of glass, through which he explores light, reflection and shadow, his oeuvre extends from painting and works on paper, to glass sculptures and furniture design. Bell’s understanding of the potential of glass and light has allowed him to expand our visual and physical fields of perception. His sculptures surpass the traditional limitations of his chosen medium and he has said: ‘Although we tend to think of glass as a window, it is a solid liquid that has at once three distinctive qualities: it reflects light, it absorbs light and it transmits light all at the same time.’ ",

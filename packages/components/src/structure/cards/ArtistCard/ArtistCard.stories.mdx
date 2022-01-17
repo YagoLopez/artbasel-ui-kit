@@ -27,7 +27,12 @@ export const argTypes = {
       category: 'ArtistCard',
     },
   },
-  artist: {
+  location: {
+    table: {
+      category: 'ArtistCard',
+    },
+  },
+  birthdate: {
     table: {
       category: 'ArtistCard',
     },
@@ -60,7 +65,9 @@ export const argTypes = {
 };
 
 export const defaultArgs = {
-  artist: example.artist,
+  name: example.name,
+  location: example.location,
+  birthdate: example.birthdate,
   image: example.image,
   link: example.link,
   headerLabel: example.headerLabel,
@@ -102,7 +109,9 @@ These cards make up most of the interface and are key components for logically g
   <Story
     name="ArtistCard Truncated Text"
     args={{
-      artist: example.artistTruncated,
+      name: example.nameTruncated,
+      location: example.locationTruncated,
+      birthdate: example.birthdate,
       description: example.description1050,
       image: example.image,
       link: example.link,

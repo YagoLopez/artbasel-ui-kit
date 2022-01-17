@@ -22,11 +22,6 @@ export const argTypes = {
       category: 'Styles',
     },
   },
-  gallery: {
-    table: {
-      category: 'GalleryCard',
-    },
-  },
   image: {
     table: {
       category: 'GalleryCard',
@@ -44,18 +39,24 @@ export const argTypes = {
   },
   headerLabel: {
     table: {
-      category: 'ArtistCard',
+      category: 'GalleryCard',
     },
   },
   ctaLabel: {
     table: {
-      category: 'ArtistCard',
+      category: 'GalleryCard',
+    },
+  },
+  locations: {
+    table: {
+      category: 'GalleryCard',
     },
   },
 };
 
 export const defaultArgs = {
-  gallery: example.gallery,
+  name: example.name,
+  locations: example.locations,
   image: example.image,
   link: example.link,
   headerLabel: example.headerLabel,
@@ -95,7 +96,8 @@ These cards make up most of the interface and are key components for logically g
   <Story
     name="GalleryCard Truncated Text"
     args={{
-      gallery: example.galleryTruncated,
+      name: example.nameTruncated,
+      locations: example.locationsTruncated,
       description: example.description1050,
       image: example.image,
       link: example.link,

@@ -9,7 +9,9 @@ const ArtistCard = ({
   cssInternalPrefix,
   cssStyles,
   image,
-  artist,
+  name,
+  location,
+  birthdate,
   description,
   link,
   headerLabel,
@@ -20,7 +22,7 @@ const ArtistCard = ({
   const subTitleRef = useRef(null);
   const [titleTruncated, setTitleTruncated] = useState(false);
   const [subtitleTruncated, setSubtitleTruncated] = useState(false);
-  const subtitle = [artist?.location || '', artist?.birthdate || ''].join(' ');
+  const subtitle = [location || '', birthdate || ''].join(' ');
   const [descriptions, setDescriptions] = useState(null);
 
   const isEllipsisActive = (item) => {
@@ -73,14 +75,14 @@ const ArtistCard = ({
           {titleTruncated
             && <BSPCard.Title
               ref={titleRef}
-              title={artist?.name}
+              title={name}
             >
-              {artist?.name}
+              {name}
             </BSPCard.Title>
           }
           {!titleTruncated
             && <BSPCard.Title ref={titleRef}>
-              {artist?.name}
+              {name}
             </BSPCard.Title>
           }
           {subtitleTruncated
@@ -127,11 +129,9 @@ const ArtistCard = ({
 };
 
 ArtistCard.propTypes = {
-  artist: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    birthdate: PropTypes.string.isRequired,
-  }).isRequired,
+  name: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  birthdate: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,

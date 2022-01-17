@@ -13,7 +13,9 @@ describe('Tests for ArtistCard component', () => {
   test('Should render the component', () => {
     render(
       <ArtistCard
-        artist={example.artist}
+        name={example.name}
+        location={example.location}
+        birthdate={example.birthdate}
         image={example.image}
         link={example.link}
         description={example.description}
@@ -21,13 +23,15 @@ describe('Tests for ArtistCard component', () => {
         ctaLabel={example.ctaLabel}
       />,
     );
-    expect(screen.queryByText(example.artist.name)).toBeInTheDocument();
+    expect(screen.queryByText(example.name)).toBeInTheDocument();
   });
 
   test('Should not render the component without image prop', () => {
     render(
       <ArtistCard
-        artist={example.artist}
+        name={example.name}
+        location={example.location}
+        birthdate={example.birthdate}
         link={example.link}
         description={example.description}
         headerLabel={example.headerLabel}
@@ -36,9 +40,11 @@ describe('Tests for ArtistCard component', () => {
     );
     expect(console.error).toBeCalled();
   });
-  test('Should not render the component artist prop', () => {
+  test('Should not render the component name prop', () => {
     render(
       <ArtistCard
+        location={example.location}
+        birthdate={example.birthdate}
         image={example.image}
         link={example.link}
         description={example.description}
@@ -52,7 +58,9 @@ describe('Tests for ArtistCard component', () => {
   test('Should not render the component without link prop', () => {
     render(
       <ArtistCard
-        artist={example.artist}
+        name={example.name}
+        location={example.location}
+        birthdate={example.birthdate}
         image={example.image}
         description={example.description}
         headerLabel={example.headerLabel}
@@ -65,7 +73,9 @@ describe('Tests for ArtistCard component', () => {
   test('Should not render the component without description prop', () => {
     render(
       <ArtistCard
-        artist={example.artist}
+        name={example.name}
+        location={example.location}
+        birthdate={example.birthdate}
         link={example.link}
         image={example.image}
         headerLabel={example.headerLabel}
@@ -78,7 +88,9 @@ describe('Tests for ArtistCard component', () => {
   test('Should not render the component without headerLabel prop', () => {
     render(
       <ArtistCard
-        artist={example.artist}
+        name={example.name}
+        location={example.location}
+        birthdate={example.birthdate}
         link={example.link}
         image={example.image}
         description={example.description}
@@ -91,7 +103,39 @@ describe('Tests for ArtistCard component', () => {
   test('Should not render the component without ctaLabel prop', () => {
     render(
       <ArtistCard
-        artist={example.artist}
+        name={example.name}
+        location={example.location}
+        birthdate={example.birthdate}
+        link={example.link}
+        image={example.image}
+        headerLabel={example.headerLabel}
+        description={example.description}
+      />,
+    );
+    expect(console.error).toBeCalled();
+  });
+
+  test('Should not render the component without location prop', () => {
+    render(
+      <ArtistCard
+        name={example.name}
+        ctaLabel={example.ctaLabel}
+        birthdate={example.birthdate}
+        link={example.link}
+        image={example.image}
+        headerLabel={example.headerLabel}
+        description={example.description}
+      />,
+    );
+    expect(console.error).toBeCalled();
+  });
+
+  test('Should not render the component without birthdate prop', () => {
+    render(
+      <ArtistCard
+        name={example.name}
+        ctaLabel={example.ctaLabel}
+        location={example.location}
         link={example.link}
         image={example.image}
         headerLabel={example.headerLabel}
