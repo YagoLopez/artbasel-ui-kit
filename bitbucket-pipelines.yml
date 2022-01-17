@@ -52,6 +52,7 @@ stepdefinitions:
         - cd packages/components/
         - yarn build-storybook
         - cd storybook-static
+        - cp ../../../web.config .
         - zip -r storybook-$BITBUCKET_BUILD_NUMBER.zip .
       artifacts:
         - "packages/components/storybook-static/storybook-*.zip"
