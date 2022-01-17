@@ -58,6 +58,8 @@
 
 @import 'scss/carousel';
 
+@import 'scss/mediaviewer';
+
 @import '../../node_modules/bootstrap/scss/transitions';
 
 @import '../../node_modules/bootstrap/scss/dropdown';
@@ -79,10 +81,9 @@
 // @import "../../node_modules/bootstrap/scss/alert";
 @import '../../node_modules/bootstrap/scss/progress';
 @import 'scss/progress';
+
 @import '../../node_modules/bootstrap/scss/list-group';
 
-@import 'scss/zoomable/zoomable';
-@import 'scss/zoomable/react-medium-image-zoom-styles';
 // @import "../../node_modules/bootstrap/scss/list-group";
 // @import "../../node_modules/bootstrap/scss/close";
 
