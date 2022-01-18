@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.9.1...@mch-group/uikit-components@0.10.0) (2022-01-18)
+
+
+### Features
+
+* added dark theme for button icon with fill and outline variants, and size options ([ba46242](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/ba4624283c07a1520d346b7140d77a758e7f2aef))
+
+
+
+
+
 ## [0.9.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.9.0...@mch-group/uikit-components@0.9.1) (2022-01-17)
 
 
