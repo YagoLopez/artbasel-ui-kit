@@ -11,10 +11,13 @@ const ButtonIcon = ({
   disabled,
   icon,
   onClick,
+  variant,
+  theme,
+  size,
 }) => (
   <BSPButton
     data-testid="mch-button-icon"
-    className={classNames('btn-icon', className)}
+    className={classNames(`btn-icon ${variant} ${size}`, className, theme)}
     style={cssStyles}
     onClick={onClick}
     disabled={disabled}
@@ -32,6 +35,9 @@ ButtonIcon.propTypes = {
   disabled: PropTypes.bool,
   icon: PropTypes.oneOf(IconList),
   onClick: PropTypes.func,
+  variant: PropTypes.oneOf(['default', 'outline', 'fill']),
+  theme: PropTypes.oneOf(['light', 'dark']),
+  size: PropTypes.oneOf(['xs', 's', 'm', 'lg']),
 };
 
 ButtonIcon.defaultProps = {
@@ -39,6 +45,9 @@ ButtonIcon.defaultProps = {
   disabled: false,
   onClick: () => {},
   icon: 'close',
+  variant: 'default',
+  theme: 'light',
+  size: 'm',
 };
 
 export default ButtonIcon;
