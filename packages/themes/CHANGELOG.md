@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.9.0...@mch-group/uikit-themes@0.10.0) (2022-01-19)
+
+
+### Features
+
+* **artistcard & gallerycard:** add new ButtonIcon on artitst and gallery cards ([6e8ffee](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/6e8ffeea35ad663cbe4c73a538b5f44dd48415ef))
+
+
+
+
+
 # [0.9.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.8.0...@mch-group/uikit-themes@0.9.0) (2022-01-18)
 
 
