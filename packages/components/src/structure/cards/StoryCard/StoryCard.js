@@ -36,6 +36,18 @@ const StoryCard = ({
     description: truncateText(description, truncateValues.description),
   };
 
+  const getSubtitle = () => {
+    const authorText = author?.length > 0 ? author : null;
+    const labelText = label?.length > 0 ? label : null;
+    let subtitle;
+    if (authorText && labelText) {
+      subtitle = [authorText, labelText].join(', ');
+    } else {
+      subtitle = authorText || labelText;
+    }
+    return subtitle;
+  };
+
   const buttonComponent = {
     textlink: button ? (
       <TextLink href={button?.link} icon="chevron-right" iconAlign="right">
@@ -75,7 +87,7 @@ const StoryCard = ({
       </div>
       <BSPCard.Body>
         <BSPCard.Text className="card-author">
-          {author}, {label}
+          {getSubtitle()}
         </BSPCard.Text>
         <BSPCard.Title>
           {truncated.title.text}
