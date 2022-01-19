@@ -3,7 +3,6 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import { Splide } from '@splidejs/react-splide';
-import '@splidejs/splide/dist/css/splide.min.css';
 import classnames from 'classnames';
 import { Icon } from '../../../utils/Icon';
 import Slide from './Slide';
