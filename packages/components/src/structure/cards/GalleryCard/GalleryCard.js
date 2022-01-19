@@ -15,6 +15,7 @@ const GalleryCard = ({
   link,
   headerLabel,
   ctaLabel,
+  onCollectionAdd,
 }) => {
   const cardRef = useRef(null);
   const titleRef = useRef(null);
@@ -67,7 +68,11 @@ const GalleryCard = ({
       <div className="card-wrapper">
         <BSPCard.Body>
           <div className="card-header">
-            <ButtonIcon icon="collections-add" />
+          <ButtonIcon
+              icon="collections-add"
+              onClick={onCollectionAdd}
+              variant="outline"
+            />
             <div className="header-title">
             <h3 className="header-uppercase-2">{headerLabel}</h3>
             </div>
@@ -137,11 +142,13 @@ GalleryCard.propTypes = {
   cssInternalPrefix: PropTypes.string,
   headerLabel: PropTypes.string.isRequired,
   ctaLabel: PropTypes.string.isRequired,
+  onCollectionAdd: PropTypes.func,
 };
 
 GalleryCard.defaultProps = {
   cssInternalPrefix: 'card',
   cssStyles: null,
+  onCollectionAdd: () => {},
 };
 
 export default GalleryCard;

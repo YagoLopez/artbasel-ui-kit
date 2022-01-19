@@ -40,17 +40,7 @@
         position: relative;
         width: 100%;
         padding: 0;
-  
-        .btn-icon {
-          position: relative;
-          border: 1px solid rgba(186, 191, 196, 0.5);
-          border-radius: 2px;
-  
-          &:hover::before, &::before {
-            display: none;
-          }
-        }
-  
+    
         .header-title {
           display: flex;
           align-items: center;

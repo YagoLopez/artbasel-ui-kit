@@ -16,6 +16,7 @@ const ArtistCard = ({
   link,
   headerLabel,
   ctaLabel,
+  onCollectionAdd,
 }) => {
   const cardRef = useRef(null);
   const titleRef = useRef(null);
@@ -67,7 +68,12 @@ const ArtistCard = ({
       <div className="card-wrapper">
         <BSPCard.Body>
           <div className="card-header">
-            <ButtonIcon icon="collections-add" />
+            <ButtonIcon
+              icon="collections-add"
+              onClick={onCollectionAdd}
+              variant="outline"
+              theme="dark"
+            />
             <div className="header-title">
               <h3 className="header-uppercase-2">{headerLabel}</h3>
             </div>
@@ -139,11 +145,13 @@ ArtistCard.propTypes = {
   cssInternalPrefix: PropTypes.string,
   headerLabel: PropTypes.string.isRequired,
   ctaLabel: PropTypes.string.isRequired,
+  onCollectionAdd: PropTypes.func,
 };
 
 ArtistCard.defaultProps = {
   cssInternalPrefix: 'card',
   cssStyles: null,
+  onCollectionAdd: () => {},
 };
 
 export default ArtistCard;
