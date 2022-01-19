@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.10.1...@mch-group/uikit-themes@0.10.2) (2022-01-19)
+
+
+### Bug Fixes
+
+* **carousel:** CSS import and component exporting ([303bd38](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/303bd388be4234bef1d829e1e26eb501cc953303))
+
+
+
+
+
 ## [0.10.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.10.0...@mch-group/uikit-themes@0.10.1) (2022-01-19)
 
 
