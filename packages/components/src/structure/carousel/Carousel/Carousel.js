@@ -94,9 +94,9 @@ const Carousel = ({
     <div ref={carousel}
       data-textid="mch-carousel"
       style={cssStyles}
-      className="carousel-container pt-8 pt-xl-11 pb-9 pb-xl-11"
+      className="carousel-container pb-9 pb-xl-11"
     >
-      <h3 className="pb-7 pb-xl-9">{title}</h3>
+      <h3 className="pb-7 pb-xl-9 header-uppercase-1">{title}</h3>
       <Splide
         className={classnames({
           'exceed-track': exceedTrack,

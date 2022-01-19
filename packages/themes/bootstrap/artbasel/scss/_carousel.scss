@@ -8,16 +8,20 @@
   max-width: 100%;
   border-top: 2px solid $color-mch-gray-200;
   border-bottom: 2px solid $color-mch-gray-200;
+  padding-top: calc(2.5rem + 3px);
+  @include media-breakpoint-up(xl) {
+    padding-top: calc(4rem + 3px);
+  }
 
   .carousel-arrows {
     position: absolute;
-    top: calc(-4.5rem - 8px);
+    top: calc(-4rem - 2px); // 1.5rem + 2.5rem +2px (button adds this for some reason)
     right: 0;
-
+  
     .splide__arrow--prev {
       float: left;
       left: unset;
-      margin-right: 2.5rem;
+      margin-right: 1.5rem;
       overflow: hidden;
       position: relative;
     }
@@ -35,15 +39,11 @@
       }
       &::before {
         display: none;
-      }
-    }
-
-    @include media-breakpoint-up(md) {
-      top: calc(-4rem - 8px);
+      } 
     }
 
     @include media-breakpoint-up(xl) {
-      top: calc(-5rem - 8px);
+      top: calc(-5rem - 2px);
     }
   }
 

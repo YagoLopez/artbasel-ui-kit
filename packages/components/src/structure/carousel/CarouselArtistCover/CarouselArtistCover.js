@@ -15,6 +15,7 @@ const CarouselArtistCover = ({
   description,
   cssInternalPrefix,
   cssStyles,
+  onClick,
 }) => {
   const truncated = {
     title: truncateText(title, truncateValues.title),
@@ -27,6 +28,7 @@ const CarouselArtistCover = ({
       bsPrefix={cssInternalPrefix}
       style={cssStyles}
       className="carousel-artist-cover"
+      onClick={onClick}
     >
       <BSPCard.Body>
         <BSPCard.Title>
@@ -52,11 +54,13 @@ CarouselArtistCover.propTypes = {
   description: PropTypes.string.isRequired,
   cssInternalPrefix: PropTypes.string,
   cssStyles: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 CarouselArtistCover.defaultProps = {
   cssInternalPrefix: 'card',
   cssStyles: null,
+  onClick: () => {},
 };
 
 export default CarouselArtistCover;

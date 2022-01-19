@@ -8,6 +8,7 @@ const CarouselArtistCard = ({
   image,
   cssInternalPrefix,
   cssStyles,
+  onClick,
 }) => {
   return (
     <BSPCard
@@ -15,6 +16,7 @@ const CarouselArtistCard = ({
       bsPrefix={cssInternalPrefix}
       style={cssStyles}
       className="carousel-artist-card"
+      onClick={onClick}
     >
       <div className="gradient" />
       <img src={image} alt="picture" />
@@ -34,11 +36,13 @@ CarouselArtistCard.propTypes = {
   image: PropTypes.string.isRequired,
   cssInternalPrefix: PropTypes.string,
   cssStyles: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 CarouselArtistCard.defaultProps = {
   cssInternalPrefix: 'card',
   cssStyles: null,
+  onClick: () => {},
 };
 
 export default CarouselArtistCard;
