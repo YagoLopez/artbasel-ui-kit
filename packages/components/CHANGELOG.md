@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.11.1...@mch-group/uikit-components@0.11.2) (2022-01-19)
+
+
+### Bug Fixes
+
+* **carousel:** add visual changes to carousel and its cards ([3a49156](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/3a49156dea1ccfde3b9ec43df19259c90e38e63e))
+
+
+
+
+
 ## [0.11.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.11.0...@mch-group/uikit-components@0.11.1) (2022-01-19)
 
 
