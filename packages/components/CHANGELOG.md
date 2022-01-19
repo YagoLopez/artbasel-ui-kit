@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.10.0...@mch-group/uikit-components@0.10.1) (2022-01-19)
+
+
+### Bug Fixes
+
+* Icon "redirect-alt" renamed to "redirect" ([37f6e9a](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/37f6e9a2ab5d185bf3c87454dcb7bf5de6513a37))
+
+
+
+
+
 # [0.10.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.9.1...@mch-group/uikit-components@0.10.0) (2022-01-18)
 
 
