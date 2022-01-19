@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.11.0...@mch-group/uikit-components@0.11.1) (2022-01-19)
+
+
+### Bug Fixes
+
+* **storycard:** Add optional comma on subtitle for StoryCard ([529d611](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/529d6111f60483cca00ee77727eb93499b6c1424))
+
+
+
+
+
 # [0.11.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.10.1...@mch-group/uikit-components@0.11.0) (2022-01-19)
 
 
