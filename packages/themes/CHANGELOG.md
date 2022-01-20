@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.11.0...@mch-group/uikit-themes@0.11.1) (2022-01-20)
+
+
+### Bug Fixes
+
+* **typograhy:** headline fonts updated to ttf type ([6d7dc4b](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/6d7dc4b4a072fc545177eef652fb621885da89ff))
+
+
+
+
+
 # [0.11.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.10.3...@mch-group/uikit-themes@0.11.0) (2022-01-20)
 
 
