@@ -13,6 +13,8 @@ const Carousel = ({
   cssStyles,
   children,
   exceedTrack,
+  showTopBorders,
+  showBottomBorders,
 }) => {
   const carousel = useRef();
   const prevArrow = useRef();
@@ -93,7 +95,13 @@ const Carousel = ({
     <div ref={carousel}
       data-textid="mch-carousel"
       style={cssStyles}
-      className="carousel-container pb-9 pb-xl-11"
+      className={classnames(
+        'carousel-container pb-9 pb-xl-11',
+        {
+          'top-bordered': showTopBorders,
+          'bottom-bordered': showBottomBorders,
+        },
+      )}
     >
       <h3 className="pb-7 pb-xl-9 header-uppercase-1">{title}</h3>
       <Splide
@@ -130,6 +138,8 @@ Carousel.propTypes = {
     pagination: PropTypes.bool,
     arrows: PropTypes.number,
   }),
+  showTopBorders: PropTypes.bool,
+  showBottomBorders: PropTypes.bool,
   cssStyles: PropTypes.string,
   children: PropTypes.any.isRequired,
 };
@@ -143,6 +153,8 @@ Carousel.defaultProps = {
     pagination: false,
     arrows: 2,
   },
+  showTopBorders: true,
+  showBottomBorders: true,
   cssStyles: null,
   children: null,
   exceedTrack: false,

@@ -7,8 +7,6 @@
 ***************************/
 .carousel-container {
   max-width: 100%;
-  border-top: 2px solid $color-mch-gray-200;
-  border-bottom: 2px solid $color-mch-gray-200;
   padding-top: calc(2.5rem + 3px);
   @include media-breakpoint-up(xl) {
     padding-top: calc(4rem + 3px);
@@ -74,5 +72,13 @@
     @include media-breakpoint-up(xl) {
       width: 326px !important;
     }
+  }
+
+  &.top-bordered {
+    border-top: 2px solid $color-mch-gray-200;
+  }
+
+  &.bottom-bordered {
+    border-bottom: 2px solid $color-mch-gray-200;
   }
 }
