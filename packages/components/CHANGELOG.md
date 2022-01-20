@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.11.3...@mch-group/uikit-components@0.12.0) (2022-01-20)
+
+
+### Features
+
+* **carousel:** add optional props to show borders con carousel ([36bc972](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/36bc9722381f078b56fed9ca4f42edcf65966b10))
+
+
+
+
+
 ## [0.11.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.11.2...@mch-group/uikit-components@0.11.3) (2022-01-19)
 
 
