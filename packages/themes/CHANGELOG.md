@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.11.2...@mch-group/uikit-themes@0.12.0) (2022-01-21)
+
+
+### Features
+
+* **typography:** added embedded base64 fonts on artbasel_fonts_base64.css ([b052b03](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/b052b039c716a81ac0aa2303fb2c5acf4d96f250))
+
+
+
+
+
 ## [0.11.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.11.1...@mch-group/uikit-themes@0.11.2) (2022-01-21)
 
 
