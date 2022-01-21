@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.11.1...@mch-group/uikit-themes@0.11.2) (2022-01-21)
+
+
+### Bug Fixes
+
+* **button icon:** Fixed hover animations on fill variant ([8f096c5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/8f096c5b88a467696930d10b67f011fbbba4151d))
+
+
+
+
+
 ## [0.11.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.11.0...@mch-group/uikit-themes@0.11.1) (2022-01-20)
 
 

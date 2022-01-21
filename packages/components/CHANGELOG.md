@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.12.0...@mch-group/uikit-components@0.12.1) (2022-01-21)
+
+
+### Bug Fixes
+
+* **button icon:** Fixed hover animations on fill variant ([8f096c5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/8f096c5b88a467696930d10b67f011fbbba4151d))
+* **gallerycard:** change state management for the description prop, its state was not being updated ([d795429](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d795429de68739b0a2c4198e3432c0f21d2603bb))
+
+
+
+
+
 # [0.12.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.11.3...@mch-group/uikit-components@0.12.0) (2022-01-20)
 
 
