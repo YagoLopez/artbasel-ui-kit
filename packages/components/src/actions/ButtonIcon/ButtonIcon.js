@@ -29,25 +29,25 @@ const ButtonIcon = ({
 );
 
 ButtonIcon.propTypes = {
-  cssStyles: PropTypes.string,
-  className: PropTypes.string,
-  cssInternalPrefix: PropTypes.string,
-  disabled: PropTypes.bool,
   icon: PropTypes.oneOf(IconList),
-  onClick: PropTypes.func,
   variant: PropTypes.oneOf(['default', 'outline', 'fill']),
   theme: PropTypes.oneOf(['light', 'dark']),
   size: PropTypes.oneOf(['xs', 's', 'm', 'lg']),
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func,
+  cssStyles: PropTypes.string,
+  className: PropTypes.string,
+  cssInternalPrefix: PropTypes.string,
 };
 
 ButtonIcon.defaultProps = {
-  cssInternalPrefix: 'btn',
-  disabled: false,
-  onClick: () => {},
   icon: 'close',
   variant: 'default',
   theme: 'light',
   size: 'm',
+  disabled: false,
+  onClick: () => {},
+  cssInternalPrefix: 'btn',
 };
 
 export default ButtonIcon;

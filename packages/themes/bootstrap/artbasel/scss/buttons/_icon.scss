@@ -107,8 +107,25 @@
       transform: translate(-50%, -50%) scale(0);
       transform-origin: center center;
   
-      background-color: $color-mch-black;
+      background-color: $color-mch-gray-500;
+      opacity: 50%;
       border-radius: 50%;
+    }
+    &:hover,
+    &.hover {
+      background-color: $color-mch-gray-500 !important;
+      &::before {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 50%;
+      }
+  
+      &::after {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 50%;
+      }
+      svg {
+        fill: $color-mch-white !important;
+      }
     }
     &:focus,
     &:not(:focus-visible) {
@@ -126,22 +143,7 @@
       fill: $color-mch-gray-400 !important;
     }
   }
-    &:hover,
-    &.hover {
-      background-color: $color-mch-gray-500 !important;
-      &::before {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 50%;
-      }
   
-      &::after {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 50%;
-      }
-      svg {
-        fill: $color-mch-white !important;
-      }
-    }
   }
 
   &.outline {
@@ -246,20 +248,20 @@
         display: block;
         width: 100px;
         height: 100px;
-    
+        transition-duration: 500ms;
         transform: translate(-50%, -50%) scale(0);
         transform-origin: center center;
     
-        background-color: $color-mch-gray-100 !important;
+        background-color: $color-mch-gray-100;
         border-radius: 50%;
       }
     
       &:hover,
       &.hover {
-        color: $color-mch-black !important;
-        background-color: $color-mch-black !important;
-        border-color: $color-mch-black !important;
-    
+        color: $color-mch-black;
+        background-color: $color-mch-gray-100;
+        border-color: $color-mch-black;
+
         &::before {
           transform: translate(-50%, -50%) scale(1);
           opacity: 1;
@@ -302,18 +304,17 @@
       height: 100px;
   
       transform: translate(-50%, -50%) scale(0);
+      transition-duration: 500ms;
       transform-origin: center center;
   
-      background-color: $color-mch-gray-500 !important;
+      background-color: $color-mch-gray-500;
       border-radius: 50%;
     }
   
     &:hover,
     &.hover {
-      color: $color-mch-black !important;
-      background-color: $color-mch-gray-100 !important;
-      border-color: $color-mch-gray-100 !important;
-  
+      color: $color-mch-white;
+      background-color: $color-mch-gray-500;
       &::before {
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
