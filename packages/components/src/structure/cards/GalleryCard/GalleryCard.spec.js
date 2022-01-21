@@ -111,4 +111,32 @@ describe('Tests for GalleryCard component', () => {
     );
     expect(console.error).toBeCalled();
   });
+
+  test('Should show changed description after description prop change', () => {
+    const { rerender } = render(
+      <GalleryCard
+        artist={example.artist}
+        link={example.link}
+        image={example.image}
+        headerLabel={example.headerLabel}
+        description={'aaaaaa'}
+        ctaLabel={example.ctaLabel}
+      />,
+    );
+
+    expect(screen.getAllByText('aaaaaa')[0]).toBeInTheDocument();
+
+    rerender(
+      <GalleryCard
+        artist={example.artist}
+        link={example.link}
+        image={example.image}
+        headerLabel={example.headerLabel}
+        description={'bbbbb'}
+        ctaLabel={example.ctaLabel}
+      />,
+    );
+
+    expect(screen.getAllByText('bbbbb')[0]).toBeInTheDocument();
+  });
 });

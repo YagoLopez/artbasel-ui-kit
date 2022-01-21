@@ -23,7 +23,6 @@ const GalleryCard = ({
   const [titleTruncated, setTitleTruncated] = useState(false);
   const [subtitleTruncated, setSubtitleTruncated] = useState(false);
   const [descriptions, setDescriptions] = useState(null);
-
   const subtitle = locations?.join(', ');
 
   const isEllipsisActive = (item) => {
@@ -50,6 +49,10 @@ const GalleryCard = ({
     });
     setDescriptions(res);
   };
+
+  useEffect(() => {
+    getTruncatedDescription();
+  }, [description]);
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
