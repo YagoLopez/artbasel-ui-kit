@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.12.2...@mch-group/uikit-components@0.13.0) (2022-01-24)
+
+
+### Features
+
+* Added Tabs component Aragones ([378903b](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/378903becc7db6a0a5dfcc791a5396d404861019))
+
+
+
+
+
 ## [0.12.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.12.1...@mch-group/uikit-components@0.12.2) (2022-01-24)
 
 

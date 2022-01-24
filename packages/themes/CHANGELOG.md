@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.12.0...@mch-group/uikit-themes@0.13.0) (2022-01-24)
+
+
+### Bug Fixes
+
+* **slider:** add hover state and changed knobs size to 24px ([b645e4b](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/b645e4b9bce39de95fca1b0ee09d85aba727e1eb))
+
+
+### Features
+
+* Added Tabs component Aragones ([378903b](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/378903becc7db6a0a5dfcc791a5396d404861019))
+
+
+
+
+
 # [0.12.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.11.2...@mch-group/uikit-themes@0.12.0) (2022-01-21)
 
 
