@@ -4,10 +4,7 @@
     "image": "http://res.cloudinary.com/dqzqcuqf9/image/upload/v1573553542/mfp-fe-artworks/umv2za2vglholdrx3io8.jpg",
     "author": "Manal AlDowayan",
     "year": 2019,
-    "price": {
-      "value": 8800,
-      "currency": "USD"
-    },
+    "price": "USD 8,800",
     "offer": false
   },
   {
@@ -15,10 +12,7 @@
     "image": "http://res.cloudinary.com/dqzqcuqf9/image/upload/v1591186420/mfp-fe-artworks/orm7b6piml6glrjayja6.jpg",
     "author": "Kenneth Bergfeld",
     "year": 2019,
-    "price": {
-      "value": 4000,
-      "currency": "USD"
-    },
+    "price": "USD 4,000",
     "offer": false
   },
   {
@@ -26,10 +20,7 @@
     "image": "http://res.cloudinary.com/dqzqcuqf9/image/upload/v1574443262/mfp-fe-artworks/plqkfu9ewnlyrlcfgqno.jpg",
     "author": "Warren Isensee",
     "year": 2017,
-    "price": {
-      "value": 10500,
-      "currency": "USD"
-    },
+    "price": "USD 10,500",
     "offer": false
   },
   {
@@ -37,10 +28,7 @@
     "image": "http://res.cloudinary.com/dqzqcuqf9/image/upload/v1571995539/mfp-fe-artworks/dlrr0f207qarr7klqkbw.jpg",
     "author": "David Diao",
     "year": 2019,
-    "price": {
-      "value": 1200,
-      "currency": "USD"
-    },
+    "price": "USD 1,200",
     "offer": false
   },
   {
@@ -48,10 +36,7 @@
     "image": "http://res.cloudinary.com/dqzqcuqf9/image/upload/v1571243919/mfp-fe-artworks/uqce7726svkaitedex7a.jpg",
     "author": "Richard Bosman",
     "year": 1980,
-    "price": {
-      "value": 10000,
-      "currency": "USD"
-    },
+    "price": "USD 1,000",
     "offer": false
   },
   {
@@ -59,10 +44,7 @@
     "image": "http://res.cloudinary.com/dqzqcuqf9/image/upload/v1574297709/mfp-fe-artworks/c3wrvvws20iyfyij4asm.jpg",
     "author": "Patricia Fernández",
     "year": 2019,
-    "price": {
-      "value": 4500,
-      "currency": "USD"
-    },
+    "price": "USD 4,500",
     "offer": false
   },
   {
@@ -70,10 +52,7 @@
     "image": "http://res.cloudinary.com/dqzqcuqf9/image/upload/v1591189652/mfp-fe-artworks/eqiucad2sd1tmbnyvpok.jpg",
     "author": "Juliana Huxtable",
     "year": 2019,
-    "price": {
-      "value": 12000,
-      "currency": "USD"
-    },
+    "price": "USD 12,000",
     "offer": false
   },
   {
@@ -81,10 +60,7 @@
     "image": "http://res.cloudinary.com/dqzqcuqf9/image/upload/v1573673271/mfp-fe-artworks/d34wynnabejnxvop4ml5.jpg",
     "author": "Nona Faustine",
     "year": 2019,
-    "price": {
-      "value": 8500,
-      "currency": "USD"
-    },
+    "price": "USD 8,500",
     "offer": false
   },
   {
@@ -92,10 +68,7 @@
     "image": "http://res.cloudinary.com/dqzqcuqf9/image/upload/v1573584806/mfp-fe-artworks/ksuegvw0abakekoi4rs4.jpg",
     "author": "Max Gómez Canle",
     "year": 2019,
-    "price": {
-      "value": 6000,
-      "currency": "USD"
-    },
+    "price": "USD 6,000",
     "offer": false
   },
   {
@@ -103,10 +76,7 @@
     "image": "http://res.cloudinary.com/dqzqcuqf9/image/upload/v1571993900/mfp-fe-artworks/mraskrgwg3j721ue9vph.jpg",
     "author": "Matt Connors",
     "year": 2019,
-    "price": {
-      "value": 8000,
-      "currency": "USD"
-    },
+    "price": "USD 8,000",
     "offer": false
   },
   {
@@ -114,10 +84,7 @@
     "image": "http://res.cloudinary.com/dqzqcuqf9/image/upload/v1574736011/mfp-fe-artworks/edmcnqiqzvjtrpuzchxr.jpg",
     "author": "Kenneth Bergfeld",
     "year": 2019,
-    "price": {
-      "value": 12000,
-      "currency": "USD"
-    },
+    "price": "USD 12,000",
     "offer": false
   },
   {
@@ -125,10 +92,7 @@
     "image": "http://res.cloudinary.com/dqzqcuqf9/image/upload/v1574539571/mfp-fe-artworks/yags7a3xwakhqwpc96yn.jpg",
     "author": "Colter Jacobsen",
     "year": 2019,
-    "price": {
-      "value": 4000,
-      "currency": "USD"
-    },
+    "price": "USD 4,000",
     "offer": false
   }
 ]

@@ -78,7 +78,7 @@ const ProductTile = ({
         {price && (
           <div className="tile-price-container">
             <div className="tile-price">
-              {price.currency} {price.value}
+              {price}
             </div>
             {offer && <div className="tile-offer">| Make an offer</div>}
           </div>
@@ -96,15 +96,11 @@ ProductTile.propTypes = {
   productName: PropTypes.string.isRequired,
   year: PropTypes.string.isRequired,
   gallery: PropTypes.string.isRequired,
-  price: PropTypes.shape({
-    value: PropTypes.string.isRequired,
-    currency: PropTypes.string.isRequired,
-  }),
+  price: PropTypes.string.isRequired,
   offer: PropTypes.bool,
 };
 
 ProductTile.defaultProps = {
-  price: null,
   offer: false,
 };
 

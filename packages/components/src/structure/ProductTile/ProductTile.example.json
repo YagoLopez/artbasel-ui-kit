@@ -7,9 +7,6 @@
   "author": "Author Name",
   "year": "2019",
   "gallery": "Acb Gallery",
-  "price": {
-    "value": "9,999",
-    "currency": "USD"
-  },
+  "price": "USD 9,999",
   "link": "#"
 }
