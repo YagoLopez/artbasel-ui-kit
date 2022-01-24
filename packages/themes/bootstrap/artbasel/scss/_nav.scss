@@ -1,0 +1,29 @@
+.nav-tabs {
+  display: inline-flex;
+  border-bottom: 2px solid $color-mch-gray-200;
+
+  .nav-link {
+    margin-bottom: -2px;
+    padding: 0.5rem 2rem;
+    font-size: 0.875rem;
+    border-radius: 0;
+    border-width: 1px 0px 2px;
+
+    &:hover,
+    &:focus {
+      border-color: transparent transparent $color-mch-gray-500;
+    }
+
+    &.disabled {
+      color: $color-mch-gray-300;
+      border-color: transparent transparent $color-mch-gray-300;
+    }
+  }
+
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    border-color: transparent transparent $color-mch-black;
+    font-size: 0.875rem;
+    font-weight: bold;
+  }
+}

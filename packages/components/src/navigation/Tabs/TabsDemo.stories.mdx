@@ -1,0 +1,69 @@
+<!--- ModalDemo.stories.mdx --->
+
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+
+import TabsDemo from './Tabs.demo';
+import Tabs from './Tabs';
+import Tab from './Tab';
+
+<Meta
+  title="Components/Navigation/Tabs"
+  component={TabsDemo}
+  decorators={[withDesign]}
+/>
+
+export const Template = (args) => <TabsDemo {...args} />;
+
+# Tabs
+
+A set of layered sections of content that are displayed one at a time.
+
+## Default
+
+<Canvas>
+  <Story
+    name="Default"
+    parameters={{
+      docs: {
+        source: {
+          code: `const TabsDemo = () => {
+  return (
+    <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
+      <Tab eventKey="home" title="Home">
+        <p>Home</p>
+      </Tab>
+      <Tab eventKey="profile" title="Profile">
+        <p>Profile</p>
+      </Tab>
+      <Tab eventKey="contact" title="Contact" disabled>
+        <p>Contact</p>
+      </Tab>
+    </Tabs>
+  );
+};`,
+        },
+      },
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=5063%3A49582',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<br />
+
+### Tabs
+
+<ArgsTable of={Tabs} />
+
+### Tab
+
+<ArgsTable of={Tab} />
