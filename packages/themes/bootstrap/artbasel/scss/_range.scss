@@ -6,7 +6,7 @@
   .slider {
     position: relative;
     width: 100%;
-
+   
     .slider-track,
     .slider-range {
       position: absolute;
@@ -23,6 +23,11 @@
     .slider-range {
       background-color: $color-mch-gray-500;
       z-index: 2;
+
+      &.hover,
+      &:hover {
+        background-color: $color-mch-black;
+      }
 
       &.disabled {
         background-color: $color-mch-gray-200;
@@ -67,35 +72,45 @@
     }
 
     .thumb::-webkit-slider-thumb {
-      background-color: $color-mch-gray-500;
+      background-color: $color-mch-black;
       border: none;
       border-radius: 50%;
       box-shadow: 0px 1px 2px rgba(63, 71, 79, 0.15);
       cursor: pointer;
-      height: 16px;
-      width: 16px;
+      height: 24px;
+      width: 24px;
       margin-top: 2px;
       pointer-events: all;
       position: relative;
     }
 
+    .thumb.hover::-webkit-slider-thumb,
+    .thumb:hover::-webkit-slider-thumb {
+      background-color: $color-mch-gray-500;
+    }
+    .thumb.disabled::-webkit-slider-thumb,
     .thumb:disabled::-webkit-slider-thumb {
       background-color: $color-mch-gray-200;
     }
 
     .thumb::-moz-range-thumb {
-      background-color: $color-mch-gray-500;
+      background-color: $color-mch-black;
       border: none;
       border-radius: 50%;
       box-shadow: 0px 1px 2px rgba(63, 71, 79, 0.15);
       cursor: pointer;
-      height: 16px;
-      width: 16px;
+      height: 24px;
+      width: 24px;
       margin-top: 2px;
       pointer-events: all;
       position: relative;
     }
 
+    .thumb.hover::-moz-range-thumb,
+    .thumb:hover::-moz-range-thumb {
+      background-color: $color-mch-gray-500;
+    }
+    .thumb.disabled::-moz-range-thumb,
     .thumb:disabled::-moz-range-thumb {
       background-color: $color-mch-gray-200;
     }
