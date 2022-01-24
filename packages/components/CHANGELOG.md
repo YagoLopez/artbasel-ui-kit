@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.12.1...@mch-group/uikit-components@0.12.2) (2022-01-24)
+
+
+### Bug Fixes
+
+* **producttile:** get product price from locale string ([512f3e9](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/512f3e9202b587e4de5f95cf28ad65b7ee4cc0c5))
+
+
+
+
+
 ## [0.12.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.12.0...@mch-group/uikit-components@0.12.1) (2022-01-21)
 
 
