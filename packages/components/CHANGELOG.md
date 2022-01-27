@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.13.0...@mch-group/uikit-components@0.14.0) (2022-01-27)
+
+
+### Features
+
+* Added Step Indicator component ([2e86e76](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/2e86e76dca3edb0b3c06d31d78751423f968d488))
+
+
+
+
+
 # [0.13.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.12.2...@mch-group/uikit-components@0.13.0) (2022-01-24)
 
 
