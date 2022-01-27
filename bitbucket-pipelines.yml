@@ -131,3 +131,41 @@ pipelines:
                 AZURE_RESOURCE_GROUP: $AZURE_RESOURCE_GROUP_DEV
                 AZURE_APP_NAME: $AZURE_APP_NAME_DEV
                 ZIP_FILE: 'packages/components/storybook-static/storybook-$BITBUCKET_BUILD_NUMBER.zip'
+      - step:
+          name: "Send email Changelog Components"
+          script:
+          - EMAIL_LIST="$(tr '\n' ',' < email_list.txt)"
+          - apt update && apt install -y markdown
+          - markdown packages/components/CHANGELOG.md > packages/components/CHANGELOG.html
+          - pipe: atlassian/email-notify:0.5.0
+            variables:
+              USERNAME: $EMAIL_USERNAME
+              PASSWORD: $EMAIL_PASSWORD
+              FROM: $EMAIL_FROM
+              TO: $EMAIL_LIST
+              HOST: $EMAIL_HOST
+              SUBJECT: 'MCH Artbasel UI KIT - Components Changelog'
+              BODY_HTML: 'packages/components/CHANGELOG.html'
+          condition:
+            changesets:
+                includePaths:
+                  - "packages/components/CHANGELOG.md"
+      - step:
+          name: "Send email Changelog Themes"
+          script:
+          - EMAIL_LIST="$(tr '\n' ',' < email_list.txt)"
+          - apt update && apt install -y markdown
+          - markdown packages/themes/CHANGELOG.md > packages/themes/CHANGELOG.html
+          - pipe: atlassian/email-notify:0.5.0
+            variables:
+              USERNAME: $EMAIL_USERNAME
+              PASSWORD: $EMAIL_PASSWORD
+              FROM: $EMAIL_FROM
+              TO: $EMAIL_LIST
+              HOST: $EMAIL_HOST
+              SUBJECT: 'MCH Artbasel UI KIT - Themes Changelog'
+              BODY_HTML: 'packages/themes/CHANGELOG.html'
+          condition:
+            changesets:
+                includePaths:
+                  - "packages/themes/CHANGELOG.md"
