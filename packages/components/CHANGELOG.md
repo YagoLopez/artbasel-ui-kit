@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.14.0...@mch-group/uikit-components@0.15.0) (2022-01-31)
+
+
+### Features
+
+* **tooltip:** add Tooltip component ([0d60bb1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/0d60bb11c3eb1a033019acb4de63b0db117599ff))
+
+
+
+
+
 # [0.14.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.13.0...@mch-group/uikit-components@0.14.0) (2022-01-27)
 
 
