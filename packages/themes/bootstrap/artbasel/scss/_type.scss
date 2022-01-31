@@ -177,52 +177,52 @@ p {
   font-size: 1rem;
   line-height: 1.375rem;
 
-  &.text-large {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-  }
-
-  &.text-medium {
-    font-size: 1rem;
-    line-height: 1.375rem;
-  }
-
-  &.text-small {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-  }
-
-  /*  Text Style "Labels"  */
-
-  &.text-label-xlarge {
-    font-size: 1rem;
-    line-height: 1.375rem;
-    font-weight: bold;
-  }
-  &.text-label-large {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-weight: bold;
-  }
-
-  &.text-label-medium {
-    font-size: 0.75rem;
-    line-height: 1rem;
-    font-weight: bold;
-  }
-
-  &.text-label-small {
-    font-size: 0.75rem;
-    line-height: 1rem;
-    letter-spacing: 0.3px;
-  }
-
   a {
     font-weight: bold;
     &:hover {
       text-decoration: underline;
     }
   }
+}
+
+.text-large {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+.text-medium {
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
+.text-small {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+}
+
+/*  Text Style "Labels"  */
+.text-label-xlarge {
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: bold;
+}
+
+.text-label-large {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: bold;
+}
+
+.text-label-medium {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: bold;
+}
+
+.text-label-small {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.3px;
 }
 
 .text-link {
@@ -239,7 +239,7 @@ p {
   cursor: pointer;
   text-decoration: underline;
   &:visited {
-   text-decoration-color: $color-mch-gray-300;
+    text-decoration-color: $color-mch-gray-300;
   }
   &:hover {
     text-decoration: none;
