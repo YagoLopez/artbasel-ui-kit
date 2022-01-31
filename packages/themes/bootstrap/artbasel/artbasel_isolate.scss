@@ -18,6 +18,7 @@
 @import 'variables/forms';
 @import 'variables/grid';
 @import 'variables/modal';
+@import 'variables/popover';
 @import 'variables/spinners';
 @import 'variables/toasts';
 @import '../../node_modules/bootstrap/scss/variables';
@@ -96,7 +97,8 @@
 // @import 'scss/modal';
 
 // @import "../../node_modules/bootstrap/scss/tooltip";
-// @import "../../node_modules/bootstrap/scss/popover";
+@import "../../node_modules/bootstrap/scss/popover";
+@import 'scss/popover';
 // @import "../../node_modules/bootstrap/scss/carousel";
 
 // @import '../../node_modules/bootstrap/scss/spinners';
