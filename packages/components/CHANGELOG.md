@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.15.0...@mch-group/uikit-components@0.16.0) (2022-02-01)
+
+
+### Features
+
+* Added Radio Button Component ([8395810](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/83958104373b1f75cb098498943981347d3e4298))
+
+
+
+
+
 # [0.15.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.14.0...@mch-group/uikit-components@0.15.0) (2022-01-31)
 
 
