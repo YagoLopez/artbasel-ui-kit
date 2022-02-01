@@ -1,0 +1,73 @@
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+import example from './TeaserCard.example.json';
+import TeaserCard from './TeaserCard';
+
+<Meta
+  title="Components/Structure/TeaserCard"
+  component={TeaserCard}
+  decorators={[withDesign]}
+/>
+
+export const Template = (args) => <TeaserCard {...args} />;
+
+export const argTypes = {};
+
+export const args = {
+  variant: example.variant,
+  title: example.title,
+  subTitle: example.subTitle,
+  imageUrl: example.imageUrl,
+  link: example.link,
+};
+
+# TeaserCard
+
+TeaserCards are used in the Megamenu. Can be verticals or horizontals. For breakpoints XS ann SM, both variants have same size, but it differs in the texts.
+
+<Canvas>
+  <Story
+    name="TeaserCard"
+    args={args}
+    argTypes={{ argTypes }}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url: 'https://www.figma.com/file/3Aa83xoxTTGnObo9tURiCe/Navigation?node-id=120%3A2165',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Variants
+
+### Type H
+
+<Canvas>
+  <TeaserCard
+    imageUrl="https://picsum.photos/600/402"
+    title="Sabrina Amrani"
+    subTitle="Madrid"
+    variant="h"
+    link="https://www.artbasel.com"
+  />
+</Canvas>
+
+### Type V
+
+<Canvas>
+  <TeaserCard
+    imageUrl="https://picsum.photos/400/602"
+    title="Acrylic Pop Art"
+    subTitle="Featured:"
+    variant="v"
+    link="https://www.artbasel.com"
+  />
+</Canvas>
+
+## Properties
+
+<ArgsTable of={TeaserCard} />

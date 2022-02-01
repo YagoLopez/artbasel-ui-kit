@@ -1,0 +1,60 @@
+<!--- Megamenu.stories.mdx --->
+
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+
+import { Container, Row, Col } from '../../structure/Grid';
+import { ProductTile } from '../../structure';
+import MegamenuDemo from './Megamenu.demo';
+import Megamenu from './Megamenu';
+import menudata from './Menudata.example.json';
+import tiles from './ProductTilePage.example.json';
+
+<Meta
+  title="Navigation/Mega Menu"
+  component={MegamenuDemo}
+  decorators={[withDesign]}
+/>
+
+export const Template = (args) => <MegamenuDemo {...args} />;
+
+export const argTypes = {
+  menuData: { type: 'object' },
+  profile: {
+    options: ['Buyer Account', 'Anonymous Account', 'Gallery Account'],
+    type: 'select',
+  },
+};
+
+<Canvas style={{ width: '1440px' }}>
+  <Story
+    name="Mega Menu"
+    argTypes={argTypes}
+    args={{
+      menuData: menudata,
+      profile: 'Anonymous Account',
+      loggedCollectionUrl: '/collections/my-collections',
+      unloggedCollectionUrl: '/auth/login?return="/collections/my-collections"',
+      userData: {
+        name: 'Jose Gumpert Ros',
+        vipStatus: false,
+      },
+      welcomeHeader: 'Welcome, ',
+    }}
+    parameters={{
+      layout: 'fullscreen',
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/3Aa83xoxTTGnObo9tURiCe/Navigation?node-id=120%3A2165',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable of={MegamenuDemo} />

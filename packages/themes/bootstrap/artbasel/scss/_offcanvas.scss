@@ -1,0 +1,60 @@
+.offcanvas {
+  position: fixed;
+  bottom: 0;
+  z-index: $zindex-offcanvas;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  color: $offcanvas-color;
+  visibility: hidden;
+  background-color: $offcanvas-bg-color;
+  background-clip: padding-box;
+  outline: 0;
+  @include box-shadow($offcanvas-box-shadow);
+  @include transition(transform $offcanvas-transition-duration ease-in-out);
+
+  @include media-breakpoint-up(xs) {
+    width: 100%;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 391px;
+  }
+}
+
+.offcanvas-backdrop {
+  @include media-breakpoint-up(xs) {
+    @include overlay-backdrop(
+      $zindex-offcanvas-backdrop,
+      $offcanvas-backdrop-bg,
+      $offcanvas-backdrop-opacity
+    );
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include overlay-backdrop(-1, $offcanvas-backdrop-bg, 0);
+  }
+}
+
+.offcanvas-body {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.offcanvas-start {
+  top: 0;
+  left: 0;
+  border-right: $offcanvas-border-width solid $offcanvas-border-color;
+  transform: translateX(-100%);
+}
+
+.offcanvas-end {
+  top: 0;
+  right: 0;
+  border-left: $offcanvas-border-width solid $offcanvas-border-color;
+  transform: translateX(100%);
+}
+
+.offcanvas.show {
+  transform: none;
+}

@@ -1,0 +1,229 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/object1637938017.json",
+  "title": "Root",
+  "type": "object",
+  "required": ["entries", "logoLink"],
+  "properties": {
+    "logoLink": {
+      "$id": "#root/logoLink",
+      "title": "logoLink",
+      "type": "string",
+      "default": "",
+      "examples": ["https://artbasel.com"],
+      "pattern": "^.*$"
+    },
+    "entries": {
+      "$id": "#root/entries",
+      "title": "Entries",
+      "type": "array",
+      "default": [],
+      "items": {
+        "$id": "#root/entries/items",
+        "title": "Items",
+        "type": "object",
+        "required": ["label", "mobileLabel", "link"],
+        "properties": {
+          "label": {
+            "$id": "#root/entries/items/label",
+            "title": "Label",
+            "type": "string",
+            "default": "",
+            "examples": ["Fairs"],
+            "pattern": "^.*$"
+          },
+          "mobileLabel": {
+            "$id": "#root/entries/items/mobileLabel",
+            "title": "mobileLabel",
+            "type": "string",
+            "default": "",
+            "examples": ["All Fairs"],
+            "pattern": "^.*$"
+          },
+          "link": {
+            "$id": "#root/entries/items/link",
+            "title": "Link",
+            "type": "string",
+            "default": "",
+            "examples": ["/fairs"],
+            "pattern": "^.*$"
+          },
+          "flyout": {
+            "$id": "#root/entries/items/flyout",
+            "title": "Flyout",
+            "type": "object",
+            "required": ["menuSection", "cardSection"],
+            "properties": {
+              "menuSection": {
+                "$id": "#root/entries/items/flyout/menuSection",
+                "title": "Menusection",
+                "type": "object",
+                "required": ["cols"],
+                "properties": {
+                  "cols": {
+                    "$id": "#root/entries/items/flyout/menuSection/cols",
+                    "title": "Cols",
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                      "$id": "#root/entries/items/flyout/menuSection/cols/items",
+                      "title": "Items",
+                      "type": "object",
+                      "required": ["menuEntries"],
+                      "properties": {
+                        "menuEntries": {
+                          "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries",
+                          "title": "Menuentries",
+                          "type": "array",
+                          "default": [],
+                          "items": {
+                            "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries/items",
+                            "title": "Items",
+                            "type": "object",
+                            "required": ["title", "menuItems"],
+                            "properties": {
+                              "title": {
+                                "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries/items/title",
+                                "title": "Title",
+                                "type": "string",
+                                "default": "",
+                                "examples": ["Basel"],
+                                "pattern": "^.*$"
+                              },
+                              "menuItems": {
+                                "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries/items/menuItems",
+                                "title": "Menuitems",
+                                "type": "array",
+                                "default": [],
+                                "items": {
+                                  "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries/items/menuItems/items",
+                                  "title": "Items",
+                                  "type": "object",
+                                  "required": ["label", "link"],
+                                  "properties": {
+                                    "label": {
+                                      "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries/items/menuItems/items/label",
+                                      "title": "Label",
+                                      "type": "string",
+                                      "default": "",
+                                      "examples": ["Overview"],
+                                      "pattern": "^.*$"
+                                    },
+                                    "link": {
+                                      "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries/items/menuItems/items/link",
+                                      "title": "Link",
+                                      "type": "string",
+                                      "default": "",
+                                      "examples": ["/basel/overview"],
+                                      "pattern": "^.*$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "cardSection": {
+                "$id": "#root/entries/items/flyout/cardSection",
+                "title": "Cardsection",
+                "type": "object",
+                "required": ["cols"],
+                "properties": {
+                  "sectionTitle": {
+                    "$id": "#root/entries/items/flyout/cardSection/sectionTitle",
+                    "title": "Sectiontitle",
+                    "type": "string",
+                    "default": "",
+                    "examples": ["Featured Galleries"],
+                    "pattern": "^.*$"
+                  },
+                  "cols": {
+                    "$id": "#root/entries/items/flyout/cardSection/cols",
+                    "title": "Cols",
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                      "$id": "#root/entries/items/flyout/cardSection/cols/items",
+                      "title": "Items",
+                      "type": "object",
+                      "required": ["cards"],
+                      "properties": {
+                        "cards": {
+                          "$id": "#root/entries/items/flyout/cardSection/cols/items/cards",
+                          "title": "Cards",
+                          "type": "array",
+                          "default": [],
+                          "items": {
+                            "$id": "#root/entries/items/flyout/cardSection/cols/items/cards/items",
+                            "title": "Items",
+                            "type": "object",
+                            "required": [
+                              "cardTitle",
+                              "cardSubtitle",
+                              "cardType",
+                              "imageUrl",
+                              "link"
+                            ],
+                            "properties": {
+                              "cardTitle": {
+                                "$id": "#root/entries/items/flyout/cardSection/cols/items/cards/items/cardTitle",
+                                "title": "Cardtitle",
+                                "type": "string",
+                                "default": "",
+                                "examples": ["Vip Services"],
+                                "pattern": "^.*$"
+                              },
+                              "cardSubtitle": {
+                                "$id": "#root/entries/items/flyout/cardSection/cols/items/cards/items/cardSubtitle",
+                                "title": "Cardsubtitle",
+                                "type": "string",
+                                "default": "",
+                                "examples": ["Become a Vip"],
+                                "pattern": "^.*$"
+                              },
+                              "cardType": {
+                                "$id": "#root/entries/items/flyout/cardSection/cols/items/cards/items/cardType",
+                                "title": "Cardtype",
+                                "type": "string",
+                                "default": "",
+                                "examples": ["H"],
+                                "enum": ["H", "V"],
+                                "pattern": "^.*$"
+                              },
+                              "imageUrl": {
+                                "$id": "#root/entries/items/flyout/cardSection/cols/items/cards/items/imageUrl",
+                                "title": "Imageurl",
+                                "type": "string",
+                                "default": "",
+                                "examples": [""],
+                                "pattern": "^.*$"
+                              },
+                              "link": {
+                                "$id": "#root/entries/items/flyout/cardSection/cols/items/cards/items/link",
+                                "title": "Link",
+                                "type": "string",
+                                "default": "",
+                                "examples": [""],
+                                "pattern": "^.*$"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -18,6 +18,7 @@
 @import 'variables/forms';
 @import 'variables/grid';
 @import 'variables/modal';
+@import 'variables/offcanvas';
 @import 'variables/popover';
 @import 'variables/spinners';
 @import 'variables/toasts';
@@ -72,6 +73,8 @@
 @import '../../node_modules/bootstrap/scss/nav';
 @import 'scss/nav';
 
+@import './scss/megamenu';
+
 @import '../../node_modules/bootstrap/scss/card';
 @import 'scss/card';
 
@@ -97,14 +100,14 @@
 @import 'scss/modal';
 
 // @import "../../node_modules/bootstrap/scss/tooltip";
-@import "../../node_modules/bootstrap/scss/popover";
+@import '../../node_modules/bootstrap/scss/popover';
 @import 'scss/popover';
 // @import "../../node_modules/bootstrap/scss/carousel";
 
 @import '../../node_modules/bootstrap/scss/spinners';
 @import 'scss/spinners';
 
-// @import "../../node_modules/bootstrap/scss/offcanvas";
+@import './scss/offcanvas';
 @import '../../node_modules/bootstrap/scss/placeholders';
 
 @import './scss/tag';
