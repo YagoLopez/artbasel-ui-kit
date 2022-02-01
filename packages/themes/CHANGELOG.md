@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.17.0...@mch-group/uikit-themes@0.17.1) (2022-02-01)
+
+
+### Bug Fixes
+
+* **navigation:** fixed megamenu layers conflict ([4dc133f](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/4dc133f0b4233d95522cd12df3ebbd6e38f43ebe))
+
+
+
+
+
 # [0.17.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.16.0...@mch-group/uikit-themes@0.17.0) (2022-02-01)
 
 
