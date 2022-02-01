@@ -46,7 +46,7 @@ const MegaMenuBuilder = ({
 
   return (
     <>
-      <div style={navBarAnimation} className="sticky-top sticky-navbar">
+      <div style={navBarAnimation} className="sticky-top">
         <div className="d-none d-lg-block">
           <Navbar
             scrolled={scrolled}

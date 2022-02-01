@@ -87,6 +87,10 @@ const ProfileFlyout = ({
         </ul>
       )}
       </div>
+      <div
+        className={classnames('megamenu-overlay',
+          { visible: isVisible })}
+      />
       </>
   );
 };

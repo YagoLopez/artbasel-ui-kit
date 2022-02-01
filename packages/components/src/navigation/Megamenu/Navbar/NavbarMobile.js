@@ -28,14 +28,21 @@ const NavbarMobile = ({
   const [visibleLinks, setVisibleLinks] = useState(false);
   const [visibleProfile, setVisibleProfile] = useState(false);
 
+  const [containerIsVisible, setContainerIsVisible] = useState(false);
+  const [optionsIsVisible, SetOptionsIsVisible] = useState(false);
+
   const handleSetVisibleProfileFlyout = useCallback((open) => {
     setVisibleMenu(open ? PROFILE_FLYOUT : null);
   }, []);
 
   useEffect(() => {
     if (visibleLinks) {
+      setContainerIsVisible(true);
+      setTimeout(() => SetOptionsIsVisible(true), 50);
       document.body.style.position = 'fixed';
     } else {
+      SetOptionsIsVisible(false);
+      setTimeout(() => setContainerIsVisible(false), 500);
       document.body.style.position = '';
     }
   }, [visibleLinks]);
@@ -120,9 +127,11 @@ const NavbarMobile = ({
       </Container>
       }
       <Container className={ classnames('navlinks-mobile-container', {
-        visible: visibleLinks,
+        visible: containerIsVisible,
       }) }>
-        <div className="navlinks-mobile-section">
+        <div className={ classnames('navlinks-mobile-section', {
+          visible: optionsIsVisible,
+        }) }>
             {menuData.entries.map((entry) => (
               <h4 className="navlink-mobile-header" key={entry.label}>
                 {entry.flyout ? (
