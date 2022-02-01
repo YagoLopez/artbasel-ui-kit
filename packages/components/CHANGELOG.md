@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.16.0...@mch-group/uikit-components@0.17.0) (2022-02-01)
+
+
+### Features
+
+* **navigation:** Added Megamenu component ([802c7d4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/802c7d4d8345380e292501a373cc6a709d015810))
+
+
+
+
+
 # [0.16.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.15.0...@mch-group/uikit-components@0.16.0) (2022-02-01)
 
 
