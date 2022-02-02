@@ -2,6 +2,8 @@ import React, { useMemo, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { FormControl, FloatingLabel, FormText } from 'react-bootstrap';
 import classnames from 'classnames';
+import { Tooltip } from '../../feedback/Tooltip';
+import { ButtonIcon } from '../../actions/ButtonIcon';
 
 const textClassName = {
   muted: 'text-muted',
@@ -26,6 +28,7 @@ const Text = ({
   onBlur,
   'data-testid': dataTestId,
   name,
+  infoTooltip,
 }) => {
   const [passwordIcon, setPasswordIcon] = useState('hide');
   const isPassword = useMemo(() => type === 'password', [type]);
@@ -61,6 +64,19 @@ const Text = ({
             data-testid="text-icon"
           />
         )}
+        {infoTooltip && (
+          <div className='position-absolute' style={{ bottom: '0.5rem', right: '1rem' }}>
+            <Tooltip
+              content={infoTooltip.content}
+              title={infoTooltip.title}
+            >
+              <ButtonIcon
+                icon="info-small"
+                size="xs"
+              />
+            </Tooltip>
+          </div>
+        )}
       </FloatingLabel>
       {helpText && (
         <FormText
@@ -92,6 +108,7 @@ Text.propTypes = {
   onBlur: PropTypes.func,
   'data-testid': PropTypes.string,
   name: PropTypes.string,
+  infoTooltip: PropTypes.shape({ title: PropTypes.string, content: PropTypes.string }),
 };
 
 Text.defaultProps = {
