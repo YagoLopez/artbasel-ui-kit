@@ -1,32 +1,34 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Tag from './Tag';
 
 const testTagId = 'mch-tag';
 
 describe('Tag component', () => {
-  test('should render Tag', () => {
+  test('should render', () => {
     render(<Tag label="Label" />);
-
     const element = screen.getByTestId(testTagId);
-
     expect(element).toBeDefined();
   });
 
-  test('should render Tag Now Live', () => {
-    render(<Tag label="Now Live" live />);
-
-    const element = screen.getByText('Now Live');
-
-    expect(element).toHaveClass('text-label-small');
+  test('should have class', () => {
+    render(<Tag icon="certificate" iconAlign="left" label="Leading Icon" />);
+    const element = screen.getByTestId(testTagId);
+    expect(element).toHaveClass('type-label');
   });
 
-  test('should render Tag Curator’s Pick', () => {
-    render(<Tag label="Name goes here" headerLabel="Curator’s Pick" />);
-
-    const element = screen.getByText('Curator’s Pick');
-
+  test('should be in document', () => {
+    render(<Tag icon="certificate" iconAlign="left" label="Leading Icon" />);
+    const element = screen.getByTestId(testTagId);
     expect(element).toBeInTheDocument();
+  });
+
+  test('should click', () => {
+    const onClickFn = jest.fn();
+    render(<Tag icon="certificate" iconAlign="left" label="Leading Icon" size="m" onClick={onClickFn} />);
+    const element = screen.getByTestId(testTagId);
+    fireEvent.click(element);
+    expect(onClickFn).toHaveBeenCalled();
   });
 });

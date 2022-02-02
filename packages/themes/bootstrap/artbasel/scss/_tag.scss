@@ -1,16 +1,113 @@
 .tag {
-  .tag-shadow {
-    filter: drop-shadow(0px 4px 16px rgba(29, 35, 39, 0.06));
+  &.type {
+    &-label {
+      background: $color-mch-white;
+      &.variant {
+        &-secondary {
+          background: $color-mch-gray-100;
+          color: $color-mch-gray-400;
+        }
+      }
+    }
+    &-curator {
+      background: $color-mch-black;
+      color: $color-mch-white;
+    }
+    &-premium {
+      background: $color-mch-black;
+      h5.header-uppercase-2 {
+        color: $color-mch-white;
+        position: relative;
+        top: 3px;
+      }
+    }
+    &-filterable {
+      background: $color-mch-white;
+      color: $color-mch-gray-500;
+      border: 1px solid $color-mch-gray-500;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background-color ease-out .35s;
+      &:hover {
+        background: $color-mch-gray-100;
+      }
+      .tag-icon {
+        width: 24px;
+        height: 22px;
+      }
+    }
+    &-sectors {
+      filter: drop-shadow(0 4px 16px rgba(29, 35, 39, 0.06));
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 2px;
+      &.theme {
+        &-dark {
+          background: $color-mch-black;
+          color: $color-mch-gray-100;
+        }
+        &-light {
+          background: $color-mch-white;
+          color: $color-mch-black;
+        }
+      }
+    }
   }
-  .tag-border-radius{
-    border-radius: .125rem;
+  &.size {
+    &-s {
+      padding: 4px 8px;
+      &.icon {
+        &-left {
+          padding: 0 8px 0 4px;
+        }
+        &-right {
+          padding: 0 4px 0 8px;
+        }
+      }
+      &.type-sectors {
+        padding: 3px 8px;
+      }
+      &.type-filterable {
+        padding: 0 0 0 8px;
+      }
+    }
+    &-m {
+      padding: 8px;
+      &.icon {
+        &-left {
+          padding: 4px 8px 4px 4px;
+        }
+        &-right {
+          padding: 4px 4px 4px 8px;
+        }
+      }
+      &.type-sectors,
+      &.type-premium {
+        padding: 7px 8px;
+      }
+      &.type-filterable {
+        padding: 4px 0 4px 8px;
+      }
+    }
   }
-  .tag-border-radius-start {
-    border-bottom-left-radius: .125rem;
-    border-top-left-radius: .125rem;
+  &.icon{
+    &-left {
+      .tag-icon {
+        padding: 4px;
+        margin-right: 2px;
+      }
+    }
+    &-right {
+      .tag-icon {
+        padding: 4px;
+        margin-left: 2px;
+      }
+    }
   }
-  .tag-border-radius-end {
-    border-bottom-left-radius: .125rem;
-    border-top-left-radius: .125rem;
+  &-radius {
+    border-radius: 2px;
+  }
+  &-shadow {
+    box-shadow: 0 4px 16px rgba(29, 35, 39, 0.06);
   }
 }

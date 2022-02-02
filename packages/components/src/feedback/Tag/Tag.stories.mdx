@@ -2,8 +2,9 @@
 
 import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
-
 import Tag from './Tag';
+import { IconList } from '../../utils/Icon';
+import sectorsList from '../../helpers/sectorsList.js';
 
 <Meta
   title="Components/Feedback/Tag"
@@ -11,69 +12,214 @@ import Tag from './Tag';
   decorators={[withDesign]}
 />
 
-# Tag
-
-The Use of Tags in e.g. Product, Content or Gallery cards is intended to be a visual feedback of the status of an associated item. 
-
 export const Template = (args) => <Tag {...args}/>;
+
+export const argTypes = {
+  icon: {
+    table: {
+      category: 'Icon',
+    },
+    options: [null, ...IconList],
+  },
+  iconAlign: {
+    table: {
+      category: 'Icon',
+    },
+  },
+  theme: {
+    table: {
+      category: 'Sector'
+    },
+  },
+  sector: {
+    table: {
+      category: 'Sector'
+    },
+    options: [null, ...sectorsList],
+  },
+  className: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  cssStyles: {
+    table: {
+      category: 'Styles',
+    },
+  },
+};
+
+export const figmaDesign = {
+  design: {
+    name: 'Figma Design',
+    type: 'figma',
+    url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=134%3A3299',
+  },
+}
+
+# Tags
+
+The Use of Tags in e.g. Product, Content or Gallery cards is intended to be a visual feedback of the status of an associated item.
+
+## Types
+
+### Signpost
+
+#### Label
 
 <Canvas>
   <Story
     name="Tag"
     args={{
       label: 'Label',
+      variant: 'primary',
+      type: 'label',
+      size: 'm',
+      theme: 'light'
     }}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=134%3A3299',
-      },
-    }}
+    argTypes={argTypes}
+    parameters={figmaDesign}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<Canvas>
-  <Story
-    name="Now Live"
-    args={{
-      label: 'Now Live',
-      live: true,
-    }}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=134%3A3299',
-      },
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
+#### Curator’s Pick
 
 <Canvas>
-  <Story
-    name="Curator’s Pick"
-    args={{
-      headerLabel: 'Curator’s Pick',
-      label: 'Name goes here',
-    }}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=134%3A3299',
-      },
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+  <Tag
+    label="Curator’s pick | Example Name"
+    onClick={() => {}}
+    size="m"
+    type="curator"
+  />
 </Canvas>
+
+
+#### Premium
+
+<Canvas>
+  <Tag
+  label="Label"
+  onClick={() => {}}
+  size="m"
+  theme="dark"
+  type="premium"
+/>
+</Canvas>
+
+
+### Filterable
+
+<Canvas>
+  
+<Tag
+  icon="close"
+  label="Tag"
+  onClick={() => {}}
+  size="m"
+  theme="dark"
+  type="filterable"
+/>
+</Canvas>
+
+### Sectors
+
+<Canvas>
+  <Tag
+    label="Meridians"
+    onClick={() => {}}
+    sector="meridians"
+    size="m"
+    type="sectors"
+  />
+</Canvas>
+
+## Options
+
+### Variants
+
+#### Signpost - Label
+
+<Canvas>
+  <Tag
+    label="Label"
+    onClick={() => {}}
+    size="m"
+  />
+  <Tag
+    label="Label"
+    onClick={() => {}}
+    size="m"
+    variant="secondary"
+  />
+</Canvas>
+
+#### Signpost - Label with Leading icon
+
+<Canvas>
+  <Tag
+    icon="certificate"
+    iconAlign="left"
+    label="Leading Icon"
+    onClick={() => {}}
+    size="m"
+  />
+  <Tag
+    icon="certificate"
+    iconAlign="left"
+    label="Leading Icon"
+    onClick={() => {}}
+    size="m"
+    variant="secondary"
+  />
+</Canvas>
+
+#### Signpost - Label with Trailing icon
+
+<Canvas>
+  <Tag
+    icon="certificate"
+    iconAlign="right"
+    label="Trailing Icon"
+    onClick={() => {}}
+    size="m"
+  />
+  <Tag
+    icon="certificate"
+    iconAlign="right"
+    label="Trailing Icon"
+    onClick={() => {}}
+    size="m"
+    variant="secondary"
+  />
+</Canvas>
+
+### Sectors 
+
+####  Light Theme
+
+<Canvas>
+  <Tag
+  label="Meridians"
+  onClick={() => {}}
+  sector="meridians"
+  type="sectors"
+/>
+</Canvas>
+
+#### Dark Theme
+
+<Canvas style={{ backgroundColor: 'black' }}>
+  <Tag
+  label="Meridians"
+  onClick={() => {}}
+  sector="meridians"
+  theme="dark"
+  type="sectors"
+/>
+</Canvas>
+
+## Properties
 
 <ArgsTable of={Tag} />
