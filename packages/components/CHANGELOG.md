@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.17.1...@mch-group/uikit-components@0.17.2) (2022-02-02)
+
+
+### Bug Fixes
+
+* **navigation:** fixed mobile user profile styles ([99e66e6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/99e66e62053297d6fa5f4b0e8b334a147e62588c))
+
+
+
+
+
 ## [0.17.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.17.0...@mch-group/uikit-components@0.17.1) (2022-02-01)
 
 
