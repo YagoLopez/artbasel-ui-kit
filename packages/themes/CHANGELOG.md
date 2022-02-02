@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.17.2...@mch-group/uikit-themes@0.18.0) (2022-02-02)
+
+
+### Features
+
+* added Tags component ([b3a5edd](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/b3a5edddcfb622ee6dd9e8caeb42ea0e07fdfd40))
+
+
+
+
+
 ## [0.17.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.17.1...@mch-group/uikit-themes@0.17.2) (2022-02-02)
 
 
