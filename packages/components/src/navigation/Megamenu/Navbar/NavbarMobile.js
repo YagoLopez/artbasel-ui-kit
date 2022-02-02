@@ -39,11 +39,11 @@ const NavbarMobile = ({
     if (visibleLinks) {
       setContainerIsVisible(true);
       setTimeout(() => SetOptionsIsVisible(true), 50);
-      document.body.style.position = 'fixed';
+      document.body.style.overflow = 'hidden';
     } else {
       SetOptionsIsVisible(false);
       setTimeout(() => setContainerIsVisible(false), 500);
-      document.body.style.position = '';
+      document.body.style.overflow = '';
     }
   }, [visibleLinks]);
 

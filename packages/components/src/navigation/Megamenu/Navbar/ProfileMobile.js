@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -13,6 +13,9 @@ const ProfileMobile = ({
   userData: { name: userName, vipStatus, isUserLoggedIn },
   welcomeHeader,
 }) => {
+  const [containerIsVisible, setContainerIsVisible] = useState(false);
+  const [optionsIsVisible, SetOptionsIsVisible] = useState(false);
+
   const onClickAction = useCallback(() => {
     onLogout();
     setIsVisible(null);
@@ -20,15 +23,21 @@ const ProfileMobile = ({
 
   useEffect(() => {
     if (isVisible) {
-      document.body.style.position = 'fixed';
+      setContainerIsVisible(true);
+      setTimeout(() => SetOptionsIsVisible(true), 50);
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.position = '';
+      SetOptionsIsVisible(false);
+      setTimeout(() => setContainerIsVisible(false), 500);
+      document.body.style.overflow = '';
     }
   }, [isVisible]);
 
   return (
-    <Container className={ classnames('navlinks-mobile-container', { visible: isVisible }) }>
-      <div className="navlinks-mobile-section">
+    <Container className={ classnames('navlinks-mobile-container', { visible: containerIsVisible }) }>
+       <div className={ classnames('navlinks-mobile-section', {
+         visible: optionsIsVisible,
+       }) }>
         <div className={classnames('mobile-item-left', { 'd-none': !isUserLoggedIn })}>
           <h5 className='navlink-mobile-header'>
             <div className='navlink-mobile link-profile-header justify-content-between'>

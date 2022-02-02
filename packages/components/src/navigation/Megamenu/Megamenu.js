@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { Container } from '../../structure/Grid';
-
 import { Navbar } from './Navbar';
 import NavbarMobile from './Navbar/NavbarMobile';
 import MenuFlyout from './Flyout/MenuFlyout';
@@ -46,7 +44,7 @@ const MegaMenuBuilder = ({
 
   return (
     <>
-      <div style={navBarAnimation} className="sticky-top">
+      <div style={navBarAnimation} className="sticky-top navbar-parent-container">
         <div className="d-none d-lg-block">
           <Navbar
             scrolled={scrolled}

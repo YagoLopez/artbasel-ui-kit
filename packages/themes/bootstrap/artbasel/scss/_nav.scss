@@ -28,10 +28,13 @@
   }
 }
 
+.navbar-parent-container {
+  background-color: $color-mch-white;
+  width: 100vw;
+}
 .navbar-container {
   position: relative;
   z-index: 1100 !important;
-  background-color: $color-mch-white;
 }
 
 .navbar {
@@ -212,7 +215,7 @@
   }
 
   @include media-breakpoint-up(md) {
-    width: 100vw;
+    width: calc(100vw - 391px);
     height: 100vh;
   }
 
