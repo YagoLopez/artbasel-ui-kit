@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.23.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.22.0...@mch-group/uikit-components@0.23.0) (2022-02-03)
+
+
+### Bug Fixes
+
+* **step indicator:** Export Step indicator ([0e9abcb](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/0e9abcbeb9501e7e566fb9ef0104a4dc5c95e6f8))
+
+
+### Features
+
+* **navigation:** added Megamenu documentation ([4601d49](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/4601d492feb46e15eda8aeeb717430e09adc037b))
+
+
+
+
+
 # [0.22.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.21.0...@mch-group/uikit-components@0.22.0) (2022-02-03)
 
 
