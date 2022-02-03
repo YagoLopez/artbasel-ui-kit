@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { Navbar } from './Navbar';
@@ -12,117 +12,157 @@ const { Validator } = require('jsonschema');
 
 const v = new Validator();
 
-const MegaMenuBuilder = ({
-  menuData, onSearch, profileData, profileWelcomeHeader, userData, onLogout,
-  loggedCollectionUrl, unloggedCollectionUrl,
+const MegaMenuBuilder = forwardRef(
+  (
+    {
+      menuData,
+      onSearch,
+      profileData,
+      profileWelcomeHeader,
+      userData,
+      onLogout,
+      welcomeHeader,
+      loggedCollectionUrl,
+      unloggedCollectionUrl,
+    },
+    ref,
+  ) => {
+    const [visibleMenu, setVisibleMenu] = useState(null);
+    const [scrolled, setScrolled] = useState(false);
 
-}) => {
-  const [visibleMenu, setVisibleMenu] = useState(null);
-  const [scrolled, setScrolled] = useState(false);
+    const navBarAnimation = {
+      transform: `translateY(${scrolled ? -105 : 0}px)`,
+      transitionDuration: '500ms',
+    };
 
-  const navBarAnimation = { transform: `translateY(${scrolled ? -105 : 0}px)`, transitionDuration: '500ms' };
+    useEffect(() => {
+      let oldValue = 0;
+      let newValue = 0;
 
-  const onListenScroll = () => {
-    let oldValue = 0;
-    let newValue = 0;
-    window.addEventListener('scroll', () => {
-      newValue = window.pageYOffset;
-      if (oldValue < newValue && newValue > 100) {
-        setScrolled(true);
-      } else if (oldValue > newValue) {
-        setScrolled(false);
-      }
-      oldValue = newValue;
-    });
-  };
+      const onListenScroll = () => {
+        newValue = window.pageYOffset;
+        if (oldValue < newValue && newValue > 100) {
+          setScrolled(true);
+        } else if (oldValue > newValue) {
+          setScrolled(false);
+        }
+        oldValue = newValue;
+      };
 
-  useEffect(() => {
-    onListenScroll();
-    return onListenScroll();
-  }, []);
+      window.addEventListener('scroll', onListenScroll);
 
-  return (
-    <>
-      <div style={navBarAnimation} className="sticky-top navbar-parent-container">
-        <div className="d-none d-lg-block">
-          <Navbar
-            scrolled={scrolled}
+      return () => {
+        window.removeEventListener('scroll', onListenScroll);
+      };
+    }, []);
+
+    return (
+      <>
+        <div
+          style={navBarAnimation}
+          className="sticky-top navbar-parent-container"
+          ref={ref}
+        >
+          <div className="d-none d-lg-block">
+            <Navbar
+              scrolled={scrolled}
+              menuData={menuData}
+              profileData={profileData}
+              onLogout={onLogout}
+              visibleMenu={visibleMenu}
+              setVisibleMenu={setVisibleMenu}
+              userData={userData}
+              loggedCollectionUrl={loggedCollectionUrl}
+              unloggedCollectionUrl={unloggedCollectionUrl}
+              welcomeHeader={welcomeHeader}
+            />
+          </div>
+          <div className="d-lg-none">
+            <NavbarMobile
+              menuData={menuData}
+              profileData={profileData}
+              onLogout={onLogout}
+              visibleMenu={visibleMenu}
+              setVisibleMenu={setVisibleMenu}
+              userData={userData}
+              welcomeHeader={welcomeHeader}
+              loggedCollectionUrl={loggedCollectionUrl}
+              unloggedCollectionUrl={unloggedCollectionUrl}
+            />
+          </div>
+          <div className="megamenu-underline d-md-none d-lg-inline" />
+        </div>
+        <div className="d-none d-lg-block sticky-top sticky-flyout">
+          <MenuFlyout
             menuData={menuData}
-            profileData={profileData}
-            onLogout={onLogout}
             visibleMenu={visibleMenu}
             setVisibleMenu={setVisibleMenu}
             userData={userData}
             loggedCollectionUrl={loggedCollectionUrl}
             unloggedCollectionUrl={unloggedCollectionUrl}
-            profileWelcomeHeader={ profileWelcomeHeader }
+            profileWelcomeHeader={profileWelcomeHeader}
             onSearch={onSearch}
           />
         </div>
-        <div className="d-lg-none">
-          <NavbarMobile
+        <div className="d-lg-none sticky-top">
+          <MenuFlyoutMobile
             menuData={menuData}
-            profileData={profileData}
-            onLogout={onLogout}
             visibleMenu={visibleMenu}
             setVisibleMenu={setVisibleMenu}
             userData={userData}
             profileWelcomeHeader={profileWelcomeHeader}
             loggedCollectionUrl={loggedCollectionUrl}
-            unloggedCollectionUrl={ unloggedCollectionUrl }
+            unloggedCollectionUrl={unloggedCollectionUrl}
             onSearch={onSearch}
           />
         </div>
-        <div className="megamenu-underline d-md-none d-lg-inline" />
-      </div>
-      <div className="d-none d-lg-block sticky-top sticky-flyout">
-        <MenuFlyout
-          menuData={menuData}
-          visibleMenu={visibleMenu}
-          setVisibleMenu={setVisibleMenu}
-        />
-      </div>
-      <div className="d-lg-none sticky-top">
-        <MenuFlyoutMobile
-          menuData={menuData}
-          visibleMenu={visibleMenu}
-          setVisibleMenu={setVisibleMenu}
-        />
-      </div>
-    </>
-  );
-};
-
-const Megamenu = ({
-  menuData, profileData,
-  onLogout, userData,
-  loggedCollectionUrl,
-  unloggedCollectionUrl, profileWelcomeHeader, onSearch,
-}) => {
-  const jsonValidation = v.validate(menuData, schema);
-  const { errors } = jsonValidation;
-  if (errors.length > 0) {
-    console.log(errors);
-    return (
-      <p>
-        Megamenu Component: Error Validation JSON Schema. Please check console
-        log.
-      </p>
+      </>
     );
-  }
-  return (
-    <MegaMenuBuilder
-      profileData={profileData}
-      onLogout={onLogout}
-      menuData={menuData}
-      userData={userData}
-      profileWelcomeHeader={profileWelcomeHeader}
-      loggedCollectionUrl={loggedCollectionUrl}
-      unloggedCollectionUrl={ unloggedCollectionUrl }
-      onSearch={onSearch}
-    />
-  );
-};
+  },
+);
+
+const Megamenu = forwardRef(
+  (
+    {
+      menuData,
+      profileData,
+      onLogout,
+      userData,
+      loggedCollectionUrl,
+      unloggedCollectionUrl,
+      profileWelcomeHeader,
+      onSearch,
+    },
+    ref,
+  ) => {
+    const jsonValidation = v.validate(menuData, schema);
+    const { errors } = jsonValidation;
+    if (errors.length > 0) {
+      console.log(errors);
+      return (
+        <p>
+          Megamenu Component: Error Validation JSON Schema. Please check console
+          log.
+        </p>
+      );
+    }
+    return (
+      <MegaMenuBuilder
+        profileData={profileData}
+        onLogout={onLogout}
+        menuData={menuData}
+        userData={userData}
+        profileWelcomeHeader={profileWelcomeHeader}
+        loggedCollectionUrl={loggedCollectionUrl}
+        unloggedCollectionUrl={unloggedCollectionUrl}
+        ref={ref}
+        onSearch={onSearch}
+      />
+    );
+  },
+);
+
+MegaMenuBuilder.displayName = 'MegaMenuBuilder';
 
 MegaMenuBuilder.propTypes = {
   menuData: PropTypes.object.isRequired,
@@ -138,6 +178,8 @@ MegaMenuBuilder.propTypes = {
   unloggedCollectionUrl: PropTypes.string.isRequired,
   onSearch: PropTypes.func.isRequired,
 };
+
+Megamenu.displayName = 'Megamenu';
 
 Megamenu.propTypes = {
   menuData: PropTypes.object.isRequired,
