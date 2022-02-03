@@ -21,10 +21,14 @@ const NavbarMobile = ({
   profileWelcomeHeader,
   loggedCollectionUrl,
   unloggedCollectionUrl,
+  onSearch,
 }) => {
   if (!menuData) {
     return null;
   }
+
+  const [searchText, setSearchText] = useState(null);
+
   const [visibleLinks, setVisibleLinks] = useState(false);
   const [visibleProfile, setVisibleProfile] = useState(false);
 
@@ -46,6 +50,15 @@ const NavbarMobile = ({
       document.body.style.overflow = '';
     }
   }, [visibleLinks]);
+
+  const onSearchChangeHandler = (event) => {
+    if (event.target.value !== '') { setSearchText(event.target.value); }
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    onSearch(searchText);
+  };
 
   return (
     <>
@@ -73,7 +86,9 @@ const NavbarMobile = ({
             <ButtonIcon icon="search" />
           </Col>
           <Col className="px-3 px-md-5 d-none d-md-block">
-            <Search placeholder="Search for artworks, events, galleries..." />
+            <form onSubmit={submitHandler}>
+              <Search placeholder="Search for artworks, events, galleries..." onChange={ onSearchChangeHandler } />
+            </form>
           </Col>
           <Col className="col-auto d-lg-none">
             <ButtonIcon icon="guest" onClick={() => setVisibleProfile(!visibleProfile)}/>
@@ -182,6 +197,8 @@ NavbarMobile.propTypes = {
   profileWelcomeHeader: PropTypes.string.isRequired,
   loggedCollectionUrl: PropTypes.string.isRequired,
   unloggedCollectionUrl: PropTypes.string.isRequired,
+  onSearch: PropTypes.func.isRequired,
+
 };
 
 export default NavbarMobile;
