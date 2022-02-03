@@ -34,16 +34,16 @@ const Carousel = ({
     ...options,
   };
 
-  const enableArrow = (arrow) => {
-    if (arrow.current.classList.contains('disabled')) {
-      arrow.current.classList.remove('disabled');
-      arrow.current.disabled = false;
+  const enableArrow = ({ current }) => {
+    if (current?.classList.contains('disabled')) {
+      current.classList.remove('disabled');
+      current.disabled = false;
     }
   };
-  const disableArrow = (arrow) => {
-    if (!arrow.current.classList.contains('disabled')) {
-      arrow.current.classList.add('disabled');
-      arrow.current.disabled = true;
+  const disableArrow = ({ current }) => {
+    if (!current?.classList.contains('disabled')) {
+      current.classList.add('disabled');
+      current.disabled = true;
     }
   };
 
@@ -93,7 +93,7 @@ const Carousel = ({
 
   return (
     <div ref={carousel}
-      data-textid="mch-carousel"
+      data-testid="mch-carousel"
       style={cssStyles}
       className={classnames(
         'carousel-container pb-9 pb-xl-11',
@@ -145,6 +145,7 @@ Carousel.propTypes = {
 };
 
 Carousel.defaultProps = {
+  title: null,
   options: {
     width: '100%',
     rewind: false,

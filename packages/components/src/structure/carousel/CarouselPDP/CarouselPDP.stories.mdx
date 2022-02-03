@@ -1,0 +1,85 @@
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+import CarouselPDP from './CarouselPDP.js';
+import { Container, Row, Col } from '../../Grid';
+
+<Meta
+  title="Components/Structure/Carousel/Carousel PDP"
+  component={CarouselPDP}
+  decorators={[withDesign]}
+/>
+
+export const argTypes = {
+  cssStyles: {
+    table: {
+      category: 'Styles',
+    },
+  },
+  showBackButton: {
+    table: {
+      category: 'CarouselPDP',
+    },
+  },
+  goBack: {
+    table: {
+      category: 'CarouselPDP',
+    },
+  },
+  onExpand: {
+    table: {
+      category: 'CarouselPDP',
+    },
+  },
+};
+
+## Product Detail Page Carousel
+
+Used in Product Detail Page with mobile devices instead of displaying several images in a column.
+
+<Canvas>
+  <Story
+    name="Carousel PDP"
+    argTypes={argTypes}
+    args={{}}
+    parameters={{
+      design: {
+        productName: 'Figma Design',
+        type: 'figma',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=2794%3A41144',
+      },
+    }}
+  >
+    <Container>
+      <Row>
+        <Col>
+          <CarouselPDP showBackButton={true}>
+            <CarouselPDP.Slide>
+              <img src="https://source.unsplash.com/random/600x600?sig=1" alt="img" />
+            </CarouselPDP.Slide>
+            <CarouselPDP.Slide>
+              <img src="https://source.unsplash.com/random/600x300?sig=1" alt="img" />
+            </CarouselPDP.Slide>
+            <CarouselPDP.Slide>
+              <img src="https://source.unsplash.com/random/500x800?sig=1" alt="img" />
+            </CarouselPDP.Slide>
+            <CarouselPDP.Slide>
+              <img src="https://source.unsplash.com/random/800x350?sig=1" alt="img" />
+            </CarouselPDP.Slide>
+          </CarouselPDP>
+        </Col>
+      </Row>
+    </Container>
+  </Story>
+</Canvas>
+
+## Properties
+
+<br />
+
+### CarouselPDP
+
+<ArgsTable of={CarouselPDP} />
+
+### CarouselPDP.Slide
+
+<ArgsTable of={CarouselPDP.Slide} />
