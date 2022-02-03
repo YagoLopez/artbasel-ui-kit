@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.23.1...@mch-group/uikit-components@0.23.2) (2022-02-03)
+
+**Note:** Version bump only for package @mch-group/uikit-components
+
+
+
+
+
 ## [0.23.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.23.0...@mch-group/uikit-components@0.23.1) (2022-02-03)
 
 
