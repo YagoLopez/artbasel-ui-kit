@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.21.0...@mch-group/uikit-components@0.22.0) (2022-02-03)
+
+
+### Bug Fixes
+
+* **navigation:** Added ref handle as prop in Megamenu ([f0bb024](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/f0bb024371c11d2353daae871789d831b39d6d2a))
+
+
+### Features
+
+* **carouselpdp:** add new carousel component for PDP mobile page ([d2779fa](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d2779fa0af7f0595a1afa93cd3cf05882da7b64a))
+
+
+
+
+
 # [0.21.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.20.0...@mch-group/uikit-components@0.21.0) (2022-02-03)
 
 

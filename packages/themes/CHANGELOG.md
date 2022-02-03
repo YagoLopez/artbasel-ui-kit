@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.18.0...@mch-group/uikit-themes@0.19.0) (2022-02-03)
+
+
+### Bug Fixes
+
+* **carousel:** Fixed styles ([03d5447](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/03d54471004dd41deeb0579004a61453fc66e40f))
+
+
+### Features
+
+* **carouselpdp:** add new carousel component for PDP mobile page ([d2779fa](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d2779fa0af7f0595a1afa93cd3cf05882da7b64a))
+
+
+
+
+
 # [0.18.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.17.2...@mch-group/uikit-themes@0.18.0) (2022-02-02)
 
 
