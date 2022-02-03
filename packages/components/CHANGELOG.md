@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.19.1...@mch-group/uikit-components@0.20.0) (2022-02-03)
+
+
+### Features
+
+* **navigation:** added search action to megamenu ([c73587f](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/c73587f7305616286d2476b0347b05012e9c862f))
+
+
+
+
+
 ## [0.19.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.19.0...@mch-group/uikit-components@0.19.1) (2022-02-03)
 
 **Note:** Version bump only for package @mch-group/uikit-components
