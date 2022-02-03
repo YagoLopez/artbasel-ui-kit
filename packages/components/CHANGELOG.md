@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.23.0...@mch-group/uikit-components@0.23.1) (2022-02-03)
+
+
+### Bug Fixes
+
+* **navigation:** fixed megamenu search and and user profile props ([2d168b8](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/2d168b8d40c9478eeb3fdfc56d56e641389df2ba))
+
+
+
+
+
 # [0.23.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.22.0...@mch-group/uikit-components@0.23.0) (2022-02-03)
 
 
