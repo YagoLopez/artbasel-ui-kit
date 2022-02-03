@@ -21,7 +21,6 @@ const MegaMenuBuilder = forwardRef(
       profileWelcomeHeader,
       userData,
       onLogout,
-      welcomeHeader,
       loggedCollectionUrl,
       unloggedCollectionUrl,
     },
@@ -74,7 +73,8 @@ const MegaMenuBuilder = forwardRef(
               userData={userData}
               loggedCollectionUrl={loggedCollectionUrl}
               unloggedCollectionUrl={unloggedCollectionUrl}
-              welcomeHeader={welcomeHeader}
+              profileWelcomeHeader={ profileWelcomeHeader }
+              onSearch={onSearch}
             />
           </div>
           <div className="d-lg-none">
@@ -85,9 +85,10 @@ const MegaMenuBuilder = forwardRef(
               visibleMenu={visibleMenu}
               setVisibleMenu={setVisibleMenu}
               userData={userData}
-              welcomeHeader={welcomeHeader}
+              profileWelcomeHeader={profileWelcomeHeader}
               loggedCollectionUrl={loggedCollectionUrl}
-              unloggedCollectionUrl={unloggedCollectionUrl}
+              unloggedCollectionUrl={ unloggedCollectionUrl }
+              onSearch={onSearch}
             />
           </div>
           <div className="megamenu-underline d-md-none d-lg-inline" />
@@ -100,8 +101,6 @@ const MegaMenuBuilder = forwardRef(
             userData={userData}
             loggedCollectionUrl={loggedCollectionUrl}
             unloggedCollectionUrl={unloggedCollectionUrl}
-            profileWelcomeHeader={profileWelcomeHeader}
-            onSearch={onSearch}
           />
         </div>
         <div className="d-lg-none sticky-top">
@@ -110,10 +109,8 @@ const MegaMenuBuilder = forwardRef(
             visibleMenu={visibleMenu}
             setVisibleMenu={setVisibleMenu}
             userData={userData}
-            profileWelcomeHeader={profileWelcomeHeader}
             loggedCollectionUrl={loggedCollectionUrl}
             unloggedCollectionUrl={unloggedCollectionUrl}
-            onSearch={onSearch}
           />
         </div>
       </>
