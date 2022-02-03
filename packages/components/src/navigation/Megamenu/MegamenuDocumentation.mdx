@@ -49,29 +49,12 @@ import Megamenu from './Megamenu';
 
 ## Data Samples
 
-### menuData Sample
+1. UserData
+2. profileData
+3. menuData
+4. menuData JSON Schema Validation
 
-This is the menuData used in this Megamenu sample:
-
-<iframe
-  src="Menudata.example.json"
-  height="400"
-  width="100%"
-  style={{ border: '1px solid #eee' }}
-/>
-
-### menuData JSON Validation Schema
-
-This is the JSON schema used by Meganeu to validate the menuData before render the content.
-
-<iframe
-  src="Menudata.schema.json"
-  height="400"
-  width="100%"
-  style={{ border: '1px solid #eee' }}
-/>
-
-### userData Sample
+### 1. userData Sample
 
 ```json
 {
@@ -81,7 +64,7 @@ This is the JSON schema used by Meganeu to validate the menuData before render t
 }
 ```
 
-### profileData Sample
+### 2. profileData Sample
 
 ```json
 {
@@ -103,5 +86,583 @@ This is the JSON schema used by Meganeu to validate the menuData before render t
     },
     { "type": "action", "label": "Sign out" }
   ]
+}
+```
+
+### 3. menuData Sample
+
+This is the menuData used in this Megamenu sample:
+
+```json
+{
+  "logoLink": "https://artbasel.com",
+  "entries": [
+    {
+      "label": "Fairs",
+      "mobileLabel": "All Fairs",
+      "link": "/fairs",
+      "flyout": {
+        "menuSection": {
+          "cols": [
+            {
+              "menuEntries": [
+                {
+                  "title": "Basel",
+                  "menuItems": [
+                    { "label": "Overview", "link": "/basel/overview" },
+                    { "label": "Galleries ", "link": "/basel/galleries" },
+                    { "label": "Events", "link": "/basel/events" },
+                    { "label": "Tickets", "link": "/basel/tickets" },
+                    {
+                      "label": "Visitors Information",
+                      "link": "/basel/visitors"
+                    },
+                    { "label": "Partners", "link": "/basel/partners" }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "menuEntries": [
+                {
+                  "title": "Miami Beach",
+                  "menuItems": [
+                    { "label": "Overview", "link": "/miami/overview" },
+                    { "label": "Galleries ", "link": "/miami/galleries" },
+                    { "label": "Events", "link": "/miami/events" },
+                    { "label": "Tickets", "link": "/miami/tickets" },
+                    {
+                      "label": "Visitors Information",
+                      "link": "/miami/visitors"
+                    },
+                    { "label": "Partners", "link": "/miami/partners" }
+                  ]
+                }
+              ]
+            },
+            {
+              "menuEntries": [
+                {
+                  "title": "Hong Kong",
+                  "menuItems": [
+                    { "label": "Overview", "link": "/hongkong/overview" },
+                    { "label": "Galleries ", "link": "/hongkong/galleries" },
+                    { "label": "Events", "link": "/hongkong/events" },
+                    { "label": "Tickets", "link": "/hongkong/tickets" },
+                    {
+                      "label": "Visitors Information",
+                      "link": "/hongkong/visitors"
+                    },
+                    { "label": "Partners", "link": "/hongkong/partners" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "cardSection": {
+          "cols": [
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "Art Basel | Basel",
+                  "cardTitle": "Buy Tickets Now",
+                  "cardType": "H",
+                  "imageUrl": "https://picsum.photos/601/402",
+                  "link": "https://artbasel.com"
+                },
+                {
+                  "cardSubtitle": "Become a Vip",
+                  "cardTitle": "Vip Services",
+                  "cardType": "H",
+                  "imageUrl": "https://picsum.photos/600/402",
+                  "link": "https://artbasel.com"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Shop",
+      "mobileLabel": "All Artworks",
+      "link": "/shop",
+      "flyout": {
+        "menuSection": {
+          "cols": [
+            {
+              "menuEntries": [
+                {
+                  "title": "Medium",
+                  "menuItems": [
+                    { "label": "Painting", "link": "/shop" },
+                    { "label": "Print ", "link": "/shop" },
+                    { "label": "Photography", "link": "/shop" },
+                    { "label": "Work on Paper", "link": "/shop" },
+                    { "label": "Mixed Media", "link": "/shop" },
+                    { "label": "Sculptures", "link": "/shop" },
+                    { "label": "See all", "link": "/shop" }
+                  ]
+                }
+              ]
+            },
+            {
+              "menuEntries": [
+                {
+                  "title": "Artist Nationality",
+                  "menuItems": [
+                    { "label": "British", "link": "/shop" },
+                    { "label": "Asian ", "link": "/shop" },
+                    { "label": "African", "link": "/shop" },
+                    { "label": "Tickets", "link": "/shop" },
+                    { "label": "American", "link": "/shop" },
+                    { "label": "Sell all", "link": "/shop" }
+                  ]
+                }
+              ]
+            },
+            {
+              "menuEntries": [
+                {
+                  "title": "Price",
+                  "menuItems": [
+                    { "label": "$50,000 and above", "link": "/shop" },
+                    { "label": "$25,000 - $50,000 ", "link": "/shop" },
+                    { "label": "$10,000 - $25,000 ", "link": "/shop" },
+                    { "label": "$5,000 - $10,000 ", "link": "/shop" },
+                    { "label": "$25,000 - $50,000 ", "link": "/shop" },
+                    { "label": "Sell all", "link": "/shop" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "cardSection": {
+          "cols": [
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "",
+                  "cardTitle": "New Arrivals",
+                  "cardType": "V",
+                  "imageUrl": "https://picsum.photos/400/601",
+                  "link": ""
+                }
+              ]
+            },
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "Featured:",
+                  "cardTitle": "Acrylic Pop Art",
+                  "cardType": "V",
+                  "imageUrl": "https://picsum.photos/400/602",
+                  "link": ""
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Viewing Rooms",
+      "mobileLabel": "",
+      "link": "/ovr/show"
+    },
+    {
+      "label": "Editorial",
+      "mobileLabel": "All Stories",
+      "link": "/editorial",
+      "flyout": {
+        "menuSection": {
+          "cols": [
+            {
+              "menuEntries": [
+                {
+                  "title": "Discover",
+                  "menuItems": [
+                    { "label": "Art Market", "link": "/discover" },
+                    { "label": "Conversations ", "link": "/discover" },
+                    { "label": "Curator's Pick", "link": "/discover" },
+                    { "label": "Meet the collectors", "link": "/discover" },
+                    { "label": "See all", "link": "/discover" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "cardSection": {
+          "cols": [
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "Meet",
+                  "cardTitle": "the Artists",
+                  "cardType": "V",
+                  "imageUrl": "https://picsum.photos/400/603",
+                  "link": ""
+                }
+              ]
+            },
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "Art &",
+                  "cardTitle": "Lifestyle",
+                  "cardType": "V",
+                  "imageUrl": "https://picsum.photos/400/604",
+                  "link": ""
+                }
+              ]
+            },
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "Intersections:",
+                  "cardTitle": "Podcast",
+                  "cardType": "V",
+                  "imageUrl": "https://picsum.photos/400/605",
+                  "link": ""
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Galleries",
+      "mobileLabel": "All Galleries",
+      "link": "/galleries",
+      "flyout": {
+        "menuSection": {
+          "cols": [
+            {
+              "menuEntries": [
+                {
+                  "title": "Fairs",
+                  "menuItems": [
+                    { "label": "Basel", "link": "/basel" },
+                    { "label": "Miami Beach", "link": "/miami" },
+                    { "label": "Hong Kong", "link": "/hongkong" }
+                  ]
+                },
+                {
+                  "title": "Gallery Events",
+                  "menuItems": [
+                    { "label": "Overview", "link": "/galleries" },
+                    { "label": "Popular Events", "link": "/galleries" },
+                    { "label": "This Week", "link": "/galleries" },
+                    { "label": "Virtual Events", "link": "/galleries" },
+                    { "label": "Art Basel OVR Event", "link": "/galleries" }
+                  ]
+                }
+              ]
+            },
+            {
+              "menuEntries": [
+                {
+                  "title": "Locations",
+                  "menuItems": [
+                    { "label": "Barcelona", "link": "/galleries" },
+                    { "label": "London", "link": "/galleries" },
+                    { "label": "Berlin", "link": "/galleries" },
+                    { "label": "New York", "link": "/galleries" },
+                    { "label": "Mexico City", "link": "/galleries" },
+                    { "label": "Instambul", "link": "/galleries" },
+                    { "label": "Los Angeles", "link": "/galleries" },
+                    { "label": "Miami", "link": "/galleries" },
+                    { "label": "Dubai", "link": "/galleries" },
+                    { "label": "Buenos Aires", "link": "/galleries" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+
+        "cardSection": {
+          "sectionTitle": "Featured Galleries",
+          "cols": [
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "Tokio",
+                  "cardTitle": "Anomaly",
+                  "cardType": "H",
+                  "imageUrl": "https://picsum.photos/600/405",
+                  "link": ""
+                },
+                {
+                  "cardSubtitle": "New York",
+                  "cardTitle": "Brooke Alexander, Inc.",
+                  "cardType": "H",
+                  "imageUrl": "https://picsum.photos/600/406",
+                  "link": ""
+                }
+              ]
+            },
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "Madrid",
+                  "cardTitle": "Galería Juana de Aizpuru",
+                  "cardType": "H",
+                  "imageUrl": "https://picsum.photos/600/407",
+                  "link": ""
+                },
+                {
+                  "cardSubtitle": "Madrid",
+                  "cardTitle": "Sabrina Amrani",
+                  "cardType": "H",
+                  "imageUrl": "https://picsum.photos/600/408",
+                  "link": ""
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
+```
+
+### 4. menuData JSON Validation Schema
+
+This is the JSON schema used by Megamenu to validate the menuData before render the content.
+
+```json
+{
+  "definitions": {},
+  "title": "Root",
+  "type": "object",
+  "required": ["entries", "logoLink"],
+  "properties": {
+    "logoLink": {
+      "$id": "#root/logoLink",
+      "title": "logoLink",
+      "type": "string",
+      "default": "",
+      "examples": ["https://artbasel.com"],
+      "pattern": "^.*$"
+    },
+    "entries": {
+      "$id": "#root/entries",
+      "title": "Entries",
+      "type": "array",
+      "default": [],
+      "items": {
+        "$id": "#root/entries/items",
+        "title": "Items",
+        "type": "object",
+        "required": ["label", "mobileLabel", "link"],
+        "properties": {
+          "label": {
+            "$id": "#root/entries/items/label",
+            "title": "Label",
+            "type": "string",
+            "default": "",
+            "examples": ["Fairs"],
+            "pattern": "^.*$"
+          },
+          "mobileLabel": {
+            "$id": "#root/entries/items/mobileLabel",
+            "title": "mobileLabel",
+            "type": "string",
+            "default": "",
+            "examples": ["All Fairs"],
+            "pattern": "^.*$"
+          },
+          "link": {
+            "$id": "#root/entries/items/link",
+            "title": "Link",
+            "type": "string",
+            "default": "",
+            "examples": ["/fairs"],
+            "pattern": "^.*$"
+          },
+          "flyout": {
+            "$id": "#root/entries/items/flyout",
+            "title": "Flyout",
+            "type": "object",
+            "required": ["menuSection", "cardSection"],
+            "properties": {
+              "menuSection": {
+                "$id": "#root/entries/items/flyout/menuSection",
+                "title": "Menusection",
+                "type": "object",
+                "required": ["cols"],
+                "properties": {
+                  "cols": {
+                    "$id": "#root/entries/items/flyout/menuSection/cols",
+                    "title": "Cols",
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                      "$id": "#root/entries/items/flyout/menuSection/cols/items",
+                      "title": "Items",
+                      "type": "object",
+                      "required": ["menuEntries"],
+                      "properties": {
+                        "menuEntries": {
+                          "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries",
+                          "title": "Menuentries",
+                          "type": "array",
+                          "default": [],
+                          "items": {
+                            "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries/items",
+                            "title": "Items",
+                            "type": "object",
+                            "required": ["title", "menuItems"],
+                            "properties": {
+                              "title": {
+                                "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries/items/title",
+                                "title": "Title",
+                                "type": "string",
+                                "default": "",
+                                "examples": ["Basel"],
+                                "pattern": "^.*$"
+                              },
+                              "menuItems": {
+                                "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries/items/menuItems",
+                                "title": "Menuitems",
+                                "type": "array",
+                                "default": [],
+                                "items": {
+                                  "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries/items/menuItems/items",
+                                  "title": "Items",
+                                  "type": "object",
+                                  "required": ["label", "link"],
+                                  "properties": {
+                                    "label": {
+                                      "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries/items/menuItems/items/label",
+                                      "title": "Label",
+                                      "type": "string",
+                                      "default": "",
+                                      "examples": ["Overview"],
+                                      "pattern": "^.*$"
+                                    },
+                                    "link": {
+                                      "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries/items/menuItems/items/link",
+                                      "title": "Link",
+                                      "type": "string",
+                                      "default": "",
+                                      "examples": ["/basel/overview"],
+                                      "pattern": "^.*$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "cardSection": {
+                "$id": "#root/entries/items/flyout/cardSection",
+                "title": "Cardsection",
+                "type": "object",
+                "required": ["cols"],
+                "properties": {
+                  "sectionTitle": {
+                    "$id": "#root/entries/items/flyout/cardSection/sectionTitle",
+                    "title": "Sectiontitle",
+                    "type": "string",
+                    "default": "",
+                    "examples": ["Featured Galleries"],
+                    "pattern": "^.*$"
+                  },
+                  "cols": {
+                    "$id": "#root/entries/items/flyout/cardSection/cols",
+                    "title": "Cols",
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                      "$id": "#root/entries/items/flyout/cardSection/cols/items",
+                      "title": "Items",
+                      "type": "object",
+                      "required": ["cards"],
+                      "properties": {
+                        "cards": {
+                          "$id": "#root/entries/items/flyout/cardSection/cols/items/cards",
+                          "title": "Cards",
+                          "type": "array",
+                          "default": [],
+                          "items": {
+                            "$id": "#root/entries/items/flyout/cardSection/cols/items/cards/items",
+                            "title": "Items",
+                            "type": "object",
+                            "required": [
+                              "cardTitle",
+                              "cardSubtitle",
+                              "cardType",
+                              "imageUrl",
+                              "link"
+                            ],
+                            "properties": {
+                              "cardTitle": {
+                                "$id": "#root/entries/items/flyout/cardSection/cols/items/cards/items/cardTitle",
+                                "title": "Cardtitle",
+                                "type": "string",
+                                "default": "",
+                                "examples": ["Vip Services"],
+                                "pattern": "^.*$"
+                              },
+                              "cardSubtitle": {
+                                "$id": "#root/entries/items/flyout/cardSection/cols/items/cards/items/cardSubtitle",
+                                "title": "Cardsubtitle",
+                                "type": "string",
+                                "default": "",
+                                "examples": ["Become a Vip"],
+                                "pattern": "^.*$"
+                              },
+                              "cardType": {
+                                "$id": "#root/entries/items/flyout/cardSection/cols/items/cards/items/cardType",
+                                "title": "Cardtype",
+                                "type": "string",
+                                "default": "",
+                                "examples": ["H"],
+                                "enum": ["H", "V"],
+                                "pattern": "^.*$"
+                              },
+                              "imageUrl": {
+                                "$id": "#root/entries/items/flyout/cardSection/cols/items/cards/items/imageUrl",
+                                "title": "Imageurl",
+                                "type": "string",
+                                "default": "",
+                                "examples": [""],
+                                "pattern": "^.*$"
+                              },
+                              "link": {
+                                "$id": "#root/entries/items/flyout/cardSection/cols/items/cards/items/link",
+                                "title": "Link",
+                                "type": "string",
+                                "default": "",
+                                "examples": [""],
+                                "pattern": "^.*$"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 ```
