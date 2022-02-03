@@ -61,7 +61,7 @@ const ProfileMobile = ({
         <div className='mobile-item-right'>
           {
             options.filter(o => o.type === 'action').map(o => <p className="navlink-mobile-header item" key={ o.label }>
-                <a className="navlink-mobile link-profile link-logout text-medium" href={o.href}>
+                <a className="navlink-mobile link-profile link-logout text-medium" href={o.link}>
                   {o.label}
                 </a>
               </p>)
@@ -78,7 +78,7 @@ ProfileMobile.propTypes = {
       PropTypes.shape({
         type: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
-        href: PropTypes.string,
+        link: PropTypes.string,
       }),
     ),
   }).isRequired,

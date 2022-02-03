@@ -3,58 +3,75 @@
 import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
 
-import { Container, Row, Col } from '../../structure/Grid';
-import { ProductTile } from '../../structure';
-import MegamenuDemo from './Megamenu.demo';
 import Megamenu from './Megamenu';
-import menudata from './Menudata.example.json';
-import tiles from './ProductTilePage.example.json';
+import menuData from './Menudata.example.json';
+
+import MegamenuDocumentation from './MegamenuDocumentation.mdx';
 
 <Meta
   title="Navigation/Mega Menu"
-  component={MegamenuDemo}
+  component={Megamenu}
   decorators={[withDesign]}
 />
 
-export const Template = (args) => <MegamenuDemo {...args} />;
+export const Template = (args) => <Megamenu {...args} />;
 
-export const argTypes = {
-  menuData: { type: 'object' },
-  profile: {
-    options: ['Buyer Account', 'Anonymous Account', 'Gallery Account'],
-    type: 'select',
-  },
+export const handleOnSearch = (searchTerm) =>
+  console.log('Search term: ', searchTerm);
+
+export const handleOnLogout = () => console.log('Logged Out');
+
+export const profileData = {
+  options: [
+    {
+      type: 'link',
+      label: 'My Account',
+      link: '/dashboard/my-account',
+    },
+    {
+      type: 'link',
+      label: 'My Fairs & Events',
+      link: '/dashboard/my-fairs-events',
+    },
+    {
+      type: 'link',
+      label: 'My Gallery Dashboard',
+      link: '/dashboard/my-gallery-dashboard',
+    },
+    { type: 'action', label: 'Sign out' },
+  ],
 };
 
-<Canvas style={{ width: '1440px' }}>
-  <Story
-    name="Mega Menu"
-    argTypes={argTypes}
-    args={{
-      menuData: menudata,
-      profile: 'Buyer Account',
-      loggedCollectionUrl: '/collections/my-collections',
-      unloggedCollectionUrl: '/auth/login?return="/collections/my-collections"',
-      userData: {
-        name: 'Jose Gumpert Ros',
-        vipStatus: true,
-      },
-      profileWelcomeHeader: 'Welcome, ',
-    }}
-    parameters={{
-      layout: 'fullscreen',
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/3Aa83xoxTTGnObo9tURiCe/Navigation?node-id=120%3A2165',
-      },
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
+export const userData = {
+  name: 'Jose Gumpert Ros',
+  vipStatus: true,
+  isUserLoggedIn: true,
+};
 
-## Properties
-
-<ArgsTable of={Megamenu} />
+<Story
+  name="Mega Menu"
+  args={{
+    menuData: menuData,
+    onSearch: handleOnSearch,
+    userData: userData,
+    profileWelcomeHeader: 'Welcome, ',
+    profileData: profileData,
+    onLogout: handleOnLogout,
+    loggedCollectionUrl: 'https://artbasel.com/mycollections',
+    unloggedCollectionUrl: 'https://artbasel.com/access',
+  }}
+  parameters={{
+    layout: 'fullscreen',
+    docs: {
+      page: MegamenuDocumentation,
+    },
+    design: {
+      name: 'Figma Design',
+      type: 'figma',
+      url:
+        'https://www.figma.com/file/3Aa83xoxTTGnObo9tURiCe/Navigation?node-id=120%3A2165',
+    },
+  }}
+>
+  {Template.bind({})}
+</Story>

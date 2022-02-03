@@ -182,17 +182,34 @@ MegaMenuBuilder.propTypes = {
 Megamenu.displayName = 'Megamenu';
 
 Megamenu.propTypes = {
+  /** JSON object that contains all information to builkd the Navbar and the flyouts.
+  Please check bellow the JSON used on this megamenu test. */
   menuData: PropTypes.object.isRequired,
+  /** A function to be called when user submits a search.
+  The searched term is passed as argument. */
   onSearch: PropTypes.func.isRequired,
+  /** A JSON object with the
+  current user logged in. */
   userData: PropTypes.shape({
     name: PropTypes.string.isRequired,
     vipStatus: PropTypes.bool.isRequired,
     isUserLoggedIn: PropTypes.bool.isRequired,
   }).isRequired,
+  /** A string to be shown on the top of User profile flyout.
+   Ex: "Welcome, " */
   profileWelcomeHeader: PropTypes.string.isRequired,
+  /** A JSON object with the options to be shown in the User Profile Flyout.
+   Please check bellow a sample.
+  */
   profileData: PropTypes.object.isRequired,
+  /** A function to be called for Logout in the
+  User Profile Flyout. */
   onLogout: PropTypes.func.isRequired,
+  /** The Collection URL when the user is logged in.
+  Used in the Collection Icon. */
   loggedCollectionUrl: PropTypes.string.isRequired,
+  /** The Collection URL when the user is unlogged.
+  Used in the Collection Icon. */
   unloggedCollectionUrl: PropTypes.string.isRequired,
 };
 

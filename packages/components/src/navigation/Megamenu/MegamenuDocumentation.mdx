@@ -1,0 +1,107 @@
+<!--- MegamenuDocumentation.mdx --->
+
+import { ArgsTable } from '@storybook/addon-docs';
+import Megamenu from './Megamenu';
+
+# Megamenu Component
+
+## Usage
+
+```jsx
+<Megamenu
+  menuData={menuData}
+  onSearch={handleOnSearch}
+  userData={{
+    name: 'Jose Gumpert Ros',
+    vipStatus: true,
+    isUserLoggedIn: true,
+  }}
+  profileWelcomeHeader="Welcome, "
+  profileData={{
+    options: [
+      {
+        type: 'link',
+        label: 'My Account',
+        link: '/dashboard/my-account',
+      },
+      {
+        type: 'link',
+        label: 'My Fairs & Events',
+        link: '/dashboard/my-fairs-events',
+      },
+      {
+        type: 'link',
+        label: 'My Gallery Dashboard',
+        link: '/dashboard/my-gallery-dashboard',
+      },
+      { type: 'action', label: 'Sign out' },
+    ],
+  }}
+  onLogout={handleOnLogout}
+  loggedCollectionUrl="https://artbasel.com/mycollections"
+  unloggedCollectionUrl="https://artbasel.com/access"
+/>
+```
+
+## Properties
+
+<ArgsTable of={Megamenu} />
+
+## Data Samples
+
+### menuData Sample
+
+This is the menuData used in this Megamenu sample:
+
+<iframe
+  src="Menudata.example.json"
+  height="400"
+  width="100%"
+  style={{ border: '1px solid #eee' }}
+/>
+
+### menuData JSON Validation Schema
+
+This is the JSON schema used by Meganeu to validate the menuData before render the content.
+
+<iframe
+  src="Menudata.schema.json"
+  height="400"
+  width="100%"
+  style={{ border: '1px solid #eee' }}
+/>
+
+### userData Sample
+
+```json
+{
+  "name": "Jose Gumpert Ros",
+  "vipStatus": true,
+  "isUserLoggedIn": true
+}
+```
+
+### profileData Sample
+
+```json
+{
+  "options": [
+    {
+      "type": "link",
+      "label": "My Account",
+      "link": "/dashboard/my-account"
+    },
+    {
+      "type": "link",
+      "label": "My Fairs & Events",
+      "link": "/dashboard/my-fairs-events"
+    },
+    {
+      "type": "link",
+      "label": "My Gallery Dashboard",
+      "link": "/dashboard/my-gallery-dashboard"
+    },
+    { "type": "action", "label": "Sign out" }
+  ]
+}
+```
