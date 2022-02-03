@@ -9,12 +9,12 @@ const profileData = {
     {
       type: 'link',
       label: 'My Account',
-      href: '/dashboard/my-account',
+      link: '/dashboard/my-account',
     },
     {
       type: 'link',
       label: 'My Gallery Dashboard',
-      href: '/dashboard/gallery',
+      link: '/dashboard/gallery',
     },
     { type: 'action', label: 'Sign out' },
   ],

@@ -1,0 +1,337 @@
+{
+  "logoLink": "https://artbasel.com",
+  "entries": [
+    {
+      "label": "Fairs",
+      "mobileLabel": "All Fairs",
+      "link": "/fairs",
+      "flyout": {
+        "menuSection": {
+          "cols": [
+            {
+              "menuEntries": [
+                {
+                  "title": "Basel",
+                  "menuItems": [
+                    { "label": "Overview", "link": "/basel/overview" },
+                    { "label": "Galleries ", "link": "/basel/galleries" },
+                    { "label": "Events", "link": "/basel/events" },
+                    { "label": "Tickets", "link": "/basel/tickets" },
+                    {
+                      "label": "Visitors Information",
+                      "link": "/basel/visitors"
+                    },
+                    { "label": "Partners", "link": "/basel/partners" }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "menuEntries": [
+                {
+                  "title": "Miami Beach",
+                  "menuItems": [
+                    { "label": "Overview", "link": "/miami/overview" },
+                    { "label": "Galleries ", "link": "/miami/galleries" },
+                    { "label": "Events", "link": "/miami/events" },
+                    { "label": "Tickets", "link": "/miami/tickets" },
+                    {
+                      "label": "Visitors Information",
+                      "link": "/miami/visitors"
+                    },
+                    { "label": "Partners", "link": "/miami/partners" }
+                  ]
+                }
+              ]
+            },
+            {
+              "menuEntries": [
+                {
+                  "title": "Hong Kong",
+                  "menuItems": [
+                    { "label": "Overview", "link": "/hongkong/overview" },
+                    { "label": "Galleries ", "link": "/hongkong/galleries" },
+                    { "label": "Events", "link": "/hongkong/events" },
+                    { "label": "Tickets", "link": "/hongkong/tickets" },
+                    {
+                      "label": "Visitors Information",
+                      "link": "/hongkong/visitors"
+                    },
+                    { "label": "Partners", "link": "/hongkong/partners" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "cardSection": {
+          "cols": [
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "Art Basel | Basel",
+                  "cardTitle": "Buy Tickets Now",
+                  "cardType": "H",
+                  "imageUrl": "https://picsum.photos/601/402",
+                  "link": "https://artbasel.com"
+                },
+                {
+                  "cardSubtitle": "Become a Vip",
+                  "cardTitle": "Vip Services",
+                  "cardType": "H",
+                  "imageUrl": "https://picsum.photos/600/402",
+                  "link": "https://artbasel.com"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Shop",
+      "mobileLabel": "All Artworks",
+      "link": "/shop",
+      "flyout": {
+        "menuSection": {
+          "cols": [
+            {
+              "menuEntries": [
+                {
+                  "title": "Medium",
+                  "menuItems": [
+                    { "label": "Painting", "link": "/shop" },
+                    { "label": "Print ", "link": "/shop" },
+                    { "label": "Photography", "link": "/shop" },
+                    { "label": "Work on Paper", "link": "/shop" },
+                    { "label": "Mixed Media", "link": "/shop" },
+                    { "label": "Sculptures", "link": "/shop" },
+                    { "label": "See all", "link": "/shop" }
+                  ]
+                }
+              ]
+            },
+            {
+              "menuEntries": [
+                {
+                  "title": "Artist Nationality",
+                  "menuItems": [
+                    { "label": "British", "link": "/shop" },
+                    { "label": "Asian ", "link": "/shop" },
+                    { "label": "African", "link": "/shop" },
+                    { "label": "Tickets", "link": "/shop" },
+                    { "label": "American", "link": "/shop" },
+                    { "label": "Sell all", "link": "/shop" }
+                  ]
+                }
+              ]
+            },
+            {
+              "menuEntries": [
+                {
+                  "title": "Price",
+                  "menuItems": [
+                    { "label": "$50,000 and above", "link": "/shop" },
+                    { "label": "$25,000 - $50,000 ", "link": "/shop" },
+                    { "label": "$10,000 - $25,000 ", "link": "/shop" },
+                    { "label": "$5,000 - $10,000 ", "link": "/shop" },
+                    { "label": "$25,000 - $50,000 ", "link": "/shop" },
+                    { "label": "Sell all", "link": "/shop" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "cardSection": {
+          "cols": [
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "",
+                  "cardTitle": "New Arrivals",
+                  "cardType": "V",
+                  "imageUrl": "https://picsum.photos/400/601",
+                  "link": ""
+                }
+              ]
+            },
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "Featured:",
+                  "cardTitle": "Acrylic Pop Art",
+                  "cardType": "V",
+                  "imageUrl": "https://picsum.photos/400/602",
+                  "link": ""
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Viewing Rooms",
+      "mobileLabel": "",
+      "link": "/ovr/show"
+    },
+    {
+      "label": "Editorial",
+      "mobileLabel": "All Stories",
+      "link": "/editorial",
+      "flyout": {
+        "menuSection": {
+          "cols": [
+            {
+              "menuEntries": [
+                {
+                  "title": "Discover",
+                  "menuItems": [
+                    { "label": "Art Market", "link": "/discover" },
+                    { "label": "Conversations ", "link": "/discover" },
+                    { "label": "Curator's Pick", "link": "/discover" },
+                    { "label": "Meet the collectors", "link": "/discover" },
+                    { "label": "See all", "link": "/discover" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "cardSection": {
+          "cols": [
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "Meet",
+                  "cardTitle": "the Artists",
+                  "cardType": "V",
+                  "imageUrl": "https://picsum.photos/400/603",
+                  "link": ""
+                }
+              ]
+            },
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "Art &",
+                  "cardTitle": "Lifestyle",
+                  "cardType": "V",
+                  "imageUrl": "https://picsum.photos/400/604",
+                  "link": ""
+                }
+              ]
+            },
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "Intersections:",
+                  "cardTitle": "Podcast",
+                  "cardType": "V",
+                  "imageUrl": "https://picsum.photos/400/605",
+                  "link": ""
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Galleries",
+      "mobileLabel": "All Galleries",
+      "link": "/galleries",
+      "flyout": {
+        "menuSection": {
+          "cols": [
+            {
+              "menuEntries": [
+                {
+                  "title": "Fairs",
+                  "menuItems": [
+                    { "label": "Basel", "link": "/basel" },
+                    { "label": "Miami Beach", "link": "/miami" },
+                    { "label": "Hong Kong", "link": "/hongkong" }
+                  ]
+                },
+                {
+                  "title": "Gallery Events",
+                  "menuItems": [
+                    { "label": "Overview", "link": "/galleries" },
+                    { "label": "Popular Events", "link": "/galleries" },
+                    { "label": "This Week", "link": "/galleries" },
+                    { "label": "Virtual Events", "link": "/galleries" },
+                    { "label": "Art Basel OVR Event", "link": "/galleries" }
+                  ]
+                }
+              ]
+            },
+            {
+              "menuEntries": [
+                {
+                  "title": "Locations",
+                  "menuItems": [
+                    { "label": "Barcelona", "link": "/galleries" },
+                    { "label": "London", "link": "/galleries" },
+                    { "label": "Berlin", "link": "/galleries" },
+                    { "label": "New York", "link": "/galleries" },
+                    { "label": "Mexico City", "link": "/galleries" },
+                    { "label": "Instambul", "link": "/galleries" },
+                    { "label": "Los Angeles", "link": "/galleries" },
+                    { "label": "Miami", "link": "/galleries" },
+                    { "label": "Dubai", "link": "/galleries" },
+                    { "label": "Buenos Aires", "link": "/galleries" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+
+        "cardSection": {
+          "sectionTitle": "Featured Galleries",
+          "cols": [
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "Tokio",
+                  "cardTitle": "Anomaly",
+                  "cardType": "H",
+                  "imageUrl": "https://picsum.photos/600/405",
+                  "link": ""
+                },
+                {
+                  "cardSubtitle": "New York",
+                  "cardTitle": "Brooke Alexander, Inc.",
+                  "cardType": "H",
+                  "imageUrl": "https://picsum.photos/600/406",
+                  "link": ""
+                }
+              ]
+            },
+            {
+              "cards": [
+                {
+                  "cardSubtitle": "Madrid",
+                  "cardTitle": "Galería Juana de Aizpuru",
+                  "cardType": "H",
+                  "imageUrl": "https://picsum.photos/600/407",
+                  "link": ""
+                },
+                {
+                  "cardSubtitle": "Madrid",
+                  "cardTitle": "Sabrina Amrani",
+                  "cardType": "H",
+                  "imageUrl": "https://picsum.photos/600/408",
+                  "link": ""
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

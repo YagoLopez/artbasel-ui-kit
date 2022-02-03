@@ -77,7 +77,7 @@ const ProfileFlyout = ({
               </li>
           ) : (
               <li className="item-menu-label" key={o.label}>
-                <a className="item-menu-link" href={o.href}>
+                <a className="item-menu-link" href={o.link}>
                   {o.label}
                 </a>
               </li>
@@ -99,7 +99,7 @@ ProfileFlyout.propTypes = {
       PropTypes.shape({
         type: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
-        href: PropTypes.string,
+        link: PropTypes.string,
       }),
     ),
   }).isRequired,
