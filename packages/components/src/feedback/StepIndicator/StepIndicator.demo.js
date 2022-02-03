@@ -9,7 +9,11 @@ const StepIndicatorDemo = ({ steps }) => {
   return (
     <div>
       <StepIndicator activeStep={stepActive} stepLabels={steps} onClickStep={setStepActive} />
-      <div className='mt-10 d-flex justify-content-between'>
+      <div className='border-top mt-10 py-5'>
+        <p className="text-large">Demo Component</p>
+        <p className="text-large">Click the buttons to see Step Indicator in Action</p>
+      </div>
+      <div className='mt-5 d-flex justify-content-between'>
         <Button variant="primary" onClick={() => setStepActive(stepActive - 1)} size="compact" disabled={stepActive === 1}>
           Prev Step
         </Button>
