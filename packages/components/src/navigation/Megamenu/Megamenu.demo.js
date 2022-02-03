@@ -16,7 +16,7 @@ const ANONYMOUS_ACCOUNT = 'Anonymous Account';
 const GALLERY_ACCOUNT = 'Gallery Account';
 
 const MegamenuDemo = ({
-  profile, menuData, loggedCollectionUrl, unloggedCollectionUrl, userData, welcomeHeader,
+  profile, menuData, loggedCollectionUrl, unloggedCollectionUrl, userData, profileWelcomeHeader,
 }) => {
   const [loginStatus, setLoginStatus] = useState(profile);
 
@@ -59,7 +59,8 @@ const MegamenuDemo = ({
         userData={{ ...userData, isUserLoggedIn }}
         loggedCollectionUrl={loggedCollectionUrl}
         unloggedCollectionUrl={unloggedCollectionUrl}
-        welcomeHeader={welcomeHeader}
+        profileWelcomeHeader={ profileWelcomeHeader }
+        onSearch={(searchTerm) => console.log('Search term: ', searchTerm)}
       />
       <Container className="px-5 px-lg-8 px-md-7">
         <Container>
@@ -113,7 +114,7 @@ MegamenuDemo.propTypes = {
     name: PropTypes.string.isRequired,
     vipStatus: PropTypes.bool.isRequired,
   }).isRequired,
-  welcomeHeader: PropTypes.string.isRequired,
+  profileWelcomeHeader: PropTypes.string.isRequired,
 
 };
 

@@ -1,6 +1,4 @@
-import React, {
-  useCallback, useEffect, useRef, useState,
-} from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { ButtonIcon } from '../../../actions/ButtonIcon';
@@ -12,7 +10,7 @@ const ProfileFlyout = ({
   setIsVisible,
   isVisible,
   userData: { name: userName, vipStatus, isUserLoggedIn },
-  welcomeHeader,
+  profileWelcomeHeader,
   navbarVisible,
 }) => {
   const menuRef = useRef(null);
@@ -65,7 +63,7 @@ const ProfileFlyout = ({
               && <li className='item-menu-label'>
                 <div className='d-flex justify-content-between'>
                   <div>
-                    <p className="text-label-large mb-0">{welcomeHeader}</p>
+                    <p className="text-label-large mb-0">{profileWelcomeHeader}</p>
                     <p className='text-label-large mb-0'>{userName}</p>
                   </div>
                   {vipStatus && <VipBadge />}
@@ -113,7 +111,7 @@ ProfileFlyout.propTypes = {
     vipStatus: PropTypes.bool.isRequired,
     isUserLoggedIn: PropTypes.bool.isRequired,
   }).isRequired,
-  welcomeHeader: PropTypes.string.isRequired,
+  profileWelcomeHeader: PropTypes.string.isRequired,
   navbarVisible: PropTypes.bool,
 };
 

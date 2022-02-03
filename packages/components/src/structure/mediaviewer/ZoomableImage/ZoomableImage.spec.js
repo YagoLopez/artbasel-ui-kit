@@ -2,7 +2,6 @@ import {
   fireEvent, render, screen,
 } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import 'regenerator-runtime/runtime';
 
 import React from 'react';
 import { ZoomableImage } from './index';

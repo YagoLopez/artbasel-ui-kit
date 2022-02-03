@@ -19,7 +19,7 @@ const Component = (props) => (
       vipStatus: false,
       isUserLoggedIn: true,
     }}
-    welcomeHeader="Welcome, "
+    profileWelcomeHeader="Welcome, "
     loggedCollectionUrl='url'
     unloggedCollectionUrl='url'
     {...props}

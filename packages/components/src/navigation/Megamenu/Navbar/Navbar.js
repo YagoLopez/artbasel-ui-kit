@@ -19,8 +19,9 @@ const Navbar = ({
   loggedCollectionUrl,
   unloggedCollectionUrl,
   userData,
-  welcomeHeader,
+  profileWelcomeHeader,
   scrolled,
+  onSearch,
 }) => {
   if (!menuData) {
     return null;
@@ -28,6 +29,7 @@ const Navbar = ({
 
   const underLineTextRef = useRef(null);
   const [underLinePosition, setUnderLinePosition] = useState(null);
+  const [searchText, setSearchText] = useState(null);
 
   const navLinks = [];
 
@@ -127,6 +129,15 @@ const Navbar = ({
     }
   };
 
+  const onSearchChangeHandler = (event) => {
+    if (event.target.value !== '') { setSearchText(event.target.value); }
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    onSearch(searchText);
+  };
+
   return (
     <Container
       className="navbar-container"
@@ -169,7 +180,9 @@ const Navbar = ({
           onMouseEnter={() => setVisibleMenu(null)}
         >
           <div style={{ minWidth: '280px', maxWidth: '399px', width: '100%' }}>
-            <Search placeholder="Search for artworks, events, galleries..." />
+            <form onSubmit={submitHandler}>
+              <Search placeholder="Search for artworks, events, galleries..." onChange={ onSearchChangeHandler } />
+              </form>
           </div>
         </Col>
 
@@ -182,7 +195,7 @@ const Navbar = ({
             setIsVisible={handleSetVisibleProfileFlyout}
             isVisible={visibleMenu === PROFILE_FLYOUT}
             userData={userData}
-            welcomeHeader={welcomeHeader}
+            profileWelcomeHeader={profileWelcomeHeader}
           />
         </Col>
 
@@ -211,8 +224,10 @@ Navbar.propTypes = {
     vipStatus: PropTypes.bool.isRequired,
     isUserLoggedIn: PropTypes.bool.isRequired,
   }).isRequired,
-  welcomeHeader: PropTypes.string.isRequired,
+  profileWelcomeHeader: PropTypes.string.isRequired,
   scrolled: PropTypes.bool,
+  onSearch: PropTypes.func.isRequired,
+
 };
 
 Navbar.defaultProps = {

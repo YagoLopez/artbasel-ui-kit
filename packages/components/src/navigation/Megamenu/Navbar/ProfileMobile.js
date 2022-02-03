@@ -11,7 +11,7 @@ const ProfileMobile = ({
   isVisible,
   setIsVisible,
   userData: { name: userName, vipStatus, isUserLoggedIn },
-  welcomeHeader,
+  profileWelcomeHeader,
 }) => {
   const [containerIsVisible, setContainerIsVisible] = useState(false);
   const [optionsIsVisible, SetOptionsIsVisible] = useState(false);
@@ -42,7 +42,7 @@ const ProfileMobile = ({
           <h5 className='navlink-mobile-header'>
             <div className='navlink-mobile link-profile-header justify-content-between'>
               <div>
-                <h5 >{welcomeHeader}</h5>
+                <h5 >{profileWelcomeHeader}</h5>
                 <h5 >{userName}</h5>
               </div>
               {vipStatus && <VipBadge />}
@@ -90,7 +90,7 @@ ProfileMobile.propTypes = {
     vipStatus: PropTypes.bool.isRequired,
     isUserLoggedIn: PropTypes.bool.isRequired,
   }).isRequired,
-  welcomeHeader: PropTypes.string.isRequired,
+  profileWelcomeHeader: PropTypes.string.isRequired,
 };
 
 export default ProfileMobile;

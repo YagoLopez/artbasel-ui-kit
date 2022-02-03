@@ -11,12 +11,11 @@ import schema from './Menudata.schema.json';
 const { Validator } = require('jsonschema');
 
 const v = new Validator();
-// console.log(v.validate(megamenu, schema));
 
 const MegaMenuBuilder = ({
-  menuData, profileData, onLogout,
+  menuData, onSearch, profileData, profileWelcomeHeader, userData, onLogout,
   loggedCollectionUrl, unloggedCollectionUrl,
-  userData, welcomeHeader,
+
 }) => {
   const [visibleMenu, setVisibleMenu] = useState(null);
   const [scrolled, setScrolled] = useState(false);
@@ -56,7 +55,8 @@ const MegaMenuBuilder = ({
             userData={userData}
             loggedCollectionUrl={loggedCollectionUrl}
             unloggedCollectionUrl={unloggedCollectionUrl}
-            welcomeHeader={welcomeHeader}
+            profileWelcomeHeader={ profileWelcomeHeader }
+            onSearch={onSearch}
           />
         </div>
         <div className="d-lg-none">
@@ -67,9 +67,10 @@ const MegaMenuBuilder = ({
             visibleMenu={visibleMenu}
             setVisibleMenu={setVisibleMenu}
             userData={userData}
-            welcomeHeader={welcomeHeader}
+            profileWelcomeHeader={profileWelcomeHeader}
             loggedCollectionUrl={loggedCollectionUrl}
-            unloggedCollectionUrl={unloggedCollectionUrl}
+            unloggedCollectionUrl={ unloggedCollectionUrl }
+            onSearch={onSearch}
           />
         </div>
         <div className="megamenu-underline d-md-none d-lg-inline" />
@@ -96,7 +97,7 @@ const Megamenu = ({
   menuData, profileData,
   onLogout, userData,
   loggedCollectionUrl,
-  unloggedCollectionUrl, welcomeHeader,
+  unloggedCollectionUrl, profileWelcomeHeader, onSearch,
 }) => {
   const jsonValidation = v.validate(menuData, schema);
   const { errors } = jsonValidation;
@@ -115,10 +116,10 @@ const Megamenu = ({
       onLogout={onLogout}
       menuData={menuData}
       userData={userData}
-      welcomeHeader={welcomeHeader}
+      profileWelcomeHeader={profileWelcomeHeader}
       loggedCollectionUrl={loggedCollectionUrl}
-      unloggedCollectionUrl={unloggedCollectionUrl}
-
+      unloggedCollectionUrl={ unloggedCollectionUrl }
+      onSearch={onSearch}
     />
   );
 };
@@ -132,21 +133,23 @@ MegaMenuBuilder.propTypes = {
     vipStatus: PropTypes.bool.isRequired,
     isUserLoggedIn: PropTypes.bool.isRequired,
   }).isRequired,
-  welcomeHeader: PropTypes.string.isRequired,
+  profileWelcomeHeader: PropTypes.string.isRequired,
   loggedCollectionUrl: PropTypes.string.isRequired,
   unloggedCollectionUrl: PropTypes.string.isRequired,
+  onSearch: PropTypes.func.isRequired,
 };
 
 Megamenu.propTypes = {
   menuData: PropTypes.object.isRequired,
-  profileData: PropTypes.object.isRequired,
-  onLogout: PropTypes.func.isRequired,
+  onSearch: PropTypes.func.isRequired,
   userData: PropTypes.shape({
     name: PropTypes.string.isRequired,
     vipStatus: PropTypes.bool.isRequired,
     isUserLoggedIn: PropTypes.bool.isRequired,
   }).isRequired,
-  welcomeHeader: PropTypes.string.isRequired,
+  profileWelcomeHeader: PropTypes.string.isRequired,
+  profileData: PropTypes.object.isRequired,
+  onLogout: PropTypes.func.isRequired,
   loggedCollectionUrl: PropTypes.string.isRequired,
   unloggedCollectionUrl: PropTypes.string.isRequired,
 };

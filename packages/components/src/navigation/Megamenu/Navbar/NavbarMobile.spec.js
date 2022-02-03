@@ -18,7 +18,7 @@ describe('NavbarMobile component', () => {
       vipStatus: false,
       isUserLoggedIn,
     },
-    welcomeHeader: 'Welcome, ',
+    profileWelcomeHeader: 'Welcome, ',
     loggedCollectionUrl: 'url',
     unloggedCollectionUrl: 'url',
   };

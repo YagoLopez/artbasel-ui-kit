@@ -31,7 +31,7 @@ const Component = (props) => (
       vipStatus: false,
       isUserLoggedIn: false,
     }}
-    welcomeHeader='Welcome, '
+    profileWelcomeHeader='Welcome, '
     {...props}
   />
 );

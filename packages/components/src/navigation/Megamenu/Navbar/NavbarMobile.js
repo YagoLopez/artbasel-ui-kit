@@ -18,7 +18,7 @@ const NavbarMobile = ({
   setVisibleMenu,
   onLogout,
   userData,
-  welcomeHeader,
+  profileWelcomeHeader,
   loggedCollectionUrl,
   unloggedCollectionUrl,
 }) => {
@@ -86,7 +86,7 @@ const NavbarMobile = ({
               setIsVisible={handleSetVisibleProfileFlyout}
               isVisible={visibleMenu === PROFILE_FLYOUT}
               userData={userData}
-              welcomeHeader={welcomeHeader}
+              profileWelcomeHeader={profileWelcomeHeader}
             />
           </Col>
           <Col className="col-auto px-md-1">
@@ -162,7 +162,7 @@ const NavbarMobile = ({
         isVisible = {visibleProfile}
         setIsVisible = {setVisibleProfile}
         userData= { userData }
-        welcomeHeader={welcomeHeader}
+        profileWelcomeHeader={profileWelcomeHeader}
        />
     </>
   );
@@ -179,7 +179,7 @@ NavbarMobile.propTypes = {
     vipStatus: PropTypes.bool.isRequired,
     isUserLoggedIn: PropTypes.bool.isRequired,
   }).isRequired,
-  welcomeHeader: PropTypes.string.isRequired,
+  profileWelcomeHeader: PropTypes.string.isRequired,
   loggedCollectionUrl: PropTypes.string.isRequired,
   unloggedCollectionUrl: PropTypes.string.isRequired,
 };
