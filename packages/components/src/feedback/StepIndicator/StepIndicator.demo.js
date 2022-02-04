@@ -4,7 +4,7 @@ import { Button } from '../../actions/Button';
 import StepIndicator from './StepIndicator';
 
 const StepIndicatorDemo = ({ steps }) => {
-  const [stepActive, setStepActive] = useState(1);
+  const [stepActive, setStepActive] = useState(0);
 
   return (
     <div>
@@ -14,7 +14,7 @@ const StepIndicatorDemo = ({ steps }) => {
         <p className="text-large">Click the buttons to see Step Indicator in Action</p>
       </div>
       <div className='mt-5 d-flex justify-content-between'>
-        <Button variant="primary" onClick={() => setStepActive(stepActive - 1)} size="compact" disabled={stepActive === 1}>
+        <Button variant="primary" onClick={() => setStepActive(stepActive - 1)} size="compact" disabled={stepActive === 0}>
           Prev Step
         </Button>
         <Button variant="primary" onClick={() => setStepActive(stepActive + 1)} size="compact" className='ms-5' disabled={stepActive === steps.length + 1}>
