@@ -35,7 +35,7 @@ Using this option, all the changes made on theme will be reflected on the Storyb
 ## Running the storybook
 
 ```
-cd packages/ui-kit
+cd packages/components
 yarn storybook
 ```
 
@@ -43,10 +43,10 @@ yarn storybook
 
 Please make a theme build before running the storybook
 
-### Build the ui-kit package
+### Build the component package
 
 ```
-cd packages/ui-kit
+cd packages/components
 yarn build
 ```
 
