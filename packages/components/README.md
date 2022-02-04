@@ -9,7 +9,7 @@ React UI components.
 ```
 yarn add @mch-group/uikit-components
 ```
-
+or
 ```
 npm --save install @mch-group/uikit-components
 ```
@@ -19,44 +19,10 @@ Additionally install the peer dependencies (if not present)
 ```
 yarn add react
 ```
-
+or
 ```
 npm --save install react
 ```
-
-## Components
-### Actions
-  - Button
-  - ButtonBackToTop
-  - ButtonFilter
-  - ButtonIcon
-  - ButtonToggle
-  - TextLink
-
-### Feedback
-  - Modal
-  - ProgressBar
-  - Snackbar
-  - Tag
-
-### Inputs
-  - Checkbox
-  - Dropdown
-  - Email
-  - Password
-  - Radio
-  - Search
-  - Switch
-  - Text
-  - TextArea
-
-### Structure
-  - Accordions
-  - Cards
-  - Grid
-  - ProductTitle
-### Utils
-  - Icon
 
 ## Usage
 
@@ -72,4 +38,24 @@ const Example = () => {
 };
 
 export default Example;
+```
+
+## Available components
+
+To check avaliable components, please run the Storybook:
+
+```
+cd packages/components
+yarn storybook
+```
+or 
+```
+cd packages/components
+npm run storybook
+```
+
+This will start a local server running Storybook with demos and documentation for all available components, avalaible on 
+
+```
+http://localhost:6006
 ```
