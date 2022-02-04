@@ -45,10 +45,12 @@ export default Example;
 To check avaliable components, please run the Storybook:
 
 ```
+cd packages/components
 yarn storybook
 ```
 or 
 ```
+cd packages/components
 npm run storybook
 ```
 
