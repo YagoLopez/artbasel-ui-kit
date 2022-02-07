@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import menuData from '../Menudata.example.json';
 
 const testElementId = 'mch-navbar';
+const linkRenderer = (link, label) => <a href={link}>{label}</a>;
 
 const Component = (props) => (
   <Navbar
@@ -22,6 +23,7 @@ const Component = (props) => (
     profileWelcomeHeader="Welcome, "
     loggedCollectionUrl='url'
     unloggedCollectionUrl='url'
+    linkRenderer={linkRenderer}
     {...props}
   />
 );

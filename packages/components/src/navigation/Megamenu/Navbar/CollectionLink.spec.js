@@ -6,6 +6,8 @@ import {
 
 import CollectionLink from './CollectionLink';
 
+const linkRenderer = (link, label) => <a href={link}>{label}</a>;
+
 describe('CollectionLink component', () => {
   describe('renderer', () => {
     test('when user is logged in then should render logged collection link', () => {
@@ -13,6 +15,7 @@ describe('CollectionLink component', () => {
         isUserLoggedIn: true,
         loggedCollectionUrl: '/collections/my-collections',
         unloggedCollectionUrl: "/auth/login?return='/collections/my-collections'",
+        linkRenderer,
       };
 
       render(<CollectionLink {...data} />);
@@ -25,6 +28,7 @@ describe('CollectionLink component', () => {
         isUserLoggedIn: false,
         loggedCollectionUrl: '/collections/my-collections',
         unloggedCollectionUrl: "/auth/login?return='/collections/my-collections'",
+        linkRenderer,
       };
 
       render(<CollectionLink {...data} />);

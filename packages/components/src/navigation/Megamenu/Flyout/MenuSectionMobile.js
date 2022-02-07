@@ -44,6 +44,7 @@ MenuSectionMobile.propTypes = {
   menuSection: PropTypes.object.isRequired,
   topLink: PropTypes.string.isRequired,
   mobileLabel: PropTypes.string.isRequired,
+  linkRenderer: PropTypes.func.isRequired,
 };
 
 export default MenuSectionMobile;

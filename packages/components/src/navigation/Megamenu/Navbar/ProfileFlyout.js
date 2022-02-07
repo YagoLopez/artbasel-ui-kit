@@ -112,6 +112,7 @@ ProfileFlyout.propTypes = {
   }).isRequired,
   profileWelcomeHeader: PropTypes.string.isRequired,
   navbarVisible: PropTypes.bool,
+  linkRenderer: PropTypes.func.isRequired,
 };
 
 ProfileFlyout.defaultProps = {
