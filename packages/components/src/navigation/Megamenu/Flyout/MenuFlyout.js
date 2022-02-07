@@ -7,7 +7,9 @@ import CardSection from './CardSection';
 import MenuSection from './MenuSection';
 import { PROFILE_FLYOUT } from '../constants';
 
-const MenuFlyout = ({ menuData, visibleMenu, setVisibleMenu }) => {
+const MenuFlyout = ({
+  menuData, visibleMenu, setVisibleMenu, linkRenderer,
+}) => {
   return (
     <>
        <Container
@@ -34,8 +36,8 @@ const MenuFlyout = ({ menuData, visibleMenu, setVisibleMenu }) => {
             ) }>
                 <Row gutter="g-0">
                   {/*  Cards Section */}
-                  <MenuSection menuSection={entry.flyout.menuSection} />
-                  <CardSection cardSection={entry.flyout.cardSection} />
+                <MenuSection menuSection={ entry.flyout.menuSection } linkRenderer={linkRenderer }/>
+                <CardSection cardSection={entry.flyout.cardSection} linkRenderer={linkRenderer }/>
                 </Row>
               </Container>
             </Container>
@@ -51,6 +53,7 @@ const MenuFlyout = ({ menuData, visibleMenu, setVisibleMenu }) => {
 
 MenuFlyout.propTypes = {
   menuData: PropTypes.object.isRequired,
+  linkRenderer: PropTypes.func.isRequired,
   visibleMenu: PropTypes.string,
   setVisibleMenu: PropTypes.func,
 };

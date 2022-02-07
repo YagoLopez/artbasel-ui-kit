@@ -10,6 +10,7 @@ import Megamenu from './Megamenu';
 ```jsx
 <Megamenu
   menuData={menuData}
+  linkRenderer={(link, label) => <a href={link}>{label}</a>}
   onSearch={handleOnSearch}
   userData={{
     name: 'Jose Gumpert Ros',
@@ -47,12 +48,13 @@ import Megamenu from './Megamenu';
 
 <ArgsTable of={Megamenu} />
 
-## Data Samples
+## Data and Proporties Samples
 
 1. UserData
 2. profileData
-3. menuData
-4. menuData JSON Schema Validation
+3. linkRenderer
+4. menuData
+5. menuData JSON Schema Validation
 
 ### 1. userData Sample
 
@@ -89,7 +91,39 @@ import Megamenu from './Megamenu';
 }
 ```
 
-### 3. menuData Sample
+### 3. linkRenderer Samples
+
+As the Megamenu component can be consumed in several diferent systems, with diferent navigation methods, the links must be rendered in different ways. To add flexibility, the **linkRenderer** property will be used to render all links.
+
+**IMPORTANT**: To have the correct look and fell, the label must be inside an "a tag".
+
+#### Example 1 - "a" tag
+
+```jsx
+<Megamenu
+  ...
+  linkRenderer={(link, label) => <a href={link}>{label}</a>}
+  ...
+/>
+```
+
+#### Example 2 - Link from router
+
+```jsx
+import Link from 'next/link'
+
+<Megamenu
+  ...
+  linkRenderer={(link, label) =>
+    <Link href={link}>
+        <a>{label}</a>
+    </Link>
+  }
+  ...
+/>
+```
+
+### 4. menuData Sample
 
 This is the menuData used in this Megamenu sample:
 
@@ -433,7 +467,7 @@ This is the menuData used in this Megamenu sample:
 }
 ```
 
-### 4. menuData JSON Validation Schema
+### 5. menuData JSON Validation Schema
 
 This is the JSON schema used by Megamenu to validate the menuData before render the content.
 

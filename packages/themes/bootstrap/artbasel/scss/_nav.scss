@@ -197,6 +197,14 @@
       line-height: 22px;
     }
   }
+
+  a {
+    font-weight: normal !important;
+    &:hover {
+      text-decoration: none;
+      color: $color-mch-gray-300;
+    }
+  }
 }
 
 .navlinks-mobile-overlay {

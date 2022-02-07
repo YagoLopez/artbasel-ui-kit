@@ -12,6 +12,7 @@ import CollectionLink from './CollectionLink';
 
 const Navbar = ({
   menuData,
+  linkRenderer,
   profileData,
   visibleMenu,
   setVisibleMenu,
@@ -148,9 +149,7 @@ const Navbar = ({
           className="col-auto pe-5 py-7"
           onMouseEnter={() => setVisibleMenu(null)}
         >
-          <a href={menuData.logoLink}>
-            <ArtBaselLogo width={130} height={43} />
-          </a>
+          { linkRenderer(menuData.logoLink, <ArtBaselLogo width={130} height={43} />) }
         </Col>
         <Col className="col-auto entries-container">
           <Row gutter="g-0" className="menu-entries">
@@ -164,11 +163,11 @@ const Navbar = ({
                 onMouseEnter={ (e) => handleEntryMouseEnter(e, entry, key) }
                 onMouseLeave={ (e) => handleMouseLeave(e)}
                 style={{ width: `${width}px`, height: '102px' }}
-              >
-                <a href={entry.link} className="m-auto navlink">
-                  {entry.label}
-                </a>
-                <div className="col-underline" />
+                >
+                  <div className="m-auto navlink">
+                    { linkRenderer(entry.link, entry.label) }
+                  </div>
+                  <div className="col-underline" />
               </Col>
               );
             })}
@@ -195,7 +194,8 @@ const Navbar = ({
             setIsVisible={handleSetVisibleProfileFlyout}
             isVisible={visibleMenu === PROFILE_FLYOUT}
             userData={userData}
-            profileWelcomeHeader={profileWelcomeHeader}
+            profileWelcomeHeader={ profileWelcomeHeader }
+            linkRenderer={linkRenderer}
           />
         </Col>
 
@@ -203,7 +203,8 @@ const Navbar = ({
           <CollectionLink
             isUserLoggedIn={userData?.isUserLoggedIn}
             loggedCollectionUrl={loggedCollectionUrl}
-            unloggedCollectionUrl={unloggedCollectionUrl}
+            unloggedCollectionUrl={ unloggedCollectionUrl }
+            linkRenderer={linkRenderer}
           />
         </Col>
       </Row>
@@ -213,6 +214,7 @@ const Navbar = ({
 
 Navbar.propTypes = {
   menuData: PropTypes.object,
+  linkRenderer: PropTypes.func.isRequired,
   profileData: PropTypes.object.isRequired,
   visibleMenu: PropTypes.string,
   setVisibleMenu: PropTypes.func.isRequired,

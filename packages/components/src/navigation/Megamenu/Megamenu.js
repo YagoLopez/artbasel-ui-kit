@@ -16,6 +16,7 @@ const MegaMenuBuilder = forwardRef(
   (
     {
       menuData,
+      linkRenderer,
       onSearch,
       profileData,
       profileWelcomeHeader,
@@ -65,7 +66,8 @@ const MegaMenuBuilder = forwardRef(
           <div className="d-none d-lg-block">
             <Navbar
               scrolled={scrolled}
-              menuData={menuData}
+              menuData={ menuData }
+              linkRenderer={linkRenderer}
               profileData={profileData}
               onLogout={onLogout}
               visibleMenu={visibleMenu}
@@ -79,7 +81,8 @@ const MegaMenuBuilder = forwardRef(
           </div>
           <div className="d-lg-none">
             <NavbarMobile
-              menuData={menuData}
+              menuData={ menuData }
+              linkRenderer={linkRenderer}
               profileData={profileData}
               onLogout={onLogout}
               visibleMenu={visibleMenu}
@@ -95,7 +98,8 @@ const MegaMenuBuilder = forwardRef(
         </div>
         <div className="d-none d-lg-block sticky-top sticky-flyout">
           <MenuFlyout
-            menuData={menuData}
+            menuData={ menuData }
+            linkRenderer={linkRenderer}
             visibleMenu={visibleMenu}
             setVisibleMenu={setVisibleMenu}
             userData={userData}
@@ -105,7 +109,8 @@ const MegaMenuBuilder = forwardRef(
         </div>
         <div className="d-lg-none sticky-top">
           <MenuFlyoutMobile
-            menuData={menuData}
+            menuData={ menuData }
+            linkRenderer={linkRenderer}
             visibleMenu={visibleMenu}
             setVisibleMenu={setVisibleMenu}
             userData={userData}
@@ -122,6 +127,7 @@ const Megamenu = forwardRef(
   (
     {
       menuData,
+      linkRenderer,
       profileData,
       onLogout,
       userData,
@@ -145,9 +151,10 @@ const Megamenu = forwardRef(
     }
     return (
       <MegaMenuBuilder
+        menuData={menuData}
+        linkRenderer={linkRenderer}
         profileData={profileData}
         onLogout={onLogout}
-        menuData={menuData}
         userData={userData}
         profileWelcomeHeader={profileWelcomeHeader}
         loggedCollectionUrl={loggedCollectionUrl}
@@ -163,6 +170,7 @@ MegaMenuBuilder.displayName = 'MegaMenuBuilder';
 
 MegaMenuBuilder.propTypes = {
   menuData: PropTypes.object.isRequired,
+  linkRenderer: PropTypes.func.isRequired,
   profileData: PropTypes.object.isRequired,
   onLogout: PropTypes.func.isRequired,
   userData: PropTypes.shape({
@@ -182,6 +190,9 @@ Megamenu.propTypes = {
   /** JSON object that contains all information to builkd the Navbar and the flyouts.
   Please check bellow the JSON used on this megamenu test. */
   menuData: PropTypes.object.isRequired,
+  /** A renderer for
+  all links. */
+  linkRenderer: PropTypes.func.isRequired,
   /** A function to be called when user submits a search.
   The searched term is passed as argument. */
   onSearch: PropTypes.func.isRequired,

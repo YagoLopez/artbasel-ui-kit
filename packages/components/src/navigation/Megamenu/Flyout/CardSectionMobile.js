@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Container, Row, Col } from '../../../structure/Grid';
 import { TeaserCard } from '../../../structure/cards/TeaserCard';
 
-const CardSectionMobile = ({ cardSection }) => {
+const CardSectionMobile = ({ cardSection, linkRenderer }) => {
   return (
     <Container className="mt-7">
       {cardSection.sectionTitle && (
@@ -21,7 +21,8 @@ const CardSectionMobile = ({ cardSection }) => {
               title={card.cardTitle}
               subTitle={card.cardSubtitle}
               variant={card.cardType.toLowerCase()}
-              link={card.link}
+            link={ card.link }
+            linkRenderer={ linkRenderer }
             />
           </Row>
       )))}
@@ -31,6 +32,7 @@ const CardSectionMobile = ({ cardSection }) => {
 
 CardSectionMobile.propTypes = {
   cardSection: PropTypes.object.isRequired,
+  linkRenderer: PropTypes.func.isRequired,
 };
 
 export default CardSectionMobile;

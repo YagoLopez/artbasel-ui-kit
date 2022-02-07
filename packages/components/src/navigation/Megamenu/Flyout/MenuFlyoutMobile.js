@@ -9,7 +9,9 @@ import { ButtonIcon } from '../../../actions/ButtonIcon';
 import CardSectionMobile from './CardSectionMobile';
 import MenuSectionMobile from './MenuSectionMobile';
 
-const MenuFlyoutMobile = ({ menuData, visibleMenu, setVisibleMenu }) => {
+const MenuFlyoutMobile = ({
+  menuData, visibleMenu, setVisibleMenu, linkRenderer,
+}) => {
   const handleClose = useCallback(() => {
     setVisibleMenu(null);
   }, []);
@@ -45,9 +47,12 @@ const MenuFlyoutMobile = ({ menuData, visibleMenu, setVisibleMenu }) => {
                   <MenuSectionMobile
                     menuSection={entry.flyout.menuSection}
                     topLink={entry.link}
-                    mobileLabel={entry.mobileLabel}
+                    mobileLabel={ entry.mobileLabel }
+                    linkRenderer={linkRenderer}
                   />
-                  <CardSectionMobile cardSection={entry.flyout.cardSection} />
+                <CardSectionMobile
+                  cardSection={ entry.flyout.cardSection }
+                  linkRenderer={ linkRenderer } />
                 </Row>
               </Offcanvas.Body>
             </Offcanvas>
@@ -61,6 +66,7 @@ MenuFlyoutMobile.propTypes = {
   menuData: PropTypes.object.isRequired,
   visibleMenu: PropTypes.string,
   setVisibleMenu: PropTypes.func.isRequired,
+  linkRenderer: PropTypes.func.isRequired,
 };
 
 export default MenuFlyoutMobile;
