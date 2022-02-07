@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 import { Accordion } from '../../../structure/Accordion';
 
-const MenuSectionMobile = ({ menuSection, topLink, mobileLabel }) => {
+const MenuSectionMobile = ({
+  menuSection, topLink, mobileLabel, linkRenderer,
+}) => {
   const entries = [];
 
   menuSection.cols.forEach((col) => {
@@ -15,9 +17,9 @@ const MenuSectionMobile = ({ menuSection, topLink, mobileLabel }) => {
   return (
     <>
       <h5 className="navlink-mobile-header">
-        <a className="navlink-mobile see-all-link" href={topLink}>
-          {mobileLabel}
-        </a>
+        <div className="navlink-mobile see-all-link">
+          { linkRenderer(topLink, mobileLabel) }
+        </div>
       </h5>
       <Accordion defaultActiveKey={0}>
         {entries.map((entry, key) => (
@@ -25,10 +27,8 @@ const MenuSectionMobile = ({ menuSection, topLink, mobileLabel }) => {
             <Accordion.Header size="l">{entry.title}</Accordion.Header>
             <Accordion.Body>
               {entry.menuItems.map((item, key1) => (
-                <p key={key1}>
-                  <a className="item-menu-link" href={item.link}>
-                    {item.label}
-                  </a>
+                <p className="item-menu-link" key={key1} >
+                  { linkRenderer(item.link, item.label) }
                 </p>
               ))}
             </Accordion.Body>
@@ -44,6 +44,7 @@ MenuSectionMobile.propTypes = {
   menuSection: PropTypes.object.isRequired,
   topLink: PropTypes.string.isRequired,
   mobileLabel: PropTypes.string.isRequired,
+  linkRenderer: PropTypes.func.isRequired,
 };
 
 export default MenuSectionMobile;

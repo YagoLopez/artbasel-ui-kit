@@ -22,6 +22,7 @@ const NavbarMobile = ({
   loggedCollectionUrl,
   unloggedCollectionUrl,
   onSearch,
+  linkRenderer,
 }) => {
   if (!menuData) {
     return null;
@@ -72,16 +73,14 @@ const NavbarMobile = ({
               aria-expanded={visibleLinks}
             />
           </Col>
+
           <Col className="ps-3 d-md-none">
-            <a href={menuData.logoLink}>
-              <ArtBaselLogo width={71} height={23} />
-            </a>
+             { linkRenderer(menuData.logoLink, <ArtBaselLogo width={71} height={23} />) }
           </Col>
           <Col className="col-auto ps-5 pe-15 d-none d-md-block">
-            <a href={menuData.logoLink}>
-              <ArtBaselLogo width={117} height={39} />
-            </a>
+             { linkRenderer(menuData.logoLink, <ArtBaselLogo width={117} height={39} />) }
           </Col>
+
           <Col className="col-auto d-md-none">
             <ButtonIcon icon="search" />
           </Col>
@@ -101,13 +100,15 @@ const NavbarMobile = ({
               setIsVisible={handleSetVisibleProfileFlyout}
               isVisible={visibleMenu === PROFILE_FLYOUT}
               userData={userData}
-              profileWelcomeHeader={profileWelcomeHeader}
+              profileWelcomeHeader={ profileWelcomeHeader }
+              linkRenderer={linkRenderer}
             />
           </Col>
           <Col className="col-auto px-md-1">
             <CollectionLink isUserLoggedIn={userData?.isUserLoggedIn}
               loggedCollectionUrl={loggedCollectionUrl}
-              unloggedCollectionUrl={unloggedCollectionUrl} />
+              unloggedCollectionUrl={ unloggedCollectionUrl }
+            linkRenderer={linkRenderer}/>
           </Col>
         </Row>
       </Container>}
@@ -131,12 +132,10 @@ const NavbarMobile = ({
             />
           </Col>
           <Col className="ps-3 d-md-none">
-            <ArtBaselLogo width={71} height={23} />
+             { linkRenderer(menuData.logoLink, <ArtBaselLogo width={71} height={23} />) }
           </Col>
           <Col className="col-auto ps-5 pe-15 d-none d-md-block">
-            <a href={menuData.logoLink}>
-              <ArtBaselLogo width={117} height={39} />
-            </a>
+             { linkRenderer(menuData.logoLink, <ArtBaselLogo width={117} height={39} />) }
           </Col>
         </Row>
       </Container>
@@ -148,7 +147,7 @@ const NavbarMobile = ({
           visible: optionsIsVisible,
         }) }>
             {menuData.entries.map((entry) => (
-              <h4 className="navlink-mobile-header" key={entry.label}>
+              <h4 className="navlink-mobile-header navlink-mobile" key={entry.label}>
                 {entry.flyout ? (
                   <button
                     className="navlink-mobile flyout"
@@ -158,9 +157,9 @@ const NavbarMobile = ({
                     {entry.label}
                   </button>
                 ) : (
-                  <a className="navlink-mobile" href={entry.link}>
-                    {entry.label}
-                  </a>
+                    <div className="navlink-mobile">
+                      { linkRenderer(entry.link, entry.label) }
+                    </div>
                 )}
               </h4>
             ))}
@@ -177,7 +176,8 @@ const NavbarMobile = ({
         isVisible = {visibleProfile}
         setIsVisible = {setVisibleProfile}
         userData= { userData }
-        profileWelcomeHeader={profileWelcomeHeader}
+        profileWelcomeHeader={ profileWelcomeHeader }
+        linkRenderer={linkRenderer}
        />
     </>
   );
@@ -198,7 +198,7 @@ NavbarMobile.propTypes = {
   loggedCollectionUrl: PropTypes.string.isRequired,
   unloggedCollectionUrl: PropTypes.string.isRequired,
   onSearch: PropTypes.func.isRequired,
-
+  linkRenderer: PropTypes.func.isRequired,
 };
 
 export default NavbarMobile;

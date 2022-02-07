@@ -4,6 +4,8 @@ import { render, fireEvent, screen } from '@testing-library/react';
 
 import ProfileFlyout from './ProfileFlyout';
 
+const linkRenderer = (link, label) => <a href={link}>{label}</a>;
+
 const profileData = {
   options: [
     {
@@ -32,6 +34,7 @@ const Component = (props) => (
       isUserLoggedIn: false,
     }}
     profileWelcomeHeader='Welcome, '
+    linkRenderer={linkRenderer}
     {...props}
   />
 );

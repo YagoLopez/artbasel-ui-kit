@@ -12,6 +12,7 @@ const ProfileFlyout = ({
   userData: { name: userName, vipStatus, isUserLoggedIn },
   profileWelcomeHeader,
   navbarVisible,
+  linkRenderer,
 }) => {
   const menuRef = useRef(null);
 
@@ -76,10 +77,8 @@ const ProfileFlyout = ({
                 {o.label}
               </li>
           ) : (
-              <li className="item-menu-label" key={o.label}>
-                <a className="item-menu-link" href={o.link}>
-                  {o.label}
-                </a>
+              <li className="item-menu-label item-menu-link" key={o.label}>
+                { linkRenderer(o.link, o.label) }
               </li>
           )))}
         </ul>
@@ -113,6 +112,7 @@ ProfileFlyout.propTypes = {
   }).isRequired,
   profileWelcomeHeader: PropTypes.string.isRequired,
   navbarVisible: PropTypes.bool,
+  linkRenderer: PropTypes.func.isRequired,
 };
 
 ProfileFlyout.defaultProps = {

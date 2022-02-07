@@ -48,10 +48,13 @@ export const userData = {
   isUserLoggedIn: true,
 };
 
+export const linkRenderer = (link, label) => <a href={link}>{label}</a>;
+
 <Story
   name="Mega Menu"
   args={{
     menuData: menuData,
+    linkRenderer: linkRenderer,
     onSearch: handleOnSearch,
     userData: userData,
     profileWelcomeHeader: 'Welcome, ',

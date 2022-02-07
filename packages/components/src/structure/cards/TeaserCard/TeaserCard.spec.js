@@ -4,6 +4,8 @@ import { cleanup, render, screen } from '@testing-library/react';
 import TeaserCard from './TeaserCard';
 import example from './TeaserCard.example.json';
 
+const linkRenderer = (link, label) => <a href={link} data-testid="link">{label}</a>;
+
 describe('Tests for TeaserCard component', () => {
   afterEach(cleanup);
 
@@ -14,7 +16,8 @@ describe('Tests for TeaserCard component', () => {
         title={example.title}
         subTitle={example.subTitle}
         imageUrl={example.imageUrl}
-        link={example.link}
+        link={ example.link }
+        linkRenderer={linkRenderer}
       />,
     );
     expect(screen.queryByText(example.title)).toBeInTheDocument();
@@ -27,10 +30,12 @@ describe('Tests for TeaserCard component', () => {
         title={example.title}
         subTitle={example.subTitle}
         imageUrl={example.imageUrl}
-        link={example.link}
+        link={ example.link }
+        linkRenderer={linkRenderer}
+
       />,
     );
-    expect(screen.getByTestId('link')).toBeTruthy();
+    expect(screen.queryByTestId('link')).toBeTruthy();
   });
 
   test('Should NOT have a link', () => {
@@ -41,6 +46,8 @@ describe('Tests for TeaserCard component', () => {
         subTitle={example.subTitle}
         imageUrl={example.imageUrl}
         link=""
+        linkRenderer={linkRenderer}
+
       />,
     );
     expect(screen.queryByTestId(/link/i)).toBeNull();

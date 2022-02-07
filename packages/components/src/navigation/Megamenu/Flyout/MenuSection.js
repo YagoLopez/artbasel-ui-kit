@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Container, Col, Row } from '../../../structure/Grid';
 
-const MenuSection = ({ menuSection }) => {
+const MenuSection = ({ menuSection, linkRenderer }) => {
   return (
     <Col>
       <Container>
@@ -14,10 +14,8 @@ const MenuSection = ({ menuSection }) => {
                 <Row gutter="g-0 mb-7" key={key3}>
                   <h5 className="mb-5">{menuEntry.title}</h5>
                   {menuEntry.menuItems.map((item, key4) => (
-                    <p key={key4} className="text-small">
-                      <a className="item-menu-link" href={item.link}>
-                        {item.label}
-                      </a>
+                    <p key={key4} className="text-small item-menu-link">
+                      { linkRenderer(item.link, item.label) }
                     </p>
                   ))}
                 </Row>
@@ -32,6 +30,7 @@ const MenuSection = ({ menuSection }) => {
 
 MenuSection.propTypes = {
   menuSection: PropTypes.object.isRequired,
+  linkRenderer: PropTypes.func.isRequired,
 };
 
 export default MenuSection;

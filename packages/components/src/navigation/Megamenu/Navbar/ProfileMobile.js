@@ -11,7 +11,7 @@ const ProfileMobile = ({
   isVisible,
   setIsVisible,
   userData: { name: userName, vipStatus, isUserLoggedIn },
-  profileWelcomeHeader,
+  profileWelcomeHeader, linkRenderer,
 }) => {
   const [containerIsVisible, setContainerIsVisible] = useState(false);
   const [optionsIsVisible, SetOptionsIsVisible] = useState(false);
@@ -49,25 +49,29 @@ const ProfileMobile = ({
             </div>
           </h5>
         </div>
-        <div className={classnames('mobile-item-midle', { 'd-none': !isUserLoggedIn })}>
+
+        <div className={ classnames('mobile-item-midle', { 'd-none': !isUserLoggedIn }) }>
           {
-            options.filter(o => o.type !== 'action').map(o => <p className='navlink-mobile-header' key={o.label}>
-            <button className="navlink-mobile link-profile text-medium" onClick={onClickAction} key={o.label}>
+            options.filter(o => o.type !== 'action').map(o => <p className="navlink-mobile-header item" key={ o.label }>
+                  <div className="navlink-mobile link-profile text-medium">
+                    { linkRenderer(o.link, o.label) }
+              </div>
+              </p>)
+          }
+        </div>
+
+                <div className='mobile-item-right'>
+          {
+            options.filter(o => o.type === 'action').map(o => <p className='navlink-mobile-header' key={o.label}>
+            <button className="navlink-mobile link-profile link-logout text-medium" onClick={onClickAction} key={o.label}>
                 {o.label}
             </button>
           </p>)
           }
         </div>
-        <div className='mobile-item-right'>
-          {
-            options.filter(o => o.type === 'action').map(o => <p className="navlink-mobile-header item" key={ o.label }>
-                <a className="navlink-mobile link-profile link-logout text-medium" href={o.link}>
-                  {o.label}
-                </a>
-              </p>)
-          }
-          </div>
-        </div>
+
+      </div>
+
     </Container>
   );
 };
@@ -91,6 +95,7 @@ ProfileMobile.propTypes = {
     isUserLoggedIn: PropTypes.bool.isRequired,
   }).isRequired,
   profileWelcomeHeader: PropTypes.string.isRequired,
+  linkRenderer: PropTypes.func.isRequired,
 };
 
 export default ProfileMobile;

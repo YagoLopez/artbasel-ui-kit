@@ -4,6 +4,8 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import NavbarMobile from './NavbarMobile';
 import menuData from '../Menudata.example.json';
 
+const linkRenderer = (link, label) => <a href={ link }>{ label }</a>;
+
 describe('NavbarMobile component', () => {
   const isUserLoggedIn = true;
   const onLogout = jest.fn();
@@ -21,6 +23,7 @@ describe('NavbarMobile component', () => {
     profileWelcomeHeader: 'Welcome, ',
     loggedCollectionUrl: 'url',
     unloggedCollectionUrl: 'url',
+    linkRenderer,
   };
   describe('renderer', () => {
     test('should render component', () => {
