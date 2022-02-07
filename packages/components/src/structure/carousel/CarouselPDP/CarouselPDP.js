@@ -9,7 +9,6 @@ const CarouselPDP = ({
   cssStyles,
   showBackButton,
   goBack,
-  onExpand,
 }) => {
   const options = {
     width: '100%',
@@ -46,11 +45,6 @@ const CarouselPDP = ({
       >
         {children}
       </Splide>
-      <ButtonIcon
-        icon="expand"
-        onClick={onExpand}
-        className="carousel-expand-btn"
-      />
     </div>
   );
 };
@@ -60,14 +54,12 @@ CarouselPDP.propTypes = {
   cssStyles: PropTypes.string,
   showBackButton: PropTypes.bool,
   goBack: PropTypes.func,
-  onExpand: PropTypes.func,
 };
 
 CarouselPDP.defaultProps = {
   cssStyles: null,
   showBackButton: false,
   goBack: () => {},
-  onExpand: () => {},
 };
 
 export default Object.assign(CarouselPDP, { Slide });
