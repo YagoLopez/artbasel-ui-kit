@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.20.0...@mch-group/uikit-themes@0.21.0) (2022-02-07)
+
+
+### Features
+
+* **navigation:** added link renderer on megamenu ([8c4eb13](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/8c4eb135efecc00e71310e0caf7b7c4365a2e687))
+
+
+
+
+
 # [0.20.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.19.0...@mch-group/uikit-themes@0.20.0) (2022-02-07)
 
 
