@@ -4,9 +4,11 @@ import React, {
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Dropdown as BTPDropdown, FormText } from 'react-bootstrap';
-import { Toggle } from './Toggle';
+import { Toggle as SelectToggle } from './Toggle';
+import { SearchableToggle } from './SearchableTaggle';
 import { SimpleMenu } from './SimpleMenu';
 import { MultiMenu } from './MultiMenu';
+import { SearchableMenu } from './SearchableMenu';
 
 const textClassName = {
   muted: 'text-muted',
@@ -24,6 +26,7 @@ const Dropdown = ({
   style,
   label,
   isMultiselect,
+  isSearchable,
   value,
   className,
   helpText,
@@ -35,9 +38,34 @@ const Dropdown = ({
     initializeValues(value, options),
   );
   const [isShow, setIsShow] = useState(false);
-  const Menu = useMemo(() => (isMultiselect ? MultiMenu : SimpleMenu), [
-    isMultiselect,
+
+  const [searchText, setSearchText] = useState('');
+
+  // TODO: Manage new status: SearchableMenu & SearchableTagMenu
+  const Menu = useMemo(() => {
+    if (isSearchable) {
+      return SearchableMenu;
+    }
+
+    return isMultiselect ? MultiMenu : SimpleMenu;
+  }, [isMultiselect, isSearchable]);
+
+  const iconName = useMemo(() => (isSearchable ? 'search' : 'chevron-down'), [
+    isSearchable,
   ]);
+
+  const Toggle = useMemo(
+    () => (isSearchable ? SearchableToggle : SelectToggle),
+    [isSearchable],
+  );
+
+  const optionsFiltered = useMemo(
+    () => (isSearchable
+      ? options.filter((option) => option.value.toUpperCase().includes(searchText.toUpperCase()))
+      : options),
+    [options, searchText],
+  );
+
   const dropdownRef = useRef(null);
 
   const handleOnChange = useCallback(
@@ -50,7 +78,7 @@ const Dropdown = ({
         onChange(option.value);
       }
     },
-    [options, isMultiselect],
+    [optionsFiltered, isMultiselect],
   );
 
   const handleOnToggle = useCallback((isOpen) => {
@@ -59,6 +87,20 @@ const Dropdown = ({
 
   const handleClose = useCallback(() => {
     setIsShow(false);
+  }, []);
+
+  const inputRef = useRef(null);
+
+  const handleOnSearch = useCallback((event) => {
+    const { value: key } = event.target;
+
+    const searchTextDraft = `${searchText}${key}`;
+
+    setSearchText(searchTextDraft);
+    setIsShow(searchTextDraft.length);
+    setOptionSelected([]);
+
+    inputRef.current.focus();
   }, []);
 
   return (
@@ -75,6 +117,10 @@ const Dropdown = ({
         optionsSelected={optionsSelected}
         placeholder={placeholder}
         helpTextType={helpTextType}
+        iconName={iconName}
+        searchText={searchText}
+        onSearch={handleOnSearch}
+        ref={inputRef}
       />
       {helpText && (
         <FormText
@@ -86,11 +132,12 @@ const Dropdown = ({
         </FormText>
       )}
       <Menu
-        options={options}
+        options={optionsFiltered}
         onChange={handleOnChange}
         optionsSelected={optionsSelected}
         isShow={isShow}
         onClose={handleClose}
+        searchText={searchText}
       />
     </BTPDropdown>
   );
@@ -109,6 +156,7 @@ Dropdown.propTypes = {
   ),
   label: PropTypes.string,
   isMultiselect: PropTypes.bool,
+  isSearchable: PropTypes.bool,
   placeholder: PropTypes.string,
   helpText: PropTypes.string,
   helpTextType: PropTypes.oneOf(['muted', 'warning', 'danger']),
@@ -122,6 +170,7 @@ Dropdown.defaultProps = {
   options: [],
   label: '',
   isMultiselect: false,
+  isSearchable: false,
   helpTextType: 'muted',
   placeholder: 'Select',
   onChange: () => null,

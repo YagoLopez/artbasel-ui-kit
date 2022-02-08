@@ -53,7 +53,15 @@
           width: initial;
           overflow-x: hidden;
         }
+
+        .search-term {
+          font-weight: bold;
+        }
       }
     }
+  }
+
+  .searchable-input {
+    caret-color: auto;
   }
 }

@@ -2,11 +2,11 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
 import { Container } from 'react-bootstrap';
 
-import dropdownOptions from './DropdownOptions.example.json';
+import dropdownOptions from './CountryOptions.example.json';
 import { Dropdown } from '.';
 
 <Meta
-  title="Components/Inputs/Dropdown/Dropdown"
+  title="Components/Inputs/Dropdown/Searchable"
   component={Dropdown}
   decorators={[
     withDesign,
@@ -14,9 +14,9 @@ import { Dropdown } from '.';
   ]}
 />
 
-# Dropdown field
+# Searchable Dropdown field
 
-Dropdown field is a field used to select a value from diferent options
+Searchable Dropdown field is a field used to search and select a value from diferent options
 
 export const Template = (args) => <Dropdown {...args} />;
 
@@ -35,8 +35,14 @@ export const argTypes = {
 
 <Canvas>
   <Story
-    name="Dropdown"
-    args={{ label: 'Label', options: dropdownOptions, isMultiselect: false }}
+    name="Searchable"
+    args={{
+      label: 'Label',
+      options: dropdownOptions,
+      isMultiselect: false,
+      isSearchable: true,
+      placeholder: 'Type a Term',
+    }}
     argTypes={argTypes}
     parameters={{
       design: {
@@ -55,48 +61,13 @@ export const argTypes = {
 
 <Canvas>
   <div>
-    <b>Default</b>
+    <b>Searchable text selection</b>
     <Dropdown
       label="Label"
-      options={dropdownOptions}
-      style={{ height: '250px', width: '240px' }}
-    />
-  </div>
-</Canvas>
-
-<Canvas>
-  <div>
-    <b>With value</b>
-    <Dropdown
-      label="Label"
-      value={dropdownOptions[0].value}
-      options={dropdownOptions}
-      style={{ height: '250px', width: '240px' }}
-    />
-  </div>
-</Canvas>
-
-<Canvas>
-  <div>
-    <b>Multiple selection</b>
-    <Dropdown
-      label="Label"
-      isMultiselect
+      isSearchable
       style={{ height: '250px', width: '240px' }}
       options={dropdownOptions}
-    />
-  </div>
-</Canvas>
-
-<Canvas>
-  <div>
-    <b>Multiple selection with values</b>
-    <Dropdown
-      label="Label"
-      isMultiselect
-      value={[dropdownOptions[1].value, dropdownOptions[3].value]}
-      style={{ height: '250px', width: '240px' }}
-      options={dropdownOptions}
+      placeholder="Type a Term"
     />
   </div>
 </Canvas>
@@ -106,9 +77,11 @@ export const argTypes = {
     <b>Helper text</b>
     <Dropdown
       label="Label"
+      isSearchable
       helpText="Helper Text"
       options={dropdownOptions}
       style={{ height: '250px', width: '240px' }}
+      placeholder="Type a Term"
     />
   </div>
 </Canvas>
@@ -118,10 +91,12 @@ export const argTypes = {
     <b>Error</b>
     <Dropdown
       label="Label"
+      isSearchable
       helpText="Helper Text"
       helpTextType="danger"
       style={{ height: '250px', width: '240px' }}
       options={dropdownOptions}
+      placeholder="Type a Term"
     />
   </div>
 </Canvas>
