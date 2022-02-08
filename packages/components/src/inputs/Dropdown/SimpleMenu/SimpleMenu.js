@@ -14,7 +14,7 @@ const SimpleMenu = ({ options, optionsSelected, onChange }) => {
       <div className="dropdown-items is-simple">
       {options.map(({ value: v, label: l }) => (
         <Dropdown.Item
-          key={v}
+          key={l}
           data-value={v}
           active={v === optionSelected.value}
           onClick={handleOnChange}

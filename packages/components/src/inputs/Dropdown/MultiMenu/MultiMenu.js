@@ -46,7 +46,7 @@ const MultiMenu = ({
           <Dropdown.Item
             as={Checkbox}
             className="d-flex"
-            key={v}
+            key={l}
             value={v}
             id={v}
             active={mapOptionsSelected(value).includes(v)}
