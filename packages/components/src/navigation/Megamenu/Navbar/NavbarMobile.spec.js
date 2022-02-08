@@ -36,7 +36,7 @@ describe('NavbarMobile component', () => {
       render(<NavbarMobile {...data} />);
       const buttons = screen.getAllByTestId('mch-button-icon');
 
-      buttons.map(el => fireEvent.click(el));
+      buttons.forEach(el => fireEvent.click(el));
 
       expect(screen.getByText('Fairs')).toBeInTheDocument();
       expect(screen.getByText('Shop')).toBeInTheDocument();

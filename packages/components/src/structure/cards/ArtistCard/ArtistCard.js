@@ -44,9 +44,8 @@ const ArtistCard = ({
       m: 355,
       l: 1030,
     };
-    Object.keys(truncateValues).map((size) => {
+    Object.keys(truncateValues).forEach((size) => {
       res[size] = truncateText(description, truncateValues[size]);
-      return true;
     });
     setDescriptions(res);
   };

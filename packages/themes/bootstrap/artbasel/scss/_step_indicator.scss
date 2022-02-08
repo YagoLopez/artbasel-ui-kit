@@ -18,9 +18,9 @@
       &-disabled {
       @extend .line;
       background-color: $color-mch-gray-300;
+      }
     }
-    };
-  };
+  }
 
   .step-indicator-container{
     .background-point-step {
@@ -63,7 +63,7 @@
           height: 12px;
           width: 12px;
         }
-      };
+      }
     }
   
     .label-style{
