@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.21.1...@mch-group/uikit-themes@0.22.0) (2022-02-08)
+
+
+### Features
+
+* **dropdown:** Added Searchable Text to dropdown component ([8d128ac](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/8d128ac5d3e73aa4585f9e545a3694a21d59248c))
+
+
+
+
+
 ## [0.21.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.21.0...@mch-group/uikit-themes@0.21.1) (2022-02-08)
 
 **Note:** Version bump only for package @mch-group/uikit-themes
