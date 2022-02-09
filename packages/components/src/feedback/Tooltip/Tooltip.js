@@ -36,7 +36,7 @@ const Tooltip = ({
       overlay={
         <Popover data-testid="mch-popover" className={classnames({ 'no-arrow': !arrow })}>
           <Popover.Header data-testid="mch-popover-header">
-            <span data-testid="mch-popover-title">{title}</span>
+            <span data-testid="mch-popover-title" className="popover-title">{title}</span>
             <ButtonIcon size="s" icon="close" onClick={() => setShowTrigger(false)} className="btn-close" />
           </Popover.Header>
           <Popover.Body data-testid="mch-popover-body">{content}</Popover.Body>
