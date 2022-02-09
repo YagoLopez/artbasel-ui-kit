@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.27.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.26.1...@mch-group/uikit-components@0.27.0) (2022-02-09)
+
+
+### Features
+
+* **tab:** Added tabs component controller and fixed styles ([2975c34](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/2975c3404b70356bd0e7ebf8e3f0f3e9c8cbd5fd))
+
+
+
+
+
 ## [0.26.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.26.0...@mch-group/uikit-components@0.26.1) (2022-02-09)
 
 
