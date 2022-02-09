@@ -84,7 +84,8 @@
   justify-content: space-between;
   transition: all 0.5s ease-in-out !important;
 
-  &.small {
+  
+  @include media-breakpoint-up(xs) {
     padding-left: 24px;
     .radio-price-container {
       padding: 24px;
@@ -94,7 +95,7 @@
     }
   }
 
-  &.medium {
+  @include media-breakpoint-up(lg)  {
     padding: 24px 32px 24px 32px;
     .radio-price-container {
       padding: 0px;
@@ -108,16 +109,22 @@
   &:hover .form-check-input,
   &:hover {
     cursor: pointer;
-    border: 1px solid $color-mch-gray-300;
+    border: 1px solid $color-mch-gray-300 !important;
+    transition-duration: .5s;
   }
 
   &:focus-visible {
     outline: none;
   }
 
-  &.focus,
-  &:focus .form-check-input,
-  &:focus {
+  &:not(.focus),
+  &:not(.focus) .form-check-input,
+  &:not(:focus) {
+    border: 1px solid $color-mch-gray-200;
+  }
+
+  &.focus .form-check-input,
+  &.focus {
     border: 1px solid $color-mch-black !important;
   }
 
@@ -174,4 +181,4 @@
       margin-bottom: 0px !important;
     }
   }
-}                                                                             
+}          

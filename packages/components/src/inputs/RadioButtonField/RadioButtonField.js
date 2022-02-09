@@ -1,26 +1,26 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Radio } from '../Radio';
 
 const RadioButtonField = ({
-  id, title, description, priceLabel, tabIndex, onChange, checked, size, className,
+  id, title, description, priceLabel, tabIndex, onChange, checked, className,
 }) => {
+  const [isChecked, setIsChecked] = useState(checked);
   const handleChange = useCallback(() => {
+    setIsChecked(!isChecked);
     onChange(checked);
-  }, [checked]);
+  }, [checked, isChecked]);
 
   return (
     <div
     data-testid="mch-radio-button-field"
     tabIndex={tabIndex}
-    key={checked}
     onClick={handleChange}
-    className={classNames('radioButtonField-container', className, size, { focus: checked })}>
+    className={classNames('radioButtonField-container', className, { focus: isChecked })}>
         <div className="radio-field-label">
           <Radio
-            checked={checked}
-            type="radio"
+            checked={isChecked}
             id={id}
             label={title}
             onChange={onChange}
@@ -42,7 +42,6 @@ RadioButtonField.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   priceLabel: PropTypes.string.isRequired,
-  size: PropTypes.oneOf(['small', 'medium']),
   onChange: PropTypes.func,
   checked: PropTypes.bool,
   tabIndex: PropTypes.number,
@@ -51,7 +50,6 @@ RadioButtonField.propTypes = {
 
 RadioButtonField.defaultProps = {
   tabIndex: 0,
-  size: 'medium',
   onChange: () => {},
 };
 
