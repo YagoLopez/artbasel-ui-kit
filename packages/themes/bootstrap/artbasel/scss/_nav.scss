@@ -3,9 +3,11 @@
   border-bottom: 2px solid $color-mch-gray-200;
 
   .nav-link {
+    font-size: 1rem !important;
+    line-height: 1.5rem;
+    color: $color-mch-gray-500;
     margin-bottom: -2px;
-    padding: 0.5rem 2rem;
-    font-size: 0.875rem;
+    padding: 0.75rem 2rem 0.875rem 2rem !important;
     border-radius: 0;
     border-width: 1px 0px 2px;
 
@@ -18,12 +20,15 @@
       color: $color-mch-gray-300;
       border-color: transparent transparent $color-mch-gray-300;
     }
+
+    &.active {
+      color: $color-mch-black;
+    }
   }
 
   .nav-link.active,
   .nav-item.show .nav-link {
     border-color: transparent transparent $color-mch-black;
-    font-size: 0.875rem;
     font-weight: bold;
   }
 }

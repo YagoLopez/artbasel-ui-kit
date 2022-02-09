@@ -8,6 +8,8 @@ const Tabs = ({
   className,
   id,
   defaultActiveKey,
+  onSelect,
+  activeKey,
 }) => {
   return (
     <BSTabs
@@ -15,7 +17,9 @@ const Tabs = ({
       className={className}
       id={id}
       defaultActiveKey={defaultActiveKey}
-      data-testid='mch-tabs'
+      data-testid="mch-tabs"
+      activeKey={activeKey}
+      onSelect={onSelect}
     >
       {children}
     </BSTabs>
@@ -23,10 +27,16 @@ const Tabs = ({
 };
 
 Tabs.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
+  activeKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string,
   id: PropTypes.string,
   defaultActiveKey: PropTypes.string,
+  onSelect: PropTypes.func,
+};
+
+Tabs.defaultProps = {
+  onSelect: () => null,
 };
 
 export default Tabs;

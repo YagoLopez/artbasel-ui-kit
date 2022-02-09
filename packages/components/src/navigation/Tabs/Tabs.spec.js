@@ -10,7 +10,7 @@ describe('Tabs component', () => {
   test('render modal', () => {
     render(
       <Tabs>
-        <Tab ventKey="home" title="Home">
+        <Tab eventKey="home" title="Home">
           <p>Welcome to Home</p>
         </Tab>
       </Tabs>,

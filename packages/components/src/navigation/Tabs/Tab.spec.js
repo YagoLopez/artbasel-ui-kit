@@ -1,18 +1,19 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import Tabs from './Tabs';
 import Tab from './Tab';
-
-const testElementId = 'mch-tab';
 
 describe('Tab component', () => {
   test('render Tab', () => {
     render(
-      <Tab title="Home">
-        <p>Content tab</p>
-      </Tab>,
+      <Tabs>
+        <Tab title="Home">
+          <p>Content tab</p>
+        </Tab>
+      </Tabs>,
     );
-    const el = screen.getByTestId(testElementId);
-    expect(el).toBeDefined();
+    const el = screen.getByText('Content tab');
+    expect(el).toBeInTheDocument();
   });
 });

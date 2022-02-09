@@ -1,4 +1,5 @@
 import React from 'react';
+import { Tab as BSTab } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 const Tab = ({
@@ -11,13 +12,12 @@ const Tab = ({
   }
 
   return (
-    <div
+    <BSTab
       title={title}
       eventKey={eventKey}
-      data-testid="mch-tab"
     >
       {children}
-    </div>
+    </BSTab>
   );
 };
 
