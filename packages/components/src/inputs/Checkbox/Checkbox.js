@@ -17,6 +17,7 @@ const Checkbox = ({
   label,
   onChange,
   value,
+  name,
 }) => (
   <Form.Check
     data-testid="mch-checkbox"
@@ -33,11 +34,13 @@ const Checkbox = ({
     label={label}
     onChange={onChange}
     value={value}
+    name={name}
   ></Form.Check>
 );
 
 Checkbox.propTypes = {
   align: PropTypes.oneOf(['left', 'right']),
+  name: PropTypes.string,
   checked: PropTypes.bool,
   className: PropTypes.string,
   cssStyles: PropTypes.string,
