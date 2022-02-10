@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.27.0...@mch-group/uikit-components@0.28.0) (2022-02-10)
+
+
+### Features
+
+* **checkbox:** add name prop to Checkbox component ([16f6fd5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/16f6fd58d50a904a570d7ba51848fe25aceda441))
+
+
+
+
+
 # [0.27.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.26.1...@mch-group/uikit-components@0.27.0) (2022-02-09)
 
 
