@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.28.0...@mch-group/uikit-components@0.29.0) (2022-02-11)
+
+
+### Features
+
+* **carouselpdp:** remove expand button (gonna be included in children) and track overflow change ([d518ac6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d518ac6fc1a88541b4063d418e305459fe015923))
+
+
+
+
+
 # [0.28.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.27.0...@mch-group/uikit-components@0.28.0) (2022-02-10)
 
 
