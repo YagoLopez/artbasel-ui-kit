@@ -9,6 +9,9 @@ const CarouselPDP = ({
   cssStyles,
   showBackButton,
   goBack,
+  onMove,
+  onMoved,
+  onDrag,
 }) => {
   const options = {
     width: '100%',
@@ -42,6 +45,9 @@ const CarouselPDP = ({
       <Splide
         options={options}
         onPaginationMounted={renderPagination}
+        onMove={onMove}
+        onMoved={onMoved}
+        onDrag={onDrag}
       >
         {children}
       </Splide>
@@ -54,12 +60,18 @@ CarouselPDP.propTypes = {
   cssStyles: PropTypes.string,
   showBackButton: PropTypes.bool,
   goBack: PropTypes.func,
+  onMove: PropTypes.func,
+  onMoved: PropTypes.func,
+  onDrag: PropTypes.func,
 };
 
 CarouselPDP.defaultProps = {
   cssStyles: null,
   showBackButton: false,
   goBack: () => {},
+  onMove: () => {},
+  onMoved: () => {},
+  onDrag: () => {},
 };
 
 export default Object.assign(CarouselPDP, { Slide });
