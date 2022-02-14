@@ -20,7 +20,6 @@ IconComponent.propTypes = {
 
 IconComponent.defaultProps = {
   icon: 'certificate',
-  size: 16,
 };
 
 const Tag = ({
@@ -52,7 +51,7 @@ const Tag = ({
         'tag-shadow': type === 'label',
         'cursor-pointer': type === 'filterable',
       }, className)}>
-      {icon && iconAlign === 'left' && type === 'label' && <IconComponent icon={icon} />}
+      {icon && iconAlign === 'left' && type === 'label' && <IconComponent icon={icon} className='py-0 px-0' />}
       <Element className={classNames('mb-0', {
         'text-small': type === 'filterable',
         'text-label-small': !['curator', 'filterable'].includes(type),
@@ -62,7 +61,7 @@ const Tag = ({
         {label}
       </Element>
       {type === 'filterable' && <IconComponent icon='close-small' size={22}/>}
-      {icon && iconAlign === 'right' && type === 'label' && <IconComponent icon={icon} />}
+      {icon && iconAlign === 'right' && type === 'label' && <IconComponent icon={icon} className='py-0 px-0' />}
     </div>
   );
 };
