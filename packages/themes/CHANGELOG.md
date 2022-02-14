@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.25.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.25.0...@mch-group/uikit-themes@0.25.1) (2022-02-14)
+
+
+### Bug Fixes
+
+* **stepindicator:** add pointer cursor on completed step ([84edf45](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/84edf45c681082da821f11ce57671ca7fdd3c05f))
+
+
+
+
+
 # [0.25.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.24.0...@mch-group/uikit-themes@0.25.0) (2022-02-11)
 
 

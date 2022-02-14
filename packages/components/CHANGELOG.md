@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.29.1...@mch-group/uikit-components@0.29.2) (2022-02-14)
+
+
+### Bug Fixes
+
+* export radio button field ([8f80d78](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/8f80d782def9b14327b90cc818e6cdcdd76dd4d8))
+* **stepindicator:** add pointer cursor on completed step ([84edf45](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/84edf45c681082da821f11ce57671ca7fdd3c05f))
+
+
+
+
+
 ## [0.29.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.29.0...@mch-group/uikit-components@0.29.1) (2022-02-14)
 
 
