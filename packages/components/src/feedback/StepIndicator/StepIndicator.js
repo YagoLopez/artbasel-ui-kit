@@ -23,7 +23,7 @@ const StepIndicator = ({ activeStep, stepLabels, onClickStep }) => {
               }
               {
                 activeStep > i
-                  && <div className='d-flex justify-content-center align-items-center background-point-step'><Icon name="checkmark" color={'white'} /></div>
+                  && <div className='d-flex justify-content-center align-items-center background-point-step pointer'><Icon name="checkmark" color={'white'} /></div>
               }
               {
                 activeStep < i
