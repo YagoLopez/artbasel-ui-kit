@@ -23,6 +23,7 @@ const Navbar = ({
   profileWelcomeHeader,
   scrolled,
   onSearch,
+  searchPlaceholder,
 }) => {
   if (!menuData) {
     return null;
@@ -140,35 +141,35 @@ const Navbar = ({
   };
 
   return (
-    <Container
-      className="navbar-container"
-      data-testid="mch-navbar"
-    >
+    <Container className="navbar-container" data-testid="mch-navbar">
       <Row gutter="g-0" className="px-3 px-lg-8 navbar">
         <Col
           className="col-auto pe-5 py-7"
           onMouseEnter={() => setVisibleMenu(null)}
         >
-          { linkRenderer(menuData.logoLink, <ArtBaselLogo width={130} height={43} />) }
+          {linkRenderer(
+            menuData.logoLink,
+            <ArtBaselLogo width={130} height={43} />,
+          )}
         </Col>
         <Col className="col-auto entries-container">
           <Row gutter="g-0" className="menu-entries">
             {menuData.entries.map((entry) => {
-              const width = (10 * (entry.label.length > 7 ? entry.label.length : 7)) - 10;
+              const width = 10 * (entry.label.length > 7 ? entry.label.length : 7) - 10;
               const key = createNavLinks(width, !!entry.flyout);
               return (
-              <Col
-                className="col-auto d-flex align-items-center text-centerm nav-entry"
-                key={entry.label}
-                onMouseEnter={ (e) => handleEntryMouseEnter(e, entry, key) }
-                onMouseLeave={ (e) => handleMouseLeave(e)}
-                style={{ width: `${width}px`, height: '102px' }}
+                <Col
+                  className="col-auto d-flex align-items-center text-centerm nav-entry"
+                  key={entry.label}
+                  onMouseEnter={(e) => handleEntryMouseEnter(e, entry, key)}
+                  onMouseLeave={(e) => handleMouseLeave(e)}
+                  style={{ width: `${width}px`, height: '102px' }}
                 >
                   <div className="m-auto navlink">
-                    { linkRenderer(entry.link, entry.label) }
+                    {linkRenderer(entry.link, entry.label)}
                   </div>
                   <div className="col-underline" />
-              </Col>
+                </Col>
               );
             })}
             <div ref={underLineTextRef} className="underline-text" />
@@ -180,8 +181,11 @@ const Navbar = ({
         >
           <div style={{ minWidth: '280px', maxWidth: '399px', width: '100%' }}>
             <form onSubmit={submitHandler}>
-              <Search placeholder="Search for artworks, events, galleries..." onChange={ onSearchChangeHandler } />
-              </form>
+              <Search
+                placeholder={searchPlaceholder}
+                onChange={onSearchChangeHandler}
+              />
+            </form>
           </div>
         </Col>
 
@@ -194,7 +198,7 @@ const Navbar = ({
             setIsVisible={handleSetVisibleProfileFlyout}
             isVisible={visibleMenu === PROFILE_FLYOUT}
             userData={userData}
-            profileWelcomeHeader={ profileWelcomeHeader }
+            profileWelcomeHeader={profileWelcomeHeader}
             linkRenderer={linkRenderer}
           />
         </Col>
@@ -203,7 +207,7 @@ const Navbar = ({
           <CollectionLink
             isUserLoggedIn={userData?.isUserLoggedIn}
             loggedCollectionUrl={loggedCollectionUrl}
-            unloggedCollectionUrl={ unloggedCollectionUrl }
+            unloggedCollectionUrl={unloggedCollectionUrl}
             linkRenderer={linkRenderer}
           />
         </Col>
@@ -229,7 +233,7 @@ Navbar.propTypes = {
   profileWelcomeHeader: PropTypes.string.isRequired,
   scrolled: PropTypes.bool,
   onSearch: PropTypes.func.isRequired,
-
+  searchPlaceholder: PropTypes.string.isRequired,
 };
 
 Navbar.defaultProps = {

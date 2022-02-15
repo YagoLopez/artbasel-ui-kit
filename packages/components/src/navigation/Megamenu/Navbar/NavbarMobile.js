@@ -2,14 +2,14 @@ import React, { useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import { CSSTransition } from 'react-transition-group';
 import { ArtBaselLogo } from '../../../utils/ArtBaselLogo';
 import { Container, Row, Col } from '../../../structure/Grid';
 import { ButtonIcon } from '../../../actions/ButtonIcon';
-import { Search } from '../../../inputs/Search';
+import { MobileSearch, Search } from '../../../inputs/Search';
 import ProfileFlyout from './ProfileFlyout';
 import { PROFILE_FLYOUT } from '../constants';
 import CollectionLink from './CollectionLink';
-import ProfileMobile from './ProfileMobile';
 
 const NavbarMobile = ({
   menuData,
@@ -23,6 +23,7 @@ const NavbarMobile = ({
   unloggedCollectionUrl,
   onSearch,
   linkRenderer,
+  searchPlaceholder,
 }) => {
   if (!menuData) {
     return null;
@@ -35,6 +36,8 @@ const NavbarMobile = ({
 
   const [containerIsVisible, setContainerIsVisible] = useState(false);
   const [optionsIsVisible, SetOptionsIsVisible] = useState(false);
+  const [showSearchBar, setShowSearchBar] = useState(false);
+  const [showSearchBarTransitions, setShowSearchBarTransitions] = useState(false);
 
   const handleSetVisibleProfileFlyout = useCallback((open) => {
     setVisibleMenu(open ? PROFILE_FLYOUT : null);
@@ -50,6 +53,7 @@ const NavbarMobile = ({
       setTimeout(() => setContainerIsVisible(false), 500);
       document.body.style.overflow = '';
     }
+    //
   }, [visibleLinks]);
 
   const onSearchChangeHandler = (event) => {
@@ -63,7 +67,7 @@ const NavbarMobile = ({
 
   return (
     <>
-      {!visibleLinks && !visibleProfile && <Container fluid>
+      {!showSearchBar && !visibleLinks && !visibleProfile && <Container fluid>
         <Row gutter="g-0" className="px-3 px-md-5 navbar">
           <Col className="col-auto">
             <ButtonIcon
@@ -81,12 +85,16 @@ const NavbarMobile = ({
              { linkRenderer(menuData.logoLink, <ArtBaselLogo width={117} height={39} />) }
           </Col>
 
-          <Col className="col-auto d-md-none">
-            <ButtonIcon icon="search" />
+          <Col className='col-auto d-md-none'>
+            <ButtonIcon
+              icon="search"
+              onClick={() => {
+                setShowSearchBarTransitions(true);
+              }} />
           </Col>
           <Col className="px-3 px-md-5 d-none d-md-block">
             <form onSubmit={submitHandler}>
-              <Search placeholder="Search for artworks, events, galleries..." onChange={ onSearchChangeHandler } />
+              <Search placeholder={searchPlaceholder} onChange={ onSearchChangeHandler } />
             </form>
           </Col>
           <Col className="col-auto d-lg-none">
@@ -112,6 +120,32 @@ const NavbarMobile = ({
           </Col>
         </Row>
       </Container>}
+      <CSSTransition
+        in={showSearchBarTransitions}
+        classNames="mobilefade"
+        unmountOnExit
+        timeout={200}
+        onEnter={() => setShowSearchBar(true)}
+        onExited={() => setShowSearchBar(false)}
+      >
+        <Container fluid>
+          <Row gutter="g-0">
+            <Col className={classnames('col-auto', 'd-md-none', 'w-100')}>
+              <form onSubmit={submitHandler}>
+              <MobileSearch
+                value={searchText}
+                placeholder={searchPlaceholder}
+                onChange={onSearchChangeHandler}
+                onBackButton={() => {
+                  setSearchText('');
+                  setShowSearchBarTransitions(false);
+                }}
+              />
+              </form>
+            </Col>
+          </Row>
+        </Container>
+      </CSSTransition>
       { (visibleLinks || visibleProfile)
         && <Container fluid>
         <Row gutter="g-0" className="px-3 px-md-5 navbar">
@@ -170,15 +204,6 @@ const NavbarMobile = ({
           visible: visibleLinks || visibleProfile,
         }) }
       />
-      <ProfileMobile
-        profileData = { profileData }
-        onLogout = {onLogout}
-        isVisible = {visibleProfile}
-        setIsVisible = {setVisibleProfile}
-        userData= { userData }
-        profileWelcomeHeader={ profileWelcomeHeader }
-        linkRenderer={linkRenderer}
-       />
     </>
   );
 };
@@ -198,6 +223,7 @@ NavbarMobile.propTypes = {
   loggedCollectionUrl: PropTypes.string.isRequired,
   unloggedCollectionUrl: PropTypes.string.isRequired,
   onSearch: PropTypes.func.isRequired,
+  searchPlaceholder: PropTypes.string.isRequired,
   linkRenderer: PropTypes.func.isRequired,
 };
 

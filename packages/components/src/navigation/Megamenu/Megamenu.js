@@ -24,6 +24,7 @@ const MegaMenuBuilder = forwardRef(
       onLogout,
       loggedCollectionUrl,
       unloggedCollectionUrl,
+      searchPlaceholder,
     },
     ref,
   ) => {
@@ -77,6 +78,7 @@ const MegaMenuBuilder = forwardRef(
               unloggedCollectionUrl={unloggedCollectionUrl}
               profileWelcomeHeader={ profileWelcomeHeader }
               onSearch={onSearch}
+              searchPlaceholder={searchPlaceholder}
             />
           </div>
           <div className="d-lg-none">
@@ -92,6 +94,7 @@ const MegaMenuBuilder = forwardRef(
               loggedCollectionUrl={loggedCollectionUrl}
               unloggedCollectionUrl={ unloggedCollectionUrl }
               onSearch={onSearch}
+              searchPlaceholder={searchPlaceholder}
             />
           </div>
           <div className="megamenu-underline d-md-none d-lg-inline" />
@@ -135,6 +138,7 @@ const Megamenu = forwardRef(
       unloggedCollectionUrl,
       profileWelcomeHeader,
       onSearch,
+      searchPlaceholder = 'Search for artworks, events, galleries...',
     },
     ref,
   ) => {
@@ -161,6 +165,7 @@ const Megamenu = forwardRef(
         unloggedCollectionUrl={unloggedCollectionUrl}
         ref={ref}
         onSearch={onSearch}
+        searchPlaceholder={searchPlaceholder}
       />
     );
   },
@@ -182,6 +187,7 @@ MegaMenuBuilder.propTypes = {
   loggedCollectionUrl: PropTypes.string.isRequired,
   unloggedCollectionUrl: PropTypes.string.isRequired,
   onSearch: PropTypes.func.isRequired,
+  searchPlaceholder: PropTypes.string.isRequired,
 };
 
 Megamenu.displayName = 'Megamenu';
@@ -219,6 +225,7 @@ Megamenu.propTypes = {
   /** The Collection URL when the user is unlogged.
   Used in the Collection Icon. */
   unloggedCollectionUrl: PropTypes.string.isRequired,
+  searchPlaceholder: PropTypes.string,
 };
 
 export default Megamenu;
