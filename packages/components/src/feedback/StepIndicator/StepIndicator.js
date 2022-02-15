@@ -16,7 +16,12 @@ const StepIndicator = ({ activeStep, stepLabels, onClickStep }) => {
             <div className={classNames('d-flex container-line', { 'd-none': i === 0 })}>
             <div className={activeStep >= i ? 'line' : 'line-disabled'} />
           </div>
-            <div className='step-indicator-container' onClick={(activeStep > i) ? (() => onClickStep(i)) : null}>
+            <div
+              className={classNames('step-indicator-container', {
+                pointer: activeStep > i,
+              })}
+              onClick={(activeStep > i) ? (() => onClickStep(i)) : null}
+            >
             <div className='position-relative'>
               {
                 activeStep === i
@@ -31,7 +36,7 @@ const StepIndicator = ({ activeStep, stepLabels, onClickStep }) => {
                   && <div className='d-flex justify-content-center align-items-center background-point-step-transparent'><div className='inactive' /></div>
               }
               <div className='d-flex justify-content-center'>
-                  <p className={classNames('text-center mb-0 text-link position-absolute text-uppercase label-style', { 'label-style-disabled': activeStep < i, 'cursor-pointer': activeStep >= i })}>{step}</p>
+                  <p className={classNames('text-center mb-0 text-link position-absolute text-uppercase label-style', { 'label-style-disabled': activeStep < i })}>{step}</p>
               </div>
             </div>
           </div>

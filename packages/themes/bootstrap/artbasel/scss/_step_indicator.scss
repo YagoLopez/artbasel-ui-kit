@@ -84,6 +84,13 @@
         color: $color-mch-gray-300;
       }
     }
+
+    &.pointer:hover {
+      cursor: pointer;
+      p:hover {
+        cursor: pointer;
+      }
+    }
   }
 
   .step-indicator-container:hover {
