@@ -1,0 +1,503 @@
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+import { Container, Row, Col } from '../../Grid';
+import RoomCard from './RoomCard';
+import { example, imagesArray } from './RoomCard.example';
+
+<Meta
+  title="Components/Structure/cards/Room Card"
+  component={RoomCard}
+  decorators={[withDesign]}
+/>
+
+export const Template = (args) => {
+  return (
+    <Container>
+      <Row>
+        {Array(6)
+          .fill(example)
+          .map((card, i) => {
+            return (
+              <Col
+                key={`col-${i}`}
+                xs={12}
+                sm={12}
+                md={6}
+                lg={4}
+                xl={4}
+                xxl={4}
+                className="mb-lg-9 mb-md-9"
+              >
+                <RoomCard {...{ ...args, imageUrl: imagesArray[i] }} />
+              </Col>
+            );
+          })}
+      </Row>
+    </Container>
+  );
+};
+
+export const argTypes = {
+  openingSoon: {
+    table: {
+      category: 'Tags',
+    },
+  },
+  visited: {
+    table: {
+      category: 'Tags',
+    },
+  },
+  curator: {
+    table: {
+      category: 'Tags',
+    },
+  },
+  show: {
+    table: {
+      category: 'Collections',
+    },
+  },
+  unavailableToView: {
+    table: {
+      category: 'Collections',
+    },
+  },
+  selectMode: {
+    table: {
+      category: 'Collections',
+    },
+  },
+  onCollectionAdd: {
+    table: {
+      category: 'Collections',
+    },
+  },
+};
+
+# OVR Room Card
+
+These type of cards make up most of the interface and are key components for logically grouping page content and making it scalable.
+
+## Types
+
+### Freestanding
+
+<Canvas style={{ width: '400px' }}>
+  <RoomCard
+    title={example.title}
+    collaboratedAccounts={example.collaboratedAccounts}
+    ownerAccount={example.ownerAccount}
+    theme={example.theme}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    ownerAccountLink={example.ownerAccountLink}
+    type="freestanding"
+    imageUrl={example.imageUrl}
+    liveChat={example.liveChat}
+    openingSoon={example.openingSoon}
+    visited={example.visited}
+    curator={example.curator}
+    show={example.show}
+    unavailableToView={example.unavailableToView}
+    selectMode={example.selectMode}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </RoomCard>
+</Canvas>
+
+### Hybrid
+
+<Canvas style={{ width: '400px' }}>
+  <RoomCard
+    title={example.title}
+    collaboratedAccounts={example.collaboratedAccounts}
+    ownerAccount={example.ownerAccount}
+    theme={example.theme}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    ownerAccountLink={example.ownerAccountLink}
+    type="hybrid"
+    imageUrl={example.imageUrl}
+    liveChat={example.liveChat}
+    openingSoon={example.openingSoon}
+    visited={example.visited}
+    curator={example.curator}
+    show={example.show}
+    unavailableToView={example.unavailableToView}
+    selectMode={example.selectMode}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </RoomCard>
+</Canvas>
+
+## Live Chat
+
+<Canvas style={{ width: '400px' }}>
+  <RoomCard
+    title={example.title}
+    collaboratedAccounts={example.collaboratedAccounts}
+    ownerAccount={example.ownerAccount}
+    theme={example.theme}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    ownerAccountLink={example.ownerAccountLink}
+    type={example.type}
+    imageUrl={example.imageUrl}
+    liveChat={true}
+    openingSoon={example.openingSoon}
+    visited={example.visited}
+    curator={example.curator}
+    show={example.show}
+    unavailableToView={example.unavailableToView}
+    selectMode={example.selectMode}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </RoomCard>
+</Canvas>
+
+## Opening Soon
+
+<Canvas style={{ width: '400px' }}>
+  <RoomCard
+    title={example.title}
+    collaboratedAccounts={example.collaboratedAccounts}
+    ownerAccount={example.ownerAccount}
+    theme={example.theme}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    ownerAccountLink={example.ownerAccountLink}
+    type={example.type}
+    imageUrl={example.imageUrl}
+    liveChat={example.liveChat}
+    openingSoon={{
+      active: true,
+      label: 'Opening Soon',
+    }}
+    visited={example.visited}
+    curator={example.curator}
+    show={example.show}
+    unavailableToView={example.unavailableToView}
+    selectMode={example.selectMode}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </RoomCard>
+</Canvas>
+
+## Visited
+
+<Canvas style={{ width: '400px' }}>
+  <RoomCard
+    title={example.title}
+    collaboratedAccounts={example.collaboratedAccounts}
+    ownerAccount={example.ownerAccount}
+    theme={example.theme}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    ownerAccountLink={example.ownerAccountLink}
+    type={example.type}
+    imageUrl={example.imageUrl}
+    liveChat={example.liveChat}
+    openingSoon={example.openingSoon}
+    visited={{
+      active: true,
+      label: 'Visited',
+    }}
+    curator={example.curator}
+    show={example.show}
+    unavailableToView={example.unavailableToView}
+    selectMode={example.selectMode}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </RoomCard>
+</Canvas>
+
+## Curator's Pick
+
+<Canvas style={{ width: '400px' }}>
+  <RoomCard
+    title={example.title}
+    collaboratedAccounts={example.collaboratedAccounts}
+    ownerAccount={example.ownerAccount}
+    theme={example.theme}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    ownerAccountLink={example.ownerAccountLink}
+    type={example.type}
+    imageUrl={example.imageUrl}
+    liveChat={example.liveChat}
+    openingSoon={example.openingSoon}
+    visited={example.visited}
+    curator={{
+      active: true,
+      label: 'Curator’s Pick | Example Name',
+    }}
+    show={example.show}
+    unavailableToView={example.unavailableToView}
+    selectMode={example.selectMode}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </RoomCard>
+</Canvas>
+
+## Dark Theme
+
+### Hybrid
+
+<Canvas style={{ width: '400px', background: '#1D2327' }}>
+  <RoomCard
+    title={example.title}
+    collaboratedAccounts={example.collaboratedAccounts}
+    ownerAccount={example.ownerAccount}
+    theme="dark"
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    ownerAccountLink={example.ownerAccountLink}
+    type={example.type}
+    imageUrl={example.imageUrl}
+    liveChat={example.liveChat}
+    openingSoon={example.openingSoon}
+    visited={example.visited}
+    curator={example.curator}
+    show={example.show}
+    unavailableToView={example.unavailableToView}
+    selectMode={example.selectMode}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </RoomCard>
+</Canvas>
+
+### Freestanding
+
+<Canvas style={{ width: '400px', background: '#1D2327' }}>
+  <RoomCard
+    title={example.title}
+    collaboratedAccounts={example.collaboratedAccounts}
+    ownerAccount={example.ownerAccount}
+    theme="dark"
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    ownerAccountLink={example.ownerAccountLink}
+    type="freestanding"
+    imageUrl={example.imageUrl}
+    liveChat={example.liveChat}
+    openingSoon={example.openingSoon}
+    visited={example.visited}
+    curator={example.curator}
+    show={example.show}
+    unavailableToView={example.unavailableToView}
+    selectMode={example.selectMode}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </RoomCard>
+</Canvas>
+
+## Collections
+
+### Default
+
+<Canvas style={{ width: '400px' }}>
+  <RoomCard
+    title={example.title}
+    collaboratedAccounts={example.collaboratedAccounts}
+    ownerAccount={example.ownerAccount}
+    theme={example.ownerAccount}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    ownerAccountLink={example.ownerAccountLink}
+    type="hybrid"
+    imageUrl={example.imageUrl}
+    liveChat={example.liveChat}
+    openingSoon={example.openingSoon}
+    visited={example.visited}
+    curator={example.curator}
+    show={{
+      active: true,
+      label: 'OVR: Show Name',
+    }}
+    unavailableToView={example.unavailableToView}
+    selectMode={example.selectMode}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </RoomCard>
+</Canvas>
+
+## Unavailable to view
+
+<Canvas style={{ width: '400px' }}>
+  <RoomCard
+    title={example.title}
+    collaboratedAccounts={example.collaboratedAccounts}
+    ownerAccount={example.ownerAccount}
+    theme={example.ownerAccount}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    ownerAccountLink={example.ownerAccountLink}
+    type={example.type}
+    imageUrl={example.imageUrl}
+    liveChat={example.liveChat}
+    openingSoon={example.openingSoon}
+    visited={example.visited}
+    curator={example.curator}
+    show={{
+      active: true,
+      label: 'OVR: Show Name',
+    }}
+    unavailableToView={{
+      active: true,
+      label: 'Unavailable to view',
+    }}
+    selectMode={example.selectMode}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </RoomCard>
+</Canvas>
+
+## Multi-Select
+
+### Default
+
+<Canvas style={{ width: '400px' }}>
+  <RoomCard
+    title={example.title}
+    collaboratedAccounts={example.collaboratedAccounts}
+    ownerAccount={example.ownerAccount}
+    theme={example.ownerAccount}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    ownerAccountLink={example.ownerAccountLink}
+    type={example.type}
+    imageUrl={example.imageUrl}
+    liveChat={example.liveChat}
+    openingSoon={example.openingSoon}
+    visited={example.visited}
+    curator={example.curator}
+    show={{
+      active: true,
+      label: 'OVR: Show Name',
+    }}
+    unavailableToView={example.unavailableToView}
+    selectMode={{
+      active: true,
+    }}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </RoomCard>
+</Canvas>
+
+### Opening Soon
+
+<Canvas style={{ width: '400px' }}>
+  <RoomCard
+    title={example.title}
+    collaboratedAccounts={example.collaboratedAccounts}
+    ownerAccount={example.ownerAccount}
+    theme={example.ownerAccount}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    ownerAccountLink={example.ownerAccountLink}
+    type={example.type}
+    imageUrl={example.imageUrl}
+    liveChat={example.liveChat}
+    openingSoon={{
+      active: true,
+      label: 'Opening Soon',
+    }}
+    visited={example.visited}
+    curator={example.curator}
+    show={{
+      active: true,
+      label: 'OVR: Show Name',
+    }}
+    unavailableToView={example.unavailableToView}
+    selectMode={{
+      active: true,
+    }}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </RoomCard>
+</Canvas>
+
+### Unavailable to view
+
+<Canvas style={{ width: '400px' }}>
+  <RoomCard
+    title={example.title}
+    collaboratedAccounts={example.collaboratedAccounts}
+    ownerAccount={example.ownerAccount}
+    theme={example.ownerAccount}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    ownerAccountLink={example.ownerAccountLink}
+    type={example.type}
+    imageUrl={example.imageUrl}
+    liveChat={example.liveChat}
+    openingSoon={example.openingSoon}
+    visited={example.visited}
+    curator={example.curator}
+    show={{
+      active: true,
+      label: 'OVR: Show Name',
+    }}
+    unavailableToView={{
+      active: true,
+      label: 'Unavailable to view',
+    }}
+    selectMode={{
+      active: true,
+      disabled: false
+    }}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </RoomCard>
+</Canvas>
+
+## List Page simulation
+
+<Canvas>
+  <Story
+    name="Room\ Card"
+    args={example}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/3Aa83xoxTTGnObo9tURiCe/Navigation?node-id=120%3A2165',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable of={RoomCard} />

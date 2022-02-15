@@ -1,0 +1,307 @@
+@mixin round-corners {
+  border-radius: $spacing-1;
+  overflow: hidden;
+}
+
+/* no safari and chrome support */
+@mixin div-blur {
+  backdrop-filter: blur($spacing-3);
+}
+
+/* better support, but creates an inner shadow */
+@mixin image-blur {
+  filter: blur(7px);
+}
+
+.card.room-card {
+  position: relative;
+  display: inline-flex;
+  border: none;
+
+  a + img:hover {
+    cursor: pointer;
+  }
+
+  &.theme {
+    @include round-corners;
+
+    &-light {
+      .text-frame {
+        h4 {
+          color: $color-mch-black;
+        }
+
+        p,
+        span {
+          color: $color-mch-gray-400;
+        }
+      }
+    }
+
+    &-dark {
+      background: $color-mch-black;
+
+      .text-frame {
+        h4 {
+          color: $color-mch-white;
+        }
+
+        p,
+        span {
+          color: $color-mch-gray-200;
+        }
+      }
+    }
+  }
+
+  &.default-state {
+    &:hover {
+      .overlay-fill.dark {
+        opacity: 1;
+      }
+
+      .text-frame p {
+        color: $color-mch-black;
+      }
+
+      .btn-icon {
+        cursor: pointer;
+        opacity: 1;
+      }
+    }
+
+    &.theme {
+      &-dark:hover .text-frame p {
+        color: $color-mch-white;
+      }
+
+      &-light:hover .text-frame p {
+        color: $color-mch-black;
+      }
+    }
+  }
+
+  &.opening-state {
+    &:hover {
+      .overlay-fill.dark {
+        opacity: 1;
+      }
+
+      .btn-icon {
+        cursor: pointer;
+        opacity: 1;
+      }
+    }
+
+    .overlay-blur.dark {
+      opacity: 1;
+    }
+
+    .image-frame img {
+      @include image-blur;
+    }
+  }
+
+  &.unavailable-state {
+    &:hover {
+      .text-frame p {
+        color: $color-mch-black;
+      }
+    }
+
+    .image-frame,
+    .text-frame-top {
+      pointer-events: none;
+    }
+
+    .form-check-input,
+    .checkbox-select {
+      pointer-events: all;
+    }
+
+    .overlay-blur.light {
+      opacity: 1;
+    }
+
+    .image-frame img {
+      @include image-blur;
+    }
+  }
+
+  &.select-state {
+    pointer-events: none;
+
+    .form-check-input,
+    .checkbox-select {
+      pointer-events: all;
+    }
+
+    .overlay-fill.dark {
+      opacity: 1;
+    }
+
+    &:not(.selected-state) {
+      .text-frame {
+        opacity: 0.5;
+      }
+    }
+
+    .selected-state {
+      .text-frame {
+        opacity: 1;
+      }
+    }
+  }
+
+  .image-frame {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    @include round-corners;
+
+    a {
+      width: 100%;
+      @include round-corners;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      @include round-corners;
+    }
+
+    .tag {
+      position: absolute;
+      z-index: 4;
+
+      &-opening,
+      &-visited,
+      &-unavailableToView {
+        top: $spacing-5;
+        left: $spacing-5;
+      }
+
+      &-curator {
+        bottom: $spacing-5;
+        left: $spacing-5;
+      }
+    }
+
+    .form-check-input {
+      position: absolute;
+      z-index: 4;
+      top: $spacing-5;
+      right: $spacing-5;
+      cursor: pointer;
+    }
+
+    .btn-icon {
+      transition: opacity 0.35s ease-out;
+      opacity: 0;
+      position: absolute;
+      top: $spacing-5;
+      right: $spacing-5;
+      z-index: 5;
+    }
+  }
+
+  .text-frame {
+    padding-top: $spacing-7;
+    padding-left: 0;
+    padding-right: 0;
+
+    .truncate {
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    p {
+      transition: color 0.35s ease-out;
+    }
+
+    h4 {
+      margin-bottom: $spacing-2;
+    }
+  }
+
+  .bottom-frame {
+    min-height: $spacing-7;
+
+    &-left {
+      .tag:first-child {
+        margin-right: $spacing-3;
+      }
+
+      .text-medium {
+        text-decoration: none;
+        cursor: default;
+      }
+
+      a > .text-medium {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .overlay {
+    &-eye {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: $spacing-10;
+      height: $spacing-10;
+      z-index: 5;
+      background: #ffffff;
+      border-radius: $spacing-7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all 0.35s ease-out;
+      z-index: 2;
+      @include round-corners;
+
+      &.dark {
+        background: rgba(29, 35, 39, 0.3);
+      }
+    }
+
+    &-blur {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all 0.35s ease-out;
+      z-index: 1;
+      @include round-corners;
+
+      &.light {
+        background: rgba(255, 255, 255, 0.8);
+        // @include div-blur;
+      }
+
+      &.dark {
+        background: rgba(255, 255, 255, 0.1);
+        // @include div-blur;
+      }
+    }
+  }
+}
