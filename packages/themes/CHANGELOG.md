@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.26.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.25.1...@mch-group/uikit-themes@0.26.0) (2022-02-15)
+
+
+### Bug Fixes
+
+* **step indicator:** Position label and props  fixed ([d706317](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d706317c95fd00fc5ef067bcfdc8dd4abdd8c6bb))
+
+
+### Features
+
+* **navigation:** Added mobile search bar ([a60b5c6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/a60b5c6ee99f13a775cd4570f16553eff1b5cd30))
+
+
+
+
+
 ## [0.25.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.25.0...@mch-group/uikit-themes@0.25.1) (2022-02-14)
 
 
