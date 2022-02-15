@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { Icon } from '../../utils/Icon';
 
 const StepIndicator = ({ activeStep, stepLabels, onClickStep }) => {
@@ -11,12 +12,12 @@ const StepIndicator = ({ activeStep, stepLabels, onClickStep }) => {
     <div className='d-flex step-indicator' test-dataid="mch-step-indicator">
       {
         stepLabels.map((step, i) => (
-        <div className={`d-flex ${i !== 0 && 'w-100'}`} key={i}>
-          <div className={`d-flex container-line ${i === 0 && 'd-none'}`}>
+        <div className={classNames('d-flex', { 'w-100': i !== 0 })} key={i}>
+            <div className={classNames('d-flex container-line', { 'd-none': i === 0 })}>
             <div className={activeStep >= i ? 'line' : 'line-disabled'} />
           </div>
-          <div className='step-indicator-container' onClick={(activeStep > i) ? (() => onClickStep(i)) : null}>
-            <div>
+            <div className='step-indicator-container' onClick={(activeStep > i) ? (() => onClickStep(i)) : null}>
+            <div className='position-relative'>
               {
                 activeStep === i
                   && <div className='d-flex justify-content-center align-items-center background-point-step'><div className='active' /></div>
@@ -29,8 +30,10 @@ const StepIndicator = ({ activeStep, stepLabels, onClickStep }) => {
                 activeStep < i
                   && <div className='d-flex justify-content-center align-items-center background-point-step-transparent'><div className='inactive' /></div>
               }
+              <div className='d-flex justify-content-center'>
+                  <p className={classNames('text-center mb-0 text-link position-absolute text-uppercase label-style', { 'label-style-disabled': activeStep < i, 'cursor-pointer': activeStep >= i })}>{step}</p>
+              </div>
             </div>
-            <p className={`text-center mb-0 text-link text-uppercase label-style ${activeStep < i && 'label-style-disabled'}`}>{step}</p>
           </div>
         </div>
         ))
@@ -51,7 +54,6 @@ StepIndicator.propTypes = {
 
 StepIndicator.defaultProps = {
   activeStep: 0,
-  stepLabels: [],
   onClickStep: () => {},
 };
 

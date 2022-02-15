@@ -1,5 +1,4 @@
 .step-indicator {
-
   .container-line {
     height: 20px;
     width: calc(100% - 2rem);
@@ -16,26 +15,26 @@
       align-self: center;
 
       &-disabled {
-      @extend .line;
-      background-color: $color-mch-gray-300;
+        @extend .line;
+        background-color: $color-mch-gray-300;
       }
     }
   }
 
-  .step-indicator-container{
+  .step-indicator-container {
     .background-point-step {
       height: 20px;
       width: 20px;
       background-color: $color-mch-black;
       border-radius: 100%;
       margin: 0 12px;
-  
+
       @include media-breakpoint-up(lg) {
         height: 28px;
         width: 28px;
         margin: 0 8px 16px;
       }
-  
+
       &-transparent {
         @extend .background-point-step;
         background-color: rgba(255, 255, 255, 0);
@@ -44,42 +43,42 @@
       &.pointer:hover {
         cursor: pointer;
       }
-  
+
       .active {
         height: 8px;
         width: 8px;
         background-color: white;
         border-radius: 100%;
-  
+
         @include media-breakpoint-up(lg) {
           height: 12px;
           width: 12px;
         }
       }
-  
+
       .inactive {
         height: 16px;
         width: 16px;
         background-color: $color-mch-gray-300;
         border-radius: 100%;
-  
+
         @include media-breakpoint-up(lg) {
           height: 12px;
           width: 12px;
         }
       }
     }
-  
-    .label-style{
+
+    .label-style {
       display: none;
-      
+
       @include media-breakpoint-up(lg) {
         display: block;
         font-size: 0.875rem;
         color: $color-mch-black;
         text-decoration: none;
       }
-  
+
       &-disabled {
         @extend .label-style;
         color: $color-mch-gray-300;
@@ -87,7 +86,7 @@
     }
   }
 
-  .step-indicator-container:hover{
+  .step-indicator-container:hover {
     .background-point-step {
       background-color: $color-mch-gray-500;
 
@@ -97,7 +96,7 @@
       }
     }
 
-    .label-style{
+    .label-style {
       cursor: default;
       color: $color-mch-gray-500;
 
