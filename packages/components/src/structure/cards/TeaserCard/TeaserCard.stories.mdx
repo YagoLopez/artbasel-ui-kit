@@ -4,12 +4,13 @@ import example from './TeaserCard.example.json';
 import TeaserCard from './TeaserCard';
 
 <Meta
-  title="Components/Structure/TeaserCard"
+  title="Components/Structure/Cards/TeaserCard"
   component={TeaserCard}
   decorators={[withDesign]}
 />
 
 export const Template = (args) => <TeaserCard {...args} />;
+export const linkRenderer = (link, label) => <a href={link}>{label}</a>;
 
 export const argTypes = {};
 
@@ -19,6 +20,7 @@ export const args = {
   subTitle: example.subTitle,
   imageUrl: example.imageUrl,
   link: example.link,
+  linkRenderer: (link, label) => <a href={link}>{label}</a>,
 };
 
 # TeaserCard
@@ -53,6 +55,7 @@ TeaserCards are used in the Megamenu. Can be verticals or horizontals. For break
     subTitle="Madrid"
     variant="h"
     link="https://www.artbasel.com"
+    linkRenderer={(link, label) => <a href={link}>{label}</a>}
   />
 </Canvas>
 
@@ -65,9 +68,42 @@ TeaserCards are used in the Megamenu. Can be verticals or horizontals. For break
     subTitle="Featured:"
     variant="v"
     link="https://www.artbasel.com"
+    linkRenderer={(link, label) => <a href={link}>{label}</a>}
   />
 </Canvas>
 
 ## Properties
 
 <ArgsTable of={TeaserCard} />
+
+### linkRenderer property
+
+As the TeaserCard component can be consumed in several diferent systems - normally in the Megamenu, with diferent navigation methods, the links must be rendered in different ways. To add flexibility, the **linkRenderer** property will be used to render all links.
+
+**IMPORTANT**: To have the correct look and fell, the label must be inside an "a tag".
+
+#### Example 1 - "a" tag
+
+```jsx
+<TeaserCard
+  ...
+  linkRenderer={(link, label) => <a href={link}>{label}</a>}
+  ...
+/>
+```
+
+#### Example 2 - Link from router
+
+```jsx
+import Link from 'next/link'
+
+<TeaserCard
+  ...
+  linkRenderer={(link, label) =>
+    <Link href={link}>
+        <a>{label}</a>
+    </Link>
+  }
+  ...
+/>
+```
