@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.27.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.0...@mch-group/uikit-themes@0.27.1) (2022-02-15)
+
+
+### Bug Fixes
+
+* **modal:** adds vertically center for mobile ([1fb261a](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/1fb261a08410ce9973e5553be0783b63a9d4bebd))
+* **stepindicator:** add pointer cursor on labels hover ([dc04452](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/dc044524693d81d126e90c13f4c32c52d027462a))
+
+
+
+
+
 # [0.27.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.26.0...@mch-group/uikit-themes@0.27.0) (2022-02-15)
 
 
