@@ -1,6 +1,6 @@
 .modal-dialog {
   @include media-breakpoint-up(xs) {
-    margin: 0;
+    margin: 1rem;
   }
   @include media-breakpoint-up(md) {
     margin: 48px auto;

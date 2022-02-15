@@ -16,7 +16,9 @@ const Modal = ({
       size={filter ? 'filter' : size}
       show={show}
       onHide={onHide}
-      className={classnames({ 'modal-fullscreen': filter })}
+      className={ classnames({ 'modal-fullscreen': filter }) }
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
     >
       {children}
     </BSModal>
