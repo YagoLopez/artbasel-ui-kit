@@ -34,7 +34,7 @@ const RoomCard = ({
 
   const ConditionalWrapper = ({ condition, link, children }) => {
     if (condition && typeof linkRenderer === 'function') {
-      linkRenderer(link, children);
+      return linkRenderer(link, children);
     }
     return children;
   };

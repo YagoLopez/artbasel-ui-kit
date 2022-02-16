@@ -10,32 +10,8 @@ import { example, imagesArray } from './RoomCard.example';
   decorators={[withDesign]}
 />
 
-export const Template = (args) => {
-  return (
-    <Container>
-      <Row>
-        {Array(6)
-          .fill(example)
-          .map((card, i) => {
-            return (
-              <Col
-                key={`col-${i}`}
-                xs={12}
-                sm={12}
-                md={6}
-                lg={4}
-                xl={4}
-                xxl={4}
-                className="mb-lg-9 mb-md-9"
-              >
-                <RoomCard {...{ ...args, imageUrl: imagesArray[i] }} />
-              </Col>
-            );
-          })}
-      </Row>
-    </Container>
-  );
-};
+export const Template = (args) => <RoomCard {...args} />
+
 
 export const argTypes = {
   openingSoon: {
@@ -83,7 +59,7 @@ These type of cards make up most of the interface and are key components for log
 
 ### Freestanding
 
-<Canvas style={{ width: '400px' }}>
+<Canvas style={{ width: '360px' }}>
   <RoomCard
     title={example.title}
     collaboratedAccounts={example.collaboratedAccounts}
@@ -110,7 +86,7 @@ These type of cards make up most of the interface and are key components for log
 
 ### Hybrid
 
-<Canvas style={{ width: '400px' }}>
+<Canvas style={{ width: '360px' }}>
   <RoomCard
     title={example.title}
     collaboratedAccounts={example.collaboratedAccounts}
@@ -137,7 +113,7 @@ These type of cards make up most of the interface and are key components for log
 
 ## Live Chat
 
-<Canvas style={{ width: '400px' }}>
+<Canvas style={{ width: '360px' }}>
   <RoomCard
     title={example.title}
     collaboratedAccounts={example.collaboratedAccounts}
@@ -164,7 +140,7 @@ These type of cards make up most of the interface and are key components for log
 
 ## Opening Soon
 
-<Canvas style={{ width: '400px' }}>
+<Canvas style={{ width: '360px' }}>
   <RoomCard
     title={example.title}
     collaboratedAccounts={example.collaboratedAccounts}
@@ -194,7 +170,7 @@ These type of cards make up most of the interface and are key components for log
 
 ## Visited
 
-<Canvas style={{ width: '400px' }}>
+<Canvas style={{ width: '360px' }}>
   <RoomCard
     title={example.title}
     collaboratedAccounts={example.collaboratedAccounts}
@@ -224,7 +200,7 @@ These type of cards make up most of the interface and are key components for log
 
 ## Curator's Pick
 
-<Canvas style={{ width: '400px' }}>
+<Canvas style={{ width: '360px' }}>
   <RoomCard
     title={example.title}
     collaboratedAccounts={example.collaboratedAccounts}
@@ -256,7 +232,7 @@ These type of cards make up most of the interface and are key components for log
 
 ### Hybrid
 
-<Canvas style={{ width: '400px', background: '#1D2327' }}>
+<Canvas style={{ width: '360px', background: '#1D2327' }}>
   <RoomCard
     title={example.title}
     collaboratedAccounts={example.collaboratedAccounts}
@@ -283,7 +259,7 @@ These type of cards make up most of the interface and are key components for log
 
 ### Freestanding
 
-<Canvas style={{ width: '400px', background: '#1D2327' }}>
+<Canvas style={{ width: '360px', background: '#1D2327' }}>
   <RoomCard
     title={example.title}
     collaboratedAccounts={example.collaboratedAccounts}
@@ -312,12 +288,12 @@ These type of cards make up most of the interface and are key components for log
 
 ### Default
 
-<Canvas style={{ width: '400px' }}>
+<Canvas style={{ width: '360px' }}>
   <RoomCard
     title={example.title}
     collaboratedAccounts={example.collaboratedAccounts}
     ownerAccount={example.ownerAccount}
-    theme={example.ownerAccount}
+    theme={example.theme}
     sectorsData={example.sectorsData}
     linkRenderer={example.linkRenderer}
     roomLink={example.roomLink}
@@ -342,12 +318,12 @@ These type of cards make up most of the interface and are key components for log
 
 ## Unavailable to view
 
-<Canvas style={{ width: '400px' }}>
+<Canvas style={{ width: '360px' }}>
   <RoomCard
     title={example.title}
     collaboratedAccounts={example.collaboratedAccounts}
     ownerAccount={example.ownerAccount}
-    theme={example.ownerAccount}
+    theme={example.theme}
     sectorsData={example.sectorsData}
     linkRenderer={example.linkRenderer}
     roomLink={example.roomLink}
@@ -377,12 +353,12 @@ These type of cards make up most of the interface and are key components for log
 
 ### Default
 
-<Canvas style={{ width: '400px' }}>
+<Canvas style={{ width: '360px' }}>
   <RoomCard
     title={example.title}
     collaboratedAccounts={example.collaboratedAccounts}
     ownerAccount={example.ownerAccount}
-    theme={example.ownerAccount}
+    theme={example.theme}
     sectorsData={example.sectorsData}
     linkRenderer={example.linkRenderer}
     roomLink={example.roomLink}
@@ -409,12 +385,12 @@ These type of cards make up most of the interface and are key components for log
 
 ### Opening Soon
 
-<Canvas style={{ width: '400px' }}>
+<Canvas style={{ width: '360px' }}>
   <RoomCard
     title={example.title}
     collaboratedAccounts={example.collaboratedAccounts}
     ownerAccount={example.ownerAccount}
-    theme={example.ownerAccount}
+    theme={example.theme}
     sectorsData={example.sectorsData}
     linkRenderer={example.linkRenderer}
     roomLink={example.roomLink}
@@ -444,12 +420,12 @@ These type of cards make up most of the interface and are key components for log
 
 ### Unavailable to view
 
-<Canvas style={{ width: '400px' }}>
+<Canvas style={{ width: '360px' }}>
   <RoomCard
     title={example.title}
     collaboratedAccounts={example.collaboratedAccounts}
     ownerAccount={example.ownerAccount}
-    theme={example.ownerAccount}
+    theme={example.theme}
     sectorsData={example.sectorsData}
     linkRenderer={example.linkRenderer}
     roomLink={example.roomLink}
@@ -478,9 +454,38 @@ These type of cards make up most of the interface and are key components for log
   </RoomCard>
 </Canvas>
 
-## List Page simulation
+## List Page
 
-<Canvas>
+<Preview>
+  <div>
+    <Container>
+      <Row>
+        {Array(6)
+          .fill(example)
+          .map((card, i) => {
+            return (
+              <Col
+                key={`col-${i}`}
+                xs={12}
+                sm={12}
+                md={6}
+                lg={4}
+                xl={4}
+                xxl={4}
+                className="mb-lg-8 mb-md-8"
+              >
+                <RoomCard {...{ ...example, imageUrl: imagesArray[i] }} />
+              </Col>
+            );
+          })}
+      </Row>
+    </Container>
+  </div>
+</Preview>
+
+## Default
+
+<Canvas style={{ width: '360px' }}>
   <Story
     name="Room\ Card"
     args={example}
