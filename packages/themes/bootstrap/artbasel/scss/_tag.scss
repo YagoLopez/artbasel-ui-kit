@@ -27,7 +27,7 @@
       border: 1px solid $color-mch-gray-500;
       border-radius: 2px;
       cursor: pointer;
-      transition: background-color ease-out .35s;
+      transition: background-color ease-out 0.35s;
       &:hover {
         background: $color-mch-gray-100;
       }
@@ -43,7 +43,7 @@
       border-radius: 2px;
       &.theme {
         &-dark {
-          background: $color-mch-black;
+          /* transparent background */
           color: $color-mch-gray-100;
         }
         &-light {
@@ -90,7 +90,7 @@
       }
     }
   }
-  &.icon{
+  &.icon {
     &-left {
       .tag-icon {
         padding: 4px;
@@ -109,5 +109,11 @@
   }
   &-shadow {
     box-shadow: 0 4px 16px rgba(29, 35, 39, 0.06);
+  }
+
+  /* fix vertical font shifting */
+  &:not(.type-filterable) p {
+    position: relative;
+    bottom: 1px;
   }
 }
