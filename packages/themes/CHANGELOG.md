@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.27.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.1...@mch-group/uikit-themes@0.27.2) (2022-02-16)
+
+
+### Bug Fixes
+
+* **tags:** fix icon size and padding in label type ([829d8f0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/829d8f096602e64b50eb0a5bdd4ffc5c06043edc))
+
+
+
+
+
 ## [0.27.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.0...@mch-group/uikit-themes@0.27.1) (2022-02-15)
 
 
