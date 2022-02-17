@@ -62,3 +62,13 @@
   0% { transform: translateX(0%)}
   100% { transform: translateX(10%)}
 }
+
+.mobile-search-overlay {
+  opacity: 0.3;
+  background-color: $color-mch-black;
+  height: calc(100vh - 58px); //from header
+  overflow: hidden;
+  width: 100vw;
+  position: fixed;
+  z-index: 1098;
+}

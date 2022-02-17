@@ -53,8 +53,15 @@ const NavbarMobile = ({
       setTimeout(() => setContainerIsVisible(false), 500);
       document.body.style.overflow = '';
     }
-    //
   }, [visibleLinks]);
+
+  useEffect(() => {
+    if (showSearchBar) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [showSearchBar]);
 
   const onSearchChangeHandler = (event) => {
     if (event.target.value !== '') { setSearchText(event.target.value); }
@@ -204,6 +211,7 @@ const NavbarMobile = ({
           visible: visibleLinks || visibleProfile,
         }) }
       />
+      { showSearchBar && <div className='mobile-search-overlay' />}
     </>
   );
 };
