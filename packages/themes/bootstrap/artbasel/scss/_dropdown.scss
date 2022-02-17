@@ -17,6 +17,7 @@
 
     .dropdown-items {
       overflow-y: auto;
+      overflow-x: hidden;
       scrollbar-width: thin;
       scrollbar-color: $color-mch-gray-400 $color-mch-gray-200;
       * {
