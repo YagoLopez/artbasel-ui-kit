@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.27.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.2...@mch-group/uikit-themes@0.27.3) (2022-02-17)
+
+
+### Bug Fixes
+
+* **dropdown:** remove overflow-x from dropdown items ([b9f2d89](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/b9f2d8995efa568a66f0ab73a9884e77acfe53ec))
+* **navigation:** mobile search overlay ([980e88c](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/980e88c32286d5c70ce26df87107b780765a16d8))
+
+
+
+
+
 ## [0.27.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.1...@mch-group/uikit-themes@0.27.2) (2022-02-16)
 
 
