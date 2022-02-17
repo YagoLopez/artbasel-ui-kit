@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.27.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.3...@mch-group/uikit-themes@0.27.4) (2022-02-17)
+
+
+### Bug Fixes
+
+* **tooltip:** paddings in tooltip title ([3dd1095](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/3dd1095a7d3ab8571eaeb2267381fe7b12dc987e))
+
+
+
+
+
 ## [0.27.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.2...@mch-group/uikit-themes@0.27.3) (2022-02-17)
 
 
