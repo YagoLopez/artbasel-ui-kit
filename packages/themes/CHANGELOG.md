@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.27.5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.4...@mch-group/uikit-themes@0.27.5) (2022-02-17)
+
+
+### Bug Fixes
+
+* **navigation:** fixed navbar border ([a39464a](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/a39464af40555561844bf61f9f5ccd7b3b8167c7))
+* **room-card:** decrease default story/canvas card width in storybook ([86b19fd](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/86b19fd0dab2f9172b35498fc599d8e8fc21a9dd))
+
+
+
+
+
 ## [0.27.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.3...@mch-group/uikit-themes@0.27.4) (2022-02-17)
 
 
