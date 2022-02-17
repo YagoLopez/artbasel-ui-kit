@@ -13,6 +13,11 @@
   filter: blur(7px);
 }
 
+/* storybook card max-width */
+:root .sb-show-main .room-card {
+  max-width: 400px;
+}
+
 .card.room-card {
   position: relative;
   display: inline-flex;
