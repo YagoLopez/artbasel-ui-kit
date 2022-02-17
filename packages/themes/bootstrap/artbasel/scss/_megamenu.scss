@@ -86,15 +86,12 @@
   @include media-breakpoint-up(md) {
     display: block;
     position: absolute;
-    top: 99px;
+    top: 98px;
     left: 0;
     width: 100vw;
     max-width: 100vw !important;
     background-color: $color-mch-white;
     border-top: 2px solid $color-mch-gray-200 !important;
-  }
-  @include media-breakpoint-up(xl) {
-    top: 98px;
   }
 }
 
