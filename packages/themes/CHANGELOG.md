@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.5...@mch-group/uikit-themes@0.28.0) (2022-02-18)
+
+
+### Features
+
+* special room card ([67f4874](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/67f4874e30778203b32bb3f87b46b0a379ea2024))
+
+
+
+
+
 ## [0.27.5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.4...@mch-group/uikit-themes@0.27.5) (2022-02-17)
 
 
