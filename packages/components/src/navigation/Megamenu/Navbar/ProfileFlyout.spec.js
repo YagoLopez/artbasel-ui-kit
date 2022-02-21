@@ -7,7 +7,7 @@ import ProfileFlyout from './ProfileFlyout';
 const linkRenderer = (link, label) => <a href={link}>{label}</a>;
 
 const profileData = {
-  options: [
+  entries: [
     {
       type: 'link',
       label: 'My Account',

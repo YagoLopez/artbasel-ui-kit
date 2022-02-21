@@ -6,7 +6,7 @@ import { Container } from '../../../structure/Grid';
 import VipBadge from './VipBadge';
 
 const ProfileMobile = ({
-  profileData: { options },
+  profileData: { entries },
   onLogout,
   isVisible,
   setIsVisible,
@@ -52,7 +52,7 @@ const ProfileMobile = ({
 
         <div className={ classnames('mobile-item-midle', { 'd-none': !isUserLoggedIn }) }>
           {
-            options.filter(o => o.type !== 'action').map(o => <p className="navlink-mobile-header item" key={ o.label }>
+            entries.filter(o => o.type !== 'action').map(o => <p className="navlink-mobile-header item" key={ o.label }>
                   <div className="navlink-mobile link-profile text-medium">
                     { linkRenderer(o.link, o.label) }
               </div>
@@ -62,7 +62,7 @@ const ProfileMobile = ({
 
                 <div className='mobile-item-right'>
           {
-            options.filter(o => o.type === 'action').map(o => <p className='navlink-mobile-header' key={o.label}>
+            entries.filter(o => o.type === 'action').map(o => <p className='navlink-mobile-header' key={o.label}>
             <button className="navlink-mobile link-profile link-logout text-medium" onClick={onClickAction} key={o.label}>
                 {o.label}
             </button>

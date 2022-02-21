@@ -5,7 +5,7 @@ import { ButtonIcon } from '../../../actions/ButtonIcon';
 import VipBadge from './VipBadge';
 
 const ProfileFlyout = ({
-  profileData: { options },
+  profileData: { entries },
   onLogout,
   setIsVisible,
   isVisible,
@@ -72,7 +72,7 @@ const ProfileFlyout = ({
 
               </li>
             }
-          {options.map((o) => (o.type === 'action' ? (
+          {entries.map((o) => (o.type === 'action' ? (
               <li className="item-menu-label" onClick={onClickAction} key={o.label}>
                 {o.label}
               </li>
@@ -94,7 +94,7 @@ const ProfileFlyout = ({
 
 ProfileFlyout.propTypes = {
   profileData: PropTypes.shape({
-    options: PropTypes.arrayOf(
+    entries: PropTypes.arrayOf(
       PropTypes.shape({
         type: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
