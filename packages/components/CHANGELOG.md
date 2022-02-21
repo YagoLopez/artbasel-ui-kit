@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.32.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.32.0...@mch-group/uikit-components@0.32.1) (2022-02-21)
+
+
+### Bug Fixes
+
+* **navigation:** changed profileData "options" field name to "entries" ([af0c766](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/af0c76696dfb6bcaa34a53f20763cc98e3f2da1b))
+
+
+
+
+
 # [0.32.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.31.3...@mch-group/uikit-components@0.32.0) (2022-02-18)
 
 
