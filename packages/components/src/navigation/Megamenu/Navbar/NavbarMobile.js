@@ -7,7 +7,7 @@ import { ArtBaselLogo } from '../../../utils/ArtBaselLogo';
 import { Container, Row, Col } from '../../../structure/Grid';
 import { ButtonIcon } from '../../../actions/ButtonIcon';
 import { MobileSearch, Search } from '../../../inputs/Search';
-import ProfileFlyout from './ProfileFlyout';
+import ProfileMobile from './ProfileMobile';
 import { PROFILE_FLYOUT } from '../constants';
 import CollectionLink from './CollectionLink';
 
@@ -107,18 +107,6 @@ const NavbarMobile = ({
           <Col className="col-auto d-lg-none">
             <ButtonIcon icon="guest" onClick={() => setVisibleProfile(!visibleProfile)}/>
           </Col>
-          <Col className="col-auto px-md-1 d-none d-lg-block">
-            <ProfileFlyout
-              profileData={profileData}
-              onChangeProfileStatus={setVisibleMenu}
-              onLogout={onLogout}
-              setIsVisible={handleSetVisibleProfileFlyout}
-              isVisible={visibleMenu === PROFILE_FLYOUT}
-              userData={userData}
-              profileWelcomeHeader={ profileWelcomeHeader }
-              linkRenderer={linkRenderer}
-            />
-          </Col>
           <Col className="col-auto px-md-1">
             <CollectionLink isUserLoggedIn={userData?.isUserLoggedIn}
               loggedCollectionUrl={loggedCollectionUrl}
@@ -211,7 +199,16 @@ const NavbarMobile = ({
           visible: visibleLinks || visibleProfile,
         }) }
       />
-      { showSearchBar && <div className='mobile-search-overlay' />}
+      { showSearchBar && <div className='mobile-search-overlay' /> }
+      <ProfileMobile
+        profileData = { profileData }
+        onLogout = {onLogout}
+        isVisible = {visibleProfile}
+        setIsVisible = {setVisibleProfile}
+        userData= { userData }
+        profileWelcomeHeader={ profileWelcomeHeader }
+        linkRenderer={linkRenderer}
+       />
     </>
   );
 };
