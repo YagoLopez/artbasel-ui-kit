@@ -34,7 +34,6 @@ export const Template = () => (
               image={product.image}
               gallery="Gallery Placeholder"
               price={product.price}
-              offer={product.offer}
             />
           </Col>
         );
@@ -74,11 +73,6 @@ export const argTypes = {
       category: 'ProductTile',
     },
   },
-  offer: {
-    table: {
-      category: 'ProductTile',
-    },
-  },
   className: {
     table: {
       category: 'Styles',
@@ -110,7 +104,6 @@ The tile is applied to represent a product in a Product List Page.
     image={example.image}
     gallery={example.gallery}
     price={example.price}
-    offer={example.offer}
   />
 </Canvas>
 

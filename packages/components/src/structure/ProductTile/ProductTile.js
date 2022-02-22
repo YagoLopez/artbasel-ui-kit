@@ -13,7 +13,6 @@ const ProductTile = ({
   year,
   gallery,
   price,
-  offer,
 }) => {
   const subtitleRef = useRef(null);
   const [truncated, setTruncated] = useState(false);
@@ -80,7 +79,6 @@ const ProductTile = ({
             <div className="tile-price">
               {price}
             </div>
-            {offer && <div className="tile-offer">| Make an offer</div>}
           </div>
         )}
       </BSPCard.Body>
@@ -97,11 +95,6 @@ ProductTile.propTypes = {
   year: PropTypes.string.isRequired,
   gallery: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  offer: PropTypes.bool,
-};
-
-ProductTile.defaultProps = {
-  offer: false,
 };
 
 export default ProductTile;
