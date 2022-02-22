@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.33.0...@mch-group/uikit-components@0.34.0) (2022-02-22)
+
+
+### Features
+
+* **radio:** set label to be entirely clickable ([e085f11](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/e085f11321cbd0829606fb9c3517dac179155b0e))
+
+
+
+
+
 # [0.33.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.32.3...@mch-group/uikit-components@0.33.0) (2022-02-22)
 
 
