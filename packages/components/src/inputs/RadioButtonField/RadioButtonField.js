@@ -13,41 +13,35 @@ const RadioButtonField = ({
   checked,
   className,
   name,
-}) => {
-  const [isChecked, setIsChecked] = useState(checked);
-  const handleChange = useCallback(() => {
-    setIsChecked(!isChecked);
-    onChange(checked);
-  }, [checked, isChecked]);
-
-  return (
-    <div
-      data-testid="mch-radio-button-field"
-      tabIndex={tabIndex}
-      onClick={handleChange}
-      className={classNames('radioButtonField-container', className, {
-        focus: isChecked,
-      })}
-    >
-      <div className="radio-field-label">
-        <Radio
-          checked={isChecked}
-          id={id}
-          label={title}
-          onChange={onChange}
-          name={name}
-        />
-        <div className="radio-label-container">
-          <p className="text-label-large">{title}</p>
-          <p className="text-small descriptor-text">{description}</p>
-        </div>
-      </div>
-      <div className="radio-price-container">
-        <p className="text-label-xlarge">{priceLabel}</p>
+  ...props
+}) => (
+  <label
+    data-testid="mch-radio-button-field"
+    tabIndex={tabIndex}
+    className={classNames('radioButtonField-container', className, {
+      focus: checked,
+    })}
+    htmlFor={id}
+  >
+    <div className="radio-field-label">
+      <Radio
+        checked={checked}
+        id={id}
+        label={title}
+        onChange={onChange}
+        name={name}
+        {...props}
+      />
+      <div className="radio-label-container">
+        <p className="text-label-large">{title}</p>
+        <p className="text-small descriptor-text">{description}</p>
       </div>
     </div>
-  );
-};
+    <div className="radio-price-container">
+      <p className="text-label-xlarge">{priceLabel}</p>
+    </div>
+  </label>
+);
 
 RadioButtonField.propTypes = {
   id: PropTypes.string,
