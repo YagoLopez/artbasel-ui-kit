@@ -37,8 +37,11 @@ import Megamenu from './Megamenu';
       },
       { type: 'action', label: 'Sign out' },
     ],
+    onProfileClick: () => {},
+    onProfileOpen: () => {},
+    onProfileClose: () => {},
+    onProfileLogout: () => {},
   }}
-  onLogout={handleOnLogout}
   loggedCollectionUrl="https://artbasel.com/mycollections"
   unloggedCollectionUrl="https://artbasel.com/access"
 />
@@ -48,7 +51,7 @@ import Megamenu from './Megamenu';
 
 <ArgsTable of={Megamenu} />
 
-## Data and Proporties Samples
+## Data and Properties Samples
 
 1. UserData
 2. profileData
@@ -87,7 +90,11 @@ import Megamenu from './Megamenu';
       "link": "/dashboard/my-gallery-dashboard"
     },
     { "type": "action", "label": "Sign out" }
-  ]
+  ],
+  "onProfileClick": () => {} /* called when user clicks on the "user" icon */,
+  "onProfileOpen": () => {} /* called when the user profile menu is opened */,
+  "onProfileClose": () => {} /* called when the user profile menu is closed */,
+  "onProfileLogout": () => {} /* called when the user clicks on Sign out */
 }
 ```
 

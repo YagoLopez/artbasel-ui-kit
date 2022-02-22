@@ -16,7 +16,6 @@ const Navbar = ({
   profileData,
   visibleMenu,
   setVisibleMenu,
-  onLogout,
   loggedCollectionUrl,
   unloggedCollectionUrl,
   userData,
@@ -194,7 +193,6 @@ const Navbar = ({
             navbarVisible={!scrolled}
             profileData={profileData}
             onChangeProfileStatus={setVisibleMenu}
-            onLogout={onLogout}
             setIsVisible={handleSetVisibleProfileFlyout}
             isVisible={visibleMenu === PROFILE_FLYOUT}
             userData={userData}
@@ -222,7 +220,6 @@ Navbar.propTypes = {
   profileData: PropTypes.object.isRequired,
   visibleMenu: PropTypes.string,
   setVisibleMenu: PropTypes.func.isRequired,
-  onLogout: PropTypes.func.isRequired,
   loggedCollectionUrl: PropTypes.string.isRequired,
   unloggedCollectionUrl: PropTypes.string.isRequired,
   userData: PropTypes.shape({

@@ -72,6 +72,13 @@ const NavbarMobile = ({
     onSearch(searchText);
   };
 
+  const toggleProfileIsVisible = useCallback(() => {
+    if (typeof profileData.onProfileClick === 'function') profileData.onProfileClick();
+    if (visibleProfile && typeof profileData.onProfileClose === 'function') profileData.onProfileClose();
+    if (!visibleProfile && typeof profileData.onProfileOpen === 'function') profileData.onProfileOpen();
+    setVisibleProfile(!visibleProfile);
+  }, [visibleProfile, visibleProfile]);
+
   return (
     <>
       {!showSearchBar && !visibleLinks && !visibleProfile && <Container fluid>
@@ -105,7 +112,7 @@ const NavbarMobile = ({
             </form>
           </Col>
           <Col className="col-auto d-lg-none">
-            <ButtonIcon icon="guest" onClick={() => setVisibleProfile(!visibleProfile)}/>
+            <ButtonIcon icon="guest" onClick={() => toggleProfileIsVisible()}/>
           </Col>
           <Col className="col-auto px-md-1">
             <CollectionLink isUserLoggedIn={userData?.isUserLoggedIn}
@@ -153,7 +160,7 @@ const NavbarMobile = ({
                   }
 
                   if (visibleProfile) {
-                    setVisibleProfile(false);
+                    toggleProfileIsVisible(false);
                   }
                 }}
               aria-controls="navlinksMobile"

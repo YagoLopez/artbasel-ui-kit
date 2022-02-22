@@ -40,6 +40,10 @@ export const profileData = {
     },
     { type: 'action', label: 'Sign out' },
   ],
+  onProfileClick: () => console.log('clicked profile'),
+  onProfileOpen: () => console.log('opened profile'),
+  onProfileClose: () => console.log('closed profile'),
+  onProfileLogout: () => console.log('Logged Out'),
 };
 
 export const userData = {
@@ -59,7 +63,6 @@ export const linkRenderer = (link, label) => <a href={link}>{label}</a>;
     userData: userData,
     profileWelcomeHeader: 'Welcome, ',
     profileData: profileData,
-    onLogout: handleOnLogout,
     loggedCollectionUrl: 'https://artbasel.com/mycollections',
     unloggedCollectionUrl: 'https://artbasel.com/access',
   }}

@@ -52,11 +52,11 @@ const ProfileMobile = ({
 
         <div className={ classnames('mobile-item-midle', { 'd-none': !isUserLoggedIn }) }>
           {
-            entries.filter(o => o.type !== 'action').map(o => <p className="navlink-mobile-header item" key={ o.label }>
+            entries.filter(o => o.type !== 'action').map(o => <div className="navlink-mobile-header item" key={ o.label }>
                   <div className="navlink-mobile link-profile text-medium">
                     { linkRenderer(o.link, o.label) }
               </div>
-              </p>)
+              </div>)
           }
         </div>
 
@@ -78,7 +78,7 @@ const ProfileMobile = ({
 
 ProfileMobile.propTypes = {
   profileData: PropTypes.shape({
-    options: PropTypes.arrayOf(
+    entries: PropTypes.arrayOf(
       PropTypes.shape({
         type: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
