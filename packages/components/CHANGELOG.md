@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.33.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.32.3...@mch-group/uikit-components@0.33.0) (2022-02-22)
+
+
+### Features
+
+* **navigation:** added callbacks to user profile menu ([442fcaf](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/442fcaf25bdeb102f9e040e68a9f6b0ddf1e8aa3))
+* **navigation:** added user profile callback methods to megamenu ([b020c04](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/b020c0428abb9304e73ca0a3c863ced9f07684d8))
+* **navigation:** added user profile methods to megamenu ([9883288](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/988328893ee2574dd4767151a7c13c9d167915fd))
+
+
+
+
+
 ## [0.32.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.32.2...@mch-group/uikit-components@0.32.3) (2022-02-22)
 
 
