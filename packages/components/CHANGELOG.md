@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.32.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.32.2...@mch-group/uikit-components@0.32.3) (2022-02-22)
+
+
+### Bug Fixes
+
+* **radio:** add name prop to radio component ([f8ad853](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/f8ad8536fe24f52dd5976ad6b01fd69527d61cc7))
+* remove 'make an offer' prop from ui components ([da9f922](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/da9f9227780b72d50ce826113bcd2ecdb36954cd))
+
+
+
+
+
 ## [0.32.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.32.1...@mch-group/uikit-components@0.32.2) (2022-02-21)
 
 

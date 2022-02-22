@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.28.0...@mch-group/uikit-themes@0.28.1) (2022-02-22)
+
+
+### Bug Fixes
+
+* remove 'make an offer' prop from ui components ([da9f922](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/da9f9227780b72d50ce826113bcd2ecdb36954cd))
+
+
+
+
+
 # [0.28.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.5...@mch-group/uikit-themes@0.28.0) (2022-02-18)
 
 
