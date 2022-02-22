@@ -6,8 +6,7 @@ import { Container } from '../../../structure/Grid';
 import VipBadge from './VipBadge';
 
 const ProfileMobile = ({
-  profileData: { entries },
-  onLogout,
+  profileData: { entries, onProfileLogout, onProfileClose },
   isVisible,
   setIsVisible,
   userData: { name: userName, vipStatus, isUserLoggedIn },
@@ -17,8 +16,9 @@ const ProfileMobile = ({
   const [optionsIsVisible, SetOptionsIsVisible] = useState(false);
 
   const onClickAction = useCallback(() => {
-    onLogout();
+    if (typeof onProfileLogout === 'function') onProfileLogout();
     setIsVisible(null);
+    if (typeof onProfileClose === 'function') onProfileClose();
   }, [setIsVisible]);
 
   useEffect(() => {
@@ -85,10 +85,11 @@ ProfileMobile.propTypes = {
         link: PropTypes.string,
       }),
     ),
+    onProfileLogout: PropTypes.func.isRequired,
+    onProfileClose: PropTypes.func,
   }).isRequired,
-  onLogout: PropTypes.func.isRequired,
   setIsVisible: PropTypes.func.isRequired,
-  isVisible: PropTypes.bool.isRequired,
+  isVisible: PropTypes.bool,
   userData: PropTypes.shape({
     name: PropTypes.string.isRequired,
     vipStatus: PropTypes.bool.isRequired,
