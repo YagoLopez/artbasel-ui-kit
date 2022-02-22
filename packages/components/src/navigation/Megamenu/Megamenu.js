@@ -21,7 +21,6 @@ const MegaMenuBuilder = forwardRef(
       profileData,
       profileWelcomeHeader,
       userData,
-      onLogout,
       loggedCollectionUrl,
       unloggedCollectionUrl,
       searchPlaceholder,
@@ -70,7 +69,6 @@ const MegaMenuBuilder = forwardRef(
               menuData={ menuData }
               linkRenderer={linkRenderer}
               profileData={profileData}
-              onLogout={onLogout}
               visibleMenu={visibleMenu}
               setVisibleMenu={setVisibleMenu}
               userData={userData}
@@ -86,7 +84,6 @@ const MegaMenuBuilder = forwardRef(
               menuData={ menuData }
               linkRenderer={linkRenderer}
               profileData={profileData}
-              onLogout={onLogout}
               visibleMenu={visibleMenu}
               setVisibleMenu={setVisibleMenu}
               userData={userData}
@@ -132,13 +129,12 @@ const Megamenu = forwardRef(
       menuData,
       linkRenderer,
       profileData,
-      onLogout,
       userData,
       loggedCollectionUrl,
       unloggedCollectionUrl,
       profileWelcomeHeader,
       onSearch,
-      searchPlaceholder = 'Search for artworks, events, galleries...',
+      searchPlaceholder,
     },
     ref,
   ) => {
@@ -158,7 +154,6 @@ const Megamenu = forwardRef(
         menuData={menuData}
         linkRenderer={linkRenderer}
         profileData={profileData}
-        onLogout={onLogout}
         userData={userData}
         profileWelcomeHeader={profileWelcomeHeader}
         loggedCollectionUrl={loggedCollectionUrl}
@@ -177,7 +172,6 @@ MegaMenuBuilder.propTypes = {
   menuData: PropTypes.object.isRequired,
   linkRenderer: PropTypes.func.isRequired,
   profileData: PropTypes.object.isRequired,
-  onLogout: PropTypes.func.isRequired,
   userData: PropTypes.shape({
     name: PropTypes.string.isRequired,
     vipStatus: PropTypes.bool.isRequired,
@@ -215,17 +209,29 @@ Megamenu.propTypes = {
   /** A JSON object with the options to be shown in the User Profile Flyout.
    Please check bellow a sample.
   */
-  profileData: PropTypes.object.isRequired,
-  /** A function to be called for Logout in the
-  User Profile Flyout. */
-  onLogout: PropTypes.func.isRequired,
+  profileData: PropTypes.shape({
+    entries: PropTypes.array.isRequired,
+    onProfileClick: PropTypes.func,
+    onProfileOpen: PropTypes.func,
+    onProfileClose: PropTypes.func,
+    /** A function to be called for Logout in the
+  User Profile Menu. */
+    onProfileLogout: PropTypes.func.isRequired,
+  }).isRequired,
   /** The Collection URL when the user is logged in.
   Used in the Collection Icon. */
   loggedCollectionUrl: PropTypes.string.isRequired,
   /** The Collection URL when the user is unlogged.
   Used in the Collection Icon. */
   unloggedCollectionUrl: PropTypes.string.isRequired,
+  /** The placeholder label
+  for search fields. */
   searchPlaceholder: PropTypes.string,
+};
+
+Megamenu.defaultProps = {
+  linkRenderer: (link, label) => <a href={ link }>{ label }</a>,
+  searchPlaceholder: 'Search for artworks, events, galleries...',
 };
 
 export default Megamenu;
