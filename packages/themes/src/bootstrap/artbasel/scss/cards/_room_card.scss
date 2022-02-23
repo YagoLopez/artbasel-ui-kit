@@ -3,14 +3,8 @@
   overflow: hidden;
 }
 
-/* no safari and chrome support */
-@mixin div-blur {
-  backdrop-filter: blur($spacing-3);
-}
-
-/* better support, but creates an inner shadow */
 @mixin image-blur {
-  filter: blur(7px);
+  filter: blur(3px);
 }
 
 /* storybook card max-width */
@@ -65,7 +59,7 @@
         opacity: 1;
       }
 
-      .text-frame p {
+      .text-frame-top p {
         color: $color-mch-black;
       }
 
@@ -76,11 +70,11 @@
     }
 
     &.theme {
-      &-dark:hover .text-frame p {
+      &-dark:hover .text-frame-top p {
         color: $color-mch-white;
       }
 
-      &-light:hover .text-frame p {
+      &-light:hover .text-frame-top p {
         color: $color-mch-black;
       }
     }
@@ -108,12 +102,6 @@
   }
 
   &.unavailable-state {
-    &:hover {
-      .text-frame p {
-        color: $color-mch-black;
-      }
-    }
-
     .image-frame,
     .text-frame-top {
       pointer-events: none;
@@ -300,12 +288,10 @@
 
       &.light {
         background: rgba(255, 255, 255, 0.8);
-        // @include div-blur;
       }
 
       &.dark {
         background: rgba(255, 255, 255, 0.1);
-        // @include div-blur;
       }
     }
   }

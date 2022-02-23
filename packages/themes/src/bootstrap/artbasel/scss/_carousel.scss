@@ -1,11 +1,12 @@
-@import 'carousel/carousel_artist_cover.scss';
-@import 'carousel/carousel_artist_card.scss';
-@import 'carousel/carousel_splide.scss';
-@import 'carousel/carousel_pdp';
-
 /***************************
     Carousel
 ***************************/
+
+@import 'carousel/carousel_artist_cover.scss';
+@import 'carousel/carousel_artist_card.scss';
+@import '../../../splide/splide';
+@import 'carousel/carousel_pdp';
+
 .carousel-container {
   max-width: 100%;
   padding-top: calc(2.5rem + 3px);
@@ -17,7 +18,7 @@
     position: absolute;
     top: -4rem;
     right: 0;
-  
+
     .splide__arrow--prev {
       float: left;
       left: unset;
@@ -41,7 +42,7 @@
       }
       &::before {
         display: none;
-      } 
+      }
     }
 
     @include media-breakpoint-up(xl) {
@@ -54,7 +55,7 @@
 
     @include media-breakpoint-up(xl) {
       margin-right: 1.5rem;
-    }    
+    }
   }
 
   .exceed-track .splide__track {

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.35.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.34.0...@mch-group/uikit-components@0.35.0) (2022-02-23)
+
+
+### Features
+
+* zoomviewer component ([ec9c785](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/ec9c785d82f32cd18b5f590db7f3303fac4b53c7))
+* zoomviewer component ([6c45969](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/6c45969d21394a0ef2dffab13d0c615f33739789))
+
+
+
+
+
 # [0.34.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.33.0...@mch-group/uikit-components@0.34.0) (2022-02-22)
 
 
