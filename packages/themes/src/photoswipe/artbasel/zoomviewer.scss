@@ -1,0 +1,459 @@
+/*! PhotoSwipe Default UI CSS by Dmitry Semenov | photoswipe.com | MIT license */
+/*
+
+	Contents:
+
+	1. Buttons
+	2. Share modal and links
+	3. Index indicator ("1 of X" counter)
+	4. Caption
+	5. Loading indicator
+	6. Additional styles (root element, top bar, idle state, hidden state, etc.)
+
+*/
+/*! Customized to Artbasel by DMI */
+/*
+
+	Customizations:
+
+	1. Background color
+	2. Index indicator position and font
+	3. Buttons left and right
+	4. Caption
+	5. Loading indicator
+	6. Additional styles (root element, top bar, idle state, hidden state, etc.)
+  
+*/
+
+@import '../../bootstrap/artbasel/variables/colors';
+@import '../../bootstrap/artbasel/variables/spacing';
+@import '../../bootstrap/artbasel/variables/grid';
+
+@import '../../node_modules/bootstrap/scss/mixins';
+@import '../photoswipe';
+
+.pswp__bg {
+  background: $color-mch-gray-100;
+}
+
+/*
+	
+	1. Buttons
+
+ */
+/* <button> css reset */
+.pswp__button {
+  width: 48px !important;
+  height: 48px !important;
+  background-color: $color-mch-white !important;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+  overflow: visible;
+  -webkit-appearance: none;
+  display: block;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  float: right;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.pswp__button:focus,
+.pswp__button:hover {
+  opacity: 1;
+}
+.pswp__button:active {
+  outline: none;
+  opacity: 1;
+}
+.pswp__button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* pswp__ui--over-close class it added when mouse is over element that should close gallery */
+.pswp__ui--over-close .pswp__button--close {
+  opacity: 1;
+}
+
+.pswp__button--close {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fillRule='evenodd' clipRule='evenodd' d='M6.515 4.757l-1.41 1.41 5.567 5.566-5.834 5.833 1.329 1.329L12 13.06l5.834 5.833 1.409-1.409-5.834-5.833 5.486-5.485-1.329-1.328-5.485 5.485-5.566-5.567z' /%3E%3C/svg%3E");
+  background-size: 24px 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.pswp__button--share {
+  display: none;
+}
+
+.pswp__button--fs {
+  display: none;
+}
+
+.pswp--supports-fs .pswp__button--fs {
+}
+
+.pswp--fs .pswp__button--fs {
+}
+
+.pswp__button--zoom {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+
+  @include media-breakpoint-up(md) {
+    right: 32px;
+    bottom: 64px;
+  }
+
+  display: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M11 7.01h-1v3.005H7v1.002h3v3.004h1v-3.005h3v-1.001h-3V7.01z' /%3E%3Cpath fillRule='evenodd' clipRule='evenodd' d='M17 10.516a6.488 6.488 0 0 1-1.404 4.041l4.965 4.973-1.06 1.062-4.966-4.973a6.467 6.467 0 0 1-4.035 1.407c-3.59 0-6.5-2.915-6.5-6.51 0-3.596 2.91-6.51 6.5-6.51S17 6.92 17 10.516zm-6.5 5.007c2.761 0 5-2.242 5-5.007a5.004 5.004 0 0 0-5-5.008c-2.761 0-5 2.242-5 5.008a5.004 5.004 0 0 0 5 5.007z' /%3E%3C/svg%3E");
+  background-size: 24px 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.pswp--zoom-allowed .pswp__button--zoom {
+  display: block;
+}
+
+.pswp--zoomed-in .pswp__button--zoom {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fillRule='evenodd' clipRule='evenodd' d='M10.5 15.5a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm4.035.096a6.5 6.5 0 1 1 1.06-1.06l4.966 4.965-1.06 1.06-4.966-4.965zM7 10v1h7v-1H7z' /%3E%3C/svg%3E");
+  background-size: 24px 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* no arrows on touch screens */
+.pswp--touch .pswp__button--arrow--left,
+.pswp--touch .pswp__button--arrow--right {
+  visibility: hidden;
+}
+
+/*
+	Arrow buttons hit area
+	(icon is added to :before pseudo-element)
+*/
+.pswp__button--arrow--left,
+.pswp__button--arrow--right {
+  background: none;
+  top: 50%;
+  margin-top: -50px;
+  width: 70px;
+  height: 100px;
+  position: absolute;
+}
+
+.pswp__button--arrow--left {
+  left: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fillRule='evenodd' clipRule='evenodd' d='M11.784 18.116l-5.304-5.14H22v-1.647l-15.522-.001L11.75 6.12 10.63 5l-7.218 7.118 7.25 7.152 1.12-1.154z' /%3E%3C/svg%3E");
+  background-size: 24px 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.pswp__button--arrow--right {
+  right: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fillRule='evenodd' clipRule='evenodd' d='M13.216 17.847l5.304-5.141H3V11.06l15.522-.002L13.25 5.85l1.12-1.12 7.218 7.118L14.337 19l-1.12-1.153z' /%3E%3C/svg%3E");
+  background-size: 24px 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.pswp__button--arrow--left:before,
+.pswp__button--arrow--right:before {
+}
+
+.pswp__button--arrow--left:before {
+}
+
+.pswp__button--arrow--right:before {
+}
+
+/*
+
+	2. Share modal/popup and links
+
+ */
+.pswp__counter,
+.pswp__share-modal {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.pswp__share-modal {
+  display: block;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  position: absolute;
+  z-index: 1600;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease-out;
+  transition: opacity 0.25s ease-out;
+  -webkit-backface-visibility: hidden;
+  will-change: opacity;
+}
+
+.pswp__share-modal--hidden {
+  display: none;
+}
+
+.pswp__share-tooltip {
+  z-index: 1620;
+  position: absolute;
+  background: #fff;
+  top: 56px;
+  border-radius: 2px;
+  display: block;
+  width: auto;
+  right: 44px;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  -webkit-transform: translateY(6px);
+  -ms-transform: translateY(6px);
+  transform: translateY(6px);
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+}
+.pswp__share-tooltip a {
+  display: block;
+  padding: 8px 12px;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 18px;
+}
+.pswp__share-tooltip a:hover {
+  text-decoration: none;
+  color: #000;
+}
+.pswp__share-tooltip a:first-child {
+  /* round corners on the first/last list item */
+  border-radius: 2px 2px 0 0;
+}
+.pswp__share-tooltip a:last-child {
+  border-radius: 0 0 2px 2px;
+}
+
+.pswp__share-modal--fade-in {
+  opacity: 1;
+}
+.pswp__share-modal--fade-in .pswp__share-tooltip {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* increase size of share links on touch devices */
+.pswp--touch .pswp__share-tooltip a {
+  padding: 16px 12px;
+}
+
+a.pswp__share--facebook:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -12px;
+  right: 15px;
+  border: 6px solid transparent;
+  border-bottom-color: #fff;
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  pointer-events: none;
+}
+
+a.pswp__share--facebook:hover {
+  background: #3e5c9a;
+  color: #fff;
+}
+a.pswp__share--facebook:hover:before {
+  border-bottom-color: #3e5c9a;
+}
+
+a.pswp__share--twitter:hover {
+  background: #55acee;
+  color: #fff;
+}
+
+a.pswp__share--pinterest:hover {
+  background: #ccc;
+  color: #ce272d;
+}
+
+a.pswp__share--download:hover {
+  background: #ddd;
+}
+
+/*
+
+	3. Index indicator ("1 of X" counter)
+
+ */
+.pswp__counter {
+  position: fixed;
+  right: 88px;
+  bottom: 36px;
+
+  @include media-breakpoint-up(md) {
+    right: 108px;
+    bottom: 80px;
+  }
+
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: bold;
+  color: $color-mch-gray-500;
+  opacity: 0.75;
+}
+
+/* no arrows on touch screens */
+.pswp--touch .pswp__counter {
+  right: 36px;
+}
+
+/*
+	
+	4. Caption
+
+ */
+.pswp__caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 44px;
+}
+.pswp__caption small {
+  font-size: 11px;
+  color: #bbb;
+}
+
+.pswp__caption__center {
+  text-align: left;
+  max-width: 420px;
+  margin: 0 auto;
+  font-size: 13px;
+  padding: 10px;
+  line-height: 20px;
+  color: #ccc;
+}
+
+.pswp__caption--empty {
+  display: none;
+}
+
+/* Fake caption element, used to calculate height of next/prev image */
+.pswp__caption--fake {
+  visibility: hidden;
+}
+
+/*
+
+	5. Loading indicator (preloader)
+
+	You can play with it here - http://codepen.io/dimsemenov/pen/yyBWoR
+
+ */
+.pswp__preloader {
+  display: none;
+}
+
+/*
+	
+	6. Additional styles
+
+ */
+/* root element of UI */
+.pswp__ui {
+  -webkit-font-smoothing: auto;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1550;
+}
+
+/* top black bar with buttons and "1 of X" indicator */
+.pswp__top-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 48px;
+  width: 100%;
+}
+
+.pswp__caption,
+.pswp--has_mouse .pswp__button--arrow--left,
+.pswp--has_mouse .pswp__button--arrow--right {
+  -webkit-backface-visibility: hidden;
+  will-change: opacity;
+  -webkit-transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
+  transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
+}
+
+/* pswp--has_mouse class is added only when two subsequent mousemove events occur */
+.pswp--has_mouse .pswp__button--arrow--left,
+.pswp--has_mouse .pswp__button--arrow--right {
+  visibility: visible;
+}
+
+.pswp__caption {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* pswp__ui--fit class is added when main image "fits" between top bar and bottom bar (caption) */
+.pswp__ui--fit,
+.pswp__ui--fit .pswp__caption {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* pswp__ui--idle class is added when mouse isn't moving for several seconds (JS option timeToIdle) */
+.pswp__ui--idle .pswp__top-bar {
+  opacity: 0;
+}
+
+.pswp__ui--idle .pswp__button--arrow--left,
+.pswp__ui--idle .pswp__button--arrow--right {
+  opacity: 0;
+}
+
+/*
+	pswp__ui--hidden class is added when controls are hidden
+	e.g. when user taps to toggle visibility of controls
+*/
+.pswp__ui--hidden .pswp__top-bar,
+.pswp__ui--hidden .pswp__caption,
+.pswp__ui--hidden .pswp__button--arrow--left,
+.pswp__ui--hidden .pswp__button--arrow--right {
+  /* Force paint & create composition layer for controls. */
+  opacity: 0.001;
+}
+
+/* pswp__ui--one-slide class is added when there is just one item in gallery */
+.pswp__ui--one-slide .pswp__button--arrow--left,
+.pswp__ui--one-slide .pswp__button--arrow--right,
+.pswp__ui--one-slide .pswp__counter {
+  display: none;
+}
+
+.pswp__element--disabled {
+  display: none !important;
+}
+
+.pswp--minimal--dark .pswp__top-bar {
+  background: none;
+}

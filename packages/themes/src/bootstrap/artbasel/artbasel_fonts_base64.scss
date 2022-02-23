@@ -59,8 +59,6 @@
 
 @import 'scss/carousel';
 
-@import 'scss/mediaviewer';
-
 @import '../../node_modules/bootstrap/scss/transitions';
 
 @import '../../node_modules/bootstrap/scss/dropdown';
@@ -95,7 +93,7 @@
 @import 'scss/modal';
 
 // @import "../../node_modules/bootstrap/scss/tooltip";
-@import "../../node_modules/bootstrap/scss/popover";
+@import '../../node_modules/bootstrap/scss/popover';
 @import 'scss/popover';
 // @import "../../node_modules/bootstrap/scss/carousel";
 
