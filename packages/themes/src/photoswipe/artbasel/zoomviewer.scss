@@ -33,7 +33,7 @@
 @import '../photoswipe';
 
 .pswp__bg {
-  background: $color-mch-gray-100;
+  background: $color-mch-gray-200;
 }
 
 /*
@@ -104,13 +104,8 @@
 
 .pswp__button--zoom {
   position: fixed;
-  right: 24px;
-  bottom: 24px;
-
-  @include media-breakpoint-up(md) {
-    right: 32px;
-    bottom: 64px;
-  }
+  right: 0px;
+  bottom: 0px;
 
   display: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M11 7.01h-1v3.005H7v1.002h3v3.004h1v-3.005h3v-1.001h-3V7.01z' /%3E%3Cpath fillRule='evenodd' clipRule='evenodd' d='M17 10.516a6.488 6.488 0 0 1-1.404 4.041l4.965 4.973-1.06 1.062-4.966-4.973a6.467 6.467 0 0 1-4.035 1.407c-3.59 0-6.5-2.915-6.5-6.51 0-3.596 2.91-6.51 6.5-6.51S17 6.92 17 10.516zm-6.5 5.007c2.761 0 5-2.242 5-5.007a5.004 5.004 0 0 0-5-5.008c-2.761 0-5 2.242-5 5.008a5.004 5.004 0 0 0 5 5.007z' /%3E%3C/svg%3E");
@@ -307,24 +302,25 @@ a.pswp__share--download:hover {
  */
 .pswp__counter {
   position: fixed;
-  right: 88px;
-  bottom: 36px;
-
-  @include media-breakpoint-up(md) {
-    right: 108px;
-    bottom: 80px;
-  }
-
+  right: 52px;
+  bottom: 0;
   font-size: 16px;
   line-height: 22px;
-  font-weight: bold;
   color: $color-mch-gray-500;
-  opacity: 0.75;
+  background-color: rgba(247, 247, 247, 0.6);
+  height: 48px !important;
+  min-width: 48px !important;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  white-space: nowrap;
 }
 
 /* no arrows on touch screens */
 .pswp--touch .pswp__counter {
-  right: 36px;
+  right: 0;
 }
 
 /*
