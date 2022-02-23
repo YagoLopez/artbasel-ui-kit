@@ -43,18 +43,12 @@
 @import '../../node_modules/bootstrap/scss/type';
 @import 'scss/type';
 
-// @import '../../node_modules/bootstrap/scss/images';
+@import '../../node_modules/bootstrap/scss/images';
 
-@import '../../node_modules/bootstrap/scss/containers';
+// @import "../../node_modules/bootstrap/scss/containers";
 
 @import '../../node_modules/bootstrap/scss/grid';
 @import 'scss/grid';
-
-@import 'scss/nav';
-@import './scss/megamenu';
-
-@import '../../node_modules/bootstrap/scss/card';
-@import 'scss/card';
 
 @import '../../node_modules/bootstrap/scss/tables';
 
@@ -66,51 +60,57 @@
 
 @import 'scss/carousel';
 
-@import 'scss/mediaviewer';
+@import '../../node_modules/bootstrap/scss/transitions';
 
-@import 'scss/step_indicator';
-
-// @import '../../node_modules/bootstrap/scss/transitions';
-
-// @import '../../node_modules/bootstrap/scss/dropdown';
-// @import 'scss/dropdown';
+@import '../../node_modules/bootstrap/scss/dropdown';
+@import 'scss/dropdown';
 
 // @import "../../node_modules/bootstrap/scss/button-group";
+// @import "../../node_modules/bootstrap/scss/navbar";
 
-// @import '../../node_modules/bootstrap/scss/card';
-// @import 'scss/card';
+@import '../../node_modules/bootstrap/scss/nav';
+@import 'scss/nav';
 
-// @import '../../node_modules/bootstrap/scss/accordion';
-// @import 'scss/accordion';
+@import './scss/megamenu';
+
+@import '../../node_modules/bootstrap/scss/card';
+@import 'scss/card';
+
+@import '../../node_modules/bootstrap/scss/accordion';
+@import 'scss/accordion';
 
 // @import "../../node_modules/bootstrap/scss/breadcrumb";
 // @import "../../node_modules/bootstrap/scss/pagination";
 // @import "../../node_modules/bootstrap/scss/badge";
 // @import "../../node_modules/bootstrap/scss/alert";
-// @import '../../node_modules/bootstrap/scss/progress';
-// @import 'scss/progress';
+@import '../../node_modules/bootstrap/scss/progress';
+@import 'scss/progress';
+
 @import '../../node_modules/bootstrap/scss/list-group';
+
+// @import "../../node_modules/bootstrap/scss/list-group";
 // @import "../../node_modules/bootstrap/scss/close";
 
-// @import '../../node_modules/bootstrap/scss/toasts';
-// @import 'scss/toasts';
+@import '../../node_modules/bootstrap/scss/toasts';
+@import 'scss/toasts';
 
-// @import '../../node_modules/bootstrap/scss/modal';
-// @import 'scss/modal';
+@import '../../node_modules/bootstrap/scss/modal';
+@import 'scss/modal';
 
 // @import "../../node_modules/bootstrap/scss/tooltip";
 @import '../../node_modules/bootstrap/scss/popover';
 @import 'scss/popover';
 // @import "../../node_modules/bootstrap/scss/carousel";
 
-// @import '../../node_modules/bootstrap/scss/spinners';
-// @import 'scss/spinners';
+@import '../../node_modules/bootstrap/scss/spinners';
+@import 'scss/spinners';
 
 @import './scss/offcanvas';
-// @import '../../node_modules/bootstrap/scss/placeholders';
+@import '../../node_modules/bootstrap/scss/placeholders';
 
-// @import './scss/tag';
-// @import './scss/range';
+@import './scss/tag';
+@import './scss/range';
+@import './scss/step_indicator';
 
 /* End - Configuration */
 

@@ -1,0 +1,292 @@
+<!--- ZoomViewerDocumentation.mdx --->
+
+import { ArgsTable } from '@storybook/addon-docs';
+import ZoomViewer from './ZoomViewer';
+
+# ZoomViewer Component
+
+## Usage
+
+Import the ZoomViewer component and the style css:
+
+```javascript
+import { ZoomViewer } from '@mch-group/uikit-components';
+import '@mch-group/uikit-themes/dist/artbasel/zoomviewer.css';
+```
+
+Create a Gallery with several items inside, using the `<ZoomViewer.Gallery>` and `<ZoomViewer.Item>` tags. Please check the example bellow:
+
+```jsx
+<ZoomViewer.Gallery>
+  <ZoomViewer.Item
+    original="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_3000/v1573584787/mfp-fe-artworks/ydurfaqymwjhfc74igj5.jpg"
+    thumbnail="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_300/v1573584787/mfp-fe-artworks/ydurfaqymwjhfc74igj5.jpg"
+    width="3538"
+    height="3000"
+  >
+    {({ ref, open }) => (
+      <a onClick={open}>
+        <img
+          ref={ref}
+          src="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_300/v1573584787/mfp-fe-artworks/ydurfaqymwjhfc74igj5.jpg"
+        />
+      </a>
+    )}
+  </ZoomViewer.Item>
+  <ZoomViewer.Item
+    original="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_3600/v1574297629/mfp-fe-artworks/xv09dlxkwscab8vu1hni.jpg"
+    thumbnail="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_300/v1574297629/mfp-fe-artworks/xv09dlxkwscab8vu1hni.jpg"
+    width="2898"
+    height="3600"
+  >
+    {({ ref, open }) => (
+      <a onClick={open}>
+        <img
+          ref={ref}
+          src="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_300/v1574297629/mfp-fe-artworks/xv09dlxkwscab8vu1hni.jpg"
+        />
+      </a>
+    )}
+  </ZoomViewer.Item>
+  <ZoomViewer.Item
+    original="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_2500/v1573582091/mfp-fe-artworks/tda8vjyt5mabpf5ini9o.jpg"
+    thumbnail="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_300/v1573582091/mfp-fe-artworks/tda8vjyt5mabpf5ini9o.jpg"
+    width="3287"
+    height="2500"
+  >
+    {({ ref, open }) => (
+      <a onClick={open}>
+        <img
+          ref={ref}
+          src="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_300/v1573582091/mfp-fe-artworks/tda8vjyt5mabpf5ini9o.jpg"
+        />
+      </a>
+    )}
+  </ZoomViewer.Gallery>
+</ZoomViewer.Gallery>
+```
+
+## Properties
+
+<br />
+
+### ZoomViewer.Gallery
+
+<ArgsTable of={ZoomViewer.Gallery} />
+
+### ZoomViewer.Item
+
+<ArgsTable of={ZoomViewer.Item} />
+
+## ZoomViewer.Gallery options
+
+Options are added in key-value pairs and passed as an prop to `ZoomViewer.Gallery`, e.g.:
+
+```jsx
+<ZoomViewer.Gallery
+  options={{
+    index: 3,
+    escKey: false,
+    timeToIdle: 4000,
+  }}
+>
+  ...
+</ZoomViewer.Gallery>
+```
+
+### Options
+
+### `index`
+
+_integer - 0_
+
+Start slide index. `0` is the first slide. Must be integer, not a string.
+
+### `showHideOpacity`
+
+boolean - false
+
+If set to `false`: background `opacity` and image `scale` will be animated (image opacity is always 1). If set to `true_: root PhotoSwipe element `opacity`and image`scale` will be animated.
+
+To enable just `opacity` transition (without `scale`), do not define `getThumbBoundsFn` option.
+
+### `showAnimationDuration`
+
+_integer - 333_
+
+Initial zoom-in transition duration in milliseconds. Set to `0` to disable. Besides this JS option, you need also to change transition duration in PhotoSwipe CSS file:
+
+### `hideAnimationDuration`
+
+_integer - 333_
+
+The same as the previous option, just for closing (zoom-out) transition. After PhotoSwipe is opened `pswp--open` class will be added to the root element, you may use it to apply different transition duration in CSS.
+
+### `spacing`
+
+_number - 0.12_
+
+Spacing ratio between slides. For example, `0.12` will render as a 12% of sliding viewport width (rounded).
+
+### `allowPanToNext`
+
+_boolean - true_
+
+Allow swipe navigation to next/prev item when current item is zoomed. Option is always `false` on devices that don't have hardware touch support.
+
+### `maxSpreadZoom`
+
+_number - 2_
+
+Maximum zoom level when performing spread (zoom) gesture. `2` means that image can be zoomed 2x from original size. Try to avoid huge values here, as too big image may cause memory issues on mobile (especially on iOS).
+
+### `getDoubleTapZoom`
+
+_function_
+
+Function should return zoom level to which image will be zoomed after double-tap gesture, or when user clicks on zoom icon, or mouse-click on image itself. If you return `1` image will be zoomed to its original size.
+
+Example:
+
+```javascript
+getDoubleTapZoom: function(isMouseClick, item) {
+
+    // isMouseClick          - true if mouse, false if double-tap
+    // item                  - slide object that is zoomed, usually current
+    // item.initialZoomLevel - initial scale ratio of image
+    //                         e.g. if viewport is 700px and image is 1400px,
+    //                              initialZoomLevel will be 0.5
+
+    if(isMouseClick) {
+
+        // is mouse click on image or zoom icon
+        // zoom to original
+        return 1;
+
+        // e.g. for 1400px image:
+        // 0.5 - zooms to 700px
+        // 2   - zooms to 2800px
+
+    } else {
+
+        // is double-tap
+        // zoom to original if initial zoom is less than 0.7x,
+        // otherwise to 1.5x, to make sure that double-tap gesture always zooms image
+        return item.initialZoomLevel < 0.7 ? 1 : 1.5;
+    }
+
+}
+```
+
+Function is called each time zoom-in animation is initiated. So feel free to return different values for different images based on their size or screen DPI.
+
+### `loop`
+
+_boolean - true_
+
+Loop slides when using swipe gesture. If set to `true_ you'll be able to swipe from last to first image. Option is always `false` when there are less than 3 slides.
+
+This option has no relation to arrows navigation. Arrows loop is turned on permanently. You can modify this behavior by making custom UI.
+
+### `pinchToClose`
+
+_boolean - true_
+
+Pinch to close gallery gesture. The gallery’s background will gradually fade out as the user zooms out. When the gesture is complete, the gallery will close.
+
+### `closeOnScroll`
+
+_boolean - true_
+
+Close gallery on page scroll. Option works just for devices without hardware touch support.
+
+### `closeOnVerticalDrag`
+
+_boolean - true_
+
+Close gallery when dragging vertically and when image is not zoomed. Always `false` when mouse is used.
+
+### `mouseUsed`
+
+_boolean - false_
+
+Option allows you to predefine if mouse was used or not. Some PhotoSwipe feature depend on it, for example default UI left/right arrows will be displayed only after mouse is used. If set to `false`, PhotoSwipe will start detecting when mouse is used by itself, `mouseUsed` event triggers when mouse is found.
+
+### `escKey`
+
+_boolean - true_
+
+`esc` keyboard key to close PhotoSwipe. Option can be changed dynamically (`yourPhotoSwipeInstance.options.escKey = false;`).
+
+### `arrowKeys`
+
+_boolean - true_
+
+Keyboard left or right arrow key navigation. Option can be changed dynamically (`yourPhotoSwipeInstance.options.arrowKeys = false;`).
+
+### `history`
+
+_boolean - true_
+
+If set to `false` disables history module (back button to close gallery, unique URL for each slide). You can also just exclude `history.js` module from your build.
+
+### `preload`
+
+_array - [1,1]_
+
+Lazy loading of nearby slides based on direction of movement. Should be an array with two integers, first one - number of items to preload before current image, second one - after the current image. E.g. if you set it to \[1,3\], it'll load 1 image before the current, and 3 images after current. Values can not be less than 1.
+
+### `getNumItemsFn`
+
+_function_
+
+Function that should return total number of items in gallery. By default it returns length of slides array. Don't put very complex code here, function is executed very often.
+
+### `focus`
+
+_boolean - true_
+
+Will set focus on ZoomViewer element after it's open.
+
+## Default UI Options
+
+```js
+// Size of top & bottom bars in pixels,
+// option applies only when mouse is used,
+// or width of screen is more than 1200px
+barsSize: {top:64, bottom:64},
+
+// Adds class pswp**ui--idle to pswp**ui element when mouse isn't moving for 4000ms
+timeToIdle: 4000,
+
+// Same as above, but this timer applies when mouse leaves the window
+timeToIdleOutside: 1000,
+
+// Delay until loading indicator is displayed
+loadingIndicatorDelay: 1000,
+
+// Buttons/elements
+closeEl:true,
+zoomEl: true,
+shareEl: true,
+counterEl: true,
+arrowEl: true,
+
+// Tap on sliding area should close gallery
+tapToClose: false,
+
+// Tap should toggle visibility of controls
+tapToToggleControls: true,
+
+// Mouse click on image should close the gallery,
+// only when image is smaller than size of the viewport
+clickToCloseNonZoomable: true,
+
+// Separator for "1 of X" counter
+indexIndicatorSep: ' / ',
+
+// Function should return zoom level to which image will be zoomed after double-tap gesture
+getDoubleTapZoom: () => 1
+
+
+```

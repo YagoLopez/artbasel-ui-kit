@@ -1,0 +1,97 @@
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+import { Container, Row, Col } from '../../index';
+import ZoomViewer from './ZoomViewer';
+import '@mch-group/uikit-themes/dist/artbasel/zoomviewer.css';
+
+import ZoomViewerDocumentation from './ZoomViewerDocumentation.mdx';
+
+<Meta
+  title="Components/Structure/Media Viewer/Zoom Viewer"
+  component={ZoomViewer}
+  decorators={[withDesign]}
+/>
+
+export const Template = (args) => (
+  <ZoomViewer.Gallery>
+    <Row className="p-7">
+      <Col className="col-auto">
+        <ZoomViewer.Item
+          original="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_3000/v1573584787/mfp-fe-artworks/ydurfaqymwjhfc74igj5.jpg"
+          thumbnail="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_300/v1573584787/mfp-fe-artworks/ydurfaqymwjhfc74igj5.jpg"
+          width="3538"
+          height="3000"
+        >
+          {({ ref, open }) => (
+            <a onClick={open}>
+              <img
+                ref={ref}
+                data-testid="thumbnail"
+                src="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_300/v1573584787/mfp-fe-artworks/ydurfaqymwjhfc74igj5.jpg"
+              />
+            </a>
+          )}
+        </ZoomViewer.Item>
+      </Col>
+      <Col className="col-auto">
+        <ZoomViewer.Item
+          original="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_3600/v1574297629/mfp-fe-artworks/xv09dlxkwscab8vu1hni.jpg"
+          thumbnail="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_300/v1574297629/mfp-fe-artworks/xv09dlxkwscab8vu1hni.jpg"
+          width="2898"
+          height="3600"
+        >
+          {({ ref, open }) => (
+            <a onClick={open}>
+              <img
+                ref={ref}
+                src="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_300/v1574297629/mfp-fe-artworks/xv09dlxkwscab8vu1hni.jpg"
+              />
+            </a>
+          )}
+        </ZoomViewer.Item>
+      </Col>
+      <Col className="col-auto">
+        <ZoomViewer.Item
+          original="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_2500/v1573582091/mfp-fe-artworks/tda8vjyt5mabpf5ini9o.jpg"
+          thumbnail="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_300/v1573582091/mfp-fe-artworks/tda8vjyt5mabpf5ini9o.jpg"
+          width="3287"
+          height="2500"
+        >
+          {({ ref, open }) => (
+            <a onClick={open}>
+              <img
+                ref={ref}
+                src="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/upload/q_auto,dpr_1.0,h_300/v1573582091/mfp-fe-artworks/tda8vjyt5mabpf5ini9o.jpg"
+              />
+            </a>
+          )}
+        </ZoomViewer.Item>
+      </Col>
+    </Row>
+  </ZoomViewer.Gallery>
+);
+
+# Zoomable Image
+
+<Canvas>
+  <Story
+    name="Zoom Viewer"
+    args={{}}
+    parameters={{
+      layout: 'fullscreen',
+      docs: {
+        page: ZoomViewerDocumentation,
+      },
+      design: {
+        productName: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/Mt9IvuqnyIQZXIUAwAO004/branch/6mkLXGQX31WfO5KJMBqZ8e/OVR-Modules?node-id=1812%3A71892',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
