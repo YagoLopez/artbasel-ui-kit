@@ -3,6 +3,51 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.28.0...@mch-group/uikit-themes@0.28.1) (2022-02-22)
+
+
+### Bug Fixes
+
+* remove 'make an offer' prop from ui components ([da9f922](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/da9f9227780b72d50ce826113bcd2ecdb36954cd))
+
+
+
+
+
+# [0.28.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.5...@mch-group/uikit-themes@0.28.0) (2022-02-18)
+
+
+### Features
+
+* special room card ([67f4874](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/67f4874e30778203b32bb3f87b46b0a379ea2024))
+
+
+
+
+
+## [0.27.5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.4...@mch-group/uikit-themes@0.27.5) (2022-02-17)
+
+
+### Bug Fixes
+
+* **navigation:** fixed navbar border ([a39464a](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/a39464af40555561844bf61f9f5ccd7b3b8167c7))
+* **room-card:** decrease default story/canvas card width in storybook ([86b19fd](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/86b19fd0dab2f9172b35498fc599d8e8fc21a9dd))
+
+
+
+
+
+## [0.27.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.3...@mch-group/uikit-themes@0.27.4) (2022-02-17)
+
+
+### Bug Fixes
+
+* **tooltip:** paddings in tooltip title ([3dd1095](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/3dd1095a7d3ab8571eaeb2267381fe7b12dc987e))
+
+
+
+
+
 ## [0.27.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.27.2...@mch-group/uikit-themes@0.27.3) (2022-02-17)
 
 

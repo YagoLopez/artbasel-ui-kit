@@ -6,8 +6,7 @@ import { Container } from '../../../structure/Grid';
 import VipBadge from './VipBadge';
 
 const ProfileMobile = ({
-  profileData: { options },
-  onLogout,
+  profileData: { entries, onProfileLogout, onProfileClose },
   isVisible,
   setIsVisible,
   userData: { name: userName, vipStatus, isUserLoggedIn },
@@ -17,8 +16,9 @@ const ProfileMobile = ({
   const [optionsIsVisible, SetOptionsIsVisible] = useState(false);
 
   const onClickAction = useCallback(() => {
-    onLogout();
+    if (typeof onProfileLogout === 'function') onProfileLogout();
     setIsVisible(null);
+    if (typeof onProfileClose === 'function') onProfileClose();
   }, [setIsVisible]);
 
   useEffect(() => {
@@ -52,17 +52,17 @@ const ProfileMobile = ({
 
         <div className={ classnames('mobile-item-midle', { 'd-none': !isUserLoggedIn }) }>
           {
-            options.filter(o => o.type !== 'action').map(o => <p className="navlink-mobile-header item" key={ o.label }>
+            entries.filter(o => o.type !== 'action').map(o => <div className="navlink-mobile-header item" key={ o.label }>
                   <div className="navlink-mobile link-profile text-medium">
                     { linkRenderer(o.link, o.label) }
               </div>
-              </p>)
+              </div>)
           }
         </div>
 
                 <div className='mobile-item-right'>
           {
-            options.filter(o => o.type === 'action').map(o => <p className='navlink-mobile-header' key={o.label}>
+            entries.filter(o => o.type === 'action').map(o => <p className='navlink-mobile-header' key={o.label}>
             <button className="navlink-mobile link-profile link-logout text-medium" onClick={onClickAction} key={o.label}>
                 {o.label}
             </button>
@@ -78,17 +78,18 @@ const ProfileMobile = ({
 
 ProfileMobile.propTypes = {
   profileData: PropTypes.shape({
-    options: PropTypes.arrayOf(
+    entries: PropTypes.arrayOf(
       PropTypes.shape({
         type: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
         link: PropTypes.string,
       }),
     ),
+    onProfileLogout: PropTypes.func.isRequired,
+    onProfileClose: PropTypes.func,
   }).isRequired,
-  onLogout: PropTypes.func.isRequired,
   setIsVisible: PropTypes.func.isRequired,
-  isVisible: PropTypes.bool.isRequired,
+  isVisible: PropTypes.bool,
   userData: PropTypes.shape({
     name: PropTypes.string.isRequired,
     vipStatus: PropTypes.bool.isRequired,

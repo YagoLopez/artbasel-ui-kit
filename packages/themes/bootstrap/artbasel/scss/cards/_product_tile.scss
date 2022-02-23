@@ -14,8 +14,7 @@
 
   .card-body {
     .card-text,
-    .tile-price,
-    .tile-offer {
+    .tile-price {
       transition: color 0.5s ease-in-out;
     }
   }
@@ -25,8 +24,7 @@
 
     .card-body {
       .card-text,
-      .tile-price,
-      .tile-offer {
+      .tile-price {
         color: $color-mch-black;
       }
     }
@@ -120,8 +118,7 @@
     }
 
     .tile-gallery,
-    .tile-price,
-    .tile-offer {
+    .tile-price {
       font-size: 16px;
       line-height: 20px;
       font-weight: bold;
@@ -153,11 +150,6 @@
 
       .tile-price {
         margin-right: 0;
-      }
-
-      .tile-offer {
-        padding-left: 5px;
-        text-transform: uppercase;
       }
     }
   }

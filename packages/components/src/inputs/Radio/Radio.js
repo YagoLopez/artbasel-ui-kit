@@ -16,6 +16,8 @@ const Radio = ({
   isValid,
   label,
   onChange,
+  name,
+  ...props
 }) => (
   <Form.Check
     data-testid="mch-radio"
@@ -30,7 +32,9 @@ const Radio = ({
     isInvalid={isInvalid}
     isValid={isValid}
     label={label}
-    onChange={onChange || (() => {})}
+    onChange={onChange}
+    name={name}
+    {...props}
   ></Form.Check>
 );
 
@@ -38,7 +42,7 @@ Radio.propTypes = {
   align: PropTypes.oneOf(['left', 'right']),
   checked: PropTypes.bool,
   className: PropTypes.string,
-  cssStyles: PropTypes.string,
+  cssStyles: PropTypes.object,
   cssInternalPrefix: PropTypes.string,
   disabled: PropTypes.bool,
   id: PropTypes.string,
@@ -47,6 +51,7 @@ Radio.propTypes = {
   isValid: PropTypes.bool,
   label: PropTypes.string,
   onChange: PropTypes.func,
+  name: PropTypes.string,
 };
 
 Radio.defaultProps = {

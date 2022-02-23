@@ -7,7 +7,7 @@ import { ArtBaselLogo } from '../../../utils/ArtBaselLogo';
 import { Container, Row, Col } from '../../../structure/Grid';
 import { ButtonIcon } from '../../../actions/ButtonIcon';
 import { MobileSearch, Search } from '../../../inputs/Search';
-import ProfileFlyout from './ProfileFlyout';
+import ProfileMobile from './ProfileMobile';
 import { PROFILE_FLYOUT } from '../constants';
 import CollectionLink from './CollectionLink';
 
@@ -72,6 +72,13 @@ const NavbarMobile = ({
     onSearch(searchText);
   };
 
+  const toggleProfileIsVisible = useCallback(() => {
+    if (typeof profileData.onProfileClick === 'function') profileData.onProfileClick();
+    if (visibleProfile && typeof profileData.onProfileClose === 'function') profileData.onProfileClose();
+    if (!visibleProfile && typeof profileData.onProfileOpen === 'function') profileData.onProfileOpen();
+    setVisibleProfile(!visibleProfile);
+  }, [visibleProfile, visibleProfile]);
+
   return (
     <>
       {!showSearchBar && !visibleLinks && !visibleProfile && <Container fluid>
@@ -105,19 +112,7 @@ const NavbarMobile = ({
             </form>
           </Col>
           <Col className="col-auto d-lg-none">
-            <ButtonIcon icon="guest" onClick={() => setVisibleProfile(!visibleProfile)}/>
-          </Col>
-          <Col className="col-auto px-md-1 d-none d-lg-block">
-            <ProfileFlyout
-              profileData={profileData}
-              onChangeProfileStatus={setVisibleMenu}
-              onLogout={onLogout}
-              setIsVisible={handleSetVisibleProfileFlyout}
-              isVisible={visibleMenu === PROFILE_FLYOUT}
-              userData={userData}
-              profileWelcomeHeader={ profileWelcomeHeader }
-              linkRenderer={linkRenderer}
-            />
+            <ButtonIcon icon="guest" onClick={() => toggleProfileIsVisible()}/>
           </Col>
           <Col className="col-auto px-md-1">
             <CollectionLink isUserLoggedIn={userData?.isUserLoggedIn}
@@ -165,7 +160,7 @@ const NavbarMobile = ({
                   }
 
                   if (visibleProfile) {
-                    setVisibleProfile(false);
+                    toggleProfileIsVisible(false);
                   }
                 }}
               aria-controls="navlinksMobile"
@@ -211,7 +206,16 @@ const NavbarMobile = ({
           visible: visibleLinks || visibleProfile,
         }) }
       />
-      { showSearchBar && <div className='mobile-search-overlay' />}
+      { showSearchBar && <div className='mobile-search-overlay' /> }
+      <ProfileMobile
+        profileData = { profileData }
+        onLogout = {onLogout}
+        isVisible = {visibleProfile}
+        setIsVisible = {setVisibleProfile}
+        userData= { userData }
+        profileWelcomeHeader={ profileWelcomeHeader }
+        linkRenderer={linkRenderer}
+       />
     </>
   );
 };

@@ -1,23 +1,33 @@
-/* eslint no-console: ["error", { allow: ["warn", "error"] }] */
 import React from 'react';
 import '@testing-library/jest-dom';
 import { cleanup, render, screen } from '@testing-library/react';
 import SpecialRoomCard from './SpecialRoomCard';
-import example from './SpecialRoomCard.example.json';
+import { example } from './SpecialRoomCard.example';
 
 console.error = jest.fn();
 
-describe('Tests for SpecialRoom Card component', () => {
+describe('Tests for X component', () => {
   afterEach(cleanup);
 
   test('Should render the component', () => {
     render(
       <SpecialRoomCard
         title={example.title}
-        date={example.date}
-        image={example.image}
-        room={example.room}
-        name={example.name}
+        artistName={example.artistName}
+        sectorsData={example.sectorsData}
+        linkRenderer={(link, children) => (
+          <a href={link} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        )}
+        roomLink={example.roomLink}
+        imageUrl={example.imageUrl}
+        openingSoon={example.openingSoon}
+        visited={example.visited}
+        show={example.show}
+        unavailableToView={example.unavailableToView}
+        selectMode={example.selectMode}
+        onCollectionAdd={example.onCollectionAdd}
       />,
     );
     expect(screen.queryByText(example.title)).toBeInTheDocument();
@@ -27,9 +37,39 @@ describe('Tests for SpecialRoom Card component', () => {
     render(
       <SpecialRoomCard
         title={example.title}
-        date={example.date}
-        room={example.room}
-        name={example.name}
+        artistName={example.artistName}
+        sectorsData={example.sectorsData}
+        linkRenderer={(link, children) => (
+          <a href={link} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        )}
+        roomLink={example.roomLink}
+        openingSoon={example.openingSoon}
+        visited={example.visited}
+        show={example.show}
+        unavailableToView={example.unavailableToView}
+        selectMode={example.selectMode}
+        onCollectionAdd={example.onCollectionAdd}
+      />,
+    );
+    expect(console.error).toBeCalled();
+  });
+
+  test('Should not render the component without linkRenderer prop', () => {
+    render(
+      <SpecialRoomCard
+        title={example.title}
+        artistName={example.artistName}
+        sectorsData={example.sectorsData}
+        roomLink={example.roomLink}
+        imageUrl={example.imageUrl}
+        openingSoon={example.openingSoon}
+        visited={example.visited}
+        show={example.show}
+        unavailableToView={example.unavailableToView}
+        selectMode={example.selectMode}
+        onCollectionAdd={example.onCollectionAdd}
       />,
     );
     expect(console.error).toBeCalled();
@@ -38,46 +78,24 @@ describe('Tests for SpecialRoom Card component', () => {
   test('Should not render the component without title prop', () => {
     render(
       <SpecialRoomCard
-        date={example.date}
-        image={example.image}
-        room={example.room}
-        name={example.name}
-      />,
-    );
-    expect(console.error).toBeCalled();
-  });
-
-  test('Should not render the component without room prop', () => {
-    render(
-      <SpecialRoomCard
-        title={example.title}
-        date={example.date}
-        image={example.image}
-        name={example.name}
-      />,
-    );
-    expect(console.error).toBeCalled();
-  });
-
-  test('Should not render the component without date prop', () => {
-    render(
-      <SpecialRoomCard
-        title={example.title}
-        room={example.room}
-        image={example.image}
-        name={example.name}
-      />,
-    );
-    expect(console.error).toBeCalled();
-  });
-
-  test('Should not render the component without name prop', () => {
-    render(
-      <SpecialRoomCard
-        title={example.title}
-        date={example.date}
-        image={example.image}
-        room={example.room}
+        artistName={example.artistName}
+        ownerAccount={example.ownerAccount}
+        theme={example.theme}
+        sectorsData={example.sectorsData}
+        linkRenderer={(link, children) => (
+          <a href={link} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        )}
+        roomLink={example.roomLink}
+        ownerAccountLink={example.ownerAccountLink}
+        imageUrl={example.imageUrl}
+        openingSoon={example.openingSoon}
+        visited={example.visited}
+        show={example.show}
+        unavailableToView={example.unavailableToView}
+        selectMode={example.selectMode}
+        onCollectionAdd={example.onCollectionAdd}
       />,
     );
     expect(console.error).toBeCalled();

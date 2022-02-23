@@ -1,137 +1,311 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
-import example from './SpecialRoomCard.example.json';
+import { Container, Row, Col } from '../../Grid';
 import SpecialRoomCard from './SpecialRoomCard';
+import { example, imagesArray } from './SpecialRoomCard.example';
 
 <Meta
-  title="Components/Structure/Cards/SpecialRoomCard"
+  title="Components/Structure/cards/Special Room Card"
   component={SpecialRoomCard}
   decorators={[withDesign]}
 />
 
-export const Template = (args) => <SpecialRoomCard {...args} />
+export const Template = (args) => <SpecialRoomCard {...args} />;
+
+export const TemplateList = (args) => {
+  return (
+    <Container>
+      <Row>
+        {Array(6)
+          .fill(example)
+          .map((card, i) => {
+            return (
+              <Col
+                key={`col-${i}`}
+                xs={12}
+                sm={12}
+                md={6}
+                lg={4}
+                xl={4}
+                xxl={4}
+                className="mb-lg-9 mb-md-9"
+              >
+                <SpecialRoomCard {...{ ...args, imageUrl: imagesArray[i] }} />
+              </Col>
+            );
+          })}
+      </Row>
+    </Container>
+  );
+};
 
 export const argTypes = {
-  cssStyles: {
+  openingSoon: {
     table: {
-      category: 'Styles',
+      category: 'Tags',
     },
   },
-  cssInternalPrefix: {
+  visited: {
     table: {
-      category: 'Styles',
+      category: 'Tags',
     },
   },
-  size: {
+  show: {
     table: {
-      category: 'SpecialRoomCard',
+      category: 'Collections',
     },
   },
-  title: {
+  unavailableToView: {
     table: {
-      category: 'SpecialRoomCard',
+      category: 'Collections',
     },
   },
-  image: {
+  selectMode: {
     table: {
-      category: 'SpecialRoomCard',
+      category: 'Collections',
     },
   },
-  room: {
+  onCollectionAdd: {
     table: {
-      category: 'SpecialRoomCard',
-    },
-  },
-  date: {
-    table: {
-      category: 'SpecialRoomCard',
-    },
-  },
-  name: {
-    table: {
-      category: 'SpecialRoomCard',
+      category: 'Collections',
     },
   },
 };
 
-export const generalArgs = {
-  title: example.title,
-  date: example.date,
-  image: example.image,
-  room: example.room,
-  name: example.name,
-};
+# Special Room Card
 
-export const truncatedArgs = {
-  title: example.titleLong,
-  date: example.date,
-  room: example.room,
-  image: example.image,
-  name: example.nameLong,
-};
+These type of cards make up most of the interface and are key components for logically grouping page content and making it scalable.
 
-# SpecialRoomCard
+## Opening Soon
 
-SpecialRoomCard is one of the different types of content cards.
-
-## Variants
-
-### Size S
-
-<Canvas style={{width: '450px'}}>
-  <Story
-    name="SpecialRoomCard Size S"
-    args={generalArgs}
-    argTypes={argTypes}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
-      },
+<Canvas style={{ width: '400px' }}>
+  <SpecialRoomCard
+    title={example.title}
+    artistName={example.artistName}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    imageUrl={example.imageUrl}
+    openingSoon={{
+      active: true,
+      label: 'Opening Soon',
     }}
+    visited={example.visited}
+    show={example.show}
+    unavailableToView={example.unavailableToView}
+    selectMode={example.selectMode}
+    onCollectionAdd={example.onCollectionAdd}
   >
     {Template.bind({})}
-  </Story>
+  </SpecialRoomCard>
 </Canvas>
 
-### Size L
+## Visited
 
-<Canvas style={{width: '1250px'}}>
-  <Story
-    name="SpecialRoomCard Size L"
-    args={{
-      ...generalArgs,
-      size: 'l',
+<Canvas style={{ width: '400px' }}>
+  <SpecialRoomCard
+    title={example.title}
+    artistName={example.artistName}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    imageUrl={example.imageUrl}
+    openingSoon={example.openingSoon}
+    visited={{
+      active: true,
+      label: 'Visited',
     }}
-    argTypes={argTypes}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
-      },
-    }}
+    show={example.show}
+    unavailableToView={example.unavailableToView}
+    selectMode={example.selectMode}
+    onCollectionAdd={example.onCollectionAdd}
   >
     {Template.bind({})}
-  </Story>
+  </SpecialRoomCard>
 </Canvas>
 
-### Truncated Text
+## Collections
 
-<Canvas style={{width: '450px'}}>
+### Default
+
+<Canvas style={{ width: '400px' }}>
+  <SpecialRoomCard
+    title={example.title}
+    artistName={example.artistName}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    imageUrl={example.imageUrl}
+    openingSoon={example.openingSoon}
+    visited={example.visited}
+    show={{
+      active: true,
+      label: 'OVR: Show Name',
+    }}
+    unavailableToView={example.unavailableToView}
+    selectMode={example.selectMode}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </SpecialRoomCard>
+</Canvas>
+
+## Unavailable to view
+
+<Canvas style={{ width: '400px' }}>
+  <SpecialRoomCard
+    title={example.title}
+    artistName={example.artistName}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    imageUrl={example.imageUrl}
+    openingSoon={example.openingSoon}
+    visited={example.visited}
+    show={{
+      active: true,
+      label: 'OVR: Show Name',
+    }}
+    unavailableToView={{
+      active: true,
+      label: 'Unavailable to view',
+    }}
+    selectMode={example.selectMode}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </SpecialRoomCard>
+</Canvas>
+
+## Multi-Select
+
+### Default
+
+<Canvas style={{ width: '400px' }}>
+  <SpecialRoomCard
+    title={example.title}
+    artistName={example.artistName}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    imageUrl={example.imageUrl}
+    openingSoon={example.openingSoon}
+    visited={example.visited}
+    show={{
+      active: true,
+      label: 'OVR: Show Name',
+    }}
+    unavailableToView={example.unavailableToView}
+    selectMode={{
+      active: true,
+    }}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </SpecialRoomCard>
+</Canvas>
+
+### Opening Soon
+
+<Canvas style={{ width: '400px' }}>
+  <SpecialRoomCard
+    title={example.title}
+    artistName={example.artistName}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    imageUrl={example.imageUrl}
+    openingSoon={{
+      active: true,
+      label: 'Opening Soon',
+    }}
+    visited={example.visited}
+    show={{
+      active: true,
+      label: 'OVR: Show Name',
+    }}
+    unavailableToView={example.unavailableToView}
+    selectMode={{
+      active: true,
+    }}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </SpecialRoomCard>
+</Canvas>
+
+### Unavailable to view
+
+<Canvas style={{ width: '400px' }}>
+  <SpecialRoomCard
+    title={example.title}
+    artistName={example.artistName}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    imageUrl={example.imageUrl}
+    openingSoon={example.openingSoon}
+    visited={example.visited}
+    show={{
+      active: true,
+      label: 'OVR: Show Name',
+    }}
+    unavailableToView={{
+      active: true,
+      label: 'Unavailable to view',
+    }}
+    selectMode={{
+      active: true,
+      disabled: false
+    }}
+    onCollectionAdd={example.onCollectionAdd}
+  >
+    {Template.bind({})}
+  </SpecialRoomCard>
+</Canvas>
+
+## List Page
+
+<Preview>
+  <div>
+    <Container>
+      <Row>
+        {Array(6)
+          .fill(example)
+          .map((card, i) => {
+            return (
+              <Col
+                key={`col-${i}`}
+                xs={12}
+                sm={12}
+                md={6}
+                lg={4}
+                xl={4}
+                xxl={4}
+                className="mb-lg-8 mb-md-8"
+              >
+                <SpecialRoomCard {...{ ...example, imageUrl: imagesArray[i] }} />
+              </Col>
+            );
+          })}
+      </Row>
+    </Container>
+  </div>
+</Preview>
+
+## Default
+
+<Canvas style={{ width: '400px' }}>
   <Story
-    name="SpecialRoomCard truncated text"
-    args={truncatedArgs}
+    name="Special\ Room\ Card"
+    args={example}
     argTypes={argTypes}
     parameters={{
       design: {
         name: 'Figma Design',
         type: 'figma',
         url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=7608%3A164120',
       },
     }}
   >

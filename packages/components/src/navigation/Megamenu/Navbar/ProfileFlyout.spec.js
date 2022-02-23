@@ -7,7 +7,7 @@ import ProfileFlyout from './ProfileFlyout';
 const linkRenderer = (link, label) => <a href={link}>{label}</a>;
 
 const profileData = {
-  options: [
+  entries: [
     {
       type: 'link',
       label: 'My Account',
@@ -20,12 +20,12 @@ const profileData = {
     },
     { type: 'action', label: 'Sign out' },
   ],
+  onProfileLogout: jest.fn(),
 };
 
 const Component = (props) => (
   <ProfileFlyout
     profileData={profileData}
-    onLogout={jest.fn()}
     setIsVisible={jest.fn()}
     isVisible={false}
     userData={{
@@ -75,7 +75,12 @@ describe('LoginFlyout component', () => {
       it('should call onLogout ', () => {
         const onLogoutSpy = jest.fn();
         const setIsVisibleSpy = jest.fn();
-        render(<Component isVisible onLogout={onLogoutSpy} setIsVisible={setIsVisibleSpy} />);
+
+        profileData.onProfileLogout = onLogoutSpy;
+
+        render(<Component isVisible
+          profileData={ profileData }
+          setIsVisible={ setIsVisibleSpy } />);
 
         const signOutAction = screen.getByText('Sign out');
 

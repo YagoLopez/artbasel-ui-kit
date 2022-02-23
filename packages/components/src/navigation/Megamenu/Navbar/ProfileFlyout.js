@@ -5,8 +5,9 @@ import { ButtonIcon } from '../../../actions/ButtonIcon';
 import VipBadge from './VipBadge';
 
 const ProfileFlyout = ({
-  profileData: { options },
-  onLogout,
+  profileData: {
+    entries, onProfileClick, onProfileClose, onProfileOpen, onProfileLogout,
+  },
   setIsVisible,
   isVisible,
   userData: { name: userName, vipStatus, isUserLoggedIn },
@@ -17,17 +18,20 @@ const ProfileFlyout = ({
   const menuRef = useRef(null);
 
   const toggleIsVisible = useCallback(() => {
+    if (typeof onProfileClick === 'function') onProfileClick();
+    if (isVisible && typeof onProfileClose === 'function') onProfileClose();
+    if (!isVisible && typeof onProfileOpen === 'function') onProfileOpen();
     setIsVisible(!isVisible);
   }, [isVisible, setIsVisible]);
 
   const onClickAction = useCallback(() => {
-    onLogout();
+    if (typeof onProfileLogout === 'function') onProfileLogout();
     setIsVisible(null);
+    if (typeof onProfileClose === 'function') onProfileClose();
   }, [setIsVisible]);
 
   const isProfileButton = (target) => {
     const isIcon = target.nodeName === 'svg' || target.nodeName === 'path';
-
     return isIcon || target.className.includes('profile-btn');
   };
 
@@ -35,6 +39,7 @@ const ProfileFlyout = ({
     const isProfileBtn = isProfileButton(event.target);
     if (menuRef.current && !isProfileBtn) {
       setIsVisible(null);
+      if (typeof onProfileClose === 'function') onProfileClose();
     }
   };
 
@@ -72,7 +77,7 @@ const ProfileFlyout = ({
 
               </li>
             }
-          {options.map((o) => (o.type === 'action' ? (
+          {entries.map((o) => (o.type === 'action' ? (
               <li className="item-menu-label" onClick={onClickAction} key={o.label}>
                 {o.label}
               </li>
@@ -94,15 +99,18 @@ const ProfileFlyout = ({
 
 ProfileFlyout.propTypes = {
   profileData: PropTypes.shape({
-    options: PropTypes.arrayOf(
+    entries: PropTypes.arrayOf(
       PropTypes.shape({
         type: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
         link: PropTypes.string,
       }),
     ),
+    onProfileClick: PropTypes.func,
+    onProfileOpen: PropTypes.func,
+    onProfileClose: PropTypes.func,
+    onProfileLogout: PropTypes.func.isRequired,
   }).isRequired,
-  onLogout: PropTypes.func.isRequired,
   setIsVisible: PropTypes.func.isRequired,
   isVisible: PropTypes.bool.isRequired,
   userData: PropTypes.shape({

@@ -3,6 +3,80 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.33.0...@mch-group/uikit-components@0.34.0) (2022-02-22)
+
+
+### Features
+
+* **radio:** set label to be entirely clickable ([e085f11](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/e085f11321cbd0829606fb9c3517dac179155b0e))
+
+
+
+
+
+# [0.33.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.32.3...@mch-group/uikit-components@0.33.0) (2022-02-22)
+
+
+### Features
+
+* **navigation:** added callbacks to user profile menu ([442fcaf](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/442fcaf25bdeb102f9e040e68a9f6b0ddf1e8aa3))
+* **navigation:** added user profile callback methods to megamenu ([b020c04](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/b020c0428abb9304e73ca0a3c863ced9f07684d8))
+* **navigation:** added user profile methods to megamenu ([9883288](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/988328893ee2574dd4767151a7c13c9d167915fd))
+
+
+
+
+
+## [0.32.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.32.2...@mch-group/uikit-components@0.32.3) (2022-02-22)
+
+
+### Bug Fixes
+
+* **radio:** add name prop to radio component ([f8ad853](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/f8ad8536fe24f52dd5976ad6b01fd69527d61cc7))
+* remove 'make an offer' prop from ui components ([da9f922](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/da9f9227780b72d50ce826113bcd2ecdb36954cd))
+
+
+
+
+
+## [0.32.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.32.1...@mch-group/uikit-components@0.32.2) (2022-02-21)
+
+
+### Bug Fixes
+
+* **navigation:** fixing mobile profile menu ([8e480d7](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/8e480d7d17463074122e152a1d5048b4bfdcbe8d))
+
+
+
+
+
+## [0.32.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.32.0...@mch-group/uikit-components@0.32.1) (2022-02-21)
+
+
+### Bug Fixes
+
+* **navigation:** changed profileData "options" field name to "entries" ([af0c766](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/af0c76696dfb6bcaa34a53f20763cc98e3f2da1b))
+
+
+
+
+
+# [0.32.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.31.3...@mch-group/uikit-components@0.32.0) (2022-02-18)
+
+
+### Bug Fixes
+
+* **room-card:** decrease default story/canvas card width in storybook ([86b19fd](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/86b19fd0dab2f9172b35498fc599d8e8fc21a9dd))
+
+
+### Features
+
+* special room card ([67f4874](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/67f4874e30778203b32bb3f87b46b0a379ea2024))
+
+
+
+
+
 ## [0.31.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.31.2...@mch-group/uikit-components@0.31.3) (2022-02-17)
 
 
