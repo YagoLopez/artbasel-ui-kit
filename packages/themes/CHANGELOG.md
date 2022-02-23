@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.3...@mch-group/uikit-themes@0.29.4) (2022-02-23)
+
+
+### Bug Fixes
+
+* **ovr room cards:** decrease default story/canvas card width in storybook ([f08294c](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/f08294cc6745eaed248ad55b38eb17e6fceb65a2))
+
+
+
+
+
 ## [0.29.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.2...@mch-group/uikit-themes@0.29.3) (2022-02-23)
 
 
