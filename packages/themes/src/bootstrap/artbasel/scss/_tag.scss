@@ -1,3 +1,9 @@
+/* font-smoothing */
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .tag {
   &.type {
     &-label {
@@ -12,6 +18,7 @@
     &-curator {
       background: $color-mch-black;
       color: $color-mch-white;
+      @include font-smoothing;
     }
     &-premium {
       background: $color-mch-black;
@@ -19,6 +26,7 @@
         color: $color-mch-white;
         position: relative;
         top: 3px;
+        @include font-smoothing;
       }
     }
     &-filterable {

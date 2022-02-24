@@ -33,7 +33,9 @@ const SpecialRoomCard = ({
 
   const onSelectRoom = (evt) => {
     setRoomSelected(evt?.target?.checked);
-    selectMode.onChange();
+    if (typeof selectMode.onChange === 'function') {
+      selectMode.onChange();
+    }
   };
 
   return (
@@ -201,7 +203,7 @@ SpecialRoomCard.propTypes = {
   }),
   selectMode: PropTypes.shape({
     active: PropTypes.bool.isRequired,
-    checked: PropTypes.bool.isRequired,
+    checked: PropTypes.bool,
     onChange: PropTypes.func,
     disabled: PropTypes.bool,
   }),
