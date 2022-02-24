@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.7](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.6...@mch-group/uikit-themes@0.29.7) (2022-02-24)
+
+
+### Bug Fixes
+
+* **ovr room cards:** fixed styles and component optimization ([fd557c2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/fd557c2d849ea9b00e8e7e7a86f27e0bab445f46))
+
+
+
+
+
 ## [0.29.6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.5...@mch-group/uikit-themes@0.29.6) (2022-02-24)
 
 
