@@ -7,6 +7,20 @@ import { Tag } from '../../../feedback/Tag';
 import { Icon } from '../../../utils/Icon';
 import { Checkbox } from '../../../inputs/Checkbox';
 
+const ConditionalWrapper = ({
+  linkRenderer,
+  condition,
+  link,
+  children,
+}) => {
+  if (condition && typeof linkRenderer === 'function') {
+    return linkRenderer(link, children);
+  }
+  return children;
+};
+
+const MemoizedConditionalWrapper = React.memo(ConditionalWrapper);
+
 const RoomCard = ({
   title,
   collaboratedAccounts,
@@ -27,17 +41,8 @@ const RoomCard = ({
   selectMode,
   onCollectionAdd,
 }) => {
-  const [isRoomSelected, setRoomSelected] = React.useState(
-    selectMode?.checked,
-  );
+  const [isRoomSelected, setRoomSelected] = React.useState(selectMode?.checked);
   const defaultState = !openingSoon?.active && !unavailableToView?.active && !selectMode?.active;
-
-  const ConditionalWrapper = ({ condition, link, children }) => {
-    if (condition && typeof linkRenderer === 'function') {
-      return linkRenderer(link, children);
-    }
-    return children;
-  };
 
   const onSelectRoom = (evt) => {
     setRoomSelected(evt?.target?.checked);
@@ -55,7 +60,6 @@ const RoomCard = ({
         'opening-state': openingSoon?.active,
         'unavailable-state': unavailableToView?.active,
         'select-state': selectMode?.active,
-        'selected-state': selectMode?.active && isRoomSelected,
       })}
     >
       {/* Image Frame */}
@@ -72,7 +76,7 @@ const RoomCard = ({
           <Tag
             label={unavailableToView.label}
             onClick={unavailableToView.onClick}
-            className='tag-unavailableToView'
+            className="tag-unavailableToView"
             icon="Info"
             iconAlign="left"
           />
@@ -83,7 +87,7 @@ const RoomCard = ({
           <Tag
             label={openingSoon.label}
             onClick={openingSoon.onClick}
-            className='tag-opening'
+            className="tag-opening"
           />
         )}
 
@@ -92,7 +96,7 @@ const RoomCard = ({
           <Tag
             label={visited.label}
             onClick={visited.onClick}
-            className='tag-visited'
+            className="tag-visited"
           />
         )}
 
@@ -111,7 +115,7 @@ const RoomCard = ({
             checked={isRoomSelected}
             disabled={selectMode.disabled}
             onChange={onSelectRoom}
-            className='checkbox-select'
+            className="checkbox-select"
           />
         )}
 
@@ -119,15 +123,23 @@ const RoomCard = ({
         {curator?.active && (
           <Tag
             label={curator.label}
-            className='tag-curator'
+            className="tag-curator"
             onClick={curator.onClick}
             type="curator"
           />
         )}
 
         {/* image + opacity blur/fill */}
-        <ConditionalWrapper condition={defaultState} link={roomLink}>
-          <div className="overlay-fill dark" />
+        <MemoizedConditionalWrapper
+          linkRenderer={linkRenderer}
+          condition={defaultState}
+          link={roomLink}
+        >
+          <div
+            className={classNames('overlay-fill dark', {
+              selected: selectMode?.active && isRoomSelected,
+            })}
+          />
           <div
             className={classNames('overlay-blur', {
               dark: openingSoon?.active,
@@ -135,7 +147,7 @@ const RoomCard = ({
             })}
           />
           <img src={imageUrl} title={title} alt={title} />
-        </ConditionalWrapper>
+        </MemoizedConditionalWrapper>
       </div>
 
       {/* Texts */}
@@ -143,17 +155,25 @@ const RoomCard = ({
         <div className="text-frame-top">
           {/* room title */}
           {title && (
-            <ConditionalWrapper condition={defaultState} link={roomLink}>
+            <MemoizedConditionalWrapper
+              linkRenderer={linkRenderer}
+              condition={defaultState}
+              link={roomLink}
+            >
               <h4>{title}</h4>
-            </ConditionalWrapper>
+            </MemoizedConditionalWrapper>
           )}
           {/* collaborated accounts */}
           {collaboratedAccounts && (
-            <ConditionalWrapper condition={defaultState} link={roomLink}>
+            <MemoizedConditionalWrapper
+              linkRenderer={linkRenderer}
+              condition={defaultState}
+              link={roomLink}
+            >
               <p className="text-medium truncate" title={collaboratedAccounts}>
                 {collaboratedAccounts}
               </p>
-            </ConditionalWrapper>
+            </MemoizedConditionalWrapper>
           )}
         </div>
         <div className="bottom-frame d-flex justify-content-between align-items-center">
@@ -174,7 +194,8 @@ const RoomCard = ({
             {/* account */}
             {/* TODO - we cant link to room, if no accountlink, when unavailable in collections */}
             {type === 'freestanding' && ownerAccount && (
-              <ConditionalWrapper
+              <MemoizedConditionalWrapper
+                linkRenderer={linkRenderer}
                 condition={
                   defaultState
                   || (unavailableToView?.active && ownerAccountLink)
@@ -182,7 +203,7 @@ const RoomCard = ({
                 link={ownerAccountLink || roomLink}
               >
                 <p className="text-medium text-link mb-0">{ownerAccount}</p>
-              </ConditionalWrapper>
+              </MemoizedConditionalWrapper>
             )}
           </div>
           <div className="bottom-frame-right d-flex align-items-center">
