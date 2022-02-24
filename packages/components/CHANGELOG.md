@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.35.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.35.2...@mch-group/uikit-components@0.35.3) (2022-02-24)
+
+
+### Bug Fixes
+
+* **special room card:** style fixes and component optimization ([61dfbb0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/61dfbb07542f75cda2efdb6ee9a979fc25732a4d))
+
+
+
+
+
 ## [0.35.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.35.1...@mch-group/uikit-components@0.35.2) (2022-02-23)
 
 
