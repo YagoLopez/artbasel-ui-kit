@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.8](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.7...@mch-group/uikit-themes@0.29.8) (2022-02-25)
+
+
+### Bug Fixes
+
+* **navigation:** change placeholder color on mobile search ([ed6cd31](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/ed6cd3118bad345e4b03403167224aee08507f35))
+
+
+
+
+
 ## [0.29.7](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.6...@mch-group/uikit-themes@0.29.7) (2022-02-24)
 
 
