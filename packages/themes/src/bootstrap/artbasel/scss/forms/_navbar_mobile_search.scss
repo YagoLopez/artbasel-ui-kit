@@ -27,11 +27,11 @@
     color: $color-mch-black;
 
     &::placeholder {
-      color: $color-mch-gray-300;
+      color: $color-mch-gray-400;
     }
   }
 
-  &.hover .form-control::placeholder {
+  &.focus .form-control::placeholder {
     color: $color-mch-gray-400;
   }
 }
