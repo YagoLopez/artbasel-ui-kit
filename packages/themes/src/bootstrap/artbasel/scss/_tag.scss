@@ -33,22 +33,22 @@
       background: $color-mch-white;
       color: $color-mch-gray-500;
       border: 1px solid $color-mch-gray-500;
-      border-radius: 2px;
+      border-radius: $spacing-1;
       cursor: pointer;
       transition: background-color ease-out 0.35s;
       &:hover {
         background: $color-mch-gray-100;
       }
       .tag-icon {
-        width: 24px;
+        width: $spacing-7;
         height: 22px;
       }
     }
     &-sectors {
-      filter: drop-shadow(0 4px 16px rgba(29, 35, 39, 0.06));
+      filter: drop-shadow(0 $spacing-2 $spacing-5 rgba(29, 35, 39, 0.06));
       border-width: 1px;
       border-style: solid;
-      border-radius: 2px;
+      border-radius: $spacing-1;
       &.theme {
         &-dark {
           /* transparent background */
@@ -63,60 +63,63 @@
   }
   &.size {
     &-s {
-      padding: 4px 8px;
+      padding: $spacing-2 $spacing-3;
       &.icon {
         &-left {
-          padding: 0 8px 0 4px;
+          padding: 0 $spacing-3 0 $spacing-2;
         }
         &-right {
-          padding: 0 4px 0 8px;
+          padding: 0 $spacing-2 0 $spacing-3;
         }
       }
       &.type-sectors {
-        padding: 3px 8px;
+        padding: 3px $spacing-3;
       }
       &.type-filterable {
-        padding: 0 0 0 8px;
+        padding: 0 0 0 $spacing-3;
+      }
+      &.type-premium {
+        padding: 3px $spacing-3;
       }
     }
     &-m {
-      padding: 8px;
+      padding: $spacing-3;
       &.icon {
         &-left {
-          padding: 4px 8px 4px 4px;
+          padding: $spacing-2 $spacing-3 $spacing-2 $spacing-2;
         }
         &-right {
-          padding: 4px 4px 4px 8px;
+          padding: $spacing-2 $spacing-2 $spacing-2 $spacing-3;
         }
       }
       &.type-sectors,
       &.type-premium {
-        padding: 7px 8px;
+        padding: 7px $spacing-3;
       }
       &.type-filterable {
-        padding: 4px 0 4px 8px;
+        padding: $spacing-2 0 $spacing-2 $spacing-3;
       }
     }
   }
   &.icon {
     &-left {
       .tag-icon {
-        padding: 4px;
-        margin-right: 2px;
+        padding: $spacing-2;
+        margin-right: $spacing-1;
       }
     }
     &-right {
       .tag-icon {
-        padding: 4px;
-        margin-left: 2px;
+        padding: $spacing-2;
+        margin-left: $spacing-1;
       }
     }
   }
   &-radius {
-    border-radius: 2px;
+    border-radius: $spacing-1;
   }
   &-shadow {
-    box-shadow: 0 4px 16px rgba(29, 35, 39, 0.06);
+    box-shadow: 0 $spacing-2 $spacing-5 rgba(29, 35, 39, 0.06);
   }
 
   /* fix vertical font shifting */
