@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.8](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.7...@mch-group/uikit-themes@0.29.8) (2022-02-25)
+
+
+### Bug Fixes
+
+* **navigation:** change placeholder color on mobile search ([ed6cd31](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/ed6cd3118bad345e4b03403167224aee08507f35))
+
+
+
+
+
+## [0.29.7](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.6...@mch-group/uikit-themes@0.29.7) (2022-02-24)
+
+
+### Bug Fixes
+
+* **ovr room cards:** fixed styles and component optimization ([fd557c2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/fd557c2d849ea9b00e8e7e7a86f27e0bab445f46))
+
+
+
+
+
+## [0.29.6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.5...@mch-group/uikit-themes@0.29.6) (2022-02-24)
+
+
+### Bug Fixes
+
+* **special room card:** style fixes and component optimization ([61dfbb0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/61dfbb07542f75cda2efdb6ee9a979fc25732a4d))
+
+
+
+
+
 ## [0.29.5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.4...@mch-group/uikit-themes@0.29.5) (2022-02-23)
 
 

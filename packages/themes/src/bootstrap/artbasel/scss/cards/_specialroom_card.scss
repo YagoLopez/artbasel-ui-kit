@@ -98,10 +98,6 @@
     .overlay-fill.dark {
       opacity: 0.75;
     }
-
-    &.selected-state .overlay-fill.dark {
-      opacity: 1;
-    }
   }
 
   .image-frame {
@@ -234,12 +230,15 @@
       width: 100%;
       height: 100%;
       opacity: 0;
-      transition: all 0.35s ease-out;
       z-index: 2;
       @include round-corners;
+      transition: opacity 0.35s ease-out;
 
       &.dark {
         background: rgba(29, 35, 39, 0.3);
+        &.selected {
+          opacity: 1;
+        }
       }
     }
 

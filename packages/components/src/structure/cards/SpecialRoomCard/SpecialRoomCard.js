@@ -7,6 +7,20 @@ import { Tag } from '../../../feedback/Tag';
 import { Icon } from '../../../utils/Icon';
 import { Checkbox } from '../../../inputs/Checkbox';
 
+const ConditionalWrapper = ({
+  linkRenderer,
+  condition,
+  link,
+  children,
+}) => {
+  if (condition && typeof linkRenderer === 'function') {
+    return linkRenderer(link, children);
+  }
+  return children;
+};
+
+const MemoizedConditionalWrapper = React.memo(ConditionalWrapper);
+
 const SpecialRoomCard = ({
   title,
   artistName,
@@ -24,13 +38,6 @@ const SpecialRoomCard = ({
   const [isRoomSelected, setRoomSelected] = React.useState(selectMode?.checked);
   const defaultState = !openingSoon?.active && !unavailableToView?.active && !selectMode?.active;
 
-  const ConditionalWrapper = ({ condition, link, children }) => {
-    if (condition && typeof linkRenderer === 'function') {
-      return linkRenderer(link, children);
-    }
-    return children;
-  };
-
   const onSelectRoom = (evt) => {
     setRoomSelected(evt?.target?.checked);
     if (typeof selectMode.onChange === 'function') {
@@ -46,7 +53,6 @@ const SpecialRoomCard = ({
         'opening-state': openingSoon?.active,
         'unavailable-state': unavailableToView?.active,
         'select-state': selectMode?.active,
-        'selected-state': selectMode?.active && isRoomSelected,
       })}
     >
       {/* Image Frame */}
@@ -121,16 +127,24 @@ const SpecialRoomCard = ({
         {/* Texts (room title and artist name) */}
         <div className="text-frame">
           {title && (
-            <ConditionalWrapper condition={defaultState} link={roomLink}>
+            <MemoizedConditionalWrapper
+              linkRenderer={linkRenderer}
+              condition={defaultState}
+              link={roomLink}
+            >
               <h3>{title}</h3>
-            </ConditionalWrapper>
+            </MemoizedConditionalWrapper>
           )}
           {artistName && (
-            <ConditionalWrapper condition={defaultState} link={roomLink}>
+            <MemoizedConditionalWrapper
+              linkRenderer={linkRenderer}
+              condition={defaultState}
+              link={roomLink}
+            >
               <h5 className="truncate" title={artistName}>
                 {artistName}
               </h5>
-            </ConditionalWrapper>
+            </MemoizedConditionalWrapper>
           )}
         </div>
 
@@ -152,9 +166,17 @@ const SpecialRoomCard = ({
         )}
 
         {/* overlay / blur, fill, gradient */}
-        <ConditionalWrapper condition={defaultState} link={roomLink}>
+        <MemoizedConditionalWrapper
+          linkRenderer={linkRenderer}
+          condition={defaultState}
+          link={roomLink}
+        >
           <div className="overlay-gradient" />
-          <div className="overlay-fill dark" />
+          <div
+            className={classNames('overlay-fill dark', {
+              selected: selectMode?.active && isRoomSelected,
+            })}
+          />
           <div
             className={classNames('overlay-blur', {
               dark: openingSoon?.active,
@@ -162,7 +184,7 @@ const SpecialRoomCard = ({
             })}
           />
           <img src={imageUrl} title={title} alt={title} />
-        </ConditionalWrapper>
+        </MemoizedConditionalWrapper>
       </div>
     </BSPCard>
   );
