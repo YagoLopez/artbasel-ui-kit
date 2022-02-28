@@ -1,25 +1,23 @@
-/* eslint no-console: ["error", { allow: ["warn", "error"] }] */
 import React from 'react';
 import '@testing-library/jest-dom';
 import { cleanup, render, screen } from '@testing-library/react';
 import EventCard from './EventCard';
-import example from './EventCard.example.json';
+import example from './EventCard.example';
 
 console.error = jest.fn();
 
-describe('Tests for Gallery Card component', () => {
+describe('Tests for Event Card component', () => {
   afterEach(cleanup);
 
   test('Should render the component', () => {
     render(
       <EventCard
-        date={example.date}
-        title={example.title}
-        description={example.description}
-        image={example.image}
-        location={example.location}
-        button={example.button}
-        schedule={example.schedule}
+        {...example}
+        linkRenderer={(link, children) => (
+          <a href={link} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        )}
       />,
     );
     expect(screen.queryByText(example.title)).toBeInTheDocument();
@@ -28,70 +26,56 @@ describe('Tests for Gallery Card component', () => {
   test('Should not render the component without image prop', () => {
     render(
       <EventCard
-        date={example.date}
-        title={example.title}
-        description={example.description}
-        location={example.location}
-        button={example.button}
-        schedule={example.schedule}
+        {...example}
+        image={null}
+        linkRenderer={(link, children) => (
+          <a href={link} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        )}
       />,
     );
     expect(console.error).toBeCalled();
   });
 
-  test('Should not render the component without title prop', () => {
+  test('Should not render the component without eventLink prop', () => {
     render(
       <EventCard
-        date={example.date}
-        description={example.description}
-        image={example.image}
-        location={example.location}
-        button={example.button}
-        schedule={example.schedule}
+        {...example}
+        eventLink={null}
+        linkRenderer={(link, children) => (
+          <a href={link} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        )}
       />,
     );
     expect(console.error).toBeCalled();
   });
 
-  test('Should not render the component without location prop', () => {
+  test('Should render the component with type', () => {
     render(
       <EventCard
-        date={example.date}
-        title={example.title}
-        description={example.description}
-        image={example.image}
-        button={example.button}
-        schedule={example.schedule}
+        {...example}
+        linkRenderer={(link, children) => (
+          <a href={link} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        )}
       />,
     );
-    expect(console.error).toBeCalled();
+    const el = screen.getByText('Exhibition');
+    expect(el).toBeDefined();
   });
 
-  test('Should not render the component without description prop', () => {
+  test('Should not render the component without linkRenderer prop', () => {
     render(
       <EventCard
-        date={example.date}
-        title={example.title}
-        image={example.image}
-        location={example.location}
-        button={example.button}
-        schedule={example.schedule}
+        {...example}
+        linkRenderer={null}
       />,
     );
-    expect(console.error).toBeCalled();
-  });
-
-  test('Should not render the component without button prop', () => {
-    render(
-      <EventCard
-        date={example.date}
-        title={example.title}
-        description={example.description}
-        location={example.location}
-        image={example.image}
-        schedule={example.schedule}
-      />,
-    );
-    expect(console.error).toBeCalled();
+    const el = screen.getByText('Exhibition');
+    expect(el).toBeDefined();
   });
 });

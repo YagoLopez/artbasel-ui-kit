@@ -1,19 +1,51 @@
+/* storybook card max-width */
+:root .sb-show-main .event-card.fixed {
+  max-width: 375px;
+}
+
+@mixin eventcard-xs-body {
+  padding: $spacing-7;
+
+  .type {
+    margin-bottom: $spacing-2;
+  }
+
+  .title {
+    margin-bottom: $spacing-5;
+    font-size: $spacing-7; // fixed font
+    line-height: 28px;
+  }
+}
+
 .card.event-card {
   width: 100%;
   border: 0;
   box-shadow: none;
 
-  .gradient {
-    position: absolute;
-    width: 100%;
-    z-index: 999;
-    background-color: none;
-    transition: all 0.1s ease-in-out;
-  }
-
-  .hoverHandler {
-    display: block;
+  .image-frame {
+    display: flex;
     position: relative;
+    overflow: hidden;
+
+    a {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+
+    .btn-icon {
+      transition: opacity 0.35s ease-out;
+      opacity: 0;
+      position: absolute;
+      top: $spacing-5;
+      right: $spacing-5;
+      z-index: 5;
+    }
   }
 
   .card-body {
@@ -21,164 +53,174 @@
     padding: 0;
     padding-bottom: 10px;
     border-top: none;
+    overflow: hidden;
 
-    .card-text {
-      font-family: $font-family-base;
-      margin-bottom: 0;
-      margin-top: 0;
+    .items {
+      display: flex;
+      flex-direction: column;
+
+      .item {
+        clear: both;
+        width: 100%;
+        display: grid;
+        grid-template-columns: $spacing-7 1fr;
+        margin-bottom: $spacing-3;
+        font-size: 14px; // fixed font
+        line-height: 18px;
+      }
+
+      .item > .card-item-icon,
+      .item > .card-item-data {
+        display: block;
+      }
+
+      .item > .card-item-data {
+        padding: 0 0 0 $spacing-4;
+        display: flex;
+        position: relative;
+        top: $spacing-2;
+      }
     }
+  }
 
-    .card-title {
-      font-family: $headings-font-family;
-    }
-
-    .card-description,
-    .item {
-      font-family: $font-family-base;
-      color: $color-mch-black;
-    }
-
-    .card-description {
-      margin-bottom: 32px;
-    }
-
-    .item {
-      clear: both;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 20px 1fr;
-      margin-bottom: 18px;
-      font-size: 14px;
-      line-height: 18px;
-    }
-
-    .item > .card-item-icon,
-    .item > .card-item-data {
-      display: block;
-    }
-
-    .item > .card-item-icon {
-      float: left;
-    }
-
-    .item > .card-item-data {
-      padding: 0 15px;
-    }
-
-    .btn-secondary {
-      background-color: $color-mch-gray-200;
+  .tags {
+    margin: $spacing-7 0 $spacing-3;
+    display: flex;
+    & > div {
+      margin-right: $spacing-3;
     }
   }
 
   &:hover {
     cursor: pointer;
 
-    .gradient {
+    .btn-icon {
+      cursor: pointer;
+      opacity: 1;
+    }
+
+    .overlay-gradient {
       background: rgba(29, 35, 39, 0.3);
     }
-
-    .btn-secondary {
-      background-color: $color-mch-gray-100;
-    }
   }
 
-  &.size-s {
-    .hoverHandler,
-    .gradient {
-      height: 234.37px;
+  &.fixed {
+    .image {
+      background-size: cover;
+      border-radius: $spacing-1 $spacing-1 0 0;
+      &.ar-16_10 {
+        aspect-ratio: 16 / 10;
+      }
     }
 
     .card-body {
-      padding: 24px;
+      @include eventcard-xs-body;
+      border-radius: 0 0 $spacing-1 $spacing-1;
+    }
+  }
 
-      .card-title {
-        margin-top: 0;
-        margin-bottom: 8px;
-        font-size: 26px;
-        line-height: 30px;
+  &.responsive {
+    @include media-breakpoint-up(md) {
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+
+    .image {
+      background-size: cover;
+      @include media-breakpoint-up(xs) {
+        aspect-ratio: 16 / 10;
       }
 
-      .card-description {
-        font-size: 16px;
-        line-height: 22px;
-        margin-bottom: 32px;
+      @include media-breakpoint-up(md) {
+        aspect-ratio: 1 / 1;
+        height: 100%;
+        border-radius: 0 $spacing-1 $spacing-1 0;
+      }
+    }
+
+    .image-frame {
+      @include media-breakpoint-up(md) {
+        border-radius: 0 $spacing-1 $spacing-1 0;
+      }
+    }
+
+    .card-body {
+      @include media-breakpoint-up(xs) {
+        @include eventcard-xs-body;
       }
 
-      .buttonBox {
-        margin-top: 32px;
-      }
+      @include media-breakpoint-up(md) {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        height: 100%;
+        padding: $spacing-7;
+        border-radius: $spacing-1 0 0 $spacing-1;
 
-      .btn-secondary {
-        width: 100%;
+        .type {
+          margin-bottom: $spacing-3;
+        }
+
+        .title {
+          margin-bottom: $spacing-3;
+        }
+
+        .card-description {
+          margin-bottom: $spacing-8;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(xs) {
+      .card-body {
+        order: 2;
+      }
+      .image-frame {
+        order: 1;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      .image-frame {
+        order: 2;
+      }
+      .card-body {
+        order: 1;
+      }
+      .tags {
+        margin: $spacing-8 0 $spacing-3;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .card-body {
+        padding: $spacing-12;
+      }
+      .tags {
+        margin: $spacing-9 0 $spacing-3;
       }
     }
   }
 
-  &.size-m,
-  &.size-l {
-    display: grid;
-    grid-template-columns: 50% 50%;
-
-    .card-body {
-      transform: translateX(-100%);
-      transition: all 0.1s ease-in-out;
-
-      .card-title {
-        font-size: 36px;
-        line-height: 42px;
-        margin-bottom: 8px;
-      }
-    }
-
-    .hoverHandler {
-      transform: translateX(100%);
-      transition: all 0.1s ease-in-out;
-    }
+  .overlay-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    transition: all 0.35s ease-out;
+    z-index: 2;
   }
 
-  &.size-m {
-    .hoverHandler,
-    .gradient {
-      height: 492px;
-    }
-
-    .card-body {
-      padding: 26px;
-
-      .card-title {
-        margin-top: 14px;
-      }
-
-      .item {
-        margin-bottom: 18px;
-      }
-
-      .buttonBox {
-        margin-top: 36px;
-      }
-    }
-  }
-
-  &.size-l {
-    .hoverHandler,
-    .gradient {
-      height: 624px;
-    }
-
-    .card-body {
-      padding: 64px;
-
-      .card-title {
-        margin-top: 56px;
-      }
-
-      .item {
-        margin-bottom: 22px;
-      }
-
-      .buttonBox {
-        margin-top: 48px;
-      }
-    }
+  .truncate {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }

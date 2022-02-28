@@ -1,128 +1,176 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
-import classnames from 'classnames';
-import { Button } from '../../../actions/Button';
+import classNames from 'classnames';
+import { ButtonIcon } from '../../../actions/ButtonIcon';
 import { Icon } from '../../../utils/Icon';
-import { truncateText } from '../../../helpers/truncateText';
+import { Tag } from '../../../feedback/Tag';
 
-const truncateValues = {
-  title: 80,
-  description: 250,
+const ConditionalWrapper = ({
+  linkRenderer, condition, link, children,
+}) => {
+  if (condition && typeof linkRenderer === 'function') {
+    return linkRenderer(link, children);
+  }
+  return children;
 };
-const classHeight = {
-  s: '234.37px',
-  m: '492px',
-  l: '624px',
-};
+
+const MemoizedConditionalWrapper = React.memo(ConditionalWrapper);
 
 const EventCard = ({
-  cssInternalPrefix,
-  cssStyles,
-  size,
+  responsive,
   title,
+  type,
   image,
   description,
-  location,
+  venue,
   schedule,
   date,
-  button,
+  linkRenderer,
+  eventLink,
+  onCollectionAdd,
+  tags,
 }) => {
-  const truncated = {
-    title: truncateText(title, truncateValues.title),
-    description: truncateText(description, truncateValues.description),
-  };
-
   return (
     <BSPCard
       data-testid="mch-event-card"
-      bsPrefix={cssInternalPrefix}
-      style={cssStyles}
-      className={classnames('event-card', `size-${size}`)}
+      className={classNames('event-card', { responsive, fixed: !responsive })}
     >
-      <div className="hoverHandler">
-        <div className="gradient" />
-        <img
-          src={image}
-          width="100%"
-          height={classHeight[size]}
-          alt="picture"
-          style={{ objectFit: 'cover' }}
+      {/* Image Frame */}
+      <div className="image-frame">
+        <ButtonIcon
+          icon="collections-add"
+          onClick={onCollectionAdd}
+          variant="fill"
+          theme="dark"
         />
+        <MemoizedConditionalWrapper
+          linkRenderer={linkRenderer}
+          condition={eventLink}
+          link={eventLink}
+        >
+          <div className="overlay-gradient" />
+          <div
+            style={{ backgroundImage: `url(${image})` }}
+            className={classNames('image', { 'ar-16_10': !responsive })}
+          />
+        </MemoizedConditionalWrapper>
       </div>
+
+      {/* Body Text */}
       <BSPCard.Body>
-        <BSPCard.Title>
-          {truncated.title.text}
-          {truncated.title.state && <span title={title}>...</span>}
-        </BSPCard.Title>
-        <BSPCard.Text className="card-description">
-          {truncated.description.text}
-          {truncated.description.state && <span title={description}>...</span>}
-        </BSPCard.Text>
-        <div className="item">
-          <div className="card-item-icon">
-            <Icon name="pin" height={20} />
-          </div>
-          <div className="card-item-data">
-            <span>{location?.address}</span>
-            <br />
-            <span>
-              {location?.pc} {location?.city}
-            </span>
-          </div>
-        </div>
-        <div className="item">
-          <div className="card-item-icon">
-            <Icon name="calendar" height={20} />
-          </div>
-          <div className="card-item-data">
-            <span>{date}</span>
-          </div>
-        </div>
-        <div className="item">
-          <div className="card-item-icon">
-            <Icon name="time" height={20} />
-          </div>
-          <div className="card-item-data">
-            <span>{schedule}</span>
-          </div>
-        </div>
-        <div className="buttonBox">
-          {button && (
-            <Button variant="secondary" href={button?.link}>
-              {button?.text}
-            </Button>
+        <MemoizedConditionalWrapper
+          linkRenderer={linkRenderer}
+          condition={eventLink}
+          link={eventLink}
+        >
+          {/* Event Type */}
+          <div className="type">{type}</div>
+          {/* Event TItle */}
+          <h3 className="title">{title}</h3>
+          {/* Event Description */}
+          {description && responsive && (
+            <div className="d-none d-md-block">
+              <span
+                className="card-description text-medium truncate"
+                title={description}
+              >
+                {description}
+              </span>
+            </div>
           )}
-        </div>
+          <div className="items">
+            {/* Event Venue */}
+            {venue?.name && (
+              <div className="item">
+                <div className="card-item-icon">
+                  <Icon name="map" />
+                </div>
+                <div className="card-item-data">
+                  <span className="text-small">{venue?.name}</span>
+                </div>
+              </div>
+            )}
+            <div className="item">
+              <div className="card-item-icon">
+                <Icon name="pin" />
+              </div>
+              <div className="card-item-data">
+                <span className="text-small">
+                  {venue?.street}
+                  <br />
+                  {venue?.postCode} {venue?.city}
+                </span>
+              </div>
+            </div>
+            <div className="item">
+              <div className="card-item-icon">
+                <Icon name="calendar" />
+              </div>
+              <div className="card-item-data">
+                <span className="text-small">{date}</span>
+              </div>
+            </div>
+            {schedule && (
+              <div className="item">
+                <div className="card-item-icon">
+                  <Icon name="time" />
+                </div>
+                <div className="card-item-data">
+                  <span className="text-small">{schedule}</span>
+                </div>
+              </div>
+            )}
+          </div>
+          {tags?.length && (
+            <div className="tags">
+              {tags.map((i) => (
+                <Tag
+                  label={i.label}
+                  key={i.id}
+                  type={i.type}
+                  theme={i.theme}
+                  size="s"
+                />
+              ))}
+            </div>
+          )}
+        </MemoizedConditionalWrapper>
       </BSPCard.Body>
     </BSPCard>
   );
 };
 
 EventCard.propTypes = {
-  size: PropTypes.oneOf(['s', 'm', 'l']),
+  responsive: PropTypes.bool,
   title: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  linkRenderer: PropTypes.func.isRequired,
   image: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  location: PropTypes.shape({
-    address: PropTypes.string.isRequired,
-    city: PropTypes.string.isRequired,
-    pc: PropTypes.string.isRequired,
+  eventLink: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  venue: PropTypes.shape({
+    name: PropTypes.string,
+    street: PropTypes.string,
+    postCode: PropTypes.string,
+    city: PropTypes.string,
   }).isRequired,
-  schedule: PropTypes.string.isRequired,
+  schedule: PropTypes.string,
   date: PropTypes.string.isRequired,
-  button: PropTypes.shape({
-    link: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-  }).isRequired,
-  cssStyles: PropTypes.string,
-  cssInternalPrefix: PropTypes.string,
+  onCollectionAdd: PropTypes.func,
+  tags: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+      label: PropTypes.string.isRequired,
+      type: PropTypes.oneOf(['label', 'premium']),
+      theme: PropTypes.oneOf(['light', 'dark']),
+    }),
+  ),
 };
 
 EventCard.defaultProps = {
-  size: 's',
-  cssInternalPrefix: 'card',
-  cssStyles: null,
+  responsive: false,
+  onCollectionAdd: () => {},
 };
 
 export default EventCard;
