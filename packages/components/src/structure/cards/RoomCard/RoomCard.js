@@ -39,7 +39,7 @@ const RoomCard = ({
   show,
   unavailableToView,
   selectMode,
-  onCollectionAdd,
+  collection,
 }) => {
   const [isRoomSelected, setRoomSelected] = React.useState(selectMode?.checked);
   const defaultState = !openingSoon?.active && !unavailableToView?.active && !selectMode?.active;
@@ -101,10 +101,10 @@ const RoomCard = ({
         )}
 
         {/* add to collection */}
-        {!selectMode?.active && (
+        {!selectMode?.active && !collection?.active && (
           <ButtonIcon
             icon="collections-add"
-            onClick={onCollectionAdd}
+            onClick={collection?.onClick}
             variant="fill"
             theme="dark"
           />
@@ -285,14 +285,16 @@ RoomCard.propTypes = {
     disabled: PropTypes.bool,
   }),
   liveChat: PropTypes.bool,
-  onCollectionAdd: PropTypes.func,
+  collection: PropTypes.shape({
+    active: PropTypes.bool.isRequired,
+    onClick: PropTypes.func,
+  }),
 };
 
 RoomCard.defaultProps = {
   theme: 'light',
   type: 'hybrid',
   liveChat: false,
-  onCollectionAdd: () => {},
   selected: false,
 };
 

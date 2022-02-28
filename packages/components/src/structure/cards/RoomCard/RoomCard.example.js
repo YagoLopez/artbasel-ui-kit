@@ -21,8 +21,8 @@ export const example = {
       {children}
     </a>
   ),
-  roomLink: 'https://room.com',
-  ownerAccountLink: 'https://gallery.com',
+  roomLink: 'https://artbasel.com',
+  ownerAccountLink: 'https://artbasel.com',
   type: 'hybrid',
   imageUrl:
     'https://res.cloudinary.com/dqzqcuqf9/image/upload/v1644497479/pix_lykotn.png',
@@ -58,7 +58,10 @@ export const example = {
     onChange: () => {},
     disabled: false,
   },
-  onCollectionAdd: () => {},
+  collection: {
+    active: false,
+    onClick: () => {},
+  },
 };
 
 export const imagesArray = [
