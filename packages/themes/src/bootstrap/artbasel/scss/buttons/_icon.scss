@@ -1,42 +1,30 @@
 .btn-icon {
   color: $color-mch-black;
   padding: $spacing-3;
-  padding-bottom: $spacing-3;
+  //padding-bottom: $spacing-3;
   border: none;
   background-color: transparent;
   box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 
   &.xs {
     width: 24px !important;
     height: 24px !important;
-    svg {
-      position: absolute;
-      top: 0px; bottom: 0px; left: 0px; right: 0;
-    }
   }
   &.s {
     width: 32px !important;
     height: 32px !important;
-    svg {
-      position: absolute;
-      top: 4px; bottom: 0px; left: 3.5px; right: 20px;
-    }
   }
   &.m {
     width: 40px !important;
     height: 40px !important;
-    svg {
-      position: absolute;
-      top: 7px; bottom: 0; left: 8px; right: 0;
-    }
   }
   &.lg {
     width: 48px !important;
     height: 48px !important;
-    svg {
-      position: absolute;
-      top: 11px; bottom: 0; left: 11px; right: 0;
-    }
   }
 
   &::before {
@@ -99,14 +87,14 @@
     }
     &::before {
       @include transition-mix();
-  
+
       display: block;
       width: 100px;
       height: 100px;
-  
+
       transform: translate(-50%, -50%) scale(0);
       transform-origin: center center;
-  
+
       background-color: $color-mch-gray-500;
       opacity: 50%;
       border-radius: 50%;
@@ -118,7 +106,7 @@
         transform: translate(-50%, -50%) scale(1);
         opacity: 50%;
       }
-  
+
       &::after {
         transform: translate(-50%, -50%) scale(1);
         opacity: 50%;
@@ -143,41 +131,25 @@
       fill: $color-mch-gray-400 !important;
     }
   }
-  
+
   }
 
   &.outline {
     &.xs {
       width: 24px !important;
       height: 24px !important;
-      svg {
-        position: absolute;
-        top: -1px; bottom: 0px; left: -1px; right: 0;
-      }
     }
     &.s {
       width: 32px !important;
       height: 32px !important;
-      svg {
-        position: absolute;
-        top: 3px; bottom: 0px; left: 2.8px; right: 20px;
-      }
     }
     &.m {
       width: 40px !important;
       height: 40px !important;
-      svg {
-        position: absolute;
-        top: 7px; bottom: 0; left: 6.5px; right: 0;
-      }
     }
     &.lg {
       width: 48px !important;
       height: 48px !important;
-      svg {
-        position: absolute;
-        top: 11px; bottom: 0; left: 11px; right: 0;
-      }
     }
     &.light {
     border: 1px solid rgba(186, 191, 196, 0.5) !important;
@@ -191,9 +163,9 @@
     svg {
       fill: $color-mch-black;
     }
-    
 
-   
+
+
   &:focus,
   &:not(:focus-visible) {
     background-color: transparent;
@@ -202,7 +174,7 @@
   &.focus {
     background-color: $color-mch-gray-100 !important;
   }
-    
+
 
     svg {
       fill: $color-mch-gray-400 !important;
@@ -234,7 +206,7 @@
   }
   }
   }
-  
+
   &.fill {
     &.dark {
       background-color: $color-mch-white !important;
@@ -244,18 +216,18 @@
       }
       &::before {
         @include transition-mix();
-    
+
         display: block;
         width: 100px;
         height: 100px;
         transition-duration: 500ms;
         transform: translate(-50%, -50%) scale(0);
         transform-origin: center center;
-    
+
         background-color: $color-mch-gray-100;
         border-radius: 50%;
       }
-    
+
       &:hover,
       &.hover {
         color: $color-mch-black;
@@ -266,7 +238,7 @@
           transform: translate(-50%, -50%) scale(1);
           opacity: 1;
         }
-    
+
         &::after {
           transform: translate(-50%, -50%) scale(1);
           opacity: 1;
@@ -275,7 +247,7 @@
       &:disabled,
       &.disabled {
         background-color: $color-mch-gray-300 !important;
-    
+
         svg {
           fill: $color-mch-gray-400 !important;
         }
@@ -289,7 +261,7 @@
     background-color: $color-mch-gray-100 !important;
   }
     }
-  
+
     &.light {
     border-radius: 2px !important;
     background-color: $color-mch-black !important;
@@ -298,19 +270,19 @@
     }
     &::before {
       @include transition-mix();
-  
+
       display: block;
       width: 100px;
       height: 100px;
-  
+
       transform: translate(-50%, -50%) scale(0);
       transition-duration: 500ms;
       transform-origin: center center;
-  
+
       background-color: $color-mch-gray-500;
       border-radius: 50%;
     }
-  
+
     &:hover,
     &.hover {
       color: $color-mch-white;
@@ -319,13 +291,13 @@
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
       }
-  
+
       &::after {
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
       }
     }
-  
+
     &:disabled,
     &.disabled {
       background-color: $color-mch-gray-300 !important;
@@ -333,7 +305,7 @@
         fill: $color-mch-gray-400 !important;
       }
     }
-  
+
     &:focus,
     &:not(:focus-visible) {
       background-color: transparent;
