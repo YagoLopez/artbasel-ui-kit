@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.35.5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.35.4...@mch-group/uikit-components@0.35.5) (2022-02-28)
+
+
+### Bug Fixes
+
+* **ovr room card:** export the component ([1d344a6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/1d344a6e1d629a9c28188c58670190a8b9e2e105))
+
+
+
+
+
 ## [0.35.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.35.3...@mch-group/uikit-components@0.35.4) (2022-02-24)
 
 
