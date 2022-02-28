@@ -13,21 +13,33 @@
     width: 24px !important;
     height: 24px !important;
     padding: 0;
+    svg {
+      position: absolute;
+    }
   }
   &.s {
     width: 32px !important;
     height: 32px !important;
     padding: $spacing-2;
+    svg {
+      position: absolute;
+    }
   }
   &.m {
     width: 40px !important;
     height: 40px !important;
     padding: $spacing-3;
+    svg {
+      position: absolute;
+    }
   }
   &.lg {
     width: 48px !important;
     height: 48px !important;
     padding: $spacing-4;
+    svg {
+      position: absolute;
+    }
   }
 
   &::before {
