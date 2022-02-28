@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.9](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.8...@mch-group/uikit-themes@0.29.9) (2022-02-28)
+
+
+### Bug Fixes
+
+* **tags:** visual fixings ([34b0c24](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/34b0c24c4058156e5d5a719de3083d48fa6fa4ff))
+
+
+
+
+
 ## [0.29.8](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.7...@mch-group/uikit-themes@0.29.8) (2022-02-25)
 
 
