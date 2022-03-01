@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.35.8](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.35.7...@mch-group/uikit-components@0.35.8) (2022-03-01)
+
+
+### Bug Fixes
+
+* **event card:** add to collection becomes optional ([8504c78](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/8504c78a69f5671a5d7bfcecf29773e76e2df7f0))
+* **special room card:** add to collection becomes optional ([aaa0a96](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/aaa0a96cc685e043488c221cb308af82b545d4a6))
+
+
+
+
+
 ## [0.35.7](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.35.6...@mch-group/uikit-components@0.35.7) (2022-02-28)
 
 
