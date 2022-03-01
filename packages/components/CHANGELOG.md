@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.35.10](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.35.9...@mch-group/uikit-components@0.35.10) (2022-03-01)
+
+
+### Bug Fixes
+
+* **navigation:** closes flyout megamenu when clicking a link ([b8b6650](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/b8b6650bef4a02aac6a62a8e49c2d4d4497adeb6))
+
+
+
+
+
 ## [0.35.9](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.35.8...@mch-group/uikit-components@0.35.9) (2022-03-01)
 
 **Note:** Version bump only for package @mch-group/uikit-components
