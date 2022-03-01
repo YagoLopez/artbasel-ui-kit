@@ -8,13 +8,11 @@ import { Container, Row, Col } from '../../../structure/Grid';
 import { ButtonIcon } from '../../../actions/ButtonIcon';
 import { MobileSearch, Search } from '../../../inputs/Search';
 import ProfileMobile from './ProfileMobile';
-import { PROFILE_FLYOUT } from '../constants';
 import CollectionLink from './CollectionLink';
 
 const NavbarMobile = ({
   menuData,
   profileData,
-  visibleMenu,
   setVisibleMenu,
   onLogout,
   userData,
@@ -24,6 +22,8 @@ const NavbarMobile = ({
   onSearch,
   linkRenderer,
   searchPlaceholder,
+  visibleMobileNavbar,
+  setVisibleMobileNavbar,
 }) => {
   if (!menuData) {
     return null;
@@ -31,7 +31,6 @@ const NavbarMobile = ({
 
   const [searchText, setSearchText] = useState(null);
 
-  const [visibleLinks, setVisibleLinks] = useState(false);
   const [visibleProfile, setVisibleProfile] = useState(false);
 
   const [containerIsVisible, setContainerIsVisible] = useState(false);
@@ -39,12 +38,8 @@ const NavbarMobile = ({
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [showSearchBarTransitions, setShowSearchBarTransitions] = useState(false);
 
-  const handleSetVisibleProfileFlyout = useCallback((open) => {
-    setVisibleMenu(open ? PROFILE_FLYOUT : null);
-  }, []);
-
   useEffect(() => {
-    if (visibleLinks) {
+    if (visibleMobileNavbar) {
       setContainerIsVisible(true);
       setTimeout(() => SetOptionsIsVisible(true), 50);
       document.body.style.overflow = 'hidden';
@@ -53,7 +48,7 @@ const NavbarMobile = ({
       setTimeout(() => setContainerIsVisible(false), 500);
       document.body.style.overflow = '';
     }
-  }, [visibleLinks]);
+  }, [visibleMobileNavbar]);
 
   useEffect(() => {
     if (showSearchBar) {
@@ -81,14 +76,14 @@ const NavbarMobile = ({
 
   return (
     <>
-      {!showSearchBar && !visibleLinks && !visibleProfile && <Container fluid>
+      {!showSearchBar && !visibleMobileNavbar && !visibleProfile && <Container fluid>
         <Row gutter="g-0" className="px-3 px-md-5 navbar">
           <Col className="col-auto">
             <ButtonIcon
               icon="menu"
-              onClick={() => setVisibleLinks(!visibleLinks)}
+              onClick={() => setVisibleMobileNavbar(!visibleMobileNavbar)}
               aria-controls="navlinksMobile"
-              aria-expanded={visibleLinks}
+              aria-expanded={visibleMobileNavbar}
             />
           </Col>
 
@@ -148,15 +143,15 @@ const NavbarMobile = ({
           </Row>
         </Container>
       </CSSTransition>
-      { (visibleLinks || visibleProfile)
+      { (visibleMobileNavbar || visibleProfile)
         && <Container fluid>
         <Row gutter="g-0" className="px-3 px-md-5 navbar">
           <Col className="col-auto">
               <ButtonIcon
                 icon="close"
                 onClick={() => {
-                  if (visibleLinks) {
-                    setVisibleLinks(false);
+                  if (visibleMobileNavbar) {
+                    setVisibleMobileNavbar(false);
                   }
 
                   if (visibleProfile) {
@@ -164,7 +159,7 @@ const NavbarMobile = ({
                   }
                 }}
               aria-controls="navlinksMobile"
-              aria-expanded={visibleLinks}
+              aria-expanded={visibleMobileNavbar}
             />
           </Col>
           <Col className="ps-3 d-md-none">
@@ -187,7 +182,9 @@ const NavbarMobile = ({
                 {entry.flyout ? (
                   <button
                     className="navlink-mobile flyout"
-                    onClick={() => setVisibleMenu(visibleLinks && entry.flyout ? entry.label : null)
+                    onClick={ () => setVisibleMenu(
+                      visibleMobileNavbar && entry.flyout ? entry.label : null,
+                    )
                     }
                   >
                     {entry.label}
@@ -203,7 +200,7 @@ const NavbarMobile = ({
       </Container>
       <div
         className={ classnames('navlinks-mobile-overlay', {
-          visible: visibleLinks || visibleProfile,
+          visible: visibleMobileNavbar || visibleProfile,
         }) }
       />
       { showSearchBar && <div className='mobile-search-overlay' /> }
@@ -225,6 +222,8 @@ NavbarMobile.propTypes = {
   profileData: PropTypes.object.isRequired,
   visibleMenu: PropTypes.string,
   setVisibleMenu: PropTypes.func.isRequired,
+  visibleMobileNavbar: PropTypes.string,
+  setVisibleMobileNavbar: PropTypes.func.isRequired,
   onLogout: PropTypes.func.isRequired,
   userData: PropTypes.shape({
     name: PropTypes.string.isRequired,

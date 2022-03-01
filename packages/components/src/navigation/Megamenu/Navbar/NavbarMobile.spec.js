@@ -10,6 +10,7 @@ describe('NavbarMobile component', () => {
   const isUserLoggedIn = true;
   const onLogout = jest.fn();
   const setVisibleMenu = jest.fn();
+  const setVisibleMobileNavbar = jest.fn();
   const data = {
     menuData,
     profileData: { entries: [] },
@@ -24,6 +25,7 @@ describe('NavbarMobile component', () => {
     loggedCollectionUrl: 'url',
     unloggedCollectionUrl: 'url',
     linkRenderer,
+    setVisibleMobileNavbar,
   };
   describe('renderer', () => {
     test('should render component', () => {

@@ -1,4 +1,6 @@
-import React, { useState, useEffect, forwardRef } from 'react';
+import React, {
+  useState, useEffect, useCallback, forwardRef,
+} from 'react';
 import PropTypes from 'prop-types';
 
 import { Navbar } from './Navbar';
@@ -28,7 +30,13 @@ const MegaMenuBuilder = forwardRef(
     ref,
   ) => {
     const [visibleMenu, setVisibleMenu] = useState(null);
+    const [visibleMobileNavbar, setVisibleMobileNavbar] = useState(null);
     const [scrolled, setScrolled] = useState(false);
+
+    const handleMenuFlyoutSetVisibleMenu = useCallback((menu) => {
+      setVisibleMenu(menu);
+      setVisibleMobileNavbar(null);
+    }, []);
 
     const navBarAnimation = {
       transform: `translateY(${scrolled ? -105 : 0}px)`,
@@ -85,7 +93,9 @@ const MegaMenuBuilder = forwardRef(
               linkRenderer={linkRenderer}
               profileData={profileData}
               visibleMenu={visibleMenu}
-              setVisibleMenu={setVisibleMenu}
+              setVisibleMenu={ setVisibleMenu }
+              visibleMobileNavbar={ visibleMobileNavbar }
+              setVisibleMobileNavbar={ setVisibleMobileNavbar }
               userData={userData}
               profileWelcomeHeader={profileWelcomeHeader}
               loggedCollectionUrl={loggedCollectionUrl}
@@ -112,7 +122,7 @@ const MegaMenuBuilder = forwardRef(
             menuData={ menuData }
             linkRenderer={linkRenderer}
             visibleMenu={visibleMenu}
-            setVisibleMenu={setVisibleMenu}
+            setVisibleMenu={handleMenuFlyoutSetVisibleMenu}
             userData={userData}
             loggedCollectionUrl={loggedCollectionUrl}
             unloggedCollectionUrl={unloggedCollectionUrl}
