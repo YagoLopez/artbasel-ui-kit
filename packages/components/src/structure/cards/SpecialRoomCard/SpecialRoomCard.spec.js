@@ -27,7 +27,7 @@ describe('Tests for X component', () => {
         show={example.show}
         unavailableToView={example.unavailableToView}
         selectMode={example.selectMode}
-        onCollectionAdd={example.onCollectionAdd}
+        collection={example.collection}
       />,
     );
     expect(screen.queryByText(example.title)).toBeInTheDocument();
@@ -50,7 +50,7 @@ describe('Tests for X component', () => {
         show={example.show}
         unavailableToView={example.unavailableToView}
         selectMode={example.selectMode}
-        onCollectionAdd={example.onCollectionAdd}
+        collection={example.collection}
       />,
     );
     expect(console.error).toBeCalled();
@@ -69,7 +69,7 @@ describe('Tests for X component', () => {
         show={example.show}
         unavailableToView={example.unavailableToView}
         selectMode={example.selectMode}
-        onCollectionAdd={example.onCollectionAdd}
+        collection={example.collection}
       />,
     );
     expect(console.error).toBeCalled();
@@ -95,7 +95,7 @@ describe('Tests for X component', () => {
         show={example.show}
         unavailableToView={example.unavailableToView}
         selectMode={example.selectMode}
-        onCollectionAdd={example.onCollectionAdd}
+        collection={example.collection}
       />,
     );
     expect(console.error).toBeCalled();

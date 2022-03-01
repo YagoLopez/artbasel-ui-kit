@@ -42,7 +42,10 @@ export const example = {
     onChange: () => {},
     disabled: false,
   },
-  onCollectionAdd: () => {},
+  collection: {
+    active: false,
+    onClick: () => {},
+  },
 };
 
 export const imagesArray = [

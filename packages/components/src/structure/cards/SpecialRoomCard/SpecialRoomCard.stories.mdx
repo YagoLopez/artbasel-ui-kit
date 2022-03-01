@@ -50,6 +50,11 @@ export const argTypes = {
       category: 'Tags',
     },
   },
+  collection: {
+    table: {
+      category: 'Collections',
+    },
+  },
   show: {
     table: {
       category: 'Collections',
@@ -64,12 +69,7 @@ export const argTypes = {
     table: {
       category: 'Collections',
     },
-  },
-  onCollectionAdd: {
-    table: {
-      category: 'Collections',
-    },
-  },
+  }
 };
 
 # Special Room Card
@@ -94,7 +94,7 @@ These type of cards make up most of the interface and are key components for log
     show={example.show}
     unavailableToView={example.unavailableToView}
     selectMode={example.selectMode}
-    onCollectionAdd={example.onCollectionAdd}
+    collection={example.collection}
   >
     {Template.bind({})}
   </SpecialRoomCard>
@@ -118,7 +118,7 @@ These type of cards make up most of the interface and are key components for log
     show={example.show}
     unavailableToView={example.unavailableToView}
     selectMode={example.selectMode}
-    onCollectionAdd={example.onCollectionAdd}
+    collection={example.collection}
   >
     {Template.bind({})}
   </SpecialRoomCard>
@@ -144,7 +144,7 @@ These type of cards make up most of the interface and are key components for log
     }}
     unavailableToView={example.unavailableToView}
     selectMode={example.selectMode}
-    onCollectionAdd={example.onCollectionAdd}
+    collection={example.collection}
   >
     {Template.bind({})}
   </SpecialRoomCard>
@@ -171,7 +171,7 @@ These type of cards make up most of the interface and are key components for log
       label: 'Unavailable to view',
     }}
     selectMode={example.selectMode}
-    onCollectionAdd={example.onCollectionAdd}
+    collection={example.collection}
   >
     {Template.bind({})}
   </SpecialRoomCard>
@@ -199,7 +199,7 @@ These type of cards make up most of the interface and are key components for log
     selectMode={{
       active: true,
     }}
-    onCollectionAdd={example.onCollectionAdd}
+    collection={example.collection}
   >
     {Template.bind({})}
   </SpecialRoomCard>
@@ -228,7 +228,7 @@ These type of cards make up most of the interface and are key components for log
     selectMode={{
       active: true,
     }}
-    onCollectionAdd={example.onCollectionAdd}
+    collection={example.collection}
   >
     {Template.bind({})}
   </SpecialRoomCard>
@@ -258,7 +258,7 @@ These type of cards make up most of the interface and are key components for log
       active: true,
       disabled: false
     }}
-    onCollectionAdd={example.onCollectionAdd}
+    collection={example.collection}
   >
     {Template.bind({})}
   </SpecialRoomCard>

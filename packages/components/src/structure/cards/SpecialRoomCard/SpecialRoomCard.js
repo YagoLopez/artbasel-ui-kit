@@ -33,7 +33,7 @@ const SpecialRoomCard = ({
   show,
   unavailableToView,
   selectMode,
-  onCollectionAdd,
+  collection,
 }) => {
   const [isRoomSelected, setRoomSelected] = React.useState(selectMode?.checked);
   const defaultState = !openingSoon?.active && !unavailableToView?.active && !selectMode?.active;
@@ -115,10 +115,10 @@ const SpecialRoomCard = ({
         )}
 
         {/* icon / add to collection */}
-        {!selectMode?.active && (
+        {!selectMode?.active && !collection?.active && (
           <ButtonIcon
             icon="collections-add"
-            onClick={onCollectionAdd}
+            onClick={collection?.onClick}
             variant="fill"
             theme="dark"
           />
@@ -229,12 +229,10 @@ SpecialRoomCard.propTypes = {
     onChange: PropTypes.func,
     disabled: PropTypes.bool,
   }),
-  onCollectionAdd: PropTypes.func,
-};
-
-SpecialRoomCard.defaultProps = {
-  onCollectionAdd: () => {},
-  selected: false,
+  collection: PropTypes.shape({
+    active: PropTypes.bool.isRequired,
+    onClick: PropTypes.func,
+  }),
 };
 
 export default SpecialRoomCard;
