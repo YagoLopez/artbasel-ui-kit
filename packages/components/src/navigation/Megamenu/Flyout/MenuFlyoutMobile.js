@@ -48,11 +48,13 @@ const MenuFlyoutMobile = ({
                     menuSection={entry.flyout.menuSection}
                     topLink={entry.link}
                     mobileLabel={ entry.mobileLabel }
-                    linkRenderer={linkRenderer}
+                    linkRenderer={ linkRenderer }
+                    setVisibleMenu={ setVisibleMenu }
                   />
                 <CardSectionMobile
                   cardSection={ entry.flyout.cardSection }
-                  linkRenderer={ linkRenderer } />
+                  linkRenderer={ linkRenderer }
+                  setVisibleMenu={ setVisibleMenu }/>
                 </Row>
               </Offcanvas.Body>
             </Offcanvas>

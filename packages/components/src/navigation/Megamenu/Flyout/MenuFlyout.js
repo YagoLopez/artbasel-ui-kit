@@ -36,8 +36,14 @@ const MenuFlyout = ({
             ) }>
                 <Row gutter="g-0">
                   {/*  Cards Section */}
-                <MenuSection menuSection={ entry.flyout.menuSection } linkRenderer={linkRenderer }/>
-                <CardSection cardSection={entry.flyout.cardSection} linkRenderer={linkRenderer }/>
+                <MenuSection
+                  menuSection={ entry.flyout.menuSection }
+                  linkRenderer={ linkRenderer }
+                  setVisibleMenu={setVisibleMenu} />
+                <CardSection
+                  cardSection={ entry.flyout.cardSection }
+                  linkRenderer={ linkRenderer }
+                  setVisibleMenu={ setVisibleMenu } />
                 </Row>
               </Container>
             </Container>

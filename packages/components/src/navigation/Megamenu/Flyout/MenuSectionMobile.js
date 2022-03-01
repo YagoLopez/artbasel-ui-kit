@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Accordion } from '../../../structure/Accordion';
 
 const MenuSectionMobile = ({
-  menuSection, topLink, mobileLabel, linkRenderer,
+  menuSection, topLink, mobileLabel, linkRenderer, setVisibleMenu,
 }) => {
   const entries = [];
 
@@ -17,7 +17,7 @@ const MenuSectionMobile = ({
   return (
     <>
       <h5 className="navlink-mobile-header">
-        <div className="navlink-mobile see-all-link">
+        <div className="navlink-mobile see-all-link" onClick={() => setVisibleMenu(null)}>
           { linkRenderer(topLink, mobileLabel) }
         </div>
       </h5>
@@ -27,7 +27,7 @@ const MenuSectionMobile = ({
             <Accordion.Header size="l">{entry.title}</Accordion.Header>
             <Accordion.Body>
               {entry.menuItems.map((item, key1) => (
-                <p className="item-menu-link" key={key1} >
+                <p className="item-menu-link" key={key1} onClick={() => setVisibleMenu(null)}>
                   { linkRenderer(item.link, item.label) }
                 </p>
               ))}
@@ -45,6 +45,7 @@ MenuSectionMobile.propTypes = {
   topLink: PropTypes.string.isRequired,
   mobileLabel: PropTypes.string.isRequired,
   linkRenderer: PropTypes.func.isRequired,
+  setVisibleMenu: PropTypes.func.isRequired,
 };
 
 export default MenuSectionMobile;

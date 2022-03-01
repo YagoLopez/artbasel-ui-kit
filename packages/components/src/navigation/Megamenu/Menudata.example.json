@@ -4,7 +4,7 @@
     {
       "label": "Fairs",
       "mobileLabel": "All Fairs",
-      "link": "/fairs",
+      "link": "#",
       "flyout": {
         "menuSection": {
           "cols": [
@@ -32,8 +32,8 @@
                 {
                   "title": "Miami Beach",
                   "menuItems": [
-                    { "label": "Overview", "link": "/miami/overview" },
-                    { "label": "Galleries ", "link": "/miami/galleries" },
+                    { "label": "Overview", "link": "#" },
+                    { "label": "Galleries ", "link": "#" },
                     { "label": "Events", "link": "/miami/events" },
                     { "label": "Tickets", "link": "/miami/tickets" },
                     {

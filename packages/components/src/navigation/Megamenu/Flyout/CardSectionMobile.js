@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Container, Row, Col } from '../../../structure/Grid';
 import { TeaserCard } from '../../../structure/cards/TeaserCard';
 
-const CardSectionMobile = ({ cardSection, linkRenderer }) => {
+const CardSectionMobile = ({ cardSection, linkRenderer, setVisibleMenu }) => {
   return (
     <Container className="mt-7">
       {cardSection.sectionTitle && (
@@ -15,7 +15,7 @@ const CardSectionMobile = ({ cardSection, linkRenderer }) => {
         </Row>
       )}
       {cardSection.cols.map((col) => col.cards.map((card) => (
-          <Row gutter="g-0" className="mb-7" key={card.cardTitle}>
+          <Row gutter="g-0" className="mb-7" key={card.cardTitle} onClick={() => setVisibleMenu(null)}>
             <TeaserCard
               imageUrl={card.imageUrl}
               title={card.cardTitle}
@@ -33,6 +33,7 @@ const CardSectionMobile = ({ cardSection, linkRenderer }) => {
 CardSectionMobile.propTypes = {
   cardSection: PropTypes.object.isRequired,
   linkRenderer: PropTypes.func.isRequired,
+  setVisibleMenu: PropTypes.func.isRequired,
 };
 
 export default CardSectionMobile;
