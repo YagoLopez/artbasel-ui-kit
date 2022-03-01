@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.11](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.10...@mch-group/uikit-themes@0.29.11) (2022-03-01)
+
+
+### Bug Fixes
+
+* add absolute position on svg to cover the whole width ([2ac1b68](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/2ac1b68772ade48bf6573f1335079dc38ebda22e))
+* add padding to button icons ([600c999](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/600c999b4ada4d5d91b1f9866948dad8d408bcdc))
+* replace absolute values with relative flex values ([a795ed9](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/a795ed9859b6ad065d6a1e968a4b44066261bc60))
+
+
+
+
+
 ## [0.29.10](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.9...@mch-group/uikit-themes@0.29.10) (2022-02-28)
 
 
