@@ -28,7 +28,7 @@ const EventCard = ({
   date,
   linkRenderer,
   eventLink,
-  onCollectionAdd,
+  collection,
   tags,
 }) => {
   return (
@@ -38,12 +38,14 @@ const EventCard = ({
     >
       {/* Image Frame */}
       <div className="image-frame">
-        <ButtonIcon
+        {!collection?.active && (
+          <ButtonIcon
           icon="collections-add"
-          onClick={onCollectionAdd}
+          onClick={collection.onClick}
           variant="fill"
           theme="dark"
         />
+        )}
         <MemoizedConditionalWrapper
           linkRenderer={linkRenderer}
           condition={eventLink}
@@ -157,7 +159,10 @@ EventCard.propTypes = {
   }).isRequired,
   schedule: PropTypes.string,
   date: PropTypes.string.isRequired,
-  onCollectionAdd: PropTypes.func,
+  collection: PropTypes.shape({
+    active: PropTypes.bool.isRequired,
+    onClick: PropTypes.func,
+  }),
   tags: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
@@ -170,7 +175,6 @@ EventCard.propTypes = {
 
 EventCard.defaultProps = {
   responsive: false,
-  onCollectionAdd: () => {},
 };
 
 export default EventCard;

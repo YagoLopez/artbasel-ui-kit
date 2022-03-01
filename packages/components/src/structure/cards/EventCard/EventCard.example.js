@@ -20,7 +20,10 @@ const example = {
       {children}
     </a>
   ),
-  onCollectionAdd: () => {},
+  collection: {
+    active: false,
+    onClick: () => {},
+  },
   tags: [
     {
       id: 1,
