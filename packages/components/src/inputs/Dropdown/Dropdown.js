@@ -1,5 +1,5 @@
 import React, {
-  useState, useCallback, useMemo, useRef,
+  useState, useCallback, useMemo, useRef, useEffect,
 } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
@@ -16,7 +16,7 @@ const textClassName = {
   danger: 'text-danger',
 };
 
-const initializeValues = (value, options) => {
+const findValuesOnOptions = (value, options) => {
   const normalizeValue = Array.isArray(value) ? value : [value];
   return options.filter((option) => normalizeValue.includes(option.value));
 };
@@ -35,11 +35,14 @@ const Dropdown = ({
   placeholder,
 }) => {
   const [optionsSelected, setOptionSelected] = useState(
-    initializeValues(value, options),
+    findValuesOnOptions(value, options),
   );
   const [isShow, setIsShow] = useState(false);
-
   const [searchText, setSearchText] = useState('');
+
+  useEffect(() => {
+    setOptionSelected(findValuesOnOptions(value, options));
+  }, [value]);
 
   // TODO: Manage new status: SearchableMenu & SearchableTagMenu
   const Menu = useMemo(() => {

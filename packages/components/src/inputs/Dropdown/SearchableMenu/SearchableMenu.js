@@ -12,7 +12,6 @@ const SearchableMenu = ({
   const handleOnChange = useCallback((e) => {
     if (e?.target?.dataset?.value) {
       const option = options.find((o) => o.value === e.target.dataset.value);
-      console.log('handleOnChange -> option ', option);
       onChange(option || {});
     }
   }, []);
