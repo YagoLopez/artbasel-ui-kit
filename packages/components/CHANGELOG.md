@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.35.11](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.35.10...@mch-group/uikit-components@0.35.11) (2022-03-02)
+
+
+### Bug Fixes
+
+* **dropdown:** fix Dropdown controller ([59247b1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/59247b15cc6c908abb20661d5ff58d873d9a6b41))
+
+
+
+
+
 ## [0.35.10](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.35.9...@mch-group/uikit-components@0.35.10) (2022-03-01)
 
 
