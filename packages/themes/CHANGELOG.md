@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.12](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.11...@mch-group/uikit-themes@0.29.12) (2022-03-03)
+
+
+### Bug Fixes
+
+* **zoomviewer:** fixed counter styles ([e6da938](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/e6da93858fb49f2251a1e41a7f091e7d9a77e68e))
+
+
+
+
+
 ## [0.29.11](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.10...@mch-group/uikit-themes@0.29.11) (2022-03-01)
 
 
