@@ -19,6 +19,8 @@ const Carousel = ({
   const carousel = useRef();
   const prevArrow = useRef();
   const nextArrow = useRef();
+  const splideRef = useRef();
+  const items = {};
 
   /* There is a default options objetc in case its not passed as prop.
     But in case the object is passed, we set default attrs in case not
@@ -47,17 +49,27 @@ const Carousel = ({
     }
   };
 
+  const handleWheelSwipe = (e) => {
+    if (e.deltaX > 1) {
+      splideRef.current.splide.go('+1');
+    } else if (e.deltaX < 1) {
+      splideRef.current.splide.go('-1');
+    }
+  };
+
   useEffect(() => {
     if (carousel.current && prevArrow.current) {
+      const li = carousel.current.querySelectorAll('li');
+      items.elements = li;
+      items.count = li?.length || 0;
+      carousel.current.addEventListener('wheel', handleWheelSwipe);
       disableArrow(prevArrow);
     }
   }, []);
 
   const handleItemMove = (_, index) => {
-    const items = carousel.current.querySelectorAll('li');
-    const itemCount = items?.length || 0;
-    const lastItem = itemCount > 0 ? items[itemCount - 1] : 0;
-    const lastItemVisible = lastItem.classList.contains('is-visible');
+    const lastItem = items.count > 0 ? items.elements[items.count - 1] : 0;
+    const lastItemVisible = lastItem?.classList.contains('is-visible');
 
     if (index === 0) {
       disableArrow(prevArrow);
@@ -105,6 +117,7 @@ const Carousel = ({
     >
       <h3 className="pb-7 pb-xl-9 header-uppercase-1">{title}</h3>
       <Splide
+        ref={splideRef}
         className={classnames({
           'exceed-track': exceedTrack,
           unlimited: !options.perPage,
