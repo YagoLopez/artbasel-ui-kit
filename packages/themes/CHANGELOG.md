@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.13](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.12...@mch-group/uikit-themes@0.29.13) (2022-03-07)
+
+
+### Bug Fixes
+
+* **modal:** fixed buttons size and margins ([2d99f3e](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/2d99f3e0764e097f3d73ec5e746e04f98cac3ff4))
+
+
+
+
+
 ## [0.29.12](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.11...@mch-group/uikit-themes@0.29.12) (2022-03-03)
 
 
