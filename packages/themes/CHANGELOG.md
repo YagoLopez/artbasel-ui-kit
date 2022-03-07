@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.13...@mch-group/uikit-themes@0.30.0) (2022-03-07)
+
+
+### Features
+
+* divider component ([b1553fa](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/b1553fa8e070d2ea3f6e77248c2b7d6aa19a6054))
+
+
+
+
+
 ## [0.29.13](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.29.12...@mch-group/uikit-themes@0.29.13) (2022-03-07)
 
 
