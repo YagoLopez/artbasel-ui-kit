@@ -18,10 +18,9 @@ const VersionInfo = () => {
 
   return (
     <>
-      <hr />
-      Build Date: {buildDate} UTC<br/>
-      Components Version: {componentsVersion} <br/>
-      Themes Version: {themesVersion} <br/>
+      Components Version: <strong>{componentsVersion}</strong> <br/>
+      Themes Version: <strong>{ themesVersion }</strong><br/>
+      Build Date: { buildDate } UTC
     </>
   );
 };
