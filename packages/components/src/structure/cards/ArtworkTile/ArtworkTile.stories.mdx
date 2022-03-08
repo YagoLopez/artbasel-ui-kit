@@ -1,0 +1,455 @@
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+import { Container, Row, Col } from '../../Grid';
+import ArtworkTile from './ArtworkTile';
+import { example, imagesArray } from './ArtworkTile.example';
+
+<Meta
+  title="Components/Structure/cards/Artwork Tile"
+  component={ArtworkTile}
+  decorators={[withDesign]}
+/>
+
+export const Template = (args) => <ArtworkTile {...args} />;
+
+export const argTypes = {
+  artworkTitle: {
+    table: {
+      category: 'Artwork',
+    },
+  },
+  artistName: {
+    table: {
+      category: 'Artwork',
+    },
+  },
+  year: {
+    table: {
+      category: 'Artwork',
+    },
+  },
+  price: {
+    table: {
+      category: 'Artwork',
+    },
+  },
+  status: {
+    table: {
+      category: 'Artwork',
+    },
+  },
+  galleryName: {
+    table: {
+      category: 'Artwork',
+    },
+  },
+  imageUrl: {
+    table: {
+      category: 'Artwork',
+    },
+  },
+  showsData: {
+    table: {
+      category: 'Artwork',
+    },
+  },
+  imageType: {
+    table: {
+      category: 'Option',
+    },
+  },
+  pageType: {
+    table: {
+      category: 'Option',
+    },
+  },
+  collection: {
+    table: {
+      category: 'Option',
+    },
+  },
+  theme: {
+    table: {
+      category: 'Option',
+    },
+  },
+  selectMode: {
+    table: {
+      category: 'Option',
+    },
+  },
+  inquiry: {
+    table: {
+      category: 'Option',
+    },
+  },
+  artworkLink: {
+    table: {
+      category: 'Link',
+    },
+  },
+  artistLink: {
+    table: {
+      category: 'Link',
+    },
+  },
+  galleryLink: {
+    table: {
+      category: 'Link',
+    },
+  },
+  linkRenderer: {
+    table: {
+      category: 'Link',
+    },
+  },
+  viewAtFair: {
+    table: {
+      category: 'Tag',
+    },
+  },
+  onlineExclusive: {
+    table: {
+      category: 'Tag',
+    },
+  },
+  curator: {
+    table: {
+      category: 'Tag',
+    },
+  },
+  show: {
+    table: {
+      category: 'Tag',
+    },
+  },
+};
+
+## Artworks Tile Card
+
+These type of cards make up most of the interface and are key components for logically grouping page content and making it scalable.
+
+## Default
+
+<Canvas style={{ width: '400px' }}>
+  <Story
+    name="Artwork\ Tile"
+    args={example}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=6978%3A137355',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Options
+
+### Square Image
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile {...example} galleryName="">
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+### Contained Image
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile {...example} galleryName="" imageType="contained">
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+### Masonry Image
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile {...example} galleryName="" imageType="masonry">
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+## Page Type
+
+### Room
+
+When displayed in an OVR room the tile can be using a square, contained or masonary image type. The gallery name is always hidden.
+
+#### Square Image
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile {...example} pageType="room" imageType="square" galleryName="">
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+#### Contained Image
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile
+    {...example}
+    pageType="room"
+    imageType="contained"
+    galleryName=""
+  >
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+#### Masonry Image
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile {...example} pageType="room" imageType="masonry" galleryName="">
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+### Listing
+
+When displayed in the listing page, the image is displayed in masonary type and the gallery name is visible.
+
+#### Masonry Image
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile {...example} imageType="masonry" pageType="listing">
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+### Catalogue
+
+When used in catalogue page, the image is displayed in masonary type, the gallery name is visible and signpost labels are used underneath to indicate the show the artwork was displayed in.
+
+#### Masonry Image
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile {...example} imageType="masonry" pageType="catalogue">
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+## Tags
+
+### Online Exclusive
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile
+    {...example}
+    galleryName=""
+    onlineExclusive={{
+      active: true,
+      label: example.onlineExclusive.label,
+    }}
+  >
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+### On view at the fair
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile
+    {...example}
+    galleryName=""
+    imageType="contained"
+    pageType="room"
+    viewAtFair={{
+      active: true,
+      label: example.viewAtFair.label,
+    }}
+  >
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+### Curator’s Pick
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile
+    {...example}
+    imageType="masonry"
+    pageType="room"
+    galleryName=""
+    curator={{
+      active: true,
+      label: example.curator.label,
+    }}
+  >
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+## Theme
+
+### Light
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile {...example} imageType="contained" pageType="listing">
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+### Dark
+
+<Canvas style={{ width: '400px', background: '#1D2327' }}>
+  <ArtworkTile
+    {...example}
+    imageType="contained"
+    theme="dark"
+    pageType="listing"
+    onlineExclusive={{
+      active: true,
+      label: example.onlineExclusive.label,
+    }}
+  >
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+## Collections
+
+### Default
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile
+    {...example}
+    imageType="masonry"
+    collection={{
+      active: true,
+      onClick: () => {},
+    }}
+    show={{
+      active: true,
+      label: example.show.label,
+      onClick: () => {},
+    }}
+  >
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+### Multi-Select
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile
+    {...example}
+    pageType="listing"
+    imageType="masonry"
+    collection={{
+      active: true,
+    }}
+    selectMode={{
+      active: true,
+      checked: false,
+      disabled: false,
+      onChange: () => {},
+    }}
+    show={{
+      active: true,
+      label: example.show.label,
+    }}
+  >
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+## Square List Page
+
+<Canvas>
+  <Container>
+    <Row>
+      {Array(3)
+        .fill(example)
+        .map((card, i) => {
+          return (
+            <Col key={`col-${i}`} xs={12} sm={12} md={6} lg={4}>
+              <ArtworkTile {...example} imageType="square" galleryName="" />
+            </Col>
+          );
+        })}
+    </Row>
+  </Container>
+</Canvas>
+
+## Contained List Page
+
+<Canvas>
+  <Container>
+    <Row>
+      {Array(3)
+        .fill(example)
+        .map((card, i) => {
+          return (
+            <Col key={`col-${i}`} xs={12} sm={12} md={6} lg={4}>
+              <ArtworkTile {...example} imageType="contained" galleryName="" />
+            </Col>
+          );
+        })}
+    </Row>
+  </Container>
+</Canvas>
+
+## Masonry List Page
+
+<Canvas>
+  <Container>
+    <Row>
+      {Array(3)
+        .fill(example)
+        .map((card, i) => {
+          return (
+            <Col key={`col-${i}`} xs={12} sm={12} md={6} lg={4}>
+              <ArtworkTile {...example} imageType="masonry" galleryName="" />
+            </Col>
+          );
+        })}
+    </Row>
+  </Container>
+</Canvas>
+
+### Multi-Select
+
+<Canvas>
+  <Container>
+    <Row>
+      {Array(3)
+        .fill(example)
+        .map((card, i) => {
+          return (
+            <Col key={`col-${i}`} xs={12} sm={12} md={6} lg={4}>
+              <ArtworkTile
+                {...example}
+                pageType="listing"
+                imageType="masonry"
+                collection={{
+                  active: true,
+                }}
+                selectMode={{
+                  active: true,
+                  checked: false,
+                  disabled: false,
+                  onChange: () => {},
+                }}
+                show={{
+                  active: true,
+                  label: example.show.label,
+                }}
+              >
+                {Template.bind({})}
+              </ArtworkTile>
+            </Col>
+          );
+        })}
+    </Row>
+  </Container>
+</Canvas>
+
+## Properties
+
+<ArgsTable of={ArtworkTile} />

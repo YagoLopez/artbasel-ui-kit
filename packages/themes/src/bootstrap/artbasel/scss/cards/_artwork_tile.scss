@@ -1,0 +1,324 @@
+@mixin round-corners {
+  border-radius: $spacing-1;
+  overflow: hidden;
+}
+
+@mixin image-blur {
+  filter: blur(3px);
+}
+
+/* storybook card max-width */
+:root .sb-show-main .artwork-card {
+  max-width: 375px;
+}
+
+.card.artwork-card {
+  position: relative;
+  display: inline-flex;
+  border: none;
+  width: 100%;
+
+  a + img:hover {
+    cursor: pointer;
+  }
+
+  &.theme {
+    @include round-corners;
+
+    &-light {
+      .text-frame {
+        &-middle {
+          p,
+          span {
+            color: $color-mch-gray-400;
+          }
+        }
+      }
+    }
+
+    &-dark {
+      background: $color-mch-black;
+
+      .text-frame {
+        h5 {
+          color: $color-mch-white;
+        }
+
+        p,
+        span {
+          color: $color-mch-gray-200;
+        }
+      }
+    }
+  }
+
+  &.default-state {
+    &:hover {
+      .overlay-fill.dark {
+        opacity: 1;
+      }
+
+      .text-frame {
+        &-top,
+        &-middle {
+          color: $color-mch-black;
+        }
+      }
+
+      .btn-icon {
+        cursor: pointer;
+        opacity: 1;
+      }
+    }
+
+    &.theme {
+      &-dark:hover .text-frame-top,
+      &-dark:hover .text-frame-middle p {
+        color: $color-mch-white;
+      }
+
+      &-light:hover .text-frame-top,
+      &-light:hover .text-frame-middle p {
+        color: $color-mch-black;
+      }
+    }
+  }
+
+  // toggles inquiry button on image hover
+  &.inquiry-state:not(.select-state):hover .btn-inquiry {
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  &.select-state {
+    &:hover {
+      cursor: pointer;
+    }
+
+    .text-frame {
+      pointer-events: none;
+      transition: all 0.35s ease-out;
+    }
+
+    .form-check-input,
+    .checkbox-select {
+      pointer-events: all;
+    }
+
+    .overlay-fill.dark {
+      opacity: 1;
+    }
+
+    &:not(.selected-state) {
+      .text-frame {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .image-frame {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    @include round-corners;
+    justify-content: center;
+
+    a {
+      width: 100%;
+      @include round-corners;
+      display: flex;
+      justify-content: center;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      @include round-corners;
+    }
+  }
+
+  &.layout {
+    &-square {
+      .image-frame {
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    &-square,
+    &-contained {
+      .image-frame {
+        aspect-ratio: 1 / 1;
+      }
+    }
+    &-contained {
+      .image-container {
+        padding: 72px 16px;
+      }
+    }
+  }
+
+  .image-container {
+    position: relative;
+    background: #f0f2f5;
+
+    .tag {
+      position: absolute;
+      z-index: 4;
+
+      &-exclusive,
+      &-viewfair,
+      &-curator {
+        top: $spacing-5;
+        left: $spacing-5;
+      }
+    }
+
+    .form-check-input {
+      position: absolute;
+      z-index: 4;
+      top: $spacing-5;
+      right: $spacing-5;
+      cursor: pointer;
+    }
+
+    .btn {
+      &-inquiry {
+        position: absolute;
+        z-index: 5;
+        bottom: $spacing-5;
+        left: $spacing-5;
+        right: $spacing-5;
+        opacity: 0;
+        transition: all 0.35s ease-out;
+      }
+      &-icon {
+        position: absolute;
+        top: $spacing-5;
+        right: $spacing-5;
+        z-index: 5;
+        opacity: 0;
+        transition: all 0.35s ease-out;
+      }
+    }
+
+    .overlay {
+      &-eye {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: $spacing-10;
+        height: $spacing-10;
+        z-index: 5;
+        background: #ffffff;
+        border-radius: $spacing-7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 0.35s ease-out;
+        @include round-corners;
+
+        &.dark {
+          background: rgba(29, 35, 39, 0.3);
+          z-index: 1;
+          &.selected {
+            opacity: 1;
+          }
+        }
+      }
+
+      &-blur {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 0.35s ease-out;
+        z-index: 1;
+        @include round-corners;
+
+        &.light {
+          background: rgba(255, 255, 255, 0.8);
+        }
+
+        &.dark {
+          background: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+
+  .text-frame {
+    padding-top: $spacing-5;
+    padding-left: 0;
+    padding-right: 0;
+    min-height: $spacing-7;
+
+    &-middle {
+      display: flex;
+      flex-direction: column;
+
+      &-left {
+        .tag:first-child {
+          margin-right: $spacing-3;
+        }
+
+        .text-medium {
+          text-decoration: none;
+        }
+
+        a:nth-child(2) p {
+          margin-top: 4px;
+        }
+      }
+    }
+
+    &-bottom {
+      display: flex;
+      margin-top: $spacing-4;
+
+      .shows {
+        display: flex;
+
+        & > div {
+          margin-right: $spacing-3;
+        }
+      }
+    }
+
+    p {
+      transition: color 0.35s ease-out;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    h4 {
+      margin-bottom: $spacing-2;
+    }
+
+    .truncate {
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}

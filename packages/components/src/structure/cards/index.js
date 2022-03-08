@@ -6,3 +6,4 @@ export * from './RoomCard';
 export * from './SpecialRoomCard';
 export * from './StoryCard';
 export * from './TeaserCard';
+export * from './ArtworkTile';
