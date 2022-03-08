@@ -1,6 +1,6 @@
 .megamenu-top-container {
   position: absolute;
-  z-index: 1099;
+  z-index: 999;
   top: 100px;
   left: 0;
   width: 100%;
@@ -15,7 +15,7 @@
 
   &.visible {
     opacity: 1;
-    z-index: 1100;
+    z-index: 1000;
     transform: scaleY(1);
     max-height: 500px;
     transition: transform 100ms 350ms ease, max-height 350ms 0ms ease,
@@ -40,7 +40,7 @@
 
 .megamenu-white-overlay {
   position: fixed;
-  z-index: 1098;
+  z-index: 998;
   top: 100px;
   left: 0;
   width: 100%;
@@ -61,12 +61,12 @@
 
 .sticky-flyout {
   top: 98px !important;
-  z-index: 1050 !important;
+  z-index: 950 !important;
 }
 
 .megamenu-overlay {
   position: fixed;
-  z-index: 1097;
+  z-index: 997;
   top: 100px;
   left: 0;
   width: 100vw;
@@ -97,7 +97,7 @@
 
 .megamenu-container-mobile {
   position: absolute;
-  z-index: 1102;
+  z-index: 1002;
   top: 0;
   left: 0;
   background-color: $color-mch-white;
@@ -150,7 +150,7 @@
 }
 
 .menu-mobile-section {
-  z-index: 1110;
+  z-index: 1010;
   height: 100vh;
   background-color: $color-mch-white;
   padding: 0px 20px;
@@ -184,7 +184,7 @@
 
 .profileflyout-container {
   position: relative;
-  z-index: 1098;
+  z-index: 998;
   height: 100%;
 
   .underline-text {
@@ -193,7 +193,7 @@
     height: 2px;
     background-color: $color-mch-black;
     left: -94px;
-    z-index: 1100;
+    z-index: 1000;
     margin: 0px 16px;
 
     @include media-breakpoint-up(xs) {

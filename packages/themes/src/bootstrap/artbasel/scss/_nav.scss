@@ -39,7 +39,7 @@
 }
 .navbar-container {
   position: relative;
-  z-index: 1100 !important;
+  z-index: 1000 !important;
 }
 
 .navbar {
@@ -97,7 +97,7 @@
 
 .navlinks-mobile-section {
   position: absolute;
-  z-index: 1098;
+  z-index: 998;
   height: calc(100vh - 100px);
   background-color: $color-mch-white;
   padding: 0px 20px;
@@ -214,7 +214,7 @@
 
 .navlinks-mobile-overlay {
   position: fixed;
-  z-index: 1098;
+  z-index: 998;
   top: 90px;
   left: 391px;
   opacity: 0.3;
