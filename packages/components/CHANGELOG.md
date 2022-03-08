@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.38.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.37.1...@mch-group/uikit-components@0.38.0) (2022-03-08)
+
+
+### Features
+
+* **artwork tile:** component structure and data ([8e15f86](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/8e15f86767f136d40cb32a3b85d30f065a1c5f9b))
+
+
+
+
+
 ## [0.37.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.37.0...@mch-group/uikit-components@0.37.1) (2022-03-08)
 
 **Note:** Version bump only for package @mch-group/uikit-components
