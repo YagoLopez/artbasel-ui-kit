@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.31.1...@mch-group/uikit-themes@0.31.2) (2022-03-08)
+
+
+### Bug Fixes
+
+* **divider:** set margins to zero ([e6112f1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/e6112f1431e4ac979eb5affb2576229776d628d9))
+
+
+
+
+
 ## [0.31.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.31.0...@mch-group/uikit-themes@0.31.1) (2022-03-08)
 
 **Note:** Version bump only for package @mch-group/uikit-themes
