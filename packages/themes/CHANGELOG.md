@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.31.3...@mch-group/uikit-themes@0.31.4) (2022-03-09)
+
+
+### Bug Fixes
+
+* **tabs:** fixed height ([ad4963b](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/ad4963b95539e46ad7a065802dae5e62e4cb5d9d))
+
+
+
+
+
 ## [0.31.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.31.2...@mch-group/uikit-themes@0.31.3) (2022-03-09)
 
 
