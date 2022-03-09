@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.31.2...@mch-group/uikit-themes@0.31.3) (2022-03-09)
+
+
+### Bug Fixes
+
+* **artwork tile:** updated hover state ([fe48925](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/fe4892550ec63bf64dc6f1ac78f264f1780fbc2a))
+* **ovr room card:** update component logic and fix styles ([d29581e](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d29581ece6b6d58ae0e1fa79e74153dda599415a))
+* **special room card:** styles fix and component optimization ([0c7f3d8](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/0c7f3d80de4423b157bb2376f0144d2d7aaaae50))
+
+
+
+
+
 ## [0.31.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.31.1...@mch-group/uikit-themes@0.31.2) (2022-03-08)
 
 
