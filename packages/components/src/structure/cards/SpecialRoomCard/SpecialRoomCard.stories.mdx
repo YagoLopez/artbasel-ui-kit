@@ -69,56 +69,80 @@ export const argTypes = {
     table: {
       category: 'Collections',
     },
-  }
+  },
 };
 
 # Special Room Card
 
 These type of cards make up most of the interface and are key components for logically grouping page content and making it scalable.
 
-## Opening Soon
+## Default
+
+<Canvas style={{ width: '400px' }}>
+  <Story
+    name="Special\ Room\ Card"
+    args={example}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=7608%3A164120',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Tags
+
+### Opening Soon
 
 <Canvas style={{ width: '400px' }}>
   <SpecialRoomCard
-    title={example.title}
-    artistName={example.artistName}
-    sectorsData={example.sectorsData}
-    linkRenderer={example.linkRenderer}
-    roomLink={example.roomLink}
-    imageUrl={example.imageUrl}
+    {...example}
     openingSoon={{
       active: true,
-      label: 'Opening Soon',
+      label: example.openingSoon.label,
+      onClick: example.openingSoon.onClick,
     }}
-    visited={example.visited}
-    show={example.show}
-    unavailableToView={example.unavailableToView}
-    selectMode={example.selectMode}
-    collection={example.collection}
   >
     {Template.bind({})}
   </SpecialRoomCard>
 </Canvas>
 
-## Visited
+### Visited
 
 <Canvas style={{ width: '400px' }}>
   <SpecialRoomCard
-    title={example.title}
-    artistName={example.artistName}
-    sectorsData={example.sectorsData}
-    linkRenderer={example.linkRenderer}
-    roomLink={example.roomLink}
-    imageUrl={example.imageUrl}
-    openingSoon={example.openingSoon}
+    {...example}
     visited={{
       active: true,
-      label: 'Visited',
+      label: example.visited.label,
+      onClick: example.visited.onClick,
     }}
-    show={example.show}
-    unavailableToView={example.unavailableToView}
-    selectMode={example.selectMode}
-    collection={example.collection}
+  >
+    {Template.bind({})}
+  </SpecialRoomCard>
+</Canvas>
+
+### Displaying more than one tag
+
+<Canvas style={{ width: '400px' }}>
+  <SpecialRoomCard
+    {...example}
+    openingSoon={{
+      active: true,
+      label: example.openingSoon.label,
+      onClick: example.openingSoon.onClick,
+    }}
+    visited={{
+      active: true,
+      label: example.visited.label,
+      onClick: example.visited.onClick,
+    }}
   >
     {Template.bind({})}
   </SpecialRoomCard>
@@ -130,21 +154,12 @@ These type of cards make up most of the interface and are key components for log
 
 <Canvas style={{ width: '400px' }}>
   <SpecialRoomCard
-    title={example.title}
-    artistName={example.artistName}
-    sectorsData={example.sectorsData}
-    linkRenderer={example.linkRenderer}
-    roomLink={example.roomLink}
-    imageUrl={example.imageUrl}
-    openingSoon={example.openingSoon}
-    visited={example.visited}
+    {...example}
     show={{
       active: true,
-      label: 'OVR: Show Name',
+      label: example.show.label,
+      onClick: example.show.onClick,
     }}
-    unavailableToView={example.unavailableToView}
-    selectMode={example.selectMode}
-    collection={example.collection}
   >
     {Template.bind({})}
   </SpecialRoomCard>
@@ -154,24 +169,17 @@ These type of cards make up most of the interface and are key components for log
 
 <Canvas style={{ width: '400px' }}>
   <SpecialRoomCard
-    title={example.title}
-    artistName={example.artistName}
-    sectorsData={example.sectorsData}
-    linkRenderer={example.linkRenderer}
-    roomLink={example.roomLink}
-    imageUrl={example.imageUrl}
-    openingSoon={example.openingSoon}
-    visited={example.visited}
+    {...example}
     show={{
       active: true,
-      label: 'OVR: Show Name',
+      label: example.show.label,
+      onClick: example.show.onClick,
     }}
     unavailableToView={{
       active: true,
-      label: 'Unavailable to view',
+      label: example.unavailableToView.label,
+      onClick: example.unavailableToView.onClick,
     }}
-    selectMode={example.selectMode}
-    collection={example.collection}
   >
     {Template.bind({})}
   </SpecialRoomCard>
@@ -183,23 +191,18 @@ These type of cards make up most of the interface and are key components for log
 
 <Canvas style={{ width: '400px' }}>
   <SpecialRoomCard
-    title={example.title}
-    artistName={example.artistName}
-    sectorsData={example.sectorsData}
-    linkRenderer={example.linkRenderer}
-    roomLink={example.roomLink}
-    imageUrl={example.imageUrl}
-    openingSoon={example.openingSoon}
-    visited={example.visited}
+    {...example}
     show={{
       active: true,
-      label: 'OVR: Show Name',
+      label: example.show.label,
+      onClick: example.show.onClick,
     }}
-    unavailableToView={example.unavailableToView}
     selectMode={{
       active: true,
+      checked: example.selectMode.checked,
+      onChange: example.selectMode.onChange,
+      disabled: example.selectMode.disabled,
     }}
-    collection={example.collection}
   >
     {Template.bind({})}
   </SpecialRoomCard>
@@ -209,26 +212,23 @@ These type of cards make up most of the interface and are key components for log
 
 <Canvas style={{ width: '400px' }}>
   <SpecialRoomCard
-    title={example.title}
-    artistName={example.artistName}
-    sectorsData={example.sectorsData}
-    linkRenderer={example.linkRenderer}
-    roomLink={example.roomLink}
-    imageUrl={example.imageUrl}
+    {...example}
     openingSoon={{
       active: true,
-      label: 'Opening Soon',
+      label: example.openingSoon.label,
+      onClick: example.openingSoon.onClick,
     }}
-    visited={example.visited}
     show={{
       active: true,
-      label: 'OVR: Show Name',
+      label: example.show.label,
+      onClick: example.show.onClick,
     }}
-    unavailableToView={example.unavailableToView}
     selectMode={{
       active: true,
+      checked: example.selectMode.checked,
+      onChange: example.selectMode.onChange,
+      disabled: example.selectMode.disabled,
     }}
-    collection={example.collection}
   >
     {Template.bind({})}
   </SpecialRoomCard>
@@ -238,27 +238,23 @@ These type of cards make up most of the interface and are key components for log
 
 <Canvas style={{ width: '400px' }}>
   <SpecialRoomCard
-    title={example.title}
-    artistName={example.artistName}
-    sectorsData={example.sectorsData}
-    linkRenderer={example.linkRenderer}
-    roomLink={example.roomLink}
-    imageUrl={example.imageUrl}
-    openingSoon={example.openingSoon}
-    visited={example.visited}
+    {...example}
     show={{
       active: true,
-      label: 'OVR: Show Name',
+      label: example.show.label,
+      onClick: example.show.onClick,
     }}
     unavailableToView={{
       active: true,
-      label: 'Unavailable to view',
+      label: example.unavailableToView.label,
+      onClick: example.unavailableToView.onClick,
     }}
     selectMode={{
       active: true,
-      disabled: false
+      checked: example.selectMode.checked,
+      onChange: example.selectMode.onChange,
+      disabled: example.selectMode.disabled,
     }}
-    collection={example.collection}
   >
     {Template.bind({})}
   </SpecialRoomCard>
@@ -284,7 +280,9 @@ These type of cards make up most of the interface and are key components for log
                 xxl={4}
                 className="mb-lg-8 mb-md-8"
               >
-                <SpecialRoomCard {...{ ...example, imageUrl: imagesArray[i] }} />
+                <SpecialRoomCard
+                  {...{ ...example, imageUrl: imagesArray[i] }}
+                />
               </Col>
             );
           })}
@@ -292,26 +290,6 @@ These type of cards make up most of the interface and are key components for log
     </Container>
   </div>
 </Preview>
-
-## Default
-
-<Canvas style={{ width: '400px' }}>
-  <Story
-    name="Special\ Room\ Card"
-    args={example}
-    argTypes={argTypes}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=7608%3A164120',
-      },
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
 
 ## Properties
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, memo } from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
 import classNames from 'classnames';
@@ -19,7 +19,7 @@ const ConditionalWrapper = ({
   return children;
 };
 
-const MemoizedConditionalWrapper = React.memo(ConditionalWrapper);
+const MemoizedConditionalWrapper = memo(ConditionalWrapper);
 
 const SpecialRoomCard = ({
   title,
@@ -35,14 +35,25 @@ const SpecialRoomCard = ({
   selectMode,
   collection,
 }) => {
-  const [isRoomSelected, setRoomSelected] = React.useState(selectMode?.checked);
+  const [isSelected, setSelected] = useState(selectMode?.checked);
   const defaultState = !openingSoon?.active && !unavailableToView?.active && !selectMode?.active;
 
-  const onSelectRoom = (evt) => {
-    setRoomSelected(evt?.target?.checked);
-    if (typeof selectMode.onChange === 'function') {
-      selectMode.onChange();
+  const toggleCardSelection = (value) => {
+    if (selectMode?.active) {
+      selectMode.checked = value;
+      if (typeof selectMode?.onChange === 'function') {
+        selectMode?.onChange();
+      }
+      setSelected(value);
     }
+  };
+
+  const onCheckCard = (evt) => {
+    toggleCardSelection(evt?.target?.checked);
+  };
+
+  const onClickCard = () => {
+    toggleCardSelection(!isSelected);
   };
 
   return (
@@ -53,11 +64,26 @@ const SpecialRoomCard = ({
         'opening-state': openingSoon?.active,
         'unavailable-state': unavailableToView?.active,
         'select-state': selectMode?.active,
+        'selected-state': isSelected,
       })}
+      onClick={onClickCard}
     >
-      {/* Image Frame */}
       <div className="image-frame">
-        {/* tag / unavailable to view */}
+      <div className="tag-container">
+        {visited?.active && (
+          <Tag
+            label={visited.label}
+            onClick={visited.onClick}
+            className="tag-visited"
+          />
+        )}
+        {openingSoon?.active && (
+          <Tag
+            label={openingSoon.label}
+            onClick={openingSoon.onClick}
+            className="tag-opening"
+          />
+        )}
         {unavailableToView?.active && (
           <Tag
             label={unavailableToView.label}
@@ -67,26 +93,7 @@ const SpecialRoomCard = ({
             iconAlign="left"
           />
         )}
-
-        {/* tag / openingSoon */}
-        {openingSoon?.active && (
-          <Tag
-            label={openingSoon.label}
-            onClick={openingSoon.onClick}
-            className="tag-opening"
-          />
-        )}
-
-        {/* tag / visited */}
-        {visited?.active && (
-          <Tag
-            label={visited.label}
-            onClick={visited.onClick}
-            className="tag-visited"
-          />
-        )}
-
-        {/* tag / sector */}
+        </div>
         {sectorsData?.length > 0 && (
           <div className="sectors">
             {sectorsData?.map((i) => (
@@ -101,8 +108,6 @@ const SpecialRoomCard = ({
             ))}
           </div>
         )}
-
-        {/* tag / show name */}
         {show?.active && (
           <div className="showname">
             <Tag
@@ -113,8 +118,6 @@ const SpecialRoomCard = ({
             />
           </div>
         )}
-
-        {/* icon / add to collection */}
         {!selectMode?.active && !collection?.active && (
           <ButtonIcon
             icon="collections-add"
@@ -123,8 +126,6 @@ const SpecialRoomCard = ({
             theme="dark"
           />
         )}
-
-        {/* Texts (room title and artist name) */}
         <div className="text-frame">
           {title && (
             <MemoizedConditionalWrapper
@@ -147,36 +148,26 @@ const SpecialRoomCard = ({
             </MemoizedConditionalWrapper>
           )}
         </div>
-
-        {/* select mode */}
         {selectMode?.active && (
           <Checkbox
-            checked={isRoomSelected}
+            checked={isSelected}
             disabled={selectMode.disabled}
-            onChange={onSelectRoom}
+            onChange={onCheckCard}
             className="checkbox-select"
           />
         )}
-
-        {/* overlay / unavailable */}
         {unavailableToView?.active && (
           <div className="overlay-eye">
             <Icon name="eye-hide" />
           </div>
         )}
-
-        {/* overlay / blur, fill, gradient */}
         <MemoizedConditionalWrapper
           linkRenderer={linkRenderer}
           condition={defaultState}
           link={roomLink}
         >
           <div className="overlay-gradient" />
-          <div
-            className={classNames('overlay-fill dark', {
-              selected: selectMode?.active && isRoomSelected,
-            })}
-          />
+          <div className='overlay-fill dark' />
           <div
             className={classNames('overlay-blur', {
               dark: openingSoon?.active,

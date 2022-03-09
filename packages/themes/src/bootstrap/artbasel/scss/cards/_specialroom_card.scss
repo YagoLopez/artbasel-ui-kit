@@ -3,12 +3,6 @@
   overflow: hidden;
 }
 
-/* no safari and chrome support */
-@mixin div-blur {
-  backdrop-filter: blur($spacing-3);
-}
-
-/* better support, but creates an inner shadow */
 @mixin image-blur {
   filter: blur($spacing-2);
 }
@@ -22,24 +16,28 @@
   position: relative;
   display: inline-flex;
   border: none;
+  width: 100%;
+  transition: opacity 0.35s ease-out;
 
   a + img:hover {
     cursor: pointer;
   }
 
-  &.default-state {
-    &:hover {
-      .overlay-fill.dark {
-        opacity: 1;
-      }
+  @media (hover: hover) {
+    &.default-state {
+      &:hover {
+        .overlay-fill.dark {
+          opacity: 1;
+        }
 
-      .text-frame p {
-        color: $color-mch-black;
-      }
+        .text-frame p {
+          color: $color-mch-black;
+        }
 
-      .btn-icon {
-        cursor: pointer;
-        opacity: 1;
+        .btn-icon {
+          cursor: pointer;
+          opacity: 1;
+        }
       }
     }
   }
@@ -48,6 +46,9 @@
     &:hover {
       .btn-icon {
         cursor: pointer;
+        opacity: 1;
+      }
+      .overlay-fill.dark {
         opacity: 1;
       }
     }
@@ -62,23 +63,15 @@
   }
 
   &.unavailable-state {
-    &:hover {
-      .text-frame p {
-        color: $color-mch-black;
-      }
-    }
-
-    .image-frame,
-    .text-frame-top {
+    a {
       pointer-events: none;
     }
 
-    .form-check-input,
-    .checkbox-select {
-      pointer-events: all;
+    .overlay-blur.light {
+      opacity: 1;
     }
 
-    .overlay-blur.light {
+    .overlay-fill.dark {
       opacity: 1;
     }
 
@@ -88,7 +81,14 @@
   }
 
   &.select-state {
-    pointer-events: none;
+    &:hover {
+      cursor: pointer;
+    }
+
+    .text-frame {
+      pointer-events: none;
+      transition: all 0.35s ease-out;
+    }
 
     .form-check-input,
     .checkbox-select {
@@ -96,7 +96,18 @@
     }
 
     .overlay-fill.dark {
+      opacity: 1;
+    }
+
+    &:not(.selected-state) {
       opacity: 0.75;
+
+      .tag, .overlay-eye {
+        opacity: 1;
+      }
+      .text-frame {
+        opacity: 1;
+      }
     }
   }
 
@@ -108,24 +119,32 @@
 
     a {
       width: 100%;
+      height: 100%;
       @include round-corners;
+      display: flex;
     }
 
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: contain;
       @include round-corners;
     }
 
-    .tag {
+    .tag-container {
+      position: absolute;
+      top: $spacing-5;
+      left: $spacing-5;
+      display: flex;
       z-index: 4;
 
-      &-opening,
-      &-visited,
-      &-unavailableToView {
-        position: absolute;
-        top: $spacing-5;
-        left: $spacing-5;
+      .tag {
+        margin-right: $spacing-3;
+        transition: all 0.35s ease-out;
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
 
@@ -192,6 +211,7 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      transition: all 0.35s ease-out;
       width: $spacing-10;
       height: $spacing-10;
       z-index: 5;
@@ -211,7 +231,7 @@
       width: 100%;
       height: 100%;
       transition: all 0.35s ease-out;
-      z-index: 2;
+      z-index: 3;
       background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0) 56.34%,
