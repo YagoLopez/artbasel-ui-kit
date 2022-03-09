@@ -10,8 +10,7 @@ import { example, imagesArray } from './RoomCard.example';
   decorators={[withDesign]}
 />
 
-export const Template = (args) => <RoomCard {...args} />
-
+export const Template = (args) => <RoomCard {...args} />;
 
 export const argTypes = {
   openingSoon: {
@@ -155,7 +154,7 @@ These type of cards make up most of the interface and are key components for log
     liveChat={example.liveChat}
     openingSoon={{
       active: true,
-      label: 'Opening Soon',
+      label: example.openingSoon.label,
     }}
     visited={example.visited}
     curator={example.curator}
@@ -186,7 +185,7 @@ These type of cards make up most of the interface and are key components for log
     openingSoon={example.openingSoon}
     visited={{
       active: true,
-      label: 'Visited',
+      label: example.visited.label,
     }}
     curator={example.curator}
     show={example.show}
@@ -217,8 +216,43 @@ These type of cards make up most of the interface and are key components for log
     visited={example.visited}
     curator={{
       active: true,
-      label: 'Curator’s Pick | Example Name',
+      label: example.curator.label,
     }}
+    show={example.show}
+    unavailableToView={example.unavailableToView}
+    selectMode={example.selectMode}
+    collection={example.collection}
+  >
+    {Template.bind({})}
+  </RoomCard>
+</Canvas>
+
+### Displaying more than one tag
+
+If using "Opening Soon" and "Visited" together or more than one except the "Curator's Pick," show them side by side as long as space permits. There should always be 8px of space between these tags, and it's okay for them to render past one line when faced with width constraints.
+
+<Canvas style={{ width: '400px' }}>
+  <RoomCard
+    title={example.title}
+    collaboratedAccounts={example.collaboratedAccounts}
+    ownerAccount={example.ownerAccount}
+    theme={example.theme}
+    sectorsData={example.sectorsData}
+    linkRenderer={example.linkRenderer}
+    roomLink={example.roomLink}
+    ownerAccountLink={example.ownerAccountLink}
+    type={example.type}
+    imageUrl={example.imageUrl}
+    liveChat={example.liveChat}
+    openingSoon={{
+      active: true,
+      label: example.openingSoon.label,
+    }}
+    visited={{
+      active: true,
+      label: example.visited.label,
+    }}
+    curator={example.curator}
     show={example.show}
     unavailableToView={example.unavailableToView}
     selectMode={example.selectMode}
@@ -306,7 +340,7 @@ These type of cards make up most of the interface and are key components for log
     curator={example.curator}
     show={{
       active: true,
-      label: 'OVR: Show Name',
+      label: example.show.label,
     }}
     unavailableToView={example.unavailableToView}
     selectMode={example.selectMode}
@@ -336,11 +370,11 @@ These type of cards make up most of the interface and are key components for log
     curator={example.curator}
     show={{
       active: true,
-      label: 'OVR: Show Name',
+      label: example.show.label,
     }}
     unavailableToView={{
       active: true,
-      label: 'Unavailable to view',
+      label: example.unavailableToView.label,
     }}
     selectMode={example.selectMode}
     collection={example.collection}
@@ -371,11 +405,13 @@ These type of cards make up most of the interface and are key components for log
     curator={example.curator}
     show={{
       active: true,
-      label: 'OVR: Show Name',
+      label: example.show.label,
     }}
     unavailableToView={example.unavailableToView}
     selectMode={{
       active: true,
+      checked: false,
+      disabled: false,
     }}
     collection={example.collection}
   >
@@ -400,13 +436,13 @@ These type of cards make up most of the interface and are key components for log
     liveChat={example.liveChat}
     openingSoon={{
       active: true,
-      label: 'Opening Soon',
+      label: example.openingSoon.label,
     }}
     visited={example.visited}
     curator={example.curator}
     show={{
       active: true,
-      label: 'OVR: Show Name',
+      label: example.show.label,
     }}
     unavailableToView={example.unavailableToView}
     selectMode={{
@@ -438,15 +474,16 @@ These type of cards make up most of the interface and are key components for log
     curator={example.curator}
     show={{
       active: true,
-      label: 'OVR: Show Name',
+      label: example.show.label,
     }}
     unavailableToView={{
       active: true,
-      label: 'Unavailable to view',
+      label: example.unavailableToView.label,
     }}
     selectMode={{
       active: true,
-      disabled: false
+      checked: false,
+      disabled: false,
     }}
     collection={example.collection}
   >

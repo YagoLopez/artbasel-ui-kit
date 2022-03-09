@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, memo } from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
 import classNames from 'classnames';
@@ -8,10 +8,7 @@ import { Icon } from '../../../utils/Icon';
 import { Checkbox } from '../../../inputs/Checkbox';
 
 const ConditionalWrapper = ({
-  linkRenderer,
-  condition,
-  link,
-  children,
+  linkRenderer, condition, link, children,
 }) => {
   if (condition && typeof linkRenderer === 'function') {
     return linkRenderer(link, children);
@@ -19,7 +16,7 @@ const ConditionalWrapper = ({
   return children;
 };
 
-const MemoizedConditionalWrapper = React.memo(ConditionalWrapper);
+const MemoizedConditionalWrapper = memo(ConditionalWrapper);
 
 const RoomCard = ({
   title,
@@ -41,14 +38,25 @@ const RoomCard = ({
   selectMode,
   collection,
 }) => {
-  const [isRoomSelected, setRoomSelected] = React.useState(selectMode?.checked);
-  const defaultState = !openingSoon?.active && !unavailableToView?.active && !selectMode?.active;
+  const defaultState = !selectMode?.active && !unavailableToView?.active;
+  const [isSelected, setSelected] = useState(selectMode?.checked);
 
-  const onSelectRoom = (evt) => {
-    setRoomSelected(evt?.target?.checked);
-    if (typeof selectMode.onChange === 'function') {
-      selectMode.onChange();
+  const toggleCardSelection = (value) => {
+    if (selectMode?.active) {
+      selectMode.checked = value;
+      if (typeof selectMode?.onChange === 'function') {
+        selectMode?.onChange();
+      }
+      setSelected(value);
     }
+  };
+
+  const onCheckCard = (evt) => {
+    toggleCardSelection(evt?.target?.checked);
+  };
+
+  const onClickCard = () => {
+    toggleCardSelection(!isSelected);
   };
 
   return (
@@ -60,47 +68,42 @@ const RoomCard = ({
         'opening-state': openingSoon?.active,
         'unavailable-state': unavailableToView?.active,
         'select-state': selectMode?.active,
+        'selected-state': isSelected,
       })}
+      onClick={onClickCard}
     >
-      {/* Image Frame */}
       <div className="image-frame">
-        {/* overlay unavailable */}
+        <div className="tag-container">
+          {visited?.active && (
+            <Tag
+              label={visited.label}
+              onClick={visited.onClick}
+              className="tag-visited"
+            />
+          )}
+          {openingSoon?.active && (
+            <Tag
+              label={openingSoon.label}
+              onClick={openingSoon.onClick}
+              className="tag-opening"
+            />
+          )}
+          {unavailableToView?.active && (
+            <Tag
+              label={unavailableToView.label}
+              onClick={unavailableToView.onClick}
+              className="tag-unavailableToView"
+              icon="Info"
+              iconAlign="left"
+            />
+          )}
+        </div>
+
         {unavailableToView?.active && (
           <div className="overlay-eye">
             <Icon name="eye-hide" />
           </div>
         )}
-
-        {/* openingSoon */}
-        {unavailableToView?.active && (
-          <Tag
-            label={unavailableToView.label}
-            onClick={unavailableToView.onClick}
-            className="tag-unavailableToView"
-            icon="Info"
-            iconAlign="left"
-          />
-        )}
-
-        {/* openingSoon */}
-        {openingSoon?.active && (
-          <Tag
-            label={openingSoon.label}
-            onClick={openingSoon.onClick}
-            className="tag-opening"
-          />
-        )}
-
-        {/* visited */}
-        {visited?.active && (
-          <Tag
-            label={visited.label}
-            onClick={visited.onClick}
-            className="tag-visited"
-          />
-        )}
-
-        {/* add to collection */}
         {!selectMode?.active && !collection?.active && (
           <ButtonIcon
             icon="collections-add"
@@ -109,17 +112,14 @@ const RoomCard = ({
             theme="dark"
           />
         )}
-
         {selectMode?.active && (
           <Checkbox
-            checked={isRoomSelected}
+            checked={isSelected}
             disabled={selectMode.disabled}
-            onChange={onSelectRoom}
+            onChange={onCheckCard}
             className="checkbox-select"
           />
         )}
-
-        {/* curator */}
         {curator?.active && (
           <Tag
             label={curator.label}
@@ -137,7 +137,7 @@ const RoomCard = ({
         >
           <div
             className={classNames('overlay-fill dark', {
-              selected: selectMode?.active && isRoomSelected,
+              selected: selectMode?.active && isSelected,
             })}
           />
           <div
@@ -163,7 +163,6 @@ const RoomCard = ({
               <h4>{title}</h4>
             </MemoizedConditionalWrapper>
           )}
-          {/* collaborated accounts */}
           {collaboratedAccounts && (
             <MemoizedConditionalWrapper
               linkRenderer={linkRenderer}
@@ -178,7 +177,6 @@ const RoomCard = ({
         </div>
         <div className="bottom-frame d-flex justify-content-between align-items-center">
           <div className="bottom-frame-left">
-            {/* sectors */}
             {type === 'hybrid'
               && sectorsData?.length > 0
               && sectorsData?.map((i) => (
@@ -191,8 +189,6 @@ const RoomCard = ({
                   onClick={i.onClick}
                 />
               ))}
-            {/* account */}
-            {/* TODO - we cant link to room, if no accountlink, when unavailable in collections */}
             {type === 'freestanding' && ownerAccount && (
               <MemoizedConditionalWrapper
                 linkRenderer={linkRenderer}
@@ -207,7 +203,6 @@ const RoomCard = ({
             )}
           </div>
           <div className="bottom-frame-right d-flex align-items-center">
-            {/* live chat */}
             {liveChat && !show?.active && (
               <Icon
                 name="live-chat"
@@ -219,7 +214,6 @@ const RoomCard = ({
                 }
               />
             )}
-            {/* show name */}
             {show?.active && !liveChat && (
               <Tag
                 type="label"
@@ -296,6 +290,12 @@ RoomCard.defaultProps = {
   type: 'hybrid',
   liveChat: false,
   selected: false,
+  selectMode: {
+    active: false,
+    checked: false,
+    onChange: () => {},
+    disabled: false,
+  },
 };
 
 export default RoomCard;

@@ -16,6 +16,7 @@
   position: relative;
   display: inline-flex;
   border: none;
+  width: 100%;
 
   a + img:hover {
     cursor: pointer;
@@ -53,29 +54,33 @@
     }
   }
 
-  &.default-state {
-    &:hover {
-      .overlay-fill.dark {
-        opacity: 1;
+  @media (hover: hover) {
+    &.default-state {
+      &:hover {
+        .overlay-fill.dark {
+          opacity: 1;
+        }
+
+        .text-frame-top p,
+        .bottom-frame-left .text-medium {
+          color: $color-mch-black;
+        }
+
+        .btn-icon {
+          cursor: pointer;
+          opacity: 1;
+        }
       }
 
-      .text-frame-top p {
-        color: $color-mch-black;
-      }
+      &.theme {
+        &-dark:hover .text-frame-top p,
+        &-dark:hover .bottom-frame-left .text-medium {
+          color: $color-mch-white;
+        }
 
-      .btn-icon {
-        cursor: pointer;
-        opacity: 1;
-      }
-    }
-
-    &.theme {
-      &-dark:hover .text-frame-top p {
-        color: $color-mch-white;
-      }
-
-      &-light:hover .text-frame-top p {
-        color: $color-mch-black;
+        &-light:hover .text-frame-top p {
+          color: $color-mch-black;
+        }
       }
     }
   }
@@ -102,14 +107,8 @@
   }
 
   &.unavailable-state {
-    .image-frame,
-    .text-frame-top {
+    a {
       pointer-events: none;
-    }
-
-    .form-check-input,
-    .checkbox-select {
-      pointer-events: all;
     }
 
     .overlay-blur.light {
@@ -122,7 +121,14 @@
   }
 
   &.select-state {
-    pointer-events: none;
+    &:hover {
+      cursor: pointer;
+    }
+
+    .text-frame {
+      pointer-events: none;
+      transition: all 0.35s ease-out;
+    }
 
     .form-check-input,
     .checkbox-select {
@@ -130,10 +136,13 @@
     }
 
     .overlay-fill.dark {
-      opacity: 0.75;
+      opacity: 1;
     }
 
     &:not(.selected-state) {
+      .tag, .overlay-eye {
+        opacity: 0.75;
+      }
       .text-frame {
         opacity: 0.5;
       }
@@ -145,33 +154,45 @@
     position: relative;
     overflow: hidden;
     @include round-corners;
+    justify-content: center;
 
     a {
       width: 100%;
       @include round-corners;
+      display: flex;
+      justify-content: center;
     }
 
     img {
-      width: 100%;
-      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
       @include round-corners;
     }
 
-    .tag {
+    .tag-container {
       position: absolute;
+      top: $spacing-5;
+      left: $spacing-5;
+      display: flex;
       z-index: 4;
 
-      &-opening,
-      &-visited,
-      &-unavailableToView {
-        top: $spacing-5;
-        left: $spacing-5;
-      }
+      .tag {
+        margin-right: $spacing-3;
+        transition: all 0.35s ease-out;
 
-      &-curator {
-        bottom: $spacing-5;
-        left: $spacing-5;
+        &:last-child {
+          margin-right: 0;
+        }
       }
+    }
+
+    .tag-curator {
+      z-index: 4;
+      transition: all 0.35s ease-out;
+      position: absolute;
+      bottom: $spacing-5;
+      left: $spacing-5;
     }
 
     .form-check-input {
@@ -239,6 +260,7 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      transition: all 0.35s ease-out;
       width: $spacing-10;
       height: $spacing-10;
       z-index: 5;
@@ -290,6 +312,18 @@
       &.dark {
         background: rgba(255, 255, 255, 0.1);
       }
+    }
+  }
+
+  .image-container .btn-icon,
+  .image-container .btn-inquiry {
+    visibility: hidden;
+  }
+
+  @media (hover: hover) {
+    .image-container .btn-icon,
+    .image-container .btn-inquiry {
+      visibility: visible;
     }
   }
 }
