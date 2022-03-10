@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.31.6...@mch-group/uikit-themes@0.32.0) (2022-03-10)
+
+
+### Features
+
+* **modal:** added new footer buttons layout for XS/SM Breakpoints ([f743feb](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/f743feba9e600256e29611bc241889df169d4f6b))
+
+
+
+
+
 ## [0.31.6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.31.5...@mch-group/uikit-themes@0.31.6) (2022-03-10)
 
 
