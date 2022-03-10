@@ -4,7 +4,7 @@
     width: calc(100% - 2rem);
     text-align: center;
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
       height: 28px;
     }
 
@@ -29,7 +29,7 @@
       border-radius: 100%;
       margin: 0 12px;
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(md) {
         height: 28px;
         width: 28px;
         margin: 0 8px 16px;
@@ -50,7 +50,7 @@
         background-color: white;
         border-radius: 100%;
 
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(md) {
           height: 12px;
           width: 12px;
         }
@@ -62,7 +62,7 @@
         background-color: $color-mch-gray-300;
         border-radius: 100%;
 
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(md) {
           height: 12px;
           width: 12px;
         }
@@ -72,7 +72,7 @@
     .label-style {
       display: none;
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(md) {
         display: block;
         font-size: 0.875rem;
         color: $color-mch-black;
