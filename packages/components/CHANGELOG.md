@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.38.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.38.1...@mch-group/uikit-components@0.38.2) (2022-03-10)
+
+
+### Bug Fixes
+
+* **tags:** add satellite sector color and color fallback ([fcf5b8b](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/fcf5b8b33f3eb4172583c1b554b29e83a562b001))
+
+
+
+
+
 ## [0.38.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.38.0...@mch-group/uikit-components@0.38.1) (2022-03-09)
 
 
