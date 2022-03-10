@@ -285,8 +285,14 @@ export const Colors = () => (
       <ColorTag
         color="#dcdcdc"
         name="Dialogues"
-        scssVar="$color-mch-dialoges"
-        bsVar="--bs-mch-dialoges"
+        scssVar="$color-mch-dialogues"
+        bsVar="--bs-mch-dialogues"
+      />
+      <ColorTag
+        color="#dcdcdc"
+        name="Satellite"
+        scssVar="$color-mch-satellite"
+        bsVar="--bs-mch-satellite"
       />
     </div>
   </>

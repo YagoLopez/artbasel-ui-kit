@@ -46,6 +46,7 @@
     }
     &-sectors {
       filter: drop-shadow(0 $spacing-2 $spacing-5 rgba(29, 35, 39, 0.06));
+      border-color: $color-mch-dialogues; // fallback color
       border-width: 1px;
       border-style: solid;
       border-radius: $spacing-1;

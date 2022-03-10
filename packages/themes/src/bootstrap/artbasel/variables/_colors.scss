@@ -47,6 +47,7 @@ $color-mch-kabinett: #fcdfaa;
 $color-mch-insights: #fcd5d7;
 $color-mch-survey: #fcd5d7;
 $color-mch-dialogues: #dcdcdc;
+$color-mch-satellite: #dcdcdc;
 $color-mch-product-tile-hover: $color-mch-black;
 
 /*-----------------------
@@ -125,6 +126,7 @@ $colors: (
   'mch-insights': $color-mch-insights,
   'mch-survey': $color-mch-survey,
   'mch-dialogues': $color-mch-dialogues,
+  'mch-satellite': $color-mch-satellite,
 ) !default;
 // scss-docs-end colors-map
 

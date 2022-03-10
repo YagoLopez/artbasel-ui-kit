@@ -16,6 +16,7 @@ const sectorsList = [
   'insights',
   'survey',
   'dialogues',
+  'satellite',
 ];
 
 export default sectorsList;
