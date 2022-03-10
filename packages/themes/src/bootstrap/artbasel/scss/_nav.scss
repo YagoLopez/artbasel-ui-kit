@@ -6,10 +6,17 @@
     height: 40px;
     font-size: 14px !important;
     line-height: 18px;
+    padding: 10px 32px 12px 32px !important;
     color: $color-mch-gray-500;
-    padding: 0.625rem 2rem 0.75rem 2rem !important;
     border-radius: 0;
     border-width: 1px 0px 2px;
+
+    @include media-breakpoint-up(md) {
+      height: 48px;
+      font-size: 16px !important;
+      line-height: 22px;
+      padding: 12px 2rem 14px 2rem !important;
+    }
 
     &:hover,
     &:focus {
