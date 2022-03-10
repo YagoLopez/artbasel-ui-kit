@@ -1,11 +1,7 @@
 .modal-dialog {
-  @include media-breakpoint-up(xs) {
-    margin: 1rem;
-  }
   @include media-breakpoint-up(md) {
     margin: 48px auto;
   }
-
   .modal-header {
     padding: 1.5rem 3.6rem 1.5rem 1.5rem;
     align-items: flex-start;
@@ -48,6 +44,10 @@
   }
 
   &.modal-sm {
+    @media (max-width: calc(#{$modal-sm} + 32px)) {
+      margin: 1rem;
+    }
+
     .modal-header {
       padding: 1.5rem 3.6rem 1.5rem 1rem;
 
@@ -66,6 +66,45 @@
       justify-content: space-between;
       .btn {
         width: calc(calc(100% - 24px) / 2);
+      }
+      &.vertical {
+        justify-content: normal !important;
+        display: grid !important;
+        gap: $spacing-5;
+        .btn {
+          width: 100% !important;
+          &:last-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &.modal-md,
+  &.modal-lg {
+    @media (max-width: calc(#{$modal-md} + 32px)) {
+      margin: 1rem;
+    }
+
+    @include media-breakpoint-down(md) {
+      .modal-footer {
+        padding: 1.5rem 1rem;
+        justify-content: space-between;
+        .btn {
+          width: calc(calc(100% - 24px) / 2);
+        }
+        &.vertical {
+          justify-content: normal !important;
+          display: grid !important;
+          gap: $spacing-5;
+          .btn {
+            width: 100% !important;
+            &:last-child {
+              margin-left: 0;
+            }
+          }
+        }
       }
     }
   }
