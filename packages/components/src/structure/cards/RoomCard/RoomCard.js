@@ -38,7 +38,7 @@ const RoomCard = ({
   selectMode,
   collection,
 }) => {
-  const defaultState = !selectMode?.active && !unavailableToView?.active;
+  const defaultState = !selectMode?.active && !unavailableToView?.active && !openingSoon?.active;
   const [isSelected, setSelected] = useState(selectMode?.checked);
 
   const toggleCardSelection = (value) => {

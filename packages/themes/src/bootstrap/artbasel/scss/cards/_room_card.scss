@@ -86,14 +86,16 @@
   }
 
   &.opening-state {
-    &:hover {
-      .overlay-fill.dark {
-        opacity: 1;
-      }
+    @media (hover: hover) {
+      &:hover {
+        .overlay-fill.dark {
+          opacity: 1;
+        }
 
-      .btn-icon {
-        cursor: pointer;
-        opacity: 1;
+        .btn-icon {
+          cursor: pointer;
+          opacity: 1;
+        }
       }
     }
 
@@ -312,18 +314,6 @@
       &.dark {
         background: rgba(255, 255, 255, 0.1);
       }
-    }
-  }
-
-  .image-container .btn-icon,
-  .image-container .btn-inquiry {
-    visibility: hidden;
-  }
-
-  @media (hover: hover) {
-    .image-container .btn-icon,
-    .image-container .btn-inquiry {
-      visibility: visible;
     }
   }
 }
