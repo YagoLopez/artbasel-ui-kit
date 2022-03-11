@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.39.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.39.1...@mch-group/uikit-components@0.39.2) (2022-03-11)
+
+
+### Bug Fixes
+
+* **ovr room card:** disable hover on native devices when unavailable room state ([81d92de](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/81d92de8022a48590e7dbc4890d2c0f38f52407e))
+* **story card:** style fixes and component optimization ([d4196d0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d4196d0b2b364a14814366f23c88569cf121ab51))
+
+
+
+
+
 ## [0.39.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.39.0...@mch-group/uikit-components@0.39.1) (2022-03-11)
 
 **Note:** Version bump only for package @mch-group/uikit-components
