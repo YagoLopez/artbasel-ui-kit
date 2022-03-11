@@ -20,12 +20,37 @@ export const Template = (args) => <ModalDemo {...args} />;
 export const argTypes = {
   size: {
     table: {
-      category: 'ModalDemo',
+      category: 'Modal',
     },
   },
   filter: {
     table: {
-      category: 'ModalDemo',
+      category: 'Modal',
+    },
+  },
+  title: {
+    table: {
+      category: 'Header',
+    },
+  },
+  subline: {
+    table: {
+      category: 'Header',
+    },
+  },
+  orientation: {
+    table: {
+      category: 'Footer',
+    },
+  },
+  primaryActionText: {
+    table: {
+      category: 'Footer Button Example',
+    },
+  },
+  secondaryActionText: {
+    table: {
+      category: 'Footer Button Example',
     },
   },
 };
@@ -333,7 +358,7 @@ Modals inform users about a task and can contain information, require decisions,
       filter: false,
       primaryActionText: 'OK',
       secondaryActionText: 'Cancel',
-      footerOrientation: 'vertical',
+      orientation: 'vertical',
     }}
     argTypes={argTypes}
     parameters={{

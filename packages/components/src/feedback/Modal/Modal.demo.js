@@ -11,7 +11,7 @@ const ModalDemo = ({
   subline,
   primaryActionText,
   secondaryActionText,
-  footerOrientation,
+  orientation,
 }) => {
   const [show, setShow] = useState(false);
 
@@ -36,7 +36,7 @@ const ModalDemo = ({
         <Modal.Body>
           <p>lorem ipsum</p>
         </Modal.Body>
-        <Modal.Footer className="test" orientation={footerOrientation}>
+        <Modal.Footer orientation={orientation}>
           {filter ? (
             <TextLink>{secondaryActionText}</TextLink>
           ) : (
@@ -56,13 +56,13 @@ ModalDemo.propTypes = {
   subline: PropTypes.string.isRequired,
   primaryActionText: PropTypes.string.isRequired,
   secondaryActionText: PropTypes.string.isRequired,
-  footerOrientation: PropTypes.oneOf(['vertical', 'horizontal']),
+  orientation: PropTypes.oneOf(['vertical', 'horizontal']),
 };
 
 ModalDemo.defaultProps = {
   size: 'sm',
   filter: false,
-  footerOrientation: 'horizontal',
+  orientation: 'horizontal',
 };
 
 export default ModalDemo;
