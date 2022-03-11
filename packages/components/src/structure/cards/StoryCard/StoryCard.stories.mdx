@@ -1,9 +1,9 @@
 import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
-import example from './StoryCard.example.json';
+import example from './StoryCard.example';
 import StoryCard from './StoryCard';
 
-<Meta 
+<Meta
   title="Components/Structure/Cards/StoryCard"
   component={StoryCard}
   decorators={[withDesign]}
@@ -11,137 +11,24 @@ import StoryCard from './StoryCard';
 
 export const Template = (args) => <StoryCard {...args} />;
 
-export const argTypes = {
-  cssStyles: {
-    table: {
-      category: 'Styles',
-    },
-  },
-  cssInternalPrefix: {
-    table: {
-      category: 'Styles',
-    },
-  },
-  size: {
-    table: {
-      category: 'StoryCard',
-    },
-  },
-  author: {
-    table: {
-      category: 'StoryCard',
-    },
-  },
-  label: {
-    table: {
-      category: 'StoryCard',
-    },
-  },
-  title: {
-    table: {
-      category: 'StoryCard',
-    },
-  },
-  date: {
-    table: {
-      category: 'StoryCard',
-    },
-  },
-  description: {
-    table: {
-      category: 'StoryCard',
-    },
-  },
-  image: {
-    table: {
-      category: 'StoryCard',
-    },
-  },
-  button: {
-    table: {
-      category: 'StoryCard',
-    },
-  },
-  video: {
-    table: {
-      category: 'StoryCard',
-    },
-  },
-};
+# Story Card
 
-export const primaryButton = {
-  link: '#',
-  type: 'primary',
-  text: 'Go to link'
-};
+These type of cards make up most of the interface and are key components for logically grouping page content and making it scalable.
 
-export const textLink = {
-  link: '#',
-  type: 'textlink',
-  text: 'Go to link'
-};
-
-export const generalArgs = {
-  author: example.author,
-  label: example.label,
-  title: example.title,
-  date: example.date,
-  description: example.description,
-  image: example.image
-};
-
-export const truncatedArgs = {
-  author: example.author,
-  label: example.label,
-  title: example.titleLong,
-  date: example.date,
-  description: example.descriptionLong,
-  image: example.image,
-  button: primaryButton
-};
-
-
-# StoryCard
-
-Story card is one of the different types of content card displayed on the website.
+## Default
 
 <Canvas>
   <Story
     name="StoryCard"
-    args={generalArgs}
-    argTypes={{argTypes}}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
-      },
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-## Variants
-
-### With primary button
-
-<Canvas style={{width: '450px'}}>
-  <Story
-    name="StoryCard primary button"
     args={{
-      ...generalArgs,
-      size: 's',
-      button: primaryButton
+      ...example,
     }}
-    argTypes={{argTypes}}
     parameters={{
       design: {
         name: 'Figma Design',
         type: 'figma',
         url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=7956%3A170103',
       },
     }}
   >
@@ -149,163 +36,63 @@ Story card is one of the different types of content card displayed on the websit
   </Story>
 </Canvas>
 
-### With text link
+## CTAs
 
-<Canvas style={{width: '450px'}}>
-  <Story
-    name="StoryCard text link"
-    args={{
-      ...generalArgs,
-      button: textLink
-    }}
-    argTypes={{argTypes}}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
-      },
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-### Without button
-
-<Canvas style={{width: '450px'}}>
-  <Story
-    name="StoryCard without button"
-    args={generalArgs}
-    argTypes={{argTypes}}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
-      },
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-### Video
-
-<Canvas style={{width: '450px'}}>
-  <Story
-    name="StoryCard Video"
-    args={{
-      ...generalArgs,
-      button: primaryButton,
-      video: true
-    }}
-    argTypes={{argTypes}}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
-      },
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-### Truncated text
-
-<Canvas style={{width: '450px'}}>
-  <Story
-    name="StoryCard truncated text"
-    args={truncatedArgs}
-    argTypes={{argTypes}}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
-      },
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-### Size S 
-
-<Canvas style={{width: '450px'}}>
-  <Story
-    name="StoryCard Size S"
-    args={generalArgs}
-    argTypes={{argTypes}}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
-      },
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-### Size M
+### Primary CTA
 
 <Canvas>
-  <Story
-    name="StoryCard Size M"
-    args={{
-      ...generalArgs,
-      button: primaryButton,
-      size: 'm',
-      video: true
-    }}
-    argTypes={{argTypes}}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
-      },
+  <StoryCard {...example}>{Template.bind({})}</StoryCard>
+</Canvas>
+
+### Secondary CTA
+
+<Canvas>
+  <StoryCard
+    {...example}
+    button={{ type: 'textlink', label: example.button.label }}
+  >
+    {Template.bind({})}
+  </StoryCard>
+</Canvas>
+
+### No CTA
+
+<Canvas>
+  <StoryCard {...example} button={null}>
+    {Template.bind({})}
+  </StoryCard>
+</Canvas>
+
+## Sizes
+
+### Layout A (fixed)
+
+<Canvas>
+  <StoryCard {...example}>{Template.bind({})}</StoryCard>
+</Canvas>
+
+### Layout B (responsive)
+
+<Canvas>
+  <StoryCard
+    {...example}
+    responsive={true}
+    button={{
+      type: 'textlink',
+      label: example.button.label,
     }}
   >
     {Template.bind({})}
-  </Story>
+  </StoryCard>
 </Canvas>
 
-### Size L
+## Video
 
-<Canvas style={{width: '1300px'}}>
-  <Story
-    name="StoryCard Size L"
-    args={{
-      ...generalArgs,
-      button: primaryButton,
-      size: 'l',
-    }}
-    argTypes={{argTypes}}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
-      },
-    }}
-  >
+<Canvas>
+  <StoryCard {...example} responsive={false} video={true}>
     {Template.bind({})}
-  </Story>
+  </StoryCard>
 </Canvas>
-
-
 
 ## Properties
 

@@ -1,9 +1,8 @@
-/* eslint no-console: ["error", { allow: ["warn", "error"] }] */
 import React from 'react';
 import '@testing-library/jest-dom';
 import { cleanup, render, screen } from '@testing-library/react';
 import StoryCard from './StoryCard';
-import example from './StoryCard.example.json';
+import example from './StoryCard.example';
 
 console.error = jest.fn();
 
@@ -13,13 +12,12 @@ describe('Tests for Story Card component', () => {
   test('Should render the component', () => {
     render(
       <StoryCard
-        author={example.author}
-        title={example.title}
-        label={example.label}
-        date={example.date}
-        description={example.description}
-        image={example.image}
-        link={example.link}
+        {...example}
+        linkRenderer={(link, children) => (
+          <a href={link} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        )}
       />,
     );
     expect(screen.queryByText(example.title)).toBeInTheDocument();
@@ -28,12 +26,13 @@ describe('Tests for Story Card component', () => {
   test('Should not render the component without image prop', () => {
     render(
       <StoryCard
-        author={example.author}
-        label={example.label}
-        title={example.title}
-        date={example.date}
-        description={example.description}
-        link={example.link}
+        {...example}
+        linkRenderer={(link, children) => (
+          <a href={link} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        )}
+        image={null}
       />,
     );
     expect(console.error).toBeCalled();
@@ -42,39 +41,28 @@ describe('Tests for Story Card component', () => {
   test('Should not render the component without title prop', () => {
     render(
       <StoryCard
-        author={example.author}
-        label={example.label}
-        date={example.date}
-        description={example.description}
-        image={example.image}
-        link={example.link}
+        {...example}
+        linkRenderer={(link, children) => (
+          <a href={link} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        )}
+        title={null}
       />,
     );
     expect(console.error).toBeCalled();
   });
 
-  test('Should not render the component without author prop', () => {
+  test('Should not render the component without subtitle prop', () => {
     render(
       <StoryCard
-        title={example.title}
-        label={example.label}
-        date={example.date}
-        description={example.description}
-        image={example.image}
-        link={example.link}
-      />,
-    );
-    expect(console.error).toBeCalled();
-  });
-
-  test('Should not render the component without label prop', () => {
-    render(
-      <StoryCard
-        author={example.author}
-        title={example.title}
-        date={example.date}
-        description={example.description}
-        image={example.image}
+        {...example}
+        linkRenderer={(link, children) => (
+          <a href={link} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        )}
+        subtitle={null}
       />,
     );
     expect(console.error).toBeCalled();
@@ -83,32 +71,31 @@ describe('Tests for Story Card component', () => {
   test('Should not render the component without description prop', () => {
     render(
       <StoryCard
-        author={example.author}
-        label={example.label}
-        title={example.title}
-        date={example.date}
-        image={example.image}
-        link={example.link}
+        {...example}
+        linkRenderer={(link, children) => (
+          <a href={link} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        )}
+        description={null}
       />,
     );
     expect(console.error).toBeCalled();
   });
-  test('Should not render the component without a required type of a button prop', () => {
-    const button = {
-      type: null,
-      text: 'Button Text',
-      link: '#',
-    };
 
+  test('Should not render the component without a required type of a button prop', () => {
     render(
       <StoryCard
-        author={example.author}
-        label={example.label}
-        title={example.title}
-        date={example.date}
-        image={example.image}
-        link={example.link}
-        button={button}
+        {...example}
+        linkRenderer={(link, children) => (
+          <a href={link} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        )}
+        button={{
+          type: null,
+          label: example.button.label,
+        }}
       />,
     );
     expect(console.error).toBeCalled();

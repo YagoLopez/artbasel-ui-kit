@@ -1,29 +1,26 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
 import classNames from 'classnames';
-import { Button } from '../../../actions/Button';
-import { TextLink } from '../../../actions/TextLink';
+import { Button, TextLink } from '../../../actions';
 import { Icon } from '../../../utils/Icon';
-import { truncateText } from '../../../helpers/truncateText';
 
-const truncateValues = {
-  title: 60,
-  description: 250,
+const ConditionalWrapper = ({
+  linkRenderer, condition, link, children,
+}) => {
+  if (condition && typeof linkRenderer === 'function') {
+    return linkRenderer(link, children);
+  }
+  return children;
 };
 
-const classHeight = {
-  s: '234.37px',
-  m: '404px',
-  l: '624px',
-};
+const MemoizedConditionalWrapper = memo(ConditionalWrapper);
 
 const StoryCard = ({
-  cssInternalPrefix,
-  cssStyles,
-  size,
-  author,
-  label,
+  responsive,
+  linkRenderer,
+  storyLink,
+  subtitle,
   image,
   video,
   title,
@@ -31,113 +28,95 @@ const StoryCard = ({
   description,
   button,
 }) => {
-  const truncated = {
-    title: truncateText(title, truncateValues.title),
-    description: truncateText(description, truncateValues.description),
-  };
-
-  const getSubtitle = () => {
-    const authorText = author?.length > 0 ? author : null;
-    const labelText = label?.length > 0 ? label : null;
-    let subtitle;
-    if (authorText && labelText) {
-      subtitle = [authorText, labelText].join(', ');
-    } else {
-      subtitle = authorText || labelText;
-    }
-    return subtitle;
-  };
-
-  const buttonComponent = {
-    textlink: button ? (
-      <TextLink href={button?.link} icon="chevron-right" iconAlign="right">
-        {button?.text}
-      </TextLink>
-    ) : null,
-    primary: button ? (
-      <Button primary href={button?.link}>
-        {button?.text}
-      </Button>
-    ) : null,
-  };
-
-  const renderButton = () => buttonComponent[button.type];
-
   return (
     <BSPCard
       data-testid="mch-story-card"
-      bsPrefix={cssInternalPrefix}
-      style={cssStyles}
-      className={classNames('story-card', `size-${size}`)}
+      className={classNames('story-card', { responsive, fixed: !responsive })}
     >
-      <div className="hoverHandler">
-        {video && (
-          <div className="play-box">
-            <Icon name="play" height={35} width={35} color="white" />
+      <div className="image-frame">
+        <MemoizedConditionalWrapper
+          linkRenderer={linkRenderer}
+          condition={storyLink}
+          link={storyLink}
+        >
+          {video && (
+            <div className="overlay-video">
+              <Icon name="play" height={33} width={33} color="white" />
+            </div>
+          )}
+          <div className="overlay-fill" />
+          <div
+            style={{ backgroundImage: `url(${image})` }}
+            className={classNames('image', { 'ar-16_10': !responsive })}
+          />
+        </MemoizedConditionalWrapper>
+      </div>
+
+      <BSPCard.Body>
+        <MemoizedConditionalWrapper
+          linkRenderer={linkRenderer}
+          condition={storyLink}
+          link={storyLink}
+        >
+          <BSPCard.Text className="card-subtitle">{subtitle}</BSPCard.Text>
+          <BSPCard.Text className="card-title truncate" title={title}>
+            {title}
+          </BSPCard.Text>
+          <BSPCard.Text className="card-date">{date}</BSPCard.Text>
+          <BSPCard.Text
+            className="card-description truncate"
+            title={description}
+          >
+            {description}
+          </BSPCard.Text>
+        </MemoizedConditionalWrapper>
+
+        {button?.type === 'primary' && button?.label && (
+          <MemoizedConditionalWrapper
+            linkRenderer={linkRenderer}
+            condition={storyLink}
+            link={storyLink}
+          >
+            <div className="card-cta">
+              <Button primary>{button?.label}</Button>
+            </div>
+          </MemoizedConditionalWrapper>
+        )}
+
+        {/* TODO: <TextLink /> doesn't support custom link wrapper */}
+        {button?.type === 'textlink' && (
+          <div className="card-cta">
+            <TextLink href={storyLink} icon="chevron-right" iconAlign="right">
+              {button?.label}
+            </TextLink>
           </div>
         )}
-        <div className="gradient" />
-        <img
-          src={image}
-          width="100%"
-          height={classHeight[size]}
-          alt="picture"
-          style={{ objectFit: 'cover' }}
-        />
-      </div>
-      <BSPCard.Body>
-        <BSPCard.Text className="card-author">
-          {getSubtitle()}
-        </BSPCard.Text>
-        <BSPCard.Title>
-          {truncated.title.text}
-          {truncated.title.state && <span title={title}>...</span>}
-        </BSPCard.Title>
-        <BSPCard.Text className="card-date">{date}</BSPCard.Text>
-        <BSPCard.Text className="card-description">
-          {truncated.description.text}
-          {truncated.description.state && <span title={description}>...</span>}
-        </BSPCard.Text>
-        { button
-          && <div
-            className={classNames('button-box', {
-              pt13: button?.type === 'next',
-            })}
-          >
-            {renderButton()}
-          </div>
-        }
       </BSPCard.Body>
     </BSPCard>
   );
 };
 
 StoryCard.propTypes = {
-  size: PropTypes.oneOf(['s', 'm', 'l']),
-  author: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+  responsive: PropTypes.bool,
+  linkRenderer: PropTypes.func.isRequired,
+  storyLink: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   video: PropTypes.bool,
   date: PropTypes.string,
   description: PropTypes.string.isRequired,
   button: PropTypes.shape({
-    link: PropTypes.string,
     type: PropTypes.oneOf(['primary', 'textlink']).isRequired,
-    text: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
   }),
-  cssStyles: PropTypes.string,
-  cssInternalPrefix: PropTypes.string,
 };
 
 StoryCard.defaultProps = {
-  size: 's',
-  link: null,
+  responsive: false,
   button: null,
   date: null,
   video: false,
-  cssInternalPrefix: 'card',
-  cssStyles: null,
 };
 
 export default StoryCard;
