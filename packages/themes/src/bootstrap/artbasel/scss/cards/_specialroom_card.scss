@@ -43,13 +43,15 @@
   }
 
   &.opening-state {
-    &:hover {
-      .btn-icon {
-        cursor: pointer;
-        opacity: 1;
-      }
-      .overlay-fill.dark {
-        opacity: 1;
+    @media (hover: hover) {
+      &:hover {
+        .btn-icon {
+          cursor: pointer;
+          opacity: 1;
+        }
+        .overlay-fill.dark {
+          opacity: 1;
+        }
       }
     }
 
