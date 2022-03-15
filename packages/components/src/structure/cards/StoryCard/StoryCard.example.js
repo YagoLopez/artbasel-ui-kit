@@ -18,6 +18,7 @@ const example = {
       {children}
     </a>
   ),
+  equalHeight: false,
 };
 
 export default example;

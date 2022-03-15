@@ -45,7 +45,7 @@ TextLink.propTypes = {
   disabled: PropTypes.bool,
   icon: PropTypes.oneOf(IconList),
   iconAlign: PropTypes.oneOf(['left', 'right']),
-  href: PropTypes.string.isRequired,
+  href: PropTypes.string, /* TODO: to be deprecated */
   onClick: PropTypes.func,
 };
 

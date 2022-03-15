@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
 import example from './StoryCard.example';
+import { Container, Row, Col } from '../../Grid';
 import StoryCard from './StoryCard';
 
 <Meta
@@ -92,6 +93,51 @@ These type of cards make up most of the interface and are key components for log
   <StoryCard {...example} responsive={false} video={true}>
     {Template.bind({})}
   </StoryCard>
+</Canvas>
+
+## Equal card height when stacked
+
+<Canvas>
+  <Container>
+    <Row>
+      <Col xs={12} sm={12} md={6} lg={4}>
+        <StoryCard
+          {...example}
+          button={{
+            type: 'textlink',
+            label: 'See all artworks',
+          }}
+          responsive={false}
+          equalHeight={true}
+          description='At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas non provident.'
+        />
+      </Col>
+      <Col xs={12} sm={12} md={6} lg={4}>
+        <StoryCard
+          {...example}
+          description={example.description}
+          button={{
+            type: 'textlink',
+            label: 'See all artworks',
+          }}
+          responsive={false}
+          equalHeight={true}
+        />
+      </Col>
+      <Col xs={12} sm={12} md={6} lg={4}>
+        <StoryCard
+          {...example}
+          button={{
+            type: 'textlink',
+            label: 'See all artworks',
+          }}
+          responsive={false}
+          equalHeight={true}
+          description='At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.'
+        />
+      </Col>
+    </Row>
+  </Container>
 </Canvas>
 
 ## Properties

@@ -27,11 +27,16 @@ const StoryCard = ({
   date,
   description,
   button,
+  equalHeight,
 }) => {
   return (
     <BSPCard
       data-testid="mch-story-card"
-      className={classNames('story-card', { responsive, fixed: !responsive })}
+      className={classNames('story-card', {
+        responsive,
+        fixed: !responsive,
+        'equal-height': equalHeight,
+      })}
     >
       <div className="image-frame">
         <MemoizedConditionalWrapper
@@ -83,13 +88,19 @@ const StoryCard = ({
           </MemoizedConditionalWrapper>
         )}
 
-        {/* TODO: <TextLink /> doesn't support custom link wrapper */}
         {button?.type === 'textlink' && (
-          <div className="card-cta">
-            <TextLink href={storyLink} icon="chevron-right" iconAlign="right">
-              {button?.label}
-            </TextLink>
-          </div>
+          <MemoizedConditionalWrapper
+            linkRenderer={linkRenderer}
+            condition={storyLink}
+            link={storyLink}
+          >
+            <div className="card-cta">
+              {/* TODO: remove href={null} when <TextLink /> deprecates it */}
+              <TextLink href={null} icon="chevron-right" iconAlign="right">
+                {button?.label}
+              </TextLink>
+            </div>
+          </MemoizedConditionalWrapper>
         )}
       </BSPCard.Body>
     </BSPCard>
@@ -110,6 +121,7 @@ StoryCard.propTypes = {
     type: PropTypes.oneOf(['primary', 'textlink']).isRequired,
     label: PropTypes.string.isRequired,
   }),
+  equalHeight: PropTypes.bool,
 };
 
 StoryCard.defaultProps = {
@@ -117,6 +129,7 @@ StoryCard.defaultProps = {
   button: null,
   date: null,
   video: false,
+  equalHeight: false,
 };
 
 export default StoryCard;
