@@ -142,7 +142,8 @@
     }
 
     &:not(.selected-state) {
-      .tag, .overlay-eye {
+      .tag,
+      .overlay-eye {
         opacity: 0.75;
       }
       .text-frame {
@@ -239,10 +240,13 @@
 
   .bottom-frame {
     min-height: $spacing-7;
+    // for stacked sector tags in multiple lines
+    align-items: baseline;
+    align-content: baseline;
 
     &-left {
-      .tag:first-child {
-        margin-right: $spacing-3;
+      .tag:not(:last-child) {
+        margin: 0 $spacing-3 $spacing-3 0;
       }
 
       .text-medium {
@@ -252,6 +256,16 @@
 
       a > .text-medium {
         cursor: pointer;
+      }
+    }
+
+    &-right {
+      & > svg {
+        position: relative;
+        top: $spacing-2;
+      }
+      p {
+        white-space: nowrap;
       }
     }
   }

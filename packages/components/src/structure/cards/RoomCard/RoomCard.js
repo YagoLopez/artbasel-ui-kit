@@ -175,7 +175,7 @@ const RoomCard = ({
             </MemoizedConditionalWrapper>
           )}
         </div>
-        <div className="bottom-frame d-flex justify-content-between align-items-center">
+        <div className="bottom-frame d-flex justify-content-between">
           <div className="bottom-frame-left">
             {type === 'hybrid'
               && sectorsData?.length > 0
@@ -202,28 +202,30 @@ const RoomCard = ({
               </MemoizedConditionalWrapper>
             )}
           </div>
-          <div className="bottom-frame-right d-flex align-items-center">
-            {liveChat && !show?.active && (
-              <Icon
-                name="live-chat"
-                size={16}
-                color={
-                  theme === 'dark'
-                    ? 'var(--bs-mch-white)'
-                    : 'var(--bs-mch-black)'
-                }
-              />
-            )}
-            {show?.active && !liveChat && (
-              <Tag
-                type="label"
-                variant="secondary"
-                label={show.label}
-                onClick={show.onClick}
-                theme={theme}
-              />
-            )}
-          </div>
+          {((liveChat && !show?.active) || (show?.active && !liveChat)) && (
+            <div className="bottom-frame-right d-flex align-items-center">
+              {liveChat && !show?.active && (
+                <Icon
+                  name="live-chat"
+                  size={16}
+                  color={
+                    theme === 'dark'
+                      ? 'var(--bs-mch-white)'
+                      : 'var(--bs-mch-black)'
+                  }
+                />
+              )}
+              {show?.active && !liveChat && (
+                <Tag
+                  type="label"
+                  variant="secondary"
+                  label={show.label}
+                  onClick={show.onClick}
+                  theme={theme}
+                />
+              )}
+            </div>
+          )}
         </div>
       </div>
     </BSPCard>
