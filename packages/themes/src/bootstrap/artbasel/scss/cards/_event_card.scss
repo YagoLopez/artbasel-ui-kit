@@ -7,7 +7,7 @@
   padding: $spacing-7;
 
   .type {
-    margin-bottom: $spacing-2;
+    margin-bottom: $spacing-3;
   }
 
   .title {
@@ -84,7 +84,7 @@
   }
 
   .tags {
-    margin: $spacing-7 0 $spacing-3;
+    margin: $spacing-8 0 $spacing-3;
     display: flex;
     & > div {
       margin-right: $spacing-3;
@@ -109,7 +109,7 @@
       background-size: cover;
       border-radius: $spacing-1 $spacing-1 0 0;
       &.ar-16_10 {
-        aspect-ratio: 16 / 10;
+        padding-bottom: 62.5%;
       }
     }
 
@@ -128,11 +128,11 @@
     .image {
       background-size: cover;
       @include media-breakpoint-up(xs) {
-        aspect-ratio: 16 / 10;
+        padding-bottom: 62.5%;
       }
 
       @include media-breakpoint-up(md) {
-        aspect-ratio: 1 / 1;
+        padding-bottom: 100%;
         height: 100%;
         border-radius: 0 $spacing-1 $spacing-1 0;
       }
