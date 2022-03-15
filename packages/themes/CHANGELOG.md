@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.32.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.32.3...@mch-group/uikit-themes@0.32.4) (2022-03-15)
+
+
+### Bug Fixes
+
+* **artwork tile:** fix image aspect ratio and inquiry button width ([73421ed](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/73421edc5d6040cec09502766227cb0a3c848f49))
+* **event card:** fix spacings and image aspect ratio ([c48d6fa](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/c48d6fa6c00a9ef0c3692aa9d9d5484082e50030))
+* **ovr room card:** disable hover fx on native mobile and fix sector tag spacing ([3e4a6e5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/3e4a6e5aaf691a5006d4d7f121d509bde8ed9517))
+* **special room card:** disable hover on native devices ([039c308](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/039c308f495bf441c4d85bc66a49bbe3f94a86f1))
+* **story card:** add linkRenderer to TextLink CTA & equalHeight prop ([15df904](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/15df9040e90fe4d301e09a4797dca615f9885485))
+
+
+
+
+
 ## [0.32.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.32.2...@mch-group/uikit-themes@0.32.3) (2022-03-15)
 
 
