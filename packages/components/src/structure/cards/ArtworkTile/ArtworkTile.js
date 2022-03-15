@@ -134,6 +134,8 @@ const ArtworkTile = ({
               selected: selectMode?.active && isSelected,
             })}
           />
+        </MemoizedConditionalWrapper>
+        <div className="image-wrapper">
           <div
             className="image-frame"
             style={
@@ -146,7 +148,7 @@ const ArtworkTile = ({
               <img src={imageUrl} title={artistName} alt={artistName} />
             )}
           </div>
-        </MemoizedConditionalWrapper>
+        </div>
       </div>
 
       <div className="text-frame">
