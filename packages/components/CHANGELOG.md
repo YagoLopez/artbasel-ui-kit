@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.39.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.39.2...@mch-group/uikit-components@0.39.3) (2022-03-15)
+
+
+### Bug Fixes
+
+* **tooltip:** fixed header title and close icon ([91892f8](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/91892f8d1e8cb0b578ce55fb5e29540b11e02c55))
+
+
+
+
+
 ## [0.39.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.39.1...@mch-group/uikit-components@0.39.2) (2022-03-11)
 
 
