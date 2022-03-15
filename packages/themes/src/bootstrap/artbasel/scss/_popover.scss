@@ -30,12 +30,16 @@
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: bold;
+  overflow: hidden;
 
   .popover-title {
-    padding: 0 0.5rem;
+    width: 85%;
+    padding: 0.5rem 0.5rem;
+    line-height: 1rem;
   }
 
   .btn-close {
+    align-self: flex-start;
     padding: 0 0;
   }
 }
