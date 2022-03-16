@@ -26,6 +26,7 @@ const MegaMenuBuilder = forwardRef(
       loggedCollectionUrl,
       unloggedCollectionUrl,
       searchPlaceholder,
+      logoVariant,
     },
     ref,
   ) => {
@@ -84,7 +85,9 @@ const MegaMenuBuilder = forwardRef(
               unloggedCollectionUrl={unloggedCollectionUrl}
               profileWelcomeHeader={ profileWelcomeHeader }
               onSearch={onSearch}
-              searchPlaceholder={searchPlaceholder}
+              searchPlaceholder={ searchPlaceholder }
+              logoVariant={ logoVariant }
+
             />
           </div>
           <div className="d-lg-none">
@@ -101,7 +104,8 @@ const MegaMenuBuilder = forwardRef(
               loggedCollectionUrl={loggedCollectionUrl}
               unloggedCollectionUrl={ unloggedCollectionUrl }
               onSearch={onSearch}
-              searchPlaceholder={searchPlaceholder}
+              searchPlaceholder={ searchPlaceholder }
+              logoVariant={ logoVariant }
             />
           </div>
           <div className="megamenu-underline d-md-none d-lg-inline" />
@@ -145,6 +149,7 @@ const Megamenu = forwardRef(
       profileWelcomeHeader,
       onSearch,
       searchPlaceholder,
+      logoVariant,
     },
     ref,
   ) => {
@@ -170,7 +175,8 @@ const Megamenu = forwardRef(
         unloggedCollectionUrl={unloggedCollectionUrl}
         ref={ref}
         onSearch={onSearch}
-        searchPlaceholder={searchPlaceholder}
+        searchPlaceholder={ searchPlaceholder }
+        logoVariant={logoVariant}
       />
     );
   },
@@ -192,6 +198,8 @@ MegaMenuBuilder.propTypes = {
   unloggedCollectionUrl: PropTypes.string.isRequired,
   onSearch: PropTypes.func.isRequired,
   searchPlaceholder: PropTypes.string.isRequired,
+  logoVariant: PropTypes.oneOf(['default', 'basel', 'miami', 'hongkong', 'cities']),
+
 };
 
 Megamenu.displayName = 'Megamenu';
@@ -237,11 +245,16 @@ Megamenu.propTypes = {
   /** The placeholder label
   for search fields. */
   searchPlaceholder: PropTypes.string,
+  /** The Artbasel
+  logo variant */
+  logoVariant: PropTypes.oneOf(['default', 'basel', 'miami', 'hongkong', 'cities']),
+
 };
 
 Megamenu.defaultProps = {
   linkRenderer: (link, label) => <a href={ link }>{ label }</a>,
   searchPlaceholder: 'Search for artworks, events, galleries...',
+  logoVariant: 'default',
 };
 
 export default Megamenu;

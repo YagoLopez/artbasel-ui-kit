@@ -24,6 +24,7 @@ const NavbarMobile = ({
   searchPlaceholder,
   visibleMobileNavbar,
   setVisibleMobileNavbar,
+  logoVariant,
 }) => {
   if (!menuData) {
     return null;
@@ -88,10 +89,12 @@ const NavbarMobile = ({
           </Col>
 
           <Col className="ps-3 d-md-none">
-             { linkRenderer(menuData.logoLink, <ArtBaselLogo width={71} height={23} />) }
+            { linkRenderer(menuData.logoLink,
+              <ArtBaselLogo variant={ logoVariant } width={ 71 } height={ 23 } />) }
           </Col>
           <Col className="col-auto ps-5 pe-15 d-none d-md-block">
-             { linkRenderer(menuData.logoLink, <ArtBaselLogo width={117} height={39} />) }
+            { linkRenderer(menuData.logoLink,
+              <ArtBaselLogo variant={ logoVariant } width={ 117 } height={ 39 } />) }
           </Col>
 
           <Col className='col-auto d-md-none'>
@@ -236,6 +239,8 @@ NavbarMobile.propTypes = {
   onSearch: PropTypes.func.isRequired,
   searchPlaceholder: PropTypes.string.isRequired,
   linkRenderer: PropTypes.func.isRequired,
+  logoVariant: PropTypes.oneOf(['default', 'basel', 'miami', 'hongkong', 'cities']),
+
 };
 
 export default NavbarMobile;

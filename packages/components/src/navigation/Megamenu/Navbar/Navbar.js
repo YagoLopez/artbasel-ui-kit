@@ -23,6 +23,7 @@ const Navbar = ({
   scrolled,
   onSearch,
   searchPlaceholder,
+  logoVariant,
 }) => {
   if (!menuData) {
     return null;
@@ -152,7 +153,7 @@ const Navbar = ({
         >
           {linkRenderer(
             menuData.logoLink,
-            <ArtBaselLogo width={130} height={43} />,
+            <ArtBaselLogo variant={logoVariant} width={130} height={43} />,
           )}
         </Col>
         <Col className="col-auto entries-container">
@@ -235,6 +236,8 @@ Navbar.propTypes = {
   scrolled: PropTypes.bool,
   onSearch: PropTypes.func.isRequired,
   searchPlaceholder: PropTypes.string.isRequired,
+  logoVariant: PropTypes.oneOf(['default', 'basel', 'miami', 'hongkong', 'cities']),
+
 };
 
 Navbar.defaultProps = {

@@ -6,7 +6,7 @@ import { withDesign } from 'storybook-addon-designs';
 import ArtBaselLogo from './ArtBaselLogo';
 
 <Meta
-  title="Components/Utils/ArtBaselLogo"
+  title="Components/Utils/Logos/Art Basel"
   component={ArtBaselLogo}
   decorators={[withDesign]}
 />
@@ -15,25 +15,23 @@ import ArtBaselLogo from './ArtBaselLogo';
 
 export const Template = (args) => <ArtBaselLogo {...args} />;
 
-export const argTypes = {
-};
+export const argTypes = {};
 
 <Canvas>
   <Story
-    name="Art Basel Logo"
+    name="Art Basel"
     args={{
       variant: 'default',
       color: 'dark',
       width: 115,
       height: 38,
-     }}
+    }}
     argTypes={argTypes}
     parameters={{
       design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=4117%3A40646',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=4117%3A40646',
       },
     }}
   >
@@ -41,10 +39,9 @@ export const argTypes = {
   </Story>
 </Canvas>
 
-
 ## Variants
 
-<br/>
+<br />
 
 ### Default
 
@@ -74,7 +71,6 @@ export const argTypes = {
   <ArtBaselLogo variant="basel" color="white" />
 </Canvas>
 
-
 ### Hong Kong
 
 <Canvas>
@@ -88,7 +84,6 @@ export const argTypes = {
 >
   <ArtBaselLogo variant="hongkong" color="white" />
 </Canvas>
-
 
 ### Miami
 
@@ -104,7 +99,6 @@ export const argTypes = {
   <ArtBaselLogo variant="miami" color="white" />
 </Canvas>
 
-
 ### Cities
 
 <Canvas>
@@ -118,7 +112,6 @@ export const argTypes = {
 >
   <ArtBaselLogo variant="cities" color="white" />
 </Canvas>
-
 
 ## Properties
 
