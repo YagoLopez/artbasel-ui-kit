@@ -52,6 +52,7 @@ const MenuFlyout = ({
       <div
         className={classnames('megamenu-overlay',
           { visible: visibleMenu !== null && visibleMenu !== PROFILE_FLYOUT })}
+        onMouseEnter={() => setVisibleMenu(null)}
       />
     </>
   );
