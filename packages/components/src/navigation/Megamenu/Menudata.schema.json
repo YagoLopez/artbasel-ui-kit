@@ -12,6 +12,15 @@
       "examples": ["https://artbasel.com"],
       "pattern": "^.*$"
     },
+    "logoVariant": {
+      "$id": "#root/logoVariant",
+      "title": "logoVariant",
+      "type": "string",
+      "default": "default",
+      "enum": ["default", "basel", "miami", "hongkong", "cities"],
+      "examples": ["basel"],
+      "pattern": "^.*$"
+    },
     "entries": {
       "$id": "#root/entries",
       "title": "Entries",

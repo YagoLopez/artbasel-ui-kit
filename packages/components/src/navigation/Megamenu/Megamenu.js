@@ -176,7 +176,7 @@ const Megamenu = forwardRef(
         ref={ref}
         onSearch={onSearch}
         searchPlaceholder={ searchPlaceholder }
-        logoVariant={logoVariant}
+        logoVariant={menuData.logoVariant ?? logoVariant}
       />
     );
   },
@@ -245,10 +245,9 @@ Megamenu.propTypes = {
   /** The placeholder label
   for search fields. */
   searchPlaceholder: PropTypes.string,
-  /** The Artbasel
-  logo variant */
+  /** The Artbasel logo variant.
+  This prop will be ignored if provided in the menuData. */
   logoVariant: PropTypes.oneOf(['default', 'basel', 'miami', 'hongkong', 'cities']),
-
 };
 
 Megamenu.defaultProps = {

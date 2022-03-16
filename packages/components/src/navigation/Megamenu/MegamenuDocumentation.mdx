@@ -138,6 +138,7 @@ This is the menuData used in this Megamenu sample:
 ```json
 {
   "logoLink": "https://artbasel.com",
+  "logoVariant": "defaul",
   "entries": [
     {
       "label": "Fairs",
@@ -492,6 +493,15 @@ This is the JSON schema used by Megamenu to validate the menuData before render 
       "type": "string",
       "default": "",
       "examples": ["https://artbasel.com"],
+      "pattern": "^.*$"
+    },
+    "logoVariant": {
+      "$id": "#root/logoVariant",
+      "title": "logoVariant",
+      "type": "string",
+      "default": "",
+      "enum": ["default", "basel", "miami", "hongkong", "cities"],
+      "examples": ["basel"],
       "pattern": "^.*$"
     },
     "entries": {
