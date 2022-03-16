@@ -1,0 +1,135 @@
+<!--- TextArea.stories.mdx --->
+
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+
+import { TextArea } from '.';
+import TextAreaDemo from './TextArea.demo';
+
+
+<Meta
+  title="Components/Inputs/Text/TextArea"
+  component={TextArea}
+  decorators={[withDesign]}
+/>
+
+# Text Area
+
+export const Template = (args) => <TextAreaDemo {...args} />;
+
+export const argTypes = {
+};
+
+<Canvas>
+  <Story
+    name="TextArea"
+    args={{
+      helpText: 'Helper Text',
+      label: 'label',
+      id: 'text-area-id',
+      name: 'textarea',
+      onChange: () => {},
+      placeholder: 'This is a placeholder',
+      value: '',
+    }}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=502%3A19207',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Options
+
+### Helper Text
+
+<Canvas>
+  <div>
+    <TextArea label="Multiline Label" helpText="Helper Text" countChar={false} />
+  </div>
+</Canvas>
+
+### Character Counter
+
+<Canvas>
+  <div>
+    <TextArea label="Multiline Label" helpText="Helper Text" countChar={true} />
+  </div>
+</Canvas>
+
+## States
+
+### Default
+
+<Canvas>
+  <div>
+    <TextArea label="Multiline Label" helpText="" countChar={false}  />
+  </div>
+</Canvas>
+
+### Hover
+
+<Canvas>
+  <div>
+    <TextArea label="Multiline Label" helpText="" countChar={false} cssInternalPrefix="form-control textarea hover" />
+  </div>
+</Canvas>
+
+### Active
+
+<Canvas>
+  <div>
+    <TextArea label="Multiline Label" helpText="" countChar={false} cssInternalPrefix="form-control textarea active" />
+  </div>
+</Canvas>
+
+### Active (Typing)
+
+<Canvas>
+  <div>
+    <TextArea label="Multiline Label" helpText="" value="Text" countChar={false} cssInternalPrefix="form-control textarea active" />
+  </div>
+</Canvas>
+
+### Active (Scrollbar)
+
+<Canvas>
+  <div>
+    <TextArea label="Multiline Label" helpText="" value="TextasdfsdfasdfasdfasdfasdfasdfajklsndfkjasbndfjkasbdffasdfsdfmaskjdfnakjsdnfkjasndfkljansdfkljansdjkfnjfnfasdfasdfasdfasdfasdfsfsdfdfTextasdfsdfasdfasdfasdfasdfasdfajklsndfkjasbndfjkasbdffasdfsdfmaskjdfnakjsdnfkjasndfkljansdfkljansdjkfnjfnfasdfasdfasdfasdfasdfsfsdfdfTextasdfsdfasdfasdfasdfasdfasdfajklsndfkjasbndfjkasbdffasdfsdfmaskjdfnakjsdnfkjasndfkljansdfkljansdjkfnjfnfasdfasdfasdfasdfasdfsfsdfdfTextasdfsdfasdfasdfasdfasdfasdfajklsndfkjasbndfjkasbdffasdfsdfmaskjdfnakjsdnfkjasndfkljansdfkljansdjkfnjfnfasdfasdfasdfasdfasdfsfsdfdfTextasdfsdfasdfasdfasdfasdfasdfajklsndfkjasbndfjkasbdffasdfsdfmaskjdfnakjsdnfkjasndfkljansdfkljansdjkfnjfnfasdfasdfasdfasdfasdfsfsdfdfTextasdfsdfasdfasdfasdfasdfasdfajklsndfkjasbndfjkasbdffasdfsdfmaskjdfnakjsdnfkjasndfkljansdfkljansdjkfnjfnfasdfasdfasdfasdfasdfsfsdfdf" countChar={false} cssInternalPrefix="form-control textarea active" />
+  </div>
+</Canvas>
+
+### Active (warning)
+
+<Canvas>
+  <div>
+    <TextArea label="Multiline Label" helpText="Helper Text" helpTextType="warning" value="Text" countChar={false} cssInternalPrefix="form-control textarea active" />
+  </div>
+</Canvas>
+
+### Error (Empty)
+
+<Canvas>
+  <div>
+    <TextArea label="Multiline Label" helpText="" helpTextType="danger" value="" countChar={false} cssInternalPrefix="form-control textarea active" />
+  </div>
+</Canvas>
+
+### Error (Count)
+
+<Canvas>
+  <div>
+    <TextArea label="Multiline Label" helpText="Helper Text" helpTextType="danger" value="TextasdfsdfasdfasdfasdfasdfasdfajklsndfkjasbndfjkasbdffasdfsdfmaskjdfnakjsdnfkjasndfkljansdfkljansdjkTextasdfsdfassfsdfdfTextasd" countChar={true} cssInternalPrefix="form-control textarea active" />
+  </div>
+</Canvas>
+
+
+## Properties
+
+<ArgsTable of={TextArea} />
