@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.33.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.32.4...@mch-group/uikit-themes@0.33.0) (2022-03-16)
+
+
+### Features
+
+* textarea component ([de3a1f6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/de3a1f67b2d3896b8a7733877def9c9ef5190639))
+
+
+
+
+
 ## [0.32.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.32.3...@mch-group/uikit-themes@0.32.4) (2022-03-15)
 
 
