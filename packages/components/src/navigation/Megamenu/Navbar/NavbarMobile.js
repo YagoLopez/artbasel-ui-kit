@@ -166,10 +166,12 @@ const NavbarMobile = ({
             />
           </Col>
           <Col className="ps-3 d-md-none">
-             { linkRenderer(menuData.logoLink, <ArtBaselLogo width={71} height={23} />) }
+              { linkRenderer(menuData.logoLink,
+                <ArtBaselLogo variant={ logoVariant } width={ 71 } height={ 23 } />) }
           </Col>
           <Col className="col-auto ps-5 pe-15 d-none d-md-block">
-             { linkRenderer(menuData.logoLink, <ArtBaselLogo width={117} height={39} />) }
+              { linkRenderer(menuData.logoLink,
+                <ArtBaselLogo variant={ logoVariant } width={ 117 } height={ 39 } />) }
           </Col>
         </Row>
       </Container>
