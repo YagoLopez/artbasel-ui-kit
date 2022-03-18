@@ -1,6 +1,7 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
-import example from './ContentCard.example.json';
+import example from './ContentCard.example';
+import { Container, Row, Col } from '../../Grid';
 import ContentCard from './ContentCard';
 
 <Meta
@@ -11,93 +12,24 @@ import ContentCard from './ContentCard';
 
 export const Template = (args) => <ContentCard {...args} />;
 
-export const argTypes = {
-  cssStyles: {
-    table: {
-      category: 'Styles',
-    },
-  },
-  cssInternalPrefix: {
-    table: {
-      category: 'Styles',
-    },
-  },
-  size: {
-    table: {
-      category: 'ContentCard',
-    },
-  },
-  title: {
-    table: {
-      category: 'ContentCard',
-    },
-  },
-  description: {
-    table: {
-      category: 'ContentCard',
-    },
-  },
-  image: {
-    table: {
-      category: 'ContentCard',
-    },
-  },
-};
+# Content Card
 
-export const generalArgs = {
-  title: example.title,
-  description: example.description,
-  image: example.image,
-};
+These type of cards make up most of the interface and are key components for logically grouping page content and making it scalable.
 
-export const truncatedArgs = {
-  title: example.titleLong,
-  description: example.descriptionLong,
-  image: example.image,
-};
+## Default
 
-# ContentCard
-
-Content on image card is one of the different types of content card displayed on the website.
-
-## Variants
-
-### Size S
-
-<Canvas style={{ width: '450px' }}>
+<Canvas className='sb-content-card default'>
   <Story
-    name="ContentCard Size S"
-    args={generalArgs}
-    argTypes={{ argTypes }}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
-      },
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-### Size L
-
-<Canvas style={{ width: '1300px' }}>
-  <Story
-    name="ContentCard Size L"
+    name="ContentCard"
     args={{
-      ...generalArgs,
-      size: 'l',
+      ...example,
     }}
-    argTypes={{ argTypes }}
     parameters={{
       design: {
         name: 'Figma Design',
         type: 'figma',
         url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=7097%3A128486',
       },
     }}
   >
@@ -105,24 +37,80 @@ Content on image card is one of the different types of content card displayed on
   </Story>
 </Canvas>
 
-### Truncated text
+## 1. Variants
 
-<Canvas style={{ width: '450px' }}>
-  <Story
-    name="ContentCard truncated text"
-    args={truncatedArgs}
-    argTypes={{ argTypes }}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=496%3A17721',
-      },
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+### Image
+<Canvas>
+  <ContentCard {...example} responsive={false} />
+</Canvas>
+
+### Video
+<Canvas>
+  <ContentCard {...example} responsive={false} video />
+</Canvas>
+
+## 2. Options
+
+### Subtitle
+
+#### On
+<Canvas>
+  <ContentCard {...example} responsive />
+</Canvas>
+
+#### Off
+<Canvas>
+  <ContentCard {...example} responsive subtitle={null} reverse />
+</Canvas>
+
+### Text Link
+
+#### On
+<Canvas>
+  <ContentCard {...example} responsive />
+</Canvas>
+
+#### Off
+<Canvas>
+  <ContentCard {...example} responsive contentLink={null} />
+</Canvas>
+
+### Reverse Layout
+
+#### Default
+<Canvas>
+  <ContentCard {...example} responsive />
+</Canvas>
+
+#### Reverse
+<Canvas>
+  <ContentCard {...example} responsive reverse />
+</Canvas>
+
+## 3. Behaviors
+
+### Video Poster
+
+When using the video variant, we should place the videos poster image on top of the video container (Youtube, etc.) The poster itself should fade out on click, revealing the video container with controls and begin palying.
+
+<Canvas>
+  <ContentCard {...example} responsive video />
+</Canvas>
+
+<Canvas>
+  <Container>
+    <Row>
+      <Col xs={12} sm={12} md={4} lg={4} className="mb-md-8">
+        <ContentCard {...example} responsive={false} video />
+      </Col>
+      <Col xs={12} sm={12} md={4} lg={4} className="mb-md-8">
+        <ContentCard {...example} responsive={false} video />
+      </Col>
+      <Col xs={12} sm={12} md={4} lg={4} className="mb-md-8">
+        <ContentCard {...example} responsive={false} video />
+      </Col>
+    </Row>
+  </Container>
 </Canvas>
 
 ## Properties

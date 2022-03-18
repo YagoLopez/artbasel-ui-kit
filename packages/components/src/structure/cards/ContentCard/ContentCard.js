@@ -1,63 +1,114 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
-import classnames from 'classnames';
-import { truncateText } from '../../../helpers/truncateText';
+import classNames from 'classnames';
+import { TextLink } from '../../../actions';
+import { Icon } from '../../../utils/Icon';
 
-const truncateValues = {
-  title: 60,
-  description: 180,
+const ConditionalWrapper = ({
+  linkRenderer, condition, link, children,
+}) => {
+  if (condition && typeof linkRenderer === 'function') {
+    return linkRenderer(link, children);
+  }
+  return children;
 };
 
-const ContentCard = ({
-  size,
-  title,
-  image,
-  description,
-  cssInternalPrefix,
-  cssStyles,
-}) => {
-  const truncated = {
-    title: truncateText(title, truncateValues.title),
-    description: truncateText(description, truncateValues.description),
-  };
+const MemoizedConditionalWrapper = memo(ConditionalWrapper);
 
+const ContentCard = ({
+  responsive,
+  linkRenderer,
+  contentLink,
+  image,
+  video,
+  title,
+  subtitle,
+  description,
+  button,
+  reverse,
+}) => {
   return (
     <BSPCard
       data-testid="mch-content-card"
-      bsPrefix={cssInternalPrefix}
-      style={cssStyles}
-      className={classnames('content-card', `size-${size}`)}
+      className={classNames('content-card', {
+        responsive,
+        fixed: !responsive,
+        reverse,
+      })}
     >
-      <div className="gradient" />
-      <img src={image} alt="picture" />
-      <BSPCard.Body>
-        <BSPCard.Title>
-          {truncated.title.text}
-          {truncated.title.state && <span title={title}>...</span>}
-        </BSPCard.Title>
-        <BSPCard.Text className="card-description">
-          {truncated.description.text}
-          {truncated.description.state && <span title={description}>...</span>}
-        </BSPCard.Text>
-      </BSPCard.Body>
+      <div className="image-frame">
+        <MemoizedConditionalWrapper
+          linkRenderer={linkRenderer}
+          condition={contentLink}
+          link={contentLink}
+        >
+          {video && (
+            <div className="overlay-video">
+              <Icon name="play" height={40} width={40} color="white" />
+            </div>
+          )}
+          <div className="overlay-fill" />
+          <div
+            style={{ backgroundImage: `url(${image})` }}
+            className={classNames('image', { 'ar-16_9': !responsive })}
+          />
+        </MemoizedConditionalWrapper>
+      </div>
+
+      <MemoizedConditionalWrapper
+        linkRenderer={linkRenderer}
+        condition={contentLink}
+        link={contentLink}
+      >
+        <BSPCard.Body>
+          <BSPCard.Text className="card-title" title={title}>
+            {title}
+          </BSPCard.Text>
+          {subtitle && (
+            <BSPCard.Text className="card-subtitle">{subtitle}</BSPCard.Text>
+          )}
+          <BSPCard.Text
+            className="card-description"
+            title={description}
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
+          {button?.type === 'textlink' && contentLink && (
+            <div className="card-cta">
+              {/* TODO: remove href={null} when <TextLink /> deprecates it */}
+              <TextLink href={null} icon="chevron-right" iconAlign="right">
+                {button?.label}
+              </TextLink>
+            </div>
+          )}
+        </BSPCard.Body>
+      </MemoizedConditionalWrapper>
     </BSPCard>
   );
 };
 
 ContentCard.propTypes = {
-  size: PropTypes.oneOf(['s', 'l']),
+  responsive: PropTypes.bool,
+  linkRenderer: PropTypes.func,
+  contentLink: PropTypes.string,
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  video: PropTypes.bool,
+  subtitle: PropTypes.string,
   description: PropTypes.string.isRequired,
-  cssInternalPrefix: PropTypes.string,
-  cssStyles: PropTypes.string,
+  button: PropTypes.shape({
+    type: PropTypes.oneOf(['primary', 'textlink']).isRequired,
+    label: PropTypes.string.isRequired,
+  }),
+  reverse: PropTypes.bool,
 };
 
 ContentCard.defaultProps = {
-  size: 's',
-  cssInternalPrefix: 'card',
-  cssStyles: null,
+  responsive: false,
+  button: null,
+  subtitle: null,
+  video: false,
+  reverse: false,
 };
 
 export default ContentCard;
