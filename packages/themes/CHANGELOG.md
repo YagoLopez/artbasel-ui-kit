@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.33.0...@mch-group/uikit-themes@0.34.0) (2022-03-18)
+
+
+### Features
+
+* add videoPlayer component ([4de08c2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/4de08c20005fb0425f16973bb7ffc74e3ee0a748))
+* **radiobuttonfield:** added disabled state ([ef56a0d](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/ef56a0d8b000cf8527ef9bb37f9d160ef232aa12))
+
+
+
+
+
 # [0.33.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.32.4...@mch-group/uikit-themes@0.33.0) (2022-03-16)
 
 
