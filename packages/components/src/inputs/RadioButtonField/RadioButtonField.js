@@ -13,13 +13,14 @@ const RadioButtonField = ({
   checked,
   className,
   name,
+  disabled,
   ...props
 }) => (
   <label
     data-testid="mch-radio-button-field"
     tabIndex={tabIndex}
     className={classNames('radioButtonField-container', className, {
-      focus: checked,
+      focus: checked, disabled,
     })}
     htmlFor={id}
   >
@@ -29,15 +30,16 @@ const RadioButtonField = ({
         id={id}
         label={title}
         onChange={onChange}
-        name={name}
+        name={ name }
+        disabled={disabled}
         {...props}
       />
-      <div className="radio-label-container">
-        <p className="text-label-large">{title}</p>
-        <p className="text-small descriptor-text">{description}</p>
+      <div className={classNames('radio-label-container', { disabled })}>
+        <p className='text-label-large'>{title}</p>
+        <p className={classNames('text-small descriptor-text', { disabled })}>{description}</p>
       </div>
     </div>
-    <div className="radio-price-container">
+      <div className={classNames('radio-label-container', { disabled })}>
       <p className="text-label-xlarge">{priceLabel}</p>
     </div>
   </label>
@@ -53,6 +55,7 @@ RadioButtonField.propTypes = {
   tabIndex: PropTypes.number,
   className: PropTypes.string,
   name: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 
 RadioButtonField.defaultProps = {
