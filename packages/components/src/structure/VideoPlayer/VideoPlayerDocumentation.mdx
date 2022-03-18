@@ -1,0 +1,251 @@
+import { ArgsTable } from '@storybook/addon-docs';
+import VideoPlayer from './VideoPlayer';
+
+# VideoPlayer component
+
+## Usage
+
+Import the VideoPlayer component and the style css:
+
+```javascript
+import { VideoPlayer } from '@mch-group/uikit-components';
+```
+
+```jsx
+<div style={{width: '600px', height: '400px'}}>
+  <VideoPlayer
+    url="https://www.youtube.com/watch?v=QvTeMQpdf5g&ab_channel=NatureZilla"
+    startOnMouseEnter
+  />
+</div>
+```
+
+## Properties
+
+<ArgsTable of={VideoPlayer} />
+
+### Options
+
+### `startOnMouseEnter`
+
+_boolean - true_
+
+Set true or false to start playing the video on hover
+
+### `pauseOnMouseLeave`
+
+_boolean - false_
+
+Set true or false to pause the video after hover
+
+### `url`
+
+The url of a video can be a string, an array or MediaStream object
+
+### `playing`
+
+_boolean - false_
+
+Set to true or false to pause or play the media.
+This prop is changed dinamically on mouseEnter and MouseLeave events
+
+### `loop`
+
+_boolean - false_
+
+Set to true or false to loop the media
+
+### `controls`
+
+_boolean - false_
+
+Set to true or false to display native player controls.
+For Vimeo videos, hiding controls must be enabled by the video owner.
+
+### `light`
+
+_boolean - false_
+
+Set to true to show just the video thumbnail, which loads the full player on click.
+Pass in an image URL to override the preview image
+
+### `volume`
+
+_number - null_
+
+Set the volume of the player, between 0 and 1.
+null uses default volume on all players
+
+### `muted`
+
+_boolean - false_
+
+Mutes the player.
+Only works if volume is set
+
+### `playbackRate`
+
+_number - 1_
+
+Set the playback rate of the player.
+Only supported by YouTube, Wistia, and file paths
+
+### `width` 
+
+_number or string - 100%_
+
+Accepts a number to se as pixels or string for responsiveness
+
+### `height` 
+
+_number or string - 100%_
+
+Accepts a number to se as pixels or string for responsiveness
+
+### `style`
+
+_object - {}_
+
+Add inline styles to the root element
+
+### `progressInterval`
+
+_number - 1000_
+
+The time between onProgress callbacks, in milliseconds
+
+### `playsinline`
+
+_boolean - false_
+
+Applies the playsinline attribute where supported
+
+### `pip`
+
+_boolean - false_
+
+Set to true or false to enable or disable picture-in-picture mode.
+Only available when playing file URLs in certain browsers
+
+### `stopOnUnmount`
+
+_boolean - true_
+
+If you are using pip you may want to use stopOnUnmount={false} to continue playing in picture-in-picture mode even after ReactPlayer unmounts
+
+### `fallback`
+
+Element or component to use as a fallback if you are using lazy loading
+
+### `wrapper`
+
+Element or component to use as the container element
+
+### `playIcon`
+
+Element or component to use as the play icon in light mode
+
+### `previewTabIndex`
+
+_number - 0_
+
+Set the tab index to be used on light mode
+
+### `config`
+
+Override options for the various players.
+
+#### There is a single config prop to override settings for each type of player:
+
+```jsx
+<VideoPlayer
+  url={url}
+  config={{
+    youtube: {
+      playerVars: { showinfo: 1 }
+    },
+    facebook: {
+      appId: '12345'
+    },
+  }}
+/>
+```
+
+#### Settings for each player live under different keys:
+
+| key | options |
+|-----|---------|
+| youtube | playerVars: Override the default player vars  <br /> embedOptions: Override the default embed options <br/> onUnstarted: Called when state changes to unstarted (usually when video fails to autoplay) |
+| facebook | appId: Your own Facebook app ID <br /> version: Facebook SDK version <br /> playerId: Override player ID for consistent server-side rendering (use with react-uid) <br /> attributes: Extra data attributes to pass to the fb-video element|
+| soundcloud | options: Override the default player options |
+| vimeo | playerOptions: Override the default params <br /> title: Set the player iframe title attribute |
+| wistia | options: Override the default player options <br /> playerId: Override player ID for consistent server-side rendering (use with react-uid) |
+| mixcloud | options: Override the default player options |
+| dailymotion | params: Override the default player vars |
+| twitch | options: Override the default player options <br /> playerId: Override player ID for consistent server-side rendering (use with react-uid) |
+| file | attributes: Apply element attributes <br /> forceVideo: Always render a `<video>` element <br /> forceAudio: Always render an `<audio>` element <br /> forceHLS: Use hls.js for HLS streams <br /> forceDASH: Always use dash.js for DASH streams <br /> forceFLV: Always use flv.js <br /> hlsOptions: Override the default hls.js options <br /> hlsVersion: Override the hls.js version loaded from jsdelivr, default: 0.13.1 <br /> dashVersion: Override the dash.js version loaded from cdnjs, default: 2.9.2 <br /> flvVersion: Override the flv.js version loaded from jsdelivr, default: 1.5.0 |
+
+### `onReady`
+
+Called when media is loaded and ready to play. If playing is set to true, media will play immediately
+
+### `onStart`
+
+Called when media starts playing
+
+### `onPlay`
+
+Called when media starts or resumes playing after pausing or buffering
+
+### `onProgress`
+
+Callback containing played and loaded progress as a fraction, and playedSeconds and loadedSeconds in seconds.
+eg { played: 0.12, playedSeconds: 11.3, loaded: 0.34, loadedSeconds: 16.7 }
+
+### `onDuration`
+
+Callback containing duration of the media, in seconds
+
+### `onPause`
+
+Called when media is paused
+
+### `onBuffer`
+
+Called when media starts buffering
+
+### `onBufferEnd`
+
+Called when media has finished buffering.
+Works for files, YouTube and Facebook
+
+### `onSeek`
+
+Called when media seeks with seconds parameter
+
+### `onPlaybackRateChange`
+
+Called when playback rate of the player changed.
+Only supported by YouTube, Wistia, and file paths
+
+### `onEnded`
+
+Called when media finishes playing.,
+Does not fire when loop is set to true
+
+### `onError`
+
+Called when an error occurs whilst attempting to play media
+
+### `onClickPreview`
+
+Called when user clicks the light mode preview
+
+### `onEnablePIP`
+
+Called when picture-in-picture mode is enabled
+
+### `onDisablePIP`
+
+Called when picture-in-picture mode is disabled
+

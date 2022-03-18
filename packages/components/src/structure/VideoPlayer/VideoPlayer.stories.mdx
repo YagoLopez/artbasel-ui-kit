@@ -1,0 +1,55 @@
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+import { Container, Row, Col } from '../../index';
+import VideoPlayer from './VideoPlayer';
+import documentation from './VideoPlayerDocumentation.mdx';
+
+<Meta
+  title="Components/Structure/Video Player/Video Player"
+  component={VideoPlayer}
+  decorators={[withDesign]}
+/>
+
+export const youtubeVideo = "https://www.youtube.com/watch?v=TEO4G_f7V78&t=2228s&ab_channel=NatureZilla";
+export const vimeoVideo = "https://vimeo.com/112836958";
+
+export const Template = (args) => (
+  <Container>
+    <Row
+      gutter="gx-lg-8 gx-md-7 mb-xs-8"
+      style={{height: '400px', width: '100%'}}
+    >
+      <Col>
+        <VideoPlayer url={youtubeVideo} {...args} />
+      </Col>
+      <Col>
+        <VideoPlayer url={vimeoVideo} {...args} />
+      </Col>
+    </Row>
+  </Container>
+);
+
+# Video Player
+
+<Canvas>
+  <Story
+    name="Video Player"
+    args={{
+      controls: true,
+      startOnMouseEnter: true,
+      loop: true,
+      width: '100%',
+      height: '100%',
+      playing: false,
+    }}
+    parameters={{
+      docs: {
+        page: documentation,
+      }
+    }}
+  >
+  {Template.bind({})}
+  </Story>
+</Canvas>
+
+
