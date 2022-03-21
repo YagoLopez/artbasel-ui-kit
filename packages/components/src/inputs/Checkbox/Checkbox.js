@@ -18,10 +18,11 @@ const Checkbox = ({
   onChange,
   value,
   name,
+  theme,
 }) => (
   <Form.Check
     data-testid="mch-checkbox"
-    className={classNames({ disabled }, className, `align-${align}`)}
+    className={classNames({ disabled }, className, `align-${align}`, theme)}
     checked={checked}
     style={cssStyles}
     disabled={disabled}
@@ -41,6 +42,7 @@ const Checkbox = ({
 Checkbox.propTypes = {
   align: PropTypes.oneOf(['left', 'right']),
   name: PropTypes.string,
+  theme: PropTypes.oneOf(['light', 'dark']),
   checked: PropTypes.bool,
   className: PropTypes.string,
   cssStyles: PropTypes.string,
@@ -56,6 +58,7 @@ Checkbox.propTypes = {
 };
 
 Checkbox.defaultProps = {
+  theme: 'light',
   align: 'right',
   cssInternalPrefix: 'form-check',
   disabled: false,

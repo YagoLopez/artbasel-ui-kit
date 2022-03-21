@@ -63,6 +63,20 @@ export const argTypes = {
 
 ## Options
 
+### Themes
+
+### Light
+
+<Canvas>
+  <Checkbox checked={false} id="label-left-align" theme="light" label="Label" />
+</Canvas>
+
+### Dark
+
+<Canvas style={{backgroundColor: 'black'}}>
+  <Checkbox checked={false} id="label-left-align" theme="dark" label="Label" />
+</Canvas>
+
 ### Label Placement
 
 Label can be aligned to the left and the right.
@@ -117,6 +131,7 @@ Label text will automatically wrapped to fit the parent container. Additionally,
 </Canvas>
 
 ## States
+### Light Theme
 
 <Canvas>
   <div>
@@ -129,13 +144,28 @@ Label text will automatically wrapped to fit the parent container. Additionally,
     Disabled
     <Checkbox disabled={true} id="state-disabled" label="Label" />
     <br />
-    Focus
-    <Checkbox
-      checked={false}
-      id="state-focus"
-      label="Label"
-      className="focus"
-    />
+    Disabled (active)
+    <Checkbox disabled={true} checked={true} id="state-active"label="Label" />
+    <br />
+  </div>
+</Canvas>
+
+### Dark Theme
+
+<Canvas style={{backgroundColor: 'black'}}>
+  <div>
+    <p style={{color: 'white'}}> Default </p>
+    <Checkbox theme="dark" checked={false} id="state-default" label="Label" />
+    <br />
+    <p style={{color: 'white'}}> Active </p>    
+    <Checkbox theme="dark" checked={true} id="state-active" label="Label" />
+    <br />
+    <p style={{color: 'white'}}>Disabled </p> 
+    <Checkbox theme="dark" disabled={true} id="state-disabled" label="Label" />
+    <br />
+    <p style={{color: 'white'}}>Disabled (active)</p> 
+    <Checkbox theme="dark" disabled={true} checked={true} id="state-active"label="Label" />
+    <br />
   </div>
 </Canvas>
 
