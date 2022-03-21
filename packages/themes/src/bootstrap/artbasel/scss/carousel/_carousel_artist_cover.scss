@@ -16,6 +16,7 @@
     flex-direction: column;
     flex: 1;
 
+
     .card-title {
       font-family: $headings-font-family;
       color: $color-mch-white;
@@ -32,11 +33,20 @@
       color: $color-mch-white;
     }
 
-    .btn-link {   
+    .btn-link {
       align-self: flex-start;
       font-size: 1rem;
       margin-top: auto;
       z-index: 2;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      transition: 0.5s;
+    }
+
+    &:hover {
+      .btn-link {
+        text-decoration-color: white;
+      }
     }
   }
   
