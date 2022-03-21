@@ -25,11 +25,12 @@ textarea::-webkit-resizer {
 
 .form-control {
   &.textarea {
-    height: 6.2rem;
+    height: 4.68rem;
     border-width: 0 0 1px !important;
     border-radius: 0px;
     padding-left: 0;
     padding-top: 0px !important;
+    padding-bottom: 0px !important;
     font-size: 0.875rem;
     border-color: $color-mch-gray-300;
     -moz-appearance: textfield;
