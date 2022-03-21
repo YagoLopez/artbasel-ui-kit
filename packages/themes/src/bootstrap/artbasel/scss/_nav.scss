@@ -80,16 +80,25 @@
 }
 
 .entries-container {
-  .menu-entries,
+  .menu-entries-edge {
+    height: 36px;
+  }
+
+  .menu-entries {
+    position: relative;
+    height: 102px;
+  }
   .nav-entry {
     position: relative;
+    height: 30px;
+    padding-bottom: 0px;
   }
 
   .col-underline,
   .underline-text {
     width: 0px;
     position: absolute;
-    bottom: 2px;
+    bottom: -34px;
     left: 0;
     height: 2px;
     background-color: black;
@@ -97,6 +106,7 @@
   }
 
   .underline-text {
+    bottom: 2px;
     opacity: 0;
     transform: translateX(0);
   }

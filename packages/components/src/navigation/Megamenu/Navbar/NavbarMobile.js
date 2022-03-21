@@ -14,7 +14,6 @@ const NavbarMobile = ({
   menuData,
   profileData,
   setVisibleMenu,
-  onLogout,
   userData,
   profileWelcomeHeader,
   loggedCollectionUrl,
@@ -211,7 +210,6 @@ const NavbarMobile = ({
       { showSearchBar && <div className='mobile-search-overlay' /> }
       <ProfileMobile
         profileData = { profileData }
-        onLogout = {onLogout}
         isVisible = {visibleProfile}
         setIsVisible = {setVisibleProfile}
         userData= { userData }
@@ -229,7 +227,6 @@ NavbarMobile.propTypes = {
   setVisibleMenu: PropTypes.func.isRequired,
   visibleMobileNavbar: PropTypes.string,
   setVisibleMobileNavbar: PropTypes.func.isRequired,
-  onLogout: PropTypes.func.isRequired,
   userData: PropTypes.shape({
     name: PropTypes.string.isRequired,
     vipStatus: PropTypes.bool.isRequired,

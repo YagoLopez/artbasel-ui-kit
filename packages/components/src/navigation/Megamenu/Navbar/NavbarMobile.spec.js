@@ -8,14 +8,12 @@ const linkRenderer = (link, label) => <a href={ link }>{ label }</a>;
 
 describe('NavbarMobile component', () => {
   const isUserLoggedIn = true;
-  const onLogout = jest.fn();
   const setVisibleMenu = jest.fn();
   const setVisibleMobileNavbar = jest.fn();
   const data = {
     menuData,
     profileData: { entries: [] },
     setVisibleMenu,
-    onLogout,
     userData: {
       name: 'User',
       vipStatus: false,

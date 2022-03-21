@@ -120,7 +120,6 @@ const Navbar = ({
       } else {
         showColLine(key, element);
       }
-
       setUnderLinePosition(key);
     }
   };
@@ -158,24 +157,28 @@ const Navbar = ({
         </Col>
         <Col className="col-auto entries-container">
           <Row gutter="g-0" className="menu-entries">
+            <div className="menu-entries-edge" onMouseEnter={() => setVisibleMenu(null)}/>
             {menuData.entries.map((entry) => {
               const width = 10 * (entry.label.length > 7 ? entry.label.length : 7) - 10;
               const key = createNavLinks(width, !!entry.flyout);
               return (
                 <Col
-                  className="col-auto d-flex align-items-center text-centerm nav-entry"
+                  className="col-auto d-flex align-items-center text-center nav-entry"
                   key={entry.label}
-                  onMouseEnter={(e) => handleEntryMouseEnter(e, entry, key)}
+onMouseEnter={(e) => handleEntryMouseEnter(e, entry, key)}
                   onMouseLeave={(e) => handleMouseLeave(e)}
-                  style={{ width: `${width}px`, height: '102px' }}
+                  style={{ width: `${width}px` }}
                 >
-                  <div className="m-auto navlink">
+                  <div className="m-auto navlink" >
                     {linkRenderer(entry.link, entry.label)}
                   </div>
                   <div className="col-underline" />
                 </Col>
               );
-            })}
+            }) }
+
+            <div className="menu-entries-edge" />
+
             <div ref={underLineTextRef} className="underline-text" />
           </Row>
         </Col>

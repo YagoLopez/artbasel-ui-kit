@@ -28,7 +28,6 @@ const MenuFlyout = ({
             ) }
 
               key={entry.label}
-              onMouseLeave={() => setVisibleMenu(null)}
             >
             <Container
             className={classnames(
