@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.34.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.34.3...@mch-group/uikit-themes@0.34.4) (2022-03-21)
+
+
+### Bug Fixes
+
+* **card-artist-cover:** carousel artist and cover hover fixed ([2e48958](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/2e489580c296ed6fe225a010a59174970b1ed4f4))
+
+
+
+
+
 ## [0.34.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.34.2...@mch-group/uikit-themes@0.34.3) (2022-03-21)
 
 **Note:** Version bump only for package @mch-group/uikit-themes
