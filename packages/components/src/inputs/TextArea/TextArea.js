@@ -10,6 +10,7 @@ const textClassName = {
 
 const TextArea = ({
   label,
+  placeholder,
   disabled,
   name,
   id,
@@ -51,7 +52,7 @@ const TextArea = ({
           style={cssStyles}
           readOnly={readOnly}
           defaultValue="Hello!"
-          placeholder={label}
+          placeholder={placeholder}
           onChange={onChange}
           value={value}
           data-testid={dataTestId}
@@ -68,18 +69,14 @@ const TextArea = ({
           className={textClassName[!countError ? helpTextType : 'danger']}
           as="div"
           data-testid="help-text"
-        >
-          {helpText}
-        </FormText>
+        >{helpText}</FormText>
       )}
       {countChar && (
         <FormText
           className={textClassName[!countError ? 'muted' : 'danger']}
           as="div"
           data-testid="help-text"
-        >
-          {count}/{maxCharacters}
-        </FormText>
+        >{count}/{maxCharacters}</FormText>
       )}
       </div>
     </div>
@@ -88,6 +85,7 @@ const TextArea = ({
 
 TextArea.propTypes = {
   label: PropTypes.string,
+  placeholder: PropTypes.string,
   id: PropTypes.string,
   name: PropTypes.string,
   cssInternalPrefix: PropTypes.string,
@@ -107,6 +105,7 @@ TextArea.propTypes = {
 
 TextArea.defaultProps = {
   label: 'label',
+  placeholder: 'placeholder',
   id: 'floatingInput',
   helpText: 'Helper Text',
   value: '',

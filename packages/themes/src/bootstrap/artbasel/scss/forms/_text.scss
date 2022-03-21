@@ -29,6 +29,7 @@ textarea::-webkit-resizer {
     border-width: 0 0 1px !important;
     border-radius: 0px;
     padding-left: 0;
+    padding-top: 0px !important;
     font-size: 0.875rem;
     border-color: $color-mch-gray-300;
     -moz-appearance: textfield;
@@ -105,11 +106,10 @@ textarea::-webkit-resizer {
     }
 
     &:focus::placeholder {
-      display: none;
-    }
+     color: $color-mch-gray-300;
+    } 
 
     & ~ label {
-      top: 30px;
       height: auto;
       padding: 0;
       line-height: 1.125rem;
