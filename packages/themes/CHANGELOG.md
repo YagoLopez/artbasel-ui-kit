@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.34.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.34.1...@mch-group/uikit-themes@0.34.2) (2022-03-21)
+
+
+### Bug Fixes
+
+* (textarea): placeholder and padding while writing ([fe07e28](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/fe07e2871a9b8635565a2e0f00f12174afd6838b))
+
+
+
+
+
 ## [0.34.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.34.0...@mch-group/uikit-themes@0.34.1) (2022-03-18)
 
 **Note:** Version bump only for package @mch-group/uikit-themes
