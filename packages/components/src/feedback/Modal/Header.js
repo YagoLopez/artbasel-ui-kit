@@ -11,7 +11,7 @@ const Header = ({
       {filter ? (
         <h5 className="modal-title">{title}</h5>
       ) : (
-        <h3 className="modal-title">{title}</h3>
+        <h4 className="modal-title">{title}</h4>
       )}
       {subline && <p className="modal-subline mb-0">{subline}</p>}
     </div>
