@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.34.8](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.34.7...@mch-group/uikit-themes@0.34.8) (2022-03-23)
+
+
+### Bug Fixes
+
+* (checkbox): update light theme background default color to white ([b779b91](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/b779b91c5f0edcd1d894cabcfaea63d3cdf2497a))
+
+
+
+
+
 ## [0.34.7](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.34.6...@mch-group/uikit-themes@0.34.7) (2022-03-22)
 
 **Note:** Version bump only for package @mch-group/uikit-themes
