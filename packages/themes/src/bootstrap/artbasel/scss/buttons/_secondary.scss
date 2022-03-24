@@ -1,12 +1,9 @@
 .btn-secondary {
   text-transform: uppercase;
-  color: $color-mch-black;
-  background-color: $color-mch-white;
-  border-color: $color-mch-black;
   box-shadow: none;
   //added to fix incorrect line height of the font
   padding-bottom: 8px;
-
+  
   &::before {
     @include transition-mix();
 
@@ -17,16 +14,11 @@
     transform: translate(-50%, -50%) scale(0);
     transform-origin: center center;
 
-    background-color: $color-mch-gray-100;
     border-radius: 50%;
   }
 
   &:hover,
   &.hover {
-    color: $color-mch-black;
-    background-color: $color-mch-gray-100;
-    border-color: $color-mch-black;
-
     &::before {
       transform: translate(-50%, -50%) scale(1);
       opacity: 1;
@@ -38,30 +30,104 @@
     }
   }
 
-  &:disabled,
-  &.disabled {
+  svg {
+    //added to fix incorrect line height of the font
+    margin-bottom: -2px;
+  }
+
+  &.light {
+    color: $color-mch-black;
     background-color: $color-mch-white;
-    color: $color-mch-gray-400;
-    border-color: $color-mch-gray-400 !important;
+    border-color: $color-mch-black;
+
+    &::before {
+      background-color: $color-mch-gray-100;
+    }
+
+    &:hover,
+    &.hover {
+      color: $color-mch-black;
+      background-color: $color-mch-gray-100;
+      border-color: $color-mch-black;
+    }
+
+    &:disabled,
+    &.disabled {
+      background-color: $color-mch-white;
+      color: $color-mch-gray-400;
+      border-color: $color-mch-gray-400;
+
+      svg {
+        fill: $color-mch-gray-400;
+      }
+    }
+
+    &:focus {
+      background-color: $color-mch-white;
+      border-color: $color-mch-black;
+    }
+    
+    &:focus-visible,
+    &.focus {
+      background-color: $color-mch-gray-200;
+      border-color: $color-mch-black;
+    }
 
     svg {
-      fill: $color-mch-gray-400;
+    fill: $color-mch-black;
     }
   }
 
-  &:focus {
-    background-color: $color-mch-white;
-    border-color: $color-mch-black;
-  }
-  &:focus-visible,
-  &.focus {
-    background-color: $color-mch-gray-200;
-    border-color: $color-mch-black;
-  }
+  &.dark {
+    color: $color-mch-white;
+    background-color: transparent;
+    border-color: $color-mch-white;
 
-  svg {
-    fill: $color-mch-black;
-    //added to fix incorrect line height of the font
-    margin-bottom: -2px;
+    &::before {
+      background-color: $color-mch-gray-100;
+    }
+
+    &:hover,
+    &.hover {
+      color: $color-mch-black;
+      background-color: $color-mch-gray-100;
+      border-color: $color-mch-gray-100;
+
+      svg {
+        fill: $color-mch-black;
+      }
+    }
+
+    &:disabled,
+    &.disabled {
+      color: $color-mch-gray-400;
+      border-color: $color-mch-gray-400;
+
+      svg {
+        fill: $color-mch-gray-400;
+      }
+    }
+
+    &:focus,
+    .focus {
+      color: $color-mch-black;
+      background-color: $color-mch-gray-100;
+      border-color: $color-mch-gray-100;
+
+      svg {
+        fill: $color-mch-black;
+      }
+    }
+
+    &:focus-visible,
+    &.focus {
+      background-color: $color-mch-gray-100;
+      border-color: $color-mch-gray-100;
+      color: $color-mch-black;
+    }
+
+    svg {
+      fill: $color-mch-white;
+    }
   }
 }

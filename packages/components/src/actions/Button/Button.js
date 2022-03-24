@@ -16,12 +16,13 @@ const Button = ({
   size,
   type,
   variant,
+  theme,
 }) => (
   <BSPButton
     data-testid="mch-button"
     className={classNames(`size-${size}`, className, {
       [`icon-${iconAlign}`]: icon,
-    })}
+    }, theme)}
     style={cssStyles}
     onClick={onClick}
     disabled={disabled}
@@ -50,6 +51,7 @@ Button.propTypes = {
   iconAlign: PropTypes.oneOf(['left', 'right']),
   onClick: PropTypes.func,
   size: PropTypes.oneOf(['compact', 'dynamic']),
+  theme: PropTypes.oneOf(['light', 'dark']),
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   variant: PropTypes.oneOf(['primary', 'secondary']),
 };
@@ -61,6 +63,7 @@ Button.defaultProps = {
   variant: 'primary',
   onClick: () => {},
   size: 'dynamic',
+  theme: 'light',
 };
 
 export default Button;

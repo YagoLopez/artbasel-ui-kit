@@ -1,11 +1,7 @@
 .btn-primary {
   text-transform: uppercase;
-  color: $color-mch-white;
-  background-color: $color-mch-black;
-  border-color: $color-mch-black;
   border: none;
   box-shadow: none;
-  //added to fix incorrect line height of the font
   padding-bottom: 8px;
 
   &::before {
@@ -18,15 +14,11 @@
     transform: translate(-50%, -50%) scale(0);
     transform-origin: center center;
 
-    background-color: $color-mch-gray-500;
     border-radius: 50%;
   }
 
   &:hover,
   &.hover {
-    color: $color-mch-white;
-    background-color: $color-mch-gray-500;
-
     &::before {
       transform: translate(-50%, -50%) scale(1);
       opacity: 1;
@@ -38,29 +30,102 @@
     }
   }
 
-  &:disabled,
-  &.disabled {
-    background-color: $color-mch-gray-300 !important;
-    border-color: $color-mch-gray-300 !important;
+  svg {
+    //added to fix incorrect line height of the font
+    margin-bottom: -2px;
+  }
 
+  &.light{
+    color: $color-mch-white;
+    background-color: $color-mch-black;
+    border-color: $color-mch-black;
+
+    &::before {
+      background-color: $color-mch-gray-500;
+    }
+  
+    &:hover,
+    &.hover {
+      color: $color-mch-white;
+      background-color: $color-mch-gray-500;
+    }
+    
+    &:focus {
+      background-color: $color-mch-black;
+    }
+  
+    &:focus-visible,
+    &.focus {
+      background-color: $color-mch-gray-500;
+      border-color: $color-mch-gray-500;
+    }
+  
+    &:disabled,
+    &.disabled {
+      background-color: $color-mch-gray-300;
+      border-color: $color-mch-gray-300;
+  
+      svg {
+        fill: $color-mch-white;
+      }
+    }
+  
     svg {
       fill: $color-mch-white;
     }
   }
 
-  &:focus {
-    background-color: $color-mch-black;
-  }
-
-  &:focus-visible,
-  &.focus {
-    background-color: $color-mch-gray-500;
-    border-color: $color-mch-gray-500;
-  }
-
-  svg {
-    fill: $color-mch-white;
+  &.dark{
+    color: $color-mch-black;
+    background-color: $color-mch-white;
+    border-color: $color-mch-white;
     //added to fix incorrect line height of the font
-    margin-bottom: -2px;
+
+    &::before {
+      background-color: $color-mch-gray-100;
+    }
+  
+    &:hover,
+    &.hover {
+      background-color: $color-mch-gray-100;
+
+      svg {
+        fill: $color-mch-black;
+      }
+    }
+  
+    &:disabled,
+    &.disabled {
+      color: $color-mch-gray-400;
+      background-color: $color-mch-gray-300;
+      border-color: $color-mch-gray-300;
+  
+      svg {
+        fill: $color-mch-white;
+      }
+    }
+  
+    &:focus,
+    .focus {
+      background-color: $color-mch-gray-100;
+
+      svg {
+        fill: $color-mch-black;
+      }
+    }
+  
+    &:focus-visible,
+    &.focus {
+      background-color: $color-mch-gray-100;
+      border-color: $color-mch-gray-100;
+
+      svg {
+        fill: $color-mch-black;
+      }
+    }
+  
+    svg {
+      fill: $color-mch-black;
+    }
   }
 }

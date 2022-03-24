@@ -99,17 +99,21 @@ All buttons provide visual feedback when clicked or tapped in the form of a resp
 
 The filled-out primary button is used for the most important action on a page or in a view. The buttons can also contain an icon and the minimum size is 184px while it’s height is set to 48px.
 
+#### Light Theme
+
 <Canvas>
   <Story
     name="Primary Button"
-    args={primaryArgs}
+    args={{
+      ...primaryArgs,
+      theme: 'light',
+    }}
     argTypes={argTypes}
     parameters={{
       design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
       },
     }}
   >
@@ -122,6 +126,8 @@ The filled-out primary button is used for the most important action on a page or
 The secondary button with a thin 2px frame is used for subordinate actions.
 The secondary button is used either white or transparent depending on the contrast. They can also contain an icon and the minimum size is 184px while it’s height is set to 48px.
 
+#### Light Theme
+
 <Canvas>
   <Story
     name="Secondary Button"
@@ -131,8 +137,7 @@ The secondary button is used either white or transparent depending on the contra
       design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
       },
     }}
   >
@@ -156,8 +161,7 @@ The secondary button is used either white or transparent depending on the contra
       design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
       },
     }}
   >
@@ -176,8 +180,7 @@ The secondary button is used either white or transparent depending on the contra
       design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
       },
     }}
   >
@@ -202,8 +205,7 @@ The minimum width rule of 184px does not adhere to the compact version. The heig
       design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
       },
     }}
   >
@@ -221,8 +223,7 @@ The minimum width rule of 184px does not adhere to the compact version. The heig
       design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
       },
     }}
   >
@@ -246,8 +247,7 @@ The width of the button dynamically adjusts to the text length. The minimum widt
       design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
       },
     }}
   >
@@ -264,8 +264,7 @@ The width of the button dynamically adjusts to the text length. The minimum widt
       design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
       },
     }}
   >
@@ -289,8 +288,7 @@ Create responsive stacks of full-width, “block buttons” using a mix of our d
       design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=488%3A18870',
       },
     }}
   >
@@ -300,7 +298,7 @@ Create responsive stacks of full-width, “block buttons” using a mix of our d
 
 ## States
 
-### Primary Button
+### Primary Button (Light theme)
 
 <Preview>
   <div>
@@ -321,7 +319,30 @@ Create responsive stacks of full-width, “block buttons” using a mix of our d
   </div>
 </Preview>
 
-### Secondary Button
+### Primary Button (Dark theme)
+
+<Preview className="bg-dark">
+  <div>
+    <Button variant="primary" theme="dark">
+      Primary Button
+    </Button>
+    <p className="text-white">Default</p>
+    <Button variant="primary" className="hover" theme="dark">
+      Primary Button
+    </Button>
+    <p className="text-white">Hover</p>
+    <Button variant="primary" disabled={true} theme="dark">
+      Primary Button
+    </Button>
+    <p className="text-white">Disabled</p>
+    <Button variant="primary" className="focus" theme="dark">
+      Primary Button
+    </Button>
+    <p className="text-white">Focus</p>
+  </div>
+</Preview>
+
+### Secondary Button (Light theme)
 
 <Preview>
   <div>
@@ -339,6 +360,29 @@ Create responsive stacks of full-width, “block buttons” using a mix of our d
       Secondary Button
     </Button>
     <p>Focus</p>
+  </div>
+</Preview>
+
+### Secondary Button (Dark theme)
+
+<Preview className="bg-dark">
+  <div>
+    <Button variant="secondary" theme="dark">
+      Secondary Button
+    </Button>
+    <p className="text-white">Default</p>
+    <Button variant="secondary" className="hover" theme="dark">
+      Secondary Button
+    </Button>
+    <p className="text-white">Hover</p>
+    <Button variant="secondary" disabled={true} theme="dark">
+      Secondary Button
+    </Button>
+    <p className="text-white">Disabled</p>
+    <Button variant="secondary" className="focus" theme="dark">
+      Secondary Button
+    </Button>
+    <p className="text-white">Focus</p>
   </div>
 </Preview>
 
