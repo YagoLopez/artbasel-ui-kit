@@ -25,6 +25,7 @@ const MegaMenuBuilder = forwardRef(
       userData,
       loggedCollectionUrl,
       unloggedCollectionUrl,
+      collectionButtonTitle,
       searchPlaceholder,
       logoVariant,
     },
@@ -83,11 +84,11 @@ const MegaMenuBuilder = forwardRef(
               userData={userData}
               loggedCollectionUrl={loggedCollectionUrl}
               unloggedCollectionUrl={unloggedCollectionUrl}
+              collectionButtonTitle={collectionButtonTitle}
               profileWelcomeHeader={ profileWelcomeHeader }
               onSearch={onSearch}
               searchPlaceholder={ searchPlaceholder }
               logoVariant={ logoVariant }
-
             />
           </div>
           <div className="d-lg-none">
@@ -146,6 +147,7 @@ const Megamenu = forwardRef(
       userData,
       loggedCollectionUrl,
       unloggedCollectionUrl,
+      collectionButtonTitle,
       profileWelcomeHeader,
       onSearch,
       searchPlaceholder,
@@ -172,7 +174,8 @@ const Megamenu = forwardRef(
         userData={userData}
         profileWelcomeHeader={profileWelcomeHeader}
         loggedCollectionUrl={loggedCollectionUrl}
-        unloggedCollectionUrl={unloggedCollectionUrl}
+        unloggedCollectionUrl={ unloggedCollectionUrl }
+        collectionButtonTitle={collectionButtonTitle}
         ref={ref}
         onSearch={onSearch}
         searchPlaceholder={ searchPlaceholder }
@@ -196,6 +199,7 @@ MegaMenuBuilder.propTypes = {
   profileWelcomeHeader: PropTypes.string.isRequired,
   loggedCollectionUrl: PropTypes.string.isRequired,
   unloggedCollectionUrl: PropTypes.string.isRequired,
+  collectionButtonTitle: PropTypes.string,
   onSearch: PropTypes.func.isRequired,
   searchPlaceholder: PropTypes.string.isRequired,
   logoVariant: PropTypes.oneOf(['default', 'basel', 'miami', 'hongkong', 'cities']),
@@ -242,6 +246,9 @@ Megamenu.propTypes = {
   /** The Collection URL when the user is unlogged.
   Used in the Collection Icon. */
   unloggedCollectionUrl: PropTypes.string.isRequired,
+  /** The Collection button's title,
+  displayed when hover. */
+  collectionButtonTitle: PropTypes.string,
   /** The placeholder label
   for search fields. */
   searchPlaceholder: PropTypes.string,

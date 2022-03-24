@@ -53,14 +53,14 @@ export const argTypes = {
     args={{
       icon: 'close',
       disabled: false,
+      title: 'Close',
     }}
     argTypes={argTypes}
     parameters={{
       design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=77%3A1994',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=77%3A1994',
       },
     }}
   >
@@ -76,9 +76,9 @@ export const argTypes = {
 
 <Preview>
   <div>
-    <ButtonIcon icon="close" theme="light" variant="default"  />
+    <ButtonIcon icon="close" theme="light" variant="default" />
     <p>Default</p>
-    <ButtonIcon icon="close" theme="light" variant="outline"/>
+    <ButtonIcon icon="close" theme="light" variant="outline" />
     <p>Outline</p>
     <ButtonIcon icon="close" theme="light" variant="fill" />
     <p>Fill</p>
@@ -89,49 +89,49 @@ export const argTypes = {
 
 <Preview>
   <div>
-    <ButtonIcon icon="close" size="xs" theme="light" variant="outline"  />
+    <ButtonIcon icon="close" size="xs" theme="light" variant="outline" />
     <p>XS</p>
-    <ButtonIcon icon="close" size="s" theme="light" variant="outline"/>
+    <ButtonIcon icon="close" size="s" theme="light" variant="outline" />
     <p>S</p>
     <ButtonIcon icon="close" size="m" theme="light" variant="outline" />
     <p>M</p>
-     <ButtonIcon icon="close" size="lg" theme="light" variant="outline" />
+    <ButtonIcon icon="close" size="lg" theme="light" variant="outline" />
     <p>LG</p>
   </div>
 </Preview>
 
-
 ### Dark Theme
 
-<Preview style={{backgroundColor: 'black'}}>
+<Preview style={{ backgroundColor: 'black' }}>
   <div>
-    <ButtonIcon icon="close" theme="dark" variant="default"  />
-    <p style={{color: 'white'}}>Default</p>
-    <ButtonIcon icon="close" theme="dark" variant="outline"/>
-    <p  style={{color: 'white'}}>Outline</p>
+    <ButtonIcon icon="close" theme="dark" variant="default" />
+    <p style={{ color: 'white' }}>Default</p>
+    <ButtonIcon icon="close" theme="dark" variant="outline" />
+    <p style={{ color: 'white' }}>Outline</p>
     <ButtonIcon icon="close" theme="dark" variant="fill" />
-    <p  style={{color: 'white'}}>Fill</p>
+    <p style={{ color: 'white' }}>Fill</p>
   </div>
 </Preview>
 
 ### Sizes
 
-<Preview style={{backgroundColor: 'black'}}>
+<Preview style={{ backgroundColor: 'black' }}>
   <div>
-    <ButtonIcon icon="close" size="xs" theme="dark" variant="outline"  />
-    <p style={{color: 'white'}}>XS</p>
-    <ButtonIcon icon="close" size="s" theme="dark" variant="outline"/>
-    <p style={{color: 'white'}}>S</p>
+    <ButtonIcon icon="close" size="xs" theme="dark" variant="outline" />
+    <p style={{ color: 'white' }}>XS</p>
+    <ButtonIcon icon="close" size="s" theme="dark" variant="outline" />
+    <p style={{ color: 'white' }}>S</p>
     <ButtonIcon icon="close" size="m" theme="dark" variant="outline" />
-    <p style={{color: 'white'}}>M</p>
-     <ButtonIcon icon="close" size="lg" theme="dark" variant="outline" />
-    <p style={{color: 'white'}}>LG</p>
+    <p style={{ color: 'white' }}>M</p>
+    <ButtonIcon icon="close" size="lg" theme="dark" variant="outline" />
+    <p style={{ color: 'white' }}>LG</p>
   </div>
 </Preview>
 
 ## States
 
 ### Light Theme
+
 #### Default
 
 <Preview>
@@ -153,11 +153,21 @@ export const argTypes = {
   <div>
     <ButtonIcon icon="close" variant="outline" theme="light" />
     <p>Default</p>
-    <ButtonIcon icon="close" className="hover" variant="outline" theme="light" />
+    <ButtonIcon
+      icon="close"
+      className="hover"
+      variant="outline"
+      theme="light"
+    />
     <p>Hover</p>
     <ButtonIcon icon="close" disabled={true} variant="outline" theme="light" />
     <p>Disabled</p>
-    <ButtonIcon icon="close" className="focus" variant="outline" theme="light" />
+    <ButtonIcon
+      icon="close"
+      className="focus"
+      variant="outline"
+      theme="light"
+    />
     <p>Focus</p>
   </div>
 </Preview>
@@ -178,48 +188,49 @@ export const argTypes = {
 </Preview>
 
 ### Dark Theme
+
 #### Default
 
-<Preview style={{backgroundColor: 'black'}}>
+<Preview style={{ backgroundColor: 'black' }}>
   <div>
     <ButtonIcon icon="close" variant="default" theme="dark" />
-    <p style={{color: 'white'}}>Default</p>
-    <ButtonIcon icon="close" className="hover" variant="default" theme="dark"/>
-    <p style={{color: 'white'}}>Hover</p>
+    <p style={{ color: 'white' }}>Default</p>
+    <ButtonIcon icon="close" className="hover" variant="default" theme="dark" />
+    <p style={{ color: 'white' }}>Hover</p>
     <ButtonIcon icon="close" disabled={true} variant="default" theme="dark" />
-    <p style={{color: 'white'}}>Disabled</p>
+    <p style={{ color: 'white' }}>Disabled</p>
     <ButtonIcon icon="close" className="focus" variant="default" theme="dark" />
-    <p style={{color: 'white'}}>Focus</p>
+    <p style={{ color: 'white' }}>Focus</p>
   </div>
 </Preview>
 
 #### Outline
 
-<Preview style={{backgroundColor: 'black'}}>
+<Preview style={{ backgroundColor: 'black' }}>
   <div>
     <ButtonIcon icon="close" variant="outline" theme="dark" />
-    <p style={{color: 'white'}}>Default</p>
+    <p style={{ color: 'white' }}>Default</p>
     <ButtonIcon icon="close" className="hover" variant="outline" theme="dark" />
-    <p style={{color: 'white'}}>Hover</p>
+    <p style={{ color: 'white' }}>Hover</p>
     <ButtonIcon icon="close" disabled={true} variant="outline" theme="dark" />
-    <p style={{color: 'white'}}>Disabled</p>
+    <p style={{ color: 'white' }}>Disabled</p>
     <ButtonIcon icon="close" className="focus" variant="outline" theme="dark" />
-    <p style={{color: 'white'}}>Focus</p>
+    <p style={{ color: 'white' }}>Focus</p>
   </div>
 </Preview>
 
 #### Fill
 
-<Preview style={{backgroundColor: 'black'}}>
+<Preview style={{ backgroundColor: 'black' }}>
   <div>
     <ButtonIcon icon="close" variant="fill" theme="dark" />
-    <p style={{color: 'white'}}>Default</p>
+    <p style={{ color: 'white' }}>Default</p>
     <ButtonIcon icon="close" className="hover" variant="fill" theme="dark" />
-    <p style={{color: 'white'}}>Hover</p>
+    <p style={{ color: 'white' }}>Hover</p>
     <ButtonIcon icon="close" disabled={true} variant="fill" theme="dark" />
-    <p style={{color: 'white'}}>Disabled</p>
+    <p style={{ color: 'white' }}>Disabled</p>
     <ButtonIcon icon="close" className="focus" variant="fill" theme="dark" />
-    <p style={{color: 'white'}}>Focus</p>
+    <p style={{ color: 'white' }}>Focus</p>
   </div>
 </Preview>
 

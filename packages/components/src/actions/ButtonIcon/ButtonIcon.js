@@ -14,6 +14,7 @@ const ButtonIcon = ({
   variant,
   theme,
   size,
+  title,
 }) => (
   <BSPButton
     data-testid="mch-button-icon"
@@ -23,6 +24,7 @@ const ButtonIcon = ({
     disabled={disabled}
     bsPrefix={cssInternalPrefix}
     variant=""
+    title={title}
   >
     <Icon name={icon} size={24} />
   </BSPButton>
@@ -37,6 +39,7 @@ ButtonIcon.propTypes = {
   onClick: PropTypes.func,
   cssStyles: PropTypes.string,
   className: PropTypes.string,
+  title: PropTypes.string,
   cssInternalPrefix: PropTypes.string,
 };
 

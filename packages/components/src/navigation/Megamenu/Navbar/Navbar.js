@@ -18,6 +18,7 @@ const Navbar = ({
   setVisibleMenu,
   loggedCollectionUrl,
   unloggedCollectionUrl,
+  collectionButtonTitle,
   userData,
   profileWelcomeHeader,
   scrolled,
@@ -213,7 +214,8 @@ onMouseEnter={(e) => handleEntryMouseEnter(e, entry, key)}
           <CollectionLink
             isUserLoggedIn={userData?.isUserLoggedIn}
             loggedCollectionUrl={loggedCollectionUrl}
-            unloggedCollectionUrl={unloggedCollectionUrl}
+            unloggedCollectionUrl={ unloggedCollectionUrl }
+            collectionButtonTitle={collectionButtonTitle}
             linkRenderer={linkRenderer}
           />
         </Col>
@@ -230,6 +232,7 @@ Navbar.propTypes = {
   setVisibleMenu: PropTypes.func.isRequired,
   loggedCollectionUrl: PropTypes.string.isRequired,
   unloggedCollectionUrl: PropTypes.string.isRequired,
+  collectionButtonTitle: PropTypes.string,
   userData: PropTypes.shape({
     name: PropTypes.string.isRequired,
     vipStatus: PropTypes.bool.isRequired,
