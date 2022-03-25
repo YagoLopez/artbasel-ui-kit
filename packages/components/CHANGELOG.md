@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.43.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.43.0...@mch-group/uikit-components@0.43.1) (2022-03-25)
+
+
+### Bug Fixes
+
+* **event card:** fix spacings and image aspect ratio browser compatibility ([d4a2d27](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d4a2d276a9eb6627573372989c60f2ea5e36781c))
+
+
+
+
+
 # [0.43.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.42.0...@mch-group/uikit-components@0.43.0) (2022-03-25)
 
 
