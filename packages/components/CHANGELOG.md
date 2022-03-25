@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.43.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.42.0...@mch-group/uikit-components@0.43.0) (2022-03-25)
+
+
+### Features
+
+* add contextualmenu component ([e30925c](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/e30925c6f14f9cfbd2d5e9333f200fd4c1b04e11))
+
+
+
+
+
 # [0.42.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.41.6...@mch-group/uikit-components@0.42.0) (2022-03-24)
 
 
