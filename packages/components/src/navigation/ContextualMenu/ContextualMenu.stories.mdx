@@ -1,0 +1,87 @@
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+import { Container, Row, Col } from '../../structure/Grid';
+import ContextualMenu from './ContextualMenu.js';
+
+<Meta
+  title="Components/Navigation/ContextualMenu"
+  component={ContextualMenu}
+  decorators={[withDesign]}
+/>
+
+export const testClick = () => {
+  alert('You clicked an option');
+};
+
+export const colStyles = {
+  height: '500px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+};
+
+export const Template = args => (
+  <Container>
+    <Row>
+      <Col style={colStyles}>
+        <ContextualMenu {...args}>
+          <ContextualMenu.Item
+            icon="edit"
+            onClick={testClick}
+          >
+            Edit
+          </ContextualMenu.Item>
+          <ContextualMenu.Item
+            icon="delete"
+            onClick={testClick}
+          >
+            Delete
+          </ContextualMenu.Item>
+          <ContextualMenu.Item
+            icon="add"
+            onClick={testClick}
+          >
+            Option #3
+          </ContextualMenu.Item>
+          <ContextualMenu.Item
+            icon="attachment"
+            onClick={testClick}
+          >
+            Option #4
+          </ContextualMenu.Item>
+          <ContextualMenu.Item
+            icon="add-guest"
+            onClick={testClick}
+          >
+            Option #5
+          </ContextualMenu.Item>
+        </ContextualMenu>
+      </Col>
+    </Row>
+  </Container>
+);
+
+# Contextual Menu
+
+<Canvas>
+  <Story
+    name="ContextualMenu"
+    args={{
+      icon: 'context',
+      showLabel: true,
+      position: 'bottom',
+      align: 'start',
+      theme: 'light',
+    }}
+    paramters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=8402%3A163594',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
