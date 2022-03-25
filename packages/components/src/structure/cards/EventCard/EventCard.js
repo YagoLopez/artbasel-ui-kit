@@ -144,6 +144,7 @@ const EventCard = ({
 };
 
 EventCard.propTypes = {
+  /** If false, the card has always the small layout in any breakpoint */
   responsive: PropTypes.bool,
   title: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
