@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Dropdown } from 'react-bootstrap';
 import { Icon, IconList } from '../../utils/Icon';
-import MenuContext from './MenuContext';
+import ButtonContext from './ButtonContext';
 
 const Item = ({
   icon,
@@ -11,7 +11,7 @@ const Item = ({
   onClick,
   cssStyles,
 }) => {
-  const showLabel = useContext(MenuContext);
+  const showLabel = useContext(ButtonContext);
 
   return (
     <Dropdown.Item
@@ -27,7 +27,10 @@ const Item = ({
       <div className="icon-wrapper">
         {icon && <Icon name={icon} size={24} />}
       </div>
-      {showLabel && <span>{children}</span>}
+
+      {showLabel
+        && <span>{children}</span>
+      }
     </Dropdown.Item>
   );
 };

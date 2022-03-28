@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { cleanup, render, screen } from '@testing-library/react';
 import Item from './Item';
 
-describe('Test for ContextualMenu.Item component', () => {
+describe('Test for ContextualButton.Item component', () => {
   afterEach(cleanup);
 
   test('Should render the component', () => {
