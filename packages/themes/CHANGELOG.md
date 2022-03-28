@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.37.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.36.1...@mch-group/uikit-themes@0.37.0) (2022-03-28)
+
+
+### Features
+
+* **button:** added dark theme to primary and secondary button ([00d36c0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/00d36c0b5ade989e4730eb5d9b1b724fd6c2dff8))
+
+
+
+
+
 ## [0.36.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.36.0...@mch-group/uikit-themes@0.36.1) (2022-03-25)
 
 
