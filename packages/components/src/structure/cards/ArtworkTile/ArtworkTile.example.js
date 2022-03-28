@@ -54,9 +54,9 @@ export const example = {
     label: 'Online Exclusive',
     onClick: () => {},
   },
-  curator: {
+  unavailableToView: {
     active: false,
-    label: 'Curator’s Pick | Example Name',
+    label: 'Unavailable to view',
     onClick: () => {},
   },
   show: {

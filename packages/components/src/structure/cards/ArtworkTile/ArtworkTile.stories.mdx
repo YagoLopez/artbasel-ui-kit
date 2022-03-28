@@ -113,7 +113,7 @@ export const argTypes = {
       category: 'Tag',
     },
   },
-  curator: {
+  unavailableToView: {
     table: {
       category: 'Tag',
     },
@@ -268,23 +268,6 @@ When used in catalogue page, the image is displayed in masonary type, the galler
   </ArtworkTile>
 </Canvas>
 
-### Curator’s Pick
-
-<Canvas style={{ width: '400px' }}>
-  <ArtworkTile
-    {...example}
-    imageType="masonry"
-    pageType="room"
-    galleryName=""
-    curator={{
-      active: true,
-      label: example.curator.label,
-    }}
-  >
-    {Template.bind({})}
-  </ArtworkTile>
-</Canvas>
-
 ## Theme
 
 ### Light
@@ -334,6 +317,27 @@ When used in catalogue page, the image is displayed in masonary type, the galler
   </ArtworkTile>
 </Canvas>
 
+## Unavailable to view
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile
+    {...example}
+    show={{
+      active: true,
+      label: example.show.label,
+    }}
+    unavailableToView={{
+      active: true,
+      label: example.unavailableToView.label,
+    }}
+    inquiry={{
+      active: false
+    }}
+  >
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
 ### Multi-Select
 
 <Canvas style={{ width: '400px' }}>
@@ -353,6 +357,30 @@ When used in catalogue page, the image is displayed in masonary type, the galler
     show={{
       active: true,
       label: example.show.label,
+    }}
+  >
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
+### Multi-Select / Unavailable to view
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile
+    {...example}
+    show={{
+      active: true,
+      label: example.show.label,
+    }}
+    unavailableToView={{
+      active: true,
+      label: example.unavailableToView.label,
+    }}
+    inquiry={{
+      active: false
+    }}
+    selectMode={{
+      active: true
     }}
   >
     {Template.bind({})}

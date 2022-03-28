@@ -99,6 +99,24 @@
     width: calc(100% - 2rem);
   }
 
+  &.unavailable-state {
+    a {
+      pointer-events: none;
+    }
+
+    .overlay-blur.light {
+      opacity: 1;
+    }
+
+    .image-frame img {
+      @include image-blur;
+    }
+
+    &.layout-square .image-frame {
+      @include image-blur;
+    }
+  }
+
   &.select-state {
     &:hover {
       cursor: pointer;
@@ -185,17 +203,22 @@
   .image-container {
     position: relative;
     background: #f0f2f5;
+    overflow: hidden;
 
-    .tag {
+    .tag-container {
       position: absolute;
+      top: $spacing-5;
+      left: $spacing-5;
+      display: flex;
       z-index: 4;
-      transition: all 0.35s ease-out;
 
-      &-exclusive,
-      &-viewfair,
-      &-curator {
-        top: $spacing-5;
-        left: $spacing-5;
+      .tag {
+        margin-right: $spacing-3;
+        transition: all 0.35s ease-out;
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
 
@@ -252,12 +275,12 @@
         width: 100%;
         height: 100%;
         opacity: 0;
-        transition: all 0.35s ease-out;
+        transition: opacity 0.35s ease-out;
+        z-index: 2;
         @include round-corners;
 
         &.dark {
           background: rgba(29, 35, 39, 0.3);
-          z-index: 1;
           &.selected {
             opacity: 1;
           }
