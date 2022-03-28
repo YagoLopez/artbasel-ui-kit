@@ -1,6 +1,7 @@
 .btn-secondary {
   text-transform: uppercase;
   box-shadow: none;
+
   //added to fix incorrect line height of the font
   padding-bottom: 8px;
   
@@ -41,14 +42,18 @@
     border-color: $color-mch-black;
 
     &::before {
-      background-color: $color-mch-gray-100;
+      background-color: $color-mch-gray-500;
     }
 
     &:hover,
     &.hover {
-      color: $color-mch-black;
-      background-color: $color-mch-gray-100;
-      border-color: $color-mch-black;
+      color: $color-mch-white;
+      background-color: $color-mch-gray-500;
+      border-color: $color-mch-gray-500;
+
+      svg {
+        fill: $color-mch-white;
+      }
     }
 
     &:disabled,
@@ -63,14 +68,24 @@
     }
 
     &:focus {
-      background-color: $color-mch-white;
-      border-color: $color-mch-black;
+      color: $color-mch-white;
+      background-color: $color-mch-gray-500;
+      border-color: $color-mch-gray-500;
+
+      svg {
+        fill: $color-mch-white;
+      }
     }
     
     &:focus-visible,
     &.focus {
-      background-color: $color-mch-gray-200;
-      border-color: $color-mch-black;
+      color: $color-mch-white;
+      background-color: $color-mch-gray-500;
+      border-color: $color-mch-gray-500;
+
+      svg {
+        fill: $color-mch-white;
+      }
     }
 
     svg {

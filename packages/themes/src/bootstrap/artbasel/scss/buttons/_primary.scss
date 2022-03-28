@@ -78,8 +78,6 @@
   &.dark{
     color: $color-mch-black;
     background-color: $color-mch-white;
-    border-color: $color-mch-white;
-    //added to fix incorrect line height of the font
 
     &::before {
       background-color: $color-mch-gray-100;
@@ -98,7 +96,6 @@
     &.disabled {
       color: $color-mch-gray-400;
       background-color: $color-mch-gray-300;
-      border-color: $color-mch-gray-300;
   
       svg {
         fill: $color-mch-white;
@@ -117,7 +114,6 @@
     &:focus-visible,
     &.focus {
       background-color: $color-mch-gray-100;
-      border-color: $color-mch-gray-100;
 
       svg {
         fill: $color-mch-black;

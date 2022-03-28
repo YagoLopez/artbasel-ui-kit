@@ -99,8 +99,6 @@ All buttons provide visual feedback when clicked or tapped in the form of a resp
 
 The filled-out primary button is used for the most important action on a page or in a view. The buttons can also contain an icon and the minimum size is 184px while it’s height is set to 48px.
 
-#### Light Theme
-
 <Canvas>
   <Story
     name="Primary Button"
@@ -126,12 +124,13 @@ The filled-out primary button is used for the most important action on a page or
 The secondary button with a thin 2px frame is used for subordinate actions.
 The secondary button is used either white or transparent depending on the contrast. They can also contain an icon and the minimum size is 184px while it’s height is set to 48px.
 
-#### Light Theme
-
 <Canvas>
   <Story
     name="Secondary Button"
-    args={secondaryArgs}
+    args={{
+      ...secondaryArgs,
+      theme: 'light',
+    }}
     argTypes={argTypes}
     parameters={{
       design: {
@@ -212,7 +211,7 @@ The minimum width rule of 184px does not adhere to the compact version. The heig
     {Template.bind({})}
   </Story>
   <Story
-    name="Compact Secundary"
+    name="Compact Secondary"
     args={{
       ...secondaryArgs,
       children: 'Compact Secondary',
@@ -321,7 +320,7 @@ Create responsive stacks of full-width, “block buttons” using a mix of our d
 
 ### Primary Button (Dark theme)
 
-<Preview className="bg-dark">
+<Preview className="bg-black">
   <div>
     <Button variant="primary" theme="dark">
       Primary Button
@@ -365,7 +364,7 @@ Create responsive stacks of full-width, “block buttons” using a mix of our d
 
 ### Secondary Button (Dark theme)
 
-<Preview className="bg-dark">
+<Preview className="bg-black">
   <div>
     <Button variant="secondary" theme="dark">
       Secondary Button
