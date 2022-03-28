@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.37.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.37.0...@mch-group/uikit-themes@0.37.1) (2022-03-28)
+
+
+### Bug Fixes
+
+* (tooltip): fixed spacing between title and content to 8px ([9c72b31](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/9c72b3132ac7cf1ce4e6ad39d5f7ef03bbb708b2))
+
+
+
+
+
 # [0.37.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.36.1...@mch-group/uikit-themes@0.37.0) (2022-03-28)
 
 
