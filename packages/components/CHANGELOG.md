@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.45.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.44.0...@mch-group/uikit-components@0.45.0) (2022-03-28)
+
+
+### Features
+
+* add SharingButton component ([1226eed](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/1226eedca8cedb38b54daa20b2d792a3f1b5d265))
+
+
+
+
+
 # [0.44.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.43.1...@mch-group/uikit-components@0.44.0) (2022-03-28)
 
 
