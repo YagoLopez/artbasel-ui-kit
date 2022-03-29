@@ -116,23 +116,57 @@ Label text will automatically wrapped to fit the parent container. Additionally,
   />
 </Canvas>
 
+## Options
+### Light Theme
+<Canvas>
+  <Radio theme="light" align="left" checked={false} id="state-default" label="Section" />
+</Canvas>
+
+### Dark Theme
+<Canvas style={{backgroundColor: 'black'}}>
+  <Radio theme="dark" align="left" checked={false} id="state-default" label="Section" />
+</Canvas>
+
 ## States
+## Light Theme
 
 <Canvas>
   <div>
     Default
-    <Radio checked={false} id="state-default" label="Section" />
+    <Radio theme="light" checked={false} id="state-default" label="Section" />
     <br />
     Active
-    <Radio checked={true} id="state-active" label="Section" />
+    <Radio theme="light" checked={true} id="state-active" label="Section" />
     <br />
     Disabled
-    <Radio disabled={true} id="state-disabled" label="Section" />
+    <Radio theme="light" disabled={true} id="state-disabled" label="Section" />
     <br />
-    Focus
-    <Radio checked={false} id="state-focus" label="Section" className="focus" />
+     Disabled (active)
+    <Radio theme="light" disabled={true} checked={true} id="state-active"label="Label" />
+    <br />
   </div>
 </Canvas>
+
+### Dark Theme
+
+<Canvas style={{backgroundColor: 'black'}}>
+  <div>
+    <p style={{color: 'white'}}> Default </p>
+    <Radio theme="dark" checked={false} id="state-default" label="Label" />
+    <br />
+    <p style={{color: 'white'}}> Active </p>    
+    <Radio theme="dark" checked={true} id="state-active" label="Label" />
+    <br />
+    <p style={{color: 'white'}}>Disabled </p> 
+    <Radio theme="dark" disabled={true} id="state-disabled" label="Label" />
+    <br />
+    <p style={{color: 'white'}}>Disabled (active)</p> 
+    <Radio theme="dark" disabled={true} checked={true} id="state-active"label="Label" />
+    <br />
+  </div>
+</Canvas>
+
+
 
 ## Properties
 

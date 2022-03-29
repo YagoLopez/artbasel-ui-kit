@@ -17,11 +17,12 @@ const Radio = ({
   label,
   onChange,
   name,
+  theme,
   ...props
 }) => (
   <Form.Check
     data-testid="mch-radio"
-    className={classNames({ disabled }, className, `align-${align}`)}
+    className={classNames({ disabled }, className, `align-${align}`, theme)}
     checked={checked}
     style={cssStyles}
     disabled={disabled}
@@ -41,6 +42,7 @@ const Radio = ({
 Radio.propTypes = {
   align: PropTypes.oneOf(['left', 'right']),
   checked: PropTypes.bool,
+  theme: PropTypes.oneOf(['light', 'dark']),
   className: PropTypes.string,
   cssStyles: PropTypes.object,
   cssInternalPrefix: PropTypes.string,
@@ -56,6 +58,7 @@ Radio.propTypes = {
 
 Radio.defaultProps = {
   align: 'right',
+  theme: 'light',
   cssInternalPrefix: 'form-check',
   disabled: false,
   inline: false,
