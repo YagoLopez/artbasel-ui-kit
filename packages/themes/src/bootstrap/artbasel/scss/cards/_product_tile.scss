@@ -28,6 +28,9 @@
         color: $color-mch-black;
       }
     }
+    .button-container {
+      opacity: 1;
+    }
   }
 
   .button-container {
@@ -38,6 +41,8 @@
     right: 12px;
     top: 12px;
     overflow: hidden;
+    opacity: 0;
+    transition: all 350ms ease-out;
   }
 
   .tile-img-container {
