@@ -40,11 +40,11 @@ const EventCard = ({
       <div className="image-frame">
         {!collection?.active && (
           <ButtonIcon
-          icon="collections-add"
-          onClick={collection.onClick}
-          variant="fill"
-          theme="dark"
-        />
+            icon="collections-add"
+            onClick={collection.onClick}
+            variant="fill"
+            theme="dark"
+          />
         )}
         <MemoizedConditionalWrapper
           linkRenderer={linkRenderer}
@@ -93,26 +93,30 @@ const EventCard = ({
                 </div>
               </div>
             )}
-            <div className="item">
-              <div className="card-item-icon">
-                <Icon name="pin" />
+            {venue?.street && (
+              <div className="item">
+                <div className="card-item-icon">
+                  <Icon name="pin" />
+                </div>
+                <div className="card-item-data">
+                  <span className="text-small">
+                    {venue?.street}
+                    <br />
+                    {venue?.postCode} {venue?.city}
+                  </span>
+                </div>
               </div>
-              <div className="card-item-data">
-                <span className="text-small">
-                  {venue?.street}
-                  <br />
-                  {venue?.postCode} {venue?.city}
-                </span>
+            )}
+            {date && (
+              <div className="item">
+                <div className="card-item-icon">
+                  <Icon name="calendar" />
+                </div>
+                <div className="card-item-data">
+                  <span className="text-small">{date}</span>
+                </div>
               </div>
-            </div>
-            <div className="item">
-              <div className="card-item-icon">
-                <Icon name="calendar" />
-              </div>
-              <div className="card-item-data">
-                <span className="text-small">{date}</span>
-              </div>
-            </div>
+            )}
             {schedule && (
               <div className="item">
                 <div className="card-item-icon">
