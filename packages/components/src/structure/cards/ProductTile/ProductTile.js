@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
 import classNames from 'classnames';
-import { ButtonIcon } from '../../actions/ButtonIcon';
+import { ButtonIcon } from '../../../actions/ButtonIcon';
 
 const ProductTile = ({
   cssInternalPrefix,

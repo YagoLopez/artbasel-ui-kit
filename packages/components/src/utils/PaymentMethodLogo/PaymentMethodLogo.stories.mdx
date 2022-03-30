@@ -1,0 +1,80 @@
+<!--- ArtBaselLogo.stories.mdx --->
+
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+
+import PaymentMethodLogo from './PaymentMethodLogo';
+
+<Meta
+  title="Components/Utils/Logos/Payment Methods"
+  component={PaymentMethodLogo}
+  decorators={[withDesign]}
+/>
+
+# Payment Methods Logo
+
+export const Template = (args) => <PaymentMethodLogo {...args} />;
+
+export const argTypes = {};
+
+<Canvas>
+  <Story
+    name="Payment Methods"
+    args={{
+      name: 'amex',
+      width: 350,
+      height: 240,
+      onClick: () => {
+        alert('Logo was clicked!');
+      },
+    }}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url: 'https://www.figma.com/file/pbkfTaJN4eVjAgZUpeYlPL/branch/iGAGECmDEIceCEKjTSEZE5/AB---Footer?node-id=1787%3A73782',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Available logos
+
+<br />
+
+### Amex
+
+<Canvas>
+  <PaymentMethodLogo name="amex" width="35" height="24" />
+</Canvas>
+
+### Discover
+
+<Canvas>
+  <PaymentMethodLogo name="discover" />
+</Canvas>
+
+### JCB
+
+<Canvas>
+  <PaymentMethodLogo name="jcb" />
+</Canvas>
+
+### Master
+
+<Canvas>
+  <PaymentMethodLogo name="master" />
+</Canvas>
+
+### Visa
+
+<Canvas>
+  <PaymentMethodLogo name="visa" />
+</Canvas>
+
+## Properties
+
+<ArgsTable of={PaymentMethodLogo} />

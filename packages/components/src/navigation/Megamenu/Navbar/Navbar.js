@@ -107,10 +107,6 @@ const Navbar = ({
     setVisibleMenu(open ? PROFILE_FLYOUT : null);
   }, []);
 
-  const handleLabelClick = useCallback(() => {
-    setVisibleMenu(null);
-  }, []);
-
   const handleEntryMouseEnter = (event, entry, key) => {
     const element = event.target.querySelector('.col-underline');
     setVisibleMenu(entry.flyout ? entry.label : null);
