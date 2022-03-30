@@ -276,6 +276,13 @@
       border-color: transparent transparent $color-mch-gray-500;
     }
 
+    &:focus,
+    &:active,
+    &:focus:active {
+      outline: none;
+      box-shadow: none;
+    }
+
     &.disabled {
       color: $color-mch-gray-300;
       border-color: transparent transparent $color-mch-gray-300;
