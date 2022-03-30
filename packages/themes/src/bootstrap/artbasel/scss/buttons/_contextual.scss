@@ -55,7 +55,8 @@
 
   .dropdown-menu {
     position: absolute;
-    width: auto;
+    width: auto !important;
+    min-width: 2.5rem;
     box-shadow: unset;
     z-index: 995;
     border-radius: 2px;
@@ -90,6 +91,9 @@
 
       span {
         padding-right: 1rem;
+        &.pl-5 {
+          padding-left: 1rem;
+        }
       }
     }
   }

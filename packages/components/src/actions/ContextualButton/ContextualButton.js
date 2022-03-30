@@ -4,9 +4,9 @@ import classnames from 'classnames';
 import { DropdownButton } from 'react-bootstrap';
 import Item from './Item';
 import { Icon } from '../../utils/Icon';
-import MenuContext from './MenuContext';
+import ButtonContext from './ButtonContext';
 
-const ContextualMenu = ({
+const ContextualButton = ({
   icon,
   children,
   showLabel,
@@ -45,15 +45,15 @@ const ContextualMenu = ({
           <Icon name={icon} size={24} />
         }
       >
-        <MenuContext.Provider value={showLabel}>
+        <ButtonContext.Provider value={showLabel}>
           {children}
-        </MenuContext.Provider>
+        </ButtonContext.Provider>
       </DropdownButton>
     </div>
   );
 };
 
-ContextualMenu.propTypes = {
+ContextualButton.propTypes = {
   icon: PropTypes.string.isRequired,
   showLabel: PropTypes.bool,
   position: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
@@ -62,7 +62,7 @@ ContextualMenu.propTypes = {
   theme: PropTypes.oneOf(['light', 'dark']),
 };
 
-ContextualMenu.defaultProps = {
+ContextualButton.defaultProps = {
   showLabel: true,
   icon: 'context',
   position: 'bottom',
@@ -70,4 +70,4 @@ ContextualMenu.defaultProps = {
   theme: 'light',
 };
 
-export default Object.assign(ContextualMenu, { Item });
+export default Object.assign(ContextualButton, { Item });
