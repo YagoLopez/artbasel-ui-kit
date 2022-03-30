@@ -185,14 +185,16 @@
     }
   }
 
-  &.reverse {
-    .image-frame {
-      order: 2;
-    }
-    .card-body {
-      order: 1;
-      padding-left: 0;
-      padding-right: $spacing-7;
+  @include media-breakpoint-up(md) {
+    &.reverse {
+      .image-frame {
+        order: 2;
+      }
+      .card-body {
+        order: 1;
+        padding-left: 0;
+        padding-right: $spacing-7;
+      }
     }
   }
 }
