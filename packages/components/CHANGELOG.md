@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.46.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.0...@mch-group/uikit-components@0.46.1) (2022-03-30)
+
+
+### Bug Fixes
+
+* **content card:** fix reverse option in small devices ([a3a7d7e](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/a3a7d7e1cf45824ea3747783315b4b8c967da876))
+
+
+
+
+
 # [0.46.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.45.0...@mch-group/uikit-components@0.46.0) (2022-03-29)
 
 
