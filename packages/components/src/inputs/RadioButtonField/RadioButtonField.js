@@ -19,7 +19,7 @@ const RadioButtonField = ({
   <label
     data-testid="mch-radio-button-field"
     tabIndex={tabIndex}
-    className={classNames('radioButtonField-container', className, {
+    className={classNames('radio-button-field-container', className, {
       focus: checked, disabled,
     })}
     htmlFor={id}
@@ -39,7 +39,7 @@ const RadioButtonField = ({
         <p className={classNames('text-small descriptor-text', { disabled })}>{description}</p>
       </div>
     </div>
-      <div className={classNames('radio-label-container', { disabled })}>
+    <div className={classNames('radio-label-container', { disabled })}>
       <p className="text-label-xlarge">{priceLabel}</p>
     </div>
   </label>
