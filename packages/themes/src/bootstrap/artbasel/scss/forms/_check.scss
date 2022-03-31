@@ -53,168 +53,156 @@
       box-shadow: none;
     }
   }
- &.light {
-  .form-check-input {
-    background-color: $color-mch-white;
-    border-color: $color-mch-gray-300;
-    margin-top: 5px;
-    margin-right: $spacing-3;
-    min-width: 1rem;
-    min-height: 1rem;
-    cursor: pointer;
+  &.light {
+    .form-check-input {
+      background-color: $color-mch-white;
+      border-color: $color-mch-gray-300;
+      margin-top: 5px;
+      margin-right: $spacing-3;
+      min-width: 1rem;
+      min-height: 1rem;
+      cursor: pointer;
 
-    &[type='checkbox'] {
-      border-radius: 2px;
-    }
-
-    &:hover,
-    &.hover {
-      border-color: $color-mch-black;
-    }
-
-    &:focus,
-    &.focus {
-      box-shadow: none;
-    }
-
-    &:checked[type='radio'] {
-      background-size: 8px;
-      border-color: $color-mch-black;
-      background-position-x: 3px;
-      background-position-y: 3px;
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8' %3e %3ccircle r='4' fill='%23000000'/%3e%3c/svg%3e");
-      &:disabled {
-        border-color: $color-mch-gray-400;
-        background-color: $color-mch-white;
-        background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23757575'/%3E%3C/svg%3E%0A");
+      &[type='checkbox'] {
+        border-radius: 2px;
       }
-    }
 
-    &:checked[type='checkbox'] {
-      background-color: $color-mch-black;
-      border-color: $color-mch-black;
-      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.57537 12.42L3 8.84463L4.26032 7.58431L6.57537 9.89042L12.4658 4L13.7261 5.26926L6.57537 12.42Z' fill='white'/%3E%3C/svg%3E ");
-      &:disabled {
-        border-color: $color-mch-gray-400;
-        background-color: $color-mch-gray-400;
+      &:hover,
+      &.hover {
+        border-color: $color-mch-black;
       }
-    }
 
-    &:disabled {
-      opacity: 1;
-      border-color: $color-mch-gray-400;
-      background-color: $color-mch-gray-300;
-    }
+      &:focus,
+      &.focus {
+        box-shadow: none;
+      }
 
-    &:disabled ~ label {
-      opacity: 1;
-      color: $color-mch-gray-300;
+      &:checked[type='radio'] {
+        background-size: 8px;
+        border-color: $color-mch-black;
+        background-position-x: 3px;
+        background-position-y: 3px;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8' %3e %3ccircle r='4' fill='%23000000'/%3e%3c/svg%3e");
+        &:disabled {
+          border-color: $color-mch-gray-400;
+          background-color: $color-mch-white;
+          background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23757575'/%3E%3C/svg%3E%0A");
+        }
+      }
+
+      &:checked[type='checkbox'] {
+        background-color: $color-mch-black;
+        border-color: $color-mch-black;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.57537 12.42L3 8.84463L4.26032 7.58431L6.57537 9.89042L12.4658 4L13.7261 5.26926L6.57537 12.42Z' fill='white'/%3E%3C/svg%3E ");
+        &:disabled {
+          border-color: $color-mch-gray-400;
+          background-color: $color-mch-gray-400;
+        }
+      }
+
+      &:disabled {
+        opacity: 1;
+        border-color: $color-mch-gray-400;
+        background-color: $color-mch-gray-300;
+      }
+
+      &:disabled ~ label {
+        opacity: 1;
+        color: $color-mch-gray-300;
+      }
     }
   }
-}
 
-&.dark {
-  .form-check-input {
-    background-color: $color-mch-black;
-    border-color: $color-mch-gray-400;
-    margin-top: 5px;
-    margin-right: $spacing-3;
-    min-width: 1rem;
-    min-height: 1rem;
-    cursor: pointer;
+  &.dark {
+    .form-check-input {
+      background-color: $color-mch-black;
+      border-color: $color-mch-gray-400;
+      margin-top: 5px;
+      margin-right: $spacing-3;
+      min-width: 1rem;
+      min-height: 1rem;
+      cursor: pointer;
 
-    &[type='checkbox'] {
-      border-radius: 2px;
-    }
+      &[type='checkbox'] {
+        border-radius: 2px;
+      }
 
-    &[type='radio'] {
+      &[type='radio'] {
+        &:disabled {
+          opacity: 1;
+          border-color: $color-mch-gray-300;
+          background-color: $color-mch-gray-400;
+        }
+      }
+
+      &:hover,
+      &.hover {
+        border-color: $color-mch-white;
+      }
+
+      &:focus,
+      &.focus {
+        box-shadow: none;
+      }
+
+      &:checked[type='radio'] {
+        background-size: 8px;
+        border-color: $color-mch-white;
+        background-position-x: 3px;
+        background-position-y: 3px;
+        background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='white'/%3E%3C/svg%3E%0A");
+        &:disabled {
+          border-color: $color-mch-gray-400;
+          background-color: $color-mch-gray-300;
+          background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23757575'/%3E%3C/svg%3E%0A");
+        }
+      }
+
+      &:checked[type='checkbox'] {
+        background-color: $color-mch-white;
+        border-color: $color-mch-white;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.57537 12.42L3 8.84463L4.26032 7.58431L6.57537 9.89042L12.4658 4L13.7261 5.26926L6.57537 12.42Z' fill='%231D2327'/%3E%3C/svg%3E ");
+        &:disabled {
+          background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.57537 12.42L3 8.84463L4.26032 7.58431L6.57537 9.89042L12.4658 4L13.7261 5.26926L6.57537 12.42Z' fill='%231D2327'/%3E%3C/svg%3E ");
+          border-color: $color-mch-gray-400;
+          background-color: $color-mch-gray-300;
+        }
+      }
+
       &:disabled {
         opacity: 1;
         border-color: $color-mch-gray-300;
         background-color: $color-mch-gray-400;
       }
-    }
 
-    &:hover,
-    &.hover {
-      border-color: $color-mch-white;
-    }
-
-    &:focus,
-    &.focus {
-      box-shadow: none;
-    }
-
-    &:checked[type='radio'] {
-      background-size: 8px;
-      border-color: $color-mch-white;
-      background-position-x: 3px;
-      background-position-y: 3px;
-      background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='white'/%3E%3C/svg%3E%0A");    
-      &:disabled {
-        border-color: $color-mch-gray-400;
-        background-color: $color-mch-gray-300;
-        background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23757575'/%3E%3C/svg%3E%0A");
+      &:disabled ~ label {
+        opacity: 1;
+        color: $color-mch-gray-300;
       }
-    }
-
-    &:checked[type='checkbox'] {
-      background-color: $color-mch-white;
-      border-color: $color-mch-white;
-      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.57537 12.42L3 8.84463L4.26032 7.58431L6.57537 9.89042L12.4658 4L13.7261 5.26926L6.57537 12.42Z' fill='%231D2327'/%3E%3C/svg%3E ");           &:disabled {
-        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.57537 12.42L3 8.84463L4.26032 7.58431L6.57537 9.89042L12.4658 4L13.7261 5.26926L6.57537 12.42Z' fill='%231D2327'/%3E%3C/svg%3E ");        border-color: $color-mch-gray-400;
-        background-color: $color-mch-gray-300;
-      }
-    }
-
-    &:disabled {
-      opacity: 1;
-      border-color: $color-mch-gray-300;
-      background-color: $color-mch-gray-400;
-    }
-
-    &:disabled ~ label {
-      opacity: 1;
-      color: $color-mch-gray-300;
     }
   }
 }
-}
 
-.radioButtonField-container {
+.radio-button-field-container {
   border: 1px solid $color-mch-gray-200;
   box-sizing: border-box;
   border-radius: 4px;
   height: 88px;
+  padding: 24px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   transition: all 0.5s ease-in-out !important;
+
+  @include media-breakpoint-up(lg) {
+    padding: 32px;
+  }
 
   &.disabled,
   &.disabled:hover {
     color: $color-mch-gray-300 !important;
     border: 1px solid $color-mch-gray-200 !important;
-  }
-
-  @include media-breakpoint-up(xs) {
-    padding-left: 24px;
-    .radio-price-container {
-      padding: 24px;
-    }
-    .radio-label-container {
-      padding-left: 24px !important;
-    }
-  }
-
-  @include media-breakpoint-up(lg) {
-    padding: 24px 32px 24px 32px;
-    .radio-price-container {
-      padding: 0px;
-    }
-    .radio-label-container {
-      padding-left: 32px !important;
-    }
   }
 
   &.hover,
@@ -262,42 +250,29 @@
         display: none;
       }
     }
-    .radio-label-container {
-      display: flex;
-      flex-direction: column;
-      padding-left: 24px;
-      justify-content: center;
-
-      &.disabled {
-        color: $color-mch-gray-300 !important;
-      }
-
-      p {
-        margin-top: 0px !important;
-        margin-bottom: 0px !important;
-
-        &.descriptor-text {
-          color: $color-mch-gray-500;
-          margin-top: 2px !important;
-          &.disabled {
-            color: $color-mch-gray-300 !important;
-          }
-        }
-      }
-
-      .radioButtonField-label {
-        font-size: 14px;
-        margin-bottom: 2px !important;
-      }
-    }
   }
 
-  .radio-price-container {
-    align-self: center;
+  .radio-label-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 24px;
+    justify-content: center;
+
+    &.disabled {
+      color: $color-mch-gray-300 !important;
+    }
 
     p {
       margin-top: 0px !important;
       margin-bottom: 0px !important;
+
+      &.descriptor-text {
+        color: $color-mch-gray-500;
+        margin-top: 2px !important;
+        &.disabled {
+          color: $color-mch-gray-300 !important;
+        }
+      }
     }
   }
 }
