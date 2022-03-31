@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.39.8](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.7...@mch-group/uikit-themes@0.39.8) (2022-03-31)
+
+
+### Bug Fixes
+
+* **radio-button-field:** fixed price alignment ([ad97279](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/ad97279fd70bd9d4af0a3ee9ac0b4a25bcdffe13))
+
+
+
+
+
 ## [0.39.7](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.6...@mch-group/uikit-themes@0.39.7) (2022-03-31)
 
 
