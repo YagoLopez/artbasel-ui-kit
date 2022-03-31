@@ -77,6 +77,12 @@
       font-weight: bold !important;
     }
   }
+
+  .search-field {
+    min-width: 180px;
+    max-width: 399px;
+    width: 100%;
+  }
 }
 
 .entries-container {
