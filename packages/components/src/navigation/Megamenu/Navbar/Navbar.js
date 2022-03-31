@@ -156,7 +156,7 @@ const Navbar = ({
           <Row gutter="g-0" className="menu-entries">
             <div className="menu-entries-edge" onMouseEnter={() => setVisibleMenu(null)}/>
             {menuData.entries.map((entry) => {
-              const width = 10 * (entry.label.length > 7 ? entry.label.length : 7) - 10;
+              const width = 9 * (entry.label.length > 7 ? entry.label.length : 7) - 4;
               const key = createNavLinks(width, !!entry.flyout);
               return (
                 <Col
@@ -183,7 +183,7 @@ onMouseEnter={(e) => handleEntryMouseEnter(e, entry, key)}
           className="px-5 d-flex justify-content-end"
           onMouseEnter={() => setVisibleMenu(null)}
         >
-          <div style={{ minWidth: '280px', maxWidth: '399px', width: '100%' }}>
+          <div className="search-field">
             <form onSubmit={submitHandler}>
               <Search
                 placeholder={searchPlaceholder}
