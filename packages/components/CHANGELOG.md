@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.46.6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.5...@mch-group/uikit-components@0.46.6) (2022-03-31)
+
+
+### Bug Fixes
+
+* **megamenu:** fixed spacing in navbar ([d7e8315](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d7e83155d1fa2c916af23e173fb6a78011a6000e))
+
+
+
+
+
 ## [0.46.5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.4...@mch-group/uikit-components@0.46.5) (2022-03-31)
 
 **Note:** Version bump only for package @mch-group/uikit-components
