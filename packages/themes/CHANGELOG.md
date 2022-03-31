@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.39.7](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.6...@mch-group/uikit-themes@0.39.7) (2022-03-31)
+
+
+### Bug Fixes
+
+* **dropdown:** fixed font size and paddings ([dd394ce](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/dd394cec212299585b501d8a59bb72219ad8a4da))
+
+
+
+
+
 ## [0.39.6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.5...@mch-group/uikit-themes@0.39.6) (2022-03-31)
 
 
