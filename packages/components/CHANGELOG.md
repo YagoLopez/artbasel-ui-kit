@@ -3,6 +3,74 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.46.7](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.6...@mch-group/uikit-components@0.46.7) (2022-03-31)
+
+
+### Bug Fixes
+
+* **radio-button-field:** fixed price alignment ([ad97279](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/ad97279fd70bd9d4af0a3ee9ac0b4a25bcdffe13))
+
+
+
+
+
+## [0.46.6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.5...@mch-group/uikit-components@0.46.6) (2022-03-31)
+
+
+### Bug Fixes
+
+* **megamenu:** fixed spacing in navbar ([d7e8315](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d7e83155d1fa2c916af23e173fb6a78011a6000e))
+
+
+
+
+
+## [0.46.5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.4...@mch-group/uikit-components@0.46.5) (2022-03-31)
+
+**Note:** Version bump only for package @mch-group/uikit-components
+
+
+
+
+
+## [0.46.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.3...@mch-group/uikit-components@0.46.4) (2022-03-30)
+
+**Note:** Version bump only for package @mch-group/uikit-components
+
+
+
+
+
+## [0.46.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.2...@mch-group/uikit-components@0.46.3) (2022-03-30)
+
+**Note:** Version bump only for package @mch-group/uikit-components
+
+
+
+
+
+## [0.46.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.1...@mch-group/uikit-components@0.46.2) (2022-03-30)
+
+
+### Bug Fixes
+
+* **event card:** fix styles when event has no address ([30869d8](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/30869d871932a1a189105756e964a9ca2b0398c8))
+
+
+
+
+
+## [0.46.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.0...@mch-group/uikit-components@0.46.1) (2022-03-30)
+
+
+### Bug Fixes
+
+* **content card:** fix reverse option in small devices ([a3a7d7e](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/a3a7d7e1cf45824ea3747783315b4b8c967da876))
+
+
+
+
+
 # [0.46.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.45.0...@mch-group/uikit-components@0.46.0) (2022-03-29)
 
 

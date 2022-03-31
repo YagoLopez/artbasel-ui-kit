@@ -3,6 +3,82 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.39.8](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.7...@mch-group/uikit-themes@0.39.8) (2022-03-31)
+
+
+### Bug Fixes
+
+* **radio-button-field:** fixed price alignment ([ad97279](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/ad97279fd70bd9d4af0a3ee9ac0b4a25bcdffe13))
+
+
+
+
+
+## [0.39.7](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.6...@mch-group/uikit-themes@0.39.7) (2022-03-31)
+
+
+### Bug Fixes
+
+* **dropdown:** fixed font size and paddings ([dd394ce](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/dd394cec212299585b501d8a59bb72219ad8a4da))
+
+
+
+
+
+## [0.39.6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.5...@mch-group/uikit-themes@0.39.6) (2022-03-31)
+
+
+### Bug Fixes
+
+* **megamenu:** fixed spacing in navbar ([d7e8315](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d7e83155d1fa2c916af23e173fb6a78011a6000e))
+
+
+
+
+
+## [0.39.5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.4...@mch-group/uikit-themes@0.39.5) (2022-03-31)
+
+**Note:** Version bump only for package @mch-group/uikit-themes
+
+
+
+
+
+## [0.39.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.3...@mch-group/uikit-themes@0.39.4) (2022-03-30)
+
+**Note:** Version bump only for package @mch-group/uikit-themes
+
+
+
+
+
+## [0.39.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.2...@mch-group/uikit-themes@0.39.3) (2022-03-30)
+
+**Note:** Version bump only for package @mch-group/uikit-themes
+
+
+
+
+
+## [0.39.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.1...@mch-group/uikit-themes@0.39.2) (2022-03-30)
+
+**Note:** Version bump only for package @mch-group/uikit-themes
+
+
+
+
+
+## [0.39.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.0...@mch-group/uikit-themes@0.39.1) (2022-03-30)
+
+
+### Bug Fixes
+
+* **content card:** fix reverse option in small devices ([a3a7d7e](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/a3a7d7e1cf45824ea3747783315b4b8c967da876))
+
+
+
+
+
 # [0.39.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.38.0...@mch-group/uikit-themes@0.39.0) (2022-03-29)
 
 

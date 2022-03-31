@@ -50,7 +50,7 @@ const ProfileMobile = ({
           </h5>
         </div>
 
-        <div className={ classnames('mobile-item-midle', { 'd-none': !isUserLoggedIn }) }>
+        <div className='mobile-item-midle'>
           {
             entries.filter(o => o.type !== 'action').map(o => <div className="navlink-mobile-header item" key={ o.label }>
                   <div className="navlink-mobile link-profile text-medium">

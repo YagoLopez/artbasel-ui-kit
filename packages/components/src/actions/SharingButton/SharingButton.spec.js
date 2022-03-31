@@ -3,7 +3,6 @@ import '@testing-library/jest-dom';
 import {
   cleanup, render, screen, fireEvent, waitFor,
 } from '@testing-library/react';
-import { act } from 'react-test-renderer';
 import SharingButton from './SharingButton';
 
 describe('Test for SharingButton component', () => {

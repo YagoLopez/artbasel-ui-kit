@@ -34,7 +34,7 @@ const ContentCard = ({
       className={classNames('content-card', {
         responsive,
         fixed: !responsive,
-        reverse,
+        reverse: responsive ? reverse : false,
       })}
     >
       <div className="image-frame">

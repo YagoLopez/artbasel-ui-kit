@@ -30,6 +30,7 @@ Gallery.propTypes = {
   children: PropTypes.object.isRequired,
   options: PropTypes.object,
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  onOpen: PropTypes.func,
 };
 
 Gallery.defaultProps = {

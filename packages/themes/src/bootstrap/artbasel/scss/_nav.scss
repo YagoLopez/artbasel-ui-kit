@@ -77,6 +77,12 @@
       font-weight: bold !important;
     }
   }
+
+  .search-field {
+    min-width: 180px;
+    max-width: 399px;
+    width: 100%;
+  }
 }
 
 .entries-container {
@@ -274,6 +280,13 @@
     &:hover,
     &:focus {
       border-color: transparent transparent $color-mch-gray-500;
+    }
+
+    &:focus,
+    &:active,
+    &:focus:active {
+      outline: none;
+      box-shadow: none;
     }
 
     &.disabled {
