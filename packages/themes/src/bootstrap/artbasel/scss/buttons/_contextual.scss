@@ -111,37 +111,37 @@
         }
       }
     }
-  }
 
-  &.with-scroll {
-    overflow-y: scroll;
-    max-height: 10rem;
+    &.with-scroll {
+      overflow-y: scroll;
+      max-height: 10rem;
 
-    .mch-contextual-item {
-      min-width: 2.375rem;
+      .mch-contextual-item {
+        min-width: 2.375rem;
 
-      &.labeled {
-        min-width: 7.5rem;
+        &.labeled {
+          min-width: 7.5rem;
+        }
       }
-    }
 
-    &::-webkit-scrollbar {
-      width: 18px;
-      background-color: $color-mch-white;
-    }
+      &::-webkit-scrollbar {
+        width: 18px;
+        background-color: $color-mch-white;
+      }
 
-    &::-webkit-scrollbar-track {
-      background-color: $color-mch-white;
-    }
+      &::-webkit-scrollbar-track {
+        background-color: $color-mch-white;
+      }
 
-    &::-webkit-scrollbar-thumb {
-      border-radius: 12px;
-      background-color: $color-mch-gray-400;
-      border: 8px solid $color-mch-white;
-    }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 12px;
+        background-color: $color-mch-gray-400;
+        border: 8px solid $color-mch-white;
+      }
 
-    &::-webkit-scrollbar-button {
-      display: none;
+      &::-webkit-scrollbar-button {
+        display: none;
+      }
     }
   }
 }
