@@ -1,12 +1,21 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import {
-  cleanup, render, screen,
-} from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
 import ArtworkTile from './ArtworkTile';
 import { example } from './ArtworkTile.example';
 
 console.error = jest.fn();
+
+const artistExample = {
+  id: example.artistsData[0].id,
+  name: example.artistsData[0].name,
+  url: example.artistsData[0].url,
+  linkRenderer: (link, children) => (
+    <a href={link} target="_blank" rel="noreferrer">
+      {children}
+    </a>
+  ),
+};
 
 describe('Tests for ArtworkTile component', () => {
   afterEach(cleanup);
@@ -15,6 +24,7 @@ describe('Tests for ArtworkTile component', () => {
     render(
       <ArtworkTile
         {...example}
+        artistsData={[artistExample]}
         linkRenderer={(link, children) => (
           <a href={link} target="_blank" rel="noreferrer">
             {children}
@@ -22,13 +32,14 @@ describe('Tests for ArtworkTile component', () => {
         )}
       />,
     );
-    expect(screen.getByText(example.artistName)).toBeInTheDocument();
+    expect(screen.getByText(example.artistsData[0].name)).toBeInTheDocument();
   });
 
   test('Should not render the component without imageUrl prop', () => {
     render(
       <ArtworkTile
         {...example}
+        artistsData={[artistExample]}
         imageUrl={null}
         linkRenderer={(link, children) => (
           <a href={link} target="_blank" rel="noreferrer">
@@ -41,7 +52,13 @@ describe('Tests for ArtworkTile component', () => {
   });
 
   test('Should not render the component without linkRenderer prop', () => {
-    render(<ArtworkTile {...example} linkRenderer={null} />);
+    render(
+      <ArtworkTile
+        {...example}
+        artistsData={[artistExample]}
+        linkRenderer={null}
+      />,
+    );
     expect(console.error).toBeCalled();
   });
 
@@ -50,6 +67,7 @@ describe('Tests for ArtworkTile component', () => {
       <ArtworkTile
         {...example}
         artworkLink={null}
+        artistsData={[artistExample]}
         linkRenderer={(link, children) => (
           <a href={link} target="_blank" rel="noreferrer">
             {children}
@@ -65,6 +83,7 @@ describe('Tests for ArtworkTile component', () => {
       <ArtworkTile
         {...example}
         pageType="catalogue"
+        artistsData={[artistExample]}
         linkRenderer={(link, children) => (
           <a href={link} target="_blank" rel="noreferrer">
             {children}
@@ -80,7 +99,8 @@ describe('Tests for ArtworkTile component', () => {
       <ArtworkTile
         {...example}
         selectMode={{ active: true }}
-        collection={{ active: true } }
+        collection={{ active: true }}
+        artistsData={[artistExample]}
         linkRenderer={(link, children) => (
           <a href={link} target="_blank" rel="noreferrer">
             {children}

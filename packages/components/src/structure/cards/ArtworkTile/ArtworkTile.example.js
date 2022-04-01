@@ -1,12 +1,24 @@
 export const example = {
   // artwork data
   artworkTitle: 'Art Name',
-  artistName: 'Artist Name',
+  artistsData: [
+    {
+      id: 1,
+      name: 'Artist Name',
+      url: 'https://artbasel.com/#1',
+      linkRenderer: (link, children) => (
+        <a href={link} target="_blank" rel="noreferrer">
+          {children}
+        </a>
+      ),
+    },
+  ],
   year: '1982',
   price: 'USD 9,999',
   status: 'Reserved',
   galleryName: 'Gallery Name',
-  imageUrl: 'https://res.cloudinary.com/dqzqcuqf9/image/upload/v1646415941/1_c8ugts.jpg',
+  imageUrl:
+    'https://res.cloudinary.com/dqzqcuqf9/image/upload/v1646415941/1_c8ugts.jpg',
   showsData: [
     {
       id: 1,
@@ -66,7 +78,6 @@ export const example = {
   },
   // links
   artworkLink: 'https://artbasel.com/artworks',
-  artistLink: 'https://artbasel.com/artists',
   galleryLink: 'https://artbasel.com/galleries',
   linkRenderer: (link, children) => (
     <a href={link} target="_blank" rel="noreferrer">

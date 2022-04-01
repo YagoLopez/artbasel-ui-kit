@@ -25,16 +25,15 @@ const ArtworkTile = ({
   collection,
   theme,
   artworkTitle,
-  artistName,
   year,
   price,
+  artistsData,
   status,
   galleryName,
   inquiry,
   imageUrl,
   showsData,
   artworkLink,
-  artistLink,
   galleryLink,
   linkRenderer,
   viewAtFair,
@@ -160,7 +159,7 @@ const ArtworkTile = ({
             }
           >
             {imageType !== 'square' && (
-              <img src={imageUrl} title={artistName} alt={artistName} />
+              <img src={imageUrl} title={artworkTitle} alt={artworkTitle} />
             )}
           </div>
         </div>
@@ -168,22 +167,25 @@ const ArtworkTile = ({
 
       <div className="text-frame">
         <div className="text-frame-top">
-          {artistName && (
-            <MemoizedConditionalWrapper
-              linkRenderer={linkRenderer}
-              condition={artworkLink}
-              link={artistLink || artworkLink}
-            >
-              <h5 className="truncate" title={artistName}>
-                {artistName}
-              </h5>
-            </MemoizedConditionalWrapper>
-          )}
+          <h5 className="truncate" title={artistsData?.map((i) => i.name).join(', ')}>
+            {artistsData?.length
+              && artistsData?.map((i, index) => (
+                <React.Fragment key={i.id}>
+                  <MemoizedConditionalWrapper
+                    linkRenderer={i.linkRenderer}
+                    condition={i.name}
+                    link={i.url}
+                  >
+                    {i.name}
+                  </MemoizedConditionalWrapper>
+                  {index + 1 < artistsData.length && ', '}
+                </React.Fragment>
+              ))}
+          </h5>
           {artworkTitle && (
             <MemoizedConditionalWrapper
               linkRenderer={linkRenderer}
               condition={artworkTitle}
-              link={artworkLink}
             >
               <p className="text-medium truncate" title={artworkTitle}>
                 {`${artworkTitle}${year ? `, ${year}` : ''}`}
@@ -215,31 +217,31 @@ const ArtworkTile = ({
         </div>
         {((show?.active && collection?.active)
           || ['catalogue'].includes(pageType)) && (
-          <div className="text-frame-bottom">
-            <div className="shows">
-              {show?.active && collection?.active && (
-                <Tag
-                  type="label"
-                  variant="secondary"
-                  label={show.label}
-                  onClick={show.onClick}
-                  theme={theme}
-                />
-              )}
-              {['catalogue'].includes(pageType)
-                && showsData?.length > 0
-                && showsData?.map((i) => (
+            <div className="text-frame-bottom">
+              <div className="shows">
+                {show?.active && collection?.active && (
                   <Tag
-                    key={i.id}
-                    label={i.name}
                     type="label"
                     variant="secondary"
+                    label={show.label}
+                    onClick={show.onClick}
                     theme={theme}
-                    onClick={i.onClick}
                   />
-                ))}
+                )}
+                {['catalogue'].includes(pageType)
+                  && showsData?.length > 0
+                  && showsData?.map((i) => (
+                    <Tag
+                      key={i.id}
+                      label={i.name}
+                      type="label"
+                      variant="secondary"
+                      theme={theme}
+                      onClick={i.onClick}
+                    />
+                  ))}
+              </div>
             </div>
-          </div>
         )}
       </div>
     </Card>
@@ -248,12 +250,18 @@ const ArtworkTile = ({
 
 ArtworkTile.propTypes = {
   artworkTitle: PropTypes.string.isRequired,
-  artistName: PropTypes.string,
   year: PropTypes.string,
   price: PropTypes.string,
   status: PropTypes.string,
   galleryName: PropTypes.string,
   imageUrl: PropTypes.string.isRequired,
+  artistsData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      linkRenderer: PropTypes.func.isRequired,
+    }),
+  ),
   showsData: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -300,7 +308,6 @@ ArtworkTile.propTypes = {
     onClick: PropTypes.func,
   }),
   artworkLink: PropTypes.string.isRequired,
-  artistLink: PropTypes.string,
   galleryLink: PropTypes.string,
   linkRenderer: PropTypes.func.isRequired,
 };
@@ -314,7 +321,7 @@ ArtworkTile.defaultProps = {
   selectMode: {
     active: false,
     checked: false,
-    onChange: () => {},
+    onChange: () => { },
     disabled: false,
   },
 };

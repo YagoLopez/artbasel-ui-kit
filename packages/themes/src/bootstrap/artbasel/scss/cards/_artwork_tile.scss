@@ -137,7 +137,8 @@
     }
 
     &:not(.selected-state) {
-      .tag {
+      .tag,
+      .overlay-eye {
         opacity: 0.75;
       }
       .text-frame {
@@ -256,6 +257,7 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        transition: all 0.35s ease-out;
         width: $spacing-10;
         height: $spacing-10;
         z-index: 5;
