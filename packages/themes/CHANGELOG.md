@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.39.9](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.8...@mch-group/uikit-themes@0.39.9) (2022-04-01)
+
+
+### Bug Fixes
+
+* **artwork tile:** enable multiple artist names with its own link, and small design tweak ([6e9a195](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/6e9a195e87051ca14f4685e6dc80fd06b2d9ed00))
+* **artwork tile:** unavailable to view state, remove curator, and support multiple tags ([b5685e4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/b5685e48781c2e9d6fbe4478d7043999566af9a6))
+
+
+
+
+
 ## [0.39.8](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.7...@mch-group/uikit-themes@0.39.8) (2022-03-31)
 
 
