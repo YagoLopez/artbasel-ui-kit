@@ -15,7 +15,7 @@ describe('Test for SharingButton component', () => {
       />,
     );
 
-    expect(screen.getByTestId('mch-contextual-menu')).toBeInTheDocument();
+    expect(screen.getByTestId('mch-btn-contextual')).toBeInTheDocument();
   });
 
   test('Should render 2 options with correct labels', async () => {
@@ -25,7 +25,7 @@ describe('Test for SharingButton component', () => {
       />,
     );
 
-    const button = container.querySelector('.dropdown-toggle');
+    const button = screen.getByTestId('mch-button-icon');
 
     await waitFor(() => fireEvent.click(button));
     const options = container.querySelectorAll('.mch-contextual-item');

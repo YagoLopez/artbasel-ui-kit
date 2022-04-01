@@ -4,10 +4,15 @@ import ContextualButton from '../ContextualButton/ContextualButton';
 
 const SharingButton = ({
   media,
-  showLabel,
+  size,
+  variant,
+  theme,
+  title,
   position,
   align,
-  theme,
+  showLabel,
+  scrollbar,
+
 }) => {
   const pageTitle = document.title;
   const pageUrl = window.location.href;
@@ -56,10 +61,14 @@ const SharingButton = ({
   return (
     <ContextualButton
       icon="share"
-      showLabel={showLabel}
+      size={ size }
+      variant={ variant }
+      theme={ theme }
+      title={ title }
       position={position}
       align={align}
-      theme={theme}
+      showLabel={ showLabel }
+      scrollbar={ scrollbar }
     >
       {
         media.map((item, index) => {
@@ -91,18 +100,25 @@ SharingButton.propTypes = {
       'link-default',
     ]),
   ).isRequired,
-  showLabel: PropTypes.bool,
+  size: PropTypes.oneOf(['xs', 's', 'm', 'lg']),
+  variant: PropTypes.oneOf(['default', 'outline', 'fill']),
+  theme: PropTypes.oneOf(['light', 'dark']),
+  title: PropTypes.string,
   position: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
   align: PropTypes.oneOf(['start', 'center', 'end']),
-  theme: PropTypes.oneOf(['light', 'dark']),
+  showLabel: PropTypes.bool,
+  scrollbar: PropTypes.bool,
 };
 
 SharingButton.defaultProps = {
-  showLabel: true,
-  icon: 'context',
+  size: 'm',
+  variant: 'default',
+  theme: 'light',
+  title: 'Share to social media',
   position: 'bottom',
   align: 'start',
-  theme: 'light',
+  showLabel: true,
+  scrollbar: false,
 };
 
 export default SharingButton;

@@ -1,18 +1,32 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { DropdownButton } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 import Item from './Item';
-import { Icon } from '../../utils/Icon';
+import { ButtonIcon } from '../ButtonIcon';
 import ButtonContext from './ButtonContext';
+import { IconList } from '../../utils/Icon';
+
+const CustomToggle = forwardRef(({ onClick, children }, ref) => {
+  return (
+  <div ref={ ref } onClick={(e) => {
+    e.preventDefault();
+    onClick(e);
+  }}>{children}</div>
+  );
+});
 
 const ContextualButton = ({
   icon,
-  children,
-  showLabel,
+  size,
+  variant,
+  theme,
+  title,
   position,
   align,
-  theme,
+  showLabel,
+  scrollbar,
+  children,
 }) => {
   const drop = {
     top: 'up',
@@ -23,51 +37,66 @@ const ContextualButton = ({
   const alignment = {
     start: 'start',
     end: 'end',
+    center: 'start',
   };
 
   return (
-    <div
-      className={classnames(
-        'mch-contextual-menu',
-        position,
-        theme,
-        {
-          centered: align === 'center',
-          'with-scroll': children?.length > 4,
-        },
-      )}
-      data-testid="mch-contextual-menu"
+    <div data-testid="mch-btn-contextual"
     >
-      <DropdownButton
-        drop={drop[position]}
-        align={alignment[align]}
-        title={
-          <Icon name={icon} size={24} />
-        }
-      >
-        <ButtonContext.Provider value={showLabel}>
-          {children}
+      <Dropdown drop={ drop[position] } align={alignment[align]} className='btn-contextual'>
+        <Dropdown.Toggle as={ CustomToggle }>
+          <ButtonIcon
+            icon={ icon }
+            theme={ theme }
+            size={ size }
+            variant={ variant }
+            title={ title }
+          />
+        </Dropdown.Toggle>
+        <ButtonContext.Provider value={ showLabel }>
+          <Dropdown.Menu drop={ drop[position] } align={ alignment[align] } className={classnames(
+            position, size, theme,
+            {
+              centered: align === 'center',
+              'with-scroll': scrollbar,
+            },
+          )}>
+            { children }
+          </Dropdown.Menu>
         </ButtonContext.Provider>
-      </DropdownButton>
+      </Dropdown>
     </div>
   );
 };
 
+CustomToggle.displayName = 'CustomToggle';
+
+CustomToggle.propTypes = {
+  onClick: PropTypes.func,
+};
+
 ContextualButton.propTypes = {
-  icon: PropTypes.string.isRequired,
-  showLabel: PropTypes.bool,
+  icon: PropTypes.oneOf(IconList),
+  size: PropTypes.oneOf(['xs', 's', 'm', 'lg']),
+  variant: PropTypes.oneOf(['default', 'outline', 'fill']),
+  theme: PropTypes.oneOf(['light', 'dark']),
+  title: PropTypes.string,
   position: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
   align: PropTypes.oneOf(['start', 'center', 'end']),
+  showLabel: PropTypes.bool,
+  scrollbar: PropTypes.bool,
   children: PropTypes.arrayOf(Item).isRequired,
-  theme: PropTypes.oneOf(['light', 'dark']),
 };
 
 ContextualButton.defaultProps = {
-  showLabel: true,
   icon: 'context',
+  size: 'm',
+  variant: 'default',
+  theme: 'light',
   position: 'bottom',
   align: 'start',
-  theme: 'light',
+  showLabel: true,
+  scrollbar: false,
 };
 
 export default Object.assign(ContextualButton, { Item });
