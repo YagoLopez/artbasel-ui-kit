@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.46.10](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.9...@mch-group/uikit-components@0.46.10) (2022-04-01)
+
+
+### Bug Fixes
+
+* **contextbutton:** added ButtonIcon  and hover text ([6ff29b1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/6ff29b11f23dc9b4b590ec6482b518ac527da8b4))
+* **contextbutton:** added ButtonIcon  and hover text ([d67fc2c](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d67fc2cc9c59ca03c0d3c8de2d54faf9ec563e2e))
+
+
+
+
+
 ## [0.46.9](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.8...@mch-group/uikit-components@0.46.9) (2022-04-01)
 
 
