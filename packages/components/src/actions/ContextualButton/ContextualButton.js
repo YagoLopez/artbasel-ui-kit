@@ -54,11 +54,11 @@ const ContextualButton = ({
           />
         </Dropdown.Toggle>
         <ButtonContext.Provider value={ showLabel }>
-          <Dropdown.Menu drop={ drop[position] } align={ alignment[align] } className={classnames(
+          <Dropdown.Menu className={classnames(
             position, size, theme,
             {
               centered: align === 'center',
-              'with-scroll': scrollbar,
+              'with-scroll': scrollbar && children?.length > 4,
             },
           )}>
             { children }
