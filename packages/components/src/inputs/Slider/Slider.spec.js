@@ -1,8 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import {
-  render, fireEvent, screen,
-} from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import Slider from './Slider';
 
 const Component = (props) => (
@@ -29,6 +27,35 @@ describe('Slider component', () => {
 
       expect(minInputElement).toBeInTheDocument();
       expect(maxInputElement).not.toBeInTheDocument();
+    });
+
+    it('should update render range when max is changed', () => {
+      const { rerender } = render(<Component max={100} value={[0, 20]}/>);
+      expect(screen.getByTestId('slider-range').style).toHaveProperty(
+        'width',
+        '20%',
+      );
+
+      rerender(<Component max={40} value={[0, 20]} />);
+
+      expect(screen.getByTestId('slider-range').style).toHaveProperty('width', '50%');
+    });
+
+    it('should update render range when min is changed', () => {
+      const { rerender } = render(<Component min={0} value={[0, 20]}/>);
+      expect(screen.getByTestId('slider-range').style).toHaveProperty(
+        'left',
+        '0%',
+      );
+      expect(screen.getByTestId('slider-range').style).toHaveProperty(
+        'width',
+        '20%',
+      );
+
+      rerender(<Component max={100} min={20} value={[40, 50]} isRange />);
+
+      expect(screen.getByTestId('slider-range').style).toHaveProperty('left', '25%');
+      expect(screen.getByTestId('slider-range').style).toHaveProperty('width', '12.5%');
     });
   });
 

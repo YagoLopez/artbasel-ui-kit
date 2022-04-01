@@ -34,7 +34,7 @@ const Slider = ({
       left: isRange ? `${minPercent}%` : 0,
       width: `${isRange ? maxPercent - minPercent : minPercent}%`,
     };
-  }, [minValue, maxValue, isRange]);
+  }, [minValue, maxValue, isRange, getPercent]);
 
   const normalizeValue = useCallback(
     (v, name) => {
@@ -125,6 +125,7 @@ const Slider = ({
         <div className="slider-track" />
         <div
           style={getRangeStyle()}
+          data-testid="slider-range"
           className={classnames('slider-range', {
             disabled: disabled === true,
           })}
