@@ -1,7 +1,9 @@
 /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
 import React from 'react';
 import '@testing-library/jest-dom';
-import { render, screen, cleanup } from '@testing-library/react';
+import {
+  cleanup, render, screen, fireEvent, waitFor,
+} from '@testing-library/react';
 import ContextualButton from './ContextualButton';
 
 console.error = jest.fn();
@@ -11,20 +13,20 @@ describe('ContextualButton component', () => {
 
   test('Render Contextual Menu component', () => {
     render(
-      <ContextualButton icon="context" data-testid="mch-contextual-menu">
+      <ContextualButton icon="context">
         <ContextualButton.Item>Label 1</ContextualButton.Item>
         <ContextualButton.Item>Label 2</ContextualButton.Item>
       </ContextualButton>,
     );
 
-    expect(screen.getByTestId('mch-contextual-menu')).toBeInTheDocument();
+    expect(screen.getByTestId('mch-btn-contextual')).toBeInTheDocument();
   });
 
-  test('Pass showLabel prop as false would render without labels', () => {
+  test('Pass showLabel prop as false would render without labels', async () => {
     render(
       <ContextualButton
         icon="context"
-        data-testid="mch-contextual-menu"
+        data-testid="mch-btn-contextual"
         showLabel={false}
       >
         <ContextualButton.Item>Label 1</ContextualButton.Item>
@@ -32,14 +34,18 @@ describe('ContextualButton component', () => {
       </ContextualButton>,
     );
 
+    const button = screen.getByTestId('mch-button-icon');
+    await waitFor(() => fireEvent.click(button));
+
     expect(screen.queryByText('Label 1')).not.toBeInTheDocument();
   });
 
-  test('Passing more than 4 items would add a class for scrolling', () => {
+  test('Passing scrollbar prop as true would add a class for scrolling', async () => {
     const { container } = render(
       <ContextualButton
         icon="context"
-        data-testid="mch-contextual-menu"
+        scrollbar={ true }
+        data-testid="mch-btn-contextual"
       >
         <ContextualButton.Item>Label 1</ContextualButton.Item>
         <ContextualButton.Item>Label 2</ContextualButton.Item>
@@ -49,15 +55,18 @@ describe('ContextualButton component', () => {
       </ContextualButton>,
     );
 
-    const menu = container.querySelector('.mch-contextual-menu');
+    const button = screen.getByTestId('mch-button-icon');
+    await waitFor(() => fireEvent.click(button));
+
+    const menu = container.querySelector('.dropdown-menu');
     expect(menu).toHaveClass('with-scroll');
   });
 
-  test('Passing dark as theme prop would change the light for dark class', () => {
+  test('Passing dark as theme prop would change the light for dark class', async () => {
     const { container } = render(
       <ContextualButton
         icon="context"
-        data-testid="mch-contextual-menu"
+        data-testid="mch-btn-contextual"
         theme='dark'
       >
         <ContextualButton.Item>Label 1</ContextualButton.Item>
@@ -65,15 +74,18 @@ describe('ContextualButton component', () => {
       </ContextualButton>,
     );
 
-    const menu = container.querySelector('.mch-contextual-menu');
+    const button = screen.getByTestId('mch-button-icon');
+    await waitFor(() => fireEvent.click(button));
+
+    const menu = container.querySelector('.dropdown-menu');
     expect(menu).toHaveClass('dark');
   });
 
-  test('Passing the position and alignment props would add them as classes', () => {
+  test('Passing the position and alignment props would add them as classes', async () => {
     const { container } = render(
       <ContextualButton
         icon="context"
-        data-testid="mch-contextual-menu"
+        data-testid="mch-btn-contextual"
         position='top'
         align='center'
       >
@@ -82,7 +94,10 @@ describe('ContextualButton component', () => {
       </ContextualButton>,
     );
 
-    const menu = container.querySelector('.mch-contextual-menu');
+    const button = screen.getByTestId('mch-button-icon');
+    await waitFor(() => fireEvent.click(button));
+
+    const menu = container.querySelector('.dropdown-menu');
     expect(menu).toHaveClass('top');
     expect(menu).toHaveClass('centered');
   });
@@ -90,7 +105,7 @@ describe('ContextualButton component', () => {
   test('Not passing icon as prop would show an error', () => {
     render(
       <ContextualButton
-        data-testid="mch-contextual-menu"
+        data-testid="mch-btn-contextual"
       >
         <ContextualButton.Item>Label 1</ContextualButton.Item>
         <ContextualButton.Item>Label 2</ContextualButton.Item>
