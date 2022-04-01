@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.46.8](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.7...@mch-group/uikit-components@0.46.8) (2022-04-01)
+
+
+### Bug Fixes
+
+* slider range line did not update when max was changed ([cc5e6cd](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/cc5e6cdaadbab58db17359f7cc46c3e679536f47))
+
+
+
+
+
 ## [0.46.7](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.6...@mch-group/uikit-components@0.46.7) (2022-03-31)
 
 
