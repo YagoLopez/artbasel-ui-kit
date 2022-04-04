@@ -53,8 +53,8 @@ const ProfileMobile = ({
         <div className='mobile-item-midle'>
           {
             entries.filter(o => o.type !== 'action').map(o => <div className="navlink-mobile-header item" key={ o.label }>
-                  <div className="navlink-mobile link-profile text-medium">
-                    { linkRenderer(o.link, o.label) }
+              <div className="navlink-mobile link-profile text-medium" onClick={() => setIsVisible(null)}>
+                { linkRenderer(o.link, o.label) }
               </div>
               </div>)
           }
