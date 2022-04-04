@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.46.11](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.10...@mch-group/uikit-components@0.46.11) (2022-04-04)
+
+
+### Bug Fixes
+
+* **megamenu:** closes mobile profile flyout onclick ([49e81c4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/49e81c467d6a8a2f525e9256b12128d6cc29296c))
+
+
+
+
+
 ## [0.46.10](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.9...@mch-group/uikit-components@0.46.10) (2022-04-01)
 
 
