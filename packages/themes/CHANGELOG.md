@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.39.11](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.10...@mch-group/uikit-themes@0.39.11) (2022-04-04)
+
+**Note:** Version bump only for package @mch-group/uikit-themes
+
+
+
+
+
 ## [0.39.10](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.9...@mch-group/uikit-themes@0.39.10) (2022-04-01)
 
 
