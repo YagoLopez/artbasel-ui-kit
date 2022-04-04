@@ -82,7 +82,7 @@ const ProfileFlyout = ({
                 {o.label}
               </li>
           ) : (
-              <li className="item-menu-label item-menu-link" key={o.label}>
+              <li className="item-menu-label item-menu-link" onClick={() => setIsVisible(null)} key={o.label}>
                 { linkRenderer(o.link, o.label) }
               </li>
           )))}
