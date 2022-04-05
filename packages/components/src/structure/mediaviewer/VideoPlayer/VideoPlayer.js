@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import PropTypes from 'prop-types';
 
@@ -7,6 +7,7 @@ const VideoPlayer = (props) => {
     startOnMouseEnter,
     pauseOnMouseLeave,
     url,
+    playing,
     ...rest
   }) => rest)(props);
 
@@ -23,6 +24,10 @@ const VideoPlayer = (props) => {
       setIsPlaying(false);
     }
   };
+
+  useEffect(() => {
+    setIsPlaying(props.playing);
+  }, [props.playing]);
 
   return (
     <div
