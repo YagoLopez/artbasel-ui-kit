@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.47.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.12...@mch-group/uikit-components@0.47.0) (2022-04-05)
+
+
+### Features
+
+* **linkcard:** adds linkcard component ([72cd396](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/72cd396cc031ddfc1fc775665b65011c4dbc3caa))
+
+
+
+
+
 ## [0.46.12](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.11...@mch-group/uikit-components@0.46.12) (2022-04-05)
 
 **Note:** Version bump only for package @mch-group/uikit-components
