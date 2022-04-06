@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.40.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.40.0...@mch-group/uikit-themes@0.40.1) (2022-04-06)
+
+
+### Bug Fixes
+
+* **linkcard:** fix figma link & border-radius css property ([d4cdffe](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d4cdffe5ba56089f4e57b4754daa44e1378d5aa3))
+
+
+
+
+
 # [0.40.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.39.11...@mch-group/uikit-themes@0.40.0) (2022-04-05)
 
 
