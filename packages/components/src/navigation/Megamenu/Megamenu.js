@@ -20,6 +20,7 @@ const MegaMenuBuilder = forwardRef(
       menuData,
       linkRenderer,
       onSearch,
+      languageData,
       profileData,
       profileWelcomeHeader,
       userData,
@@ -79,6 +80,7 @@ const MegaMenuBuilder = forwardRef(
               menuData={ menuData }
               linkRenderer={linkRenderer}
               profileData={profileData}
+              languageData={languageData}
               visibleMenu={visibleMenu}
               setVisibleMenu={setVisibleMenu}
               userData={userData}
@@ -96,6 +98,7 @@ const MegaMenuBuilder = forwardRef(
               menuData={ menuData }
               linkRenderer={linkRenderer}
               profileData={profileData}
+              languageData={languageData}
               visibleMenu={visibleMenu}
               setVisibleMenu={ setVisibleMenu }
               visibleMobileNavbar={ visibleMobileNavbar }
@@ -143,6 +146,7 @@ const Megamenu = forwardRef(
     {
       menuData,
       linkRenderer,
+      languageData,
       profileData,
       userData,
       loggedCollectionUrl,
@@ -169,7 +173,8 @@ const Megamenu = forwardRef(
     return (
       <MegaMenuBuilder
         menuData={menuData}
-        linkRenderer={linkRenderer}
+        linkRenderer={ linkRenderer }
+        languageData={languageData}
         profileData={profileData}
         userData={userData}
         profileWelcomeHeader={profileWelcomeHeader}
@@ -190,6 +195,7 @@ MegaMenuBuilder.displayName = 'MegaMenuBuilder';
 MegaMenuBuilder.propTypes = {
   menuData: PropTypes.object.isRequired,
   linkRenderer: PropTypes.func.isRequired,
+  languageData: PropTypes.object,
   profileData: PropTypes.object.isRequired,
   userData: PropTypes.shape({
     name: PropTypes.string.isRequired,
@@ -225,6 +231,17 @@ Megamenu.propTypes = {
     vipStatus: PropTypes.bool.isRequired,
     isUserLoggedIn: PropTypes.bool.isRequired,
   }).isRequired,
+
+  /** A JSON object with the options to be shown in the Language Flyout.
+   Please check bellow a sample.
+  */
+  languageData: PropTypes.shape({
+    LanguageHeader: PropTypes.string.isRequired,
+    LanguageEntries: PropTypes.array.isRequired,
+    LanguageSelected: PropTypes.string.isRequired,
+    onLanguageClick: PropTypes.func,
+  }),
+
   /** A string to be shown on the top of User profile flyout.
    Ex: "Welcome, " */
   profileWelcomeHeader: PropTypes.string.isRequired,

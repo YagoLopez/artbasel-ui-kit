@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import { Container, Row } from '../../../structure/Grid';
 import CardSection from './CardSection';
 import MenuSection from './MenuSection';
-import { PROFILE_FLYOUT } from '../constants';
+import { PROFILE_FLYOUT, LANGUAGE_FLYOUT } from '../constants';
 
 const MenuFlyout = ({
   menuData, visibleMenu, setVisibleMenu, linkRenderer,
@@ -15,7 +15,11 @@ const MenuFlyout = ({
        <Container
             className={classnames(
               'megamenu-white-overlay',
-              { visible: visibleMenu !== null && visibleMenu !== PROFILE_FLYOUT },
+              {
+                visible: visibleMenu !== null
+                  && visibleMenu !== PROFILE_FLYOUT
+                  && visibleMenu !== LANGUAGE_FLYOUT,
+              },
             ) }
 
             ></Container>
@@ -50,7 +54,11 @@ const MenuFlyout = ({
       )}
       <div
         className={classnames('megamenu-overlay',
-          { visible: visibleMenu !== null && visibleMenu !== PROFILE_FLYOUT })}
+          {
+            visible: visibleMenu !== null
+              && visibleMenu !== PROFILE_FLYOUT
+              && visibleMenu !== LANGUAGE_FLYOUT,
+          }) }
         onMouseEnter={() => setVisibleMenu(null)}
       />
     </>

@@ -12,6 +12,7 @@ describe('NavbarMobile component', () => {
   const setVisibleMobileNavbar = jest.fn();
   const data = {
     menuData,
+    languageData: { languageEntries: [] },
     profileData: { entries: [] },
     setVisibleMenu,
     userData: {

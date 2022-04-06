@@ -8,10 +8,31 @@ import menuData from '../Menudata.example.json';
 const testElementId = 'mch-navbar';
 const linkRenderer = (link, label) => <a href={link}>{label}</a>;
 
+const languageData = {
+  languageHeader: 'Site Language',
+  languageSelected: 'en',
+  languageEntries: [
+    {
+      type: 'en',
+      label: 'English',
+    },
+    {
+      type: 'fr',
+      label: 'Français',
+    },
+    {
+      type: 'cn',
+      label: '简体中文',
+    },
+  ],
+  onLanguageClick: jest.fn(),
+};
+
 const Component = (props) => (
   <Navbar
     menuData={menuData}
-    profileData={{ options: [] }}
+    profileData={ { options: [] } }
+    languageData={ languageData }
     visibleMenu={null}
     setVisibleMenu={jest.fn()}
     onLogout={jest.fn()}

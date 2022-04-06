@@ -17,6 +17,25 @@ import Megamenu from './Megamenu';
     vipStatus: true,
     isUserLoggedIn: true,
   }}
+  languageData={{
+    languageHeader: 'Site Language',
+    languageSelected: 'en',
+    languageEntries: [
+      {
+        type: 'en',
+        label: 'English',
+      },
+      {
+        type: 'fr',
+        label: 'Français',
+      },
+      {
+        type: 'cn',
+        label: '简体中文',
+      },
+    ],
+    onLanguageClick: (type) => {},
+  }}
   profileWelcomeHeader="Welcome, "
   profileData={{
     entries: [
@@ -56,10 +75,11 @@ import Megamenu from './Megamenu';
 ## Data and Properties Samples
 
 1. UserData
-2. profileData
-3. linkRenderer
-4. menuData
-5. menuData JSON Schema Validation
+2. languageData
+3. profileData
+4. linkRenderer
+5. menuData
+6. menuData JSON Schema Validation
 
 ### 1. userData Sample
 
@@ -71,7 +91,31 @@ import Megamenu from './Megamenu';
 }
 ```
 
-### 2. profileData Sample
+### 2. languageData Sample
+
+```json
+{
+  "languageHeader": 'Site Language',
+  "languageSelected": 'en',
+  "languageEntries": [
+    {
+      "type": 'en',
+      "label": 'English',
+    },
+    {
+      "type": 'fr',
+      "label": 'Français',
+    },
+    {
+      "type": 'cn',
+      "label": '简体中文',
+    },
+  ],
+  "onLanguageClick": (type) => alert(`You selected ${type}`) /* called when a language is seleted */,
+}
+```
+
+### 3. profileData Sample
 
 ```json
 {
@@ -100,7 +144,7 @@ import Megamenu from './Megamenu';
 }
 ```
 
-### 3. linkRenderer Samples
+### 4. linkRenderer Samples
 
 As the Megamenu component can be consumed in several diferent systems, with diferent navigation methods, the links must be rendered in different ways. To add flexibility, the **linkRenderer** property will be used to render all links.
 
@@ -132,7 +176,7 @@ import Link from 'next/link'
 />
 ```
 
-### 4. menuData Sample
+### 5. menuData Sample
 
 This is the menuData used in this Megamenu sample:
 
@@ -477,7 +521,7 @@ This is the menuData used in this Megamenu sample:
 }
 ```
 
-### 5. menuData JSON Validation Schema
+### 6. menuData JSON Validation Schema
 
 This is the JSON schema used by Megamenu to validate the menuData before render the content.
 

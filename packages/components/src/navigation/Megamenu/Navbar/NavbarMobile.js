@@ -8,10 +8,12 @@ import { Container, Row, Col } from '../../../structure/Grid';
 import { ButtonIcon } from '../../../actions/ButtonIcon';
 import { MobileSearch, Search } from '../../../inputs/Search';
 import ProfileMobile from './ProfileMobile';
+import LanguageMobile from './LanguageMobile';
 import CollectionLink from './CollectionLink';
 
 const NavbarMobile = ({
   menuData,
+  languageData,
   profileData,
   setVisibleMenu,
   userData,
@@ -32,6 +34,7 @@ const NavbarMobile = ({
   const [searchText, setSearchText] = useState(null);
 
   const [visibleProfile, setVisibleProfile] = useState(false);
+  const [visibleLanguage, setVisibleLanguage] = useState(false);
 
   const [containerIsVisible, setContainerIsVisible] = useState(false);
   const [optionsIsVisible, SetOptionsIsVisible] = useState(false);
@@ -62,6 +65,12 @@ const NavbarMobile = ({
     if (event.target.value !== '') { setSearchText(event.target.value); }
   };
 
+  const overlayCloseHandler = () => {
+    setVisibleMobileNavbar(false);
+    setVisibleProfile(false);
+    setVisibleLanguage(false);
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
     onSearch(searchText);
@@ -74,9 +83,18 @@ const NavbarMobile = ({
     setVisibleProfile(!visibleProfile);
   }, [visibleProfile, visibleProfile]);
 
+  const toggleLanguageIsVisible = useCallback(() => {
+    if (visibleLanguage && typeof languageData.onLanguageClose === 'function') languageData.onLanguageClose();
+    if (!visibleLanguage && typeof languageData.onLanguageOpen === 'function') languageData.onLanguageOpen();
+    setVisibleLanguage(!visibleLanguage);
+  }, [visibleLanguage, visibleLanguage]);
+
   return (
     <>
-      {!showSearchBar && !visibleMobileNavbar && !visibleProfile && <Container fluid>
+      { !showSearchBar
+        && !visibleMobileNavbar
+        && !visibleLanguage
+        && !visibleProfile && <Container fluid>
         <Row gutter="g-0" className="px-3 px-md-5 navbar">
           <Col className="col-auto">
             <ButtonIcon
@@ -108,6 +126,9 @@ const NavbarMobile = ({
               <Search placeholder={searchPlaceholder} onChange={ onSearchChangeHandler } />
             </form>
           </Col>
+            { languageData && <Col className="col-auto d-lg-none">
+              <ButtonIcon icon="world" onClick={ () => toggleLanguageIsVisible() } />
+            </Col> }
           <Col className="col-auto d-lg-none">
             <ButtonIcon icon="guest" onClick={() => toggleProfileIsVisible()}/>
           </Col>
@@ -145,20 +166,14 @@ const NavbarMobile = ({
           </Row>
         </Container>
       </CSSTransition>
-      { (visibleMobileNavbar || visibleProfile)
+      { (visibleMobileNavbar || visibleLanguage || visibleProfile)
         && <Container fluid>
         <Row gutter="g-0" className="px-3 px-md-5 navbar">
           <Col className="col-auto">
               <ButtonIcon
                 icon="close"
                 onClick={() => {
-                  if (visibleMobileNavbar) {
-                    setVisibleMobileNavbar(false);
-                  }
-
-                  if (visibleProfile) {
-                    toggleProfileIsVisible(false);
-                  }
+                  overlayCloseHandler();
                 }}
               aria-controls="navlinksMobile"
               aria-expanded={visibleMobileNavbar}
@@ -202,12 +217,17 @@ const NavbarMobile = ({
             ))}
         </div>
       </Container>
-      <div
+      <div onClick={ overlayCloseHandler }
         className={ classnames('navlinks-mobile-overlay', {
-          visible: visibleMobileNavbar || visibleProfile,
+          visible: visibleMobileNavbar || visibleProfile || visibleLanguage,
         }) }
       />
-      { showSearchBar && <div className='mobile-search-overlay' /> }
+      { showSearchBar && <div className='mobile-search-overlay' onClick={ () => setShowSearchBarTransitions(false) }/> }
+      { languageData && <LanguageMobile
+        languageData={ languageData }
+        isVisible={ visibleLanguage }
+        setIsVisible={ setVisibleLanguage }
+      /> }
       <ProfileMobile
         profileData = { profileData }
         isVisible = {visibleProfile}
@@ -222,6 +242,7 @@ const NavbarMobile = ({
 
 NavbarMobile.propTypes = {
   menuData: PropTypes.object,
+  languageData: PropTypes.object,
   profileData: PropTypes.object.isRequired,
   visibleMenu: PropTypes.string,
   setVisibleMenu: PropTypes.func.isRequired,
