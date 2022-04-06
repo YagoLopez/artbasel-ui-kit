@@ -21,6 +21,26 @@ export const handleOnSearch = (searchTerm) =>
 
 export const handleOnLogout = () => console.log('Logged Out');
 
+export const languageData = {
+  languageHeader: 'Site Language',
+  languageSelected: 'en',
+  languageEntries: [
+    {
+      type: 'en',
+      label: 'English',
+    },
+    {
+      type: 'fr',
+      label: 'Français',
+    },
+    {
+      type: 'cn',
+      label: '简体中文',
+    },
+  ],
+  onLanguageClick: (type) => alert(`You selected ${type}`),
+};
+
 export const profileData = {
   entries: [
     {
@@ -60,6 +80,7 @@ export const linkRenderer = (link, label) => <a href={link}>{label}</a>;
     menuData: menuData,
     linkRenderer: linkRenderer,
     onSearch: handleOnSearch,
+    languageData: languageData,
     userData: userData,
     profileWelcomeHeader: 'Welcome, ',
     profileData: profileData,

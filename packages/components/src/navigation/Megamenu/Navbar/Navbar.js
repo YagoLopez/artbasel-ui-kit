@@ -7,13 +7,15 @@ import { ArtBaselLogo } from '../../../utils/ArtBaselLogo';
 import { Container, Row, Col } from '../../../structure/Grid';
 import { Search } from '../../../inputs/Search';
 import ProfileFlyout from './ProfileFlyout';
-import { PROFILE_FLYOUT } from '../constants';
+import LanguageFlyout from './LanguageFlyout';
+import { PROFILE_FLYOUT, LANGUAGE_FLYOUT } from '../constants';
 import CollectionLink from './CollectionLink';
 
 const Navbar = ({
   menuData,
   linkRenderer,
   profileData,
+  languageData,
   visibleMenu,
   setVisibleMenu,
   loggedCollectionUrl,
@@ -107,6 +109,10 @@ const Navbar = ({
     setVisibleMenu(open ? PROFILE_FLYOUT : null);
   }, []);
 
+  const handleSetVisibleLanguageFlyout = useCallback((open) => {
+    setVisibleMenu(open ? LANGUAGE_FLYOUT : null);
+  }, []);
+
   const handleEntryMouseEnter = (event, entry, key) => {
     const element = event.target.querySelector('.col-underline');
     setVisibleMenu(entry.flyout ? entry.label : null);
@@ -193,6 +199,17 @@ onMouseEnter={(e) => handleEntryMouseEnter(e, entry, key)}
           </div>
         </Col>
 
+        { languageData && <Col className="col-auto px-md-1">
+          <LanguageFlyout
+            navbarVisible={ !scrolled }
+            languageData={ languageData }
+            setIsVisible={ handleSetVisibleLanguageFlyout }
+            isVisible={ visibleMenu === LANGUAGE_FLYOUT }
+            linkRenderer={ linkRenderer }
+          />
+        </Col>
+        }
+
         <Col className="col-auto px-md-1">
           <ProfileFlyout
             navbarVisible={!scrolled}
@@ -223,6 +240,7 @@ onMouseEnter={(e) => handleEntryMouseEnter(e, entry, key)}
 Navbar.propTypes = {
   menuData: PropTypes.object,
   linkRenderer: PropTypes.func.isRequired,
+  languageData: PropTypes.object,
   profileData: PropTypes.object.isRequired,
   visibleMenu: PropTypes.string,
   setVisibleMenu: PropTypes.func.isRequired,

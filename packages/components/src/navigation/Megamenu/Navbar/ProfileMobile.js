@@ -39,7 +39,7 @@ const ProfileMobile = ({
          visible: optionsIsVisible,
        }) }>
         <div className={classnames('mobile-item-left', { 'd-none': !isUserLoggedIn })}>
-          <h5 className='navlink-mobile-header'>
+          <div className='navlink-mobile-header'>
             <div className='navlink-mobile link-profile-header justify-content-between'>
               <div>
                 <h5 >{profileWelcomeHeader}</h5>
@@ -47,7 +47,7 @@ const ProfileMobile = ({
               </div>
               {vipStatus && <VipBadge />}
             </div>
-          </h5>
+          </div>
         </div>
 
         <div className='mobile-item-midle'>
