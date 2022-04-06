@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.49.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.48.0...@mch-group/uikit-components@0.49.0) (2022-04-06)
+
+
+### Features
+
+* **megamenu:** add language switcher ([3bf2324](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/3bf2324e6b3fec5da80ec726a87a31f621849cb4))
+
+
+
+
+
 # [0.48.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.47.0...@mch-group/uikit-components@0.48.0) (2022-04-06)
 
 
