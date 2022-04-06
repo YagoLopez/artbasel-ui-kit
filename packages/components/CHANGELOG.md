@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.48.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.47.0...@mch-group/uikit-components@0.48.0) (2022-04-06)
+
+
+### Bug Fixes
+
+* **linkcard:** fix figma link & border-radius css property ([d4cdffe](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d4cdffe5ba56089f4e57b4754daa44e1378d5aa3))
+
+
+### Features
+
+* **divider:** add  className prop in Divider component ([31e54e2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/31e54e28afa800f1e3fdb69871dc5617a96b17f0))
+
+
+
+
+
 # [0.47.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.46.12...@mch-group/uikit-components@0.47.0) (2022-04-05)
 
 
