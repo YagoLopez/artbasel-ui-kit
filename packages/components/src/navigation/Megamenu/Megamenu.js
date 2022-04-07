@@ -236,9 +236,9 @@ Megamenu.propTypes = {
    Please check bellow a sample.
   */
   languageData: PropTypes.shape({
-    LanguageHeader: PropTypes.string.isRequired,
-    LanguageEntries: PropTypes.array.isRequired,
-    LanguageSelected: PropTypes.string.isRequired,
+    languageHeader: PropTypes.string.isRequired,
+    languageEntries: PropTypes.array.isRequired,
+    languageSelected: PropTypes.string.isRequired,
     onLanguageClick: PropTypes.func,
   }),
 
