@@ -79,12 +79,10 @@ LanguageFlyout.propTypes = {
       }),
     ),
     onLanguageClick: PropTypes.func,
-    onLogout: PropTypes.func.isRequired,
   }).isRequired,
   setIsVisible: PropTypes.func.isRequired,
   isVisible: PropTypes.bool.isRequired,
   navbarVisible: PropTypes.bool,
-  linkRenderer: PropTypes.func.isRequired,
 };
 
 LanguageFlyout.defaultProps = {

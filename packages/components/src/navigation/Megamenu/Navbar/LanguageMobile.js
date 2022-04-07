@@ -67,17 +67,9 @@ LanguageMobile.propTypes = {
       }),
     ),
     onLanguageClick: PropTypes.func,
-    onLogout: PropTypes.func.isRequired,
   }).isRequired,
   setIsVisible: PropTypes.func.isRequired,
   isVisible: PropTypes.bool,
-  userData: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    vipStatus: PropTypes.bool.isRequired,
-    isUserLoggedIn: PropTypes.bool.isRequired,
-  }).isRequired,
-  languageHeader: PropTypes.string.isRequired,
-  linkRenderer: PropTypes.func.isRequired,
 };
 
 export default LanguageMobile;
