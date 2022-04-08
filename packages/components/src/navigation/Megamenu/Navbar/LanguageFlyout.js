@@ -31,11 +31,6 @@ const LanguageFlyout = ({
     }
   }, [navbarVisible]);
 
-  useEffect(() => {
-    document.addEventListener('click', handleFlyoutClick(null));
-    return () => document.removeEventListener('click', handleFlyoutClick);
-  }, []);
-
   return (
     <>
       <ButtonIcon
@@ -62,7 +57,7 @@ const LanguageFlyout = ({
       </div>
       <div
         className={classnames('megamenu-overlay',
-          { visible: isVisible })}
+          { visible: isVisible })} onClick={toggleIsVisible}
       />
       </>
   );

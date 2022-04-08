@@ -168,7 +168,7 @@ const Navbar = ({
                 <Col
                   className="col-auto d-flex align-items-center text-center nav-entry"
                   key={entry.label}
-onMouseEnter={(e) => handleEntryMouseEnter(e, entry, key)}
+                  onMouseEnter={(e) => handleEntryMouseEnter(e, entry, key)}
                   onMouseLeave={(e) => handleMouseLeave(e)}
                   style={{ width: `${width}px` }}
                 >
