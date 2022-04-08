@@ -436,6 +436,38 @@ When used in catalogue page, the image is displayed in masonary type, the galler
   </Container>
 </Canvas>
 
+## Multiple Artists with Links
+
+<Canvas style={{ width: '400px' }}>
+  <ArtworkTile
+    {...example}
+    pageType="listing"
+    imageType="masonry"
+    artistsData={[
+      {
+        id: example.artistsData[0].id,
+        name: 'Von Bruenchenhein',
+        url: 'https://artbasel.com/#1',
+        linkRenderer: example.artistsData[0].linkRenderer,
+      },
+      {
+        id: example.artistsData[0].id,
+        name: 'Kwon Young Woo',
+        url: 'https://artbasel.com/#2',
+        linkRenderer: example.artistsData[0].linkRenderer,
+      },
+      {
+        id: example.artistsData[0].id,
+        name: 'Ding Yi',
+        url: 'https://artbasel.com/#3',
+        linkRenderer: example.artistsData[0].linkRenderer,
+      },
+    ]}
+  >
+    {Template.bind({})}
+  </ArtworkTile>
+</Canvas>
+
 ### Multi-Select
 
 <Canvas>

@@ -135,7 +135,7 @@ const ArtworkTile = ({
         )}
         <MemoizedConditionalWrapper
           linkRenderer={linkRenderer}
-          condition={!selectMode?.active}
+          condition={!selectMode?.active && !unavailableToView?.active}
           link={artworkLink}
         >
           <div
@@ -173,7 +173,7 @@ const ArtworkTile = ({
                 <React.Fragment key={i.id}>
                   <MemoizedConditionalWrapper
                     linkRenderer={i.linkRenderer}
-                    condition={i.name}
+                    condition={i.name && !unavailableToView?.active}
                     link={i.url}
                   >
                     {i.name}
@@ -185,7 +185,7 @@ const ArtworkTile = ({
           {artworkTitle && (
             <MemoizedConditionalWrapper
               linkRenderer={linkRenderer}
-              condition={artworkTitle}
+              condition={artworkTitle && !unavailableToView?.active}
             >
               <p className="text-medium truncate" title={artworkTitle}>
                 {`${artworkTitle}${year ? `, ${year}` : ''}`}
@@ -197,7 +197,7 @@ const ArtworkTile = ({
           {galleryName && ['listing', 'catalogue'].includes(pageType) && (
             <MemoizedConditionalWrapper
               linkRenderer={linkRenderer}
-              condition={galleryName}
+              condition={galleryName && !unavailableToView?.active}
               link={galleryLink || artworkLink}
             >
               <p className="text-medium text-link mb-0">{galleryName}</p>
@@ -206,7 +206,7 @@ const ArtworkTile = ({
           {price && (
             <MemoizedConditionalWrapper
               linkRenderer={linkRenderer}
-              condition={price}
+              condition={price && !unavailableToView?.active}
               link={artworkLink}
             >
               <p className="text-medium text-link mb-0 text-uppercase">
