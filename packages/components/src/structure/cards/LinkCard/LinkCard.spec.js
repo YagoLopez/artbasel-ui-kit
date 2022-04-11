@@ -63,4 +63,17 @@ describe('Test for LinkCard component', () => {
 
     expect(screen.getByText(example.description)).toBeInTheDocument();
   });
+
+  test('should have the according class when elasticHight prop is set to true', () => {
+    const { container } = render(
+      <Component
+        {...{
+          ...defaultProps,
+          elasticHeight: true,
+        }}
+      />,
+    );
+    const card = container.querySelector('.link-card');
+    expect(card).toHaveClass('elastic-height');
+  });
 });

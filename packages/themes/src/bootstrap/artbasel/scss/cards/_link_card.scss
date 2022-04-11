@@ -17,6 +17,10 @@
     box-sizing: border-box;
   }
 
+  &.elastic-height {
+    height: 100%;
+  }
+
   .headline {
     font-family: $headings-font-family;
     color: $color-mch-black;

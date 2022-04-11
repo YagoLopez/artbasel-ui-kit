@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
 import example from './LinkCard.example.json';
+import { Container, Row, Col } from '../../Grid';
 import LinkCard from './LinkCard';
 
 <Meta
@@ -9,12 +10,17 @@ import LinkCard from './LinkCard';
   decorators={[withDesign]}
 />
 
-export const Template = (args) => <LinkCard {...args} />;
+export const Template = (args) => (
+  <div style={{ height: '100vh', backgroundColor: '#CCC', padding: '1rem'}}>
+    <LinkCard {...args} />
+  </div>
+);
 
 export const defaultArgs = {
   title: example.title,
   description: example.description,
   showDescription: example.showDescription,
+  elasticHeight: example.elasticHeight,
   variant: example.variant,
 };
 
@@ -36,6 +42,35 @@ These type of cards make up most of the interface and are key components for log
   >
     {Template.bind({})}
   </Story>
+</Canvas>
+
+## Card aligment demostration
+These cards would have different height according to their different content. But having the elasticHeight prop set to true, both have the 100% height of its container and get the correct aligment.
+
+<Canvas>
+  <Container style={{ backgroundColor: '#ccc', padding: '1rem' }}>
+    <Row style={{ height: '200px'}} gutter={'gx-5'}>
+      <Col>
+        <LinkCard
+          {...{
+            ...defaultArgs,
+            showDescription: true,
+            elasticHeight: true,
+          }}
+        />
+      </Col>
+      <Col>
+        <LinkCard
+          {...{
+            ...defaultArgs,
+            showDescription: true,
+            description: 'this is a longer description that could possible end up in more than a single line',
+            elasticHeight: true,
+          }}
+        />
+      </Col>
+    </Row>
+  </Container>
 </Canvas>
 
 ## Properties

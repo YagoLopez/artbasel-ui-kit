@@ -8,6 +8,7 @@ const LinkCard = ({
   title,
   description,
   showDescription,
+  elasticHeight,
   onClick,
 }) => {
   const isSecondary = useMemo(() => variant === 'secondary', [variant]);
@@ -15,8 +16,11 @@ const LinkCard = ({
   return (
     <div
       data-testid="mch-link-card"
-      className={classNames('link-card d-flex justify-content-between',
-        { secondary: isSecondary })}
+      className={classNames('link-card d-flex flex-column justify-content-end',
+        {
+          secondary: isSecondary,
+          'elastic-height': elasticHeight,
+        })}
       onClick={onClick}
     >
       <div>
@@ -24,7 +28,7 @@ const LinkCard = ({
           <span className="headline-underline">{title}</span>
         </div>
         {showDescription
-          && <p className="description mb-0 mt-3">{description}</p>
+          && <p className="description mb-0 mt-3 d-none d-md-block">{description}</p>
         }
         <div className="d-flex flex-column justify-content-end icon-wrapper">
           <Icon name="chevron-right" size={24} />
@@ -38,6 +42,7 @@ LinkCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   showDescription: PropTypes.bool,
+  elasticHeight: PropTypes.bool,
   variant: PropTypes.oneOf(['primary', 'secondary']),
   onClick: PropTypes.func,
 };
@@ -46,6 +51,7 @@ LinkCard.defaultProps = {
   variant: 'primary',
   description: '',
   showDescription: false,
+  elasticHeight: false,
   onClick: () => {},
 };
 
