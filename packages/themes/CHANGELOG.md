@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.41.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.41.2...@mch-group/uikit-themes@0.41.3) (2022-04-11)
+
+
+### Bug Fixes
+
+* **linkcard:** add new height prop and style changes according to it ([0bfbc2f](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/0bfbc2f700e3f0996a2917d21a5e1dc93da88e24))
+
+
+
+
+
 ## [0.41.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.41.1...@mch-group/uikit-themes@0.41.2) (2022-04-08)
 
 
