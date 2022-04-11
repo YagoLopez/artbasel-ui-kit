@@ -3,20 +3,6 @@
   max-width: 375px;
 }
 
-@mixin eventcard-xs-body {
-  padding: $spacing-7;
-
-  .type {
-    margin-bottom: $spacing-3;
-  }
-
-  .title {
-    margin-bottom: $spacing-5;
-    font-size: $spacing-7; // fixed font
-    line-height: 28px;
-  }
-}
-
 .card.event-card {
   width: 100%;
   border: 0;
@@ -84,7 +70,7 @@
   }
 
   .tags {
-    margin: $spacing-8 0 $spacing-3;
+    margin: $spacing-8 0 0;
     display: flex;
     flex-wrap: wrap;
 
@@ -110,13 +96,25 @@
     .image {
       background-size: cover;
       border-radius: $spacing-1 $spacing-1 0 0;
+
       &.ar-16_10 {
         padding-bottom: 62.5%;
       }
     }
 
     .card-body {
-      @include eventcard-xs-body;
+      padding: $spacing-7;
+
+      .type {
+        margin-bottom: $spacing-3;
+      }
+
+      .title {
+        margin-bottom: $spacing-5;
+        font-size: $spacing-7; // fixed font
+        line-height: 28px;
+      }
+
       border-radius: 0 0 $spacing-1 $spacing-1;
     }
   }
@@ -129,6 +127,7 @@
 
     .image {
       background-size: cover;
+
       @include media-breakpoint-up(xs) {
         padding-bottom: 62.5%;
       }
@@ -148,7 +147,15 @@
 
     .card-body {
       @include media-breakpoint-up(xs) {
-        @include eventcard-xs-body;
+        padding: $spacing-7;
+
+        .type {
+          margin-bottom: $spacing-3;
+        }
+
+        .title {
+          margin-bottom: $spacing-5;
+        }
       }
 
       @include media-breakpoint-up(md) {
@@ -182,6 +189,7 @@
       .card-body {
         order: 2;
       }
+
       .image-frame {
         order: 1;
       }
@@ -191,9 +199,11 @@
       .image-frame {
         order: 2;
       }
+
       .card-body {
         order: 1;
       }
+
       .tags {
         margin: $spacing-8 0 $spacing-3;
       }
@@ -203,6 +213,7 @@
       .card-body {
         padding: $spacing-12;
       }
+
       .tags {
         margin: $spacing-9 0 $spacing-3;
       }
