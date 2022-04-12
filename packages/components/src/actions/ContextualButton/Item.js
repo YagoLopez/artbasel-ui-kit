@@ -36,14 +36,13 @@ const Item = ({
 };
 Item.propTypes = {
   icon: PropTypes.oneOf(IconList),
-  label: PropTypes.string,
   onClick: PropTypes.func,
   cssStyles: PropTypes.string,
+  children: PropTypes.string,
 };
 
 Item.defaultProps = {
   icon: null,
-  label: null,
   onClick: () => {},
   cssStyles: null,
 };
