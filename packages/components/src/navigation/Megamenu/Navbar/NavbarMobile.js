@@ -1,4 +1,6 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, {
+  useState, useCallback, useEffect, Fragment,
+} from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -12,6 +14,7 @@ import LanguageMobile from './LanguageMobile';
 import CollectionLink from './CollectionLink';
 
 const NavbarMobile = ({
+  variant,
   menuData,
   languageData,
   profileData,
@@ -103,16 +106,35 @@ const NavbarMobile = ({
               aria-controls="navlinksMobile"
               aria-expanded={visibleMobileNavbar}
             />
-          </Col>
+            </Col>
 
-          <Col className="ps-3 d-md-none">
-            { linkRenderer(menuData.logoLink,
-              <ArtBaselLogo variant={ logoVariant } width={ 71 } height={ 23 } />) }
-          </Col>
-          <Col className="col-auto ps-5 pe-15 d-none d-md-block">
-            { linkRenderer(menuData.logoLink,
-              <ArtBaselLogo variant={ logoVariant } width={ 117 } height={ 39 } />) }
-          </Col>
+          { /* temporary solution for Paris variant */}
+
+            {
+              variant === 'paris'
+              && <Fragment>
+                <Col className="ps-3 d-md-none">
+                  <div style={ { width: 71, height: 23, backgroundColor: '#f0f2f5' } }></div>
+                </Col>
+                <Col className="col-auto ps-5 pe-15 d-none d-md-block">
+                  <div style={ { width: 117, height: 39, backgroundColor: '#f0f2f5' } }></div>
+                </Col>
+              </Fragment>
+            }
+
+            {
+              variant !== 'paris'
+              && <Fragment>
+              <Col className="ps-3 d-md-none">
+                { linkRenderer(menuData.logoLink,
+                  <ArtBaselLogo variant={ logoVariant } width={ 71 } height={ 23 } />) }
+                </Col>
+                <Col className="col-auto ps-5 pe-15 d-none d-md-block">
+                  { linkRenderer(menuData.logoLink,
+                  <ArtBaselLogo variant={ logoVariant } width={ 117 } height={ 39 } />) }
+              </Col>
+              </Fragment>
+            }
 
           <Col className='col-auto d-md-none'>
             <ButtonIcon
@@ -241,6 +263,7 @@ const NavbarMobile = ({
 };
 
 NavbarMobile.propTypes = {
+  variant: PropTypes.string,
   menuData: PropTypes.object,
   languageData: PropTypes.object,
   profileData: PropTypes.object.isRequired,

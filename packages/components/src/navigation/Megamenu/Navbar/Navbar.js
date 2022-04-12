@@ -12,6 +12,7 @@ import { PROFILE_FLYOUT, LANGUAGE_FLYOUT } from '../constants';
 import CollectionLink from './CollectionLink';
 
 const Navbar = ({
+  variant,
   menuData,
   linkRenderer,
   profileData,
@@ -149,15 +150,26 @@ const Navbar = ({
   return (
     <Container className="navbar-container" data-testid="mch-navbar">
       <Row gutter="g-0" className="px-3 px-lg-8 navbar">
-        <Col
-          className="col-auto pe-5 py-7"
-          onMouseEnter={() => setVisibleMenu(null)}
-        >
-          {linkRenderer(
-            menuData.logoLink,
-            <ArtBaselLogo variant={logoVariant} width={130} height={43} />,
-          )}
-        </Col>
+
+        { /* temporary solution for Paris variant */}
+
+        {
+          variant === 'paris'
+          && <Col className="col-auto pe-5 py-7">
+            <div style={ { width: 130, height: 43, backgroundColor: '#f0f2f5' } }></div>
+          </Col>
+        }
+
+        {
+          variant !== 'paris'
+          && <Col className="col-auto pe-5 py-7" onMouseEnter={ () => setVisibleMenu(null) }>
+            { linkRenderer(
+              menuData.logoLink,
+              <ArtBaselLogo variant={ logoVariant } width={ 130 } height={ 43 } />,
+            ) }
+          </Col>
+        }
+
         <Col className="col-auto entries-container">
           <Row gutter="g-0" className="menu-entries">
             <div className="menu-entries-edge" onMouseEnter={() => setVisibleMenu(null)}/>
@@ -238,6 +250,7 @@ const Navbar = ({
 };
 
 Navbar.propTypes = {
+  variant: PropTypes.string,
   menuData: PropTypes.object,
   linkRenderer: PropTypes.func.isRequired,
   languageData: PropTypes.object,
