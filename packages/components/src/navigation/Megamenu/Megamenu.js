@@ -17,6 +17,7 @@ const v = new Validator();
 const MegaMenuBuilder = forwardRef(
   (
     {
+      variant,
       menuData,
       linkRenderer,
       onSearch,
@@ -76,7 +77,8 @@ const MegaMenuBuilder = forwardRef(
         >
           <div className="d-none d-lg-block">
             <Navbar
-              scrolled={scrolled}
+              variant={ variant }
+              scrolled={ scrolled }
               menuData={ menuData }
               linkRenderer={linkRenderer}
               profileData={profileData}
@@ -95,6 +97,7 @@ const MegaMenuBuilder = forwardRef(
           </div>
           <div className="d-lg-none">
             <NavbarMobile
+              variant={ variant }
               menuData={ menuData }
               linkRenderer={linkRenderer}
               profileData={profileData}
@@ -144,6 +147,7 @@ const MegaMenuBuilder = forwardRef(
 const Megamenu = forwardRef(
   (
     {
+      variant,
       menuData,
       linkRenderer,
       languageData,
@@ -172,6 +176,7 @@ const Megamenu = forwardRef(
     }
     return (
       <MegaMenuBuilder
+        variant={variant}
         menuData={menuData}
         linkRenderer={ linkRenderer }
         languageData={languageData}
@@ -193,6 +198,7 @@ const Megamenu = forwardRef(
 MegaMenuBuilder.displayName = 'MegaMenuBuilder';
 
 MegaMenuBuilder.propTypes = {
+  variant: PropTypes.string,
   menuData: PropTypes.object.isRequired,
   linkRenderer: PropTypes.func.isRequired,
   languageData: PropTypes.object,
@@ -269,7 +275,10 @@ Megamenu.propTypes = {
   /** The placeholder label
   for search fields. */
   searchPlaceholder: PropTypes.string,
-  /** The Artbasel logo variant.
+  /** The megamenu
+   variant. */
+  variant: PropTypes.oneOf(['artbasel', 'paris']),
+  /** The logo to be used if variant is artbasel.
   This prop will be ignored if provided in the menuData. */
   logoVariant: PropTypes.oneOf(['default', 'basel', 'miami', 'hongkong', 'cities']),
 };
@@ -277,6 +286,7 @@ Megamenu.propTypes = {
 Megamenu.defaultProps = {
   linkRenderer: (link, label) => <a href={ link }>{ label }</a>,
   searchPlaceholder: 'Search for artworks, events, galleries...',
+  variant: 'artbasel',
   logoVariant: 'default',
 };
 
