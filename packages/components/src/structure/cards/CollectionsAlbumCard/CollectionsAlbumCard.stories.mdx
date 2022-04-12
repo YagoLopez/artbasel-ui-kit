@@ -1,0 +1,131 @@
+<!--- CollectionAlbumCard.stories.mdx --->
+
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+
+import CollectionsAlbumCard from './CollectionsAlbumCard';
+import { albumExample, lessFourImagesExample } from './CollectionsAlbumCard.example.js';
+
+<Meta
+  title="Components/Structure/Cards/CollectionsAlbumCard"
+  component={CollectionsAlbumCard}
+  decorators={[withDesign]}
+/>
+
+# Collections Album Card
+
+These type of cards make up most of the interface and are key components for logically grouping page content and making it scalable.
+
+export const Template = (args) => <div style={{width: '326px'}}> <CollectionsAlbumCard {...args} /> </div>;
+
+export const argTypes = {};
+
+## Variant
+
+### Album
+
+<Canvas>
+  <Story
+    name="Album"
+    args={{
+      variant: 'album',
+      images: [
+        'https://picsum.photos/300?random=1',
+        'https://picsum.photos/300?random=2',
+        'https://picsum.photos/300?random=3',
+        'https://picsum.photos/300?random=4',
+      ],
+      collectionName: 'Abstract Name',
+      numberOfFollowers: 20,
+      author: 'Cameron Johnson',
+      viewpoint: 'creator',
+    }}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=8302%3A163593',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Create new
+
+<Canvas>
+  <Story
+    name="Create New"
+    args={{
+      variant: 'new'
+    }}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=8302%3A163593',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Options
+
+### Less than 4 artworks in a collection
+
+If an album has less than four images in its collection, each image block should revert to using the background color "MCH-Grey-200" with a white (MCH-White) 1px stroke.
+
+<Canvas>
+  <div style={{ width: '326px' }}>
+    <CollectionsAlbumCard {...lessFourImagesExample} />
+  </div>
+</Canvas>
+
+### Not shared or followed
+
+The number of items will always be present. If the collection has no items, it would simply display as “0 items.”
+
+<Canvas>
+  <div style={{ width: '326px' }}>
+    <CollectionsAlbumCard {...albumExample} numberOfFollowers={0} />
+  </div>
+</Canvas>
+
+### Shared and followed from the creator’s viewpoint
+
+If the collection has been shared and users followed the collection (from a link given to them), its creator will see the number of followers on the Album cover for that collection.
+
+<Canvas>
+  <div style={{ width: '326px' }}>
+    <CollectionsAlbumCard {...albumExample} viewpoint='creator' />
+  </div>
+</Canvas>
+
+### Shared and followed from the follower’s viewpoint
+
+The follower of the collection will only see the author's name of its creator.
+
+<Canvas>
+  <div style={{ width: '326px' }}>
+    <CollectionsAlbumCard {...albumExample} viewpoint='follower' />
+  </div>
+</Canvas>
+
+### User has no collections found
+
+If a user hasn't created any collections yet, the CTA text includes the following label underneath it. The label will disappear once they've created a collection.
+
+<Canvas>
+  <div style={{ width: '326px' }}>
+    <CollectionsAlbumCard variant="new" noCollectionText="Get the art you love organised in one place. Share it to get support or inspire others."/>
+  </div>
+</Canvas>
+
+## Properties
+
+<ArgsTable of={CollectionsAlbumCard} />

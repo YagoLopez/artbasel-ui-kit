@@ -1,0 +1,55 @@
+.collection-album-card{    
+  .new{
+    cursor: pointer;
+    padding: 8.625rem 0;
+    border: $spacing-1 dashed $color-mch-gray-200;
+    transition: all 0.35s ease-out;
+
+    &:hover,
+    &.hover {
+      background-color: $color-mch-gray-200;
+      border-color: rgba(186, 191, 196, 0.5);
+    }
+  }
+
+  .album{
+    cursor: pointer;
+
+    .box-effect{
+      transition: all 0.35s ease-out;
+    }
+  
+    &:hover,
+    &.hover {
+      .box-effect{
+        background-color: rgba(29, 35, 39, 0.3);
+      }
+    }
+  
+    .principal-image{
+      background-color: $color-mch-gray-200;  
+      padding-bottom: 66.66%;
+      background-size: cover;
+      border-radius: 2px 2px 0 0;
+    }
+
+    .secondary-image{
+      height: 33.33%;
+      width: 33.33%;
+    }
+
+    .secondary-image:first-child {
+      border-radius: 0px 0px 0px 2px;
+    }
+
+    .secondary-image:last-child {
+      border-radius: 0px 0px 2px 0px;
+    }
+
+    .empty-box{
+      width: 33.33%;
+      background-color: $color-mch-gray-200;
+      border: 1px solid $color-mch-white;
+    }
+  }
+}
