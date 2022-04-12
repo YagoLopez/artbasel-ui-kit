@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.51.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.50.1...@mch-group/uikit-components@0.51.0) (2022-04-12)
+
+
+### Features
+
+* **megamenu:** paris variant ([8bff927](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/8bff927b9d5372e8583cf1b55c852ac97f74ea48))
+
+
+
+
+
 ## [0.50.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.50.0...@mch-group/uikit-components@0.50.1) (2022-04-12)
 
 
