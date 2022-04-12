@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.50.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.50.0...@mch-group/uikit-components@0.50.1) (2022-04-12)
+
+
+### Bug Fixes
+
+* **sharingbutton:** added useeffect to load document properties ([97bd17b](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/97bd17b39ac4cf57b9bdbcf600bd6b14ba1e2b69))
+
+
+
+
+
 # [0.50.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.49.6...@mch-group/uikit-components@0.50.0) (2022-04-12)
 
 
