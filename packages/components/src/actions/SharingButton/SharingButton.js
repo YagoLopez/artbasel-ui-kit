@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ContextualButton from '../ContextualButton/ContextualButton';
 
@@ -14,10 +14,17 @@ const SharingButton = ({
   scrollbar,
 
 }) => {
-  const pageTitle = document.title;
-  const pageUrl = window.location.href;
-  const isMobile = () => /(android|iphone|ipad|mobile)/i.test(navigator.userAgent);
-  const service = isMobile ? 'api' : 'web';
+  let pageTitle = '';
+  let pageUrl = '';
+  let isMobile = false;
+  let service = 'web';
+
+  useEffect(() => {
+    pageTitle = document.title;
+    pageUrl = window.location.href;
+    isMobile = () => /(android|iphone|ipad|mobile)/i.test(navigator.userAgent);
+    service = isMobile ? 'api' : 'web';
+  }, []);
 
   const openWindow = (link) => window.open(link);
   const openSizedWindow = (link) => window.open(link, '', 'width=500,height=500');
