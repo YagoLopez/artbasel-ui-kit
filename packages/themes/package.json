@@ -31,8 +31,8 @@
     "build": "yarn css-compile && yarn copy-resources",
     "clean": "rm -rf dist",
     "css-compile": "yarn run css-compile-bootstrap && yarn run css-compile-photoswipe",
-    "css-compile-bootstrap": "sass -I ../../node_modules -s compressed src/bootstrap:dist/",
-    "css-compile-photoswipe": "sass -I ../../node_modules -s compressed src/photoswipe:dist/",
+    "css-compile-bootstrap": "sass -I ../../node_modules --no-source-map -s compressed src/bootstrap:dist/",
+    "css-compile-photoswipe": "sass -I ../../node_modules --no-source-map -s compressed src/photoswipe:dist/",
     "watch": "nodemon -e scss -x \"yarn run css-compile\"",
     "copy-resources": "cp -R src/bootstrap/artbasel/variables src/bootstrap/artbasel/resources/fonts dist/artbasel",
     "test": "yarn run css-compile"
