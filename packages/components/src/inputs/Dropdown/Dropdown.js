@@ -23,6 +23,7 @@ const findValuesOnOptions = (value, options) => {
 
 const Dropdown = ({
   options,
+  id,
   style,
   label,
   isMultiselect,
@@ -123,6 +124,7 @@ const Dropdown = ({
         iconName={iconName}
         searchText={searchText}
         onSearch={handleOnSearch}
+        id={id}
         ref={inputRef}
       />
       {helpText && (
@@ -166,6 +168,7 @@ Dropdown.propTypes = {
   onChange: PropTypes.func,
   style: PropTypes.object,
   className: PropTypes.string,
+  id: PropTypes.string,
 };
 
 Dropdown.defaultProps = {

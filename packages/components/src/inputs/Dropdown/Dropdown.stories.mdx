@@ -36,14 +36,18 @@ export const argTypes = {
 <Canvas>
   <Story
     name="Dropdown"
-    args={{ label: 'Label', options: dropdownOptions, isMultiselect: false }}
+    args={{
+      label: 'Label',
+      options: dropdownOptions,
+      isMultiselect: false,
+      id: 'dropdown',
+    }}
     argTypes={argTypes}
     parameters={{
       design: {
         name: 'Figma Design',
         type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=486%3A22447',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=486%3A22447',
       },
     }}
   >
@@ -58,6 +62,7 @@ export const argTypes = {
     <b>Default</b>
     <Dropdown
       label="Label"
+      id="dropdown"
       options={dropdownOptions}
       style={{ height: '250px', width: '240px' }}
     />
@@ -69,6 +74,7 @@ export const argTypes = {
     <b>With value</b>
     <Dropdown
       label="Label"
+      id="dropdown"
       value={dropdownOptions[0].value}
       options={dropdownOptions}
       style={{ height: '250px', width: '240px' }}
@@ -93,6 +99,7 @@ export const argTypes = {
     <b>Multiple selection with values</b>
     <Dropdown
       label="Label"
+      id="dropdown"
       isMultiselect
       value={[dropdownOptions[1].value, dropdownOptions[3].value]}
       style={{ height: '250px', width: '240px' }}
@@ -106,6 +113,7 @@ export const argTypes = {
     <b>Helper text</b>
     <Dropdown
       label="Label"
+      id="dropdown"
       helpText="Helper Text"
       options={dropdownOptions}
       style={{ height: '250px', width: '240px' }}
@@ -118,6 +126,7 @@ export const argTypes = {
     <b>Error</b>
     <Dropdown
       label="Label"
+      id="dropdown"
       helpText="Helper Text"
       helpTextType="danger"
       style={{ height: '250px', width: '240px' }}

@@ -9,6 +9,7 @@ const SearchableToggle = forwardRef(
   (
     {
       label,
+      id,
       onClick,
       optionsSelected,
       placeholder,
@@ -32,7 +33,7 @@ const SearchableToggle = forwardRef(
     // TODO: Pending -> Enable write in form control text input
 
     return (
-      <FloatingLabel label={label} onClick={onClick}>
+      <FloatingLabel label={label} onClick={onClick} controlId={id}>
         <FormControl
           ref={ref}
           type="text"
@@ -51,6 +52,7 @@ SearchableToggle.displayName = 'SearchableToggle';
 
 SearchableToggle.propTypes = {
   label: PropTypes.string,
+  id: PropTypes.string,
   onClick: PropTypes.func,
   optionsSelected: PropTypes.arrayOf(
     PropTypes.shape({

@@ -14,9 +14,8 @@ const Component = (props) => (
 describe('Tooltip component', () => {
   describe('when no hover or focus', () => {
     it('should not render popover', () => {
-      act(() => {
-        render(<Component />);
-      });
+      render(<Component />);
+
       const popover = screen.queryByTestId('mch-popover');
 
       expect(popover).not.toBeInTheDocument();
@@ -24,13 +23,11 @@ describe('Tooltip component', () => {
   });
 
   describe('on hover', () => {
-    it('should render popover', () => {
-      act(() => {
-        render(<Component />);
-      });
+    it('should render popover', async () => {
+      render(<Component />);
 
       const button = screen.getByTestId('trigger-button');
-      act(() => {
+      await act(async () => {
         fireEvent.mouseOver(button);
       });
 
@@ -39,13 +36,11 @@ describe('Tooltip component', () => {
       expect(popover).toBeInTheDocument();
     });
 
-    it('popover header should contain the provided title', () => {
-      act(() => {
-        render(<Component />);
-      });
+    it('popover header should contain the provided title', async () => {
+      render(<Component />);
 
       const button = screen.getByTestId('trigger-button');
-      act(() => {
+      await act(async () => {
         fireEvent.mouseOver(button);
       });
 
@@ -58,13 +53,11 @@ describe('Tooltip component', () => {
       expect(title).toHaveTextContent('title');
     });
 
-    it('popover header should contain the close button', () => {
-      act(() => {
-        render(<Component />);
-      });
+    it('popover header should contain the close button', async () => {
+      render(<Component />);
 
       const button = screen.getByTestId('trigger-button');
-      act(() => {
+      await act(async () => {
         fireEvent.mouseOver(button);
       });
 
@@ -77,13 +70,11 @@ describe('Tooltip component', () => {
       expect(closeButton).toHaveClass('btn-close');
     });
 
-    it('popover body should contain the provided content', () => {
-      act(() => {
-        render(<Component />);
-      });
+    it('popover body should contain the provided content', async () => {
+      render(<Component />);
 
       const button = screen.getByTestId('trigger-button');
-      act(() => {
+      await act(async () => {
         fireEvent.mouseOver(button);
       });
 
@@ -95,13 +86,11 @@ describe('Tooltip component', () => {
   });
 
   describe('on focus', () => {
-    it('should render popover', () => {
-      act(() => {
-        render(<Component />);
-      });
+    it('should render popover', async () => {
+      render(<Component />);
 
       const button = screen.getByTestId('trigger-button');
-      act(() => {
+      await act(async () => {
         fireEvent.focus(button);
       });
 
@@ -110,13 +99,11 @@ describe('Tooltip component', () => {
       expect(popover).toBeInTheDocument();
     });
 
-    it('popover header should contain the provided title', () => {
-      act(() => {
-        render(<Component />);
-      });
+    it('popover header should contain the provided title', async () => {
+      render(<Component />);
 
       const button = screen.getByTestId('trigger-button');
-      act(() => {
+      await act(async () => {
         fireEvent.focus(button);
       });
 
@@ -129,13 +116,11 @@ describe('Tooltip component', () => {
       expect(title).toHaveTextContent('title');
     });
 
-    it('popover header should contain the close button', () => {
-      act(() => {
-        render(<Component />);
-      });
+    it('popover header should contain the close button', async () => {
+      render(<Component />);
 
       const button = screen.getByTestId('trigger-button');
-      act(() => {
+      await act(async () => {
         fireEvent.mouseOver(button);
       });
 
@@ -148,13 +133,11 @@ describe('Tooltip component', () => {
       expect(closeButton).toHaveClass('btn-close');
     });
 
-    it('popover body should contain the provided content', () => {
-      act(() => {
-        render(<Component />);
-      });
+    it('popover body should contain the provided content', async () => {
+      render(<Component />);
 
       const button = screen.getByTestId('trigger-button');
-      act(() => {
+      await act(async () => {
         fireEvent.focus(button);
       });
 
@@ -166,13 +149,11 @@ describe('Tooltip component', () => {
   });
 
   describe('when focus out popover', () => {
-    it('should not hide popover', () => {
-      act(() => {
-        render(<Component />);
-      });
+    it('should not hide popover', async () => {
+      render(<Component />);
 
       const button = screen.getByTestId('trigger-button');
-      act(() => {
+      await act(async () => {
         fireEvent.focusIn(button);
       });
 
@@ -191,13 +172,11 @@ describe('Tooltip component', () => {
   });
 
   describe('when click on close button', () => {
-    it('should hide popover', () => {
-      act(() => {
-        render(<Component />);
-      });
+    it('should hide popover', async () => {
+      render(<Component />);
 
       const button = screen.getByTestId('trigger-button');
-      act(() => {
+      await act(async () => {
         fireEvent.focusIn(button);
       });
 
@@ -206,24 +185,22 @@ describe('Tooltip component', () => {
       expect(popover).toHaveClass('show');
 
       const closeButton = screen.getByTestId('mch-button-icon');
-      act(() => {
+      await act(async () => {
         fireEvent.click(closeButton);
       });
 
-      popover = screen.getByTestId('mch-popover');
+      popover = screen.queryByTestId('mch-popover');
 
-      expect(popover).not.toHaveClass('show');
+      expect(popover).not.toBeInTheDocument();
     });
   });
 
   describe('when escape pressed', () => {
-    it('should hide popover', () => {
-      act(() => {
-        render(<Component />);
-      });
+    it('should hide popover', async () => {
+      render(<Component />);
 
       const button = screen.getByTestId('trigger-button');
-      act(() => {
+      await act(async () => {
         fireEvent.focusIn(button);
       });
 
@@ -231,26 +208,24 @@ describe('Tooltip component', () => {
 
       expect(popover).toHaveClass('show');
 
-      act(() => {
+      await act(async () => {
         fireEvent.keyDown(button, {
           key: 'Escape', code: 'Escape', charCode: 27, keyCode: 27,
         });
       });
 
-      popover = screen.getByTestId('mch-popover');
+      popover = screen.queryByTestId('mch-popover');
 
-      expect(popover).not.toHaveClass('show');
+      expect(popover).not.toBeInTheDocument();
     });
   });
 
   describe('when other key (not escape) pressed', () => {
-    it('should not hide popover', () => {
-      act(() => {
-        render(<Component />);
-      });
+    it('should not hide popover', async () => {
+      render(<Component />);
 
       const button = screen.getByTestId('trigger-button');
-      act(() => {
+      await act(async () => {
         fireEvent.focusIn(button);
       });
 
@@ -258,7 +233,7 @@ describe('Tooltip component', () => {
 
       expect(popover).toHaveClass('show');
 
-      act(() => {
+      await act(async () => {
         fireEvent.keyDown(button, {
           key: 'Enter', code: 'Enter', charCode: 13, keyCode: 13,
         });

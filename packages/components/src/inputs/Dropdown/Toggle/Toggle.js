@@ -10,6 +10,7 @@ const Toggle = forwardRef(
   (
     {
       label,
+      id,
       onClick,
       optionsSelected,
       'aria-expanded': ariaExpanded,
@@ -24,7 +25,7 @@ const Toggle = forwardRef(
       return `${firstOption.label}${rest.length ? `, +${rest.length}` : ''}`;
     }, [optionsSelected]);
     return (
-      <FloatingLabel label={label} onClick={onClick}>
+      <FloatingLabel label={label} onClick={onClick} controlId={id}>
         <FormControl
           ref={ref}
           type="text"
@@ -46,6 +47,7 @@ Toggle.displayName = 'Toggle';
 
 Toggle.propTypes = {
   label: PropTypes.string,
+  id: PropTypes.string,
   onClick: PropTypes.func,
   optionsSelected: PropTypes.arrayOf(
     PropTypes.shape({

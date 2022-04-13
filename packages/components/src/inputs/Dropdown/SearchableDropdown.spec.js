@@ -2,7 +2,7 @@ import React from 'react';
 import '@babel/polyfill';
 import '@testing-library/jest-dom';
 import {
-  render, screen, fireEvent, waitFor,
+  render, screen, fireEvent, waitFor, act,
 } from '@testing-library/react';
 import dropdownOptions from './CountryOptions.example.json';
 import { Dropdown } from '.';
@@ -74,8 +74,9 @@ describe('Dropdown component', () => {
         const input = screen.getByPlaceholderText(placeholder);
         fireEvent.click(input);
 
-        await waitFor(() => {
-          const option2 = screen.getByText(dropdownOptions[1].label);
+        const option2 = screen.getByText(dropdownOptions[1].label);
+
+        await act(async () => {
           fireEvent.click(option2);
         });
 
