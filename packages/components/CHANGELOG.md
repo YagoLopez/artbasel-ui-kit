@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.52.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.51.0...@mch-group/uikit-components@0.52.0) (2022-04-13)
+
+
+### Features
+
+* **dropdown id:** add id to Dropdown for controlId and fixes some tests ([96dc995](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/96dc995269028d7618075677bc807e6c9a86b814))
+
+
+
+
+
 # [0.51.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.50.1...@mch-group/uikit-components@0.51.0) (2022-04-12)
 
 
