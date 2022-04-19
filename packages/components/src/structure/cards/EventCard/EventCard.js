@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, memo } from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
 import classNames from 'classnames';
 import { ButtonIcon } from '../../../actions/ButtonIcon';
 import { Icon } from '../../../utils/Icon';
 import { Tag } from '../../../feedback/Tag';
+import { Checkbox } from '../../../inputs/Checkbox';
 
 const ConditionalWrapper = ({
   linkRenderer, condition, link, children,
@@ -15,7 +16,7 @@ const ConditionalWrapper = ({
   return children;
 };
 
-const MemoizedConditionalWrapper = React.memo(ConditionalWrapper);
+const MemoizedConditionalWrapper = memo(ConditionalWrapper);
 
 const EventCard = ({
   responsive,
@@ -30,28 +31,97 @@ const EventCard = ({
   eventLink,
   collection,
   tags,
+  unavailableToView,
+  selectMode,
 }) => {
+  const defaultState = !selectMode?.active && !unavailableToView?.active;
+  const collectionState = collection?.active && !responsive;
+  const [isSelected, setSelected] = useState(selectMode?.checked);
+
+  const toggleCardSelection = (value) => {
+    if (selectMode?.active) {
+      selectMode.checked = value;
+      if (typeof selectMode?.onChange === 'function') {
+        selectMode?.onChange();
+      }
+      setSelected(value);
+    }
+  };
+
+  const onCheckCard = (evt) => {
+    toggleCardSelection(evt?.target?.checked);
+  };
+
+  const onClickCard = () => {
+    toggleCardSelection(!isSelected);
+  };
+
   return (
     <BSPCard
       data-testid="mch-event-card"
-      className={classNames('event-card', { responsive, fixed: !responsive })}
+      onClick={onClickCard}
+      className={classNames('event-card theme-light', {
+        responsive,
+        fixed: !responsive,
+        'default-state': defaultState,
+        'unavailable-state': unavailableToView?.active,
+        'select-state': selectMode?.active,
+        'selected-state': isSelected,
+        'collection-state': collection?.active,
+      })}
     >
-      {/* Image Frame */}
       <div className="image-frame">
-        {!collection?.active && (
+        {collectionState && unavailableToView?.active && (
+          <div className="tag-container">
+            <Tag
+              label={unavailableToView.label}
+              onClick={unavailableToView.onClick}
+              className="tag-unavailableToView"
+              icon="Info"
+              iconAlign="left"
+            />
+          </div>
+        )}
+        {unavailableToView?.active && collectionState && (
+          <div className="overlay-eye">
+            <Icon name="eye-hide" />
+          </div>
+        )}
+        {!selectMode?.active && !collection?.active && (
           <ButtonIcon
             icon="collections-add"
-            onClick={collection.onClick}
+            onClick={collection?.onClick}
             variant="fill"
             theme="dark"
           />
         )}
+        {selectMode?.active && collectionState && (
+          <Checkbox
+            checked={isSelected}
+            disabled={selectMode.disabled}
+            onChange={onCheckCard}
+            className="checkbox-select"
+          />
+        )}
         <MemoizedConditionalWrapper
           linkRenderer={linkRenderer}
-          condition={eventLink}
+          condition={
+            eventLink && !unavailableToView?.active && !selectMode?.active
+          }
           link={eventLink}
         >
-          <div className="overlay-gradient" />
+          {collectionState && (
+            <div
+              className={classNames('overlay-blur', {
+                light: unavailableToView?.active,
+              })}
+            />
+          )}
+          <div
+            className={classNames('overlay-fill dark', {
+              selected: selectMode?.active && isSelected,
+            })}
+          />
           <div
             style={{ backgroundImage: `url(${image})` }}
             className={classNames('image', { 'ar-16_10': !responsive })}
@@ -59,18 +129,16 @@ const EventCard = ({
         </MemoizedConditionalWrapper>
       </div>
 
-      {/* Body Text */}
       <BSPCard.Body>
         <MemoizedConditionalWrapper
           linkRenderer={linkRenderer}
-          condition={eventLink}
+          condition={
+            eventLink && !unavailableToView?.active && !selectMode?.active
+          }
           link={eventLink}
         >
-          {/* Event Type */}
           <div className="type">{type}</div>
-          {/* Event TItle */}
           <h3 className="title">{title}</h3>
-          {/* Event Description */}
           {description && responsive && (
             <div className="d-none d-md-block">
               <span
@@ -82,7 +150,6 @@ const EventCard = ({
             </div>
           )}
           <div className="items">
-            {/* Event Venue */}
             {venue?.name && (
               <div className="item">
                 <div className="card-item-icon">
@@ -148,7 +215,6 @@ const EventCard = ({
 };
 
 EventCard.propTypes = {
-  /** If false, the card has always the small layout in any breakpoint */
   responsive: PropTypes.bool,
   title: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
@@ -176,6 +242,17 @@ EventCard.propTypes = {
       theme: PropTypes.oneOf(['light', 'dark']),
     }),
   ),
+  unavailableToView: PropTypes.shape({
+    active: PropTypes.bool.isRequired,
+    label: PropTypes.string.isRequired,
+    onClick: PropTypes.func,
+  }),
+  selectMode: PropTypes.shape({
+    active: PropTypes.bool.isRequired,
+    checked: PropTypes.bool,
+    onChange: PropTypes.func,
+    disabled: PropTypes.bool,
+  }),
 };
 
 EventCard.defaultProps = {

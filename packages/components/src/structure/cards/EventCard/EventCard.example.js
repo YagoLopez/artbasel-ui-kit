@@ -20,10 +20,6 @@ const example = {
       {children}
     </a>
   ),
-  collection: {
-    active: false,
-    onClick: () => {},
-  },
   tags: [
     {
       id: 1,
@@ -56,6 +52,21 @@ const example = {
       theme: 'light',
     },
   ],
+  unavailableToView: {
+    active: false,
+    label: 'Unavailable to view',
+    onClick: () => {},
+  },
+  selectMode: {
+    active: false,
+    checked: false,
+    onChange: () => {},
+    disabled: false,
+  },
+  collection: {
+    active: false,
+    onClick: () => {},
+  },
 };
 
 export default example;

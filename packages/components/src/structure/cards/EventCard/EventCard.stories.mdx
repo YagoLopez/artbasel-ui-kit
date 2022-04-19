@@ -12,21 +12,32 @@ import EventCard from './EventCard';
 
 export const Template = (args) => <EventCard {...args} />;
 
-export const titles = [
-  'Conversations | majelis: an assembly hosted by ruangrupa on lumbung, documenta fifteen, and beyond',
-  'Marcel Dzama | The dove is never free',
-  'Gheorghe Ilea',
-  'Ding Yi: Anomalous Galaxies',
-  'Not So Fast! curated by John Armleder',
-  'Marcel Dzama | The dove is never free',
-  'Alec Soth: A Pound of Pictures'
-]
-
 # Event Card
 
 These type of cards make up most of the interface and are key components for logically grouping page content and making it scalable.
 
-## Layout A
+## Default
+
+<Canvas>
+  <Story
+    name="EventCard"
+    args={{
+      ...example,
+      responsive: false
+    }}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/?node-id=5908%3A95033',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Responsive
 
 <Canvas>
   <EventCard {...example} responsive={true} tags={null}>
@@ -34,15 +45,13 @@ These type of cards make up most of the interface and are key components for log
   </EventCard>
 </Canvas>
 
-## Layout B
+## Tags
 
 <Canvas>
-  <EventCard {...example} responsive={false} tags={null}>
+  <EventCard {...example} responsive={false}>
     {Template.bind({})}
   </EventCard>
 </Canvas>
-
-## Tags
 
 <Canvas>
   <EventCard {...example} responsive={true}>
@@ -50,8 +59,74 @@ These type of cards make up most of the interface and are key components for log
   </EventCard>
 </Canvas>
 
+## Collections
+
+### Unavailable to view
+
 <Canvas>
-  <EventCard {...example} responsive={false}>
+  <EventCard
+    {...example}
+    responsive={false}
+    tags={null}
+    collection={{
+      active: true,
+      onClick: () => {},
+    }}
+    unavailableToView={{
+      active: true,
+      label: 'Unavailable to view',
+      onClick: () => {},
+    }}
+  >
+    {Template.bind({})}
+  </EventCard>
+</Canvas>
+
+### Select Mode
+
+<Canvas>
+  <EventCard
+    {...example}
+    responsive={false}
+    tags={null}
+    collection={{
+      active: true,
+      onClick: () => {},
+    }}
+    selectMode={{
+      active: true,
+      checked: false,
+      onChange: () => {},
+      disabled: false,
+    }}
+  >
+    {Template.bind({})}
+  </EventCard>
+</Canvas>
+
+### Select Mode & Unavailable to view
+
+<Canvas>
+  <EventCard
+    {...example}
+    responsive={false}
+    tags={null}
+    collection={{
+      active: true,
+      onClick: () => {},
+    }}
+    unavailableToView={{
+      active: true,
+      label: 'Unavailable to view',
+      onClick: () => {},
+    }}
+    selectMode={{
+      active: true,
+      checked: false,
+      onChange: () => {},
+      disabled: false,
+    }}
+  >
     {Template.bind({})}
   </EventCard>
 </Canvas>
@@ -61,38 +136,21 @@ These type of cards make up most of the interface and are key components for log
 <Canvas>
   <Container>
     <Row>
-      {Array(6)
+      {Array(3)
         .fill(example)
         .map((card, i) => {
           return (
             <Col key={`col-${i}`} xs={12} sm={12} md={6} lg={4}>
-              <EventCard {...example} title={titles[i]} responsive={false} tags={null} />
+              <EventCard
+                {...example}
+                responsive={false}
+                tags={null}
+              />
             </Col>
           );
         })}
     </Row>
   </Container>
-</Canvas>
-
-## Default
-
-<Canvas>
-  <Story
-    name="EventCard"
-    args={{
-      ...example,
-    }}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/?node-id=5908%3A95033',
-      },
-    }}
-  >
-    {Template.bind({})}
-  </Story>
 </Canvas>
 
 ## Properties
