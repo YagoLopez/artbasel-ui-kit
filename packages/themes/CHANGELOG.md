@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.43.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.42.2...@mch-group/uikit-themes@0.43.0) (2022-04-20)
+
+
+### Features
+
+* **ordercard:** add OrderCard component ([90d7426](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/90d74261088fde30b1d194c49aae094ee9a7746d))
+
+
+
+
+
 ## [0.42.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.42.1...@mch-group/uikit-themes@0.42.2) (2022-04-19)
 
 
