@@ -35,11 +35,13 @@ const VideoPlayer = (props) => {
       className='player-wrapper'
     >
       <ReactPlayer
+        className={props.className}
         {...args}
         playing={isPlaying}
         url={props.url}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onEnded={() => props.setPlaying(true)}
       />
     </div>
   );
@@ -50,6 +52,8 @@ const {
 } = PropTypes;
 
 VideoPlayer.propTypes = {
+  className: string,
+  setPlaying: func,
   startOnMouseEnter: bool,
   pauseOnMouseLeave: bool,
   url: oneOfType([string, array, object]),

@@ -17,7 +17,7 @@ const example = {
   ),
   responsive: false,
   reverse: false,
-  video: false,
+  urlVideo: 'http://res.cloudinary.com/dqzqcuqf9/video/upload/vc_h264/v1648188493/artbasel-admin/fsum03r2ohhwbfjhrkya.m3u8',
 };
 
 export default example;

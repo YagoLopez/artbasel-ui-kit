@@ -50,7 +50,7 @@ describe('Tests for Story Card component', () => {
         subtitle={null}
       />,
     );
-    expect(console.error).toBeCalled();
+    expect(screen.queryByText(example.title)).toBeInTheDocument();
   });
 
   test('Should not render the component without description prop', () => {

@@ -1,9 +1,10 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Card as BSPCard } from 'react-bootstrap';
 import classNames from 'classnames';
 import { TextLink } from '../../../actions';
 import { Icon } from '../../../utils/Icon';
+import VideoPlayer from '../../mediaviewer/VideoPlayer/VideoPlayer';
 
 const ConditionalWrapper = ({
   linkRenderer, condition, link, children,
@@ -21,13 +22,17 @@ const ContentCard = ({
   linkRenderer,
   contentLink,
   image,
-  video,
+  videoPlayer,
+  videoIcon,
   title,
   subtitle,
   description,
   button,
   reverse,
+  urlVideo,
 }) => {
+  const [playing, setPlaying] = useState(true);
+
   return (
     <BSPCard
       data-testid="mch-content-card"
@@ -37,23 +42,36 @@ const ContentCard = ({
         reverse: responsive ? reverse : false,
       })}
     >
-      <div className="image-frame">
+      <div className="image-frame" onClick={() => setPlaying(false)}>
         <MemoizedConditionalWrapper
           linkRenderer={linkRenderer}
           condition={contentLink}
           link={contentLink}
         >
-          {video && (
+          {videoIcon && (
             <div className="overlay-video">
               <Icon name="play" height={40} width={40} color="white" />
             </div>
           )}
-          <div className="overlay-fill" />
-          <div
-            style={{ backgroundImage: `url(${image})` }}
-            className={classNames('image', { 'ar-16_9': !responsive })}
-          />
+          {!videoPlayer && (
+            <div
+              style={{ backgroundImage: `url(${image})` }}
+              className={classNames('image', { 'ar-16_9': !responsive })}
+            />
+          )}
         </MemoizedConditionalWrapper>
+        {(videoPlayer && playing) && (
+          <>
+            <div className="overlay-video" role="button">
+              <Icon name="play" height={40} width={40} color="white" />
+            </div>
+            <div className="overlay-fill" />
+          </>
+        )}
+        {
+          videoPlayer
+            && <VideoPlayer url={urlVideo} className="react-player" playing={!playing} controls={!playing} setPlaying={setPlaying} />
+        }
       </div>
 
       <MemoizedConditionalWrapper
@@ -92,8 +110,10 @@ ContentCard.propTypes = {
   linkRenderer: PropTypes.func,
   contentLink: PropTypes.string,
   title: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  video: PropTypes.bool,
+  image: PropTypes.string,
+  videoPlayer: PropTypes.bool,
+  videoIcon: PropTypes.bool,
+  urlVideo: PropTypes.string,
   subtitle: PropTypes.string,
   description: PropTypes.string.isRequired,
   button: PropTypes.shape({
@@ -107,7 +127,7 @@ ContentCard.defaultProps = {
   responsive: false,
   button: null,
   subtitle: null,
-  video: false,
+  videoPlayer: false,
   reverse: false,
 };
 
