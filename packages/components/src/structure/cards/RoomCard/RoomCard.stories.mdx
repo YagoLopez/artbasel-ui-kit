@@ -2,7 +2,7 @@ import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
 import { withDesign } from 'storybook-addon-designs';
 import { Container, Row, Col } from '../../Grid';
 import RoomCard from './RoomCard';
-import { example, imagesArray } from './RoomCard.example';
+import { example } from './RoomCard.example';
 
 <Meta
   title="Components/Structure/cards/OVR Room Card"
@@ -53,6 +53,25 @@ export const argTypes = {
 # OVR Room Card
 
 These type of cards make up most of the interface and are key components for logically grouping page content and making it scalable.
+
+## Default
+
+<Canvas style={{ width: '400px' }}>
+  <Story
+    name="OVR\ Room\ Card"
+    args={example}
+    argTypes={argTypes}
+    parameters={{
+      design: {
+        name: 'Figma Design',
+        type: 'figma',
+        url: 'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=6522%3A115174',
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
 ## Types
 
@@ -493,52 +512,47 @@ If using "Opening Soon" and "Visited" together or more than one except the "Cura
 
 ## List Page
 
+- To adjust the card's height when stacked, its parent should use "d-flex" class.
+- Refer to [figma file](https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=6522%3A115174) for grid usage across different breakpoints
+
 <Preview>
   <div>
     <Container>
       <Row>
-        {Array(6)
-          .fill(example)
-          .map((card, i) => {
-            return (
-              <Col
-                key={`col-${i}`}
-                xs={12}
-                sm={12}
-                md={6}
-                lg={4}
-                xl={4}
-                xxl={4}
-                className="mb-lg-8 mb-md-8"
-              >
-                <RoomCard {...{ ...example, imageUrl: imagesArray[i] }} />
-              </Col>
-            );
-          })}
+        <Col xs={12} md={6} xxl={4} className="d-flex">
+          <RoomCard
+            {...example}
+            title="Galerie nächst St. Stephan Rosemarie Schwarzwäl Galerie nächst St. Stephan Rosemarie Schwarzwäl"
+          />
+        </Col>
+        <Col xs={12} md={6} xxl={4} className="d-flex">
+          <RoomCard {...example} collaboratedAccounts="Galerie nächst St. " />
+        </Col>
+        <Col xs={12} md={6} xxl={4} className="d-flex">
+          <RoomCard
+            {...example}
+            title="Galerie nächst St. Stephan Rosemarie Schwarzwäl Galerie nächst St. Stephan Rosemarie Schwarzwäl"
+          />
+        </Col>
+        <Col xs={12} md={6} xxl={4} className="d-flex">
+          <RoomCard
+            {...example}
+            collaboratedAccounts="Galerie nächst St. Stephan Rosemarie Schwarzwäl Galerie nächst St. Stephan Rosemarie Schwarzwäl"
+          />
+        </Col>
+        <Col xs={12} md={6} xxl={4} className="d-flex">
+          <RoomCard
+            {...example}
+            title="Galerie nächst St. Stephan Rosemarie Schwarzwäl Galerie nächst St. Stephan Rosemarie Schwarzwäl"
+          />
+        </Col>
+        <Col xs={12} md={6} xxl={4} className="d-flex">
+          <RoomCard {...example} collaboratedAccounts="Galerie nächst St." />
+        </Col>
       </Row>
     </Container>
   </div>
 </Preview>
-
-## Default
-
-<Canvas style={{ width: '400px' }}>
-  <Story
-    name="OVR\ Room\ Card"
-    args={example}
-    argTypes={argTypes}
-    parameters={{
-      design: {
-        name: 'Figma Design',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/TENnOP4K38G6r3vDL3emCP/AB---Style-Guide?node-id=6522%3A115174',
-      },
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
 
 ## Properties
 

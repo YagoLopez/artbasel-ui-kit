@@ -160,7 +160,7 @@ const RoomCard = ({
               condition={defaultState}
               link={roomLink}
             >
-              <h4>{title}</h4>
+              <h4 className="truncate">{title}</h4>
             </MemoizedConditionalWrapper>
           )}
           {collaboratedAccounts && (

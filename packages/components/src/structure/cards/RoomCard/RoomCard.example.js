@@ -64,13 +64,4 @@ export const example = {
   },
 };
 
-export const imagesArray = [
-  'http://res.cloudinary.com/dqzqcuqf9/image/upload/c_fill,h_600,w_600,q_auto:good/v1643407792/mfp-fe-profile-image/puqcutvjyr57aplyucak.jpg',
-  'http://res.cloudinary.com/dqzqcuqf9/image/upload/c_fill,h_600,w_600,q_auto:good/v1641528983/mfp-fe-profile-image/wpgraltvuxxulo5k8yhy.jpg',
-  'http://res.cloudinary.com/dqzqcuqf9/image/upload/c_fill,h_600,w_600,q_auto:good/v1574443262/mfp-fe-profile-image/j1kipnvlbdszo6ugdhof.jpg',
-  'http://res.cloudinary.com/dqzqcuqf9/image/upload/c_fill,h_600,w_600,q_auto:good/v1571995539/mfp-fe-profile-image/o6exeku3aluoloht7bsi.jpg',
-  'http://res.cloudinary.com/dqzqcuqf9/image/upload/x_95,y_505,c_crop,w_2821,h_1763/c_fill,h_600,w_600,q_auto:good/v1571243919/mfp-fe-profile-image/uxi2bkhacamjbuyystdj.jpg',
-  'http://res.cloudinary.com/dqzqcuqf9/image/upload/x_1164,y_1237,c_crop,w_4714,h_2948/c_fill,h_600,w_600,q_auto:good/v1574297709/mfp-fe-profile-image/qw7k9sy08n6xuqeaarbw.jpg',
-];
-
 export default {};

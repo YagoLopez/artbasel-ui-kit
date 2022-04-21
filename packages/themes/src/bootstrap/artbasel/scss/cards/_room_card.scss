@@ -220,6 +220,13 @@
     padding-top: $spacing-7;
     padding-left: 0;
     padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    &-top {
+      flex: 1;
+    }
 
     .truncate {
       text-overflow: ellipsis;
