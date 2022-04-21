@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.53.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.53.1...@mch-group/uikit-components@0.53.2) (2022-04-21)
+
+
+### Bug Fixes
+
+* **event card:** design improvements ([601fd61](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/601fd617d90cb7a9e6cc76287f39f60b06761261))
+* **room card:** adjust cards heights ([d167f20](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d167f2046be84493b61fc030e9ba6dd90fe07205))
+
+
+
+
+
 ## [0.53.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.53.0...@mch-group/uikit-components@0.53.1) (2022-04-20)
 
 **Note:** Version bump only for package @mch-group/uikit-components
