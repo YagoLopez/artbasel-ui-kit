@@ -23,7 +23,7 @@ These type of cards make up most of the interface and are key components for log
     name="EventCard"
     args={{
       ...example,
-      responsive: false
+      responsive: false,
     }}
     parameters={{
       design: {
@@ -133,22 +133,91 @@ These type of cards make up most of the interface and are key components for log
 
 ## List Page
 
+To adjust the card's height when stacked, its parent should use "d-flex" class
+
 <Canvas>
   <Container>
     <Row>
-      {Array(3)
-        .fill(example)
-        .map((card, i) => {
-          return (
-            <Col key={`col-${i}`} xs={12} sm={12} md={6} lg={4}>
-              <EventCard
-                {...example}
-                responsive={false}
-                tags={null}
-              />
-            </Col>
-          );
-        })}
+      <Col xs={12} sm={12} md={6} lg={4} className="d-flex">
+        <EventCard
+          {...example}
+          title="Ding Yi: Anomalous Galaxies"
+          responsive={false}
+          tags={[
+            {
+              id: 1,
+              label: 'Private',
+              type: 'premium',
+              theme: 'dark',
+            },
+            {
+              id: 2,
+              label: 'Vip',
+              type: 'premium',
+              theme: 'dark',
+            },
+            {
+              id: 3,
+              label: 'Tag',
+              type: 'label',
+              theme: 'light',
+            },
+            {
+              id: 4,
+              label: 'Tag',
+              type: 'label',
+              theme: 'light',
+            },
+          ]}
+        />
+      </Col>
+      <Col xs={12} sm={12} md={6} lg={4} className="d-flex">
+        <EventCard
+          {...example}
+          title="HEK (House of Electronic Arts) | Pax Art Awards 2022 | Reception"
+          tags={[
+            {
+              id: 1,
+              label: 'PRIVATE invitation',
+              type: 'premium',
+              theme: 'dark',
+            },
+            {
+              id: 2,
+              label: 'art basel conversations',
+              type: 'premium',
+              theme: 'dark',
+            },
+            {
+              id: 3,
+              label: 'art basel ovr event',
+              type: 'premium',
+              theme: 'dark',
+            },
+            {
+              id: 4,
+              label: 'Art Basel Cities: Buenos Aires',
+              type: 'label',
+              theme: 'light',
+            },
+            {
+              id: 5,
+              label: 'Art Basel Hong Kong Event',
+              type: 'label',
+              theme: 'light',
+            },
+          ]}
+          responsive={false}
+        />
+      </Col>
+      <Col xs={12} sm={12} md={6} lg={4} className="d-flex">
+        <EventCard
+          {...example}
+          title="Alvaro Barrington"
+          responsive={false}
+          tags={null}
+        />
+      </Col>
     </Row>
   </Container>
 </Canvas>

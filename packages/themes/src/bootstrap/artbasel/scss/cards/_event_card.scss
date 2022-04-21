@@ -162,6 +162,8 @@
   }
 
   &.fixed {
+    flex: 1;
+
     .image {
       background-size: cover;
       border-radius: $spacing-1 $spacing-1 0 0;
@@ -173,6 +175,13 @@
 
     .card-body {
       padding: $spacing-7;
+      border-radius: 0 0 $spacing-1 $spacing-1;
+
+      & > a:first-child {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
 
       .type {
         margin-bottom: $spacing-3;
@@ -182,9 +191,8 @@
         margin-bottom: $spacing-5;
         font-size: $spacing-7; // fixed font
         line-height: 28px;
+        -webkit-line-clamp: 3;
       }
-
-      border-radius: 0 0 $spacing-1 $spacing-1;
     }
 
     &.collection-state {
@@ -314,6 +322,7 @@
 
         .title {
           margin-bottom: $spacing-5;
+          -webkit-line-clamp: 3;
         }
       }
 
@@ -332,6 +341,7 @@
 
         .title {
           margin-bottom: $spacing-3;
+          -webkit-line-clamp: 4;
 
           & + .items {
             margin-top: $spacing-7;
@@ -340,6 +350,7 @@
 
         .card-description {
           margin-bottom: $spacing-8;
+          -webkit-line-clamp: 3;
         }
       }
     }
@@ -382,7 +393,6 @@
   .truncate {
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }

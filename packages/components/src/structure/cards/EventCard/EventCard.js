@@ -138,7 +138,7 @@ const EventCard = ({
           link={eventLink}
         >
           <div className="type">{type}</div>
-          <h3 className="title">{title}</h3>
+          <h3 className="title truncate">{title}</h3>
           {description && responsive && (
             <div className="d-none d-md-block">
               <span
