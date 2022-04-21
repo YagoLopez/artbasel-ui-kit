@@ -37,8 +37,26 @@
     height: 24px;
   }
 
-  .accordion-button:not(.collapsed) {
+  .accordion-button {
     color: $color-mch-black;
     background-color: $color-mch-white;
+  }
+
+  &.dark {
+    .accordion-item {
+      border-top: 1px solid $color-mch-gray-500;
+      border-bottom: 1px solid $color-mch-gray-500;
+    }
+
+    .accordion-button,
+    .accordion-body {
+
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 14.4814L5.75259 7.34149L4.24744 8.6585L12 17.5186L19.7526 8.6585L18.2474 7.34149L12 14.4814Z' fill='%23ffffff'/%3E%3C/svg%3E");
+      }
+
+      background-color: $color-mch-black;
+      color: $color-mch-white;
+    }
   }
 }

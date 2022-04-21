@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Accordion from './Accordion';
 
 const AccordionDemo = ({
+  theme,
   title1,
   title2,
   title3,
@@ -11,7 +12,7 @@ const AccordionDemo = ({
   body3,
   size,
 }) => (
-    <Accordion
+    <Accordion theme={theme}
     >
 <Accordion.Item eventKey="0">
 <Accordion.Header size={size}>{title1}</Accordion.Header>
@@ -35,6 +36,7 @@ const AccordionDemo = ({
 );
 
 AccordionDemo.propTypes = {
+  theme: PropTypes.string,
   title1: PropTypes.string,
   title2: PropTypes.string,
   title3: PropTypes.string,

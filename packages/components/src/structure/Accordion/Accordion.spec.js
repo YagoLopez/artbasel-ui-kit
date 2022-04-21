@@ -31,4 +31,16 @@ describe('Accordion component', () => {
     </Accordion>);
     expect(container.container.querySelector('.size-l')).toBeInTheDocument();
   });
+
+  test('check if the Accordion has darkMode attribute', () => {
+    const container = render(<Accordion defaultActiveKey="0" theme='dark'>
+    <Accordion.Item eventKey="0">
+    <Accordion.Header size="l">Accordion Item #1</Accordion.Header>
+    <Accordion.Body>
+          test
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>);
+    expect(container.container.querySelector('.dark')).toBeInTheDocument();
+  });
 });
