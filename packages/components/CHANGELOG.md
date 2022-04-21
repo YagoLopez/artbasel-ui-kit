@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.54.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.53.2...@mch-group/uikit-components@0.54.0) (2022-04-21)
+
+
+### Features
+
+* **accordion:** added dark theme ([c421047](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/c4210471a3a4a555e364516061499ca8376e5ba1))
+
+
+
+
+
 ## [0.53.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.53.1...@mch-group/uikit-components@0.53.2) (2022-04-21)
 
 
