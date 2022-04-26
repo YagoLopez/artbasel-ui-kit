@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.54.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.54.0...@mch-group/uikit-components@0.54.1) (2022-04-26)
+
+
+### Bug Fixes
+
+* **artwork tile:** fix image aspect ratio and inquiry button width ([e1ffd65](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/e1ffd6583361c9ae9f51d8eb835422b4a05572d7))
+* **event card:** hide add to collection button in xs/sm breakpoints ([6227e2f](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/6227e2fafb21e064cb0e22750fa14adcf29365d8))
+* **room card:** adjust cards heights ([358e360](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/358e3600ebac227e01a2dd8fad4e992f9d51e560))
+
+
+
+
+
 # [0.54.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.53.2...@mch-group/uikit-components@0.54.0) (2022-04-21)
 
 
