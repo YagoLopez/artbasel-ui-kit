@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.54.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.54.1...@mch-group/uikit-components@0.54.2) (2022-04-26)
+
+
+### Bug Fixes
+
+* **content-card:** Docs fixed and https in video link added ([66cc3d6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/66cc3d69cde084113e29e1590690a2f845cdc05c))
+
+
+
+
+
 ## [0.54.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.54.0...@mch-group/uikit-components@0.54.1) (2022-04-26)
 
 
