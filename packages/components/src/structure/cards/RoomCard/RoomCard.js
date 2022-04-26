@@ -110,6 +110,7 @@ const RoomCard = ({
             onClick={collection?.onClick}
             variant="fill"
             theme="dark"
+            className="d-xs-none d-sm-none d-md-flex"
           />
         )}
         {selectMode?.active && (
@@ -160,7 +161,7 @@ const RoomCard = ({
               condition={defaultState}
               link={roomLink}
             >
-              <h4 className="truncate">{title}</h4>
+              <h4 className="truncate" title={title}>{title}</h4>
             </MemoizedConditionalWrapper>
           )}
           {collaboratedAccounts && (
