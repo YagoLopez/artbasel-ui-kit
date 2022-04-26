@@ -56,6 +56,11 @@
       }
     }
 
+    .headline-underline {
+      text-decoration: underline .125rem rgba($color-mch-black, 0);
+      transition: text-decoration-color ease-out 300ms;
+    }
+
     p.status {
       size: 16px;
       line-height: 22px;
@@ -67,15 +72,11 @@
     }
   }
 
-  &.border-top {
-    border-top: 2px solid $color-mch-gray-200;
-  }
-
-  &.border-bottom {
-    border-bottom: 2px solid $color-mch-gray-200;
-  }
-
   &:hover {
     cursor: pointer;
+    
+    .headline-underline {
+      text-decoration-color: rgba($color-mch-black, 1);
+    }
   }
 }

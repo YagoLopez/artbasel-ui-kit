@@ -27,10 +27,18 @@ describe('Test for OrderCard component', () => {
     expect(onClickFn).toHaveBeenCalled();
   });
 
-  test('should have correct css classes according to props', () => {
-    render(<Component {...{ ...example, borderTop: false }} />);
-    const card = screen.getByTestId('mch-order-card');
+  test('should not display divider component according to props', () => {
+    render(<Component {...{ ...example, borderTop: false, borderBottom: false }} />);
+    const divider = screen.queryByTestId('mch-divider');
 
-    expect(card).not.toHaveClass('border-top');
+    expect(divider).not.toBeInTheDocument();
+  });
+
+  test('should display divider component according to props', () => {
+    render(<Component {...{ ...example, borderTop: true, borderBottom: true }} />);
+    const card = screen.getByTestId('mch-order-card');
+    const divider = card.querySelectorAll('.divider');
+
+    expect(divider.length).toBe(2);
   });
 });
