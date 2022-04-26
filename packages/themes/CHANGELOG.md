@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.44.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.44.1...@mch-group/uikit-themes@0.44.2) (2022-04-26)
+
+
+### Bug Fixes
+
+* **ordercard:** add Divider component as borders and underline hover effect ([3f8996e](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/3f8996e1195012635f40655b3f556684638359b7))
+
+
+
+
+
 ## [0.44.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.44.0...@mch-group/uikit-themes@0.44.1) (2022-04-26)
 
 
