@@ -93,6 +93,7 @@ const EventCard = ({
             onClick={collection?.onClick}
             variant="fill"
             theme="dark"
+            className="d-xs-none d-sm-none d-md-flex"
           />
         )}
         {selectMode?.active && collectionState && (
