@@ -82,6 +82,7 @@ const ArtworkTile = ({
             onClick={collection?.onClick}
             variant="fill"
             theme="dark"
+            className="d-xs-none d-sm-none d-md-flex"
           />
         )}
         {selectMode?.active && (
@@ -128,7 +129,7 @@ const ArtworkTile = ({
             variant="primary"
             theme="dark"
             onClick={inquiry?.onClick}
-            className="btn-inquiry"
+            className="btn-inquiry d-xs-none d-sm-none d-md-block"
           >
             {inquiry?.label}
           </Button>
