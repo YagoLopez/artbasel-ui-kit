@@ -110,7 +110,7 @@ const RoomCard = ({
             onClick={collection?.onClick}
             variant="fill"
             theme="dark"
-            className="d-xs-none d-sm-none d-md-flex"
+            className="d-none d-lg-flex"
           />
         )}
         {selectMode?.active && (
