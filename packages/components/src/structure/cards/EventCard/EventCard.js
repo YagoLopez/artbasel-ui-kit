@@ -93,7 +93,7 @@ const EventCard = ({
             onClick={collection?.onClick}
             variant="fill"
             theme="dark"
-            className="d-xs-none d-sm-none d-md-flex"
+            className="d-none d-lg-flex"
           />
         )}
         {selectMode?.active && collectionState && (
@@ -139,7 +139,7 @@ const EventCard = ({
           link={eventLink}
         >
           <div className="type">{type}</div>
-          <h3 className="title truncate">{title}</h3>
+          <h3 className="title truncate" title={title}>{title}</h3>
           {description && responsive && (
             <div className="d-none d-md-block">
               <span
