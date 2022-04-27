@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.54.5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.54.4...@mch-group/uikit-components@0.54.5) (2022-04-27)
+
+
+### Bug Fixes
+
+* **artwork tile:** fix image aspect ratio and inquiry button width ([200b0f7](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/200b0f7b20cb4bc9a4bd8b538e7d617a68c6b17a))
+
+
+
+
+
 ## [0.54.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.54.3...@mch-group/uikit-components@0.54.4) (2022-04-27)
 
 
