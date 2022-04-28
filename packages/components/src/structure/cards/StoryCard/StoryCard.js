@@ -16,6 +16,10 @@ const ConditionalWrapper = ({
 
 const MemoizedConditionalWrapper = memo(ConditionalWrapper);
 
+const stripTags = (str) => {
+  return str ? str.replace(/(<([^>]+)>)/gi, '').replace('&nbsp;', ' ') : '';
+};
+
 const StoryCard = ({
   responsive,
   linkRenderer,
@@ -28,6 +32,7 @@ const StoryCard = ({
   description,
   button,
   equalHeight,
+  isHtml,
 }) => {
   return (
     <BSPCard
@@ -69,10 +74,14 @@ const StoryCard = ({
           </BSPCard.Text>
           <BSPCard.Text className="card-date">{date}</BSPCard.Text>
           <BSPCard.Text
-            className="card-description truncate"
-            title={description}
+            dangerouslySetInnerHTML={isHtml ? { __html: description } : null}
+            title={stripTags(description)}
+            className={classNames('card-description truncate', {
+              'is-html': isHtml,
+            })}
+            as="div"
           >
-            {description}
+            {isHtml ? null : description}
           </BSPCard.Text>
         </MemoizedConditionalWrapper>
 
@@ -122,6 +131,7 @@ StoryCard.propTypes = {
     label: PropTypes.string.isRequired,
   }),
   equalHeight: PropTypes.bool,
+  isHtml: PropTypes.bool,
 };
 
 StoryCard.defaultProps = {
@@ -130,6 +140,7 @@ StoryCard.defaultProps = {
   date: null,
   video: false,
   equalHeight: false,
+  isHtml: false,
 };
 
 export default StoryCard;

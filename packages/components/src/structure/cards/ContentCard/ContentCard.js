@@ -30,6 +30,7 @@ const ContentCard = ({
   button,
   reverse,
   urlVideo,
+  isHtml,
 }) => {
   const [playing, setPlaying] = useState(true);
 
@@ -60,7 +61,7 @@ const ContentCard = ({
             />
           )}
         </MemoizedConditionalWrapper>
-        {(videoPlayer && playing) && (
+        {videoPlayer && playing && (
           <>
             <div className="overlay-video" role="button">
               <Icon name="play" height={40} width={40} color="white" />
@@ -68,10 +69,15 @@ const ContentCard = ({
             <div className="overlay-fill" />
           </>
         )}
-        {
-          videoPlayer
-            && <VideoPlayer url={urlVideo} className="react-player" playing={!playing} controls={!playing} setPlaying={setPlaying} />
-        }
+        {videoPlayer && (
+          <VideoPlayer
+            url={urlVideo}
+            className="react-player"
+            playing={!playing}
+            controls={!playing}
+            setPlaying={setPlaying}
+          />
+        )}
       </div>
 
       <MemoizedConditionalWrapper
@@ -87,10 +93,14 @@ const ContentCard = ({
             <BSPCard.Text className="card-subtitle">{subtitle}</BSPCard.Text>
           )}
           <BSPCard.Text
-            className="card-description"
-            title={description}
-            dangerouslySetInnerHTML={{ __html: description }}
-          />
+            dangerouslySetInnerHTML={isHtml ? { __html: description } : null}
+            className={classNames('card-description', {
+              'is-html': isHtml,
+            })}
+            as="div"
+          >
+            {isHtml ? null : description}
+          </BSPCard.Text>
           {button?.type === 'textlink' && contentLink && (
             <div className="card-cta">
               {/* TODO: remove href={null} when <TextLink /> deprecates it */}
@@ -121,6 +131,7 @@ ContentCard.propTypes = {
     label: PropTypes.string.isRequired,
   }),
   reverse: PropTypes.bool,
+  isHtml: PropTypes.bool,
 };
 
 ContentCard.defaultProps = {
@@ -129,6 +140,7 @@ ContentCard.defaultProps = {
   subtitle: null,
   videoPlayer: false,
   reverse: false,
+  isHtml: false,
 };
 
 export default ContentCard;

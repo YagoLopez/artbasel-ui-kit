@@ -19,6 +19,7 @@ const example = {
     </a>
   ),
   equalHeight: false,
+  isHtml: true,
 };
 
 export default example;

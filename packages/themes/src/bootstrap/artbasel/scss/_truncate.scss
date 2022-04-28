@@ -1,0 +1,25 @@
+.truncate {
+  &.is-html {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: end;
+
+    p:nth-child(n + 2) {
+      display: none;
+    }
+
+    br:nth-child(n + 1) {
+      display: none;
+    }
+
+    br:nth-child(n + 1) + div {
+      display: none;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
