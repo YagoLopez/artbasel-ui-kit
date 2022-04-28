@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.45.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.45.0...@mch-group/uikit-themes@0.45.1) (2022-04-28)
+
+
+### Bug Fixes
+
+* **story/content card:** html tags and truncation support ([12f5e94](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/12f5e94f892f932857ca879e6db2434eaf903845))
+
+
+
+
+
 # [0.45.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.44.2...@mch-group/uikit-themes@0.45.0) (2022-04-28)
 
 

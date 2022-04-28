@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.55.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.55.0...@mch-group/uikit-components@0.55.1) (2022-04-28)
+
+
+### Bug Fixes
+
+* **collection card:** fixed Collections album card export ([8c3387c](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/8c3387caea3ff1ff13dae50f29186eb1664236a0))
+* **content card:** Content card documentation fixed ([1d44de2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/1d44de26cc91148a2c06cf2f521017ae52d5d0f1))
+* **story/content card:** html tags and truncation support ([12f5e94](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/12f5e94f892f932857ca879e6db2434eaf903845))
+
+
+
+
+
 # [0.55.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.54.6...@mch-group/uikit-components@0.55.0) (2022-04-28)
 
 
