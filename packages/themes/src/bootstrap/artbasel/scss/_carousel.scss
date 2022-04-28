@@ -85,4 +85,21 @@
   &.bottom-bordered {
     border-bottom: 2px solid $color-mch-gray-200;
   }
+
+  &.dark{
+    :disabled,
+    .disabled {
+      svg{
+        fill: $color-mch-gray-400;
+      }
+    }
+
+    svg{
+      fill: white;
+    }
+
+    .header-uppercase-1{
+      color: white;
+    }
+  }
 }

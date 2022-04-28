@@ -35,9 +35,9 @@ describe('Carousel component', () => {
     expect(arrows).toBeInTheDocument();
   });
 
-  test('Should not render custom arrows when perPage attr is set', () => {
+  test('Should render button when button is set in true.', () => {
     const { container } = render(
-      <Carousel title="some title" options={{ perPage: 4 }}>
+      <Carousel title="some title" options={{ button: true, controlButtonLabel: 'SEE ALL' }}>
         {example.cards.map((card, i) => (
           <Carousel.Slide key={i}>
             <img src={card.image} alt="picture" />
@@ -46,8 +46,8 @@ describe('Carousel component', () => {
         ))}
       </Carousel>,
     );
-    const arrows = container.querySelector('.carousel-arrows');
-    expect(arrows).not.toBeInTheDocument();
+    const button = container.querySelector('.btn-primary');
+    expect(button).toBeInTheDocument();
   });
 
   test('Should see the prev arrow disabled', () => {

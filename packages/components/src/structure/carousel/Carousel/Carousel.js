@@ -1,11 +1,23 @@
 import React, {
-  useRef, useEffect,
+  useRef, useEffect, memo,
 } from 'react';
 import PropTypes from 'prop-types';
 import { Splide } from '@splidejs/react-splide';
 import classnames from 'classnames';
 import { Icon } from '../../../utils/Icon';
 import Slide from './Slide';
+import { Button } from '../../../actions/Button';
+
+const ConditionalWrapper = ({
+  linkRenderer, condition, link, children,
+}) => {
+  if (condition && typeof linkRenderer === 'function') {
+    return linkRenderer(link, children);
+  }
+  return children;
+};
+
+const MemoizedConditionalWrapper = memo(ConditionalWrapper);
 
 const Carousel = ({
   title,
@@ -15,6 +27,10 @@ const Carousel = ({
   exceedTrack,
   showTopBorders,
   showBottomBorders,
+  controlButtonLabel,
+  theme,
+  linkRenderer,
+  controlButtonLink,
 }) => {
   const carousel = useRef();
   const prevArrow = useRef();
@@ -33,6 +49,7 @@ const Carousel = ({
     perPage: options?.perPage || null,
     pagination: options?.pagination || false,
     arrows: options?.arrows || 2,
+    button: options?.button,
     ...options,
   };
 
@@ -86,20 +103,42 @@ const Carousel = ({
 
   const renderCustomControls = () => (
     <div className="carousel-arrows splide__arrows">
-      <button
-        className="splide__arrow--prev btn-icon"
-        role="button"
-        ref={prevArrow}
-      >
-        <Icon name="chevron-right" size={24} />
-      </button>
-      <button
-        className="splide__arrow--next btn-icon"
-        role="button"
-        ref={nextArrow}
-      >
-        <Icon name="chevron-right" size={24} />
-      </button>
+      {
+        options.button
+          ? (
+            <MemoizedConditionalWrapper
+              linkRenderer={linkRenderer}
+              condition={controlButtonLink}
+              link={controlButtonLink}
+            >
+              <Button
+                variant="primary"
+                theme={theme}
+                size="compact"
+              >
+                {controlButtonLabel}
+              </Button>
+            </MemoizedConditionalWrapper>
+          )
+          : (
+            <section>
+              <button
+                className="splide__arrow--prev btn-icon"
+                role="button"
+                ref={prevArrow}
+              >
+                <Icon name="chevron-right" size={24} />
+              </button>
+              <button
+                className="splide__arrow--next btn-icon"
+                role="button"
+                ref={nextArrow}
+              >
+                <Icon name="chevron-right" size={24} />
+              </button>
+            </section>
+          )
+      }
     </div>
   );
 
@@ -113,6 +152,7 @@ const Carousel = ({
           'top-bordered': showTopBorders,
           'bottom-bordered': showBottomBorders,
         },
+        theme,
       )}
     >
       <h3 className="pb-7 pb-xl-9 header-uppercase-1">{title}</h3>
@@ -122,7 +162,7 @@ const Carousel = ({
           'exceed-track': exceedTrack,
           unlimited: !options.perPage,
         })}
-        renderControls={ options.arrows && renderCustomControls}
+        renderControls={ renderCustomControls }
         onMoved={handleItemMove}
         options={carouselOptions}
       >
@@ -150,11 +190,16 @@ Carousel.propTypes = {
     perPage: PropTypes.number,
     pagination: PropTypes.bool,
     arrows: PropTypes.number,
+    button: PropTypes.bool,
   }),
   showTopBorders: PropTypes.bool,
   showBottomBorders: PropTypes.bool,
   cssStyles: PropTypes.string,
   children: PropTypes.any.isRequired,
+  theme: PropTypes.oneOf(['light', 'dark']),
+  controlButtonLabel: PropTypes.string,
+  linkRenderer: PropTypes.func,
+  controlButtonLink: PropTypes.string,
 };
 
 Carousel.defaultProps = {
@@ -166,12 +211,14 @@ Carousel.defaultProps = {
     perPage: null,
     pagination: false,
     arrows: 2,
+    button: false,
   },
   showTopBorders: true,
   showBottomBorders: true,
   cssStyles: null,
   children: null,
   exceedTrack: false,
+  theme: 'light',
 };
 
 export default Object.assign(Carousel, { Slide });

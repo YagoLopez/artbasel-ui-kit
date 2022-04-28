@@ -48,20 +48,155 @@ export const cardArgs = {
   exceedTrack: true,
 };
 
-export const tileArgs = {
-  title: 'Heading',
-  exceedTrack: true,
+export const linkRenderer = {
+  linkRenderer: (link, children) => (
+    <a href={link} target="_blank" rel="noreferrer">
+      {children}
+    </a>
+  ),
 };
 
 # Carousel
 
 ## Default Carousel
 
+### Light 
+
+#### Header with navigation arrows
+
 <Canvas>
   <Container>
     <Row>
       <Col>
         <Carousel title="Heading">
+          <Carousel.Slide>
+            <CarouselArtistCover
+              title={example.cover.title}
+              description={example.cover.description}
+              link={example.cover.link}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[0].artistName}
+              artworks={example.cards[0].artworks}
+              image={example.cards[0].image}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[1].artistName}
+              artworks={example.cards[1].artworks}
+              image={example.cards[1].image}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[2].artistName}
+              artworks={example.cards[2].artworks}
+              image={example.cards[2].image}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[3].artistName}
+              artworks={example.cards[3].artworks}
+              image={example.cards[3].image}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[4].artistName}
+              artworks={example.cards[4].artworks}
+              image={example.cards[4].image}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[5].artistName}
+              artworks={example.cards[5].artworks}
+              image={example.cards[5].image}
+            />
+          </Carousel.Slide>
+        </Carousel>
+      </Col>
+    </Row>
+  </Container>
+</Canvas>
+
+#### Header with compact button
+
+<Canvas>
+  <Container>
+    <Row>
+      <Col>
+        <Carousel title="Heading" options={{ button: true }} controlButtonLabel="See All" controlButtonLink= 'https://artbasel.com/galleries' linkRenderer={(link, children) => (
+          <a href={link} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        )}>
+          <Carousel.Slide>
+            <CarouselArtistCover
+              title={example.cover.title}
+              description={example.cover.description}
+              link={example.cover.link}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[0].artistName}
+              artworks={example.cards[0].artworks}
+              image={example.cards[0].image}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[1].artistName}
+              artworks={example.cards[1].artworks}
+              image={example.cards[1].image}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[2].artistName}
+              artworks={example.cards[2].artworks}
+              image={example.cards[2].image}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[3].artistName}
+              artworks={example.cards[3].artworks}
+              image={example.cards[3].image}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[4].artistName}
+              artworks={example.cards[4].artworks}
+              image={example.cards[4].image}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[5].artistName}
+              artworks={example.cards[5].artworks}
+              image={example.cards[5].image}
+            />
+          </Carousel.Slide>
+        </Carousel>
+      </Col>
+    </Row>
+  </Container>
+</Canvas>
+
+### Dark 
+
+<Canvas style={{ backgroundColor: '#1D2327' }}>
+  <Container>
+    <Row>
+      <Col>
+        <Carousel title="Heading" theme="dark">
           <Carousel.Slide>
             <CarouselArtistCover
               title={example.cover.title}
