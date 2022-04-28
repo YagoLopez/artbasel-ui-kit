@@ -10,3 +10,4 @@ export * from './ArtworkTile';
 export * from './ProductTile';
 export * from './LinkCard';
 export * from './OrderCard';
+export * from './CollectionsAlbumCard';
