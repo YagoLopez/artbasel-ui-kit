@@ -45,8 +45,17 @@ These type of cards make up most of the interface and are key components for log
 </Canvas>
 
 ### Video
+
+Content Card with video icon
+
 <Canvas>
-  <ContentCard {...example} responsive={false} video />
+  <ContentCard {...example} responsive={false} videoIcon />
+</Canvas>
+
+Content Card with video player
+
+<Canvas>
+  <ContentCard {...example} responsive={false} videoPlayer />
 </Canvas>
 
 ## 2. Options
@@ -94,20 +103,20 @@ These type of cards make up most of the interface and are key components for log
 When using the video variant, we should place the videos poster image on top of the video container (Youtube, etc.) The poster itself should fade out on click, revealing the video container with controls and begin palying.
 
 <Canvas>
-  <ContentCard {...example} responsive video />
+  <ContentCard {...example} responsive videoPlayer />
 </Canvas>
 
 <Canvas>
   <Container>
     <Row>
       <Col xs={12} sm={12} md={4} lg={4} className="mb-md-8">
-        <ContentCard {...example} responsive={false} video />
+        <ContentCard {...example} responsive={false} videoIcon />
       </Col>
       <Col xs={12} sm={12} md={4} lg={4} className="mb-md-8">
-        <ContentCard {...example} responsive={false} video />
+        <ContentCard {...example} responsive={false} videoIcon />
       </Col>
       <Col xs={12} sm={12} md={4} lg={4} className="mb-md-8">
-        <ContentCard {...example} responsive={false} video />
+        <ContentCard {...example} responsive={false} videoIcon />
       </Col>
     </Row>
   </Container>
