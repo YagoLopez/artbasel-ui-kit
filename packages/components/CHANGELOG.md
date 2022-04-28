@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.55.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.54.6...@mch-group/uikit-components@0.55.0) (2022-04-28)
+
+
+### Features
+
+* **collection-card:** Collection card linkrendered added ([f38432d](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/f38432db15c21bd8933a36dcf8284859149225f4))
+* **default-carousel:** dark mode added in default carousel ([3eccaa2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/3eccaa243f4b38b1caa35134692658451fefd050))
+
+
+
+
+
 ## [0.54.6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.54.5...@mch-group/uikit-components@0.54.6) (2022-04-28)
 
 **Note:** Version bump only for package @mch-group/uikit-components

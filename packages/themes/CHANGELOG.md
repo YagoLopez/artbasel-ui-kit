@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.45.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.44.2...@mch-group/uikit-themes@0.45.0) (2022-04-28)
+
+
+### Features
+
+* **default-carousel:** dark mode added in default carousel ([3eccaa2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/3eccaa243f4b38b1caa35134692658451fefd050))
+
+
+
+
+
 ## [0.44.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.44.1...@mch-group/uikit-themes@0.44.2) (2022-04-26)
 
 
