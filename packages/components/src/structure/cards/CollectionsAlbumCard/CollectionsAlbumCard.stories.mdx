@@ -39,6 +39,12 @@ export const argTypes = {};
       numberOfFollowers: 20,
       author: 'Cameron Johnson',
       viewpoint: 'creator',
+      collectionLink: 'https://artbasel.com',
+      linkRenderer: (link, children) => (
+        <a href={link} target="_blank" rel="noreferrer">
+          {children}
+        </a>
+      ),
     }}
     argTypes={argTypes}
     parameters={{

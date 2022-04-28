@@ -1,3 +1,5 @@
+import React from 'react';
+
 const albumExample = {
   variant: 'album',
   images: [
@@ -9,6 +11,12 @@ const albumExample = {
   numberOfFollowers: 10,
   collectionName: 'Abstract Name',
   author: 'Cameron Johnson',
+  collectionLink: 'https://artbasel.com',
+  linkRenderer: (link, children) => (
+    <a href={link} target="_blank" rel="noreferrer">
+      {children}
+    </a>
+  ),
 };
 
 const lessFourImagesExample = {
@@ -20,6 +28,12 @@ const lessFourImagesExample = {
   numberOfFollowers: 10,
   collectionName: 'Abstract Name',
   author: 'Cameron Johnson',
+  collectionLink: 'https://artbasel.com',
+  linkRenderer: (link, children) => (
+    <a href={link} target="_blank" rel="noreferrer">
+      {children}
+    </a>
+  ),
 };
 
 export { albumExample, lessFourImagesExample };
