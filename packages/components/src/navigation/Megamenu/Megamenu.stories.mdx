@@ -72,7 +72,11 @@ export const userData = {
   isUserLoggedIn: true,
 };
 
-export const linkRenderer = (link, label) => <a href={link}>{label}</a>;
+export const linkRenderer = (link, label, target) => (
+  <a target={`${target === '_blank' ? '_blank' : '_self'}`} href={link}>
+    {label}
+  </a>
+);
 
 <Story
   name="Mega Menu"

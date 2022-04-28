@@ -1,5 +1,6 @@
 {
   "logoLink": "https://artbasel.com",
+  "logoLinkTarget": "_blank",
   "entries": [
     {
       "label": "Fairs",
@@ -13,7 +14,11 @@
                 {
                   "title": "Basel",
                   "menuItems": [
-                    { "label": "Overview", "link": "/basel/overview" },
+                    {
+                      "label": "Overview",
+                      "link": "/basel/overview",
+                      "target": "_blank"
+                    },
                     { "label": "Galleries ", "link": "/basel/galleries" },
                     { "label": "Events", "link": "/basel/events" },
                     { "label": "Tickets", "link": "/basel/tickets" },
@@ -74,7 +79,8 @@
                   "cardTitle": "Buy Tickets Now",
                   "cardType": "H",
                   "imageUrl": "https://picsum.photos/601/402",
-                  "link": "https://artbasel.com"
+                  "link": "https://artbasel.com",
+                  "target": "_blank"
                 },
                 {
                   "cardSubtitle": "Become a Vip",
@@ -93,6 +99,7 @@
       "label": "Shop",
       "mobileLabel": "All Artworks",
       "link": "/shop",
+      "target": "_blank",
       "flyout": {
         "menuSection": {
           "cols": [

@@ -12,6 +12,14 @@
       "examples": ["https://artbasel.com"],
       "pattern": "^.*$"
     },
+    "logoLinkTarget": {
+      "$id": "#root/logoLinkTarget",
+      "title": "logoLinkTarget",
+      "type": "string",
+      "default": "",
+      "examples": ["_blank"],
+      "pattern": "^.*$"
+    },
     "logoVariant": {
       "$id": "#root/logoVariant",
       "title": "logoVariant",
@@ -54,6 +62,14 @@
             "type": "string",
             "default": "",
             "examples": ["/fairs"],
+            "pattern": "^.*$"
+          },
+          "target": {
+            "$id": "#root/entries/items/target",
+            "title": "Target",
+            "type": "string",
+            "default": "",
+            "examples": ["_blank"],
             "pattern": "^.*$"
           },
           "flyout": {
@@ -123,6 +139,14 @@
                                       "type": "string",
                                       "default": "",
                                       "examples": ["/basel/overview"],
+                                      "pattern": "^.*$"
+                                    },
+                                    "target": {
+                                      "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries/items/menuItems/items/target",
+                                      "title": "Target",
+                                      "type": "string",
+                                      "default": "",
+                                      "examples": ["_blank"],
                                       "pattern": "^.*$"
                                     }
                                   }
@@ -217,6 +241,14 @@
                                 "type": "string",
                                 "default": "",
                                 "examples": [""],
+                                "pattern": "^.*$"
+                              },
+                              "target": {
+                                "$id": "#root/entries/items/flyout/cardSection/cols/items/cards/items/target",
+                                "title": "Target",
+                                "type": "string",
+                                "default": "",
+                                "examples": ["_blank"],
                                 "pattern": "^.*$"
                               }
                             }

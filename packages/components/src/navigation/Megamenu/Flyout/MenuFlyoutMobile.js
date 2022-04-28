@@ -46,7 +46,8 @@ const MenuFlyoutMobile = ({
                 <Row gutter="g-0" className="menu-mobile-section">
                   <MenuSectionMobile
                     menuSection={entry.flyout.menuSection}
-                    topLink={entry.link}
+                    topLink={ entry.link }
+                    topLinkTarget={ entry.target }
                     mobileLabel={ entry.mobileLabel }
                     linkRenderer={ linkRenderer }
                     setVisibleMenu={ setVisibleMenu }

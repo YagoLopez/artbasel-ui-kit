@@ -125,13 +125,15 @@ const NavbarMobile = ({
             {
               variant !== 'paris'
               && <Fragment>
-              <Col className="ps-3 d-md-none">
-                { linkRenderer(menuData.logoLink,
-                  <ArtBaselLogo variant={ logoVariant } width={ 71 } height={ 23 } />) }
+                <Col className="ps-3 d-md-none">
+                  { linkRenderer(menuData.logoLink,
+                  <ArtBaselLogo variant={ logoVariant } width={ 71 } height={ 23 } />,
+                  menuData.logoLinkTarget) }
                 </Col>
                 <Col className="col-auto ps-5 pe-15 d-none d-md-block">
                   { linkRenderer(menuData.logoLink,
-                  <ArtBaselLogo variant={ logoVariant } width={ 117 } height={ 39 } />) }
+                  <ArtBaselLogo variant={ logoVariant } width={ 117 } height={ 39 } />,
+                  menuData.logoLinkTarget) }
               </Col>
               </Fragment>
             }
@@ -158,7 +160,7 @@ const NavbarMobile = ({
             <CollectionLink isUserLoggedIn={userData?.isUserLoggedIn}
               loggedCollectionUrl={loggedCollectionUrl}
               unloggedCollectionUrl={ unloggedCollectionUrl }
-            linkRenderer={linkRenderer}/>
+              linkRenderer={linkRenderer}/>
           </Col>
         </Row>
       </Container>}
@@ -203,11 +205,13 @@ const NavbarMobile = ({
           </Col>
           <Col className="ps-3 d-md-none">
               { linkRenderer(menuData.logoLink,
-                <ArtBaselLogo variant={ logoVariant } width={ 71 } height={ 23 } />) }
+                <ArtBaselLogo variant={ logoVariant } width={ 71 } height={ 23 } />,
+                menuData.logoLinkTarget) }
           </Col>
           <Col className="col-auto ps-5 pe-15 d-none d-md-block">
               { linkRenderer(menuData.logoLink,
-                <ArtBaselLogo variant={ logoVariant } width={ 117 } height={ 39 } />) }
+                <ArtBaselLogo variant={ logoVariant } width={ 117 } height={ 39 } />,
+                menuData.logoLinkTarget) }
           </Col>
         </Row>
       </Container>
@@ -232,7 +236,7 @@ const NavbarMobile = ({
                   </button>
                 ) : (
                     <div className="navlink-mobile">
-                      { linkRenderer(entry.link, entry.label) }
+                      { linkRenderer(entry.link, entry.label, entry.target) }
                     </div>
                 )}
               </h4>

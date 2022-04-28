@@ -166,6 +166,7 @@ const Navbar = ({
             { linkRenderer(
               menuData.logoLink,
               <ArtBaselLogo variant={ logoVariant } width={ 130 } height={ 43 } />,
+              menuData.logoLinkTarget,
             ) }
           </Col>
         }
@@ -185,7 +186,7 @@ const Navbar = ({
                   style={{ width: `${width}px` }}
                 >
                   <div className="m-auto navlink" >
-                    {linkRenderer(entry.link, entry.label)}
+                    {linkRenderer(entry.link, entry.label, entry.target)}
                   </div>
                   <div className="col-underline" />
                 </Col>

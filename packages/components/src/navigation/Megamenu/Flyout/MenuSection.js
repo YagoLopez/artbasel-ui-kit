@@ -15,7 +15,7 @@ const MenuSection = ({ menuSection, linkRenderer, setVisibleMenu }) => {
                   <h5 className="mb-5">{menuEntry.title}</h5>
                   {menuEntry.menuItems.map((item, key4) => (
                     <p key={key4} className="text-small item-menu-link" onClick={() => setVisibleMenu(null)}>
-                      { linkRenderer(item.link, item.label) }
+                      { linkRenderer(item.link, item.label, item.target) }
                     </p>
                   ))}
                 </Row>

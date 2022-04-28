@@ -10,7 +10,11 @@ import Megamenu from './Megamenu';
 ```jsx
 <Megamenu
   menuData={menuData}
-  linkRenderer={(link, label) => <a href={link}>{label}</a>}
+  linkRenderer={(link, label, target) => (
+    <a target={`${target === '_blank' ? '_blank' : '_self'}`} href={link}>
+      {label}
+    </a>
+  )}
   onSearch={handleOnSearch}
   userData={{
     name: 'Jose Gumpert Ros',
@@ -156,7 +160,11 @@ As the Megamenu component can be consumed in several diferent systems, with dife
 ```jsx
 <Megamenu
   ...
-  linkRenderer={(link, label) => <a href={link}>{label}</a>}
+  linkRenderer={(link, label, target) => (
+    <a target={`${target === '_blank' ? '_blank' : '_self'}`} href={link}>
+      {label}
+    </a>
+  )}
   ...
 />
 ```
@@ -168,9 +176,9 @@ import Link from 'next/link'
 
 <Megamenu
   ...
-  linkRenderer={(link, label) =>
+  linkRenderer={(link, label, target) =>
     <Link href={link}>
-        <a>{label}</a>
+        <a target={`${target === '_blank' ? '_blank' : '_self'}`}>{label}</a>
     </Link>
   }
   ...
@@ -184,12 +192,12 @@ This is the menuData used in this Megamenu sample:
 ```json
 {
   "logoLink": "https://artbasel.com",
-  "logoVariant": "default",
+  "logoLinkTarget": "_blank",
   "entries": [
     {
       "label": "Fairs",
       "mobileLabel": "All Fairs",
-      "link": "/fairs",
+      "link": "#",
       "flyout": {
         "menuSection": {
           "cols": [
@@ -198,7 +206,11 @@ This is the menuData used in this Megamenu sample:
                 {
                   "title": "Basel",
                   "menuItems": [
-                    { "label": "Overview", "link": "/basel/overview" },
+                    {
+                      "label": "Overview",
+                      "link": "/basel/overview",
+                      "target": "_blank"
+                    },
                     { "label": "Galleries ", "link": "/basel/galleries" },
                     { "label": "Events", "link": "/basel/events" },
                     { "label": "Tickets", "link": "/basel/tickets" },
@@ -217,8 +229,8 @@ This is the menuData used in this Megamenu sample:
                 {
                   "title": "Miami Beach",
                   "menuItems": [
-                    { "label": "Overview", "link": "/miami/overview" },
-                    { "label": "Galleries ", "link": "/miami/galleries" },
+                    { "label": "Overview", "link": "#" },
+                    { "label": "Galleries ", "link": "#" },
                     { "label": "Events", "link": "/miami/events" },
                     { "label": "Tickets", "link": "/miami/tickets" },
                     {
@@ -278,6 +290,7 @@ This is the menuData used in this Megamenu sample:
       "label": "Shop",
       "mobileLabel": "All Artworks",
       "link": "/shop",
+      "target": "_blank",
       "flyout": {
         "menuSection": {
           "cols": [
@@ -541,11 +554,19 @@ This is the JSON schema used by Megamenu to validate the menuData before render 
       "examples": ["https://artbasel.com"],
       "pattern": "^.*$"
     },
+    "logoLinkTarget": {
+      "$id": "#root/logoLinkTarget",
+      "title": "logoLinkTarget",
+      "type": "string",
+      "default": "",
+      "examples": ["_blank"],
+      "pattern": "^.*$"
+    },
     "logoVariant": {
       "$id": "#root/logoVariant",
       "title": "logoVariant",
       "type": "string",
-      "default": "",
+      "default": "default",
       "enum": ["default", "basel", "miami", "hongkong", "cities"],
       "examples": ["basel"],
       "pattern": "^.*$"
@@ -583,6 +604,14 @@ This is the JSON schema used by Megamenu to validate the menuData before render 
             "type": "string",
             "default": "",
             "examples": ["/fairs"],
+            "pattern": "^.*$"
+          },
+          "target": {
+            "$id": "#root/entries/items/target",
+            "title": "Target",
+            "type": "string",
+            "default": "",
+            "examples": ["_blank"],
             "pattern": "^.*$"
           },
           "flyout": {
@@ -652,6 +681,14 @@ This is the JSON schema used by Megamenu to validate the menuData before render 
                                       "type": "string",
                                       "default": "",
                                       "examples": ["/basel/overview"],
+                                      "pattern": "^.*$"
+                                    },
+                                    "target": {
+                                      "$id": "#root/entries/items/flyout/menuSection/cols/items/menuEntries/items/menuItems/items/target",
+                                      "title": "Target",
+                                      "type": "string",
+                                      "default": "",
+                                      "examples": ["_blank"],
                                       "pattern": "^.*$"
                                     }
                                   }
@@ -746,6 +783,14 @@ This is the JSON schema used by Megamenu to validate the menuData before render 
                                 "type": "string",
                                 "default": "",
                                 "examples": [""],
+                                "pattern": "^.*$"
+                              },
+                              "target": {
+                                "$id": "#root/entries/items/flyout/cardSection/cols/items/cards/items/target",
+                                "title": "Target",
+                                "type": "string",
+                                "default": "",
+                                "examples": ["_blank"],
                                 "pattern": "^.*$"
                               }
                             }
