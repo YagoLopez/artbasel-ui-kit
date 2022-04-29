@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.55.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.55.2...@mch-group/uikit-components@0.55.3) (2022-04-29)
+
+
+### Bug Fixes
+
+* **megamenu:** fixed target blank on teaser cards ([b763f24](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/b763f24ac47c7cf565227b6ffcc7f40baaf508c6))
+
+
+
+
+
 ## [0.55.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.55.1...@mch-group/uikit-components@0.55.2) (2022-04-29)
 
 **Note:** Version bump only for package @mch-group/uikit-components
