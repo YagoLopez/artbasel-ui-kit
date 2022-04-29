@@ -21,8 +21,9 @@ const CardSectionMobile = ({ cardSection, linkRenderer, setVisibleMenu }) => {
               title={card.cardTitle}
               subTitle={card.cardSubtitle}
               variant={card.cardType.toLowerCase()}
-            link={ card.link }
-            linkRenderer={ linkRenderer }
+              link={ card.link }
+              target={ card.target }
+              linkRenderer={ linkRenderer }
             />
           </Row>
       )))}

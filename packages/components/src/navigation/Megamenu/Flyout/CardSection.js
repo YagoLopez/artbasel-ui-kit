@@ -26,6 +26,7 @@ const CardSection = ({ cardSection, linkRenderer, setVisibleMenu }) => {
                     subTitle={card.cardSubtitle}
                     variant={card.cardType.toLowerCase()}
                     link={ card.link }
+                    target={ card.target }
                     linkRenderer={ linkRenderer }
                   />
                 </Row>
