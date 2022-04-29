@@ -4,6 +4,7 @@ import React, {
 import PropTypes from 'prop-types';
 
 import { ArtBaselLogo } from '../../../utils/ArtBaselLogo';
+import { ParisPlusLogo } from '../../../utils/ParisPlusLogo';
 import { Container, Row, Col } from '../../../structure/Grid';
 import { Search } from '../../../inputs/Search';
 import ProfileFlyout from './ProfileFlyout';
@@ -151,12 +152,14 @@ const Navbar = ({
     <Container className="navbar-container" data-testid="mch-navbar">
       <Row gutter="g-0" className="px-3 px-lg-8 navbar">
 
-        { /* temporary solution for Paris variant */}
-
         {
           variant === 'paris'
-          && <Col className="col-auto pe-5 py-7">
-            <div style={ { width: 130, height: 43, backgroundColor: '#f0f2f5' } }></div>
+          && <Col className="col-auto pe-5 py-7" onMouseEnter={ () => setVisibleMenu(null) }>
+            { linkRenderer(
+              menuData.logoLink,
+              <ParisPlusLogo variant={ logoVariant } width={ 100 } height={ 43 } />,
+              menuData.logoLinkTarget,
+            ) }
           </Col>
         }
 

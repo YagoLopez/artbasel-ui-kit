@@ -6,6 +6,8 @@ import classnames from 'classnames';
 
 import { CSSTransition } from 'react-transition-group';
 import { ArtBaselLogo } from '../../../utils/ArtBaselLogo';
+import { ParisPlusLogo } from '../../../utils/ParisPlusLogo';
+
 import { Container, Row, Col } from '../../../structure/Grid';
 import { ButtonIcon } from '../../../actions/ButtonIcon';
 import { MobileSearch, Search } from '../../../inputs/Search';
@@ -108,17 +110,19 @@ const NavbarMobile = ({
             />
             </Col>
 
-          { /* temporary solution for Paris variant */}
-
             {
               variant === 'paris'
               && <Fragment>
                 <Col className="ps-3 d-md-none">
-                  <div style={ { width: 71, height: 23, backgroundColor: '#f0f2f5' } }></div>
+                  { linkRenderer(menuData.logoLink,
+                  <ParisPlusLogo variant={ logoVariant } width={ 54 } height={ 23 } />,
+                  menuData.logoLinkTarget) }
                 </Col>
                 <Col className="col-auto ps-5 pe-15 d-none d-md-block">
-                  <div style={ { width: 117, height: 39, backgroundColor: '#f0f2f5' } }></div>
-                </Col>
+                  { linkRenderer(menuData.logoLink,
+                  <ParisPlusLogo variant={ logoVariant } width={ 90 } height={ 39 } />,
+                  menuData.logoLinkTarget) }
+              </Col>
               </Fragment>
             }
 
@@ -203,16 +207,37 @@ const NavbarMobile = ({
               aria-expanded={visibleMobileNavbar}
             />
           </Col>
-          <Col className="ps-3 d-md-none">
-              { linkRenderer(menuData.logoLink,
-                <ArtBaselLogo variant={ logoVariant } width={ 71 } height={ 23 } />,
-                menuData.logoLinkTarget) }
-          </Col>
-          <Col className="col-auto ps-5 pe-15 d-none d-md-block">
-              { linkRenderer(menuData.logoLink,
-                <ArtBaselLogo variant={ logoVariant } width={ 117 } height={ 39 } />,
-                menuData.logoLinkTarget) }
-          </Col>
+            {
+              variant === 'paris'
+              && <Fragment>
+                <Col className="ps-3 d-md-none">
+                  { linkRenderer(menuData.logoLink,
+                  <ParisPlusLogo variant={ logoVariant } width={ 54 } height={ 23 } />,
+                  menuData.logoLinkTarget) }
+                </Col>
+                <Col className="col-auto ps-5 pe-15 d-none d-md-block">
+                  { linkRenderer(menuData.logoLink,
+                  <ParisPlusLogo variant={ logoVariant } width={ 90 } height={ 39 } />,
+                  menuData.logoLinkTarget) }
+              </Col>
+              </Fragment>
+            }
+
+            {
+              variant !== 'paris'
+              && <Fragment>
+                <Col className="ps-3 d-md-none">
+                  { linkRenderer(menuData.logoLink,
+                  <ArtBaselLogo variant={ logoVariant } width={ 71 } height={ 23 } />,
+                  menuData.logoLinkTarget) }
+                </Col>
+                <Col className="col-auto ps-5 pe-15 d-none d-md-block">
+                  { linkRenderer(menuData.logoLink,
+                  <ArtBaselLogo variant={ logoVariant } width={ 117 } height={ 39 } />,
+                  menuData.logoLinkTarget) }
+              </Col>
+              </Fragment>
+            }
         </Row>
       </Container>
       }

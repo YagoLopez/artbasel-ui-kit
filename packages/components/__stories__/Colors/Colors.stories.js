@@ -174,6 +174,12 @@ export const Colors = () => (
         scssVar="$color-mch-cities"
         bsVar="--bs-mch-cities"
       />
+      <ColorTag
+        color="#1e1e1e"
+        name="Paris Plus"
+        scssVar="$color-mch-parisplus"
+        bsVar="--bs-mch-parisplus"
+      />
     </div>
     <h3 className="mt-10">Sectors</h3>
     <p>
