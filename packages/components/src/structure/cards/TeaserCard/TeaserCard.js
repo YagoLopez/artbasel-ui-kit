@@ -9,13 +9,13 @@ const ConditionalWrapper = ({ condition, wrapper, children }) => {
 };
 
 const TeaserCard = ({
-  variant, title, subTitle, imageUrl, link, linkRenderer,
+  variant, title, subTitle, imageUrl, link, target, linkRenderer,
 }) => {
   return (
     <ConditionalWrapper
       condition={link}
       wrapper={ (children) => (
-        linkRenderer(link, children)
+        linkRenderer(link, children, target)
       )}
     >
       <Col
@@ -49,6 +49,7 @@ TeaserCard.propTypes = {
   subTitle: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   link: PropTypes.string,
+  target: PropTypes.string,
   linkRenderer: PropTypes.func.isRequired,
 };
 
