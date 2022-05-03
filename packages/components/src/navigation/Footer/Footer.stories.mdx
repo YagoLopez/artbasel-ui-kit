@@ -1,0 +1,129 @@
+<!--- Footer.stories.mdx --->
+
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs';
+import { withDesign } from 'storybook-addon-designs';
+
+import Footer from './Footer';
+import footerData from './FooterData.example.json';
+
+import FooterDocumentation from './FooterDocumentation.mdx';
+
+<Meta
+  title="Navigation/Footer"
+  component={Footer}
+  decorators={[withDesign]}
+/>
+
+export const Template = (args) => <Footer {...args} />;
+
+export const socialMedia = {
+    title: "FOLLOW US",
+    entries: [
+      {
+        label: "Instagram",
+        icon: "instagram",
+        link: "#",
+        target: "_blank"
+      },
+      {
+        label: "Facebook",
+        icon: "facebook",
+        link: "https://facebook.com",
+        target: "_blank"
+      },
+      {
+        label: "Twitter",
+        icon: "twitter",
+        link: "#",
+        target: "_blank"
+      },
+      {
+        label: "LinkedIn",
+        icon: "linkedin",
+        link: "#",
+        target: "_blank"
+      },
+      {
+        label: "Youtube",
+        icon: "youtube",
+        link: "#",
+        target: "_blank"
+      },
+      {
+        label: "Wechat",
+        icon: "wechat",
+        link: "#",
+        target: "_blank"
+      },
+      {
+        label: "Weebo",
+        icon: "weebo",
+        link: "#",
+        target: "_blank"
+      }
+    ]
+  }
+
+export const paymentMethods = {
+    title: "Accepted payment methods",
+    entries: [
+      "visa",
+      "master",
+      "amex",
+      "discover",
+      "jcb"
+    ]
+  }
+
+export const legalData = {
+  entries: [
+    {
+      label:"Terms of use",
+      link: "https://artbasel.com/terms-of-use",
+      target: "_blank"
+    },
+    {
+      label:"Data protection",
+      link: "#"
+    },
+    {
+      "label":"Terms of use Online Viewing Rooms",
+      link: "#"
+    },
+    {
+      label:"Terms and Conditions",
+      link: "#",
+    }
+  ],
+  copyright: "© by MCH Swiss Exhibition (Basel) Ltd"
+}
+
+export const linkRenderer = (link, children, target) => <a href={link} target={target}>{children}</a>;
+
+
+
+<Story
+  name="Footer"
+  args={{
+    footerData: footerData,
+    socialMedia: socialMedia,
+    paymentMethods: paymentMethods,
+    legalData: legalData,
+    linkRenderer: linkRenderer,
+    variant: 'artbasel',
+    logoVariant: 'basel',
+  }}
+  parameters={{
+    layout: 'fullscreen',
+      docs: {
+      page: FooterDocumentation,
+    },
+    design: {
+      name: 'Figma Design',
+      type: 'figma',
+      url: 'https://www.figma.com/file/pbkfTaJN4eVjAgZUpeYlPL/AB---Footer?node-id=1787%3A73552',
+    },
+  }}
+>
+  {Template.bind({})}
+</Story>

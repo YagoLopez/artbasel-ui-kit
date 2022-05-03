@@ -1,0 +1,393 @@
+<!--- FooterDocumentation.mdx --->
+
+import { ArgsTable } from '@storybook/addon-docs';
+import Footer from './Footer';
+
+# Footer Component
+
+## Usage
+
+```jsx
+<Footer
+  footerData={footerData}
+  socialData={socialData}
+  paymentData={paymentData}
+  linkRenderer={(link, children, target) => <a href={link} target={target}>{children}</a>}
+  legalData={legalData}
+/>
+```
+
+## Properties
+
+<ArgsTable of={Footer} />
+
+## Data and Properties Samples
+
+1. socialMedia
+2. paymentMethods
+3. legalData
+4. linkRenderer
+5. footerData
+6. footerData JSON Schema Validation
+
+### 1. socialData Sample
+
+```json
+{
+    "title": "FOLLOW US",
+    "entries": [
+      {
+        "label": "Instagram",
+        "icon": "instagram",
+        "link": "#",
+        "target": "_blank"
+      },
+      {
+        "label": "Facebook",
+        "icon": "facebook",
+        "link": "#",
+        "target": "_blank"
+      },
+      {
+        "label": "Twitter",
+        "icon": "twitter",
+        "link": "#",
+        "target": "_blank"
+      },
+      {
+        "label": "LinkedIn",
+        "icon": "linkedin",
+        "link": "#",
+        "target": "_blank"
+      },
+      {
+        "label": "Youtube",
+        "icon": "youtube",
+        "link": "#",
+        "target": "_blank"
+      },
+      {
+        "label": "Wechat",
+        "icon": "wechat",
+        "link": "#",
+        "target": "_blank"
+      },
+      {
+        "label": "Weebo",
+        "icon": "weebo",
+        "link": "#",
+        "target": "_blank"
+      }
+    ]
+  }
+```
+
+### 2. paymentData Sample
+
+```json
+{
+    "title": "Accepted payment methods",
+    "entries": [
+      "visa",
+      "master",
+      "amex",
+      "discover",
+      "jcb"
+    ]
+  }
+```
+
+### 3. legalData Sample
+
+```json
+{
+  "copyright": "© by MCH Swiss Exhibition (Basel) Ltd",
+  "entries": [
+    {
+      "label":"Terms of use",
+      "link": "#"
+    },
+    {
+      "label":"Data protection",
+      "link": "#"
+    },
+    {
+      "label":"Terms of use Online Viewing Rooms",
+      "link": "#"
+    },
+    {
+      "label":"Terms and Conditions",
+      "link": "#"
+    }
+  ]
+}
+```
+
+### 4. linkRenderer Samples
+
+As the Footer component can be consumed in several diferent systems, with diferent navigation methods, the links must be rendered in different ways. To add flexibility, the **linkRenderer** property will be used to render all links.
+
+**IMPORTANT**: To have the correct look and fell, the label must be inside an "a tag".
+
+#### Example 1 - "a" tag
+
+```jsx
+<Footer
+  ...
+  linkRenderer={(link, children, target) => <a href={link} target={target}>{label}</a>}
+  ...
+/>
+```
+
+
+#### Example 2 - Link from router
+
+```jsx
+import Link from 'next/link'
+
+<Footer
+  ...
+  linkRenderer={(link, label, target) =>
+    <Link href={link}>
+        <a target={`${target === '_blank' ? '_blank' : '_self'}`}>{label}</a>
+    </Link>
+  }
+  ...
+/>
+```
+
+### 5. footerData Sample
+
+This is the footerData used in this Footer sample:
+
+```json
+{
+  "cols": [
+    [
+      {
+        "title": "Buy artworks",
+        "data": [
+          {
+            "label": "All artworks",
+            "link": "#"
+          },
+          {
+            "label": "Contemporary",
+            "link": "#"
+          },
+          {
+            "label": "Miami Show",
+            "link": "#"
+          },
+          {
+            "label": "Under 5k",
+            "link": "#"
+          },
+          {
+            "label": "Street Art",
+            "link": "#"
+          }
+        ]
+      },
+      {
+        "title": "Contact us",
+        "data": [
+          {
+            "label": "Artwork sales",
+            "link": "#"
+          },
+          {
+            "label": "Help center",
+            "link": "#"
+          },
+          {
+            "label": "Gallery applications",
+            "link": "#"
+          },
+          {
+            "label": "Become a partner",
+            "link": "#"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "title": "Initiatives",
+        "data": [
+          {
+            "label": "VIP Relations",
+            "link": "#"
+          },
+          {
+            "label": "The art market",
+            "link": "#"
+          },
+          {
+            "label": "BMW art journey",
+            "link": "#"
+          },
+          {
+            "label": "Publications",
+            "link": "#"
+          }
+        ]
+      },
+      {
+        "title": "About us",
+        "data": [
+          {
+            "label": "Our history",
+            "link": "#"
+          },
+          {
+            "label": "The team",
+            "link": "#"
+          },
+          {
+            "label": "Careers",
+            "link": "#"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "title": "Get the app",
+        "data": [
+          {
+            "label": "iOS",
+            "link": "#"
+          },
+          {
+            "label": "Android",
+            "link": "#"
+          }
+        ]
+      },
+      {
+        "title": "Press",
+        "data": [
+          {
+            "label": "Overview",
+            "link": "#"
+          },
+          {
+            "label": "Press releases",
+            "link": "#"
+          },
+          {
+            "label": "Press images",
+            "link": "#"
+          },
+          {
+            "label": "Accredetation",
+            "link": "#"
+          },
+          {
+            "label": "Press contacts",
+            "link": "#"
+          }
+        ]
+      }
+    ]
+  ]
+}
+```
+
+### 6. footerData JSON Validation Schema
+
+This is the JSON schema used by Footer to validate the footerData before render the content.
+
+```json
+{
+  "definitions": {},
+  "title": "Root",
+  "type": "object",
+  "required": [
+    "cols"
+  ],
+  "properties": {
+    "cols": {
+      "$id": "#root/cols",
+      "title": "Cols",
+      "type": "array",
+      "default": [],
+      "items": {
+        "$id": "#root/cols/items",
+        "title": "Items",
+        "type": "array",
+        "default": [],
+        "items": {
+          "$id": "#root/cols/items/items",
+          "title": "Items",
+          "type": "object",
+          "required": [
+            "title",
+            "data"
+          ],
+          "properties": {
+            "title": {
+              "$id": "#root/cols/items/items/title",
+              "title": "Title",
+              "type": "string",
+              "default": "",
+              "examples": [
+                "Buy artworks"
+              ],
+              "pattern": "^.*$"
+            },
+            "data": {
+              "$id": "#root/cols/items/items/data",
+              "title": "Data",
+              "type": "array",
+              "default": [],
+              "items": {
+                "$id": "#root/cols/items/items/data/items",
+                "title": "Items",
+                "type": "object",
+                "required": [
+                  "label",
+                  "link"
+                ],
+                "properties": {
+                  "label": {
+                    "$id": "#root/cols/items/items/data/items/label",
+                    "title": "Label",
+                    "type": "string",
+                    "default": "",
+                    "examples": [
+                      "All artworks"
+                    ],
+                    "pattern": "^.*$"
+                  },
+                  "link": {
+                    "$id": "#root/cols/items/items/data/items/link",
+                    "title": "Link",
+                    "type": "string",
+                    "default": "",
+                    "examples": [
+                      "#"
+                    ],
+                    "pattern": "^.*$"
+                  },
+                  "target": {
+                    "$id": "#root/cols/items/items/data/items/target",
+                    "title": "Target",
+                    "type": "string",
+                    "default": "",
+                    "examples": [
+                      "_blank"
+                    ],
+                    "pattern": "^.*$"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```

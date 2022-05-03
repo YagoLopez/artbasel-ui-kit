@@ -1,0 +1,90 @@
+{
+  "definitions": {},
+  "title": "Root",
+  "type": "object",
+  "required": [
+    "cols"
+  ],
+  "properties": {
+    "cols": {
+      "$id": "#root/cols",
+      "title": "Cols",
+      "type": "array",
+      "default": [],
+      "items": {
+        "$id": "#root/cols/items",
+        "title": "Items",
+        "type": "array",
+        "default": [],
+        "items": {
+          "$id": "#root/cols/items/items",
+          "title": "Items",
+          "type": "object",
+          "required": [
+            "title",
+            "data"
+          ],
+          "properties": {
+            "title": {
+              "$id": "#root/cols/items/items/title",
+              "title": "Title",
+              "type": "string",
+              "default": "",
+              "examples": [
+                "Buy artworks"
+              ],
+              "pattern": "^.*$"
+            },
+            "data": {
+              "$id": "#root/cols/items/items/data",
+              "title": "Data",
+              "type": "array",
+              "default": [],
+              "items": {
+                "$id": "#root/cols/items/items/data/items",
+                "title": "Items",
+                "type": "object",
+                "required": [
+                  "label",
+                  "link"
+                ],
+                "properties": {
+                  "label": {
+                    "$id": "#root/cols/items/items/data/items/label",
+                    "title": "Label",
+                    "type": "string",
+                    "default": "",
+                    "examples": [
+                      "All artworks"
+                    ],
+                    "pattern": "^.*$"
+                  },
+                  "link": {
+                    "$id": "#root/cols/items/items/data/items/link",
+                    "title": "Link",
+                    "type": "string",
+                    "default": "",
+                    "examples": [
+                      "#"
+                    ],
+                    "pattern": "^.*$"
+                  },
+                  "target": {
+                    "$id": "#root/cols/items/items/data/items/target",
+                    "title": "Target",
+                    "type": "string",
+                    "default": "",
+                    "examples": [
+                      "_blank"
+                    ],
+                    "pattern": "^.*$"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

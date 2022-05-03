@@ -1,0 +1,133 @@
+{
+  "cols": [
+    [
+      {
+        "title": "Buy artworks",
+        "data": [
+          {
+            "label": "All artworks",
+            "link": "#"
+          },
+          {
+            "label": "Contemporary",
+            "link": "#"
+          },
+          {
+            "label": "Miami Show",
+            "link": "#"
+          },
+          {
+            "label": "Under 5k",
+            "link": "#"
+          },
+          {
+            "label": "Street Art",
+            "link": "#"
+          }
+        ]
+      },
+      {
+        "title": "Contact us",
+        "data": [
+          {
+            "label": "Artwork sales",
+            "link": "#"
+          },
+          {
+            "label": "Help center",
+            "link": "#"
+          },
+          {
+            "label": "Gallery applications",
+            "link": "#"
+          },
+          {
+            "label": "Become a partner",
+            "link": "#"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "title": "Initiatives",
+        "data": [
+          {
+            "label": "VIP Relations",
+            "link": "#"
+          },
+          {
+            "label": "The art market",
+            "link": "#"
+          },
+          {
+            "label": "BMW art journey",
+            "link": "#"
+          },
+          {
+            "label": "Publications",
+            "link": "#"
+          }
+        ]
+      },
+      {
+        "title": "About us",
+        "data": [
+          {
+            "label": "Our history",
+            "link": "#"
+          },
+          {
+            "label": "The team",
+            "link": "#"
+          },
+          {
+            "label": "Careers",
+            "link": "#"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "title": "Get the app",
+        "data": [
+          {
+            "label": "iOS",
+            "link": "#"
+          },
+          {
+            "label": "Android",
+            "link": "#"
+          }
+        ]
+      },
+      {
+        "title": "Press",
+        "data": [
+          {
+            "label": "Overview",
+            "link": "#"
+          },
+          {
+            "label": "Press releases",
+            "link": "https://artbasel.com/press/releases",
+            "target": "_blank"
+          },
+          {
+            "label": "Press images",
+            "link": "#"
+          },
+          {
+            "label": "Accredetation",
+            "link": "#"
+          },
+          {
+            "label": "Press contacts",
+            "link": "#"
+          }
+        ]
+      }
+    ]
+  ]
+}

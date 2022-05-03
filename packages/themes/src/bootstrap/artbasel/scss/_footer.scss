@@ -1,0 +1,51 @@
+footer {
+
+  li {
+    list-style-type: none;
+  }
+
+  a {
+    color: $color-mch-white;
+    line-height: 22px;
+
+    &:hover {
+      color: $color-mch-white;
+      text-decoration: underline;
+    }
+  }
+
+  .left-section {
+    .col {
+      h5:nth-child(1) {
+        margin-top: 0 !important;
+      }
+    }
+
+    ul {
+      li:first-child {
+        margin: 0 !important;
+      }
+    }
+  }
+
+  .bottom-section {
+
+    .copyright {
+      color: $color-mch-gray-300;
+    }
+
+    .copyright-container {
+
+      @include media-breakpoint-between(md, lg) {
+        position: relative;
+
+        ul {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+
+      }
+    }
+  }
+}

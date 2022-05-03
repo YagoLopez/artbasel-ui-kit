@@ -43,9 +43,14 @@
   }
 
   &.dark {
+
+    background-color: $color-mch-black;
+    color: $color-mch-white;
+
     .accordion-item {
       border-top: 1px solid $color-mch-gray-500;
       border-bottom: 1px solid $color-mch-gray-500;
+      background-color: $color-mch-black;
     }
 
     .accordion-button,

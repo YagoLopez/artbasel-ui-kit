@@ -8,6 +8,8 @@ const colorsList = [
   'mch-gray-100',
   'mch-gray-200',
   'mch-gray-300',
+  'mch-gray-400',
+  'mch-gray-500',
 ];
 
 const Divider = ({
