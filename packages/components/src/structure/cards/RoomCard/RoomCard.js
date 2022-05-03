@@ -72,96 +72,95 @@ const RoomCard = ({
       })}
       onClick={onClickCard}
     >
-      <div className="image-frame">
-        <div className="tag-container">
-          {visited?.active && (
-            <Tag
-              label={visited.label}
-              onClick={visited.onClick}
-              className="tag-visited"
-            />
-          )}
-          {openingSoon?.active && (
-            <Tag
-              label={openingSoon.label}
-              onClick={openingSoon.onClick}
-              className="tag-opening"
-            />
-          )}
+      <div className="room-card-wrapper">
+        <div className="image-frame">
+          <div className="tag-container">
+            {visited?.active && (
+              <Tag
+                label={visited.label}
+                onClick={visited.onClick}
+                className="tag-visited"
+              />
+            )}
+            {openingSoon?.active && (
+              <Tag
+                label={openingSoon.label}
+                onClick={openingSoon.onClick}
+                className="tag-opening"
+              />
+            )}
+            {unavailableToView?.active && (
+              <Tag
+                label={unavailableToView.label}
+                onClick={unavailableToView.onClick}
+                className="tag-unavailableToView"
+                icon="Info"
+                iconAlign="left"
+              />
+            )}
+          </div>
+
           {unavailableToView?.active && (
-            <Tag
-              label={unavailableToView.label}
-              onClick={unavailableToView.onClick}
-              className="tag-unavailableToView"
-              icon="Info"
-              iconAlign="left"
+            <div className="overlay-eye">
+              <Icon name="eye-hide" />
+            </div>
+          )}
+          {!selectMode?.active && !collection?.active && (
+            <ButtonIcon
+              icon="collections-add"
+              onClick={collection?.onClick}
+              variant="fill"
+              theme="dark"
+              className="d-none d-lg-flex"
             />
           )}
+          {selectMode?.active && (
+            <Checkbox
+              checked={isSelected}
+              disabled={selectMode.disabled}
+              onChange={onCheckCard}
+              className="checkbox-select"
+            />
+          )}
+          {curator?.active && (
+            <Tag
+              label={curator.label}
+              className="tag-curator"
+              onClick={curator.onClick}
+              type="curator"
+            />
+          )}
+
+          <MemoizedConditionalWrapper
+            linkRenderer={linkRenderer}
+            condition={defaultState}
+            link={roomLink}
+          >
+            <div
+              className={classNames('overlay-fill dark', {
+                selected: selectMode?.active && isSelected,
+              })}
+            />
+            <div
+              className={classNames('overlay-blur', {
+                dark: openingSoon?.active,
+                light: unavailableToView?.active,
+              })}
+            />
+            <img src={imageUrl} title={title} alt={title} />
+          </MemoizedConditionalWrapper>
         </div>
 
-        {unavailableToView?.active && (
-          <div className="overlay-eye">
-            <Icon name="eye-hide" />
-          </div>
-        )}
-        {!selectMode?.active && !collection?.active && (
-          <ButtonIcon
-            icon="collections-add"
-            onClick={collection?.onClick}
-            variant="fill"
-            theme="dark"
-            className="d-none d-lg-flex"
-          />
-        )}
-        {selectMode?.active && (
-          <Checkbox
-            checked={isSelected}
-            disabled={selectMode.disabled}
-            onChange={onCheckCard}
-            className="checkbox-select"
-          />
-        )}
-        {curator?.active && (
-          <Tag
-            label={curator.label}
-            className="tag-curator"
-            onClick={curator.onClick}
-            type="curator"
-          />
-        )}
-
-        {/* image + opacity blur/fill */}
-        <MemoizedConditionalWrapper
-          linkRenderer={linkRenderer}
-          condition={defaultState}
-          link={roomLink}
-        >
-          <div
-            className={classNames('overlay-fill dark', {
-              selected: selectMode?.active && isSelected,
-            })}
-          />
-          <div
-            className={classNames('overlay-blur', {
-              dark: openingSoon?.active,
-              light: unavailableToView?.active,
-            })}
-          />
-          <img src={imageUrl} title={title} alt={title} />
-        </MemoizedConditionalWrapper>
-      </div>
-
-      {/* Texts */}
-      <div className="text-frame">
-        <div className="text-frame-top">
-          {/* room title */}
+        <div className="text-frame">
           {title && (
             <MemoizedConditionalWrapper
               linkRenderer={linkRenderer}
               condition={defaultState}
               link={roomLink}
             >
-              <h4 className="truncate" title={title}>{title}</h4>
+              <h4 className="truncate" title={title}>
+                {title}
+              </h4>
             </MemoizedConditionalWrapper>
           )}
           {collaboratedAccounts && (
@@ -176,58 +175,58 @@ const RoomCard = ({
             </MemoizedConditionalWrapper>
           )}
         </div>
-        <div className="bottom-frame d-flex justify-content-between">
-          <div className="bottom-frame-left">
-            {type === 'hybrid'
-              && sectorsData?.length > 0
-              && sectorsData?.map((i) => (
-                <Tag
-                  key={i.id}
-                  label={i.name}
-                  sector={i.name.toLowerCase()}
-                  type="sectors"
-                  theme={theme}
-                  onClick={i.onClick}
-                />
-              ))}
-            {type === 'freestanding' && ownerAccount && (
-              <MemoizedConditionalWrapper
-                linkRenderer={linkRenderer}
-                condition={
-                  defaultState
-                  || (unavailableToView?.active && ownerAccountLink)
-                }
-                link={ownerAccountLink || roomLink}
-              >
-                <p className="text-medium text-link mb-0">{ownerAccount}</p>
-              </MemoizedConditionalWrapper>
-            )}
-          </div>
-          {((liveChat && !show?.active) || (show?.active && !liveChat)) && (
-            <div className="bottom-frame-right d-flex align-items-center">
-              {liveChat && !show?.active && (
-                <Icon
-                  name="live-chat"
-                  size={16}
-                  color={
-                    theme === 'dark'
-                      ? 'var(--bs-mch-white)'
-                      : 'var(--bs-mch-black)'
-                  }
-                />
-              )}
-              {show?.active && !liveChat && (
-                <Tag
-                  type="label"
-                  variant="secondary"
-                  label={show.label}
-                  onClick={show.onClick}
-                  theme={theme}
-                />
-              )}
-            </div>
+      </div>
+
+      <div className="bottom-frame d-flex justify-content-between">
+        <div className="bottom-frame-left">
+          {type === 'hybrid'
+            && sectorsData?.length > 0
+            && sectorsData?.map((i) => (
+              <Tag
+                key={i.id}
+                label={i.name}
+                sector={i.name.toLowerCase()}
+                type="sectors"
+                theme={theme}
+                onClick={i.onClick}
+              />
+            ))}
+          {type === 'freestanding' && ownerAccount && (
+            <MemoizedConditionalWrapper
+              linkRenderer={linkRenderer}
+              condition={
+                defaultState || (unavailableToView?.active && ownerAccountLink)
+              }
+              link={ownerAccountLink || roomLink}
+            >
+              <p className="text-medium text-link mb-0">{ownerAccount}</p>
+            </MemoizedConditionalWrapper>
           )}
         </div>
+        {((liveChat && !show?.active) || (show?.active && !liveChat)) && (
+          <div className="bottom-frame-right d-flex align-items-center">
+            {liveChat && !show?.active && (
+              <Icon
+                name="live-chat"
+                size={16}
+                color={
+                  theme === 'dark'
+                    ? 'var(--bs-mch-white)'
+                    : 'var(--bs-mch-black)'
+                }
+              />
+            )}
+            {show?.active && !liveChat && (
+              <Tag
+                type="label"
+                variant="secondary"
+                label={show.label}
+                onClick={show.onClick}
+                theme={theme}
+              />
+            )}
+          </div>
+        )}
       </div>
     </BSPCard>
   );

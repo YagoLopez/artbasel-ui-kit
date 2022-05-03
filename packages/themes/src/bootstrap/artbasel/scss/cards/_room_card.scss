@@ -14,9 +14,14 @@
 
 .card.room-card {
   position: relative;
-  display: inline-flex;
   border: none;
   width: 100%;
+
+  .room-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
 
   a + img:hover {
     cursor: pointer;
@@ -41,7 +46,8 @@
     &-dark {
       background: $color-mch-black;
 
-      .text-frame {
+      .text-frame,
+      .bottom-frame {
         h4 {
           color: $color-mch-white;
         }
@@ -220,8 +226,6 @@
     padding-top: $spacing-7;
     padding-left: 0;
     padding-right: 0;
-    display: flex;
-    flex-direction: column;
     flex: 1;
 
     &-top {
@@ -246,13 +250,14 @@
   }
 
   .bottom-frame {
-    min-height: $spacing-7;
-    // for stacked sector tags in multiple lines
+    display: block;
     align-items: baseline;
-    align-content: baseline;
+    flex: 1;
+    flex-grow: 0;
 
     &-left {
-      .tag:not(:last-child) {
+      margin-bottom: -$spacing-3;
+      .tag {
         margin: 0 $spacing-3 $spacing-3 0;
       }
 
