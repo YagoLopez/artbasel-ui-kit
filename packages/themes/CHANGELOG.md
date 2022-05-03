@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.45.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.45.2...@mch-group/uikit-themes@0.45.3) (2022-05-03)
+
+
+### Bug Fixes
+
+* **room card:** adjust cards heights ([938cfc1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/938cfc16a3ad33662a62cbf48be027cf2b070026))
+* tags update ([2d69237](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/2d692378f64805865ce8486d55d61bb4fb5d343c))
+
+
+
+
+
 ## [0.45.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.45.1...@mch-group/uikit-themes@0.45.2) (2022-04-29)
 
 **Note:** Version bump only for package @mch-group/uikit-themes
