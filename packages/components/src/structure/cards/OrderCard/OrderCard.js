@@ -29,7 +29,7 @@ const OrderCard = ({
         <div className="data-col d-flex justify-content-between">
           <div className="d-flex flex-column justify-content-between">
             <h5 className="headline-underline">{title}</h5>
-            <p className="subtitle headline-underline">{subtitle}</p>
+            <p className="subtitle headline-underline-grey">{subtitle}</p>
             <p className="status">{status}</p>
           </div>
           <div className="ml-auto d-flex align-items-center icon-wrapper">

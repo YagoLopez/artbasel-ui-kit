@@ -50,6 +50,7 @@
       size: 14px;
       line-height: 18px;
       margin-top: 0.25rem;
+      color: $color-mch-gray-500;
 
       @include media-breakpoint-up(md) {
         margin-top: 0;
@@ -58,7 +59,12 @@
 
     .headline-underline {
       text-decoration: underline .125rem rgba($color-mch-black, 0);
-      transition: text-decoration-color ease-out 300ms;
+      transition: text-decoration ease-out 300ms;
+    }
+
+    .headline-underline-grey {
+      text-decoration: underline .125rem rgba($color-mch-gray-500, 0);
+      transition: text-decoration ease-out 300ms;
     }
 
     p.status {
@@ -76,7 +82,11 @@
     cursor: pointer;
     
     .headline-underline {
-      text-decoration-color: rgba($color-mch-black, 1);
+      text-decoration: underline .125rem rgba($color-mch-black, 1);
+    }
+
+    .headline-underline-grey {
+      text-decoration: underline .125rem rgba($color-mch-gray-500, 1);
     }
   }
 }
