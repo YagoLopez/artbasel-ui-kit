@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.56.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.55.4...@mch-group/uikit-components@0.56.0) (2022-05-04)
+
+
+### Bug Fixes
+
+* **ordercard:** changed hover attribute for transition ([ddc8662](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/ddc8662165e52c634247337ed7dc2df15f7e29d5))
+
+
+### Features
+
+* **navigation:** added footer component ([73c2d6c](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/73c2d6c83174bf426f8a0e9ebefb2c13ccecb550))
+
+
+
+
+
 ## [0.55.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.55.3...@mch-group/uikit-components@0.55.4) (2022-05-03)
 
 
