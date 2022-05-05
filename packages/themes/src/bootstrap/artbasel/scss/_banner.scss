@@ -1,0 +1,54 @@
+.banner-container {
+
+  max-width: 580px !important;
+  border: 2px solid $color-mch-gray-200;
+  border-left: 4px solid $color-mch-gray-300;
+
+  &.informational {
+    border-left: 4px solid $color-mch-gray-500;
+
+    svg {
+      fill: $color-mch-gray-500;
+    }
+  }
+
+  &.success {
+    border-left: 4px solid $color-mch-green;
+
+    svg {
+      fill: $color-mch-green;
+    }
+  }
+
+  &.warning {
+    border-left: 4px solid $color-mch-orange;
+
+    svg {
+      fill: $color-mch-orange;
+    }
+  }
+
+  &.error {
+    border-left: 4px solid $color-mch-red;
+
+    svg {
+      fill: $color-mch-red;
+    }
+  }
+
+  .icon-column {
+    width: 38px;
+  }
+
+  .text-column {
+    min-width: 83.33333%;
+    max-width: 100%;
+  }
+
+  .link-column {
+    margin: auto 0;
+    white-space: nowrap;
+  }
+
+
+}
