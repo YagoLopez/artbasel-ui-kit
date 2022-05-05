@@ -54,7 +54,7 @@ const socialMedia = {
   ],
 };
 
-const Component = (props) => (
+const Component = () => (
   <Social
     socialMediaData={socialMedia}
     linkRenderer={linkRenderer}

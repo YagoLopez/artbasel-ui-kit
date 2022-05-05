@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { Accordion } from '../../structure/Accordion';
 import { Col } from '../../structure/Grid';
 
@@ -8,19 +9,19 @@ const Links = (({ cols, linkRenderer }) => {
     return <li key={label} className="mt-4 mt-md-3">{linkRenderer(link, label, target)}</li>;
   };
 
-  const buildEntry = ({ title, data }) => {
-    return <>
-      <h5 className="header-uppercase-2 text-white mt-8 mb-5">{title}</h5>
+  const buildEntry = ({ title, data, entryIndex }) => {
+    return <div key={title}>
+      <h5 className={classNames('header-uppercase-2 text-white mb-5', entryIndex === 0 ? 'mt-0' : 'mt-8')}>{title}</h5>
       <ul className="list-unstyled mb-0">
       {data.map(element => buildLink(element))}
   </ul>
-    </>;
+    </div>;
   };
 
   const buildCols = () => {
-    return cols.map((col, index) => {
-      return <Col key={index} className="mb-4 mb-md-0">
-        {col.map(entry => buildEntry(entry))}
+    return cols.map((col, colIndex) => {
+      return <Col key={colIndex} className="mb-4 mb-md-0 data-col">
+        {col.map((entry, entryIndex) => buildEntry({ ...entry, entryIndex }))}
       </Col>;
     });
   };
@@ -30,7 +31,7 @@ const Links = (({ cols, linkRenderer }) => {
 
     return <Accordion theme='dark'>
             {mobileRows.map((row, index) => {
-              return <Accordion.Item key={index} eventKey={index}>
+              return <Accordion.Item key={row.title} eventKey={String(index)}>
               <Accordion.Header size='l'>{row.title}</Accordion.Header>
                <Accordion.Body>
                 <ul className='list-unstyled pb-5'>
@@ -56,16 +57,17 @@ const Links = (({ cols, linkRenderer }) => {
 });
 
 Links.propTypes = {
-  cols: [PropTypes.shape({
-    entries: [PropTypes.shape({
-      title: PropTypes.string,
-      data: [PropTypes.shape({
-        label: PropTypes.string,
-        link: PropTypes.string,
-      })],
-    })],
-
-  })],
+  cols: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.shape({
+      entries: PropTypes.arrayOf(PropTypes.shape({
+        title: PropTypes.string,
+        data: PropTypes.arrayOf(PropTypes.shape({
+          label: PropTypes.string,
+          link: PropTypes.string,
+        })),
+      })),
+    })),
+  ),
   linkRenderer: PropTypes.func.isRequired,
 };
 

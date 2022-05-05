@@ -27,11 +27,11 @@ const Social = ({ socialMediaData, linkRenderer }) => {
 Social.propTypes = {
   socialMediaData: PropTypes.shape({
     title: PropTypes.string,
-    entries: [PropTypes.shape({
+    entries: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string,
       icon: PropTypes.string,
       link: PropTypes.string,
-    })],
+    })),
   }).isRequired,
   linkRenderer: PropTypes.func.isRequired,
 };

@@ -39,10 +39,10 @@ Legal.propTypes = {
   variant: PropTypes.string,
   legalData: PropTypes.shape({
     copyright: PropTypes.string,
-    entries: [PropTypes.shape({
+    entries: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string,
       link: PropTypes.string,
-    })],
+    })),
   }).isRequired,
   linkRenderer: PropTypes.func.isRequired,
 };

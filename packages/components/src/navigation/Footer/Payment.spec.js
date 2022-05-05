@@ -17,7 +17,7 @@ const paymentMethods = {
   ],
 };
 
-const Component = (props) => (
+const Component = () => (
   <Payment
     paymentData={paymentMethods}
     linkRenderer={linkRenderer}

@@ -17,9 +17,9 @@ const Payment = ({ paymentData }) => {
 Payment.propTypes = {
   paymentData: PropTypes.shape({
     title: PropTypes.string,
-    entries: [PropTypes.shape({
-      label: PropTypes.string,
-    })],
+    entries: PropTypes.arrayOf(
+      PropTypes.string,
+    ),
   }).isRequired,
 };
 

@@ -28,7 +28,7 @@ const legalData = {
   copyright: '© by MCH Swiss Exhibition (Basel) Ltd',
 };
 
-const Component = (props) => (
+const Component = () => (
   <Legal
     legalData={legalData}
     linkRenderer={linkRenderer}
