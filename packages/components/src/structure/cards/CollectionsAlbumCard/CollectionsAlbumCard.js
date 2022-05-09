@@ -20,7 +20,7 @@ const CollectionsAlbumCard = ({
   variant, images, collectionName, numberOfFollowers,
   author, onEdit, onDelete, viewpoint,
   noCollectionText, followerText, byText, newCollectionText, itemsText,
-  hideContextMenu, linkRenderer, collectionLink,
+  hideContextMenu, linkRenderer, collectionLink, numberOfItems,
 }) => {
   const truncated = truncateText(collectionName, 30);
 
@@ -56,7 +56,7 @@ const CollectionsAlbumCard = ({
           <div className='d-flex justify-content-between pt-5'>
             <div className='text-start'>
               {truncated.state ? <h5>{truncated.text}...</h5> : <h5>{collectionName}</h5>}
-              <p className='text-medium'>{images.length !== 0 ? images.length : 0} {itemsText} {viewpoint === 'follower' && `• ${byText} ${author}`} {(viewpoint === 'creator' && numberOfFollowers !== 0) && `• ${numberOfFollowers} ${followerText}`}</p>
+              <p className='text-medium'>{numberOfItems} {itemsText} {viewpoint === 'follower' && `• ${byText} ${author}`} {(viewpoint === 'creator' && numberOfFollowers !== 0) && `• ${numberOfFollowers} ${followerText}`}</p>
             </div>
             {
               !hideContextMenu && (
@@ -102,6 +102,7 @@ CollectionsAlbumCard.propTypes = {
   hideContextMenu: PropTypes.bool,
   linkRenderer: PropTypes.func,
   collectionLink: PropTypes.string,
+  numberOfItems: PropTypes.number,
 };
 
 CollectionsAlbumCard.defaultProps = {
@@ -111,6 +112,7 @@ CollectionsAlbumCard.defaultProps = {
   byText: 'by',
   newCollectionText: 'Create new collection',
   itemsText: 'items',
+  numberOfItems: 0,
 };
 
 export default CollectionsAlbumCard;

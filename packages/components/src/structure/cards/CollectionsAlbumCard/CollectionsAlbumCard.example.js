@@ -17,6 +17,7 @@ const albumExample = {
       {children}
     </a>
   ),
+  numberOfItems: 4,
 };
 
 const lessFourImagesExample = {
@@ -34,6 +35,7 @@ const lessFourImagesExample = {
       {children}
     </a>
   ),
+  numberOfItems: 2,
 };
 
 export { albumExample, lessFourImagesExample };
