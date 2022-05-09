@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.57.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.57.0...@mch-group/uikit-components@0.57.1) (2022-05-09)
+
+
+### Bug Fixes
+
+* **collection album card:** items count added ([7d6a65f](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/7d6a65fca674ef5b521fe7c1c67ed252d1c82c01))
+
+
+
+
+
 # [0.57.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.56.1...@mch-group/uikit-components@0.57.0) (2022-05-05)
 
 
