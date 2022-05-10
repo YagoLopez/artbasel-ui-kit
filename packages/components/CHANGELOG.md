@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.59.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.58.0...@mch-group/uikit-components@0.59.0) (2022-05-10)
+
+
+### Features
+
+* **addtocollection:** add onCollectionAdd prop ([3239949](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/3239949f26fd392dd921ea046d7f5a1c34131072))
+
+
+
+
+
 # [0.58.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.57.1...@mch-group/uikit-components@0.58.0) (2022-05-09)
 
 
