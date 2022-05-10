@@ -83,21 +83,14 @@ describe('Tests for Story Card component', () => {
     expect(console.error).toBeCalled();
   });
 
-  test('Should not render the component without a required type of a button prop', () => {
+  test('Should render the component without storyLink or linkRenderer', () => {
     render(
       <StoryCard
         {...example}
-        linkRenderer={(link, children) => (
-          <a href={link} target="_blank" rel="noreferrer">
-            {children}
-          </a>
-        )}
-        button={{
-          type: null,
-          label: example.button.label,
-        }}
+        linkRenderer={null}
+        storyLink={null}
       />,
     );
-    expect(console.error).toBeCalled();
+    expect(screen.queryByText(example.title)).toBeInTheDocument();
   });
 });

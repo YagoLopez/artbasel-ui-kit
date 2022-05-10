@@ -59,7 +59,7 @@ These type of cards make up most of the interface and are key components for log
 ### No CTA
 
 <Canvas>
-  <StoryCard {...example} button={null}>
+  <StoryCard {...example} button={null} linkRenderer={null} storyLink={null}>
     {Template.bind({})}
   </StoryCard>
 </Canvas>
@@ -95,7 +95,7 @@ These type of cards make up most of the interface and are key components for log
   </StoryCard>
 </Canvas>
 
-## Equal card height when stacked
+## Stacked Cards with CTA
 
 <Canvas>
   <Container>
@@ -109,7 +109,7 @@ These type of cards make up most of the interface and are key components for log
           }}
           responsive={false}
           equalHeight={true}
-          description='At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas non provident.'
+          description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas non provident."
         />
       </Col>
       <Col xs={12} sm={12} md={6} lg={4}>
@@ -133,7 +133,58 @@ These type of cards make up most of the interface and are key components for log
           }}
           responsive={false}
           equalHeight={true}
-          description='At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.'
+          description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis."
+        />
+      </Col>
+    </Row>
+  </Container>
+</Canvas>
+
+## Stacked Cards without CTA
+
+<Canvas>
+  <Container>
+    <Row>
+      <Col xs={12} sm={12} md={6} lg={4}>
+        <StoryCard
+          {...example}
+          button={{
+            type: 'textlink',
+            label: 'See all artworks',
+          }}
+          linkRenderer={null}
+          storyLink={null}
+          responsive={false}
+          equalHeight={true}
+          description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas non provident."
+        />
+      </Col>
+      <Col xs={12} sm={12} md={6} lg={4}>
+        <StoryCard
+          {...example}
+          description={example.description}
+          button={{
+            type: 'textlink',
+            label: 'See all artworks',
+          }}
+          linkRenderer={null}
+          storyLink={null}
+          responsive={false}
+          equalHeight={true}
+        />
+      </Col>
+      <Col xs={12} sm={12} md={6} lg={4}>
+        <StoryCard
+          {...example}
+          button={{
+            type: 'textlink',
+            label: 'See all artworks',
+          }}
+          linkRenderer={null}
+          storyLink={null}
+          responsive={false}
+          equalHeight={true}
+          description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis."
         />
       </Col>
     </Row>

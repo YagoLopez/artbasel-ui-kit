@@ -41,6 +41,7 @@ const StoryCard = ({
         responsive,
         fixed: !responsive,
         'equal-height': equalHeight,
+        'no-cta': !storyLink,
       })}
     >
       <div className="image-frame">
@@ -54,7 +55,7 @@ const StoryCard = ({
               <Icon name="play" height={33} width={33} color="white" />
             </div>
           )}
-          <div className="overlay-fill" />
+          {storyLink && <div className="overlay-fill" />}
           <div
             style={{ backgroundImage: `url(${image})` }}
             className={classNames('image', { 'ar-16_10': !responsive })}
@@ -85,7 +86,7 @@ const StoryCard = ({
           </BSPCard.Text>
         </MemoizedConditionalWrapper>
 
-        {button?.type === 'primary' && button?.label && (
+        {button?.type === 'primary' && button?.label && storyLink && (
           <MemoizedConditionalWrapper
             linkRenderer={linkRenderer}
             condition={storyLink}
@@ -97,7 +98,7 @@ const StoryCard = ({
           </MemoizedConditionalWrapper>
         )}
 
-        {button?.type === 'textlink' && (
+        {button?.type === 'textlink' && storyLink && (
           <MemoizedConditionalWrapper
             linkRenderer={linkRenderer}
             condition={storyLink}
@@ -117,12 +118,14 @@ const StoryCard = ({
 };
 
 StoryCard.propTypes = {
+  /** Switch between layout A (fixed) or B (responsive) */
   responsive: PropTypes.bool,
-  linkRenderer: PropTypes.func.isRequired,
-  storyLink: PropTypes.string.isRequired,
+  linkRenderer: PropTypes.func,
+  storyLink: PropTypes.string,
   subtitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  /** Toggle the video svg icon above the image. */
   video: PropTypes.bool,
   date: PropTypes.string,
   description: PropTypes.string.isRequired,
@@ -130,7 +133,9 @@ StoryCard.propTypes = {
     type: PropTypes.oneOf(['primary', 'textlink']).isRequired,
     label: PropTypes.string.isRequired,
   }),
+  /** Fits cards height when stacked. The card parent node must use d-flex class. */
   equalHeight: PropTypes.bool,
+  /** Use this wisely in case the teaser should render html tags. */
   isHtml: PropTypes.bool,
 };
 

@@ -35,7 +35,7 @@
   border: 0;
   box-shadow: none;
 
-  &:hover {
+  a:hover {
     cursor: pointer;
 
     .overlay-fill {
@@ -50,6 +50,13 @@
 
       &.ar-16_10 {
         padding-bottom: 62.5%;
+        width: 100%;
+      }
+    }
+
+    &.no-cta {
+      .card-body .card-description {
+        margin-top: 0;
       }
     }
 
@@ -104,6 +111,7 @@
     .image {
       background-size: cover;
       border-radius: $spacing-1 0 0 $spacing-1;
+      width: 100%;
       @include media-breakpoint-up(xs) {
         padding-bottom: 62.5%;
       }
