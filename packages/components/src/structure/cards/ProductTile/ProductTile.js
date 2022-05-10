@@ -13,6 +13,7 @@ const ProductTile = ({
   year,
   gallery,
   price,
+  onCollectionAdd,
 }) => {
   const subtitleRef = useRef(null);
   const [truncated, setTruncated] = useState(false);
@@ -55,7 +56,10 @@ const ProductTile = ({
       data-testid="mch-product-tile"
     >
       <div className="button-container">
-        <ButtonIcon icon="collections-add" />
+        <ButtonIcon
+          icon="collections-add"
+          onClick={onCollectionAdd}
+        />
       </div>
       <div className="tile-img-container">
         <div className="overlay-fill" />
@@ -95,6 +99,11 @@ ProductTile.propTypes = {
   year: PropTypes.string.isRequired,
   gallery: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
+  onCollectionAdd: PropTypes.func,
+};
+
+ProductTile.defaultProps = {
+  onCollectionAdd: () => {},
 };
 
 export default ProductTile;
