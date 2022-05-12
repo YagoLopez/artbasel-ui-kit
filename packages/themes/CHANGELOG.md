@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.48.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.48.2...@mch-group/uikit-themes@0.48.3) (2022-05-12)
+
+
+### Bug Fixes
+
+* **carousel:** fix: added padding right to title ([eec59f2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/eec59f2f636a734898a184106f56eb6e037039b8))
+
+
+
+
+
 ## [0.48.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.48.1...@mch-group/uikit-themes@0.48.2) (2022-05-12)
 
 
