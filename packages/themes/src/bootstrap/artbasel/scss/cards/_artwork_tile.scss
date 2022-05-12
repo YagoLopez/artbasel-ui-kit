@@ -37,10 +37,10 @@
     }
 
     &-dark {
-      background: $color-mch-black;
+      background: none;
 
       .text-frame {
-        h5 {
+        h5, a {
           color: $color-mch-white;
         }
 
