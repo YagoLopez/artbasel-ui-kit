@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.48.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.48.1...@mch-group/uikit-themes@0.48.2) (2022-05-12)
+
+
+### Bug Fixes
+
+* **carousel:** add title with limitation ([ccf638f](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/ccf638fd11ee6c291e7719132beeae2c74f904cd))
+* **content card:** support additional CTAs ([ee0537d](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/ee0537d8fe0572bcb5b953a1924587ad5fa3f6b9))
+* **room & artwork card:** remove dark background color in dark theme ([371457c](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/371457c97f6a1a33b0841e5ca179f71ebc6827a4))
+
+
+
+
+
 ## [0.48.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.48.0...@mch-group/uikit-themes@0.48.1) (2022-05-10)
 
 **Note:** Version bump only for package @mch-group/uikit-themes
