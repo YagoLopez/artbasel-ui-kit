@@ -155,7 +155,9 @@ const Carousel = ({
         theme,
       )}
     >
-      <h3 className="pb-7 pb-xl-9 header-uppercase-1">{title}</h3>
+      <div className="title-container pb-7 pb-xl-9">
+        <h3 className="header-uppercase-1">{title}</h3>
+      </div>
       <Splide
         ref={splideRef}
         className={classnames({

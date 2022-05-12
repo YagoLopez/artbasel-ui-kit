@@ -9,9 +9,17 @@
 
 .carousel-container {
   max-width: 100%;
-  padding-top: calc(2.5rem + 3px);
+  padding-top: 1.5rem;
   @include media-breakpoint-up(xl) {
-    padding-top: calc(4rem + 3px);
+    padding-top: 62px;
+  }
+
+  .title-container {
+    min-height: 66px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: calc(100% - 100px);
   }
 
   .carousel-arrows {
