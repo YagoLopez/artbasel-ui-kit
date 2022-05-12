@@ -63,7 +63,7 @@
       background-position: center center;
 
       @include media-breakpoint-up(md) {
-        height: 100%;
+        height: auto;
       }
 
       &-frame {
@@ -138,6 +138,7 @@
     position: relative;
     overflow: hidden;
     margin-bottom: $spacing-6;
+    height: fit-content;
 
     a {
       width: 100%;
@@ -186,13 +187,17 @@
       color: $color-mch-gray-400;
     }
 
-    &-description {
-      margin-bottom: 0;
+    &-cta {
+      margin-top: $spacing-5;
+      display: flex;
     }
 
-    &-cta {
-      margin-top: $spacing-7;
-      display: flex;
+    &-description {
+      margin-bottom: 0;
+
+      & + .card-cta {
+        margin-top: $spacing-7;
+      }
     }
   }
 

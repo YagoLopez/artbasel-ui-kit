@@ -19,20 +19,28 @@ const MemoizedConditionalWrapper = memo(ConditionalWrapper);
 
 const ContentCard = ({
   responsive,
-  linkRenderer,
-  contentLink,
   image,
   videoPlayer,
   videoIcon,
   title,
   subtitle,
   description,
-  button,
+  cta,
   reverse,
   urlVideo,
   isHtml,
 }) => {
   const [playing, setPlaying] = useState(true);
+  const hasOneCta = cta?.length === 1;
+  const firstCtaProps = hasOneCta
+    ? { linkRenderer: cta[0].linkRenderer, contentLink: cta[0].contentLink }
+    : { linkRenderer: () => {}, contentLink: null };
+
+  const togglePlayer = () => {
+    if (videoPlayer) {
+      setPlaying(false);
+    }
+  };
 
   return (
     <BSPCard
@@ -43,11 +51,11 @@ const ContentCard = ({
         reverse: responsive ? reverse : false,
       })}
     >
-      <div className="image-frame" onClick={() => setPlaying(false)}>
+      <div className="image-frame" onClick={togglePlayer}>
         <MemoizedConditionalWrapper
-          linkRenderer={linkRenderer}
-          condition={contentLink}
-          link={contentLink}
+          condition={hasOneCta}
+          linkRenderer={firstCtaProps.linkRenderer}
+          link={firstCtaProps.contentLink}
         >
           {videoIcon && (
             <div className="overlay-video">
@@ -75,17 +83,16 @@ const ContentCard = ({
             className="react-player"
             playing={!playing}
             controls={!playing}
-            setPlaying={setPlaying}
           />
         )}
       </div>
 
-      <MemoizedConditionalWrapper
-        linkRenderer={linkRenderer}
-        condition={contentLink}
-        link={contentLink}
-      >
-        <BSPCard.Body>
+      <BSPCard.Body>
+        <MemoizedConditionalWrapper
+          condition={hasOneCta}
+          linkRenderer={firstCtaProps.linkRenderer}
+          link={firstCtaProps.contentLink}
+        >
           <BSPCard.Text className="card-title" title={title}>
             {title}
           </BSPCard.Text>
@@ -101,24 +108,37 @@ const ContentCard = ({
           >
             {isHtml ? null : description}
           </BSPCard.Text>
-          {button?.type === 'textlink' && contentLink && (
-            <div className="card-cta">
-              {/* TODO: remove href={null} when <TextLink /> deprecates it */}
-              <TextLink href={null} icon="chevron-right" iconAlign="right">
-                {button?.label}
-              </TextLink>
-            </div>
-          )}
-        </BSPCard.Body>
-      </MemoizedConditionalWrapper>
+        </MemoizedConditionalWrapper>
+        {cta?.map(
+          (i) => i?.contentLink && (
+              <div className="card-cta" key={i.id}>
+                <MemoizedConditionalWrapper
+                  linkRenderer={i?.linkRenderer}
+                  condition={i?.contentLink}
+                  link={i?.contentLink}
+                >
+                  <TextLink href={null} icon="chevron-right" iconAlign="right">
+                    {i?.label}
+                  </TextLink>
+                </MemoizedConditionalWrapper>
+              </div>
+          ),
+        )}
+      </BSPCard.Body>
     </BSPCard>
   );
 };
 
 ContentCard.propTypes = {
   responsive: PropTypes.bool,
-  linkRenderer: PropTypes.func,
-  contentLink: PropTypes.string,
+  cta: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: [PropTypes.oneOfType([PropTypes.string, PropTypes.number])].isRequired,
+      label: [PropTypes.string].isRequired,
+      contentLink: [PropTypes.string].isRequired,
+      linkRenderer: [PropTypes.func].isRequired,
+    }),
+  ),
   title: PropTypes.string.isRequired,
   image: PropTypes.string,
   videoPlayer: PropTypes.bool,
@@ -126,21 +146,17 @@ ContentCard.propTypes = {
   urlVideo: PropTypes.string,
   subtitle: PropTypes.string,
   description: PropTypes.string.isRequired,
-  button: PropTypes.shape({
-    type: PropTypes.oneOf(['primary', 'textlink']).isRequired,
-    label: PropTypes.string.isRequired,
-  }),
   reverse: PropTypes.bool,
   isHtml: PropTypes.bool,
 };
 
 ContentCard.defaultProps = {
   responsive: false,
-  button: null,
   subtitle: null,
   videoPlayer: false,
   reverse: false,
   isHtml: false,
+  cta: [],
 };
 
 export default ContentCard;

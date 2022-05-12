@@ -13,11 +13,18 @@ describe('Tests for Story Card component', () => {
     render(
       <ContentCard
         {...example}
-        linkRenderer={(link, children) => (
-          <a href={link} target="_blank" rel="noreferrer">
-            {children}
-          </a>
-        )}
+        cta={[
+          {
+            id: 1,
+            label: 'TextLink Label',
+            contentLink: 'https://artbasel.com/#1',
+            linkRenderer: (link, children) => (
+              <a href={link} target="_blank" rel="noreferrer">
+                {children}
+              </a>
+            ),
+          },
+        ]}
       />,
     );
     expect(screen.queryByText(example.title)).toBeInTheDocument();
@@ -27,12 +34,19 @@ describe('Tests for Story Card component', () => {
     render(
       <ContentCard
         {...example}
-        linkRenderer={(link, children) => (
-          <a href={link} target="_blank" rel="noreferrer">
-            {children}
-          </a>
-        )}
         image={null}
+        cta={[
+          {
+            id: 1,
+            label: 'TextLink Label',
+            contentLink: 'https://artbasel.com/#1',
+            linkRenderer: (link, children) => (
+              <a href={link} target="_blank" rel="noreferrer">
+                {children}
+              </a>
+            ),
+          },
+        ]}
       />,
     );
     expect(screen.queryByText(example.title)).toBeInTheDocument();
@@ -42,12 +56,19 @@ describe('Tests for Story Card component', () => {
     render(
       <ContentCard
         {...example}
-        linkRenderer={(link, children) => (
-          <a href={link} target="_blank" rel="noreferrer">
-            {children}
-          </a>
-        )}
         subtitle={null}
+        cta={[
+          {
+            id: 1,
+            label: 'TextLink Label',
+            contentLink: 'https://artbasel.com/#1',
+            linkRenderer: (link, children) => (
+              <a href={link} target="_blank" rel="noreferrer">
+                {children}
+              </a>
+            ),
+          },
+        ]}
       />,
     );
     expect(screen.queryByText(example.title)).toBeInTheDocument();
@@ -57,18 +78,25 @@ describe('Tests for Story Card component', () => {
     render(
       <ContentCard
         {...example}
-        linkRenderer={(link, children) => (
-          <a href={link} target="_blank" rel="noreferrer">
-            {children}
-          </a>
-        )}
         description={null}
+        cta={[
+          {
+            id: 1,
+            label: 'TextLink Label',
+            contentLink: 'https://artbasel.com/#1',
+            linkRenderer: (link, children) => (
+              <a href={link} target="_blank" rel="noreferrer">
+                {children}
+              </a>
+            ),
+          },
+        ]}
       />,
     );
     expect(console.error).toBeCalled();
   });
 
-  test('Should not render the component without a required type of a button prop', () => {
+  test('Should not render the component without a required prop in cta', () => {
     render(
       <ContentCard
         {...example}
@@ -77,10 +105,18 @@ describe('Tests for Story Card component', () => {
             {children}
           </a>
         )}
-        button={{
-          type: null,
-          label: example.button.label,
-        }}
+        cta={[
+          {
+            id: null,
+            label: 'TextLink Label',
+            contentLink: 'https://artbasel.com/#1',
+            linkRenderer: (link, children) => (
+              <a href={link} target="_blank" rel="noreferrer">
+                {children}
+              </a>
+            ),
+          },
+        ]}
       />,
     );
     expect(console.error).toBeCalled();
