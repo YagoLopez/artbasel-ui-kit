@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Links from './Links';
 import Payment from './Payment';
@@ -12,7 +12,7 @@ const { Validator } = require('jsonschema');
 
 const v = new Validator();
 
-const FooterBuilder = forwardRef(({
+const FooterBuilder = ({
   variant, footerData, socialMedia, paymentMethods, legalData, linkRenderer,
 }) => {
   return <>
@@ -34,9 +34,9 @@ const FooterBuilder = forwardRef(({
             </div>
     </footer>
   </>;
-});
+};
 
-const Footer = forwardRef(({
+const Footer = ({
   variant, footerData, socialMedia, paymentMethods, legalData, linkRenderer,
 }) => {
   const jsonValidation = v.validate(footerData, schema);
@@ -54,7 +54,7 @@ const Footer = forwardRef(({
   return (<FooterBuilder footerData={footerData} variant={variant}
     socialMedia={socialMedia} paymentMethods={paymentMethods}
     legalData={legalData} linkRenderer={linkRenderer}></FooterBuilder>);
-});
+};
 
 const labelLink = {
   label: PropTypes.string,
@@ -81,17 +81,17 @@ Footer.propTypes = {
   /** JSON object that contains the data about social media section */
   socialMedia: PropTypes.shape({
     title: PropTypes.string,
-    entries: [PropTypes.shape(labelLink)],
+    entries: PropTypes.arrayOf(PropTypes.shape(labelLink)),
   }).isRequired,
   /** JSON object that contains the data about payments section */
   paymentMethods: PropTypes.shape({
     title: PropTypes.string,
-    entries: [PropTypes.shape(labelLink)],
+    entries: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
   /** JSON object that contains the bottom data about legal concerns */
   legalData: PropTypes.shape({
     copyright: PropTypes.string,
-    entries: [PropTypes.shape(labelLink)],
+    entries: PropTypes.arrayOf(PropTypes.shape(labelLink)),
   }).isRequired,
   /** A renderer for
   all links. */
