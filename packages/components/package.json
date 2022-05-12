@@ -1,7 +1,7 @@
 {
   "name": "@mch-group/uikit-components",
   "description": "MCH UI Basic Componentes",
-  "version": "0.59.2",
+  "version": "0.59.3",
   "bugs": "https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/issues",
   "repository": {
     "type": "git",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.59.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.59.2...@mch-group/uikit-components@0.59.3) (2022-05-12)
+
+
+### Bug Fixes
+
+* **footer:** fix forward-ref and proptypes ([f530ba0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/f530ba01093b77f1c70846a53568a3c3f8208372))
+
+
+
+
+
 ## [0.59.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.59.1...@mch-group/uikit-components@0.59.2) (2022-05-12)
 
 
