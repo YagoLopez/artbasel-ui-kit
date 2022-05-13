@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.60.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.59.4...@mch-group/uikit-components@0.60.0) (2022-05-13)
+
+
+### Features
+
+* **banner:** banner implementation ([326cb7b](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/326cb7b79278960122524b2724e47e5a4af8e498))
+
+
+
+
+
 ## [0.59.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.59.3...@mch-group/uikit-components@0.59.4) (2022-05-13)
 
 
