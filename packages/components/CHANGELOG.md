@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.62.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.61.0...@mch-group/uikit-components@0.62.0) (2022-05-13)
+
+
+### Features
+
+* **carousel:** added logic to hide arrows when there are a few items ([d91d281](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d91d281b0ee6f55c7f91227ad3e5144a73816ee2))
+
+
+
+
+
 # [0.61.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.60.0...@mch-group/uikit-components@0.61.0) (2022-05-13)
 
 
