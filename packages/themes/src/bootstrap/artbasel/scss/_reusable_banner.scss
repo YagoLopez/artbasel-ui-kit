@@ -1,0 +1,55 @@
+.reusable-banner{
+  height: 70vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  .headline-truncated{
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .text-truncated{
+    @extend .headline-truncated;
+
+    -webkit-line-clamp: 4;
+  }
+  
+  @include media-breakpoint-up(lg) {
+    height: 75vh;
+    background-attachment: fixed;
+
+    .headline-truncated{
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .text-truncated{
+      @extend .headline-truncated;
+      
+      -webkit-line-clamp: 3;
+    }
+
+    .hover-button{
+      opacity: 0;
+      transition: all 0.35s ease-in-out;
+    }
+
+    &.hover,
+    &:hover {
+      .hover-button{
+        opacity: 1;
+      }
+    }
+
+    .text-size{
+      width: 50%;
+    }
+  }
+}
