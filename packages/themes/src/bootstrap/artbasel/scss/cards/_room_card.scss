@@ -10,6 +10,9 @@
 /* storybook card max-width */
 :root .sb-show-main .room-card {
   max-width: 375px;
+  &.theme-dark {
+    background: $color-mch-black;
+  }
 }
 
 .card.room-card {
