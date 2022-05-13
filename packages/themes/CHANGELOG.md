@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.51.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.51.0...@mch-group/uikit-themes@0.51.1) (2022-05-13)
+
+
+### Bug Fixes
+
+* **room & artwork card:** remove dark background color in dark theme ([762a8a9](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/762a8a93c351252c82651a8b56da64d6bc27f9e1))
+
+
+
+
+
 # [0.51.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.50.0...@mch-group/uikit-themes@0.51.0) (2022-05-13)
 
 
