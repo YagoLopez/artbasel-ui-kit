@@ -96,6 +96,30 @@
   }
 
   &.dark{
+    .splide__arrow--next {
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $color-mch-gray-500;
+      }
+
+      &:disabled{
+        background-color: transparent;
+      }
+    }
+
+    .splide__arrow--prev {
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $color-mch-gray-500;
+      }
+
+      &:disabled{
+        background-color: transparent;
+      }
+    }
+
     :disabled,
     .disabled {
       svg{
