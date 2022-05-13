@@ -12,8 +12,8 @@ const Banner = ({
       <Col>
       <Row>
       <div className='col text-column mb-7'>
-          {header && (<Row className='pt-2'><h5>{header}</h5></Row>)}
-          {body && (<Row><p className='m-0'>{body}</p></Row>)}
+          {header && (<Row className='pt-3 mb-2'><h5>{header}</h5></Row>)}
+          {body && (<Row><p className='m-0 pe-10'>{body}</p></Row>)}
         </div>
         {button && (<div className='col link-column pb-7 text-link'><a>{linkRenderer({ ...button })}</a></div>)}
         </Row>
