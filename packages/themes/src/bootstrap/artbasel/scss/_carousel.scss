@@ -57,6 +57,10 @@
     @include media-breakpoint-up(xl) {
       top: -5rem;
     }
+
+    &.hidden {
+      display: none;
+    }
   }
 
   .splide__list .splide__slide {

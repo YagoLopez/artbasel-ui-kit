@@ -124,6 +124,33 @@ export const linkRenderer = {
   </Container>
 </Canvas>
 
+#### Header not showing navigation arrows when there are a few items
+
+<Canvas>
+  <Container>
+    <Row>
+      <Col>
+        <Carousel title="Heading">
+          <Carousel.Slide>
+            <CarouselArtistCover
+              title={example.cover.title}
+              description={example.cover.description}
+              link={example.cover.link}
+            />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <CarouselArtistCard
+              artistName={example.cards[0].artistName}
+              artworks={example.cards[0].artworks}
+              image={example.cards[0].image}
+            />
+          </Carousel.Slide>
+        </Carousel>
+      </Col>
+    </Row>
+  </Container>
+</Canvas>
+
 #### Header with compact button
 
 <Canvas>

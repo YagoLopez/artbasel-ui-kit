@@ -74,6 +74,23 @@ const Carousel = ({
     }
   };
 
+  const controlArrowsVisibility = () => {
+    if (carousel.current) {
+      const lastItem = items.count > 0 ? items.elements[items.count - 1] : 0;
+      const lastItemVisible = lastItem?.classList.contains('is-visible');
+      const firstItemVisible = items.elements[0]?.classList.contains('is-visible');
+
+      const arrows = carousel.current.querySelector('.carousel-arrows');
+      if (firstItemVisible && lastItemVisible) {
+        if (!arrows.classList.contains('hidden')) {
+          arrows.classList.add('hidden');
+        }
+      } else if (arrows.classList.contains('hidden')) {
+        arrows.classList.remove('hidden');
+      }
+    }
+  };
+
   useEffect(() => {
     if (carousel.current && prevArrow.current) {
       const li = carousel.current.querySelectorAll('li');
@@ -81,7 +98,9 @@ const Carousel = ({
       items.count = li?.length || 0;
       carousel.current.addEventListener('wheel', handleWheelSwipe);
       disableArrow(prevArrow);
+      controlArrowsVisibility();
     }
+    window.addEventListener('resize', controlArrowsVisibility);
   }, []);
 
   const handleItemMove = (_, index) => {

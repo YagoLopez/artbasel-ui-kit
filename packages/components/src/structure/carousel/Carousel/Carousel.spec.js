@@ -1,10 +1,13 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, cleanup } from '@testing-library/react';
 import Carousel from './Carousel';
 import example from './Carousel.example.json';
 
 describe('Carousel component', () => {
+  beforeEach(() => {
+    cleanup();
+  });
   test('Render Carousel component', () => {
     const { container } = render(
       <Carousel title="some title">
@@ -84,5 +87,19 @@ describe('Carousel component', () => {
 
     fireEvent.click(prevArrow);
     expect(prevArrow).toHaveClass('disabled');
+  });
+
+  test('Should not render arrows when there is no need for it', () => {
+    const { container } = render(
+      <Carousel title="some title">
+        <Carousel.Slide>
+          <img src={example.cards[0].image} alt="picture" />
+          <span>{example.cards[0].artistName}</span>
+        </Carousel.Slide>
+      </Carousel>,
+    );
+
+    const arrows = container.querySelector('.carousel-arrows');
+    expect(arrows).toHaveClass('hidden');
   });
 });
