@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.61.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.60.0...@mch-group/uikit-components@0.61.0) (2022-05-13)
+
+
+### Bug Fixes
+
+* **collection album card:** Unfollow item in context menu added ([92218a8](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/92218a8a45c9399af2320b5c5ed332cb43f4c7ed))
+
+
+### Features
+
+* **reusable banner:** Reusable banner added ([6dfe8d2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/6dfe8d2ae2e074a9721807c2a91b5b21c1400545))
+
+
+
+
+
 # [0.60.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.59.4...@mch-group/uikit-components@0.60.0) (2022-05-13)
 
 
