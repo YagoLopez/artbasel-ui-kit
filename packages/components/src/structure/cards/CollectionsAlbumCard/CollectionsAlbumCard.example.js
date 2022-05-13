@@ -18,6 +18,18 @@ const albumExample = {
     </a>
   ),
   numberOfItems: 4,
+  unfollowContextMenu: {
+    label: 'Unfollow',
+    onClick: () => {},
+  },
+  editContextMenu: {
+    label: 'Edit',
+    onClick: () => { },
+  },
+  deleteContextMenu: {
+    label: 'Delete',
+    onClick: () => { },
+  },
 };
 
 const lessFourImagesExample = {
@@ -36,6 +48,18 @@ const lessFourImagesExample = {
     </a>
   ),
   numberOfItems: 2,
+  unfollowContextMenu: {
+    label: 'Unfollow',
+    onClick: () => { },
+  },
+  editContextMenu: {
+    label: 'Edit',
+    onClick: () => { },
+  },
+  deleteContextMenu: {
+    label: 'Delete',
+    onClick: () => { },
+  },
 };
 
 export { albumExample, lessFourImagesExample };

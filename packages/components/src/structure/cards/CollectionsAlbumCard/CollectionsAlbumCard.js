@@ -18,9 +18,9 @@ const MemoizedConditionalWrapper = memo(ConditionalWrapper);
 
 const CollectionsAlbumCard = ({
   variant, images, collectionName, numberOfFollowers,
-  author, onEdit, onDelete, viewpoint,
+  author, editContextMenu, deleteContextMenu, viewpoint,
   noCollectionText, followerText, byText, newCollectionText, itemsText,
-  hideContextMenu, linkRenderer, collectionLink, numberOfItems,
+  hideContextMenu, linkRenderer, collectionLink, numberOfItems, unfollowContextMenu,
 }) => {
   const truncated = truncateText(collectionName, 30);
 
@@ -63,18 +63,33 @@ const CollectionsAlbumCard = ({
                 <ContextualButton
                   align='end'
                 >
-                  <Item
-                    icon="edit"
-                    onClick={onEdit}
-                  >
-                    Edit
-                  </Item>
-                  <Item
-                    icon="delete"
-                    onClick={onDelete}
-                  >
-                    Delete
-                  </Item>
+                  {
+                    viewpoint === 'creator' && (
+                      <>
+                        <Item
+                          icon="edit"
+                          onClick={editContextMenu?.onClick}
+                        >
+                          {editContextMenu?.label}
+                        </Item>
+                        <Item
+                          icon="delete"
+                          onClick={deleteContextMenu?.onClick}
+                        >
+                          {deleteContextMenu?.label}
+                        </Item>
+                      </>
+                    )
+                  }
+                  {
+                    viewpoint === 'follower' && (
+                      <Item
+                        icon="close"
+                        onClick={unfollowContextMenu?.onClick}
+                      >
+                        {unfollowContextMenu?.label}
+                      </Item>
+                    )}
                 </ContextualButton>
               )
             }
@@ -92,7 +107,14 @@ CollectionsAlbumCard.propTypes = {
   collectionName: PropTypes.string,
   author: PropTypes.string,
   numberOfFollowers: PropTypes.number,
-  onEdit: PropTypes.func,
+  editContextMenu: PropTypes.shape({
+    label: PropTypes.string,
+    onClick: PropTypes.func,
+  }),
+  deleteContextMenu: PropTypes.shape({
+    label: PropTypes.string,
+    onClick: PropTypes.func,
+  }),
   onDelete: PropTypes.func,
   noCollectionText: PropTypes.string,
   followerText: PropTypes.string,
@@ -103,6 +125,10 @@ CollectionsAlbumCard.propTypes = {
   linkRenderer: PropTypes.func,
   collectionLink: PropTypes.string,
   numberOfItems: PropTypes.number,
+  unfollowContextMenu: PropTypes.shape({
+    label: PropTypes.string,
+    onClick: PropTypes.func,
+  }),
 };
 
 CollectionsAlbumCard.defaultProps = {

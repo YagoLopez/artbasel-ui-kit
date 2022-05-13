@@ -46,6 +46,18 @@ export const argTypes = {};
         </a>
       ),
       numberOfItems: 12,
+      editContextMenu: {
+        label: 'Edit',
+        onClick: () => { },
+      },
+      deleteContextMenu: {
+        label: 'Delete',
+        onClick: () => { },
+      },
+      unfollowContextMenu: {
+        label: 'Unfollow',
+        onClick: () => { },
+      },
     }}
     argTypes={argTypes}
     parameters={{
@@ -129,7 +141,7 @@ If a user hasn't created any collections yet, the CTA text includes the followin
 
 <Canvas>
   <div style={{ width: '326px' }}>
-    <CollectionsAlbumCard variant="new" noCollectionText="Get the art you love organised in one place. Share it to get support or inspire others."/>
+    <CollectionsAlbumCard variant="new" noCollectionText="Get the art you love organised in one place. Share it to get support or inspire others." />
   </div>
 </Canvas>
 
