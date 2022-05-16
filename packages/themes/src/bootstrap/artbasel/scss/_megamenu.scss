@@ -31,6 +31,7 @@
     .item-menu-link a {
       font-weight: normal;
       text-decoration: none;
+
       &:hover {
         color: $color-mch-gray-300;
       }
@@ -91,7 +92,7 @@
     width: 100vw;
     max-width: 100vw !important;
     background-color: $color-mch-white;
-    border-top: 2px solid $color-mch-gray-200 !important;
+    border-top: 2px solid $color-mch-gray-200  !important;
   }
 }
 
@@ -125,7 +126,7 @@
   .header {
     background-color: $color-mch-white;
     position: relative;
-    border-bottom: 2px solid $color-mch-gray-200 !important;
+    border-bottom: 2px solid $color-mch-gray-200  !important;
 
     display: flex;
     align-items: center;
@@ -143,6 +144,7 @@
   .item-menu-link a {
     font-weight: normal;
     text-decoration: none;
+
     &:hover {
       color: $color-mch-gray-300;
     }
@@ -163,7 +165,7 @@
   }
 
   .accordion-button {
-    font-family: $headings-font-family !important;
+    font-family: $headings-font-family  !important;
     font-size: 18px !important;
     line-height: 21px !important;
     padding-top: 24px;
@@ -209,6 +211,7 @@
     @include media-breakpoint-up(lg) {
       top: 27px;
       left: -134px;
+
       &.language-switcher {
         left: -90px;
       }
@@ -240,6 +243,7 @@
   @include media-breakpoint-up(lg) {
     top: 27px;
     left: -134px;
+
     &.language-switcher {
       left: -90px;
     }
@@ -315,4 +319,20 @@
   box-shadow: 0px 4px 16px rgba(29, 35, 39, 0.06);
   border-radius: 2px;
   padding: 12px 8px 4px;
+}
+
+.navlink {
+  &::after {
+    content: attr(data-text)/"";
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    display: block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    font-weight: bold;
+  }
 }

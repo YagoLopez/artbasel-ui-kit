@@ -35,20 +35,18 @@ const Navbar = ({
   }
 
   const underLineTextRef = useRef(null);
+  const linksRef = useRef([]);
   const [underLinePosition, setUnderLinePosition] = useState(null);
   const [searchText, setSearchText] = useState(null);
 
   const navLinks = [];
 
-  const createNavLinks = (width, flyout) => {
+  const createNavLinks = (flyout) => {
     const key = navLinks?.length;
     if (navLinks.length < menuData.entries.length) {
-      const position = key > 0 ? navLinks[key - 1]?.position + navLinks[key - 1]?.width : 0;
       navLinks.push({
         key,
-        position,
         flyout,
-        width,
       });
     }
     return key;
@@ -90,18 +88,24 @@ const Navbar = ({
     const nextKey = navLinks.length >= key + 2 ? key + 1 : null;
     hideColUnderline(null, nextKey);
 
-    underLineTextRef.current.style.setProperty('width', `${navLinks[key].width}px`);
+    const width = linksRef.current[key].offsetWidth;
+    const position = linksRef.current[key].offsetLeft;
+
+    underLineTextRef.current.style.setProperty('width', `${width}px`);
     underLineTextRef.current.style.setProperty('opacity', 1);
     underLineTextRef.current.style.setProperty(
-      'transform', `translateX(${navLinks[key].position}px)`,
+      'transform', `translateX(${position}px)`,
     );
   };
 
   const showColLine = (key, element) => {
-    underLineTextRef.current.style.setProperty('width', `${navLinks[key].width}px`);
+    const width = linksRef.current[key].offsetWidth;
+    const position = linksRef.current[key].offsetLeft;
+
+    underLineTextRef.current.style.setProperty('width', `${width}px`);
     underLineTextRef.current.style.setProperty('opacity', 0);
     underLineTextRef.current.style.setProperty(
-      'transform', `translateX(${navLinks[key].position}px)`,
+      'transform', `translateX(${position}px)`,
     );
     element?.style.setProperty('opacity', 1);
     element?.style.setProperty('width', '100%');
@@ -148,6 +152,26 @@ const Navbar = ({
     onSearch(searchText);
   };
 
+  const renderNavLinks = () => {
+    return menuData.entries.map((entry) => {
+      const key = createNavLinks(!!entry.flyout);
+      return (
+        <div
+          className="col-auto d-flex align-items-center text-center nav-entry mx-4"
+          key={entry.label}
+          onMouseEnter={(e) => handleEntryMouseEnter(e, entry, key)}
+          onMouseLeave={(e) => handleMouseLeave(e)}
+          ref={(element) => { linksRef.current[key] = element; }}
+        >
+          <div className="m-auto navlink" data-text={entry.label}>
+            {linkRenderer(entry.link, entry.label, entry.target)}
+          </div>
+          <div className="col-underline" />
+        </div>
+      );
+    });
+  };
+
   return (
     <Container className="navbar-container" data-testid="mch-navbar">
       <Row gutter="g-0" className="px-3 px-lg-8 navbar">
@@ -174,30 +198,13 @@ const Navbar = ({
           </Col>
         }
 
-        <Col className="col-auto entries-container">
+        <Col className="entries-container col-auto">
           <Row gutter="g-0" className="menu-entries">
-            <div className="menu-entries-edge" onMouseEnter={() => setVisibleMenu(null)}/>
-            {menuData.entries.map((entry) => {
-              const width = 9 * (entry.label.length > 7 ? entry.label.length : 7) - 4;
-              const key = createNavLinks(width, !!entry.flyout);
-              return (
-                <Col
-                  className="col-auto d-flex align-items-center text-center nav-entry"
-                  key={entry.label}
-                  onMouseEnter={(e) => handleEntryMouseEnter(e, entry, key)}
-                  onMouseLeave={(e) => handleMouseLeave(e)}
-                  style={{ width: `${width}px` }}
-                >
-                  <div className="m-auto navlink" >
-                    {linkRenderer(entry.link, entry.label, entry.target)}
-                  </div>
-                  <div className="col-underline" />
-                </Col>
-              );
-            }) }
-
+            <div className="menu-entries-edge" onMouseEnter={() => setVisibleMenu(null)} />
+            <div className='row flex-nowrap'>
+            { renderNavLinks() }
+            </div>
             <div className="menu-entries-edge" />
-
             <div ref={underLineTextRef} className="underline-text" />
           </Row>
         </Col>
