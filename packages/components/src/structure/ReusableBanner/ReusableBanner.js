@@ -21,10 +21,8 @@ const ReusableBanner = ({
   shareButtonAction, calendarButtonAction, buttonVisibility,
   mediaPriority, backgroundVideo,
 }) => {
-  if (!background) return null;
-
   return (
-    <section className="reusable-banner" test-dataid="reusable-banner" style={{ backgroundImage: `url(${mediaPriority === 'image' && background})` }}>
+    <section className="reusable-banner" test-dataid="reusable-banner" style={{ backgroundImage: `${mediaPriority === 'image' ? `url(${background})` : 'none'}` }}>
       <main className="d-flex align-items-center h-100 justify-content-center">
         {
           mediaPriority === 'video' && (
@@ -34,8 +32,8 @@ const ReusableBanner = ({
           )
         }
         <div className="text-center position-relative">
-          <h5 className="text-white pb-3">{eyebrow}</h5>
-          <h1 className="text-white px-5 headline-truncated">{headline}</h1>
+          { eyebrow && <h5 className="text-white pb-3">{eyebrow}</h5> }
+          { headline && <h1 className="text-white px-5 headline-truncated">{headline}</h1> }
           {
             text && (
               <div className='d-flex justify-content-center pt-2'>
@@ -43,57 +41,59 @@ const ReusableBanner = ({
               </div>
             )
           }
-          <section className='d-flex justify-content-center'>
-            <div className={classNames('position-absolute d-flex', {
-              'mt-8': (primaryButton || shareButtonAction || calendarButtonAction) && buttonVisibility !== 'neverShow',
-            })}>
-              {
-                primaryButton && (
-                  <Button
-                    onClick={primaryButton?.onClick}
-                    className={classNames('me-3', {
-                      'hover-button': buttonVisibility === 'hover',
-                      'd-none': buttonVisibility === 'never',
-                      'opacity-100': buttonVisibility === 'always',
-                    })}
-                  >
-                    {primaryButton?.label}
-                  </Button>
-                )
-              }
-              {
-                shareButtonAction?.length > 0 && (
-                  <div className={classNames('me-3', {
-                    'hover-button': buttonVisibility === 'hover',
-                    'd-none': buttonVisibility === 'never',
-                    'opacity-100': buttonVisibility === 'always',
-                  })}>
-                    <SharingButton
-                      size="lg"
-                      variant="fill"
-                      media={shareButtonAction}
-                    />
-                  </div>
-                )
-              }
-              {
-                calendarButtonAction && (
-                  <ButtonIcon
-                    icon="calendar"
-                    onClick={calendarButtonAction}
-                    size="lg"
-                    title="Calendar"
-                    variant="fill"
-                    className={classNames({
-                      'hover-button': buttonVisibility === 'hover',
-                      'd-none': buttonVisibility === 'never',
-                      'opacity-100': buttonVisibility === 'always',
-                    })}
-                  />
-                )
-              }
-            </div>
-          </section>
+          {
+            (primaryButton || shareButtonAction || calendarButtonAction) && (buttonVisibility !== 'neverShow') && (
+              <section className='d-flex justify-content-center'>
+                <div className='position-absolute d-flex mt-8'>
+                  {
+                    primaryButton && (
+                      <Button
+                        onClick={primaryButton?.onClick}
+                        className={classNames('me-3', {
+                          'hover-button': buttonVisibility === 'hover',
+                          'd-none': buttonVisibility === 'never',
+                          'opacity-100': buttonVisibility === 'always',
+                        })}
+                      >
+                        {primaryButton?.label}
+                      </Button>
+                    )
+                  }
+                  {
+                    shareButtonAction?.length > 0 && (
+                      <div className={classNames('me-3', {
+                        'hover-button': buttonVisibility === 'hover',
+                        'd-none': buttonVisibility === 'never',
+                        'opacity-100': buttonVisibility === 'always',
+                      })}>
+                        <SharingButton
+                          size="lg"
+                          variant="fill"
+                          media={shareButtonAction}
+                        />
+                      </div>
+                    )
+                  }
+                  {
+                    calendarButtonAction && (
+                      <ButtonIcon
+                        icon="calendar"
+                        onClick={calendarButtonAction}
+                        size="lg"
+                        title="Calendar"
+                        variant="fill"
+                        className={classNames({
+                          'hover-button': buttonVisibility === 'hover',
+                          'd-none': buttonVisibility === 'never',
+                          'opacity-100': buttonVisibility === 'always',
+                        })}
+                      />
+                    )
+                  }
+                </div>
+              </section>
+            )
+          }
         </div>
       </main>
     </section>
@@ -101,7 +101,7 @@ const ReusableBanner = ({
 };
 
 ReusableBanner.propTypes = {
-  background: PropTypes.string.isRequired,
+  background: PropTypes.string,
   eyebrow: PropTypes.string,
   headline: PropTypes.string,
   text: PropTypes.string,
