@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.62.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.62.1...@mch-group/uikit-components@0.62.2) (2022-05-16)
+
+
+### Bug Fixes
+
+* **reusable banner:** reusable banner render target fixed ([406d2e6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/406d2e6e33314ecff3e80141de558d2eb99c646b))
+
+
+
+
+
 ## [0.62.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.62.0...@mch-group/uikit-components@0.62.1) (2022-05-16)
 
 **Note:** Version bump only for package @mch-group/uikit-components
