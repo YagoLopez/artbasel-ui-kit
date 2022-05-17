@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.63.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.62.2...@mch-group/uikit-components@0.63.0) (2022-05-17)
+
+
+### Features
+
+* **icon:** wold icon updated ([648b2b6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/648b2b6195baa006474e83f3115b45c514e75674))
+
+
+
+
+
 ## [0.62.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.62.1...@mch-group/uikit-components@0.62.2) (2022-05-16)
 
 
