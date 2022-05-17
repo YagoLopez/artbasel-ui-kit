@@ -19,6 +19,8 @@ const example = {
   ],
   responsive: false,
   reverse: false,
+  videoPlayer: false,
+  videoIcon: false,
   urlVideo:
     'https://res.cloudinary.com/dqzqcuqf9/video/upload/vc_h264/v1648188493/artbasel-admin/fsum03r2ohhwbfjhrkya.m3u8',
   isHtml: false,

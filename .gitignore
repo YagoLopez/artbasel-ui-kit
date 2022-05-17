@@ -16,6 +16,7 @@ dist
 .DS_Store
 .env*
 .vscode
+next
 
 # debug
 npm-debug.log*

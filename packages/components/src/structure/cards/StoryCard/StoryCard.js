@@ -44,24 +44,26 @@ const StoryCard = ({
         'no-cta': !storyLink,
       })}
     >
-      <div className="image-frame">
-        <MemoizedConditionalWrapper
-          linkRenderer={linkRenderer}
-          condition={storyLink}
-          link={storyLink}
-        >
-          {video && (
-            <div className="overlay-video">
-              <Icon name="play" height={33} width={33} color="white" />
-            </div>
-          )}
-          {storyLink && <div className="overlay-fill" />}
-          <div
-            style={{ backgroundImage: `url(${image})` }}
-            className={classNames('image', { 'ar-16_10': !responsive })}
-          />
-        </MemoizedConditionalWrapper>
-      </div>
+      {image && (
+        <div className="image-frame">
+          <MemoizedConditionalWrapper
+            linkRenderer={linkRenderer}
+            condition={storyLink}
+            link={storyLink}
+          >
+            {video && (
+              <div className="overlay-video">
+                <Icon name="play" height={33} width={33} color="white" />
+              </div>
+            )}
+            {storyLink && <div className="overlay-fill" />}
+            <div
+              style={{ backgroundImage: `url(${image})` }}
+              className={classNames('image', { 'ar-16_10': !responsive })}
+            />
+          </MemoizedConditionalWrapper>
+        </div>
+      )}
 
       <BSPCard.Body>
         <MemoizedConditionalWrapper
@@ -124,7 +126,7 @@ StoryCard.propTypes = {
   storyLink: PropTypes.string,
   subtitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   /** Toggle the video svg icon above the image. */
   video: PropTypes.bool,
   date: PropTypes.string,
