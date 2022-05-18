@@ -51,7 +51,6 @@ const TextArea = ({
           bsPrefix={cssInternalPrefix}
           style={cssStyles}
           readOnly={readOnly}
-          defaultValue=""
           placeholder={placeholder}
           onChange={onChange}
           value={value}
@@ -107,7 +106,7 @@ TextArea.defaultProps = {
   label: 'label',
   placeholder: 'placeholder',
   id: 'floatingInput',
-  helpText: 'Helper Text',
+  helpText: '',
   value: '',
   cssInternalPrefix: 'form-control textarea',
   disabled: false,
