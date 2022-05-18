@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.52.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.51.2...@mch-group/uikit-themes@0.52.0) (2022-05-18)
+
+
+### Features
+
+* **stepindicator:** add vertical variant ([ff3374d](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/ff3374dbf602e5747e38f1c1c87b01a03060e1f5))
+
+
+
+
+
 ## [0.51.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.51.1...@mch-group/uikit-themes@0.51.2) (2022-05-16)
 
 **Note:** Version bump only for package @mch-group/uikit-themes
