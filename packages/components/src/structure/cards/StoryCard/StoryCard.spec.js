@@ -23,7 +23,7 @@ describe('Tests for Story Card component', () => {
     expect(screen.queryByText(example.title)).toBeInTheDocument();
   });
 
-  test('Should not render the component without image prop', () => {
+  test('Should render the component without image prop', () => {
     render(
       <StoryCard
         {...example}
@@ -35,7 +35,7 @@ describe('Tests for Story Card component', () => {
         image={null}
       />,
     );
-    expect(console.error).toBeCalled();
+    expect(screen.queryByText(example.title)).toBeInTheDocument();
   });
 
   test('Should not render the component without title prop', () => {

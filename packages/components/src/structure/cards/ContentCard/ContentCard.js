@@ -32,6 +32,7 @@ const ContentCard = ({
 }) => {
   const [playing, setPlaying] = useState(true);
   const hasOneCta = cta?.length === 1;
+  const showImageContainer = (videoPlayer && urlVideo) || image;
   const firstCtaProps = hasOneCta
     ? { linkRenderer: cta[0].linkRenderer, contentLink: cta[0].contentLink }
     : { linkRenderer: () => {}, contentLink: null };
@@ -51,41 +52,43 @@ const ContentCard = ({
         reverse: responsive ? reverse : false,
       })}
     >
-      <div className="image-frame" onClick={togglePlayer}>
-        <MemoizedConditionalWrapper
-          condition={hasOneCta}
-          linkRenderer={firstCtaProps.linkRenderer}
-          link={firstCtaProps.contentLink}
-        >
-          {videoIcon && (
-            <div className="overlay-video">
-              <Icon name="play" height={40} width={40} color="white" />
-            </div>
+      {showImageContainer && (
+        <div className="image-frame" onClick={togglePlayer}>
+          <MemoizedConditionalWrapper
+            condition={hasOneCta}
+            linkRenderer={firstCtaProps.linkRenderer}
+            link={firstCtaProps.contentLink}
+          >
+            {videoIcon && (
+              <div className="overlay-video">
+                <Icon name="play" height={40} width={40} color="white" />
+              </div>
+            )}
+            {!videoPlayer && (
+              <div
+                style={{ backgroundImage: `url(${image})` }}
+                className={classNames('image', { 'ar-16_9': !responsive })}
+              />
+            )}
+          </MemoizedConditionalWrapper>
+          {videoPlayer && playing && (
+            <>
+              <div className="overlay-video" role="button">
+                <Icon name="play" height={40} width={40} color="white" />
+              </div>
+              <div className="overlay-fill" />
+            </>
           )}
-          {!videoPlayer && (
-            <div
-              style={{ backgroundImage: `url(${image})` }}
-              className={classNames('image', { 'ar-16_9': !responsive })}
+          {videoPlayer && (
+            <VideoPlayer
+              url={urlVideo}
+              className="react-player"
+              playing={!playing}
+              controls={!playing}
             />
           )}
-        </MemoizedConditionalWrapper>
-        {videoPlayer && playing && (
-          <>
-            <div className="overlay-video" role="button">
-              <Icon name="play" height={40} width={40} color="white" />
-            </div>
-            <div className="overlay-fill" />
-          </>
-        )}
-        {videoPlayer && (
-          <VideoPlayer
-            url={urlVideo}
-            className="react-player"
-            playing={!playing}
-            controls={!playing}
-          />
-        )}
-      </div>
+        </div>
+      )}
 
       <BSPCard.Body>
         <MemoizedConditionalWrapper
@@ -133,7 +136,8 @@ ContentCard.propTypes = {
   responsive: PropTypes.bool,
   cta: PropTypes.arrayOf(
     PropTypes.shape({
-      id: [PropTypes.oneOfType([PropTypes.string, PropTypes.number])].isRequired,
+      id: [PropTypes.oneOfType([PropTypes.string, PropTypes.number])]
+        .isRequired,
       label: [PropTypes.string].isRequired,
       contentLink: [PropTypes.string].isRequired,
       linkRenderer: [PropTypes.func].isRequired,
