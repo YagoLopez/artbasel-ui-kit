@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.63.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.63.0...@mch-group/uikit-components@0.63.1) (2022-05-18)
+
+
+### Bug Fixes
+
+* **story & content card:** image container will not render if image url is not set ([f6add5d](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/f6add5d9d8e26d1d03d6daf63db6efaa503a3321))
+
+
+
+
+
 # [0.63.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.62.2...@mch-group/uikit-components@0.63.0) (2022-05-17)
 
 
