@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.65.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.64.0...@mch-group/uikit-components@0.65.0) (2022-05-18)
+
+
+### Features
+
+* **textarea:** make TextArea only controllable and cleanup unnused props in TextLink storybook ([a3e74f6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/a3e74f61b1fd76b2fb0d60c0f47b493c19da7c2c))
+
+
+
+
+
 # [0.64.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.63.1...@mch-group/uikit-components@0.64.0) (2022-05-18)
 
 
