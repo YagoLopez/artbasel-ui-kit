@@ -19,6 +19,26 @@
         background-color: $color-mch-gray-300;
       }
     }
+
+    
+  }
+
+  .vertical-container-line {
+    height: 56px;
+    width: 30px;
+    align-items: center;
+    margin-left: 0.5rem;
+
+    .line {
+      width: 2px;
+      height: 48px;
+      background-color: $color-mch-black;
+
+      &-disabled {
+        @extend .line;
+        background-color: $color-mch-gray-300;
+      }
+    }
   }
 
   .step-indicator-container {
@@ -65,6 +85,14 @@
         @include media-breakpoint-up(md) {
           height: 12px;
           width: 12px;
+        }
+      }
+
+      &.vertical {
+        @include media-breakpoint-up(md) {
+          height: 28px;
+          width: 28px;
+          margin: 0 16px 8px 8px;
         }
       }
     }

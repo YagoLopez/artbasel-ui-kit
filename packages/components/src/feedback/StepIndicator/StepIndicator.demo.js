@@ -3,12 +3,17 @@ import PropTypes from 'prop-types';
 import { Button } from '../../actions/Button';
 import StepIndicator from './StepIndicator';
 
-const StepIndicatorDemo = ({ steps }) => {
+const StepIndicatorDemo = ({ steps, variant }) => {
   const [stepActive, setStepActive] = useState(0);
 
   return (
     <div>
-      <StepIndicator activeStep={stepActive} stepLabels={steps} onClickStep={setStepActive} />
+      <StepIndicator
+        activeStep={stepActive}
+        stepLabels={steps}
+        variant={variant}
+        onClickStep={setStepActive}
+      />
       <div className='border-top mt-10 py-5'>
         <p className="text-large">Demo Component</p>
         <p className="text-large">Click the buttons to see Step Indicator in Action</p>

@@ -5,6 +5,7 @@ import {
   fireEvent,
   render,
   screen,
+  waitFor,
 } from '@testing-library/react';
 import StepIndicator from './StepIndicator';
 
@@ -27,11 +28,13 @@ describe('Tests for Step Indicator component', () => {
   });
 
   test('Should not render component', () => {
+    console.error = jest.fn();
     render(
       <StepIndicator />,
     );
 
     expect(screen.queryByText(testElementId)).not.toBeInTheDocument();
+    expect(console.error).toBeCalled();
   });
 
   test('Should call onClick with correct values', () => {
@@ -45,5 +48,35 @@ describe('Tests for Step Indicator component', () => {
     fireEvent.click(el);
 
     expect(onClickStep).toHaveBeenCalled();
+  });
+
+  test('Should have vertical css class according to variant prop', () => {
+    const { container } = render(
+      <StepIndicator {...data} variant="vertical" />,
+    );
+    waitFor(() => {
+      const verticalLineContainer = container.querySelector('.vertical-container-line');
+      const horizontalLineContainer = container.querySelector('.container-line');
+      const verticalClass = container.querySelectorAll('.vertical');
+
+      expect(verticalLineContainer).toBeInTheDocument();
+      expect(horizontalLineContainer).not.toBeInTheDocument();
+      expect(verticalClass.length).toBe(3);
+    });
+  });
+
+  test('Should not have vertical css class according to variant prop', () => {
+    const { container } = render(
+      <StepIndicator {...data} />,
+    );
+    waitFor(() => {
+      const verticalLineContainer = container.querySelector('.vertical-container-line');
+      const horizontalLineContainer = container.querySelector('.container-line');
+      const verticalClass = container.querySelectorAll('.vertical');
+
+      expect(verticalLineContainer).not.toBeInTheDocument();
+      expect(horizontalLineContainer).toBeInTheDocument();
+      expect(verticalClass.length).toBe(0);
+    });
   });
 });
