@@ -89,6 +89,8 @@
       }
 
       &.vertical {
+        margin: 0 12px 8px;
+
         @include media-breakpoint-up(md) {
           height: 28px;
           width: 28px;
@@ -114,7 +116,6 @@
 
       &.vertical {
         display: block;
-        padding-top: 0.5rem;
         
         @include media-breakpoint-up(md) {
           padding-top: 0;
