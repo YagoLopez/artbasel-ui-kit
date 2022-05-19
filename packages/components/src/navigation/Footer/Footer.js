@@ -15,8 +15,7 @@ const v = new Validator();
 const FooterBuilder = ({
   variant, footerData, socialMedia, paymentMethods, legalData, linkRenderer,
 }) => {
-  return <>
-    <footer className=" bg-black text-white">
+  return (<footer className=" bg-black text-white">
           <div className="container pt-10 pb-8 ps-5 pe-5 ps-md-7 pe-md-7 pb-md-8 p-lg-8 pt-lg-12   row">
             <section className="col-lg-9 col-md-12 left-section">
                 <Links cols={footerData.cols} linkRenderer={linkRenderer}></Links>
@@ -32,8 +31,7 @@ const FooterBuilder = ({
                 <Legal variant={variant} legalData={legalData} linkRenderer={linkRenderer}></Legal>
               </section>
             </div>
-    </footer>
-  </>;
+    </footer>);
 };
 
 const Footer = ({
@@ -87,7 +85,7 @@ Footer.propTypes = {
   paymentMethods: PropTypes.shape({
     title: PropTypes.string,
     entries: PropTypes.arrayOf(PropTypes.string),
-  }).isRequired,
+  }),
   /** JSON object that contains the bottom data about legal concerns */
   legalData: PropTypes.shape({
     copyright: PropTypes.string,

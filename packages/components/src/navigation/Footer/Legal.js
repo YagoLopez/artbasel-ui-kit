@@ -18,21 +18,27 @@ const Legal = ({ variant, legalData, linkRenderer }) => {
     return <li key={label} className="d-inline-block me-5">{linkRenderer(link, label, target)}</li>;
   };
 
-  return <div className='row' data-testid="mch-footer-legal">
+  const hasData = (obj) => obj && Object.keys(obj).length;
+
+  if (hasData(legalData)) {
+    return (<div className='row' data-testid="mch-footer-legal">
     <div className='col-md-6 text-start'>
       <ul className='p-0 text-label-small mb-8 mb-md-0'>
           {legalData.entries.map(link => buildLink(link))}
- </ul>
-</div>
-<div className='col-md-6 text-end copyright-container'>
-  <ul className='p-0 m-0 text-small'>
-  <li className='d-inline-block ms-md-5 float-start float-md-none text-small copyright'>{legalData.copyright}</li>
-  <li className='d-inline-block ms-md-5 float-end'>{getLogo()}</li>
+    </ul>
+    </div>
+    <div className='col-md-6 text-end copyright-container'>
+      <ul className='p-0 m-0 text-small'>
+      <li className='d-inline-block ms-md-5 float-start float-md-none text-small copyright'>{legalData.copyright}</li>
+      <li className='d-inline-block ms-md-5 float-end'>{getLogo()}</li>
 
-  </ul>
+      </ul>
 
-</div>
-  </div>;
+    </div>
+  </div>);
+  } else {
+    return (<></>);
+  }
 };
 
 Legal.propTypes = {
