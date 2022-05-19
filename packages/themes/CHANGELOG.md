@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.52.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.52.1...@mch-group/uikit-themes@0.52.2) (2022-05-19)
+
+
+### Bug Fixes
+
+* **stepindicator:** fix label mobile visibility and unit test correction ([351d0ce](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/351d0cecfd5af7db540f002faddff1a4b973a898))
+
+
+
+
+
 ## [0.52.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.52.0...@mch-group/uikit-themes@0.52.1) (2022-05-18)
 
 

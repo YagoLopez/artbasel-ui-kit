@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.65.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.65.0...@mch-group/uikit-components@0.65.1) (2022-05-19)
+
+
+### Bug Fixes
+
+* **carousel:** arrow hover effect fixed ([d6f4672](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d6f4672fdb96d580a07a1f54eb8026ee00080687))
+* **stepindicator:** fix label mobile visibility and unit test correction ([351d0ce](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/351d0cecfd5af7db540f002faddff1a4b973a898))
+
+
+
+
+
 # [0.65.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.64.0...@mch-group/uikit-components@0.65.0) (2022-05-18)
 
 
