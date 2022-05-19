@@ -77,7 +77,10 @@ const StepIndicator = ({
                         </div>
                 }
                 <div className={classNames('d-flex', variant === 'horizontal' ? 'justify-content-center' : 'align-items-center pb-3')}>
-                    <p className={classNames('text-center mb-0 text-link position-absolute text-uppercase label-style', { 'label-style-disabled': activeStep < i })}>{step}</p>
+                    <p className={classNames('text-center mb-0 text-link position-absolute text-uppercase label-style', {
+                      'label-style-disabled': activeStep < i,
+                      vertical: variant === 'vertical',
+                    })}>{step}</p>
                 </div>
               </div>
             </div>

@@ -5,7 +5,6 @@ import {
   fireEvent,
   render,
   screen,
-  waitFor,
 } from '@testing-library/react';
 import StepIndicator from './StepIndicator';
 
@@ -54,29 +53,25 @@ describe('Tests for Step Indicator component', () => {
     const { container } = render(
       <StepIndicator {...data} variant="vertical" />,
     );
-    waitFor(() => {
-      const verticalLineContainer = container.querySelector('.vertical-container-line');
-      const horizontalLineContainer = container.querySelector('.container-line');
-      const verticalClass = container.querySelectorAll('.vertical');
+    const verticalLineContainer = container.querySelector('.vertical-container-line');
+    const horizontalLineContainer = container.querySelector('.container-line');
+    const verticalClass = container.querySelectorAll('.vertical');
 
-      expect(verticalLineContainer).toBeInTheDocument();
-      expect(horizontalLineContainer).not.toBeInTheDocument();
-      expect(verticalClass.length).toBe(3);
-    });
+    expect(verticalLineContainer).toBeInTheDocument();
+    expect(horizontalLineContainer).not.toBeInTheDocument();
+    expect(verticalClass.length).toBe(10);
   });
 
   test('Should not have vertical css class according to variant prop', () => {
     const { container } = render(
       <StepIndicator {...data} />,
     );
-    waitFor(() => {
-      const verticalLineContainer = container.querySelector('.vertical-container-line');
-      const horizontalLineContainer = container.querySelector('.container-line');
-      const verticalClass = container.querySelectorAll('.vertical');
+    const verticalLineContainer = container.querySelector('.vertical-container-line');
+    const horizontalLineContainer = container.querySelector('.container-line');
+    const verticalClass = container.querySelectorAll('.vertical');
 
-      expect(verticalLineContainer).not.toBeInTheDocument();
-      expect(horizontalLineContainer).toBeInTheDocument();
-      expect(verticalClass.length).toBe(0);
-    });
+    expect(verticalLineContainer).not.toBeInTheDocument();
+    expect(horizontalLineContainer).toBeInTheDocument();
+    expect(verticalClass.length).toBe(0);
   });
 });
