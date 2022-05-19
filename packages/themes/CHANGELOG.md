@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.52.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.52.2...@mch-group/uikit-themes@0.52.3) (2022-05-19)
+
+
+### Bug Fixes
+
+* **megamenu:** increase the clickable area for profile flyout link ([eaba83b](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/eaba83b66fe36020bd8d69e3d41477ccfd7dab27))
+
+
+
+
+
 ## [0.52.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.52.1...@mch-group/uikit-themes@0.52.2) (2022-05-19)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.65.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.65.1...@mch-group/uikit-components@0.65.2) (2022-05-19)
+
+
+### Bug Fixes
+
+* **footer:** allow empty paymentMethods ([cb2ba19](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/cb2ba19b54165a98a5b9d11c56da6691e8b3abfa))
+* **megamenu:** increase the clickable area for profile flyout link ([eaba83b](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/eaba83b66fe36020bd8d69e3d41477ccfd7dab27))
+
+
+
+
+
 ## [0.65.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.65.0...@mch-group/uikit-components@0.65.1) (2022-05-19)
 
 
