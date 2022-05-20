@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.65.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.65.2...@mch-group/uikit-components@0.65.3) (2022-05-20)
+
+
+### Bug Fixes
+
+* **megamenu:** fix back arrow closes menu ([ba08966](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/ba0896613839eb375479166020923805734d3890))
+
+
+
+
+
 ## [0.65.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.65.1...@mch-group/uikit-components@0.65.2) (2022-05-19)
 
 
