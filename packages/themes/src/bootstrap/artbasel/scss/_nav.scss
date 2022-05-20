@@ -205,6 +205,10 @@
       height: auto;
       cursor: pointer;
 
+      .link-profile-item:hover {
+        color: $color-mch-gray-300 !important;
+      }
+
       &.selected {
         font-weight: bold;
       }
