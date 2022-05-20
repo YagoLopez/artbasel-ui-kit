@@ -182,7 +182,7 @@
     {
       "label": "Viewing Rooms",
       "mobileLabel": "",
-      "link": "/ovr/show"
+      "link": "#"
     },
     {
       "label": "Editorial",

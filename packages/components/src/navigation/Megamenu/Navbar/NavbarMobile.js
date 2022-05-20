@@ -260,7 +260,7 @@ const NavbarMobile = ({
                     {entry.label}
                   </button>
                 ) : (
-                    <div className="navlink-mobile">
+                    <div className="navlink-mobile" onClick={() => setVisibleMobileNavbar(false)}>
                       { linkRenderer(entry.link, entry.label, entry.target) }
                     </div>
                 )}
@@ -298,7 +298,10 @@ NavbarMobile.propTypes = {
   profileData: PropTypes.object.isRequired,
   visibleMenu: PropTypes.string,
   setVisibleMenu: PropTypes.func.isRequired,
-  visibleMobileNavbar: PropTypes.string,
+  visibleMobileNavbar: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+  ]),
   setVisibleMobileNavbar: PropTypes.func.isRequired,
   userData: PropTypes.shape({
     name: PropTypes.string.isRequired,
