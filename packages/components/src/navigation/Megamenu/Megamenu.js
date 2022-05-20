@@ -40,7 +40,6 @@ const MegaMenuBuilder = forwardRef(
 
     const handleMenuFlyoutSetVisibleMenu = useCallback((menu) => {
       setVisibleMenu(menu);
-      setVisibleMobileNavbar(null);
     }, []);
 
     const navBarAnimation = {
