@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.52.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.52.3...@mch-group/uikit-themes@0.52.4) (2022-05-20)
+
+
+### Bug Fixes
+
+* **language-switcher:** fixed hover color for mobile ([4623f94](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/4623f943444c410f4f93fee3c843870d8554bc4e))
+
+
+
+
+
 ## [0.52.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.52.2...@mch-group/uikit-themes@0.52.3) (2022-05-19)
 
 
