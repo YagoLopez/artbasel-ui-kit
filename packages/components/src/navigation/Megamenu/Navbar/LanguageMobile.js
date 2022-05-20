@@ -46,7 +46,7 @@ const LanguageMobile = ({
             {
             languageEntries.map(entry => <div className='navlink-mobile-header item' key={ entry.label }>
                 <div className={ classnames('navlink-mobile link-profile text-medium', { selected: entry.type === languageSelected }) } onClick={() => handleFlyoutClick(entry.type)}>
-                  { entry.label }
+                  <span className="link-profile-item">{ entry.label }</span>
                 </div>
                 </div>)
             }
