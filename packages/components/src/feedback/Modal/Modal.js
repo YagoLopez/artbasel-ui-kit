@@ -16,7 +16,7 @@ const Modal = ({
       size={filter ? 'filter' : size}
       show={show}
       onHide={onHide}
-      className={ classnames({ 'modal-fullscreen': filter, className }) }
+      className={ classnames({ 'modal-fullscreen': filter }, className) }
       aria-labelledby="contained-modal-title-vcenter"
       centered
       {...props}
