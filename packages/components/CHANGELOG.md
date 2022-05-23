@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.66.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.65.4...@mch-group/uikit-components@0.66.0) (2022-05-23)
+
+
+### Features
+
+* **classname props:** add classname and props to Modal component ([e4592f7](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/e4592f76710b14128841db17c51bb563cf42bf7d))
+
+
+
+
+
 ## [0.65.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.65.3...@mch-group/uikit-components@0.65.4) (2022-05-20)
 
 
