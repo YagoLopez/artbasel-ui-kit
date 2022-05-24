@@ -157,7 +157,7 @@ const Navbar = ({
       const key = createNavLinks(!!entry.flyout);
       return (
         <div
-          className="col-auto d-flex align-items-center text-center nav-entry mx-4"
+          className="col-auto d-flex align-items-center text-center nav-entry px-4"
           key={entry.label}
           onMouseEnter={(e) => handleEntryMouseEnter(e, entry, key)}
           onMouseLeave={(e) => handleMouseLeave(e)}
