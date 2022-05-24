@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.66.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.66.1...@mch-group/uikit-components@0.66.2) (2022-05-24)
+
+
+### Bug Fixes
+
+* **navbar:** black lines still on mouseleave ([0bc4e47](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/0bc4e471d2d0208efdff4d2e3bffa2cb8f7a0265))
+
+
+
+
+
 ## [0.66.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.66.0...@mch-group/uikit-components@0.66.1) (2022-05-23)
 
 
