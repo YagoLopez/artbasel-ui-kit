@@ -76,17 +76,24 @@ const StoryCard = ({
             {title}
           </BSPCard.Text>
           <BSPCard.Text className="card-date">{date}</BSPCard.Text>
-          <BSPCard.Text
-            dangerouslySetInnerHTML={isHtml ? { __html: description } : null}
-            title={stripTags(description)}
-            className={classNames('card-description truncate', {
-              'is-html': isHtml,
-            })}
-            as="div"
-          >
-            {isHtml ? null : description}
-          </BSPCard.Text>
+          { !isHtml && (
+            <BSPCard.Text
+              title={stripTags(description)}
+              className={'card-description truncate'}
+              as="div"
+            >
+              {description}
+            </BSPCard.Text>
+          )}
         </MemoizedConditionalWrapper>
+        { isHtml && (
+          <BSPCard.Text
+            dangerouslySetInnerHTML={{ __html: description }}
+            title={stripTags(description)}
+            className={'card-description truncate is-html'}
+            as="div"
+          />
+        )}
 
         {button?.type === 'primary' && button?.label && storyLink && (
           <MemoizedConditionalWrapper

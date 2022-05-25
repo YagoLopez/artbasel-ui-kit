@@ -17,6 +17,10 @@ const ConditionalWrapper = ({
 
 const MemoizedConditionalWrapper = memo(ConditionalWrapper);
 
+const stripTags = (str) => {
+  return str ? str.replace(/(<([^>]+)>)/gi, '').replace('&nbsp;', ' ') : '';
+};
+
 const ContentCard = ({
   responsive,
   image,
@@ -102,16 +106,25 @@ const ContentCard = ({
           {subtitle && (
             <BSPCard.Text className="card-subtitle">{subtitle}</BSPCard.Text>
           )}
-          <BSPCard.Text
-            dangerouslySetInnerHTML={isHtml ? { __html: description } : null}
-            className={classNames('card-description', {
-              'is-html': isHtml,
-            })}
-            as="div"
-          >
-            {isHtml ? null : description}
-          </BSPCard.Text>
+          {!isHtml && (
+            <BSPCard.Text
+              className={'card-description truncate'}
+              title={stripTags(description)}
+              as="div"
+            >
+              {description}
+            </BSPCard.Text>
+          )}
         </MemoizedConditionalWrapper>
+        {isHtml && (
+          <BSPCard.Text
+            dangerouslySetInnerHTML={{ __html: description }}
+            title={stripTags(description)}
+            className={'card-description truncate is-html'}
+            as="div"
+          />
+        )}
+
         {cta?.map(
           (i) => i?.contentLink && (
               <div className="card-cta" key={i.id}>
