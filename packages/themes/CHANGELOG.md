@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.52.5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.52.4...@mch-group/uikit-themes@0.52.5) (2022-05-25)
+
+
+### Bug Fixes
+
+* **navbar:** elements bouncing in safari ([df35d99](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/df35d99a0c498fc9de80cf8f2d89dca4bb3406c8))
+
+
+
+
+
 ## [0.52.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.52.3...@mch-group/uikit-themes@0.52.4) (2022-05-20)
 
 
