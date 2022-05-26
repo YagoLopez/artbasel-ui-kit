@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.66.5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.66.4...@mch-group/uikit-components@0.66.5) (2022-05-26)
+
+
+### Bug Fixes
+
+* **checkbox:** fixed styling when label is null ([dcef31a](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/dcef31adf40765377a623f80dfbb33bc84912fa4))
+
+
+
+
+
 ## [0.66.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.66.3...@mch-group/uikit-components@0.66.4) (2022-05-26)
 
 
