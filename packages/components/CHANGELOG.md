@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.66.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.66.3...@mch-group/uikit-components@0.66.4) (2022-05-26)
+
+
+### Bug Fixes
+
+* **footer:** remove ubs logo for paris show variant ([3ba974e](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/3ba974e34e621af54f0b2687838a18b98ed7ae93))
+
+
+
+
+
 ## [0.66.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.66.2...@mch-group/uikit-components@0.66.3) (2022-05-25)
 
 

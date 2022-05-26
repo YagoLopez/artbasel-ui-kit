@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.52.6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.52.5...@mch-group/uikit-themes@0.52.6) (2022-05-26)
+
+
+### Bug Fixes
+
+* **megamenu:** increase the clickable area for mobile header links ([1158e86](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/1158e860e6f8a12548e1fe6440bbaa56ac6f8f7c))
+
+
+
+
+
 ## [0.52.5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.52.4...@mch-group/uikit-themes@0.52.5) (2022-05-25)
 
 
