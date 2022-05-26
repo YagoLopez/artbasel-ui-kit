@@ -22,7 +22,7 @@ const Checkbox = ({
 }) => (
   <Form.Check
     data-testid="mch-checkbox"
-    className={classNames({ disabled }, className, `align-${align}`, theme)}
+    className={classNames({ disabled }, className, `align-${align}`, 'form-check', theme)}
     checked={checked}
     style={cssStyles}
     disabled={disabled}
