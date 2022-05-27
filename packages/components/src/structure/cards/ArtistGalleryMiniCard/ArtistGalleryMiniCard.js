@@ -48,20 +48,28 @@ const ArtistGalleryMiniCard = ({
     >
       {
         (!selectMode.active || isSelected) && (
-          <MemoizedConditionalWrapper
-            linkRenderer={linkRenderer}
-            condition={collectionLink && !selectMode.active}
-            link={collectionLink}
-          >
-            <div className={classNames('w-100 h-100 position-absolute d-flex justify-content-end p-5', className, {
-              'card-wrapper': !selectMode.active,
-              'card-selected-wrapper': isSelected,
-            })}>
-              {
-                (!selectMode.active && collection.active) && <ButtonIcon icon="collections-add" theme={variant === 'artist' ? 'dark' : 'light'} variant="outline" className='show-icon' onClick={collection.onClick}/>
-              }
-            </div>
-          </MemoizedConditionalWrapper>
+          <>
+            <MemoizedConditionalWrapper
+              linkRenderer={linkRenderer}
+              condition={collectionLink && !selectMode.active}
+              link={collectionLink}
+            >
+              <div
+                className={classNames('w-100 h-100 position-absolute d-flex justify-content-end p-5', className, {
+                  'card-wrapper': !selectMode.active,
+                  'card-selected-wrapper': isSelected,
+                })}
+              />
+            </MemoizedConditionalWrapper>
+            {
+              (!selectMode.active && collection.active)
+                && (
+                  <div className='show-icon position-absolute'>
+                    <ButtonIcon icon="collections-add" theme={variant === 'artist' ? 'dark' : 'light'} variant="outline" onClick={collection.onClick} />
+                  </div>
+                )
+            }
+          </>
         )
       }
       <header className={classNames('d-flex justify-content-between px-5 py-7', {
@@ -69,16 +77,25 @@ const ArtistGalleryMiniCard = ({
         headerGallery: variant === 'gallery',
       })}>
         <div>
-          <h5 title={title} className={classNames({ 'text-white me-10 mini-card-title': variant === 'artist' })}>{title}</h5>
+          <MemoizedConditionalWrapper
+            linkRenderer={linkRenderer}
+            condition={collectionLink && !selectMode.active}
+            link={collectionLink}
+          >
+            <h5 title={title} className={classNames('me-10 position-relative', {
+              'text-white mini-card-title-artist': variant === 'artist',
+              'mini-card-title opacity-100': variant === 'gallery',
+              'mini-card-title-artist': !selectMode.active,
+            })}>{title}</h5>
+          </MemoizedConditionalWrapper>
         </div>
         {
           selectMode.active && (
             <Checkbox
-              id="checkbox-artist-mini-card"
               onChange={onCheckCard}
               checked={isSelected}
               theme={variant === 'artist' ? 'dark' : 'light'}
-              className='m-0 position-relative'
+              className='position-relative'
             />
           )
         }

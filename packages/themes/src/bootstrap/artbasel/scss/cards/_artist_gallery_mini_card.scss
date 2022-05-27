@@ -1,22 +1,36 @@
 .artist-mini-card{
   cursor: pointer;
 
+  &:hover,
+  &.hover {
+    .show-icon{
+      opacity: 1;
+    }
+
+    .mini-card-title-artist{
+      opacity: 0.5;
+    }
+
+    .card-wrapper{
+      background-color: #00000075;
+    }
+  }
+
+  .show-icon{
+    opacity: 0;
+    transition: all 0.35s ease-in-out;
+    top: 1rem;
+    right: 1rem;
+  }
+
   .card-wrapper{
     background-color: transparent;
     transition: all 0.35s ease-in-out;
 
-    .show-icon{
-      opacity: 0;
-      transition: all 0.35s ease-in-out;
-    }
 
     &:hover,
     &.hover {
       background-color: #00000075;
-
-      .show-icon{
-        opacity: 1;
-      }
     }
   }
 
@@ -27,16 +41,26 @@
   .headerArtist{
     background-color: $color-mch-black;
 
+    .mini-card-title-artist{
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: all 0.35s ease-in-out;
+    }
+  }
+
+  .headerGallery{
+    background-color: $color-mch-gray-200;
+
     .mini-card-title{
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      transition: all 0.35s ease-in-out;
     }
-  }
-
-  .headerGallery{
-    background-color: $color-mch-gray-200;
   }
 }
