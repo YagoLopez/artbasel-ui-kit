@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.66.6](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.66.5...@mch-group/uikit-components@0.66.6) (2022-05-27)
+
+
+### Bug Fixes
+
+* **artist gallery mini card:** mini card onClick fixed ([cfffef5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/cfffef59b6aa5599f8a9eaa4792498f1e21c74cb))
+* **story card:** fix vertical fit in stacked cards ([d374e02](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d374e0244eb32f7878fed639dc9affafc5ae4727))
+
+
+
+
+
 ## [0.66.5](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.66.4...@mch-group/uikit-components@0.66.5) (2022-05-26)
 
 
