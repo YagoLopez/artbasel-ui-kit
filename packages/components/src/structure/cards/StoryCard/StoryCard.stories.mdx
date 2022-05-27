@@ -140,6 +140,57 @@ These type of cards make up most of the interface and are key components for log
   </Container>
 </Canvas>
 
+## Stacked Cards with HTML and Truncation
+
+When stacking cards with HTML and truncation, the description can only have a single paragraph without line breaks.
+
+<Canvas>
+  <Container>
+    <Row>
+      <Col xs={12} sm={12} md={6} lg={4}>
+        <StoryCard
+          {...example}
+          button={{
+            type: 'textlink',
+            label: 'See all artworks',
+          }}
+          isHtml
+          responsive={false}
+          equalHeight
+          description='<p>At vero eos et <i>italic</i> et iusto <b>bold</b> dignissimos ducimus qui blanditiis <a href="https://artbasel.com">hyperlink</a> voluptatum deleniti atque <u>underline</u> quos dolores et quas non. At vero eos et <i>italic</i> et iusto <b>bold</b> dignissimos ducimus qui blanditiis <a href="https://artbasel.com">hyperlink</a> voluptatum deleniti atque <u>underline</u> quos dolores et quas non.</p>'
+        />
+      </Col>
+      <Col xs={12} sm={12} md={6} lg={4}>
+        <StoryCard
+          {...example}
+          description={example.description}
+          button={{
+            type: 'textlink',
+            label: 'See all artworks',
+          }}
+          isHtml
+          responsive={false}
+          equalHeight
+          description='<p>At vero eos et <i>italic</i> et iusto <b>bold</b> dignissimos ducimus qui blanditiis <a href="https://artbasel.com">hyperlink</a> voluptatum deleniti atque <u>underline</u> quos dolores et quas non.</p>'
+        />
+      </Col>
+      <Col xs={12} sm={12} md={6} lg={4}>
+        <StoryCard
+          {...example}
+          button={{
+            type: 'textlink',
+            label: 'See all artworks',
+          }}
+          isHtml
+          responsive={false}
+          equalHeight
+          description='<p>At vero eos et <i>italic</i> et iusto <b>bold</b> dignistiis <a href="https://artbasel.com">hyperlink</a> vol atque <u>underline</u> quos doloret <i>italic</i> et iusto <b>bold</b> dignissimos ducimus qui blanditiis <a href="https://artbasel.com">hyperlink</a> voue <u>underline</u> quos dolores et quas non.</p>'
+        />
+      </Col>
+    </Row>
+  </Container>
+</Canvas>
+
 ## Stacked Cards without CTA
 
 <Canvas>

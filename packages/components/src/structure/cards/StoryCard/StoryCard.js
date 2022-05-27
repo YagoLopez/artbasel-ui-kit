@@ -68,7 +68,7 @@ const StoryCard = ({
       <BSPCard.Body>
         <MemoizedConditionalWrapper
           linkRenderer={linkRenderer}
-          condition={storyLink}
+          condition={storyLink && !isHtml}
           link={storyLink}
         >
           <BSPCard.Text className="card-subtitle">{subtitle}</BSPCard.Text>
@@ -76,7 +76,7 @@ const StoryCard = ({
             {title}
           </BSPCard.Text>
           <BSPCard.Text className="card-date">{date}</BSPCard.Text>
-          { !isHtml && (
+          {!isHtml && (
             <BSPCard.Text
               title={stripTags(description)}
               className={'card-description truncate'}
@@ -86,7 +86,7 @@ const StoryCard = ({
             </BSPCard.Text>
           )}
         </MemoizedConditionalWrapper>
-        { isHtml && (
+        {isHtml && (
           <BSPCard.Text
             dangerouslySetInnerHTML={{ __html: description }}
             title={stripTags(description)}
@@ -108,18 +108,17 @@ const StoryCard = ({
         )}
 
         {button?.type === 'textlink' && storyLink && (
-          <MemoizedConditionalWrapper
-            linkRenderer={linkRenderer}
-            condition={storyLink}
-            link={storyLink}
-          >
-            <div className="card-cta">
-              {/* TODO: remove href={null} when <TextLink /> deprecates it */}
-              <TextLink href={null} icon="chevron-right" iconAlign="right">
+          <div className="card-cta">
+            <MemoizedConditionalWrapper
+              linkRenderer={linkRenderer}
+              condition={storyLink}
+              link={storyLink}
+            >
+              <TextLink icon="chevron-right" iconAlign="right">
                 {button?.label}
               </TextLink>
-            </div>
-          </MemoizedConditionalWrapper>
+            </MemoizedConditionalWrapper>
+          </div>
         )}
       </BSPCard.Body>
     </BSPCard>

@@ -5,6 +5,8 @@
 
 @mixin storycard-xs-body {
   padding: 0;
+  justify-content: flex-start;
+  flex: unset;
 
   .card {
     &-title {
@@ -18,11 +20,13 @@
     }
 
     &-description {
-      margin-top: $spacing-5;
-      margin-bottom: 0;
+      flex-grow: 0;
+      margin: 0;
     }
 
     &-cta {
+      display: flex;
+      align-items: flex-end;
       min-height: $spacing-7;
       margin-top: $spacing-10;
     }
@@ -60,8 +64,14 @@
       }
     }
 
-    .card-body {
-      @include storycard-xs-body;
+    .card {
+      &-body {
+        @include storycard-xs-body;
+      }
+
+      &-cta {
+        flex-grow: 1;
+      }
     }
   }
 
