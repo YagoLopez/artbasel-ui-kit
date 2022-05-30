@@ -66,7 +66,7 @@ const ProfileFlyout = ({
       {isVisible && (
           <ul className="profileflyout-menu" ref={menuRef}>
             {isUserLoggedIn
-              && <li className='item-menu-label'>
+              && <li className='item-menu-label profile-label mx-5 pt-7 pb-2'>
                 <div className='d-flex justify-content-between'>
                   <div>
                     <p className="text-label-large mb-0">{profileWelcomeHeader}</p>
@@ -78,11 +78,11 @@ const ProfileFlyout = ({
               </li>
             }
           {entries.map((o) => (o.type === 'action' ? (
-              <li className="item-menu-label" onClick={onClickAction} key={o.label}>
+              <li className="item-menu-label py-5 mx-5" onClick={onClickAction} key={o.label}>
                 {o.label}
               </li>
           ) : (
-              <li className="item-menu-label item-menu-link profile-link" onClick={() => setIsVisible(null)} key={o.label}>
+              <li className="item-menu-label item-menu-link profile-link mx-5" onClick={() => setIsVisible(null)} key={o.label}>
                 { linkRenderer(o.link, o.label, o.target) }
               </li>
           )))}
