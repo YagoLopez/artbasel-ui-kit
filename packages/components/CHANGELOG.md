@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.67.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.67.0...@mch-group/uikit-components@0.67.1) (2022-05-30)
+
+
+### Bug Fixes
+
+* **profileflyout:** bouncing profile data when only one option ([9629b74](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/9629b74a2a122d03c902462e3f2e396a44bcacb6))
+
+
+
+
+
 # [0.67.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.66.6...@mch-group/uikit-components@0.67.0) (2022-05-30)
 
 
