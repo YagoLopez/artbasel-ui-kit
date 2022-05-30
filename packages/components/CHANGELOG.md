@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.68.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.67.1...@mch-group/uikit-components@0.68.0) (2022-05-30)
+
+
+### Features
+
+* **iconography:** added new icon invitation-key ([3b652ce](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/3b652ce8c5c0e4906eabbc0ddcfcb41719b17ecf))
+
+
+
+
+
 ## [0.67.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.67.0...@mch-group/uikit-components@0.67.1) (2022-05-30)
 
 
