@@ -26,6 +26,7 @@ Item.propTypes = {
   height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   children: PropTypes.func.isRequired,
   id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /** Photo caption */
   title: PropTypes.string,
 };
 
