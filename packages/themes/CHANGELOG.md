@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.53.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.52.7...@mch-group/uikit-themes@0.53.0) (2022-05-30)
+
+
+### Features
+
+* **mini card:** unavailable image state added ([0962247](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/0962247cbabdb2a0ed82abead21d2721c59b085c))
+
+
+
+
+
 ## [0.52.7](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.52.6...@mch-group/uikit-themes@0.52.7) (2022-05-27)
 
 
