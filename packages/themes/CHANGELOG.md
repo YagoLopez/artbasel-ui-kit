@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.55.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.55.0...@mch-group/uikit-themes@0.55.1) (2022-05-31)
+
+
+### Bug Fixes
+
+* **LanguageFlyout:** fixed styles of li element in the language switcher ([3246b5e](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/3246b5ebdbd8378d977e6d662da5a1074d92f0ac))
+
+
+
+
+
 # [0.55.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.54.1...@mch-group/uikit-themes@0.55.0) (2022-05-31)
 
 
