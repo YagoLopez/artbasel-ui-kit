@@ -297,11 +297,6 @@
     padding: 24px 0px 4px 0px;
   }
 
-  .item-menu-label.language-switcher:first-child {
-    border-top: 0px;
-    padding: 24px 0px 4px 0px;
-  }
-
   .item-menu-label.profile-label:hover {
     margin-left: 0px;
     padding-left: 16px;
@@ -314,6 +309,16 @@
     font-size: 0.875rem;
     line-height: 1.125rem;
   }
+}
+
+.language-switcher .item-menu-label {
+  padding: 16px 0;
+  margin: 0 16px;
+}
+
+.language-switcher .item-menu-label:first-child {
+  border-top: 0px;
+  padding: 24px 0px 4px 0px;
 }
 
 .vip-badge {
