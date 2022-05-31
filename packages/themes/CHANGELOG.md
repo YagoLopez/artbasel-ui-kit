@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.55.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.54.1...@mch-group/uikit-themes@0.55.0) (2022-05-31)
+
+
+### Features
+
+* **zoomviewer:** added caption to zoomviewer ([57a9df4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/57a9df4c78b56e304773d348cd91ed3fa4654eac))
+* **zoomviewer:** added caption to zoomviewer ([25d3310](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/25d3310e7841f05f3758ca4cd0409241c6c51d17))
+
+
+
+
+
 ## [0.54.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.54.0...@mch-group/uikit-themes@0.54.1) (2022-05-31)
 
 
