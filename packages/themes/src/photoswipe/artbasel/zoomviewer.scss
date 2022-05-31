@@ -302,11 +302,11 @@ a.pswp__share--download:hover {
  */
 .pswp__counter {
   position: fixed;
-  right: 52px;
+  left: 0px;
   bottom: 0;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 18px;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 22px;
   color: $color-mch-black;
   background-color: rgba(247, 247, 247, 0.6);
   height: 48px !important;
@@ -319,11 +319,6 @@ a.pswp__share--download:hover {
   white-space: nowrap;
 }
 
-/* no arrows on touch screens */
-.pswp--touch .pswp__counter {
-  right: 0;
-}
-
 /*
 	
 	4. Caption
@@ -331,24 +326,35 @@ a.pswp__share--download:hover {
  */
 .pswp__caption {
   position: absolute;
-  left: 0;
+  left: 56px;
   bottom: 0;
-  width: 100%;
-  min-height: 44px;
+  background-color: rgba(247, 247, 247, 0.6) !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  max-width: calc(100% - 148px);
+  border-radius: 2px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px;
+  white-space: nowrap;
+
+
 }
-.pswp__caption small {
-  font-size: 11px;
-  color: #bbb;
+
+.pswp--touch .pswp__caption {
+  max-width: calc(100% - 56px);
 }
 
 .pswp__caption__center {
   text-align: left;
-  max-width: 420px;
-  margin: 0 auto;
-  font-size: 13px;
-  padding: 10px;
-  line-height: 20px;
-  color: #ccc;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 22px;
+  color: $color-mch-black;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .pswp__caption--empty {
@@ -363,7 +369,7 @@ a.pswp__share--download:hover {
 /*
 
 	5. Loading indicator (preloader)
-
+  
 	You can play with it here - http://codepen.io/dimsemenov/pen/yyBWoR
 
  */
@@ -408,10 +414,6 @@ a.pswp__share--download:hover {
   visibility: visible;
 }
 
-.pswp__caption {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 /* pswp__ui--fit class is added when main image "fits" between top bar and bottom bar (caption) */
 .pswp__ui--fit,
 .pswp__ui--fit .pswp__caption {
@@ -424,7 +426,8 @@ a.pswp__share--download:hover {
 }
 
 .pswp__ui--idle .pswp__button--arrow--left,
-.pswp__ui--idle .pswp__button--arrow--right {
+.pswp__ui--idle .pswp__button--arrow--right,
+.pswp__ui--idle .pswp__caption {
   opacity: 0;
 }
 
