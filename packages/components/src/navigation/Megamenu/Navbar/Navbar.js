@@ -138,7 +138,7 @@ const Navbar = ({
       const element = event.target.querySelector('.col-underline');
       hideColUnderline(element);
     }
-    if (!navLinks[underLinePosition].flyout) {
+    if (!('flyout' in navLinks[underLinePosition]) || navLinks[underLinePosition].flyout === undefined || navLinks[underLinePosition].flyout === false) {
       hideRowUnderline();
     }
   };
