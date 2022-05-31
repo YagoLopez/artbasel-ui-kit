@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.69.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.68.0...@mch-group/uikit-components@0.69.0) (2022-05-31)
+
+
+### Features
+
+* **tabs:** add divider colors ([baeb908](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/baeb9086828781311b3c9a3d9696a90887555b38))
+
+
+
+
+
 # [0.68.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.67.1...@mch-group/uikit-components@0.68.0) (2022-05-30)
 
 
