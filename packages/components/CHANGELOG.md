@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.70.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.70.1...@mch-group/uikit-components@0.70.2) (2022-05-31)
+
+
+### Bug Fixes
+
+* **megamenu:** fixed onMouseLeave warning error in Navbar ([183155b](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/183155b587d5a4f2ad41eceabbcdcb33ff1dce51))
+
+
+
+
+
 ## [0.70.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.70.0...@mch-group/uikit-components@0.70.1) (2022-05-31)
 
 
