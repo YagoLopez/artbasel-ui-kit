@@ -5,7 +5,7 @@ import Tabs from './Tabs';
 import Tab from './Tab';
 
 describe('Tab component', () => {
-  test('render Tab', () => {
+  test('should render', () => {
     render(
       <Tabs>
         <Tab title="Home">

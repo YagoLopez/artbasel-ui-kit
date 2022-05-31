@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Tabs as BSTabs } from 'react-bootstrap';
+import classNames from 'classnames';
 
 const Tabs = ({
   children,
@@ -10,21 +11,23 @@ const Tabs = ({
   defaultActiveKey,
   onSelect,
   activeKey,
-}) => {
-  return (
-    <BSTabs
-      variant="tabs"
-      className={className}
-      id={id}
-      defaultActiveKey={defaultActiveKey}
-      data-testid="mch-tabs"
-      activeKey={activeKey}
-      onSelect={onSelect}
-    >
-      {children}
-    </BSTabs>
-  );
-};
+  bottomDividerColor,
+}) => (
+  <BSTabs
+    variant="tabs"
+    className={classNames(
+      className,
+      bottomDividerColor && `divider-color-grey-${bottomDividerColor}`,
+    )}
+    id={id}
+    defaultActiveKey={defaultActiveKey}
+    data-testid="mch-tabs"
+    activeKey={activeKey}
+    onSelect={onSelect}
+  >
+    {children}
+  </BSTabs>
+);
 
 Tabs.propTypes = {
   children: PropTypes.node.isRequired,
@@ -33,9 +36,11 @@ Tabs.propTypes = {
   id: PropTypes.string,
   defaultActiveKey: PropTypes.string,
   onSelect: PropTypes.func,
+  bottomDividerColor: PropTypes.oneOf(['100', '200']),
 };
 
 Tabs.defaultProps = {
+  bottomDividerColor: '200',
   onSelect: () => null,
 };
 

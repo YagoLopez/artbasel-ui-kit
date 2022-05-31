@@ -6,25 +6,18 @@ const Tab = ({
   children,
   title,
   eventKey,
-}) => {
-  if (!children || !title) {
-    return null;
-  }
-
-  return (
-    <BSTab
-      title={title}
-      eventKey={eventKey}
-    >
-      {children}
-    </BSTab>
-  );
-};
+}) => (
+  <BSTab
+    title={title}
+    eventKey={eventKey}
+  >
+    {children}
+  </BSTab>
+);
 
 Tab.propTypes = {
   children: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
-  className: PropTypes.string,
   eventKey: PropTypes.string,
 };
 

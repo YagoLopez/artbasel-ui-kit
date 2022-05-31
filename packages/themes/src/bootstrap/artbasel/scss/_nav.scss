@@ -9,7 +9,7 @@
     padding: 10px 32px 12px 32px !important;
     color: $color-mch-gray-500;
     border-radius: 0;
-    border-width: 1px 0px 2px;
+    border-width: 1px 0 2px;
 
     @include media-breakpoint-up(md) {
       height: 48px;
@@ -85,6 +85,14 @@
   }
 }
 
+.nav-tabs.divider-color-grey-100 {
+  border-bottom: 2px solid $color-mch-gray-100 !important;
+}
+
+.nav-tabs.divider-color-grey-200 {
+  border-bottom: 2px solid $color-mch-gray-200 !important;
+}
+
 .entries-container {
   .menu-entries-edge {
     height: 36px;
@@ -97,12 +105,12 @@
   .nav-entry {
     position: relative;
     height: 30px;
-    padding-bottom: 0px;
+    padding-bottom: 0;
   }
 
   .col-underline,
   .underline-text {
-    width: 0px;
+    width: 0;
     position: absolute;
     bottom: -34px;
     left: 0;
@@ -123,7 +131,7 @@
   z-index: 998;
   height: calc(100vh - 100px);
   background-color: $color-mch-white;
-  padding: 0px 20px;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -178,7 +186,7 @@
     border-bottom: 1px solid #f0f2f5;
     display: flex;
     align-items: center;
-    justify-content: between;
+    justify-content: space-between;
 
     &.flyout:after {
       box-sizing: border-box;
@@ -222,7 +230,7 @@
       height: auto;
       font-size: 18px;
       line-height: 21px;
-      padding: 32px 0px 16px 0px;
+      padding: 32px 0 16px 0;
     }
 
     &.link-language-header {
@@ -233,7 +241,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       color: $color-mch-gray-300;
-      padding: 24px 0px 8px 0px;
+      padding: 24px 0 8px 0;
     }
 
     &.link-logout {
@@ -306,7 +314,7 @@
     padding: 0.5rem 2rem;
     font-size: 0.875rem;
     border-radius: 0;
-    border-width: 1px 0px 2px;
+    border-width: 1px 0 2px;
 
     &:hover,
     &:focus {
