@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.70.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.70.0...@mch-group/uikit-components@0.70.1) (2022-05-31)
+
+
+### Bug Fixes
+
+* **megamenu:** fix onMouseLeave error in Navbar if flyout does not exists ([d2fb2f1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/d2fb2f1765519f9ef96821b0f3ac17f8cf8fec16))
+
+
+
+
+
 # [0.70.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.69.0...@mch-group/uikit-components@0.70.0) (2022-05-31)
 
 
