@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.54.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.54.0...@mch-group/uikit-themes@0.54.1) (2022-05-31)
+
+
+### Bug Fixes
+
+* **collection album card:** collection album card empty fixed ([9243cee](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/9243cee9c82123851ea3c3daa5c1032b3c0bc42b))
+
+
+
+
+
 # [0.54.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.53.1...@mch-group/uikit-themes@0.54.0) (2022-05-31)
 
 
