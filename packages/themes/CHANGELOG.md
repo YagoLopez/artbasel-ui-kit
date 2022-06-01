@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.55.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.55.1...@mch-group/uikit-themes@0.55.2) (2022-06-01)
+
+
+### Bug Fixes
+
+* **navbar:** fixed first element of Language Flyout ([22d57b9](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/22d57b986c402565531e3d38c54aa0d30ef4c7b8))
+
+
+
+
+
 ## [0.55.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.55.0...@mch-group/uikit-themes@0.55.1) (2022-05-31)
 
 
