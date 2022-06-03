@@ -16,6 +16,10 @@
     }
   }
 
+  .bg-selected-card{
+    background-color: rgba(29, 35, 39, 0.3);
+  }
+
   .show-icon{
     opacity: 0;
     transition: all 0.35s ease-in-out;
@@ -62,12 +66,29 @@
 
     .mini-card-title-artist{
       @extend .titles;
+      color: white;
     }
   }
 
   main{
     .blur-image{
       backdrop-filter: blur(8px);
+    }
+
+    .image-size{
+      height: 343px;
+
+      @include media-breakpoint-up(md) {
+        height: 352px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 304px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        height: 286px;
+      }
     }
 
     .unavailable-image{
@@ -89,5 +110,9 @@
         margin-left: .313rem;
       }
     }
+  }
+
+  footer{
+    z-index: 2;
   }
 }
