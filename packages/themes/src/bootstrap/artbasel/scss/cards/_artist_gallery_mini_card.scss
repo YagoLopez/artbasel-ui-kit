@@ -70,6 +70,23 @@
       backdrop-filter: blur(8px);
     }
 
+    .title-without-image{
+      height: 21.438rem;
+      background-color: $color-mch-gray-100;
+
+      @include media-breakpoint-up(md) {
+        height: 22rem;
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 19rem;
+      }
+
+      @include media-breakpoint-up(xl) {
+        height: 17.875rem;
+      }
+    }
+
     .unavailable-image{
       background-color: rgba(255, 255, 255, 0.8);
 

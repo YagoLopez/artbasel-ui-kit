@@ -23,7 +23,7 @@ const ArtistGalleryMiniCard = ({
   collection, linkRenderer, collectionLink,
   unavailable,
 }) => {
-  if (!title || !image) return null;
+  if (!title) return null;
 
   const [isSelected, setSelected] = useState(selectMode?.checked);
 
@@ -106,9 +106,17 @@ const ArtistGalleryMiniCard = ({
       <main className={classNames({
         'position-relative': unavailable,
       })}>
-        <img src={image} alt="mini card image" className={classNames('w-100', {
-          'blur-image': unavailable,
-        })}/>
+        {
+          image
+            ? <img src={image} alt="mini card image" className={classNames('w-100', {
+              'blur-image': unavailable,
+            })} />
+            : (
+              <div className='w-100 d-flex justify-content-center align-items-center title-without-image'>
+                <h5>{title}</h5>
+              </div>
+            )
+        }
         {
           unavailable && (
             <>
