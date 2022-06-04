@@ -53,7 +53,7 @@ const ArtistGalleryMiniCard = ({
           <>
             <MemoizedConditionalWrapper
               linkRenderer={linkRenderer}
-              condition={collectionLink && !selectMode.active}
+              condition={collectionLink && !selectMode.active && !unavailable}
               link={collectionLink}
             >
               <div
@@ -81,7 +81,7 @@ const ArtistGalleryMiniCard = ({
         <div>
           <MemoizedConditionalWrapper
             linkRenderer={linkRenderer}
-            condition={collectionLink && !selectMode.active}
+            condition={collectionLink && !selectMode.active && !unavailable}
             link={collectionLink}
           >
             <h5 title={title} className={classNames('me-10 position-relative', {
