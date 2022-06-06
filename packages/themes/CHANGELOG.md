@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.55.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.55.3...@mch-group/uikit-themes@0.55.4) (2022-06-06)
+
+
+### Bug Fixes
+
+* **cards:** fix checkboxes styling and position in several cards ([b09adda](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/b09adda4def8f4575fd487210ddce25dec920c26))
+* **carousel:** add specific selector for dark button ([dd25d44](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/dd25d448f64cd1268a340a439656c2ec23f2ac9e))
+
+
+
+
+
 ## [0.55.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.55.2...@mch-group/uikit-themes@0.55.3) (2022-06-02)
 
 **Note:** Version bump only for package @mch-group/uikit-themes

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.70.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.70.2...@mch-group/uikit-components@0.70.3) (2022-06-06)
+
+
+### Bug Fixes
+
+* **rehusable banner:** muted video and description in HTML ([af6f876](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/af6f87648592b13040cf07b7de45bb06e51c4a03))
+
+
+
+
+
 ## [0.70.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.70.1...@mch-group/uikit-components@0.70.2) (2022-05-31)
 
 
