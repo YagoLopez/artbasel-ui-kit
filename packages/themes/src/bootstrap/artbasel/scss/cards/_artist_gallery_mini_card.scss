@@ -1,5 +1,18 @@
 .artist-mini-card{
   cursor: pointer;
+  width: 21.438rem;
+
+  @include media-breakpoint-up(md) {
+    width: 22rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 19rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 17.875rem;
+  }
 
   &:hover,
   &.hover {
@@ -53,6 +66,10 @@
     z-index: 2;
   }
 
+  header{
+    height: 4.5rem;
+  }
+
   .headerGallery{
     background-color: $color-mch-gray-200;
 
@@ -76,18 +93,18 @@
     }
 
     .image-size{
-      height: 343px;
+      height: 21.438rem;
 
       @include media-breakpoint-up(md) {
-        height: 352px;
+        height: 22rem;
       }
 
       @include media-breakpoint-up(lg) {
-        height: 304px;
+        height: 19rem;
       }
 
       @include media-breakpoint-up(xl) {
-        height: 286px;
+        height: 17.875rem;
       }
     }
 

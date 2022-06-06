@@ -49,7 +49,7 @@ const ArtistGalleryMiniCard = ({
     >
       <div
         className={classNames('position-absolute w-100 h-100', {
-          'bg-selected-card': !isSelected && selectMode.active,
+          'bg-selected-card': selectMode.active,
         })}
         onClick={onClickCard}
       />
@@ -64,7 +64,6 @@ const ArtistGalleryMiniCard = ({
               <div
                 className={classNames('w-100 h-100 position-absolute d-flex justify-content-end p-5', className, {
                   'card-wrapper': !selectMode.active,
-                  'card-selected-wrapper': isSelected,
                 })}
               />
             </MemoizedConditionalWrapper>
@@ -79,7 +78,7 @@ const ArtistGalleryMiniCard = ({
           </>
         )
       }
-      <header className={classNames('d-flex justify-content-between px-5 py-7', {
+      <header className={classNames('d-flex justify-content-between align-items-center px-5', {
         headerArtist: variant === 'artist',
         headerGallery: variant === 'gallery',
       })}>
