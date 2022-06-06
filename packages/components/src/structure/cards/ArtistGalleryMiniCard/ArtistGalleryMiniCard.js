@@ -21,7 +21,7 @@ const ArtistGalleryMiniCard = ({
   selectMode, title, variant, tagCities,
   className, onClickTag, image,
   collection, linkRenderer, collectionLink,
-  unavailable, unavailableLabel
+  unavailable, unavailableLabel,
 }) => {
   if (!title) return null;
 
