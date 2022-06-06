@@ -21,9 +21,9 @@ const ArtistGalleryMiniCard = ({
   selectMode, title, variant, tagCities,
   className, onClickTag, image,
   collection, linkRenderer, collectionLink,
-  unavailable,
+  unavailable, unavailableLabel,
 }) => {
-  if (!title || !image) return null;
+  if (!title) return null;
 
   const [isSelected, setSelected] = useState(selectMode?.checked);
 
@@ -44,21 +44,16 @@ const ArtistGalleryMiniCard = ({
       data-testid="mch-artist-gallery-card-mini"
       className={classNames('artist-mini-card position-relative', {
         'opacity-100': isSelected,
+        'cursor-pointer': !unavailable,
       })}
       onClick={onClickCard}
     >
-      <div
-        className={classNames('position-absolute w-100 h-100', {
-          'bg-selected-card': selectMode.active,
-        })}
-        onClick={onClickCard}
-      />
       {
-        (!selectMode.active || isSelected) && (
+        ((!selectMode.active || isSelected) && !unavailable) && (
           <>
             <MemoizedConditionalWrapper
               linkRenderer={linkRenderer}
-              condition={collectionLink && !selectMode.active}
+              condition={collectionLink && !selectMode.active && !unavailable}
               link={collectionLink}
             >
               <div
@@ -85,13 +80,14 @@ const ArtistGalleryMiniCard = ({
         <div>
           <MemoizedConditionalWrapper
             linkRenderer={linkRenderer}
-            condition={collectionLink && !selectMode.active}
+            condition={collectionLink && !selectMode.active && !unavailable}
             link={collectionLink}
           >
             <h5 title={title} className={classNames('me-10 position-relative', {
-              'mini-card-title': variant === 'gallery' && !selectMode.active,
+              'mini-card-title opacity-100': variant === 'gallery',
               'mini-card-title opacity-50': variant === 'gallery' && selectMode.active && !isSelected,
-              'mini-card-title-artist opacity-title': variant === 'artist' && !selectMode.active,
+              'text-white mini-card-title-artist': variant === 'artist',
+              'mini-card-title-artist opacity-title': !selectMode.active && !unavailable,
               'mini-card-title-artist opacity-50': variant === 'artist' && selectMode.active && !isSelected,
               'mini-card-title-artist opacity-100': variant === 'artist' && isSelected,
             })}>{title}</h5>
@@ -108,24 +104,43 @@ const ArtistGalleryMiniCard = ({
           )
         }
       </header>
-      <main className={classNames({
-        'position-relative': unavailable,
-      })}>
-        <img src={image} alt="mini card image" className={classNames('w-100 image-size', {
+      <main className='position-relative'>
+        <div
+          className={classNames('position-absolute w-100 h-100', {
+            'bg-selected-card': selectMode.active,
+          })}
+          onClick={onClickCard}
+        />
+        <div className={classNames('w-100 h-100 position-absolute', {
           'blur-image': unavailable,
         })}/>
         {
+          image
+            ? <img src={image} alt="mini card image" className='w-100' />
+            : (
+              <div className='w-100 d-flex justify-content-center align-items-center title-without-image'>
+                <h5>{title}</h5>
+              </div>
+            )
+        }
+        {
           unavailable && (
             <>
-              <div className='info-text position-absolute d-flex'>
+              <div className={classNames('info-text position-absolute d-flex', {
+                'opacity-75': !isSelected && selectMode.active,
+                'opacity-100': isSelected && selectMode.active,
+              })}>
                 <Icon
                   name="Info"
                   size={18}
                 />
-                <p className='text-label-small my-0'>Unavailable to view</p>
+                <p className='text-label-small my-0'>{unavailableLabel}</p>
               </div>
               <div className='position-absolute h-100 w-100 top-0 unavailable-image d-flex justify-content-center align-items-center p-5'>
-                <div className='eye-hide-box p-4 rounded-circle'>
+                <div className={classNames('eye-hide-box p-4 rounded-circle', {
+                  'opacity-75': !isSelected && selectMode.active,
+                  'opacity-100': isSelected && selectMode.active,
+                })}>
                   <Icon
                     name="eye-hide"
                   />
@@ -143,7 +158,10 @@ const ArtistGalleryMiniCard = ({
                 key={i}
                 label={city}
                 onClick={onClickTag}
-                className='me-3'
+                className={classNames('me-3', {
+                  'opacity-75': !isSelected && selectMode.active,
+                  'opacity-100': isSelected && selectMode.active,
+                })}
               />
             ))
           )
@@ -172,6 +190,7 @@ ArtistGalleryMiniCard.propTypes = {
   linkRenderer: PropTypes.func,
   collectionLink: PropTypes.string,
   unavailable: PropTypes.bool,
+  unavailableLabel: PropTypes.string,
 };
 
 ArtistGalleryMiniCard.defaultProps = {
