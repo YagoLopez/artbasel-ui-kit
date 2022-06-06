@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.72.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.71.0...@mch-group/uikit-components@0.72.0) (2022-06-06)
+
+
+### Features
+
+* **mini card:** image unavailable state added ([a21e73c](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/a21e73c234cfb25f65ba2e73ef9f0265095da9e0))
+
+
+
+
+
 # [0.71.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.70.3...@mch-group/uikit-components@0.71.0) (2022-06-06)
 
 
