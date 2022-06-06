@@ -21,7 +21,7 @@ const ArtistGalleryMiniCard = ({
   selectMode, title, variant, tagCities,
   className, onClickTag, image,
   collection, linkRenderer, collectionLink,
-  unavailable,
+  unavailable, unavailableLabel
 }) => {
   if (!title) return null;
 
@@ -134,7 +134,7 @@ const ArtistGalleryMiniCard = ({
                   name="Info"
                   size={18}
                 />
-                <p className='text-label-small my-0'>Unavailable to view</p>
+                <p className='text-label-small my-0'>{unavailableLabel}</p>
               </div>
               <div className='position-absolute h-100 w-100 top-0 unavailable-image d-flex justify-content-center align-items-center p-5'>
                 <div className={classNames('eye-hide-box p-4 rounded-circle', {
@@ -190,6 +190,7 @@ ArtistGalleryMiniCard.propTypes = {
   linkRenderer: PropTypes.func,
   collectionLink: PropTypes.string,
   unavailable: PropTypes.bool,
+  unavailableLabel: PropTypes.string,
 };
 
 ArtistGalleryMiniCard.defaultProps = {
