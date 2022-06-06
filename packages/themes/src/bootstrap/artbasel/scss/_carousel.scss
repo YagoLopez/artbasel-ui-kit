@@ -100,7 +100,7 @@
   }
 
   &.dark{
-    .btn-icon::before{
+    .carousel-arrows .btn-icon::before{
       background-color: $color-mch-gray-500;
     }
 
