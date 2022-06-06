@@ -43,11 +43,16 @@ const ArtistGalleryMiniCard = ({
     <section
       data-testid="mch-artist-gallery-card-mini"
       className={classNames('artist-mini-card position-relative', {
-        'opacity-75': !isSelected && selectMode.active,
         'opacity-100': isSelected,
       })}
       onClick={onClickCard}
     >
+      <div
+        className={classNames('position-absolute w-100 h-100', {
+          'bg-selected-card': selectMode.active,
+        })}
+        onClick={onClickCard}
+      />
       {
         (!selectMode.active || isSelected) && (
           <>
@@ -59,7 +64,6 @@ const ArtistGalleryMiniCard = ({
               <div
                 className={classNames('w-100 h-100 position-absolute d-flex justify-content-end p-5', className, {
                   'card-wrapper': !selectMode.active,
-                  'card-selected-wrapper': isSelected,
                 })}
               />
             </MemoizedConditionalWrapper>
@@ -74,7 +78,7 @@ const ArtistGalleryMiniCard = ({
           </>
         )
       }
-      <header className={classNames('d-flex justify-content-between px-5 py-7', {
+      <header className={classNames('d-flex justify-content-between align-items-center px-5', {
         headerArtist: variant === 'artist',
         headerGallery: variant === 'gallery',
       })}>
@@ -85,10 +89,11 @@ const ArtistGalleryMiniCard = ({
             link={collectionLink}
           >
             <h5 title={title} className={classNames('me-10 position-relative', {
-              'text-white mini-card-title-artist': variant === 'artist',
-              'mini-card-title opacity-100': variant === 'gallery',
-              'mini-card-title-artist opacity-title': !selectMode.active,
-              'mini-card-title-artist opacity-100': selectMode.active,
+              'mini-card-title': variant === 'gallery' && !selectMode.active,
+              'mini-card-title opacity-50': variant === 'gallery' && selectMode.active && !isSelected,
+              'mini-card-title-artist opacity-title': variant === 'artist' && !selectMode.active,
+              'mini-card-title-artist opacity-50': variant === 'artist' && selectMode.active && !isSelected,
+              'mini-card-title-artist opacity-100': variant === 'artist' && isSelected,
             })}>{title}</h5>
           </MemoizedConditionalWrapper>
         </div>
@@ -106,7 +111,7 @@ const ArtistGalleryMiniCard = ({
       <main className={classNames({
         'position-relative': unavailable,
       })}>
-        <img src={image} alt="mini card image" className={classNames('w-100', {
+        <img src={image} alt="mini card image" className={classNames('w-100 image-size', {
           'blur-image': unavailable,
         })}/>
         {
@@ -130,7 +135,7 @@ const ArtistGalleryMiniCard = ({
           )
         }
       </main>
-      <footer className='position-absolute bottom-0 start-0 ms-5 my-5'>
+      <footer className='position-absolute bottom-0 start-0 ms-5 my-5 tag-z-position'>
         {
           (variant === 'gallery' && tagCities !== null && (tagCities instanceof Array)) && (
             tagCities.map((city, i) => (
