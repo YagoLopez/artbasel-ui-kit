@@ -43,7 +43,6 @@ const ArtistGalleryMiniCard = ({
     <section
       data-testid="mch-artist-gallery-card-mini"
       className={classNames('artist-mini-card position-relative', {
-        'opacity-75': !isSelected && selectMode.active,
         'opacity-100': isSelected,
         'cursor-pointer': !unavailable,
       })}
@@ -60,7 +59,6 @@ const ArtistGalleryMiniCard = ({
               <div
                 className={classNames('w-100 h-100 position-absolute d-flex justify-content-end p-5', className, {
                   'card-wrapper': !selectMode.active,
-                  'card-selected-wrapper': isSelected,
                 })}
               />
             </MemoizedConditionalWrapper>
@@ -75,7 +73,7 @@ const ArtistGalleryMiniCard = ({
           </>
         )
       }
-      <header className={classNames('d-flex justify-content-between px-5 py-7', {
+      <header className={classNames('d-flex justify-content-between align-items-center px-5', {
         headerArtist: variant === 'artist',
         headerGallery: variant === 'gallery',
       })}>
@@ -86,10 +84,12 @@ const ArtistGalleryMiniCard = ({
             link={collectionLink}
           >
             <h5 title={title} className={classNames('me-10 position-relative', {
-              'text-white mini-card-title-artist': variant === 'artist',
               'mini-card-title opacity-100': variant === 'gallery',
+              'mini-card-title opacity-50': variant === 'gallery' && selectMode.active && !isSelected,
+              'text-white mini-card-title-artist': variant === 'artist',
               'mini-card-title-artist opacity-title': !selectMode.active && !unavailable,
-              'mini-card-title-artist opacity-100': selectMode.active,
+              'mini-card-title-artist opacity-50': variant === 'artist' && selectMode.active && !isSelected,
+              'mini-card-title-artist opacity-100': variant === 'artist' && isSelected,
             })}>{title}</h5>
           </MemoizedConditionalWrapper>
         </div>
@@ -104,9 +104,13 @@ const ArtistGalleryMiniCard = ({
           )
         }
       </header>
-      <main className={classNames({
-        'position-relative': unavailable,
-      })}>
+      <main className='position-relative'>
+        <div
+          className={classNames('position-absolute w-100 h-100', {
+            'bg-selected-card': selectMode.active,
+          })}
+          onClick={onClickCard}
+        />
         <div className={classNames('w-100 h-100 position-absolute', {
           'blur-image': unavailable,
         })}/>
@@ -122,7 +126,10 @@ const ArtistGalleryMiniCard = ({
         {
           unavailable && (
             <>
-              <div className='info-text position-absolute d-flex'>
+              <div className={classNames('info-text position-absolute d-flex', {
+                'opacity-75': !isSelected && selectMode.active,
+                'opacity-100': isSelected && selectMode.active,
+              })}>
                 <Icon
                   name="Info"
                   size={18}
@@ -130,7 +137,10 @@ const ArtistGalleryMiniCard = ({
                 <p className='text-label-small my-0'>Unavailable to view</p>
               </div>
               <div className='position-absolute h-100 w-100 top-0 unavailable-image d-flex justify-content-center align-items-center p-5'>
-                <div className='eye-hide-box p-4 rounded-circle'>
+                <div className={classNames('eye-hide-box p-4 rounded-circle', {
+                  'opacity-75': !isSelected && selectMode.active,
+                  'opacity-100': isSelected && selectMode.active,
+                })}>
                   <Icon
                     name="eye-hide"
                   />
@@ -140,7 +150,7 @@ const ArtistGalleryMiniCard = ({
           )
         }
       </main>
-      <footer className='position-absolute bottom-0 start-0 ms-5 my-5'>
+      <footer className='position-absolute bottom-0 start-0 ms-5 my-5 tag-z-position'>
         {
           (variant === 'gallery' && tagCities !== null && (tagCities instanceof Array)) && (
             tagCities.map((city, i) => (
@@ -148,7 +158,10 @@ const ArtistGalleryMiniCard = ({
                 key={i}
                 label={city}
                 onClick={onClickTag}
-                className='me-3'
+                className={classNames('me-3', {
+                  'opacity-75': !isSelected && selectMode.active,
+                  'opacity-100': isSelected && selectMode.active,
+                })}
               />
             ))
           )

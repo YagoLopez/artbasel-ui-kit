@@ -14,12 +14,13 @@ const videoOptions = {
   loop: true,
   width: 'auto',
   height: '75vh',
+  muted: true,
 };
 
 const ReusableBanner = ({
   background, eyebrow, headline, text, primaryButton,
   shareButtonAction, calendarButtonAction, buttonVisibility,
-  mediaPriority, backgroundVideo,
+  mediaPriority, backgroundVideo, isHtml,
 }) => {
   return (
     <section className="reusable-banner" test-dataid="reusable-banner" style={{ backgroundImage: `${mediaPriority === 'image' ? `url(${background})` : 'none'}` }}>
@@ -34,8 +35,17 @@ const ReusableBanner = ({
         <div className="text-center position-relative">
           { eyebrow && <h5 className="text-white pb-3">{eyebrow}</h5> }
           { headline && <h1 className="text-white px-5 headline-truncated">{headline}</h1> }
+          {(isHtml && text) && (
+            <div className='d-flex justify-content-center pt-2 '>
+              <div
+                dangerouslySetInnerHTML={{ __html: text }}
+                className='text-large text-white px-5 text-size m-0 text-truncated'
+                as="div"
+              />
+            </div>
+          )}
           {
-            text && (
+            (!isHtml && text) && (
               <div className='d-flex justify-content-center pt-2'>
                 <p className='text-large text-white px-5 text-size m-0 text-truncated'>{text}</p>
               </div>
@@ -125,11 +135,13 @@ ReusableBanner.propTypes = {
   buttonVisibility: PropTypes.oneOf(['hover', 'always', 'never']),
   mediaPriority: PropTypes.oneOf(['image', 'video']),
   backgroundVideo: PropTypes.string,
+  isHtml: PropTypes.bool,
 };
 
 ReusableBanner.defaultProps = {
   buttonVisibility: 'hover',
   mediaPriority: 'image',
+  isHtml: false,
 };
 
 export default ReusableBanner;

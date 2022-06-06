@@ -3,6 +3,20 @@
     cursor: pointer;
   }
 
+  width: 21.438rem;
+
+  @include media-breakpoint-up(md) {
+    width: 22rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 19rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 17.875rem;
+  }
+
   &:hover,
   &.hover {
     .show-icon{
@@ -51,6 +65,10 @@
     z-index: 2;
   }
 
+  header{
+    height: 4.5rem;
+  }
+
   .headerGallery{
     background-color: $color-mch-gray-200;
 
@@ -64,10 +82,15 @@
 
     .mini-card-title-artist{
       @extend .titles;
+      color: white;
     }
   }
 
   main{
+    .bg-selected-card{
+      background-color: rgba(29, 35, 39, 0.3);
+    }
+
     .blur-image{
       backdrop-filter: blur(3px);
     }
@@ -93,6 +116,22 @@
       }
     }
 
+    .image-size{
+      height: 21.438rem;
+
+      @include media-breakpoint-up(md) {
+        height: 22rem;
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 19rem;
+      }
+
+      @include media-breakpoint-up(xl) {
+        height: 17.875rem;
+      }
+    }
+
     .unavailable-image{
       background-color: #FFFFFFCC;
 
@@ -112,5 +151,9 @@
         margin-left: .313rem;
       }
     }
+  }
+
+  footer{
+    z-index: 2;
   }
 }

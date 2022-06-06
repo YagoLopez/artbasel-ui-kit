@@ -6,6 +6,7 @@ export const ArtistMiniCardExample = {
     checked: false,
     onChange: () => {},
   },
+  unavailableLabel: 'Unavailable to view',
   collectionLink: 'https://artbasel.com',
   linkRenderer: (link, children) => (
     <a href={link} target="_blank" rel="noreferrer">
@@ -24,6 +25,7 @@ export const GalleryMiniCardExample = {
     checked: false,
     onChange: () => { },
   },
+  unavailableLabel: 'Unavailable to view',
   collectionLink: 'https://artbasel.com',
   linkRenderer: (link, children) => (
     <a href={link} target="_blank" rel="noreferrer">
