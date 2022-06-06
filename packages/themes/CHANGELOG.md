@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.56.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.55.4...@mch-group/uikit-themes@0.56.0) (2022-06-06)
+
+
+### Features
+
+* **artist mini card:** sizes and colors fixes in artist mini card ([1760599](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/17605993347e9dfbe8d8903b2c18770fa497557f))
+
+
+
+
+
 ## [0.55.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.55.3...@mch-group/uikit-themes@0.55.4) (2022-06-06)
 
 
