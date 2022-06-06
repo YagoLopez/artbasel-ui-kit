@@ -45,11 +45,12 @@ const ArtistGalleryMiniCard = ({
       className={classNames('artist-mini-card position-relative', {
         'opacity-75': !isSelected && selectMode.active,
         'opacity-100': isSelected,
+        'cursor-pointer': !unavailable,
       })}
       onClick={onClickCard}
     >
       {
-        (!selectMode.active || isSelected) && (
+        ((!selectMode.active || isSelected) && !unavailable) && (
           <>
             <MemoizedConditionalWrapper
               linkRenderer={linkRenderer}
@@ -87,7 +88,7 @@ const ArtistGalleryMiniCard = ({
             <h5 title={title} className={classNames('me-10 position-relative', {
               'text-white mini-card-title-artist': variant === 'artist',
               'mini-card-title opacity-100': variant === 'gallery',
-              'mini-card-title-artist opacity-title': !selectMode.active,
+              'mini-card-title-artist opacity-title': !selectMode.active && !unavailable,
               'mini-card-title-artist opacity-100': selectMode.active,
             })}>{title}</h5>
           </MemoizedConditionalWrapper>
@@ -106,11 +107,12 @@ const ArtistGalleryMiniCard = ({
       <main className={classNames({
         'position-relative': unavailable,
       })}>
+        <div className={classNames('w-100 h-100 position-absolute', {
+          'blur-image': unavailable,
+        })}/>
         {
           image
-            ? <img src={image} alt="mini card image" className={classNames('w-100', {
-              'blur-image': unavailable,
-            })} />
+            ? <img src={image} alt="mini card image" className='w-100' />
             : (
               <div className='w-100 d-flex justify-content-center align-items-center title-without-image'>
                 <h5>{title}</h5>
