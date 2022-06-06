@@ -161,6 +161,23 @@
     }
   }
 
+  .form-check {
+    padding-left: 0;
+    position: absolute;
+    z-index: 4;
+    top: $spacing-5;
+    right: $spacing-5;
+    cursor: pointer;
+    min-height: inherit !important;
+
+    input {
+      padding-right: 0;
+      margin-right: 0;
+      float: none;
+      margin: 0;
+    }
+  }
+
   .image-frame {
     display: flex;
     position: relative;
@@ -205,14 +222,6 @@
       position: absolute;
       bottom: $spacing-5;
       left: $spacing-5;
-    }
-
-    .form-check-input {
-      position: absolute;
-      z-index: 4;
-      top: $spacing-5;
-      right: $spacing-5;
-      cursor: pointer;
     }
 
     .btn-icon {
