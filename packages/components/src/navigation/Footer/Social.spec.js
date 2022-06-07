@@ -6,7 +6,7 @@ import Social from './Social';
 const testElementId = 'mch-footer-social';
 const linkRenderer = (link, label, target) => <a href={link} target={target}>{label}</a>;
 
-const socialMedia = {
+const socialData = {
   title: 'FOLLOW US',
   entries: [
     {
@@ -56,7 +56,7 @@ const socialMedia = {
 
 const Component = () => (
   <Social
-    socialMediaData={socialMedia}
+    socialData={socialData}
     linkRenderer={linkRenderer}
   />
 );

@@ -6,7 +6,7 @@ import Payment from './Payment';
 const testElementId = 'mch-footer-payment';
 const linkRenderer = (link, label, target) => <a href={link} target={target}>{label}</a>;
 
-const paymentMethods = {
+const paymentData = {
   title: 'Accepted payment methods',
   entries: [
     'visa',
@@ -19,7 +19,7 @@ const paymentMethods = {
 
 const Component = () => (
   <Payment
-    paymentData={paymentMethods}
+    paymentData={paymentData}
     linkRenderer={linkRenderer}
   />
 );

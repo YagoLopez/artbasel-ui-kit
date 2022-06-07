@@ -16,7 +16,7 @@ import FooterDocumentation from './FooterDocumentation.mdx';
 
 export const Template = (args) => <Footer {...args} />;
 
-export const socialMedia = {
+export const socialData = {
     title: "FOLLOW US",
     entries: [
       {
@@ -64,7 +64,7 @@ export const socialMedia = {
     ]
   }
 
-export const paymentMethods = {
+export const paymentData = {
     title: "Accepted payment methods",
     entries: [
       "visa",
@@ -106,8 +106,8 @@ export const linkRenderer = (link, children, target) => <a href={link} target={t
   name="Footer"
   args={{
     footerData: footerData,
-    socialMedia: socialMedia,
-    paymentMethods: paymentMethods,
+    socialData: socialData,
+    paymentData: paymentData,
     legalData: legalData,
     linkRenderer: linkRenderer,
     variant: 'artbasel',
