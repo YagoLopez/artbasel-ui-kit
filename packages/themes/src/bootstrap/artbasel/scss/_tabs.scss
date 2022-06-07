@@ -1,0 +1,60 @@
+ul.nav-tabs {
+  flex-wrap: nowrap;
+  scrollbar-width: none;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: none !important;
+
+  .nav-item {
+    border-bottom: 2px solid #f0f2f5;
+    font-size: .875rem;
+    font-weight: bold;
+
+    .nav-link {
+      white-space: nowrap;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:before,
+  &:after {
+    content: ' ';
+    border-bottom: 2px solid #f0f2f5;
+  }
+
+  &.divider-color-grey-100 {
+    .nav-item {
+      border-bottom: 2px solid $color-mch-gray-100;
+    }
+  }
+
+  &.divider-color-grey-200 {
+    .nav-item {
+      border-bottom: 2px solid $color-mch-gray-200;
+    }
+  }
+
+}
+
+.scroll-button {
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  z-index: 9999;
+
+  &.scroll-left {
+    left: 0;
+    background: -prefix-linear-gradient(left, rgb(255, 255, 255) 80%, rgba(255, 255, 255, 0));
+    background: linear-gradient(to right, rgb(255, 255, 255) 80%, rgba(255, 255, 255, 0));
+  }
+
+  &.scroll-right {
+    right: 0;
+    background: -prefix-linear-gradient(right, rgb(255, 255, 255) 80%, rgba(255, 255, 255, 0));
+    background: linear-gradient(to left, rgb(255, 255, 255) 80%, rgba(255, 255, 255, 0));
+  }
+}

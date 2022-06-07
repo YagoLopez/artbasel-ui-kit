@@ -1,136 +1,139 @@
-/* Init - Configuration */
+ /* Init - Configuration */
 
-// Functions
-@import 'bootstrap/scss/functions';
+ // Functions
+ @import 'bootstrap/scss/functions';
 
-// Resources
-@import 'resources/fonts';
+ // Resources
+ @import 'resources/fonts';
 
-// Variables
-@import 'variables/colors';
-@import 'variables/type';
-@import 'variables/spacing';
+ // Variables
+ @import 'variables/colors';
+ @import 'variables/type';
+ @import 'variables/spacing';
 
-@import 'variables/accordion';
-@import 'variables/buttons';
-@import 'variables/card';
-@import 'variables/dropdown';
-@import 'variables/forms';
-@import 'variables/grid';
-@import 'variables/modal';
-@import 'variables/offcanvas';
-@import 'variables/popover';
-@import 'variables/spinners';
-@import 'variables/toasts';
-@import 'bootstrap/scss/variables';
+ @import 'variables/accordion';
+ @import 'variables/buttons';
+ @import 'variables/card';
+ @import 'variables/dropdown';
+ @import 'variables/forms';
+ @import 'variables/grid';
+ @import 'variables/modal';
+ @import 'variables/offcanvas';
+ @import 'variables/popover';
+ @import 'variables/spinners';
+ @import 'variables/toasts';
+ @import 'bootstrap/scss/variables';
 
-// Mixin
-@import 'bootstrap/scss/mixins';
+ // Mixin
+ @import 'bootstrap/scss/mixins';
 
-// Scrollbar mixins
-@import 'scss/scrollbar';
+ // Scrollbar mixins
+ @import 'scss/scrollbar';
 
-// Utilities
-@import 'bootstrap/scss/utilities';
-@import 'scss/truncate';
+ // Utilities
+ @import 'bootstrap/scss/utilities';
+ @import 'scss/truncate';
 
-/* End - Configuration */
+ /* End - Configuration */
 
-/* Init - Layout & components */
+ /* Init - Layout & components */
 
-@import 'bootstrap/scss/root';
-@import 'bootstrap/scss/reboot';
+ @import 'bootstrap/scss/root';
+ @import 'bootstrap/scss/reboot';
 
-@import 'bootstrap/scss/type';
-@import 'scss/type';
+ @import 'bootstrap/scss/type';
+ @import 'scss/type';
 
-@import 'bootstrap/scss/images';
+ @import 'bootstrap/scss/images';
 
-// @import "bootstrap/scss/containers";
+ // @import "bootstrap/scss/containers";
 
-@import 'bootstrap/scss/grid';
-@import 'scss/grid';
+ @import 'bootstrap/scss/grid';
+ @import 'scss/grid';
 
-@import 'bootstrap/scss/tables';
+ @import 'bootstrap/scss/tables';
 
-@import 'bootstrap/scss/forms';
-@import 'scss/forms';
+ @import 'bootstrap/scss/forms';
+ @import 'scss/forms';
 
-@import 'bootstrap/scss/buttons';
-@import 'scss/buttons';
+ @import 'bootstrap/scss/buttons';
+ @import 'scss/buttons';
 
-@import 'scss/carousel';
+ @import 'scss/carousel';
 
-@import 'scss/reactplayer';
+ @import 'scss/reactplayer';
 
-@import 'scss/reusable_banner';
+ @import 'scss/reusable_banner';
 
-@import 'bootstrap/scss/transitions';
+ @import 'bootstrap/scss/transitions';
 
-@import 'bootstrap/scss/dropdown';
-@import 'scss/dropdown';
+ @import 'bootstrap/scss/dropdown';
+ @import 'scss/dropdown';
 
-// @import "bootstrap/scss/button-group";
-// @import "bootstrap/scss/navbar";
+ // @import "bootstrap/scss/button-group";
+ // @import "bootstrap/scss/navbar";
 
-@import 'bootstrap/scss/nav';
-@import 'scss/nav';
+ @import 'bootstrap/scss/nav';
+ @import 'scss/nav';
 
-@import './scss/megamenu';
+ @import './scss/megamenu';
 
-@import 'bootstrap/scss/card';
-@import 'scss/card';
+ @import 'bootstrap/scss/card';
+ @import 'scss/card';
 
-@import 'bootstrap/scss/accordion';
-@import 'scss/accordion';
+ @import 'bootstrap/scss/accordion';
+ @import 'scss/accordion';
 
-// @import "bootstrap/scss/breadcrumb";
-// @import "bootstrap/scss/pagination";
-// @import "bootstrap/scss/badge";
-// @import "bootstrap/scss/alert";
-@import 'bootstrap/scss/progress';
-@import 'scss/progress';
+ // @import "bootstrap/scss/breadcrumb";
+ // @import "bootstrap/scss/pagination";
+ // @import "bootstrap/scss/badge";
+ // @import "bootstrap/scss/alert";
+ @import 'bootstrap/scss/progress';
+ @import 'scss/progress';
 
-@import 'bootstrap/scss/list-group';
+ @import 'bootstrap/scss/list-group';
 
-// @import "bootstrap/scss/list-group";
-// @import "bootstrap/scss/close";
+ // @import "bootstrap/scss/list-group";
+ // @import "bootstrap/scss/close";
 
-@import 'bootstrap/scss/toasts';
-@import 'scss/toasts';
+ @import 'bootstrap/scss/toasts';
+ @import 'scss/toasts';
 
-@import 'bootstrap/scss/modal';
-@import 'scss/modal';
+ @import 'bootstrap/scss/modal';
+ @import 'scss/modal';
 
-// @import "bootstrap/scss/tooltip";
-@import 'bootstrap/scss/popover';
-@import 'scss/popover';
-// @import "bootstrap/scss/carousel";
+ // @import "bootstrap/scss/tooltip";
+ @import 'bootstrap/scss/popover';
+ @import 'scss/popover';
+ // @import "bootstrap/scss/carousel";
 
-@import 'bootstrap/scss/spinners';
-@import 'scss/spinners';
+ @import 'bootstrap/scss/spinners';
+ @import 'scss/spinners';
 
-@import './scss/offcanvas';
-@import 'bootstrap/scss/placeholders';
+ @import './scss/offcanvas';
+ @import 'bootstrap/scss/placeholders';
 
-@import './scss/tag';
-@import './scss/range';
-@import './scss/step_indicator';
-@import './scss/divider';
+ @import './scss/tag';
+ @import './scss/range';
+ @import './scss/step_indicator';
+ @import './scss/divider';
 
-/* End - Configuration */
+ /* End - Configuration */
 
-// Helpers
-@import 'bootstrap/scss/helpers';
+ // Helpers
+ @import 'bootstrap/scss/helpers';
 
-// Utilities
-@import 'bootstrap/scss/utilities/api';
+ // Utilities
+ @import 'bootstrap/scss/utilities/api';
 
-// replaces the auto generated text colors
-@import 'scss/colors';
+ // replaces the auto generated text colors
+ @import 'scss/colors';
 
-// footer
-@import './scss/footer';
+ // footer
+ @import './scss/footer';
 
-// banner
-@import 'scss/banner';
+ // banner
+ @import 'scss/banner';
+
+ // tabs
+ @import 'scss/tabs';
