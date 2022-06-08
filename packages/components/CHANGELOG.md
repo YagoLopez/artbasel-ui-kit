@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.74.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.73.1...@mch-group/uikit-components@0.74.0) (2022-06-08)
+
+
+### Features
+
+* **rehusable banner:** title size in xl breakpoint ([61b48a9](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/61b48a95079f3575bd72d72c9face50f2444a7fc))
+
+
+
+
+
 ## [0.73.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.73.0...@mch-group/uikit-components@0.73.1) (2022-06-08)
 
 
