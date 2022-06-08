@@ -13,6 +13,21 @@ ul.nav-tabs {
 
     .nav-link {
       white-space: nowrap;
+
+      &::after {
+        content: attr(data-rr-ui-event-key);
+        text-transform: capitalize;
+        height: 0;
+        visibility: hidden;
+        overflow: hidden;
+        display: block;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        pointer-events: none;
+        font-weight: bold;
+      }
     }
   }
 
@@ -47,14 +62,20 @@ ul.nav-tabs {
   z-index: 9999;
 
   &.scroll-left {
-    left: 0;
-    background: -prefix-linear-gradient(left, rgb(255, 255, 255) 80%, rgba(255, 255, 255, 0));
-    background: linear-gradient(to right, rgb(255, 255, 255) 80%, rgba(255, 255, 255, 0));
+    left: -2px;
+    background: -prefix-linear-gradient(left, rgb(255, 255, 255) 85%, rgba(255, 255, 255, 0));
+    background: linear-gradient(to right, rgb(255, 255, 255) 85%, rgba(255, 255, 255, 0));
+
+    &:hover {
+      background: -prefix-linear-gradient(left, rgb(255, 255, 255) 85%, rgba(255, 255, 255, 0));
+      background: linear-gradient(to right, rgb(255, 255, 255) 85%, rgba(255, 255, 255, 0));
+    }
   }
 
   &.scroll-right {
-    right: 0;
-    background: -prefix-linear-gradient(right, rgb(255, 255, 255) 80%, rgba(255, 255, 255, 0));
-    background: linear-gradient(to left, rgb(255, 255, 255) 80%, rgba(255, 255, 255, 0));
+    right: -2px;
+    background: -prefix-linear-gradient(right, rgb(255, 255, 255) 85%, rgba(255, 255, 255, 0));
+    background: linear-gradient(to left, rgb(255, 255, 255) 85%, rgba(255, 255, 255, 0));
+
   }
 }

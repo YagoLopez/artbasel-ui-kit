@@ -111,7 +111,9 @@ const Tabs = ({
   return (
     <div className='position-relative overflow-hidden' ref={containerRef}>
 
-    <ButtonIcon className={classNames('scroll-button scroll-left px-5 py-3 p-md-4', { 'd-none': !showLeftScrollArrow })} icon='chevron-left' onClick={() => handleScroll('left')}/>
+      <div className={classNames('scroll-button scroll-left ps-5 pe-8 py-0 py-md-2', { 'd-none': !showLeftScrollArrow })}>
+      <ButtonIcon icon='chevron-left' onClick={() => handleScroll('left')}/>
+      </div>
 
      <BSTabs
       variant="tabs"
@@ -129,7 +131,9 @@ const Tabs = ({
       {children}
     </BSTabs>
 
-    <ButtonIcon className={classNames('scroll-button scroll-right  px-5 py-3 p-md-4', { 'd-none': !showRigthScroll })} icon='chevron-right' onClick={() => handleScroll('right')}/>
+    <div className={classNames('scroll-button scroll-right ps-8 pe-5 py-0 py-md-2', { 'd-none': !showRigthScroll })}>
+      <ButtonIcon icon='chevron-right' onClick={() => handleScroll('right')}/>
+      </div>
 
     </div>
 
