@@ -44,7 +44,7 @@ const ArtistGalleryMiniCard = ({
       data-testid="mch-artist-gallery-card-mini"
       className={classNames('artist-mini-card position-relative', {
         'opacity-100': isSelected,
-        'cursor-pointer': !unavailable,
+        'cursor-pointer': !unavailable || selectMode.active,
       })}
       onClick={onClickCard}
     >
@@ -84,10 +84,11 @@ const ArtistGalleryMiniCard = ({
             link={collectionLink}
           >
             <h5 title={title} className={classNames('me-10 position-relative', {
-              'mini-card-title opacity-100': variant === 'gallery',
+              'mini-card-title': variant === 'gallery',
+              'mini-card-title opacity-100': variant === 'gallery' && isSelected,
               'mini-card-title opacity-50': variant === 'gallery' && selectMode.active && !isSelected,
               'text-white mini-card-title-artist': variant === 'artist',
-              'mini-card-title-artist opacity-title': !selectMode.active && !unavailable,
+              'mini-card-title-artist opacity-title': !selectMode.active && !unavailable && variant === 'artist',
               'mini-card-title-artist opacity-50': variant === 'artist' && selectMode.active && !isSelected,
               'mini-card-title-artist opacity-100': variant === 'artist' && isSelected,
             })}>{title}</h5>
@@ -107,7 +108,7 @@ const ArtistGalleryMiniCard = ({
       <main className='position-relative'>
         <div
           className={classNames('position-absolute w-100 h-100', {
-            'bg-selected-card': selectMode.active,
+            'bg-selected-card': selectMode.active && !unavailable,
           })}
           onClick={onClickCard}
         />
@@ -116,7 +117,9 @@ const ArtistGalleryMiniCard = ({
         })}/>
         {
           image
-            ? <img src={image} alt="mini card image" className='w-100' />
+            ? (
+              <div className='w-100 d-flex justify-content-center align-items-center image-style' style={{ backgroundImage: `url(${image})` }} />
+            )
             : (
               <div className='w-100 d-flex justify-content-center align-items-center title-without-image'>
                 <h5>{title}</h5>
@@ -137,6 +140,12 @@ const ArtistGalleryMiniCard = ({
                 <p className='text-label-small my-0'>{unavailableLabel}</p>
               </div>
               <div className='position-absolute h-100 w-100 top-0 unavailable-image d-flex justify-content-center align-items-center p-5'>
+                <div
+                  className={classNames('position-absolute w-100 h-100', {
+                    'bg-selected-card': selectMode.active && unavailable,
+                  })}
+                  onClick={onClickCard}
+                />
                 <div className={classNames('eye-hide-box p-4 rounded-circle', {
                   'opacity-75': !isSelected && selectMode.active,
                   'opacity-100': isSelected && selectMode.active,
@@ -158,7 +167,7 @@ const ArtistGalleryMiniCard = ({
                 key={i}
                 label={city}
                 onClick={onClickTag}
-                className={classNames('me-3', {
+                className={classNames('me-3 tags', {
                   'opacity-75': !isSelected && selectMode.active,
                   'opacity-100': isSelected && selectMode.active,
                 })}
