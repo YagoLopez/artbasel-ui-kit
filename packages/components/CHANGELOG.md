@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.74.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.74.1...@mch-group/uikit-components@0.74.2) (2022-06-08)
+
+
+### Bug Fixes
+
+* **content card:** content card spacings fixed ([c6c08dc](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/c6c08dcf5f03467dd468c1f58be6a1b0598b75cc))
+
+
+
+
+
 ## [0.74.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.74.0...@mch-group/uikit-components@0.74.1) (2022-06-08)
 
 **Note:** Version bump only for package @mch-group/uikit-components

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.59.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.59.0...@mch-group/uikit-themes@0.59.1) (2022-06-08)
+
+
+### Bug Fixes
+
+* **content card:** content card spacings fixed ([c6c08dc](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/c6c08dcf5f03467dd468c1f58be6a1b0598b75cc))
+
+
+
+
+
 # [0.59.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.58.1...@mch-group/uikit-themes@0.59.0) (2022-06-08)
 
 
