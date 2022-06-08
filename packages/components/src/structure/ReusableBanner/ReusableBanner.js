@@ -34,7 +34,9 @@ const ReusableBanner = ({
         }
         <div className="text-center position-relative">
           { eyebrow && <h5 className="text-white pb-3">{eyebrow}</h5> }
-          { headline && <h1 className="text-white px-5 headline-truncated">{headline}</h1> }
+          <div className='d-flex justify-content-center'>
+            {headline && <h1 className="text-white title-size headline-truncated">{headline}</h1> }
+          </div>
           {(isHtml && text) && (
             <div className='d-flex justify-content-center pt-2 '>
               <div

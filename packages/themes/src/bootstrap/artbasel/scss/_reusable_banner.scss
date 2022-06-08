@@ -17,6 +17,11 @@
 
     -webkit-line-clamp: 4;
   }
+
+  .title-size{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   
   @include media-breakpoint-up(lg) {
     height: 75vh;
@@ -49,7 +54,13 @@
     }
 
     .text-size{
-      width: 50%;
+      max-width: 45rem;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .title-size{
+      max-width: 70rem;
     }
   }
 }
