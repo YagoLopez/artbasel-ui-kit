@@ -12,6 +12,34 @@ import ContentCard from './ContentCard';
 
 export const Template = (args) => <ContentCard {...args} />;
 
+export const cta = [
+  {
+    "id": 1,
+    "label": "TextLink Label",
+    "contentLink": "https://artbasel.com/#1"
+  },
+  {
+    "id": 2,
+    "label": "TextLink Label",
+    "contentLink": "https://artbasel.com/#2"
+  },
+  {
+    "id": 3,
+    "label": "TextLink Label",
+    "contentLink": "https://artbasel.com/#3"
+  },
+  {
+    "id": 4,
+    "label": "TextLink Label",
+    "contentLink": "https://artbasel.com/#4"
+  },
+  {
+    "id": 5,
+    "label": "TextLink Label",
+    "contentLink": "https://artbasel.com/#5"
+  }
+]
+
 # Content Card
 
 These type of cards make up most of the interface and are key components for logically grouping page content and making it scalable.
@@ -74,14 +102,34 @@ Content Card with video player
 
 ### Text Link
 
-#### On
+#### None
 <Canvas>
-  <ContentCard {...example} subtitle={null} responsive />
+  <ContentCard {...example} subtitle={null} responsive cta={null}/>
 </Canvas>
 
-#### Off
+#### One Link
 <Canvas>
   <ContentCard {...example} subtitle={null} responsive contentLink={null} />
+</Canvas>
+
+#### Two Links
+<Canvas>
+  <ContentCard {...example} subtitle={null} responsive contentLink={null} cta={[cta[0], cta[1]]}/>
+</Canvas>
+
+#### Three Links
+<Canvas>
+  <ContentCard {...example} subtitle={null} responsive contentLink={null} cta={[cta[0], cta[1], cta[2]]}/>
+</Canvas>
+
+#### Four Links
+<Canvas>
+  <ContentCard {...example} subtitle={null} responsive contentLink={null} cta={[cta[0], cta[1], cta[2], cta[3]]}/>
+</Canvas>
+
+#### Five Links
+<Canvas>
+  <ContentCard {...example} subtitle={null} responsive contentLink={null} cta={[cta[0], cta[1], cta[2], cta[3], cta[4]]}/>
 </Canvas>
 
 ### Reverse Layout

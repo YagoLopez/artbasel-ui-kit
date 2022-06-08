@@ -100,7 +100,7 @@ const ContentCard = ({
           linkRenderer={firstCtaProps.linkRenderer}
           link={firstCtaProps.contentLink}
         >
-          <BSPCard.Text className="card-title" title={title}>
+          <BSPCard.Text as="h3" className="card-title" title={title}>
             {title}
           </BSPCard.Text>
           {subtitle && (
@@ -126,8 +126,10 @@ const ContentCard = ({
         )}
 
         {cta?.map(
-          (i) => i?.contentLink && (
-              <div className="card-cta" key={i.id}>
+          (i, index) => i?.contentLink && (
+              <div className={classNames('card-cta', {
+                'mt-7': index === 0,
+              })} key={i.id}>
                 <MemoizedConditionalWrapper
                   linkRenderer={i?.linkRenderer}
                   condition={i?.contentLink}
