@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.73.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.73.0...@mch-group/uikit-components@0.73.1) (2022-06-08)
+
+
+### Bug Fixes
+
+* **mini card:** mini cards shadows and title fixes ([7f9a177](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/7f9a1778834c4e2c7b9a37249866ac70192bc9cb))
+
+
+
+
+
 # [0.73.0](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.72.1...@mch-group/uikit-components@0.73.0) (2022-06-07)
 
 
