@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Links from './Links';
 import Payment from './Payment';
 import Social from './Social';
@@ -13,9 +14,10 @@ const { Validator } = require('jsonschema');
 const v = new Validator();
 
 const FooterBuilder = ({
-  variant, footerData, socialData, paymentData, legalData, linkRenderer,
+  variant, footerData, socialData,
+  paymentData, legalData, linkRenderer,
 }) => {
-  return (<footer className=" bg-black text-white">
+  return (<footer className='bg-black text-white' data-testid="mch-footer">
           <div className="container pt-10 pb-8 ps-5 pe-5 ps-md-7 pe-md-7 pb-md-8 p-lg-8 pt-lg-12   row">
             <section className="col-lg-9 col-md-12 left-section">
                 <Links cols={footerData.cols} linkRenderer={linkRenderer}></Links>
@@ -35,7 +37,8 @@ const FooterBuilder = ({
 };
 
 const Footer = ({
-  variant, footerData, socialData, paymentData, legalData, linkRenderer,
+  variant, footerData, socialData,
+  paymentData, legalData, linkRenderer,
 }) => {
   const jsonValidation = v.validate(footerData, schema);
   const { errors } = jsonValidation;
