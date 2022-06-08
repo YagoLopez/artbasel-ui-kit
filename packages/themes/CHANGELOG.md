@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.59.2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.59.1...@mch-group/uikit-themes@0.59.2) (2022-06-08)
+
+
+### Bug Fixes
+
+* **tabs:** fixed scroll behavior and styling with buttons ([ccd799c](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/ccd799ce1b6438f0defdabd9b746d0b5de829f45))
+
+
+
+
+
 ## [0.59.1](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-themes@0.59.0...@mch-group/uikit-themes@0.59.1) (2022-06-08)
 
 
