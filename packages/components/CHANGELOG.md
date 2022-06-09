@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.74.4](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.74.3...@mch-group/uikit-components@0.74.4) (2022-06-09)
+
+
+### Bug Fixes
+
+* **megamenu:** remove navbar bounces when scrollbar is visible ([38545e2](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/commits/38545e25d331613a6595ab04df3d85a8dffa9835))
+
+
+
+
+
 ## [0.74.3](https://bitbucket.org/mchappsrvcs/artbasel-ui-kit/compare/@mch-group/uikit-components@0.74.2...@mch-group/uikit-components@0.74.3) (2022-06-08)
 
 
