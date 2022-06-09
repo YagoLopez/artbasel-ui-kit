@@ -72,7 +72,7 @@ const MegaMenuBuilder = forwardRef(
       <>
         <div
           style={navBarAnimation}
-          className="sticky-top navbar-parent-container"
+          className="sticky-top navbar-parent-container m-0 p-0"
           ref={ref}
         >
           <div className="d-none d-lg-block">
