@@ -103,6 +103,7 @@ const SpecialRoomCard = ({
                 sector={i.name.toLowerCase()}
                 type="sectors"
                 theme="dark"
+                className="me-3"
                 onClick={i.onClick}
               />
             ))}
